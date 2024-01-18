@@ -1,0 +1,176 @@
+<?php include "head.php"; ?>
+<?php include "header.php"; ?>
+
+
+<section class="page-banner section-padding" style="background-image: url('includes/images/services-banner.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="heading-top">OUR SERVICES</span>
+                <h1 class="section-heading">Strategy, Design, <span class="light">Development, and More </span></h1>
+                <p>Experience the power of a leading IT partner. League City Consulting's comprehensive software solutions tackle any business obstacle, paving the way for progress.</p>
+                <a href="#" class="btn web-btn">Hire Our Developers</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<?php include "innovative-services.php"; ?>
+
+<section class="services-page bg-dark section-padding">
+    <div class="container">
+        <div class="row align-items-center service-heading-mb mt-0">
+            <div class="col-lg-6">
+                <h2 class="section-heading">Software Engineering</h2>
+            </div>
+            <div class="col-lg-6">
+                <p>Empowering your digital transformation: Partner with us to build mobile apps, web, and software that are an extension of your vision.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/mobile-app-development.jpg" alt="Mobile App Development">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">iOS App Development</a></li>
+                            <li><a href="#">Android App Development</a></li>
+                            <li><a href="#">Flutter Development</a></li>
+                            <li><a href="#">React Native App Development</a></li>
+                            <li><a href="#">PWA Development</a></li>
+                            <li><a href="#">Mobile App Maintenance & Support Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/web-development.webp" alt="Web Development">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>Web Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">Front End Development</a></li>
+                            <li><a href="#">Back End Development</a></li>
+                            <li><a href="#">Full Stack Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/custom-software-development.webp" alt="Custom Software Development">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>Custom Software Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">Innovation ignited</a></li>
+                            <li><a href="#">Top-notch expertise</a></li>
+                            <li><a href="#">Agile approach</a></li>
+                            <li><a href="#">Top-Notch Quality Every Time</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/ui-ux-development.webp" alt="UI/UX Developemet">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>UI/UX Developemet</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">Branding Services</a></li>
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">Illustrator</a></li>
+                            <li><a href="#">Coreldraw</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/graphic-designing.webp" alt="Graphic Designing">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>Graphic Designing</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">Illustrator</a></li>
+                            <li><a href="#">Coreldraw</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="row align-items-center service-heading-mb">
+            <div class="col-lg-6">
+                <h2 class="section-heading">Digital Automation</h2>
+            </div>
+            <div class="col-lg-6">
+                <p>We fuel organizational evolution with cutting-edge solutions, empowering you to dominate the digital landscape with streamlined workflows and intelligent decision-making.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/ecommerce-development.webp" alt="E-Commerce Development">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>E-Commerce Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">WordPress Development</a></li>
+                            <li><a href="#">Magento Development</a></li>
+                            <li><a href="#">OpenCart Development</a></li>
+                            <li><a href="#">Shopify Development</a></li>
+                            <li><a href="#">WooCommerce Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="image">
+                        <img src="includes/images/cyber-security.webp" alt="Cyber Security">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="heading"><span>Cyber Security</span> <i class="fas fa-arrow-right"></i></a>
+                        <ul>
+                            <li><a href="#">Penetration Testing</a></li>
+                            <li><a href="#">Threat Intelligence & Monitoring</a></li>
+                            <li><a href="#">Network Security & Firewall Solutions</a></li>
+                            <li><a href="#">Access Control & Identity Management</a></li>
+                            <li><a href="#">Data Encryption & Backups</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include "query-form.php"; ?>
+<?php include "footer.php"; ?>
+<?php include "footer-script.php"; ?>

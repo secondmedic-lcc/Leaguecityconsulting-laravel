@@ -1,0 +1,153 @@
+<?php
+
+if (isset($_POST)) {
+
+    if (isset($_POST['form-btn']) && $_POST['form-btn'] == 'submit') {
+
+        extract($_POST);
+
+        $sub = urlencode("League City Consultation request");
+
+        /* $to = $_POST['email']; */
+
+        $to = array("customer.support@secondmedic.com", "aniket.namdeo@secondmedic.com", "ravi.namdeo@secondmedic.com", "rajneesh.dwivedi@secondmedic.com");
+
+        $headers = ['Content-Type: application/json'];
+
+        $msg = "<br/>
+                Dear User thank you for your request. We will contact you soon. <br/>
+                your details mentioned below <br/>
+                Name: " . $_POST['name'] . " <br/>
+                Email: " . $_POST['email'] . " <br/>
+                Contact: " . $_POST['contact'] . " <br/>
+                Budget: " . $_POST['budget'] . " <br/>
+                Project Brief: " . $_POST['project_about'] . ".";
+
+        $array = ['msg' => $msg];
+
+        for ($i = 0; $i < count($to); $i++) {
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://api.crisil.xyz/mail/mailpost.php?id=35&to=$to[$i]&subject=$sub");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($array));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result_data = curl_exec($ch);
+            $response = json_decode($result_data, true);
+        }
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        /* header("Location: https://leaguecityconsulting.com"); */
+        exit;
+    }
+}
+
+?>
+
+<section class="contactus section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                            <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
+                            <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
+                            <form action="" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Full Name*</label>
+                                            <input class="form-control" name="name" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Email*</label>
+                                            <input type="email" class="form-control" name="email" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Mobile Number*</label>
+                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Budget*</label>
+                                            <input class="form-control" name="budget" required onkeypress="return /[0-9]/i.test(event.key)" min="5000" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">About Project*</label>
+                                            <input class="form-control" name="project_about" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>
+                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="javascript:void(0)">Privacy Policy</a></p>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btnrow">
+                                            <button type="submit" class="btn web-btn" name="form-btn" value="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="right-side bg-blue">
+                                <h3>Get In Touch</h3>
+                                <p>Unleash the power of personalized assistance. Your questions, our expertise.</p>
+                                <ul class="contact-list">
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span>Email</span>
+                                            <a href="mailto:info@leaguecity.com">info@leaguecity.com</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span>Contact</span>
+                                            <a href="tel:+18323305432">+1-832-330-5432</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span>Address</span>
+                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="social-icons">
+                                    <li>
+                                        <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
