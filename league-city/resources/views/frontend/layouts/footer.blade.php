@@ -5,26 +5,26 @@
                 <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
-                        <li><a href="services.php">Mobile App Development</a></li>
-                        <li><a href="services.php">Web Development</a></li>
-                        <li><a href="services.php">Custom Software Development</a></li>
-                        <li><a href="services.php">UI/UX Development</a></li>
+                        <li><a href="{{ url('services') }}">Mobile App Development</a></li>
+                        <li><a href="{{ url('services') }}">Web Development</a></li>
+                        <li><a href="{{ url('services') }}">Custom Software Development</a></li>
+                        <li><a href="{{ url('services') }}">UI/UX Development</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Digital Automation</h2>
                     <ul class="list">
-                        <li><a href="services.php">E-Commerce Development</a></li>
-                        <li><a href="services.php">Cyber Security</a></li>
+                        <li><a href="{{ url('services') }}">E-Commerce Development</a></li>
+                        <li><a href="{{ url('services') }}">Cyber Security</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Quick Links</h2>
                     <ul class="list">
-                        <li><a href="aboutus.php">About Us</a></li>
-                        <li><a href="index.php#portfolio">Portfolio</a></li>
-                        <li><a href="services.php">Services</a></li>
-                        <li><a href="contactus.php">Contact Us</a></li>
+                        <li><a href="{{ url('about-us') }}">About Us</a></li>
+                        <li><a href="{{ url('/'); }}#portfolio">Portfolio</a></li>
+                        <li><a href="{{ url('services') }}">Services</a></li>
+                        <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">

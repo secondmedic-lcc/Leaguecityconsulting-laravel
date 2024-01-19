@@ -13,7 +13,7 @@
                             in touch to boost your business online.
                         </p>
                     </div>
-                    <a href="contactus.php" class="btn web-btn">Let's Connect</a>
+                    <a href="{{ url('contact-us') }}" class="btn web-btn">Let's Connect</a>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
 
                     </div>
                     <div class="btnrow text-center">
-                        <a href="services.php" class="btn web-btn">View All Services</a>
+                        <a href="{{ url('services') }}" class="btn web-btn">View All Services</a>
                     </div>
                 </div>
             </div>
@@ -179,14 +179,14 @@
                     <div class="box">
                         <h2>Speed, Agility, Innovation: Your keys to success</h2>
                         <p>Empower your business to evolve. Agile solutions, crafted for your unique transformation.</p>
-                        <a href="services.php" class="btn white-btn">Explore</a>
+                        <a href="{{ url('services') }}" class="btn white-btn">Explore</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="box left-border">
                         <h2>Unlocking Industry Potential Through Digital Innovation</h2>
                         <p>Beyond trends, beyond limits. Explore the uncharted territories of your business.Unleash new possibilities in Business.</p>
-                        <a href="services.php" class="btn white-btn">Explore</a>
+                        <a href="{{ url('services') }}" class="btn white-btn">Explore</a>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                 <h2>Healthcare & Lifescience</h2>
                 <div class="hide">
                     <p>Connecting Patients and Providers Through Powerful Healthcare Software</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
                 <h2>E-Commerce Solutions</h2>
                 <div class="hide">
                     <p>Supercharge Your Sales: Drive Revenue & Order Value with Expert E-Commerce Solutions</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -229,7 +229,7 @@
                 <h2>Gas and <br>oil</h2>
                 <div class="hide">
                     <p>Sustainable Solutions for Diverse and Dynamic Energy Landscape</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -239,7 +239,7 @@
                 <h2>Education and E-learning</h2>
                 <div class="hide">
                     <p>Immersive, Interactive, and Personalized Training Solutions</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -249,7 +249,7 @@
                 <h2>Media and Entertainment</h2>
                 <div class="hide">
                     <p>Elevate Your M&E Content and Captivate Audiences</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -259,7 +259,7 @@
                 <h2>On Demand <br>Delivery</h2>
                 <div class="hide">
                     <p>Let us handle the logistics, you focus on what matters</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -269,7 +269,7 @@
                 <h2>Travel and <br>Hospitality</h2>
                 <div class="hide">
                     <p>Software for Seamless Journeys & Thriving Guests</p>
-                    <a href="services.php" class="btn web-btn">Know More</a>
+                    <a href="{{ url('services') }}" class="btn web-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -346,7 +346,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -386,7 +386,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -426,7 +426,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -466,7 +466,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -506,7 +506,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -546,7 +546,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -586,7 +586,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
@@ -626,7 +626,7 @@
                                 </li>
                             </ul>
                             <div class="btnrow text-end">
-                                <a href="services.php" class="btn web-btn">Explore More</a>
+                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
                     </div>
