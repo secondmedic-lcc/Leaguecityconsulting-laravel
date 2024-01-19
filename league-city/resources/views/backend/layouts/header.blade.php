@@ -9,10 +9,10 @@
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand d-none d-md-block">
                     <a href="{{ url('admin/dashboard') }}">
-                        <span><img src="{{ asset('includes-backend/images/logo.webp'); }}" alt="Health Hub Logo"></span>
+                        <span><img src="{{ asset('includes-backend/images/logo.png'); }}" alt="League City"></span>
                     </a>
                 </li>
-                <li class="mb-1 {{ ($current_page == 'dashboard') ? 'active' : ''; }}">
+                <li class="mb-2 {{ ($current_page == 'dashboard') ? 'active' : ''; }}">
                     <a href="{{ url('admin/dashboard') }}">
                         <font><i class="bx bxs-dashboard"></i> <span>Dashboard</span></font>
                     </a>
@@ -24,7 +24,7 @@
                     </a>
                 </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
+                {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>
                         <span class="bx bx-chevron-right"></span>
@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item" href="{{ url('/admin/customers'); }}">Add Customers</a></li>
                         <li><a class="dropdown-item" href="{{ url('/admin/customers-list'); }}">Customers List</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         @endif
     </nav>

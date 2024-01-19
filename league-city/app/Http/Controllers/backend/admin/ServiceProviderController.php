@@ -36,9 +36,9 @@ class ServiceProviderController extends Controller
         
         $current_page = "leads";
 
-        $service_provider = ContactRequest::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+        $request = ContactRequest::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','service_provider'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','request'));
     }
 
     public function destroy($id) {

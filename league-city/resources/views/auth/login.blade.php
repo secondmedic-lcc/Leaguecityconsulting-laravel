@@ -11,7 +11,7 @@
                     </div>
                 @endif
                 <div class="logo-div mb-4 mb-xs-20">
-                    <img src="{{ asset('includes-backend/images/logo.webp'); }}" alt="">
+                    <img src="{{ asset('includes-backend/images/logo.png'); }}" alt="">
                 </div>
                 <form method="POST" action="{{ url('login') }}" autocomplete="off" >
                     @csrf

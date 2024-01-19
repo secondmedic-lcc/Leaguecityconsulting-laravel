@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use App\Models\EmailTemplate;
 
 function send_mail_api($to, $sub, $msg) {
@@ -76,14 +74,16 @@ function send_mail($mailid, $moduleid, $values) {
         $template_content = str_replace("@var9", $var9, $template_content);
         $template_content = str_replace("@var10", $var10, $template_content);
 
-        $message = file_get_contents(asset('template/order_email_template.html'));
+        $message = file_get_contents(asset('template/email_template.html'));
         $message = str_replace('%title%', $datav->title, $message);
         $message = str_replace('%content%', $template_content, $message);
         $subject = $datav->subject;
     }
   
     send_mail_api($mailid, $subject, $message);
-    if($mailid != 'customer.support@secondmedic.com'){
-        send_mail_api("customer.support@secondmedic.com", $subject, $message);
-    }
+    // send_mail_api("customer.support@secondmedic.com", $subject, $message);
+    // send_mail_api("aniket.namdeo@secondmedic.com", $subject, $message);
+    // send_mail_api("ravi.namdeo@secondmedic.com", $subject, $message);
+    // send_mail_api("rajneesh.dwivedi@secondmedic.com", $subject, $message);
+    // send_mail_api("durgesh.mishra@secondmedic.com", $subject, $message);
 }

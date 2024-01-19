@@ -13,51 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*
+
 Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
 
-Route::get('/pharmacy/{id}', [App\Http\Controllers\PharmacyController::class, 'index']);
-Route::get('/pharmacy/prescription/{id}', [App\Http\Controllers\PharmacyController::class, 'prescription']);
+Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
-Route::post('/pharmacy-leads', [App\Http\Controllers\PharmacyController::class, 'store']);
+Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
 
-Route::get('/{url}/labs', [App\Http\Controllers\LabsController::class, 'index']);
+Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);
 
-Route::get('/labs', [App\Http\Controllers\LabsController::class, 'index']);
+Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
 
-Route::get('/labs/{package_url}', [App\Http\Controllers\LabsController::class, 'lab_details']);
-
-Route::get('/{url}/labs/{package_url}', [App\Http\Controllers\LabsController::class, 'lab_details']);
-
-Route::get('/labs/{package_url}/booking-form', [App\Http\Controllers\LabsController::class, 'booking_form']);
-
-Route::get('/{url}/labs/{package_url}/booking-form', [App\Http\Controllers\LabsController::class, 'booking_form']);
-
-Route::get('/labs/booking/{booking_id}', [App\Http\Controllers\LabsController::class, 'placeThyrocareOrderAPI']);
-
-Route::post('/lab/thyrocare_slot', [App\Http\Controllers\LabsController::class, 'get_app_thyrocare_slot']);
-
-
-Route::get('/{url}/homecare', [App\Http\Controllers\HomecareController::class, 'index']);
-
-Route::get('/homecare', [App\Http\Controllers\HomecareController::class, 'index']);
-
-Route::post('/homecare', [App\Http\Controllers\HomecareController::class, 'store']);
-
-Route::get('/doctor-consultation', [App\Http\Controllers\DoctorConsultationController::class, 'index']);
-
-Route::get('/doctor-consultation/{doctor_url}', [App\Http\Controllers\DoctorConsultationController::class, 'doctor_details']);
-
-Route::get('/{url}/doctor-consultation', [App\Http\Controllers\DoctorConsultationController::class, 'index']);
-
-Route::get('/{url}/doctor-consultation/{doctor_url}', [App\Http\Controllers\DoctorConsultationController::class, 'doctor_details']);
-
-Route::post('/doctor-consultation', [App\Http\Controllers\DoctorConsultationController::class, 'store']);
-
-Route::get('/pay-now/{order_id}/{amount}', [App\Http\Controllers\DoctorConsultationController::class, 'pay_now']);
-*/
-
-Route::get('/', function () { return view('auth/login'); });
+/* Route::get('/', function () { return view('auth/login'); }); */
 
 Auth::routes();
 

@@ -13,4 +13,15 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     function __construct(){ }
+
+    public function index(){
+        
+        $page_name = "index";
+        
+        $page_title = "home";
+        
+        $current_page = "home";
+
+        return view('frontend/main', compact('page_name','page_title','current_page'));
+    }
 }

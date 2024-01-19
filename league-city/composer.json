@@ -32,9 +32,7 @@
         "files": [
             "app/Helpers/send_mail.php",
             "app/Helpers/send_wati.php",
-           "app/Helpers/password_enc.php",
-           "app/Helpers/send_message.php",
-           "app/Helpers/set_user_session.php"
+           "app/Helpers/send_message.php"
        ]
     },
     "autoload-dev": {
