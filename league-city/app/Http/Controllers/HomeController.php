@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\City;
+use App\Models\ContactRequest;
 
 class HomeController extends Controller {
 
@@ -21,7 +22,9 @@ class HomeController extends Controller {
         
         $current_page = "dashboard";
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page'));
+        $contact_request = ContactRequest::where(array('status'=>1))->count();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','contact_request'));
     }
 
     public function state($country_id){
