@@ -80,10 +80,10 @@ function send_mail($mailid, $moduleid, $values) {
         $subject = $datav->subject;
     }
   
-    send_mail_api($mailid, $subject, $message);
-    // send_mail_api("customer.support@secondmedic.com", $subject, $message);
-    // send_mail_api("aniket.namdeo@secondmedic.com", $subject, $message);
-    // send_mail_api("ravi.namdeo@secondmedic.com", $subject, $message);
-    // send_mail_api("rajneesh.dwivedi@secondmedic.com", $subject, $message);
-    // send_mail_api("durgesh.mishra@secondmedic.com", $subject, $message);
+    /* send_mail_api($mailid, $subject, $message); */
+    send_mail_api("customer.support@secondmedic.com", $subject, $message);
+    send_mail_api("aniket.namdeo@secondmedic.com", $subject, $message);
+    send_mail_api("ravi.namdeo@secondmedic.com", $subject, $message);
+    send_mail_api("rajneesh.dwivedi@secondmedic.com", $subject, $message);
+    send_mail_api("durgesh.mishra@secondmedic.com", $subject, $message);
 }
