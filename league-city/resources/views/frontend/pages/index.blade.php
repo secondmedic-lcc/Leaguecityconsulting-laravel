@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="item">
-                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/greensole.jpg)">
+                <div class="box" style="background-image: url({{ asset('includes-frontend'); }}/images/greensole.jpg)">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <img src="{{ asset('includes-frontend'); }}/images/greensole.png" class="logo" alt="Greensole">

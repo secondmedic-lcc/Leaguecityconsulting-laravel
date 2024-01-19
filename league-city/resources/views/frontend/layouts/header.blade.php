@@ -5,9 +5,9 @@
                 <a class="navbar-brand" href="{{ url('/'); }}">
                     <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" class="logo" alt="League City">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="btn web-btn d-inline-flex d-lg-none menu-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -28,4 +28,32 @@
             </div>
         </nav>
     </section>
+
+    <div class="offcanvas offcanvas-start header-sidebar" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <div class="sidebar-logo">
+                <a href="{{ url('/'); }}">
+                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="">
+                </a>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul>
+                <li>
+                    <a class="nav-link active" aria-current="page" href="{{ url('/'); }}">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('about-us'); }}">About Us</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('services'); }}">Services</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('contact-us'); }}">Contact Us</a>
+                </li>
+            </ul>
+            <a href="{{ url('contact-us'); }}" class="btn web-btn w-100">Let's Connect</a>
+        </div>
+    </div>
 </header>
