@@ -39,7 +39,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul>
+            <ul class="menus">
                 <li>
                     <a class="nav-link active" aria-current="page" href="{{ url('/'); }}">Home</a>
                 </li>
@@ -54,6 +54,17 @@
                 </li>
             </ul>
             <a href="{{ url('contact-us'); }}" class="btn web-btn w-100">Let's Connect</a>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
         </div>
     </div>
 </header>
