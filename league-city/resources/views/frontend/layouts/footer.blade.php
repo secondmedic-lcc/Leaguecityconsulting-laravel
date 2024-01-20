@@ -22,8 +22,8 @@
                     <h2 class="footer-h">Quick Links</h2>
                     <ul class="list">
                         <li><a href="{{ url('about-us') }}">About Us</a></li>
-                        <li><a href="{{ url('/'); }}#portfolio">Portfolio</a></li>
                         <li><a href="{{ url('services') }}">Services</a></li>
+                        <li><a href="{{ url('portfolio') }}">Portfolio</a></li>
                         <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
                     </ul>
                 </div>

@@ -168,9 +168,9 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="btnrow text-center">
-            <a href="#" class="btn web-btn">See Our Portfolio</a>
-        </div> -->
+        <div class="btnrow text-center">
+            <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
+        </div>
     </section>
     <section class="explore section-padding">
         <div class="container">
@@ -204,7 +204,6 @@
     </div>
 
     <div class="owl-carousel industry-slider">
-
         <div class="item">
             <div class="box">
                 <h2>Healthcare & Lifescience</h2>

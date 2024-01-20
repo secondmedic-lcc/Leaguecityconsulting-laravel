@@ -24,16 +24,18 @@ Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'ind
 
 Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
 
+Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index']);
+
 /* Route::get('/', function () { return view('auth/login'); }); */
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware('auth')->group(function() {
-    
+Route::prefix('admin')->middleware('auth')->group(function () {
+
     Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    
+
     /* All Routes for Contact Request */
     Route::get('contact-request', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'index']);
 
@@ -51,7 +53,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::post('customers/{id}', [App\Http\Controllers\backend\admin\CustomersController::class, 'update']);
 
     Route::get('customers-delete/{id}', [App\Http\Controllers\backend\admin\CustomersController::class, 'destroy']);
-
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);
