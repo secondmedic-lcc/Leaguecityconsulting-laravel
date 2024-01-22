@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Email</span>
-                                            <a href="mailto:info@leaguecity.com">info@leaguecity.com</a>
+                                            <a href="mailto:info@leaguecity.com">info@leaguecityconsulting.com</a>
                                         </div>
                                     </li>
                                     <li>
