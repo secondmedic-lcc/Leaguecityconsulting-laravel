@@ -121,7 +121,7 @@
         </div>
     </section>
 
-    <section class="recent-work section-padding pb-0" id="portfolio">
+    <section class="recent-work section-padding pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center">
@@ -172,6 +172,7 @@
             <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
         </div>
     </section>
+
     <section class="explore section-padding">
         <div class="container">
             <div class="row g-0">
@@ -194,7 +195,7 @@
     </section>
 </div>
 
-<section class="industries" id="sectors">
+<section class="industries" style="background-image: url({{ asset('includes-frontend'); }}/images/healthcarelifescience.webp)">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -205,7 +206,7 @@
 
     <div class="owl-carousel industry-slider">
         <div class="item">
-            <div class="box">
+            <div class="box active" id="healthcarelifescience">
                 <h2>Healthcare & Lifescience</h2>
                 <div class="hide">
                     <p>Connecting Patients and Providers Through Powerful Healthcare Software</p>
@@ -214,7 +215,7 @@
             </div>
         </div>
         <div class="item">
-            <div class="box">
+            <div class="box" id="ecommercesolutions">
                 <h2>E-Commerce Solutions</h2>
                 <div class="hide">
                     <p>Supercharge Your Sales: Drive Revenue & Order Value with Expert E-Commerce Solutions</p>
@@ -224,7 +225,7 @@
         </div>
 
         <div class="item">
-            <div class="box">
+            <div class="box" id="gasandoil">
                 <h2>Gas and <br>oil</h2>
                 <div class="hide">
                     <p>Sustainable Solutions for Diverse and Dynamic Energy Landscape</p>
@@ -234,7 +235,7 @@
         </div>
 
         <div class="item">
-            <div class="box">
+            <div class="box" id="educationandelearning">
                 <h2>Education and E-learning</h2>
                 <div class="hide">
                     <p>Immersive, Interactive, and Personalized Training Solutions</p>
@@ -244,7 +245,7 @@
         </div>
 
         <div class="item">
-            <div class="box">
+            <div class="box" id="mediaandentertainment">
                 <h2>Media and Entertainment</h2>
                 <div class="hide">
                     <p>Elevate Your M&E Content and Captivate Audiences</p>
@@ -254,7 +255,7 @@
         </div>
 
         <div class="item">
-            <div class="box">
+            <div class="box" id="ondemanddelivery">
                 <h2>On Demand <br>Delivery</h2>
                 <div class="hide">
                     <p>Let us handle the logistics, you focus on what matters</p>
@@ -264,7 +265,7 @@
         </div>
 
         <div class="item">
-            <div class="box">
+            <div class="box" id="travelandhospitality">
                 <h2>Travel and <br>Hospitality</h2>
                 <div class="hide">
                     <p>Software for Seamless Journeys & Thriving Guests</p>
