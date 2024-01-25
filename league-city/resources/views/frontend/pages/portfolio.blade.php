@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="section-heading with-p">Explore Our Recent Work</h2>
-                <p class="heading-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis commodi at aperiam nemo, voluptates totam quas sapiente error repellat doloribus adipisci iusto illum dolore voluptatum a ullam. Optio, debitis tempore.</p>
+                <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
+                <p class="heading-info">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
             </div>
         </div>
         <div class="row g-3">
@@ -96,6 +96,19 @@
                         <p>A platform showcasing grassroot technology startups.</p>
                     </div>
                     <a href="https://aic-rmp.org/startupconclave2.0/" target="_blank" class="btn web-btn">View Project Details</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box">
+                    <img src="{{ asset('includes-frontend'); }}/images/craftnkreation.png" class="logo" alt="Craft & Kreation">
+                    <div class="image">
+                        <img src="{{ asset('includes-frontend'); }}/images/craftnkreation.jpg" alt="Craft & Kreation">
+                    </div>
+                    <div>
+                        <h3><span class="light">Craft & Kreation</span><br> IT Consultant</h3>
+                        <p>A platform showcasing grassroot technology startups.</p>
+                    </div>
+                    <a href="https://www.craftnkreation.com/" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
         </div>
