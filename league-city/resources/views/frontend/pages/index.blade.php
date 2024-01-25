@@ -2,9 +2,9 @@
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <h1 class="section-heading">
-                        <span class="light">Leading</span> Web Development <span class="light">&</span> IT Solution <span class="light">Company</span>
+                        <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution <span class="light">Company</span>
                     </h1>
                     <div class="content">
                         <p>
@@ -163,6 +163,42 @@
                             <h2><span class="light">Greensole</span><br> A Footwear E-commerce Shop</h2>
                             <p>An E-commerce app for sustainable and vegan footwear.</p>
                             <a href="https://www.greensole.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url({{ asset('includes-frontend'); }}/images/vivavalet.jpg)">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="VivaValet">
+                            <h2><span class="light">VivaValet</span><br> Home Services For Olders</h2>
+                            <p>We believe in OurOlders right to self determination and support their desire to live at home.</p>
+                            <a href="https://www.vivavalet.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url({{ asset('includes-frontend'); }}/images/startupconclave.jpg)">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/startupconclave.png" class="logo" alt="Startup Conclave">
+                            <h2><span class="light">Startup Conclave</span><br>Atal Incubation Centre</h2>
+                            <p>A platform showcasing grassroot technology startups.</p>
+                            <a href="https://aic-rmp.org/startupconclave2.0/" target="_blank" class="btn web-btn">View Project Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url({{ asset('includes-frontend'); }}/images/jkbajar.jpg)">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/jkbajar.png" class="logo" alt="JK Bajar">
+                            <h2><span class="light">JK Bajar</span><br>Online Food Delivery App</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            <a href="https://www.jkbajar.com/" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>

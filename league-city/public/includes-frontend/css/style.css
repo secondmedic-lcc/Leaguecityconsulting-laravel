@@ -21,17 +21,17 @@
 
     --gradienttoptobottom: linear-gradient(
         to bottom,
-        #c20c0e 0,
-        #ecdc6a 51%,
-        #3790c2 100%
+        #3790c2 30%,
+        #ecdc6a 50%,
+        #c20c0e 80%
     );
     --gradientlefttoright: linear-gradient(
         90deg,
-        #c20c0e 0,
-        #ecdc6a 51%,
-        #3790c2 100%
+        #3790c2 30%,
+        #ecdc6a 50%,
+        #c20c0e 80%
     );
-    --icongradient: linear-gradient(180deg, #c20c0e 0, #3790c2 100%);
+    --icongradient: linear-gradient(180deg, #3790c2 0, #c20c0e 100%);
 
     --fontSemiBold: "Gilroy-SemiBold, Arial, sans-serif";
     --fontMedium: "Gilroy-Medium, Arial, sans-serif";
@@ -1269,8 +1269,7 @@ h6 .light {
 }
 .growth .box .icon i {
     font-size: 40px;
-    background: linear-gradient(180deg, #c20c0e 0, #3790c2 100%);
-    color: transparent;
+    color: var(--themecolor);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -1411,8 +1410,7 @@ h6 .light {
 }
 .innovative-services .box i {
     font-size: 50px;
-    background: var(--icongradient);
-    color: transparent;
+    color: var(--themecolor);
     -webkit-background-clip: text;
     background-clip: text;
     display: block;
