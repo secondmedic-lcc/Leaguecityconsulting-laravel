@@ -111,6 +111,19 @@
                     <a href="https://www.craftnkreation.com/" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box">
+                    <img src="{{ asset('includes-frontend'); }}/images/jkbajar.png" class="logo" alt="JK Bajar">
+                    <div class="image">
+                        <img src="{{ asset('includes-frontend'); }}/images/jkbajar.jpg" alt="JK Bajar">
+                    </div>
+                    <div>
+                        <h3><span class="light">JK Bajar</span><br> Online Food Delivery App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                    <a href="https://www.jkbajar.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
