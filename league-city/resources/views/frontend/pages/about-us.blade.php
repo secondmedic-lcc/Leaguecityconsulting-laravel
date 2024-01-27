@@ -1,5 +1,3 @@
-
-
 <section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/aboutus-banner.jpg);">
     <div class="container">
         <div class="row">
@@ -18,7 +16,7 @@
         <div class="row">
             <div class="col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">About Us</li>
                 </ol>
             </div>

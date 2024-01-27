@@ -19,9 +19,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="{{ url('products'); }}">Products</a>
-                        </li> -->
                     </ul>
                     <a href="{{ url('contact-us'); }}" class="btn web-btn">Let's Connect</a>
                 </div>

@@ -26,7 +26,7 @@ Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'st
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index']);
 
-Route::get('/products', [App\Http\Controllers\ProductsController::class, 'index']);
+Route::get('/singleportfolio', [App\Http\Controllers\SinglePortfolioController::class, 'index']);
 
 /* Route::get('/', function () { return view('auth/login'); }); */
 

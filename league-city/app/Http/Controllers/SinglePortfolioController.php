@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class SinglePortfolioController extends Controller
 {
     public function index()
     {
 
-        $page_name = "products";
+        $page_name = "singleportfolio";
 
-        $page_title = "products";
+        $page_title = "singleportfolio";
 
-        $current_page = "products";
+        $current_page = "singleportfolio";
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page'));
     }

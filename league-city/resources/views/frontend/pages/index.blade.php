@@ -322,28 +322,22 @@
             </div>
         </div>
         <div class="row g-0">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-12">
                 <div class="left-side">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">Mobile App Development</button>
 
                         <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">Application Development</button>
 
                         <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">AI & Automation</button>
 
-                        <button class="nav-link" id="v-pills-dataanalytics-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dataanalytics" type="button" role="tab" aria-controls="v-pills-dataanalytics" aria-selected="false">Data Analytics</button>
-
-                        <button class="nav-link" id="v-pills-cloudapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cloudapp" type="button" role="tab" aria-controls="v-pills-cloudapp" aria-selected="false">Cloud App Development</button>
-
                         <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">UI/UX Services</button>
 
                         <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">IT Consulting</button>
-
-                        <button class="nav-link" id="v-pills-quality-tab" data-bs-toggle="pill" data-bs-target="#v-pills-quality" type="button" role="tab" aria-controls="v-pills-quality" aria-selected="false">Quality Assurance & Testing</button>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-8">
+            <div class="col-lg-12">
                 <div class="right-side bg-dark">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
@@ -466,86 +460,6 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-dataanalytics" role="tabpanel" aria-labelledby="v-pills-dataanalytics-tab">
-                            <h3>Data Analytics</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="v-pills-cloudapp" role="tabpanel" aria-labelledby="v-pills-cloudapp-tab">
-                            <h3>Cloud App Development</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                            </div>
-                        </div>
-
                         <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel" aria-labelledby="v-pills-uiux-tab">
                             <h3>UI/UX Services</h3>
                             <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
@@ -625,50 +539,47 @@
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
-
-                        <div class="tab-pane fade" id="v-pills-quality" role="tabpanel" aria-labelledby="v-pills-quality-tab">
-                            <h3>Quality Assurance & Testing</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="blog section-padding pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center">
+                <h2 class="section-heading with-p">What's New At LeagueCity?</h2>
+                <p class="heading-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis mollitia eveniet corporis quia tempore repellendus.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel blog-slider">
+                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                    <div class="item">
+                        <div class="box">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="{{ asset('includes-frontend'); }}/images/ecommercesolutions.webp" alt="SecondMedic">
+                                </div>
+                            </a>
+                            <div>
+                                <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></h3>
+                                <ul class="blog-info-list">
+                                    <li>27 January 2024</li>
+                                    <li><a href="#" class="badge">Blog</a></li>
+                                </ul>
+                                <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit officia a odit eaque enim recusandae impedit vel <a href="#" class="web-clr">Read More</a></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div class="btnrow text-center">
+        <a href="{{ url('portfolio'); }}" class="btn web-btn">View All</a>
     </div>
 </section>
 

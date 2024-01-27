@@ -66,3 +66,39 @@ $(".industry-slider").owlCarousel({
         },
     },
 });
+$(".standout-slider").owlCarousel({
+    loop: false,
+    margin: 0,
+    nav: true,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+        },
+        767: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
+});
+$(".blog-slider").owlCarousel({
+    loop: false,
+    margin: 15,
+    nav: true,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+        },
+        767: {
+            items: 2,
+        },
+        1000: {
+            items: 3,
+        },
+    },
+});
