@@ -325,15 +325,27 @@
             <div class="col-lg-12">
                 <div class="left-side">
                     <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">Mobile App Development</button>
+                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">
+                            <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.svg" alt="Mobile App Development"> <br />
+                            Mobile App Development
+                        </button>
 
-                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">Application Development</button>
+                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">
+                            <img src="{{ asset('includes-frontend'); }}/images/app-development.svg" alt="App Development"> <br />
+                            Application Development
+                        </button>
 
-                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">AI & Automation</button>
+                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
+                            <img src="{{ asset('includes-frontend'); }}/images/aiautomation.svg" alt="AI & Automation"> <br />
+                            AI & Automation</button>
 
-                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">UI/UX Services</button>
+                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">
+                            <img src="{{ asset('includes-frontend'); }}/images/uiux.svg" alt="UI/UX Services"> <br />
+                            UI/UX Services</button>
 
-                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">IT Consulting</button>
+                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">
+                            <img src="{{ asset('includes-frontend'); }}/images/itconsulting.svg" alt="IT Consulting"> <br />
+                            IT Consulting</button>
                     </div>
                 </div>
             </div>
@@ -341,201 +353,234 @@
                 <div class="right-side bg-dark">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
-                            <h3>Mobile App Development</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="text-center">
+                                        <h3>Mobile App Development</h3>
+                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">iOS App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Android App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Flutter App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">React Native App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cross-Platform App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hybrid App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">MVP Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wearable App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Progressive Web App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Xamarin Development</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btnrow text-center">
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel" aria-labelledby="v-pills-appdevelopment-tab">
-                            <h3>Application Development</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
+
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="text-center">
+                                        <h3>Application Development</h3>
+                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">iOS App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Android App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Flutter App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">React Native App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cross-Platform App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hybrid App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">MVP Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wearable App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Progressive Web App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Xamarin Development</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btnrow text-center">
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab">
-                            <h3>AI & Automation</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
+
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="text-center">
+                                        <h3>AI & Automation</h3>
+                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">iOS App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Android App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Flutter App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">React Native App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cross-Platform App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hybrid App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">MVP Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wearable App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Progressive Web App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Xamarin Development</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btnrow text-center">
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel" aria-labelledby="v-pills-uiux-tab">
-                            <h3>UI/UX Services</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
+
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="text-center">
+                                        <h3>UI/UX Services</h3>
+                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">iOS App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Android App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Flutter App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">React Native App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cross-Platform App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hybrid App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">MVP Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wearable App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Progressive Web App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Xamarin Development</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btnrow text-center">
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel" aria-labelledby="v-pills-itconsulting-tab">
-                            <h3>IT Consulting</h3>
-                            <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
-                            <ul>
-                                <li>
-                                    <a href="#">iOS App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Android App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Flutter App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">React Native App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Cross-Platform App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hybrid App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">MVP Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Wearable App Development</a>
-                                </li>
-                                <li>
-                                    <a href="#">Progressive Web App Development </a>
-                                </li>
-                                <li>
-                                    <a href="#">Xamarin Development</a>
-                                </li>
-                            </ul>
-                            <div class="btnrow text-end">
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="text-center">
+                                        <h3>IT Consulting</h3>
+                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">iOS App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Android App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Flutter App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">React Native App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cross-Platform App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hybrid App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">MVP Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wearable App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Progressive Web App Development </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Xamarin Development</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btnrow text-center">
                                 <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
                             </div>
                         </div>

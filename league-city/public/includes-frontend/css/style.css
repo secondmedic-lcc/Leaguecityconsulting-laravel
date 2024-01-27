@@ -810,26 +810,42 @@ h6 .light {
 
 /* Technologies Work Start */
 .technology .left-side {
-    background-color: var(--darkgreycolor);
+    margin-bottom: 15px;
 }
 .technology .left-side .nav-pills {
     flex-flow: nowrap;
     overflow: auto;
     flex-direction: unset !important;
+    justify-content: center;
 }
 .technology .left-side .nav-link {
     white-space: nowrap;
     text-align: left;
-    color: var(--whitecolor);
+    color: var(--blackcolor);
     border-radius: 0;
     padding: 12px 18px;
-    font-family: var(--fontMedium);
-    font-size: 18px;
+    font-family: var(--fontSemiBold);
+    font-size: 16px;
     transition: var(--transition);
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    margin: 0px 7.5px;
+    min-width: 225px;
 }
 .technology .left-side .nav-link:hover,
 .technology .left-side .nav-link.active {
     background-color: var(--themecolor);
+    border-color: var(--themecolor);
+    color: var(--whitecolor);
+}
+.technology .left-side .nav-link:hover img,
+.technology .left-side .nav-link.active img {
+    filter: invert(1);
+}
+.technology .left-side .nav-link img {
+    height: 50px;
+    margin-bottom: 5px;
 }
 .technology .right-side {
     padding: 30px;
@@ -886,10 +902,17 @@ h6 .light {
     background-color: var(--themecolor);
 }
 @media (max-width: 767px) {
+    .technology .left-side .nav-pills {
+        justify-content: start;
+    }
+    .technology .left-side .nav-link img {
+        height: 30px;
+    }
     .technology .left-side .nav-link {
         font-size: 12px;
-        padding: 15px;
+        padding: 10px 15px;
         margin: 0px;
+        min-width: auto;
     }
     .technology .right-side {
         padding: 15px;

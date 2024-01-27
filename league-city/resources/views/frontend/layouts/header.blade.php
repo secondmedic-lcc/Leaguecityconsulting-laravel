@@ -19,6 +19,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>
+                        </li>
                     </ul>
                     <a href="{{ url('contact-us'); }}" class="btn web-btn">Let's Connect</a>
                 </div>
@@ -45,6 +48,9 @@
                 </li>
                 <li>
                     <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>
                 </li>
             </ul>
             <a href="{{ url('contact-us'); }}" class="btn web-btn w-100">Let's Connect</a>

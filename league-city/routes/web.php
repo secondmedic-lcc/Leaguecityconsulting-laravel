@@ -28,6 +28,8 @@ Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'inde
 
 Route::get('/singleportfolio', [App\Http\Controllers\SinglePortfolioController::class, 'index']);
 
+Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
+
 /* Route::get('/', function () { return view('auth/login'); }); */
 
 Auth::routes();
