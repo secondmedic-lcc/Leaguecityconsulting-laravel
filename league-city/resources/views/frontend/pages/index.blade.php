@@ -138,7 +138,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/secmed-white.png" class="logo" alt="SecondMedic">
                             <h2><span class="light">Providing Healthcare</span><br> Solution Anywhere</h2>
                             <p>A Complete Health Care App for all your Health Care needs.</p>
-                            <a href="https://www.secondmedic.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/showoffclicks.png" class="logo" alt="SecondMedic">
                             <h2><span class="light">Showoffclicks</span><br> For Women & Kids</h2>
                             <p>Be the next cover page model.</p>
-                            <a href="https://showoffclicks.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/greensole.png" class="logo" alt="Greensole">
                             <h2><span class="light">Greensole</span><br> A Footwear E-commerce Shop</h2>
                             <p>An E-commerce app for sustainable and vegan footwear.</p>
-                            <a href="https://www.greensole.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="VivaValet">
                             <h2><span class="light">VivaValet</span><br> Home Services For Olders</h2>
                             <p>We believe in OurOlders right to self determination and support their desire to live at home.</p>
-                            <a href="https://www.vivavalet.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/startupconclave.png" class="logo" alt="Startup Conclave">
                             <h2><span class="light">Startup Conclave</span><br>Atal Incubation Centre</h2>
                             <p>A platform showcasing grassroot technology startups.</p>
-                            <a href="https://aic-rmp.org/startupconclave2.0/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                             <img src="{{ asset('includes-frontend'); }}/images/jkbajar.png" class="logo" alt="JK Bajar">
                             <h2><span class="light">JK Bajar</span><br>Online Food Delivery App</h2>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                            <a href="https://www.jkbajar.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                            <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                         </div>
                     </div>
                 </div>
@@ -615,7 +615,7 @@
                                     <li>27 January 2024</li>
                                     <li><a href="#" class="badge">Blog</a></li>
                                 </ul>
-                                <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit officia a odit eaque enim recusandae impedit vel <a href="#" class="web-clr">Read More</a></p>
+                                <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit officia a odit eaque enim... <a href="#" class="web-clr">Read More</a></p>
                             </div>
                         </div>
                     </div>

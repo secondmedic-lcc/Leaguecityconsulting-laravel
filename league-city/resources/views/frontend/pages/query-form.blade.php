@@ -8,7 +8,7 @@
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
                             <form action="{{ url('contact-us'); }}" method="POST">
-                            @csrf
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label>
-                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="javascript:void(0)">Privacy Policy</a></p>
+                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="javascript:void(0)" class="web-clr">Privacy Policy</a></p>
                                         </label>
                                     </div>
                                     <div class="col-md-6">
@@ -86,14 +86,14 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <ul class="social-icons">
-                                    <li>
+                                <ul class="social-icons colorful">
+                                    <li class="facebook">
                                         <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                     </li>
-                                    <li>
+                                    <li class="instagram">
                                         <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
                                     </li>
-                                    <li>
+                                    <li class="linkedin">
                                         <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>

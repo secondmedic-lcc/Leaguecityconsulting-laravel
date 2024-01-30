@@ -30,6 +30,8 @@ Route::get('/singleportfolio', [App\Http\Controllers\SinglePortfolioController::
 
 Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
 
+Route::get('/singleblog', [App\Http\Controllers\SingleBlogController::class, 'index']);
+
 /* Route::get('/', function () { return view('auth/login'); }); */
 
 Auth::routes();

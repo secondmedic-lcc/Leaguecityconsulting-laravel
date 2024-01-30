@@ -33,14 +33,14 @@
                         <input type="text" class="form-control" placeholder="Your Email Address">
                         <button class="btn web-btn">Subscribe Now</button>
                     </div>
-                    <ul class="social-icons">
-                        <li>
+                    <ul class="social-icons colorful">
+                        <li class="facebook">
                             <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li>
+                        <li class="instagram">
                             <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
-                        <li>
+                        <li class="linkedin">
                             <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                     </ul>

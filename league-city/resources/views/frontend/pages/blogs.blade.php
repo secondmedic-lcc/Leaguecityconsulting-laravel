@@ -24,22 +24,22 @@
 
 <section class="blog section-padding pb-0">
     <div class="container">
-        <div class="row">
+        <div class="row g-3">
             <?php for ($i = 1; $i <= 6; $i++) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="box">
-                        <a href="#">
+                        <a href="{{ url('/singleblog'); }}">
                             <div class="image">
                                 <img src="{{ asset('includes-frontend'); }}/images/ecommercesolutions.webp" alt="SecondMedic">
                             </div>
                         </a>
                         <div>
-                            <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></h3>
+                            <h3><a href="{{ url('/singleblog'); }}">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></h3>
                             <ul class="blog-info-list">
-                                <li>27 January 2024</li>
-                                <li><a href="#" class="badge">Blog</a></li>
+                                <li><span class="text-grey">27 January 2024</span></li>
+                                <li>Read Time : <span class="text-grey">30 Minutes</span></li>
                             </ul>
-                            <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit officia a odit eaque enim recusandae impedit vel <a href="#" class="web-clr">Read More</a></p>
+                            <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit officia a odit eaque enim recusandae impedit vel... <a href="#" class="web-clr">Read More</a></p>
                         </div>
                     </div>
                 </div>

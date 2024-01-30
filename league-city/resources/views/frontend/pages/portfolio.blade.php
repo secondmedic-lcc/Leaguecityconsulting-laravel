@@ -17,7 +17,7 @@
                         <h3><span class="light">Providing Healthcare</span><br> Solution Anywhere</h3>
                         <p>A Complete Health Care App for all your Health Care needs.</p>
                     </div>
-                    <a href="https://www.secondmedic.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -30,7 +30,7 @@
                         <h3><span class="light">Showoffclicks</span><br> For Women & Kids</h3>
                         <p>Be the next cover page model.</p>
                     </div>
-                    <a href="https://showoffclicks.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -43,7 +43,7 @@
                         <h3><span class="light">Greensole</span><br> A Footwear E-commerce Shop</h3>
                         <p>An E-commerce app for sustainable and vegan footwear.</p>
                     </div>
-                    <a href="https://www.greensole.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -56,7 +56,7 @@
                         <h3><span class="light">VivaValet</span><br> Home Services For Olders</h3>
                         <p>We believe in OurOlders right to self determination and support their desire to live at home.</p>
                     </div>
-                    <a href="https://www.vivavalet.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -69,7 +69,7 @@
                         <h3><span class="light">Joint Biologics</span><br> Orthobiologics Centre</h3>
                         <p>Regenerative therapy for bone and joint conditions</p>
                     </div>
-                    <a href="https://jointbiologics.co.uk/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -82,7 +82,7 @@
                         <h3><span class="light">Heritage Girls School</span><br> Best Boarding School In Udaipur</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
-                    <a href="https://aic-rmp.org/startupconclave2.0/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -95,7 +95,7 @@
                         <h3><span class="light">Startup Conclave</span><br> Atal Incubation Centre</h3>
                         <p>A platform showcasing grassroot technology startups.</p>
                     </div>
-                    <a href="https://aic-rmp.org/startupconclave2.0/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -108,7 +108,7 @@
                         <h3><span class="light">Craft & Kreation</span><br> IT Consultant</h3>
                         <p>A platform showcasing grassroot technology startups.</p>
                     </div>
-                    <a href="https://www.craftnkreation.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -121,7 +121,7 @@
                         <h3><span class="light">JK Bajar</span><br> Online Food Delivery App</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                     </div>
-                    <a href="https://www.jkbajar.com/" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
         </div>
