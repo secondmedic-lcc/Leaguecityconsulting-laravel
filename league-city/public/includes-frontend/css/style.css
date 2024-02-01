@@ -2110,7 +2110,7 @@ h6 .light {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: right;
+    object-position: center;
     transition: all ease-in-out 0.3s;
 }
 .blog .box:hover .image img {
@@ -2119,9 +2119,22 @@ h6 .light {
 .blog .box h3 {
     font-size: 22px;
     margin-bottom: 5px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .blog .box p {
     margin-bottom: 15px;
+}
+.blog .box p span {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .blog .box a {
     text-decoration: none;
