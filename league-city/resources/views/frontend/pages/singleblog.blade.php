@@ -166,52 +166,52 @@
             <div class="owl-carousel blog-slider">
                 <div class="item">
                     <div class="box">
-                        <a href="{{ url('/singleblog'); }}">
+                        <a href="#">
                             <div class="image">
                                 <img src="{{ asset('includes-frontend'); }}/images/aichatbots.jpg" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
                             </div>
                         </a>
                         <div>
-                            <h3><a href="{{ url('/singleblog'); }}">AI Chatbots: Transforming Customer Experiences with Digital Companions</a></h3>
+                            <h3><a href="#">AI Chatbots: Transforming Customer Experiences with Digital Companions</a></h3>
                             <ul class="blog-info-list">
                                 <li><span class="text-grey">27 January 2024</span></li>
                                 <li>Read Time : <span class="text-grey">30 Minutes</span></li>
                             </ul>
-                            <p class="mb-0"><span>In a world where assistance is as simple as chatting with a friend, AI chatbots emerge as the magical digital pals reshaping customer experiences. These virtual colleagues work tirelessly to make interactions smoother and more personalized, revolutionizing the way we seek help. Let's dive into the realm of AI chatbots, where technology meets friendliness to create an extraordinary digital experience</span> <a href="{{ url('/singleblog'); }}" class="web-clr">Read More</a></p>
+                            <p class="mb-0"><span>In a world where assistance is as simple as chatting with a friend, AI chatbots emerge as the magical digital pals reshaping customer experiences. These virtual colleagues work tirelessly to make interactions smoother and more personalized, revolutionizing the way we seek help. Let's dive into the realm of AI chatbots, where technology meets friendliness to create an extraordinary digital experience</span> <a href="#" class="web-clr">Read More</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="box">
-                        <a href="{{ url('/singleblog'); }}">
+                        <a href="#">
                             <div class="image">
                                 <img src="{{ asset('includes-frontend'); }}/images/generativeai.jpg" alt="What is Generative AI? A Guide to Its Magic">
                             </div>
                         </a>
                         <div>
-                            <h3><a href="{{ url('/singleblog'); }}">What is Generative AI? A Guide to Its Magic</a></h3>
+                            <h3><a href="#">What is Generative AI? A Guide to Its Magic</a></h3>
                             <ul class="blog-info-list">
                                 <li><span class="text-grey">27 January 2024</span></li>
                                 <li>Read Time : <span class="text-grey">30 Minutes</span></li>
                             </ul>
-                            <p class="mb-0"><span>Generative AI is a fascinating technology that acts like a smart artist on a computer, creating new things such as pictures or text by learning from examples. In simple terms, it's like having a computer that can be creative and generate content independently.</span> <a href="{{ url('/singleblog'); }}" class="web-clr">Read More</a></p>
+                            <p class="mb-0"><span>Generative AI is a fascinating technology that acts like a smart artist on a computer, creating new things such as pictures or text by learning from examples. In simple terms, it's like having a computer that can be creative and generate content independently.</span> <a href="#" class="web-clr">Read More</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="box">
-                        <a href="{{ url('/singleblog'); }}">
+                        <a href="#">
                             <div class="image">
                                 <img src="{{ asset('includes-frontend'); }}/images/powerofai.jpg" alt="The Power of AI Chatbots: Simplifying Your Digital Experience">
                             </div>
                         </a>
                         <div>
-                            <h3><a href="{{ url('/singleblog'); }}">The Power of AI Chatbots: Simplifying Your Digital Experience</a></h3>
+                            <h3><a href="#">The Power of AI Chatbots: Simplifying Your Digital Experience</a></h3>
                             <ul class="blog-info-list">
                                 <li><span class="text-grey">27 January 2024</span></li>
                                 <li>Read Time : <span class="text-grey">30 Minutes</span></li>
                             </ul>
-                            <p class="mb-0"><span>In a world where help is just a chat away, imagine having a virtual friend at your service—no more waiting on hold or drowning in a sea of emails. That's the magic of AI chatbots! These digital pals act as your virtual colleagues, enhancing customer experiences and making things smoother and more personal.</span> <a href="{{ url('/singleblog'); }}" class="web-clr">Read More</a></p>
+                            <p class="mb-0"><span>In a world where help is just a chat away, imagine having a virtual friend at your service—no more waiting on hold or drowning in a sea of emails. That's the magic of AI chatbots! These digital pals act as your virtual colleagues, enhancing customer experiences and making things smoother and more personal.</span> <a href="#" class="web-clr">Read More</a></p>
                         </div>
                     </div>
                 </div>
