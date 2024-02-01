@@ -81,6 +81,41 @@
     });
 </script>
 
+@if(@$current_page == "portfolio")
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img_preview').attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+@endif
+
+@if(@$current_page == "portfolio")
+    <script>
+        
+        CKEDITOR.replace("description");
+
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img_preview2').attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+@endif
+
 
 </body>
 </html>

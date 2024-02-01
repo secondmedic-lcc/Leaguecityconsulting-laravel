@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\admin\PortfolioController;
+use App\Http\Controllers\backend\admin\CustomersController;
+use App\Http\Controllers\backend\admin\PortfolioServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,8 @@ Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'st
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index']);
 
+Route::get('portfolio/{url}', [App\Http\Controllers\PortfolioController::class, 'portfolio_details']);
+
 Route::get('/singleportfolio', [App\Http\Controllers\SinglePortfolioController::class, 'index']);
 
 Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
@@ -35,6 +40,8 @@ Route::get('/singleblog', [App\Http\Controllers\SingleBlogController::class, 'in
 /* Route::get('/', function () { return view('auth/login'); }); */
 
 Auth::routes();
+
+Route::get('/register', [App\Http\Controllers\backend\LoginController::class, 'logout']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -47,18 +54,52 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
 
+    
     /* All Routes for Customers */
-    Route::get('customers', [App\Http\Controllers\backend\admin\CustomersController::class, 'index']);
+    Route::get('customers', [CustomersController::class, 'index']);
 
-    Route::post('customers', [App\Http\Controllers\backend\admin\CustomersController::class, 'store']);
+    Route::post('customers', [CustomersController::class, 'store']);
 
-    Route::get('customers-list', [App\Http\Controllers\backend\admin\CustomersController::class, 'list']);
+    Route::get('customers-list', [CustomersController::class, 'list']);
 
-    Route::get('customers/{id}', [App\Http\Controllers\backend\admin\CustomersController::class, 'edit']);
+    Route::get('customers/{id}', [CustomersController::class, 'edit']);
 
-    Route::post('customers/{id}', [App\Http\Controllers\backend\admin\CustomersController::class, 'update']);
+    Route::post('customers/{id}', [CustomersController::class, 'update']);
 
-    Route::get('customers-delete/{id}', [App\Http\Controllers\backend\admin\CustomersController::class, 'destroy']);
+    Route::get('customers-delete/{id}', [CustomersController::class, 'destroy']);
+
+    
+    /* All Routes for Portfolio */
+    Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+    
+    Route::get('/portfolio/create', [PortfolioController::class, 'create'])->name('portfolio.create');
+    
+    Route::post('/portfolio', [PortfolioController::class, 'store'])->name('portfolio.store');
+    
+    Route::get('/portfolio/{id}', [PortfolioController::class, 'edit'])->name('portfolio.edit');
+    
+    Route::post('/portfolio/{id}', [PortfolioController::class, 'update'])->name('portfolio.update');
+    
+    Route::get('portfolio-delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
+
+    
+    /* All Routes for Portfolio Services */
+    Route::get('/portfolio-services', [PortfolioServicesController::class, 'index'])->name('portfolio-services');
+    
+    Route::post('/portfolio-services', [PortfolioServicesController::class, 'store'])->name('portfolio-services.store');
+    
+    Route::get('/portfolio-services/{id}', [PortfolioServicesController::class, 'edit'])->name('portfolio-services.edit');
+    
+    Route::post('/portfolio-services/{id}', [PortfolioServicesController::class, 'update'])->name('portfolio-services.update');
+    
+    Route::get('portfolio-services-delete/{id}', [PortfolioServicesController::class, 'destroy'])->name('portfolio-services.destroy');
+    
+    Route::post('/portfolio-details/{id}', [PortfolioController::class, 'update_description'])->name('portfolio.update_description');
+
+    /* All Routes for Portfolio Images */
+    Route::post('portfolio-images', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'store']);
+
+    Route::get('portfolio-images-delete/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'destroy']);
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

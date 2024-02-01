@@ -310,7 +310,7 @@ a:hover {
     border-bottom: 1px dashed var(--greyrgb);
     min-width: 30px;
     vertical-align: middle;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .table tr td h6 {

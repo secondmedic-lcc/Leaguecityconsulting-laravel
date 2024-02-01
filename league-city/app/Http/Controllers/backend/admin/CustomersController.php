@@ -31,9 +31,7 @@ class CustomersController extends Controller
 
         $country = Country::all();
 
-        // $state = State::all();
-
-        // $city = City::all();
+        /* $state = State::all(); $city = City::all(); */
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','country'));
     }

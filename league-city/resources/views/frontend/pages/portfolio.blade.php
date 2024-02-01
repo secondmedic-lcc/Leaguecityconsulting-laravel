@@ -7,123 +7,29 @@
             </div>
         </div>
         <div class="row g-3">
+            
+            @foreach($portfolio as $p)
+
+            @php $url = url('portfolio')."/".Str::slug($p['name']."-".$p['id']);; @endphp
+            
             <div class="col-lg-4 col-md-6">
                 <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/secmed-white.png" class="logo" alt="SecondMedic">
+                    @if($p['logo'] != null && $p['logo'] != "")
+                        <img src="{{ asset($p['logo']); }}" class="logo" alt="{{ $p['name']; }}">
+                    @endif
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic.jpg" alt="SecondMedic">
+                        <img src="{{ asset($p['image']); }}" alt="{{ $p['name']; }}" />
                     </div>
                     <div>
-                        <h3><span class="light">Providing Healthcare</span><br> Solution Anywhere</h3>
-                        <p>A Complete Health Care App for all your Health Care needs.</p>
+                        <h3><span class="light">{{ $p['name']; }}</span><br> {{ $p['heading']; }}</h3>
+                        <p>{{ $p['sub_heading']; }}</p>
                     </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
+                    <a href="{{ $url; }}" target="_blank" class="btn web-btn">View Project Details</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/showoffclicks.png" class="logo" alt="Show Off Clicks">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/showoffclicks.jpg" alt="Show Off Clicks">
-                    </div>
-                    <div>
-                        <h3><span class="light">Showoffclicks</span><br> For Women & Kids</h3>
-                        <p>Be the next cover page model.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/greensole.png" class="logo" alt="Greensole">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/greensole.jpg" alt="Greensole">
-                    </div>
-                    <div>
-                        <h3><span class="light">Greensole</span><br> A Footwear E-commerce Shop</h3>
-                        <p>An E-commerce app for sustainable and vegan footwear.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="VivaValet">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/vivavalet.jpg" alt="VivaValet">
-                    </div>
-                    <div>
-                        <h3><span class="light">VivaValet</span><br> Home Services For Olders</h3>
-                        <p>We believe in OurOlders right to self determination and support their desire to live at home.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/jointbiologics.png" class="logo" alt="Joint Biologics">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/jointbiologics.jpg" alt="Joint Biologics">
-                    </div>
-                    <div>
-                        <h3><span class="light">Joint Biologics</span><br> Orthobiologics Centre</h3>
-                        <p>Regenerative therapy for bone and joint conditions</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/heritagegirlsschool.png" class="logo" alt="Heritage Girls School">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/heritagegirlsschool.jpg" alt="Heritage Girls School">
-                    </div>
-                    <div>
-                        <h3><span class="light">Heritage Girls School</span><br> Best Boarding School In Udaipur</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/startupconclave.png" class="logo" alt="Startup Conclave">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/startupconclave.jpg" alt="Startup Conclave">
-                    </div>
-                    <div>
-                        <h3><span class="light">Startup Conclave</span><br> Atal Incubation Centre</h3>
-                        <p>A platform showcasing grassroot technology startups.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/craftnkreation.png" class="logo" alt="Craft & Kreation">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/craftnkreation.jpg" alt="Craft & Kreation">
-                    </div>
-                    <div>
-                        <h3><span class="light">Craft & Kreation</span><br> IT Consultant</h3>
-                        <p>A platform showcasing grassroot technology startups.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/jkbajar.png" class="logo" alt="JK Bajar">
-                    <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/jkbajar.jpg" alt="JK Bajar">
-                    </div>
-                    <div>
-                        <h3><span class="light">JK Bajar</span><br> Online Food Delivery App</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                    <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a>
-                </div>
-            </div>
+
+            @endforeach
+            
         </div>
     </div>
 </section>

@@ -5,21 +5,8 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\PartnerType;
-use App\Models\Agents;
-use App\Models\ServiceProvider;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
-use App\Models\Country;
-use App\Models\State;
-use App\Models\City;
-use App\Models\PharmacyLeads;
-use App\Models\Homecare;
-use App\Models\Doctors;
-use App\Models\DoctorConsultation;
 use App\Models\ContactRequest;
-use App\Models\LabPackageBooking;
 
 class ServiceProviderController extends Controller
 {

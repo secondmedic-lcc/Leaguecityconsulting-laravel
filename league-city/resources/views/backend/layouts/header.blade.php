@@ -24,6 +24,17 @@
                     </a>
                 </li>
 
+                <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user"></i> <span>Manage Portfolio</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('portfolio.create'); }}">Add Portfolio</a></li>
+                        <li><a class="dropdown-item" href="{{ route('portfolio'); }}">Portfolio List</a></li>
+                    </ul>
+                </li>
+
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>
