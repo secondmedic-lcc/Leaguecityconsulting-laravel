@@ -2236,6 +2236,7 @@ h6 .light {
     position: relative;
     padding-left: 15px;
 }
+.singleblog .content h3:before,
 .singleblog .content h4:before,
 .singleblog .content h5:before,
 .singleblog .content h6:before {
