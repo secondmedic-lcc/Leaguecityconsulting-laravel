@@ -2223,11 +2223,11 @@ h6 .light {
     transform: scale(1.1);
 }
 .singleblog .content h1,
-.singleblog .content h2,
-.singleblog .content h3 {
+.singleblog .content h2 {
     font-size: 22px;
     margin: 20px 0px 10px;
 }
+.singleblog .content h3,
 .singleblog .content h4,
 .singleblog .content h5,
 .singleblog .content h6 {
