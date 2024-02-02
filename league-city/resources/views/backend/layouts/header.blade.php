@@ -35,6 +35,17 @@
                     </ul>
                 </li>
 
+                <li class="mb-1 dropdown {{ ($current_page == 'blogs') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user"></i> <span>Manage Blogs</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('blogs.create'); }}">Add Blogs</a></li>
+                        <li><a class="dropdown-item" href="{{ route('blogs'); }}">Blogs List</a></li>
+                    </ul>
+                </li>
+
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>

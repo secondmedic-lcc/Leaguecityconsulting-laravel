@@ -6,7 +6,7 @@
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="mb-1">Portfolio List</h6>
+                        <h6 class="mb-1">Blogs List</h6>
                     </div>
                     <div class="dropdown  filter-dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -14,8 +14,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><h6>Quick Actions</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('portfolio.create'); }}">Add Portfolio</a></li>
-                            <li><a class="dropdown-item" href="{{ route('portfolio-services'); }}">Add Portfolio Services</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/admin/blogs/create'); }}">Add Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -25,9 +24,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Image</th>
-                                <th>Name</th>
-                                <th>Heading</th>
-                                <th>Sub Heading</th>
+                                <th width="30%">Name</th>
+                                <th width="30%">Details</th>
+                                <th>Created At</th>
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
@@ -35,23 +34,20 @@
                             
                             @php $a = 1; @endphp
 
-                            @foreach($portfolio as $s)
+                            @foreach($blog as $s)
                                 <tr>
                                     <td>{{ $a++; }}</td>
                                     <td>
-                                        <img src="{{ asset($s['image']); }}" alt="Image" width="100" height="auto" />
+                                        <img src="{{ asset($s['blog_image']); }}" width="100" height="auto" alt="Blog Image">
                                     </td>
-                                    <td>{{ $s['name']; }}</td>
-                                    <td>{{ $s['heading']; }}</td>
-                                    <td>{{ $s['sub_heading']; }}</td>
+                                    <td width="30%">{{ $s['blog_title']; }}</td>
+                                    <td width="30%">{{ $s['blog_details']; }}</td>
+                                    <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
                                     <td class="text-end">
-                                        <a href={{ url('/admin/portfolio/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
+                                        <a href={{ url('/admin/blogs/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href={{ url('/admin/portfolio-services?portfolio_id='.$s['id']); }} class="btn btn-primary btn-xs text-white">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                        <a href="javascript:void(0);" url={{ url('/admin/portfolio-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                        <a href="javascript:void(0);" url={{ url('/admin/blogs-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
@@ -60,7 +56,7 @@
                         </tbody>
                     </table>
                     <div class="pagination-all mt-3">
-                        {{ $portfolio->links() }}
+                        {{ $blog->links() }}
                     </div>
                 </div>
             </div>
