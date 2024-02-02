@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\admin\PortfolioController;
 use App\Http\Controllers\backend\admin\CustomersController;
 use App\Http\Controllers\backend\admin\PortfolioServicesController;
+use App\Http\Controllers\backend\admin\BlogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::get('portfolio/{url}', [App\Http\Controllers\PortfolioController::class, 
 Route::get('/singleportfolio', [App\Http\Controllers\SinglePortfolioController::class, 'index']);
 
 Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
+
+Route::get('blogs/{url}', [App\Http\Controllers\BlogsController::class, 'blog_details']);
 
 Route::get('/singleblog', [App\Http\Controllers\SingleBlogController::class, 'index']);
 
@@ -100,6 +103,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('portfolio-images', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'store']);
 
     Route::get('portfolio-images-delete/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'destroy']);
+
+    
+    /* All Routes for Portfolio Services */
+    Route::get('blogs', [BlogsController::class, 'index'])->name('blogs');
+    
+    Route::get('blogs/create', [BlogsController::class, 'create'])->name('blogs.create');
+    
+    Route::post('blogs', [BlogsController::class, 'store'])->name('blogs.store');
+    
+    Route::get('blogs/{id}', [BlogsController::class, 'edit'])->name('blogs.edit');
+    
+    Route::post('blogs/{id}', [BlogsController::class, 'update'])->name('blogs.update');
+    
+    Route::get('blogs-delete/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+    
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

@@ -81,7 +81,7 @@
     });
 </script>
 
-@if(@$current_page == "portfolio")
+@if(@$current_page == "portfolio" || @$current_page == "blogs")
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -97,7 +97,7 @@
     </script>
 @endif
 
-@if(@$current_page == "portfolio")
+@if(@$current_page == "portfolio" || @$current_page == "blogs")
     <script>
         
         CKEDITOR.replace("description");

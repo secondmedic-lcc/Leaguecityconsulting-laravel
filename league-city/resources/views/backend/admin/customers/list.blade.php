@@ -53,6 +53,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="pagination-all mt-3">
+                        {{ $list->links() }}
+                    </div>
                 </div>
             </div>
         </div>
