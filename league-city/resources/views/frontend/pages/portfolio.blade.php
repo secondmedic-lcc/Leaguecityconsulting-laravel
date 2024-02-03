@@ -7,15 +7,15 @@
             </div>
         </div>
         <div class="row g-3">
-            
+
             @foreach($portfolio as $p)
 
             @php $url = url('portfolio')."/".Str::slug($p['name']."-".$p['id']);; @endphp
-            
+
             <div class="col-lg-4 col-md-6">
                 <div class="box">
                     @if($p['logo'] != null && $p['logo'] != "")
-                        <img src="{{ asset($p['logo']); }}" class="logo" alt="{{ $p['name']; }}">
+                    <img src="{{ asset($p['logo']); }}" class="logo" alt="{{ $p['name']; }}">
                     @endif
                     <div class="image">
                         <img src="{{ asset($p['image']); }}" alt="{{ $p['name']; }}" />
@@ -24,12 +24,12 @@
                         <h3><span class="light">{{ $p['name']; }}</span><br> {{ $p['heading']; }}</h3>
                         <p>{{ $p['sub_heading']; }}</p>
                     </div>
-                    <a href="{{ $url; }}" target="_blank" class="btn web-btn">View Project Details</a>
+                    <!-- <a href="{{ $url; }}" target="_blank" class="btn web-btn">View Project Details</a> -->
                 </div>
             </div>
 
             @endforeach
-            
+
         </div>
     </div>
 </section>

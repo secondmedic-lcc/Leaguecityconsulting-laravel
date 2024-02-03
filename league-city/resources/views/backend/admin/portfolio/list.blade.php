@@ -59,9 +59,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="pagination-all mt-3">
-                        {{ $portfolio->links() }}
-                    </div>
                 </div>
             </div>
         </div>
