@@ -27,7 +27,7 @@ class BlogsController extends Controller
 
         $page_title = "blogs details";
 
-        $current_page = "blogs->details";
+        $current_page = "blogs-details";
         
 		$url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);

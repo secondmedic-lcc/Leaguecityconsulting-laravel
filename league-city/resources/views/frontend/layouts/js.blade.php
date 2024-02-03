@@ -22,6 +22,35 @@
     });
 </script>
 
+@if($current_page == 'blogs-details')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('myForm');
+        var submitButton = document.getElementById('form-btn');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
+        });
+    });
+</script>
+
+@endif
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('contact-form');
+        var submitButton = document.getElementById('contact-btn');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
+        });
+    });
+</script>
+
+
 </body>
 
 </html>

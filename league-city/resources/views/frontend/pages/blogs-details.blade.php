@@ -59,23 +59,24 @@
                     </div>
                     <div class="form-box d-lg-block d-none">
                         <h3 class="heading">Let's talk about your project!</h3>
-                        <form action="">
+                        <form action="{{ url('contact-us'); }}"  id="myForm" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name*">
+                                <input type="text" class="form-control" placeholder="Full Name*" name="name" required />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email*">
+                                <input type="email" class="form-control" placeholder="Email*"  name="email" required />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Mobile Number*">
+                                <input type="text" class="form-control" placeholder="Mobile Number*" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Budget*">
+                                <input type="text" class="form-control" placeholder="Budget*" name="budget" required onkeypress="return /[0-9]/i.test(event.key)" min="5000" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="About Project*">
+                                <input type="text" class="form-control" placeholder="About Project*" name="message" required />
                             </div>
-                            <input type="submit" class="btn web-btn w-100" value="Submit">
+                            <button type="submit" class="btn web-btn w-100" id="form-btn">Submit</button>
                         </form>
                     </div>
                 </div>

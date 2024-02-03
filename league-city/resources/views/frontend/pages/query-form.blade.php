@@ -7,7 +7,7 @@
                         <div class="col-lg-8 col-md-12">
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
-                            <form action="{{ url('contact-us'); }}" method="POST">
+                            <form action="{{ url('contact-us'); }}" id="contact-form" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="btnrow">
-                                            <button type="submit" class="btn web-btn" name="form-btn" value="submit">Submit</button>
+                                            <button type="submit" class="btn web-btn" name="form-btn" value="submit" id="contact-btn">Submit</button>
                                         </div>
                                     </div>
                                 </div>
