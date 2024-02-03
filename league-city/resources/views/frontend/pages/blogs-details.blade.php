@@ -43,7 +43,7 @@
                             <li class="facebook">
                                 <a href="https://www.facebook.com/sharer.php?u={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Facebook"><i class="fab fa-facebook-f"></i></a>
                             </li>
-                            <li class="instagram">
+                            <li class="instagram d-none">
                                 <a href="https://www.instagram.com/share?url={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Instagram"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li class="linkedin">
