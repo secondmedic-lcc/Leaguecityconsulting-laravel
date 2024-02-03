@@ -2043,7 +2043,7 @@ h6 .light {
         margin-bottom: 5px;
     }
     .portfolio-standout .box {
-        padding: 20px 20px 0px;
+        padding: 20px;
     }
     .portfolio-standout .box .content {
         padding-bottom: 20px;
@@ -2057,6 +2057,9 @@ h6 .light {
     }
     .portfolio-standout .box p {
         font-size: 14px;
+    }
+    .portfolio-standout .box img {
+        height: 200px;
     }
     .portfolio-process .accordion button {
         padding: 10px 20px;
