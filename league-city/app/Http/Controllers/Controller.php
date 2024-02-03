@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Blogs;
+use App\Models\Portfolio;
 /* use App\Models\ServiceProvider; */
 
 class Controller extends BaseController
@@ -25,6 +26,8 @@ class Controller extends BaseController
         
         $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->limit(5)->get();
 
-        return view('frontend/main', compact('page_name','page_title','current_page','blog'));
+        $portfolio = Portfolio::where(array('status'=>1))->orderBy('id','desc')->limit(5)->get();
+
+        return view('frontend/main', compact('page_name','page_title','current_page','blog','portfolio'));
     }
 }

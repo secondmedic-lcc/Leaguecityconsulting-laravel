@@ -35,7 +35,9 @@ class BlogsController extends Controller
         $blog_id = end($pathFragments);
         
         $single_blog = Blogs::where(array('status'=>1,'id'=>$blog_id))->first();
+        
+        $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->limit(6)->get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog'));
     }
 }
