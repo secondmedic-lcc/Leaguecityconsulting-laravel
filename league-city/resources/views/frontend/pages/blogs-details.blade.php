@@ -41,19 +41,19 @@
                         <h3 class="heading">Share this article</h3>
                         <ul class="social-icons colorful">
                             <li class="facebook">
-                                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/sharer.php?u={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Facebook"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li class="instagram">
-                                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/share?url={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Instagram"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li class="linkedin">
-                                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.twitter.com/share?url={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Twitter"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li class="whatsapp">
-                                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="whatsapp://send?text={{ url()->current(); }}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
                             </li>
                             <li class="copy">
-                                <a href="#" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Copy Link"><i class="far fa-copy"></i></a>
+                                <a href="javascript:void(0);" onClick="copyUrl();" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Copy Link"><i class="far fa-copy"></i></a>
                             </li>
                         </ul>
                     </div>

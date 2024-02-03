@@ -23,6 +23,7 @@
 </script>
 
 @if($current_page == 'blogs-details')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -36,6 +37,19 @@
     });
 </script>
 
+<script>
+    function copyUrl(){
+
+        var currentUrl = window.location.href;
+        var tempInput = $('<input>');
+        $('body').append(tempInput);
+        tempInput.val(currentUrl).select();
+        document.execCommand('copy');
+        tempInput.remove();
+        
+        swal("Thank you!", "Url Copyed Successfully", "success");
+    }
+</script>
 @endif
 
 <script>
