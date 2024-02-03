@@ -1890,7 +1890,7 @@ h6 .light {
     color: white;
 }
 .portfolio-standout .box .content {
-    /* padding-bottom: 200px; */
+    padding-bottom: 70px;
 }
 .portfolio-standout .box i {
     font-size: 40px;
@@ -2021,7 +2021,7 @@ h6 .light {
 
 @media (max-width: 991px) {
     .portfolio-standout .box .content {
-        padding-bottom: 110px;
+        padding-bottom: 70px;
     }
 }
 @media (max-width: 767px) {
@@ -2046,7 +2046,7 @@ h6 .light {
         padding: 20px 20px 0px;
     }
     .portfolio-standout .box .content {
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
     .portfolio-standout .box i {
         font-size: 22px;

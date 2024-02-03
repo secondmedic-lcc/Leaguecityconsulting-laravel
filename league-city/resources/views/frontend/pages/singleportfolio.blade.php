@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <img src=" " alt="LeagueCity">
+                                        <img src="" alt="LeagueCity">
                                     </div>
                                 </div>
                             </div>
