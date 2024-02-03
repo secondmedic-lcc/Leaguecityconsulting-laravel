@@ -500,10 +500,10 @@ h6 .light {
 /* Banner Work Start */
 .banner {
     min-height: 100vh;
-    background: url("../images/banner2.jpg") center;
+    background: url("../images/banner3.jpg") center;
     background-size: cover;
     position: relative;
-    padding: 150px 0px;
+    padding: 250px 0px 50px;
     overflow: hidden;
 }
 .banner:after {
@@ -554,7 +554,7 @@ h6 .light {
     .banner {
         padding: 120px 0px 120px;
         min-height: auto;
-        background-position: left;
+        background-size: 290%;
     }
     .banner:after {
         height: 110%;
@@ -1880,7 +1880,7 @@ h6 .light {
 }
 
 .portfolio-standout .box {
-    padding: 30px 30px 0px;
+    padding: 30px;
     background: url("../images/slider-bg.jpg") center;
     background-size: cover;
     position: relative;
@@ -1890,7 +1890,7 @@ h6 .light {
     color: white;
 }
 .portfolio-standout .box .content {
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
 }
 .portfolio-standout .box i {
     font-size: 40px;
@@ -1904,15 +1904,22 @@ h6 .light {
     font-size: 18px;
     margin: 0px;
 }
+.portfolio-standout .box img {
+    width: 100%;
+    height: 350px;
+    background-color: #eee;
+    display: block;
+    object-fit: cover;
+}
 .portfolio-standout .owl-nav .owl-prev {
     left: 0px;
-    bottom: 30px;
+    bottom: 0px;
     transform: unset;
     top: unset;
 }
 .portfolio-standout .owl-nav .owl-next {
     left: 60px;
-    bottom: 30px;
+    bottom: 0px;
     transform: unset;
     top: unset;
 }

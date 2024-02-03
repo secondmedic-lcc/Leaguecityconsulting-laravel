@@ -66,16 +66,16 @@
                     <div class="owl-carousel standout-slider">
                         <?php for ($i = 1; $i <= 6; $i++) { ?>
                             <div class="item">
-                                <div class="row align-items-end">
-                                    <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4">
                                         <div class="content">
-                                            <i class="far fa-play-circle"></i>
-                                            <h3>Group Conferencing</h3>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste accusamus error molestiae sed quis recusandae obcaecati, eius enim necessitatibus unde fugiat odit non tenetur possimus! Alias perferendis consectetur eligendi sequi?</p>
+                                            <i class="fas fa-desktop"></i>
+                                            <h3>SecondMedic</h3>
+                                            <p>Website connects users with diverse health services, facilitating convenient access to medical resources and information.</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <img src="{{ asset('includes-frontend'); }}/images/doctor.webp" alt="Group Conferencing">
+                                    <div class="col-md-8">
+                                        <img src=" " alt="LeagueCity">
                                     </div>
                                 </div>
                             </div>
