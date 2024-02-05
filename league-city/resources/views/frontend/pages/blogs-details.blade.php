@@ -1,5 +1,5 @@
 @empty(!$single_blog)
-    
+
 <nav aria-label="breadcrumb">
     <div class="container">
         <div class="row">
@@ -30,9 +30,9 @@
                     <img src="{{ ($single_blog->detail_image != '' && $single_blog->detail_image != null) ? asset($single_blog->detail_image) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="SecondMedic">
                 </div>
                 <div class="content">
-                   @php
-                       echo $single_blog->description;
-                   @endphp
+                    @php
+                    echo $single_blog->description;
+                    @endphp
                 </div>
             </div>
             <div class="col-lg-3">
@@ -59,13 +59,13 @@
                     </div>
                     <div class="form-box d-lg-block d-none">
                         <h3 class="heading">Let's talk about your project!</h3>
-                        <form action="{{ url('contact-us'); }}"  id="myForm" method="POST">
+                        <form action="{{ url('contact-us'); }}" id="myForm" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Full Name*" name="name" required />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email*"  name="email" required />
+                                <input type="email" class="form-control" placeholder="Email*" name="email" required />
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Mobile Number*" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" />
@@ -92,7 +92,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="section-heading with-p">Recent Blogs</h2>
-                <p class="heading-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis mollitia eveniet corporis quia tempore repellendus.</p>
+                <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
         <div class="row">
@@ -100,25 +100,25 @@
 
                 @foreach($blog as $b)
                 @php $url = url('blogs')."/".Str::slug($b['blog_title']."-".$b['id']);; @endphp
-                    <div class="item">
-                        <div class="box">
-                            <a href="{{ $url; }}">
-                                <div class="image">
-                                    <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
-                                </div>
-                            </a>
-                            <div>
-                                <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
-                                <ul class="blog-info-list">
-                                    <li><span class="text-grey">27 January 2024</span></li>
-                                    <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
-                                </ul>
-                                <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
+                <div class="item">
+                    <div class="box">
+                        <a href="{{ $url; }}">
+                            <div class="image">
+                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
                             </div>
+                        </a>
+                        <div>
+                            <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
+                            <ul class="blog-info-list">
+                                <li><span class="text-grey">27 January 2024</span></li>
+                                <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
+                            </ul>
+                            <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
                         </div>
                     </div>
+                </div>
                 @endforeach
-                
+
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
             <div class="col-lg-6">
                 <span class="heading-top">Our Blogs</span>
                 <h1 class="section-heading">What's New <span class="light">At LeagueCity?</span></h1>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repellat necessitatibus earum sed officiis?</p>
+                <p class="mb-0">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
     </div>
@@ -28,29 +28,29 @@
 
             @foreach($blog as $b)
             @php $url = url('blogs')."/".Str::slug($b['blog_title']."-".$b['id']);; @endphp
-                <div class="col-lg-4 col-md-6">
-                    <div class="box">
-                        <a href="{{ $url; }}">
-                            <div class="image">
-                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
-                            </div>
-                        </a>
-                        <div>
-                            <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
-                            <ul class="blog-info-list">
-                                <li><span class="text-grey">27 January 2024</span></li>
-                                <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
-                            </ul>
-                            <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
+            <div class="col-lg-4 col-md-6">
+                <div class="box">
+                    <a href="{{ $url; }}">
+                        <div class="image">
+                            <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
                         </div>
+                    </a>
+                    <div>
+                        <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
+                        <ul class="blog-info-list">
+                            <li><span class="text-grey">27 January 2024</span></li>
+                            <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
+                        </ul>
+                        <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
                     </div>
                 </div>
+            </div>
             @endforeach
-            
+
             <div class="pagination-all mt-3">
                 {{ $blog->links() }}
             </div>
-         
+
         </div>
     </div>
 </section>

@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="section-heading with-p">Recent Blogs</h2>
-                <p class="heading-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis mollitia eveniet corporis quia tempore repellendus.</p>
+                <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
         <div class="row">

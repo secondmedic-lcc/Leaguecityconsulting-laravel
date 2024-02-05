@@ -1154,11 +1154,28 @@ h6 .light {
 .footer * {
     color: white;
 }
+.footer .web-clr {
+    color: var(--themecolor);
+}
 .footer .footer-h {
     color: var(--whitecolor);
     font-size: 20px;
     line-height: 1;
     margin-bottom: 15px;
+}
+.footer .footer-info .logo {
+    margin-bottom: 20px;
+}
+.footer .footer-info .logo img {
+    width: 150px;
+    height: 37px;
+    object-fit: contain;
+    object-position: left;
+}
+.footer .footer-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 .footer .list {
     padding-left: 0;
@@ -1191,7 +1208,7 @@ h6 .light {
     margin-bottom: 15px;
 }
 .footer .social-icons {
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .footer-bottom {
     padding: 20px 0px;
@@ -1224,6 +1241,19 @@ h6 .light {
         line-height: 22px;
         margin-bottom: 5px;
     }
+    .footer .footer-info .logo {
+        margin-bottom: 10px;
+    }
+    .footer .footer-info .logo img {
+        width: 150px;
+        height: 37px;
+        object-fit: contain;
+        object-position: left;
+    }
+    .footer .footer-info p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
     .footer .list {
         margin-bottom: 15px;
     }
@@ -1235,7 +1265,7 @@ h6 .light {
         line-height: 20px;
     }
     .footer .social-icons {
-        margin-top: 20px;
+        margin-bottom: 15px;
     }
     .footer-bottom {
         text-align: center;

@@ -2,7 +2,32 @@
     <section class="footer section-padding bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-6 col-6">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footer-info">
+                        <div class="logo">
+                            <a href="{{ url('/'); }}">
+                                <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="">
+                            </a>
+                        </div>
+                        <p>League City Consulting crafts elegant solutions for simple and complex business problems... <a href="{{ url('about-us'); }}" class="web-clr">Read More</a></p>
+                    </div>
+                    <!-- <div class="form-group mt-lg-4 mt-3 mb-0">
+                        <input type="text" class="form-control" placeholder="Your Email Address">
+                        <button class="btn web-btn">Subscribe Now</button>
+                    </div> -->
+                    <ul class="social-icons colorful">
+                        <li class="facebook">
+                            <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="instagram">
+                            <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
                         <li><a href="{{ url('services') }}">Mobile App Development</a></li>
@@ -18,31 +43,13 @@
                         <li><a href="{{ url('services') }}">Cyber Security</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-6">
+                <div class="col-lg-2 col-sm-6 col-6">
                     <h2 class="footer-h">Quick Links</h2>
                     <ul class="list">
                         <li><a href="{{ url('about-us') }}">About Us</a></li>
                         <li><a href="{{ url('services') }}">Services</a></li>
                         <li><a href="{{ url('portfolio') }}">Portfolio</a></li>
                         <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <h2 class="footer-h">League City Newsletter</h2>
-                    <div class="form-group mt-lg-4 mt-3 mb-0">
-                        <input type="text" class="form-control" placeholder="Your Email Address">
-                        <button class="btn web-btn">Subscribe Now</button>
-                    </div>
-                    <ul class="social-icons colorful">
-                        <li class="facebook">
-                            <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="instagram">
-                            <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="linkedin">
-                            <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
                     </ul>
                 </div>
             </div>

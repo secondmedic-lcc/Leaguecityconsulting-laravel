@@ -538,7 +538,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="section-heading with-p">What's New At LeagueCity?</h2>
-                <p class="heading-info"> Dive deep into our technical expertise with blog posts on AI, blockchain, and more.</p>
+                <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
         <div class="row">
