@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Products;
+
+class ProductsController extends Controller
+{
+    public function index()
+    {
+        $page_name = "products";
+
+        $page_title = "products";
+
+        $current_page = "products";
+
+        $product = Products::where(array('status'=>1))->orderBy('id','desc')->get();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product'));
+    }
+    
+    public function products_details()
+    {
+        $page_name = "products-details";
+
+        $page_title = "Product details";
+
+        $current_page = "products-details";
+        
+		$url = $_SERVER['REQUEST_URI'];
+        $this->path = pathinfo($url, PATHINFO_BASENAME);
+        $pathFragments = explode('-', $this->path);
+        $product_id = end($pathFragments);
+
+        $product_details = Products::where(array('status'=>1,'id'=>$product_id))->first();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product_details'));
+    }
+}

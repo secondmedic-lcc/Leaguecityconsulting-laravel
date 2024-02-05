@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\admin\PortfolioController;
 use App\Http\Controllers\backend\admin\CustomersController;
 use App\Http\Controllers\backend\admin\PortfolioServicesController;
 use App\Http\Controllers\backend\admin\BlogsController;
+use App\Http\Controllers\backend\admin\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
 Route::get('blogs/{url}', [App\Http\Controllers\BlogsController::class, 'blog_details']);
 
 Route::get('/singleblog', [App\Http\Controllers\SingleBlogController::class, 'index']);
+
+
+Route::get('/products', [App\Http\Controllers\ProductsController::class, 'index']);
+
+Route::get('products/{url}', [App\Http\Controllers\ProductsController::class, 'products_details']);
 
 /* Route::get('/', function () { return view('auth/login'); }); */
 
@@ -117,6 +123,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('blogs/{id}', [BlogsController::class, 'update'])->name('blogs.update');
     
     Route::get('blogs-delete/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+
+    
+    
+    /* All Routes for Products Services */
+    Route::get('products', [ProductsController::class, 'index'])->name('products');
+    
+    Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');
+    
+    Route::post('products', [ProductsController::class, 'store'])->name('products.store');
+    
+    Route::get('products/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+    
+    Route::post('products/{id}', [ProductsController::class, 'update'])->name('products.update');
+    
+    Route::get('products-delete/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
     
 });
 

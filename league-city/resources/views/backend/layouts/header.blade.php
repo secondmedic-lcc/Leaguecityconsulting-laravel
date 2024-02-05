@@ -46,6 +46,17 @@
                     </ul>
                 </li>
 
+                <li class="mb-1 dropdown {{ ($current_page == 'products') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user"></i> <span>Manage Products</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('products.create'); }}">Add Products</a></li>
+                        <li><a class="dropdown-item" href="{{ route('products'); }}">Products List</a></li>
+                    </ul>
+                </li>
+
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>
