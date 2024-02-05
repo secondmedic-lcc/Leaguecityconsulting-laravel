@@ -5,7 +5,6 @@
                 <span class="heading-top">OUR SERVICES</span>
                 <h1 class="section-heading">Strategy, Design, <span class="light">Development, and More </span></h1>
                 <p>Experience the power of a leading IT partner. League City Consulting's comprehensive software solutions tackle any business obstacle, paving the way for progress.</p>
-                <a href="#" class="btn web-btn">Hire Our Developers</a>
             </div>
         </div>
     </div>

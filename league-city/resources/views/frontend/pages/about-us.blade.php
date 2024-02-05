@@ -5,7 +5,6 @@
                 <span class="heading-top">ABOUT US</span>
                 <h1 class="section-heading">League City Consulting <span class="light">Where Software Meets Brilliance </span></h1>
                 <p>Harnessing the power of technology with industry smarts, League City Consulting crafts elegant solutions for simple and complex business problems..</p>
-                <a href="#" class="btn web-btn">Hire Our Developers</a>
             </div>
         </div>
     </div>
