@@ -1,10 +1,10 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/services-banner.jpg);">
+<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/blog-banner.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <span class="heading-top">Our Blogs</span>
                 <h1 class="section-heading">What's New <span class="light">At LeagueCity?</span></h1>
-                <p class="mb-0">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
+                <p>Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
     </div>

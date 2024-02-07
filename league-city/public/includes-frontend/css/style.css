@@ -1439,6 +1439,9 @@ h6 .light {
     background-position: center;
     background-size: cover;
     position: relative;
+    min-height: 368px;
+    display: flex;
+    align-items: center;
 }
 .page-banner * {
     color: white;
@@ -1477,9 +1480,15 @@ h6 .light {
     font-size: 18px;
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+}
+.page-banner .btn {
+    margin-top: 20px;
 }
 @media (max-width: 767px) {
+    .page-banner {
+        min-height: 210px;
+    }
     .page-banner:before {
         content: "";
         position: absolute;
@@ -2389,11 +2398,11 @@ h6 .light {
         height: 200px;
     }
     .singleblog .content h1,
-    .singleblog .content h2,
-    .singleblog .content h3 {
+    .singleblog .content h2 {
         font-size: 16px;
         margin: 15px 0px;
     }
+    .singleblog .content h3,
     .singleblog .content h4,
     .singleblog .content h5,
     .singleblog .content h6 {
@@ -2406,3 +2415,72 @@ h6 .light {
     }
 }
 /* Single Blog Work End */
+
+/* Terms Work Start */
+.terms .content h1,
+.terms .content h2 {
+    font-size: 22px;
+    margin: 20px 0px 10px;
+}
+.terms .content h3,
+.terms .content h4,
+.terms .content h5,
+.terms .content h6 {
+    font-size: 16px;
+    margin: 20px 0px 10px;
+    position: relative;
+    padding-left: 15px;
+}
+.terms .content h3:before,
+.terms .content h4:before,
+.terms .content h5:before,
+.terms .content h6:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: var(--gradienttoptobottom);
+    top: 0;
+    left: 0;
+}
+.terms .content p {
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.terms .content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.terms .content ul li {
+    padding-left: 20px;
+    position: relative;
+    margin-top: 5px;
+}
+.terms .content ul li:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 767px) {
+    .terms .content h1,
+    .terms .content h2 {
+        font-size: 16px;
+        margin: 15px 0px;
+    }
+    .terms .content h3,
+    .terms .content h4,
+    .terms .content h5,
+    .terms .content h6 {
+        font-size: 14px;
+        margin: 10px 0px;
+    }
+}
+/* Terms Work End */
