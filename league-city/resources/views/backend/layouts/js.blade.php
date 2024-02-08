@@ -103,6 +103,13 @@
     </script>
 @endif
 
+
+@if(@$current_page == "seo-data" || @$current_page == "blogs" || @$current_page == "portfolio" || @$current_page == "products")
+    <script>
+        CKEDITOR.replace("meta_description");
+    </script>
+@endif
+
 @if(@$current_page == "portfolio" || @$current_page == "blogs")
     <script>
         

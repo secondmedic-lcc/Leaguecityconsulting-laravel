@@ -5,6 +5,8 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Portfolio;
+use App\Models\SeoData;
+use Illuminate\Support\Str;
 
 class PortfolioController extends Controller
 {
@@ -51,6 +53,8 @@ class PortfolioController extends Controller
             $image = "uploads/portfolio/".$imageName;
 
             $data += array('image'=>$image);
+
+            $data2['meta_image'] = $image;
         }
           
         if(!empty($request->logo)){
@@ -64,7 +68,18 @@ class PortfolioController extends Controller
             $data += array('logo'=>$image);
         }
 
-        Portfolio::create($data);
+        $result = Portfolio::create($data);
+
+        $page_link = "portfolio/". Str::slug($request->name."-".$result->id);
+        $data2['page_link'] = $page_link;
+        $data2['page_name'] = "portfolio-details";
+        $data2['meta_title'] = $request->meta_title;
+        $data2['meta_key'] = $request->meta_key;
+        $data2['meta_description'] = $request->meta_description;
+        $data2['canonical'] = $page_link;
+        $data2['service_id'] = $result->id;
+
+        $result2 = SeoData::create($data2);
 
         return redirect()->route('portfolio')->with('success', 'Portfolio created successfully.');
     }
@@ -76,10 +91,12 @@ class PortfolioController extends Controller
         $page_title = "Manage Portfolio";
         
         $current_page = "portfolio";
+        
+        $portfolio = Portfolio::where(array('status'=>1,'id'=>$id))->get()->first();
+        
+        $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'portfolio-details'))->get()->first();
 
-        $portfolio = Portfolio::where(array('status'=>1,'id'=>$id))->first();
-
-        return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio','seo_data'));
     }
 
     public function update(Request $request, $id)
@@ -100,6 +117,7 @@ class PortfolioController extends Controller
             $image = "uploads/portfolio/".$imageName;
 
             $data += array('image'=>$image);
+            $data2['meta_image'] = $image;
         }
           
         if(!empty($request->logo)){
@@ -114,6 +132,23 @@ class PortfolioController extends Controller
         }
 
         Portfolio::where(array('status'=>1,'id'=>$id))->update($data);
+
+        $page_link = "portfolio/".Str::slug($request->name."-".$id);
+        $data2['page_link'] = $page_link;
+        $data2['service_id'] = $id;
+        $data2['page_name'] = "portfolio-details";
+        $data2['meta_title'] = $request->meta_title;
+        $data2['meta_key'] = $request->meta_key;
+        $data2['meta_description'] = $request->meta_description;
+        $data2['canonical'] = $page_link;
+
+        $check = SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->first();
+
+        if(empty($check)){
+            SeoData::insert($data2);
+        }else{
+            SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->update($data2);
+        }
 
         return redirect()->route('portfolio')->with('success', 'Portfolio updated successfully.');
     }

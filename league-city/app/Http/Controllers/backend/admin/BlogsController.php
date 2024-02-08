@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blogs;
 use Illuminate\Support\Facades\Validator;
+use App\Models\SeoData;
+use Illuminate\Support\Str;
 
 
 class BlogsController extends Controller
@@ -72,6 +74,7 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['blog_image'] = $image;
+                $data2['meta_image'] = $image;
             }
             
             if(!empty($request->detail_image)){
@@ -84,8 +87,19 @@ class BlogsController extends Controller
 
                 $data['detail_image'] = $image;
             }
-
+          
             $result = Blogs::create($data);
+
+            $page_link = "blogs/". Str::slug($request->blog_title."-".$result->id);
+            $data2['page_link'] = $page_link;
+            $data2['page_name'] = "blog-details";
+            $data2['meta_title'] = $request->meta_title;
+            $data2['meta_key'] = $request->meta_key;
+            $data2['meta_description'] = $request->meta_description;
+            $data2['canonical'] = $page_link;
+            $data2['service_id'] = $result->id;
+
+            $result2 = SeoData::insert($data2);
 
             if($result->id > 0){
                 return redirect()->back()->with('success', 'Blog Added successfully');
@@ -104,9 +118,11 @@ class BlogsController extends Controller
         
         $current_page = "blogs";
 
-        $blog = Blogs::where(array('status'=>1,'id'=>$id))->first();
+        $blog = Blogs::where(array('status'=>1,'id'=>$id))->get()->first();
+        
+        $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'blog-details'))->get()->first();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','blog'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','blog','seo_data'));
     }
     
     
@@ -139,6 +155,7 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['blog_image'] = $image;
+                $data2['meta_image'] = $user_img;
             }
             
             if(!empty($request->detail_image)){
@@ -153,6 +170,23 @@ class BlogsController extends Controller
             }
 
             $result = Blogs::where(array('id'=>$id))->update($data);
+
+            $page_link = "blogs/".Str::slug($request->blog_title."-".$id);
+            $data2['page_link'] = $page_link;
+            $data2['service_id'] = $id;
+            $data2['page_name'] = "blog-details";
+            $data2['meta_title'] = $request->meta_title;
+            $data2['meta_key'] = $request->meta_key;
+            $data2['meta_description'] = $request->meta_description;
+            $data2['canonical'] = $page_link;
+
+            $check = SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->first();
+
+            if(empty($check)){
+                $result = SeoData::insert($data2);
+            }else{
+                $result = SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->update($data2);
+            }
 
             if($result > 0){
                 return redirect()->back()->with('success', 'Blog Updated successfully');

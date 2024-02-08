@@ -143,6 +143,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('products/{id}', [ProductsController::class, 'update'])->name('products.update');
 
     Route::get('products-delete/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
+
+    
+    /* Routes for Seo Data */
+    Route::get('seo-data', [App\Http\Controllers\backend\admin\SeoDataController::class, 'index']);
+
+    Route::get('seo-data/create', [App\Http\Controllers\backend\admin\SeoDataController::class, 'create']);
+
+    Route::post('seo-data/create', [App\Http\Controllers\backend\admin\SeoDataController::class, 'store']);
+    
+    Route::get('seo-data/edit/{service_id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'edit']);
+    
+    Route::post('seo-data/edit/{service_id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'update']);
+    
+    Route::get('seo-data-delete/{id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'destroy']);
+
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

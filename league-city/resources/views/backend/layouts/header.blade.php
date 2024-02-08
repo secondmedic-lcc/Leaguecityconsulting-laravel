@@ -56,6 +56,17 @@
                         <li><a class="dropdown-item" href="{{ route('products'); }}">Products List</a></li>
                     </ul>
                 </li>
+                <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-gift"></i> <span>Manage Seo Data</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ url('/admin/seo-data/create') }}">Create SEO Data</a></li>
+                        <li><a class="dropdown-item" href="{{ url('/admin/seo-data') }}">List of Seo Data</a></li>
+                    </ul>
+                </li>
 
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

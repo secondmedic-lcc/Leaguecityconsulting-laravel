@@ -2961,16 +2961,16 @@
   .pagination .rounded-md .duration-150{
     width: 100px !important;
     border: none !important;
-    border-radius: 20px !important;
+    border-radius: 5px !important;
     margin: 0 5px !important;
-    height: 50px !important;
+    height: 60px !important;
     background: #018a95 !important;
     color: white !important;
   }
   
   .pagination .rounded-md span:first-child{
     border: none !important;
-    border-radius: 20px !important;
+    border-radius: 5px !important;
     background: #018a95 !important;
     color: white !important;
   }

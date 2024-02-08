@@ -1,3 +1,5 @@
+@empty(!$product_details)
+    
 <section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/services-banner.jpg);">
     <div class="container">
         <div class="row">
@@ -153,3 +155,4 @@
 </section>
 
 @include('frontend.pages.query-form')
+@endempty

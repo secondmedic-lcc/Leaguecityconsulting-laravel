@@ -34,6 +34,20 @@
                             <label class="form-label" for="">Product Description</label>
                             <textarea name="description" class="form-control"></textarea>
                         </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label" for="">Meta Title</label>
+                                <textarea class="form-control text-dark" name="meta_title" required value="{{ old('meta_title') }}" ></textarea>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label" for="">Meta Key</label>
+                                <textarea class="form-control text-dark" name="meta_key" required value="{{ old('meta_key') }}" ></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="">Meta Description</label>
+                            <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ old('meta_description') }}</textarea>
+                        </div>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn" >
                                 Add Product

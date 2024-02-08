@@ -55,6 +55,10 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    <div class="pagination mt-3">
+                        {{ $blog->links() }}
+                    </div>
                 </div>
             </div>
         </div>
