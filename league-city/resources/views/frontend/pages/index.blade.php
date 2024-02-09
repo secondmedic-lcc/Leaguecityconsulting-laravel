@@ -29,7 +29,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Mobile App Development</h3>
@@ -41,7 +41,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="Web Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Web <br>Development</h3>
@@ -53,7 +53,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Custom Software Development
@@ -66,7 +66,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Development image">
                                 </div>
                                 <div class="content">
                                     <h3>UI/UX Development
@@ -79,7 +79,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
                                 </div>
                                 <div class="content">
                                     <h3>E-Commerce Development</h3>
@@ -91,7 +91,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="Graphic Designing image">
                                 </div>
                                 <div class="content">
                                     <h3>Graphic <br>Designing</h3>
@@ -103,7 +103,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="">
+                                    <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security image">
                                 </div>
                                 <div class="content">
                                     <h3>Cyber <br>Security</h3>
@@ -136,7 +136,7 @@
                 <div class="box" style="background-image: url({{ asset($p['image']); }})">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic">
+                            <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
                             <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
                             <p>{{ $p['sub_heading'] }}</p>
                             <!-- <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a> -->
@@ -268,25 +268,25 @@
                 <div class="left-side">
                     <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">
-                            <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.svg" alt="Mobile App Development"> <br />
+                            <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.svg" alt="Mobile App Development image"> <br />
                             Mobile App Development
                         </button>
 
                         <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">
-                            <img src="{{ asset('includes-frontend'); }}/images/app-development.svg" alt="App Development"> <br />
+                            <img src="{{ asset('includes-frontend'); }}/images/app-development.svg" alt="App Development image"> <br />
                             Application Development
                         </button>
 
                         <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
-                            <img src="{{ asset('includes-frontend'); }}/images/aiautomation.svg" alt="AI & Automation"> <br />
+                            <img src="{{ asset('includes-frontend'); }}/images/aiautomation.svg" alt="AI & Automation image"> <br />
                             AI & Automation</button>
 
                         <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">
-                            <img src="{{ asset('includes-frontend'); }}/images/uiux.svg" alt="UI/UX Services"> <br />
+                            <img src="{{ asset('includes-frontend'); }}/images/uiux.svg" alt="UI/UX Services image"> <br />
                             UI/UX Services</button>
 
                         <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">
-                            <img src="{{ asset('includes-frontend'); }}/images/itconsulting.svg" alt="IT Consulting"> <br />
+                            <img src="{{ asset('includes-frontend'); }}/images/itconsulting.svg" alt="IT Consulting image"> <br />
                             IT Consulting</button>
                     </div>
                 </div>
@@ -549,7 +549,7 @@
                     <div class="box">
                         <a href="{{ $url; }}">
                             <div class="image">
-                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
+                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title'] }}">
                             </div>
                         </a>
                         <div>
