@@ -39,7 +39,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development">
+                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development by app developer">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></a>
@@ -57,7 +57,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="Web Development">
+                        <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="complete Web Development">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>Web Development</span> <i class="fas fa-arrow-right"></i></a>
@@ -72,7 +72,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development">
+                        <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development by expert developers">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>Custom Software Development</span> <i class="fas fa-arrow-right"></i></a>
@@ -88,7 +88,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Developemet">
+                        <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Developemet by expert designers">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>UI/UX Developemet</span> <i class="fas fa-arrow-right"></i></a>
@@ -131,7 +131,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development">
+                        <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development leaguecityconsulting">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>E-Commerce Development</span> <i class="fas fa-arrow-right"></i></a>
@@ -148,7 +148,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security">
+                        <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security experts">
                     </div>
                     <div class="details">
                         <a href="#" class="heading"><span>Cyber Security</span> <i class="fas fa-arrow-right"></i></a>

@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/'); }}">
-                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" class="logo" alt="League City">
+                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" class="logo" alt="League City Consulting white company Logo">
                 </a>
                 <a class="btn web-btn d-inline-flex d-lg-none menu-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
         <div class="offcanvas-header">
             <div class="sidebar-logo">
                 <a href="{{ url('/'); }}">
-                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="League City Consulting white company Logo">
                 </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

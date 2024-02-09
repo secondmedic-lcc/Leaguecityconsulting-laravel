@@ -32,7 +32,7 @@
                 <div class="box">
                     <a href="{{ $url; }}">
                         <div class="image">
-                            <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
+                            <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title']; }}">
                         </div>
                     </a>
                     <div>

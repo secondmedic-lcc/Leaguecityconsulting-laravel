@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
+                <h1 class="section-heading with-p">Start your journey with our latest innovative projects</h1>
                 <p class="heading-info">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
             </div>
         </div>

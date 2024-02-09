@@ -6,7 +6,7 @@
                     <div class="footer-info">
                         <div class="logo">
                             <a href="{{ url('/'); }}">
-                                <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="">
+                                <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="League City Consulting white company Logo">
                             </a>
                         </div>
                         <p>League City Consulting crafts elegant solutions for simple and complex business problems... <a href="{{ url('about-us'); }}" class="web-clr">Read More</a></p>
