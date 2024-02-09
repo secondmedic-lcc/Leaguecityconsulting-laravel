@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
-                <h2 class="section-heading">{{ $single_blog->blog_title }}</h2>
+                <h1 class="section-heading">{{ $single_blog->blog_title }}</h1>
 
                 <div class="grediant-vertical-line"></div>
 
