@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="">Product URL</label>
-                                <input type="text" class="form-control" name="industry_url" required value="{{ $industry->industry_url; }}" />
+                                <input type="text" class="form-control" name="industry_url"  value="{{ $industry->industry_url; }}" />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="">Product Heading</label>

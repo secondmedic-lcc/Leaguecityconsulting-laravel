@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Industry URL</label>
-                            <input type="text" class="form-control" name="industry_url" required value="{{ old('industry_url') }}" />
+                            <input type="text" class="form-control" name="industry_url"  value="{{ old('industry_url') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Industry Heading</label>

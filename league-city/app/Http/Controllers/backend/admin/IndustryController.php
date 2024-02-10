@@ -39,7 +39,7 @@ class IndustryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'industry_url' => 'required|string',
+            'industry_url' => 'string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'description' => 'required|string',
@@ -107,7 +107,7 @@ class IndustryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'industry_url' => 'required|string',
+            'industry_url' => 'string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'description' => 'required|string',
