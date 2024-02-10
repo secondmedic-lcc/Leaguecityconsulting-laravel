@@ -10,7 +10,7 @@
 
             @foreach($product as $p)
 
-            @php $url = url('products')."/".Str::slug($p['name']."-".$p['id']);; @endphp
+            @php $url = url('products')."/".$p->url_slug; @endphp
 
             <div class="col-lg-4 col-md-6">
                 <div class="box">

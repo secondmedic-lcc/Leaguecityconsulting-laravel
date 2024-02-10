@@ -13,6 +13,7 @@ class Blogs extends Model
     protected $primaryKey = "id";
     protected $fillable = [
         'blog_title',
+        'url_slug',
         'blog_details',
         'description',
         'read_time',

@@ -27,7 +27,7 @@
         <div class="row g-3">
 
             @foreach($blog as $b)
-            @php $url = url('blogs')."/".Str::slug($b['blog_title']."-".$b['id']); @endphp
+            @php $url = url('blogs')."/".$b['url_slug']; @endphp
             <div class="col-lg-4 col-md-6">
                 <div class="box">
                     <a href="{{ $url; }}">

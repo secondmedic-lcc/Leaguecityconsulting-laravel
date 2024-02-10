@@ -87,24 +87,36 @@ class BlogsController extends Controller
 
                 $data['detail_image'] = $image;
             }
-          
-            $result = Blogs::create($data);
+        
+            $url_slug = Str::slug($request->blog_title."-");
+            
+            $check = Blogs::where(array('url_slug'=>$url_slug))->first();
 
-            $page_link = "blogs/". Str::slug($request->blog_title."-".$result->id);
-            $data2['page_link'] = $page_link;
-            $data2['page_name'] = "blog-details";
-            $data2['meta_title'] = $request->meta_title;
-            $data2['meta_key'] = $request->meta_key;
-            $data2['meta_description'] = $request->meta_description;
-            $data2['canonical'] = $page_link;
-            $data2['service_id'] = $result->id;
+            if(empty($check)){
+            
+                $data['url_slug'] = $url_slug;
 
-            $result2 = SeoData::insert($data2);
+                $result = Blogs::create($data);
 
-            if($result->id > 0){
-                return redirect()->back()->with('success', 'Blog Added successfully');
+                $page_link = "blogs/". Str::slug($request->blog_title."-".$result->id);
+                $data2['page_link'] = $page_link;
+                $data2['page_name'] = "blog-details";
+                $data2['meta_title'] = $request->meta_title;
+                $data2['meta_key'] = $request->meta_key;
+                $data2['meta_description'] = $request->meta_description;
+                $data2['canonical'] = $page_link;
+                $data2['service_id'] = $result->id;
+
+                $result2 = SeoData::insert($data2);
+
+                if($result->id > 0){
+                    return redirect()->back()->with('success', 'Blog Added successfully');
+                }else{
+                    return redirect()->back()->with('error', 'Something went Wrong');
+                }
+            
             }else{
-                return redirect()->back()->with('error', 'Something went Wrong');
+                return redirect()->back()->with('error', 'Another Product Already Exist From this Name');
             }
         }
     }
@@ -169,6 +181,9 @@ class BlogsController extends Controller
                 $data['detail_image'] = $image;
             }
 
+            $url_slug = Str::slug($request->blog_title."-");
+            $data['url_slug'] = $url_slug;
+            
             $result = Blogs::where(array('id'=>$id))->update($data);
 
             $page_link = "blogs/".Str::slug($request->blog_title."-".$id);

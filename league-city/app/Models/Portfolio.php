@@ -13,6 +13,6 @@ class Portfolio extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'name', 'project_url', 'heading', 'sub_heading', 'logo', 'image', 'banner', 'desc_heading', 'description', 'status'
+        'name', 'url_slug', 'project_url', 'heading', 'sub_heading', 'logo', 'image', 'banner', 'desc_heading', 'description', 'status'
     ];
 }

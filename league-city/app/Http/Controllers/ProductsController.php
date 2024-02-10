@@ -30,10 +30,8 @@ class ProductsController extends Controller
         
 		$url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);
-        $pathFragments = explode('-', $this->path);
-        $product_id = end($pathFragments);
-
-        $product_details = Products::where(array('status'=>1,'id'=>$product_id))->first();
+      
+        $product_details = Products::where(array('status'=>1,'url_slug'=>$this->path))->first();
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page','product_details'));
     }

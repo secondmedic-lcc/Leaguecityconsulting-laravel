@@ -35,7 +35,7 @@ class PortfolioController extends Controller
         $pathFragments = explode('-', $this->path);
         $portfolio_id = end($pathFragments);
 
-        $portfolio = Portfolio::where(array('status'=>1,'id'=>$portfolio_id))->first();
+        $portfolio = Portfolio::where(array('status'=>1,'url_slug'=>$this->path))->first();
 
         $portfolio['portfolio_services'] = PortfolioServices::where(array('status'=>1,'portfolio_id'=>$portfolio_id))->get();
 

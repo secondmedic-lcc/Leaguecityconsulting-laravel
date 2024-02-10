@@ -34,7 +34,7 @@ class BlogsController extends Controller
         $pathFragments = explode('-', $this->path);
         $blog_id = end($pathFragments);
         
-        $single_blog = Blogs::where(array('status'=>1,'id'=>$blog_id))->first();
+        $single_blog = Blogs::where(array('status'=>1,'url_slug'=>$this->path))->first();
         
         $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->limit(6)->get();
 

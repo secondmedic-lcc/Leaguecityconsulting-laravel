@@ -10,7 +10,7 @@
 
             @foreach($portfolio as $p)
 
-            @php $url = url('portfolio')."/".Str::slug($p['name']."-".$p['id']);; @endphp
+            @php $url = url('portfolio')."/".$p->url_slug; @endphp
 
             <div class="col-lg-4 col-md-6">
                 <div class="box">

@@ -67,21 +67,35 @@ class PortfolioController extends Controller
 
             $data += array('logo'=>$image);
         }
+        
+        $url_slug = Str::slug($request->name."-");
+        
+        $check = Portfolio::where(array('url_slug'=>$url_slug))->first();
 
-        $result = Portfolio::create($data);
+        if(empty($check)){
 
-        $page_link = "portfolio/". Str::slug($request->name."-".$result->id);
-        $data2['page_link'] = $page_link;
-        $data2['page_name'] = "portfolio-details";
-        $data2['meta_title'] = $request->meta_title;
-        $data2['meta_key'] = $request->meta_key;
-        $data2['meta_description'] = $request->meta_description;
-        $data2['canonical'] = $page_link;
-        $data2['service_id'] = $result->id;
+            $data['url_slug'] = $url_slug;
 
-        $result2 = SeoData::create($data2);
+            $result = Portfolio::create($data);
 
-        return redirect()->route('portfolio')->with('success', 'Portfolio created successfully.');
+            $page_link = "portfolio/". Str::slug($request->name."-".$result->id);
+            $data2['page_link'] = $page_link;
+            $data2['page_name'] = "portfolio-details";
+            $data2['meta_title'] = $request->meta_title;
+            $data2['meta_key'] = $request->meta_key;
+            $data2['meta_description'] = $request->meta_description;
+            $data2['canonical'] = $page_link;
+            $data2['service_id'] = $result->id;
+
+            $result2 = SeoData::create($data2);
+
+            return redirect()->route('portfolio')->with('success', 'Portfolio created successfully.');
+        
+        }else{
+        
+            return redirect()->back()->with('error', 'Another Product Already Exist From this Name');
+        
+        }
     }
 
     public function edit($id)
@@ -130,6 +144,9 @@ class PortfolioController extends Controller
 
             $data += array('logo'=>$image);
         }
+
+        $url_slug = Str::slug($request->name."-");
+        $data['url_slug'] = $url_slug;
 
         Portfolio::where(array('status'=>1,'id'=>$id))->update($data);
 
