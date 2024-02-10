@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\admin\CustomersController;
 use App\Http\Controllers\backend\admin\PortfolioServicesController;
 use App\Http\Controllers\backend\admin\BlogsController;
 use App\Http\Controllers\backend\admin\ProductsController;
+use App\Http\Controllers\backend\admin\IndustryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -158,6 +159,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     
     Route::get('seo-data-delete/{id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'destroy']);
 
+
+    
+
+    /* All Routes for Products Services */
+    Route::get('industry', [IndustryController::class, 'index'])->name('industry');
+
+    Route::get('industry/create', [IndustryController::class, 'create'])->name('industry.create');
+
+    Route::post('industry', [IndustryController::class, 'store'])->name('industry.store');
+
+    Route::get('industry/{id}', [IndustryController::class, 'edit'])->name('industry.edit');
+
+    Route::post('industry/{id}', [IndustryController::class, 'update'])->name('industry.update');
+
+    Route::get('industry-delete/{id}', [IndustryController::class, 'destroy'])->name('industry.destroy');
+    
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);
@@ -165,3 +182,7 @@ Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'log
 Route::get('state/{country_id}', [App\Http\Controllers\HomeController::class, 'state']);
 
 Route::get('city/{state_id}', [App\Http\Controllers\HomeController::class, 'city']);
+
+Route::get('/industry', [App\Http\Controllers\IndustryController::class, 'index']);
+
+Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'industry_details']);

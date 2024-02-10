@@ -19,6 +19,7 @@
                                     <option value="portfolio">Portfolio Listing</option>
                                     <option value="blogs">Blogs Listing</option>
                                     <option value="products">Products Listing</option>
+                                    <option value="industry">Industry Listing</option>
                                 </select>
                             </div>
                             <div class="col-md-12 mb-3">

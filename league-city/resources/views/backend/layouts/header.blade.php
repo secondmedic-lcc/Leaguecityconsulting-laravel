@@ -56,6 +56,18 @@
                         <li><a class="dropdown-item" href="{{ route('products'); }}">Products List</a></li>
                     </ul>
                 </li>
+
+                <li class="mb-1 dropdown {{ ($current_page == 'industry') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user"></i> <span>Manage Industry</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('industry.create'); }}">Add Industry</a></li>
+                        <li><a class="dropdown-item" href="{{ route('industry'); }}">Industry List</a></li>
+                    </ul>
+                </li>
+
                 <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
