@@ -53,9 +53,17 @@
         
         <meta name="twitter:image0" content="{{ ($seo_data->meta_image != null && $seo_data->meta_image != '') ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.png') }}">
 
+        
+
+
     @else
         <title>League City Consulting</title>
     @endif
+
+    @if(!empty($seo_data))
+        <?= $seo_data->meta_schema; ?>
+    @endif
+
 </head>
 
 <body class="web-overflow">
