@@ -78,7 +78,7 @@ class PortfolioController extends Controller
 
             $result = Portfolio::create($data);
 
-            $page_link = "portfolio/". Str::slug($request->name."-".$result->id);
+            $page_link = "portfolio/". $url_slug;
             $data2['page_link'] = $page_link;
             $data2['page_name'] = "portfolio-details";
             $data2['meta_title'] = $request->meta_title;
@@ -93,7 +93,7 @@ class PortfolioController extends Controller
         
         }else{
         
-            return redirect()->back()->with('error', 'Another Product Already Exist From this Name');
+            return redirect()->back()->with('error', 'Another Product Already Exist From this Name')->withInput();
         
         }
     }
