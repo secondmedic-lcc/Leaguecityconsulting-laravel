@@ -1,14 +1,19 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/terms-banner.jpg);">
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">League City Consulting</span>
-                <h1 class="section-heading">Terms & Coditions</h1>
-                <p>Establishing a successful partnership requires a shared understanding. Please carefully review our Terms of Use beforehand.</p>
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}</h1>
+                <p>{{ $web_banner['details']; }}</p>
             </div>
         </div>
     </div>
 </section>
+
+@endempty
+
 
 <nav aria-label="breadcrumb">
     <div class="container">
@@ -28,7 +33,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="content">
-                    <h2 class="mt-0">Welcome to Secondmedic</h2>
+                    <h2 class="mt-0">Welcome to League City Consulting</h2>
                     <p>By using this website, you agree to be bound by these Terms of Use. We reserve the right to change these Terms of Use at any time, so please check back regularly for updates.</p>
                     <h2>Your Use of the Website</h2>
                     <p>We grant you a non-transferable, non-exclusive license to use the website and the content provided on it, in accordance with these Terms of Use. You may not use the website or its content for any commercial purpose without our express written permission.</p>

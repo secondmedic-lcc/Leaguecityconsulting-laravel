@@ -1,14 +1,20 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/blog-banner.jpg);">
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">Our Blogs</span>
-                <h1 class="section-heading">What's New <span class="light">At LeagueCity?</span></h1>
-                <p>Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}<span class="light">{{ $web_banner['sub_heading']; }}</span></h1>
+                <p>{{ $web_banner['details']; }}</p>
             </div>
         </div>
     </div>
 </section>
+
+@endempty
+
+
 <nav aria-label="breadcrumb">
     <div class="container">
         <div class="row">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Portfolio;
 use App\Models\PortfolioServices;
 use App\Models\PotfolioImage;
+use App\Models\WebsiteBanners;
 
 class PortfolioController extends Controller
 {
@@ -41,6 +42,8 @@ class PortfolioController extends Controller
 
         $portfolio['portfolio_images'] = PotfolioImage::where(array('status'=>1,'portfolio_id'=>$portfolio_id))->get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio'));
+        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner'));
     }
 }

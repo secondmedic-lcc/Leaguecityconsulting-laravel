@@ -68,6 +68,17 @@
                     </ul>
                 </li>
 
+                <li class="mb-1 dropdown {{ ($current_page == 'website-banner') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user"></i> <span>Manage Banner</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('website-banner.create'); }}">Add Banner</a></li>
+                        <li><a class="dropdown-item" href="{{ route('website-banner'); }}">Banner List</a></li>
+                    </ul>
+                </li>
+
                 <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">

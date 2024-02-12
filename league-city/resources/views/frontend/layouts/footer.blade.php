@@ -63,8 +63,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="links">
-                        <a href="{{ url('terms') }}">Terms of Use</a>
-                        <a href="{{ url('privacypolicy') }}">Privacy</a>
+                        <a href="{{ url('terms-and-conditions') }}">Terms of Use</a>
+                        <a href="{{ url('privacy-policy') }}">Privacy</a>
                     </div>
                 </div>
             </div>

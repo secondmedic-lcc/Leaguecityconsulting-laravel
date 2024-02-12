@@ -1,14 +1,18 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/privacy-banner.jpg);">
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">League City Consulting</span>
-                <h1 class="section-heading">Privacy Policy</h1>
-                <p>Partnering with integrity and clarity. We value your trust and commit to open communication, protecting your privacy while driving your success</p>
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}</h1>
+                <p>{{ $web_banner['details']; }}</p>
             </div>
         </div>
     </div>
 </section>
+
+@endempty
 
 <nav aria-label="breadcrumb">
     <div class="container">

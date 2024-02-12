@@ -1,14 +1,18 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/aboutus-banner.jpg);">
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
-                <span class="heading-top">ABOUT US</span>
-                <h1 class="section-heading">League City Consulting <span class="light">Where Software Meets Brilliance </span></h1>
-                <p>Harnessing the power of technology with industry smarts, League City Consulting crafts elegant solutions for simple and complex business problems..</p>
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}<span class="light">{{ $web_banner['sub_heading']; }}</span></h1>
+                <p>{{ $web_banner['details']; }}</p>
             </div>
         </div>
     </div>
 </section>
+
+@endempty
 
 <nav aria-label="breadcrumb">
     <div class="container">

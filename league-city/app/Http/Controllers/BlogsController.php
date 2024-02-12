@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blogs;
+use App\Models\WebsiteBanners;
 
 class BlogsController extends Controller
 {
@@ -17,7 +18,9 @@ class BlogsController extends Controller
         
         $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog'));
+        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog','web_banner'));
     }
     
     

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\WebsiteBanners;
 
 class AboutController extends Controller
 {
@@ -15,6 +16,8 @@ class AboutController extends Controller
         
         $current_page = "about-us";
 
-        return view('frontend/main', compact('page_name','page_title','current_page'));
+        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+
+        return view('frontend/main', compact('page_name','page_title','current_page','web_banner'));
     }
 }

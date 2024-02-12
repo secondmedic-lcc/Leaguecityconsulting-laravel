@@ -81,7 +81,7 @@
     });
 </script>
 
-@if(@$current_page == "portfolio" || @$current_page == "blogs" || @$current_page == "products" || @$current_page == "industry")
+@if(@$current_page == "portfolio" || @$current_page == "blogs" || @$current_page == "products" || @$current_page == "industry" || @$current_page == "website-banner")
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {

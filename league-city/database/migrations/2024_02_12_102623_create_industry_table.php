@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contact_request', function (Blueprint $table) {
+        Schema::create('industry', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('contact')->nullable();
-            $table->string('budget')->nullable();
-            $table->longText('message')->nullable();
-            $table->tinyInteger("status")->default(1);
+            $table->text('url_slug')->nullable();
+            $table->string('industry_url')->nullable();
+            $table->string('heading')->nullable();
+            $table->string('sub_heading')->nullable();
+            $table->string('industry_image')->nullable();
+            $table->longText('description')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_request');
+        Schema::dropIfExists('industry');
     }
 };

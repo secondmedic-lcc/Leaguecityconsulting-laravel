@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('portfolio', function (Blueprint $table) {
             $table->id();
             $table->string("name")->nullable();
+            $table->string("url_slug")->nullable();
             $table->string("project_url")->nullable();
             $table->string("heading")->nullable();
             $table->string("sub_heading")->nullable();

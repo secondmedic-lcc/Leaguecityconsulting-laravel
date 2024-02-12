@@ -1,16 +1,22 @@
 @empty(!$product_details)
     
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/services-banner.jpg);">
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">League City Consulting</span>
-                <h1 class="section-heading">{{ $product_details['name'] }} <span class="light"> {{ $product_details['heading'] }}</span></h1>
-                <p class="mb-0">{{ $product_details['sub_heading'] }}</p>
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}<span class="light">{{ $web_banner['sub_heading']; }}</span></h1>
+                <p>{{ $web_banner['details']; }}</p>
             </div>
         </div>
     </div>
 </section>
+
+@endempty
+
+
 <nav aria-label="breadcrumb">
     <div class="container">
         <div class="row">

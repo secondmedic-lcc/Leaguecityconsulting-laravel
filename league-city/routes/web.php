@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\admin\PortfolioServicesController;
 use App\Http\Controllers\backend\admin\BlogsController;
 use App\Http\Controllers\backend\admin\ProductsController;
 use App\Http\Controllers\backend\admin\IndustryController;
+use App\Http\Controllers\backend\admin\WebsiteBannersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +48,9 @@ Route::get('/products', [App\Http\Controllers\ProductsController::class, 'index'
 
 Route::get('products/{url}', [App\Http\Controllers\ProductsController::class, 'products_details']);
 
-Route::get('/terms', [App\Http\Controllers\TermsController::class, 'index']);
+Route::get('terms-and-conditions', [App\Http\Controllers\TermsController::class, 'index']);
 
-Route::get('/privacypolicy', [App\Http\Controllers\PrivacyPolicyController::class, 'index']);
+Route::get('privacy-policy', [App\Http\Controllers\PrivacyPolicyController::class, 'index']);
 
 
 /* Route::get('/', function () { return view('auth/login'); }); */
@@ -162,7 +163,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     
 
-    /* All Routes for Products Services */
+    /* All Routes for Industry */
     Route::get('industry', [IndustryController::class, 'index'])->name('industry');
 
     Route::get('industry/create', [IndustryController::class, 'create'])->name('industry.create');
@@ -174,6 +175,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('industry/{id}', [IndustryController::class, 'update'])->name('industry.update');
 
     Route::get('industry-delete/{id}', [IndustryController::class, 'destroy'])->name('industry.destroy');
+    
+    
+
+    /* All Routes for Website Banner */
+    Route::get('website-banner', [WebsiteBannersController::class, 'index'])->name('website-banner');
+
+    Route::get('website-banner/create', [WebsiteBannersController::class, 'create'])->name('website-banner.create');
+
+    Route::post('website-banner', [WebsiteBannersController::class, 'store'])->name('website-banner.store');
+
+    Route::get('website-banner/{id}', [WebsiteBannersController::class, 'edit'])->name('website-banner.edit');
+
+    Route::post('website-banner/{id}', [WebsiteBannersController::class, 'update'])->name('website-banner.update');
+
+    Route::get('website-banner-delete/{id}', [WebsiteBannersController::class, 'destroy'])->name('website-banner.destroy');
     
 });
 

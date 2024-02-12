@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\WebsiteBanners;
 
 class ProductsController extends Controller
 {
@@ -33,6 +34,8 @@ class ProductsController extends Controller
       
         $product_details = Products::where(array('status'=>1,'url_slug'=>$this->path))->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product_details'));
+        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product_details','web_banner'));
     }
 }

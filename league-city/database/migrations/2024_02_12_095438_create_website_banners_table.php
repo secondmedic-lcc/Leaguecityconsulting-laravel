@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contact_request', function (Blueprint $table) {
+        Schema::create('website_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('contact')->nullable();
-            $table->string('budget')->nullable();
-            $table->longText('message')->nullable();
+            $table->string("page_name")->nullable();
+            $table->string("page_title")->nullable();
+            $table->string("heading")->nullable();
+            $table->string("sub_heading")->nullable();
+            $table->string("details")->nullable();
+            $table->string("banner_image")->nullable();
             $table->tinyInteger("status")->default(1);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_request');
+        Schema::dropIfExists('website_banners');
     }
 };
