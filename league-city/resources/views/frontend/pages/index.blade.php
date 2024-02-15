@@ -299,39 +299,35 @@
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="text-center">
                                         <h3>Mobile App Development</h3>
-                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                        <p>We are providing complete mobile app solutions, where we specialize in developing Native Android, iOS, and Cross-Platform Apps.</p>
                                     </div>
                                     <ul>
                                         <li>
-                                            <a href="#">iOS App Development </a>
+                                            Crafting Solutions for iOS Ecosystem 
                                         </li>
                                         <li>
-                                            <a href="#">Android App Development </a>
+                                            Tailored Solutions for Android Platforms 
                                         </li>
                                         <li>
-                                            <a href="#">Flutter App Development </a>
+                                            Innovative Apps with Flutter Framework 
                                         </li>
                                         <li>
-                                            <a href="#">React Native App Development </a>
+                                            Cross-Platform Excellence with React Native 
                                         </li>
                                         <li>
-                                            <a href="#">Cross-Platform App Development</a>
+                                            Unifying Platforms with Cross-Platform Development
                                         </li>
                                         <li>
-                                            <a href="#">Hybrid App Development</a>
+                                            Blending Technologies in Hybrid App Development
                                         </li>
                                         <li>
-                                            <a href="#">MVP Development </a>
+                                            Prototyping with MVP Development 
                                         </li>
+                                        
                                         <li>
-                                            <a href="#">Wearable App Development</a>
+                                            Engaging Experience with Progressive Web Apps 
                                         </li>
-                                        <li>
-                                            <a href="#">Progressive Web App Development </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Xamarin Development</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -346,39 +342,37 @@
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="text-center">
                                         <h3>Application Development</h3>
-                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                        <p>
+                                            
+Elevate your business with our custom app development, featuring exceptional design and seamless cross-platform compatibility.</p>
                                     </div>
                                     <ul>
                                         <li>
-                                            <a href="#">iOS App Development </a>
+                                            Crafting Web Applications for Unique Needs
                                         </li>
                                         <li>
-                                            <a href="#">Android App Development </a>
+                                            Building Robust E-Commerce Solutions 
                                         </li>
                                         <li>
-                                            <a href="#">Flutter App Development </a>
+                                            Customised Solutions for Mobile Platforms 
                                         </li>
                                         <li>
-                                            <a href="#">React Native App Development </a>
+                                            Streamlining Enterprise Content Management 
                                         </li>
                                         <li>
-                                            <a href="#">Cross-Platform App Development</a>
+                                            Designing and Developing SaaS Applications
+                                        </li>
+                                        
+                                        <li>
+                                            Innovating with Internet of Things Applications 
                                         </li>
                                         <li>
-                                            <a href="#">Hybrid App Development</a>
+                                            Harnessing the Power of the Platform for Custom Apps
                                         </li>
                                         <li>
-                                            <a href="#">MVP Development </a>
+                                            Revitalizing and Upgrading Applications 
                                         </li>
-                                        <li>
-                                            <a href="#">Wearable App Development</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Progressive Web App Development </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Xamarin Development</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -393,39 +387,36 @@
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="text-center">
                                         <h3>AI & Automation</h3>
-                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                        <p>Maximize your business potential with our AI & Automation services, covering development, and maintenance of advanced technologies.</p>
                                     </div>
                                     <ul>
+
                                         <li>
-                                            <a href="#">iOS App Development </a>
+                                            Chatbots & predictive analytics
                                         </li>
                                         <li>
-                                            <a href="#">Android App Development </a>
+                                            Smart Automation Solutions 
                                         </li>
                                         <li>
-                                            <a href="#">Flutter App Development </a>
+                                            Creative AI Generation 
                                         </li>
                                         <li>
-                                            <a href="#">React Native App Development </a>
+                                            Integrating Machine Learning Operations 
                                         </li>
                                         <li>
-                                            <a href="#">Cross-Platform App Development</a>
+                                            Intelligent Cognitive Services 
                                         </li>
+                                        
                                         <li>
-                                            <a href="#">Hybrid App Development</a>
-                                        </li>
+                                            Facial Identification Technology
+                                     </li>
+
                                         <li>
-                                            <a href="#">MVP Development </a>
+                                           Linguistic Understanding Technology
                                         </li>
-                                        <li>
-                                            <a href="#">Wearable App Development</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Progressive Web App Development </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Xamarin Development</a>
-                                        </li>
+
+                                        <li>Independent AI Decision Agents</li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -440,39 +431,35 @@
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="text-center">
                                         <h3>UI/UX Services</h3>
-                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                        <p>Our UI/UX services prioritize empathy and in-depth user research to enhance product usability, accessibility, and satisfaction.</p>
                                     </div>
                                     <ul>
                                         <li>
-                                            <a href="#">iOS App Development </a>
+                                           Intuitive UI/UX Design
                                         </li>
                                         <li>
-                                            <a href="#">Android App Development </a>
+                                           Visual & Interaction Design
                                         </li>
                                         <li>
-                                            <a href="#">Flutter App Development </a>
+                                           Rigorous UI Testing
                                         </li>
                                         <li>
-                                            <a href="#">React Native App Development </a>
+                                           Enterprise UX
+                                        </li>
+                                        
+                                        <li>
+                                           Responsive Web Design
                                         </li>
                                         <li>
-                                            <a href="#">Cross-Platform App Development</a>
+                                           Prototyping & MVP Development 
                                         </li>
                                         <li>
-                                            <a href="#">Hybrid App Development</a>
+                                           Comprehensive Branding
                                         </li>
                                         <li>
-                                            <a href="#">MVP Development </a>
+                                           Website Redesign
                                         </li>
-                                        <li>
-                                            <a href="#">Wearable App Development</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Progressive Web App Development </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Xamarin Development</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -486,38 +473,35 @@
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="text-center">
                                         <h3>IT Consulting</h3>
-                                        <p>We're your end-to-end Mobile app development service provider excelling in crafting Native Android, iOS and Cross Platform Apps. Our team of experts delivers seamless functionality with stunning UI designs and top-notch performance- empowering your brand to thrive in the digital landscape.</p>
+                                        <p>
+                                            Get expert IT Consulting for swift process improvement, tech planning, and cybersecurity, ensuring efficient software transformation.</p>
                                     </div>
                                     <ul>
                                         <li>
-                                            <a href="#">iOS App Development </a>
+                                            Digital Transformation & Engineering 
                                         </li>
                                         <li>
-                                            <a href="#">Android App Development </a>
+                                            Enterprise Mobility & Custom Software 
                                         </li>
                                         <li>
-                                            <a href="#">Flutter App Development </a>
+                                            Strategic IT Planning & DevOps 
                                         </li>
                                         <li>
-                                            <a href="#">React Native App Development </a>
+                                            Microservices & Salesforce Expertise
                                         </li>
                                         <li>
-                                            <a href="#">Cross-Platform App Development</a>
+                                            Custom Web and Mobile Apps
                                         </li>
                                         <li>
-                                            <a href="#">Hybrid App Development</a>
+                                            Security Risk Assessments
+
+
+
                                         </li>
                                         <li>
-                                            <a href="#">MVP Development </a>
+                                            Cloud and Data Migration
                                         </li>
-                                        <li>
-                                            <a href="#">Wearable App Development</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Progressive Web App Development </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Xamarin Development</a>
+                                        <li>Salesforce Expertise
                                         </li>
                                     </ul>
                                 </div>

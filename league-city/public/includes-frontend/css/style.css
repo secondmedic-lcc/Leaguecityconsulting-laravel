@@ -942,32 +942,30 @@ h6 .light {
     position: relative;
     width: calc(50% - 7.5px);
     padding-right: 5px;
-}
-.technology .right-side ul li a {
     color: var(--whitecolor);
     text-decoration: none;
     position: relative;
     transition: var(--transition);
 }
-.technology .right-side ul li a::before {
+.technology .right-side ul li::before {
     content: "";
     position: absolute;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
-    left: -22px;
+    left: 0px;
     top: 50%;
     transform: translate(0, -50%);
     transition: all 0.5s ease-in-out;
 }
-.technology .right-side ul li a:hover {
+/* .technology .right-side ul li a:hover {
     color: var(--themecolor);
     padding-left: 6px;
 }
 .technology .right-side ul li a:hover:before {
     background-color: var(--themecolor);
-}
+} */
 @media (max-width: 767px) {
     .technology .left-side .nav-pills {
         justify-content: start;
