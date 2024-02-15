@@ -1234,7 +1234,7 @@ h6 .light {
 }
 @media (max-width: 767px) {
     .footer {
-        padding-bottom: 20px;
+        padding-bottom: 0px;
     }
     .footer .footer-h {
         font-size: 16px;
@@ -1255,7 +1255,7 @@ h6 .light {
         margin-bottom: 10px;
     }
     .footer .list {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
     .footer .list li:not(:last-child) {
         margin-bottom: 5px;
@@ -1265,7 +1265,7 @@ h6 .light {
         line-height: 20px;
     }
     .footer .social-icons {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
     .footer-bottom {
         text-align: center;
@@ -2464,8 +2464,7 @@ h6 .light {
     height: 8px;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
+    top: 7px;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -2481,6 +2480,9 @@ h6 .light {
     .terms .content h6 {
         font-size: 14px;
         margin: 10px 0px;
+    }
+    .terms .content ul li:before {
+        top: 5px;
     }
 }
 /* Terms Work End */
