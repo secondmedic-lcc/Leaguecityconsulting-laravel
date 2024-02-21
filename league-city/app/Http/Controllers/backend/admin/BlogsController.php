@@ -74,7 +74,7 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['blog_image'] = $image;
-                $data2['meta_image'] = $image;
+                
             }
             
             if(!empty($request->detail_image)){
@@ -86,6 +86,7 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['detail_image'] = $image;
+                $data2['meta_image'] = $image;
             }
         
             $url_slug = Str::slug($request->blog_title."-");
@@ -167,7 +168,7 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['blog_image'] = $image;
-                $data2['meta_image'] = $user_img;
+                
             }
             
             if(!empty($request->detail_image)){
@@ -179,6 +180,8 @@ class BlogsController extends Controller
                 $image = "uploads/blogs/".$imageName;
 
                 $data['detail_image'] = $image;
+
+                $data2['meta_image'] = $image;
             }
 
             $url_slug = Str::slug($request->blog_title."-");
