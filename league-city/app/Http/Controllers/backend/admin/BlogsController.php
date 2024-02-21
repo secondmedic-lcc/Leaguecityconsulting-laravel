@@ -189,7 +189,7 @@ class BlogsController extends Controller
             
             $result = Blogs::where(array('id'=>$id))->update($data);
 
-            $page_link = "blogs/".Str::slug($request->blog_title."-".$id);
+            $page_link = "blogs/".$url_slug;
             $data2['page_link'] = $page_link;
             $data2['service_id'] = $id;
             $data2['page_name'] = "blog-details";
