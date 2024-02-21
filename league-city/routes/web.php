@@ -52,6 +52,8 @@ Route::get('terms-and-conditions', [App\Http\Controllers\TermsController::class,
 
 Route::get('privacy-policy', [App\Http\Controllers\PrivacyPolicyController::class, 'index']);
 
+Route::get('sitemap.xml', function() { return \Illuminate\Support\Facades\Redirect::to('sitemap.xml'); });
+
 
 /* Route::get('/', function () { return view('auth/login'); }); */
 

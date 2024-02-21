@@ -65,6 +65,7 @@
                     <div class="links">
                         <a href="{{ url('terms-and-conditions') }}">Terms of Use</a>
                         <a href="{{ url('privacy-policy') }}">Privacy</a>
+                        <a href="{{ url('sitemap.xml') }}">Sitemap</a>
                     </div>
                 </div>
             </div>
