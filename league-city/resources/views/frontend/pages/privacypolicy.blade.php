@@ -20,7 +20,7 @@
             <div class="col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Terms & Conditions</li>
+                    <li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
                 </ol>
             </div>
         </div>

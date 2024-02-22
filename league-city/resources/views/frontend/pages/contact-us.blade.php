@@ -12,6 +12,19 @@
     }
 </style>
 
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <section class="contactus section-padding pb-0">
     <div class="container">
         <div class="row">
