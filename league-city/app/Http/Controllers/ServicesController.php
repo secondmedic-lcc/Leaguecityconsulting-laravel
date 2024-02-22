@@ -17,6 +17,8 @@ class ServicesController extends Controller
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
-        return view('frontend/main', compact('page_name','page_title','current_page','web_banner'));
+        $schema_image = @$web_banner['banner_image'];
+
+        return view('frontend/main', compact('page_name','page_title','current_page','web_banner', 'schema_image'));
     }
 }

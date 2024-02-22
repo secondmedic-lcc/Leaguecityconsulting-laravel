@@ -16,7 +16,9 @@ class ContactUsController extends Controller
         
         $current_page = "contact-us";
 
-        return view('frontend/main', compact('page_name','page_title','current_page'));
+        $schema_image = "includes-frontend/images/logo-white.png"; 
+
+        return view('frontend/main', compact('page_name','page_title','current_page','schema_image'));
     }
     
     public function store(Request $request){

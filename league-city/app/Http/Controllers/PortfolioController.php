@@ -20,7 +20,9 @@ class PortfolioController extends Controller
 
         $portfolio = Portfolio::where(array('status'=>1))->orderBy('id','desc')->get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio'));
+        $schema_image = asset('includes-frontend/images/logo-white.png');
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio','schema_image'));
     }
     
     public function portfolio_details()
@@ -44,6 +46,8 @@ class PortfolioController extends Controller
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner'));
+        $schema_image = @$web_banner['banner_image']; 
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner','schema_image'));
     }
 }

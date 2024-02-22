@@ -158,6 +158,31 @@
         }    
     </script>
 
+    {{-- ImageObject Schema --}}
+    @if (!empty($schema_image))
+        <script type="application/ld+json"> 
+            {
+                "@context": "https://schema.org/",
+                "@type": "ImageObject",
+                "contentUrl": "{{ asset($schema_image) ? asset($schema_image) : asset('includes-frontend/images/logo-white.png') }}",
+                "license": "https://www.leaguecityconsulting.com/terms-and-conditions",
+                "acquireLicensePage": "https://www.leaguecityconsulting.com/terms-and-conditions",
+                "creditText": "LeagueCityConsulting",
+                "creator": {
+                "@type": "Organization",
+                "name": "LeagueCityConsulting"
+                },
+                "copyrightNotice": "LeagueCityConsulting"
+            }
+        </script>    
+    @endif                                                
+
+    @if (!empty($seo_data_breadcrumb))
+        {{-- BreadcrumbList Schema --}}
+        <?= $seo_data_breadcrumb ?>
+    @endif
+
+
     @if (!empty($seo_data))
         <?= $seo_data->meta_schema ?>
     @endif

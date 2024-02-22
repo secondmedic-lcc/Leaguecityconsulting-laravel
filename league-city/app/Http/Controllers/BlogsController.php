@@ -20,7 +20,9 @@ class BlogsController extends Controller
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog','web_banner'));
+        $schema_image = @$web_banner['banner_image']; 
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog','web_banner','schema_image'));
     }
     
     
@@ -41,6 +43,8 @@ class BlogsController extends Controller
         
         $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->limit(6)->get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog'));
+        $schema_image = @$single_blog->detail_image; 
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog','schema_image'));
     }
 }
