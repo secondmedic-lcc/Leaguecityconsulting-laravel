@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="">Seo Schema</label>
-                                    <textarea name="meta_schema" class="form-control text-dark" rows="5" required>{{ $seo_data->meta_schema }}</textarea>
+                                    <textarea name="meta_schema" class="form-control text-dark" rows="5">{{ $seo_data->meta_schema }}</textarea>
                                 </div>
                             </div>
 
