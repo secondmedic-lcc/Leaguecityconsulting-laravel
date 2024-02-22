@@ -109,7 +109,54 @@
         }
     </script>
 
-    
+    {{-- FAQPage Schema --}}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+              "@type": "Question",
+              "name": "What services does LeagueCity Consulting offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LeagueCity Consulting offers a wide range of services including AI consulting, blockchain development, website design, app development, and more. We provide tailored solutions to meet your business needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I contact LeagueCity Consulting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can contact LeagueCity Consulting by filling out the contact form on our website or by emailing us at info@leaguecityconsulting.com. We are also available by phone at +1-832-330-5432"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does LeagueCity Consulting offer customized solutions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, LeagueCity Consulting specializes in providing customized solutions tailored to the unique needs of each client. Our team works closely with you to understand your requirements and deliver the best possible outcomes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What industries does LeagueCity Consulting serve?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LeagueCity Consulting serves clients across various industries including finance, healthcare, retail, manufacturing, and more. Our expertise spans across different sectors to deliver innovative IT solutions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is LeagueCity Consulting experienced in AI and blockchain technologies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, LeagueCity Consulting has extensive experience in AI and blockchain technologies. Our team of experts stays updated with the latest advancements to provide cutting-edge solutions to our clients."
+              }
+            }
+          ]
+        }    
+    </script>
 
     @if (!empty($seo_data))
         <?= $seo_data->meta_schema ?>
