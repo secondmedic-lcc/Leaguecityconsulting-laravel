@@ -19,6 +19,28 @@ class TermsController extends Controller
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','web_banner'));
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Terms And Conditions"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','web_banner', 'seo_data_breadcrumb'));
     }
 }

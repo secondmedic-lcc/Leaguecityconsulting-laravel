@@ -18,7 +18,29 @@ class ContactUsController extends Controller
 
         $schema_image = "includes-frontend/images/logo-white.png"; 
 
-        return view('frontend/main', compact('page_name','page_title','current_page','schema_image'));
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Contact Us"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name','page_title','current_page','schema_image', 'seo_data_breadcrumb'));
     }
     
     public function store(Request $request){

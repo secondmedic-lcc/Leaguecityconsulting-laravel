@@ -22,7 +22,29 @@ class BlogsController extends Controller
 
         $schema_image = @$web_banner['banner_image']; 
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog','web_banner','schema_image'));
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blogs"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','blog','web_banner','schema_image', 'seo_data_breadcrumb'));
     }
     
     
@@ -45,6 +67,34 @@ class BlogsController extends Controller
 
         $schema_image = @$single_blog->detail_image; 
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog','schema_image'));
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "'.url('/').'"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blogs",
+                        "item": "'.url('/blogs').'"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "'.$single_blog->blog_title.'"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog','schema_image', 'seo_data_breadcrumb'));
     }
 }

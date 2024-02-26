@@ -22,7 +22,29 @@ class PortfolioController extends Controller
 
         $schema_image = asset('includes-frontend/images/logo-white.png');
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio','schema_image'));
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Portfolio"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio','schema_image', 'seo_data_breadcrumb'));
     }
     
     public function portfolio_details()
@@ -48,6 +70,36 @@ class PortfolioController extends Controller
 
         $schema_image = @$web_banner['banner_image']; 
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner','schema_image'));
+        $portfolio_name = $portfolio['name'] ;
+
+        $seo_data_breadcrumb = 
+        '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Portfolio",
+                        "item": "'.url('/portfolio').'"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "'.$portfolio['name'].'"
+                    }
+                ]
+            }
+        </script>';
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner','schema_image', 'seo_data_breadcrumb'));
     }
 }
