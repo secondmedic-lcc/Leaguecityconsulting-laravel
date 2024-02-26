@@ -5,6 +5,31 @@ const tooltipList = [...tooltipTriggerList].map(
     (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
 
+$(".team-slider").owlCarousel({
+    loop: false,
+    margin: 15,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+        },
+        400: {
+            items: 2,
+            nav: false,
+        },
+        767: {
+            items: 3,
+        },
+        1200: {
+            items: 5,
+        },
+    },
+});
+
 $(".services-slider").owlCarousel({
     loop: true,
     margin: 15,

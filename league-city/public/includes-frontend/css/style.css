@@ -321,6 +321,13 @@ h6 .light {
     margin: 20px 0px;
 }
 
+.line {
+    width: 100px;
+    height: 5px;
+    background: var(--gradientlefttoright);
+    margin: 20px 0px;
+}
+
 @media (max-width: 767px) {
     body {
         font-size: 14px;
@@ -367,6 +374,10 @@ h6 .light {
         line-clamp: 1;
         -webkit-box-orient: vertical;
         width: 190px;
+    }
+    .line {
+        margin: 15px 0px;
+        width: 60px;
     }
 }
 /* Common CSS End */
@@ -2484,3 +2495,167 @@ h6 .light {
     }
 }
 /* Terms Work End */
+
+/* CEO Section Work Start */
+.ceo-section * {
+    color: white;
+}
+.ceo-section .heading-info {
+    font-size: 18px;
+}
+.ceo-section .ceo-img {
+    position: relative;
+    padding-top: 40px;
+}
+.ceo-section .ceo-img .main-img {
+    width: 296px;
+    height: 350px;
+    background-size: auto 390px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0px 0px 50px 50px;
+}
+.ceo-section .ceo-img .shape-img {
+    width: 350px;
+    height: 350px;
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    mask-size: 350px 350px;
+    margin: 0 auto;
+}
+.ceo-section .ceo-img .shape-img .shape {
+    width: 350px;
+    height: 350px;
+    background-size: auto 390px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+}
+.ceo-section .ceo-img .shape-img .shape:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradientlefttoright);
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+@media (max-width: 991px) {
+    .ceo-section .ceo-img {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .ceo-section .ceo-img {
+        padding-top: 30px;
+        margin-bottom: 20px;
+    }
+    .ceo-section .ceo-img .main-img {
+        width: 150px;
+        height: 200px;
+        background-size: auto 230px;
+    }
+    .ceo-section .ceo-img .shape-img {
+        width: 200px;
+        height: 200px;
+        mask-size: 200px 200px;
+    }
+    .ceo-section .ceo-img .shape-img .shape {
+        width: 200px;
+        height: 200px;
+        background-size: auto 230px;
+    }
+    .ceo-section .heading-info {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+/* CEO Section Work End */
+
+/* Team Section Work Start */
+.team-section .box {
+    text-align: center;
+    position: relative;
+    padding-top: 40px;
+}
+.team-section .box .main-img {
+    width: 150px;
+    height: 150px;
+    background-size: auto 190px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0px 0px 50px 50px;
+}
+.team-section .box .shape-img {
+    width: 150px;
+    height: 150px;
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    mask-size: 150px 150px;
+    margin: 0 auto 8px;
+}
+.team-section .box .shape-img .shape {
+    width: 150px;
+    height: 150px;
+    background-size: auto 190px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+}
+.team-section .box .shape-img .shape:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradientlefttoright);
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.team-section .box h3 {
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+.team-section .box p {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+    .team-section .box {
+        padding-top: 20px;
+    }
+    .team-section .box .main-img {
+        width: 100px;
+        height: 100px;
+        background-size: auto 120px;
+    }
+    .team-section .box .shape-img {
+        width: 100px;
+        height: 100px;
+        mask-size: 100px 100px;
+    }
+    .team-section .box .shape-img .shape {
+        width: 100px;
+        height: 100px;
+        background-size: auto 120px;
+    }
+    .team-section .box h3 {
+        font-size: 16px;
+    }
+    .team-section .box p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+/* Team Section Work End */
