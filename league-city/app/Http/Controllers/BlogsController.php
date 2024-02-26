@@ -93,7 +93,38 @@ class BlogsController extends Controller
                     }
                 ]
             }
-        </script>';
+        </script>
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+    			"@type": "WebPage",
+    			"@id": "'.url()->current().'"
+    			},
+    			"headline": "'.$single_blog->blog_title.'",
+    			"description": "LeagueCity Consulting blogs: '.$single_blog->blog_title.'",
+    			"image": "'.asset($single_blog->detail_image).'",  
+    			"author": {
+    				"@type": "Organization",
+                    "url": "https://www.leaguecityconsulting.com",
+    				"name": "LeagueCity consulting"
+    				},  
+    				"publisher": {
+    					"@type": "Organization",
+    					"name": "LeagueCity consulting",
+    					"logo": {
+    						"@type": "ImageObject",
+    						"url": "https://www.leaguecityconsulting.com//includes-frontend/images/logo-white.png"
+    					}
+    					},
+    					"datePublished": "'.date('Y-m-d', strtotime($single_blog->created_at)).'T'.date('H:i', strtotime($single_blog->created_at)).'-05:00",
+    					"dateModified": "'.date('Y-m-d', strtotime($single_blog->updated_at)).'T'.date('H:i', strtotime($single_blog->updated_at)).'-05:00"
+    		}        
+        </script>
+
+        ';
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page','single_blog','blog','schema_image', 'seo_data_breadcrumb'));
     }
