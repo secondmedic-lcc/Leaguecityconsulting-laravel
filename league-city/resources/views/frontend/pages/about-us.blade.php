@@ -81,14 +81,26 @@
                 <div class="owl-carousel team-slider">
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/ravinamdeo.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/raviprakash.png');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/ravinamdeo.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/raviprakash.png');">
                                 </div>
                             </div>
-                            <h3>Ravi Namdeo</h3>
+                            <h3>Ravi Prakash</h3>
                             <p>Chief Technology Officer</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="box">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
+                            </div>
+                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
+                                </div>
+                            </div>
+                            <h3>Jeel Thakkar</h3>
+                            <p>Social Media Manager</p>
                         </div>
                     </div>
                     <div class="item">
@@ -113,18 +125,6 @@
                             </div>
                             <h3>Sanjay Adtani</h3>
                             <p>Team Leader</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
-                            </div>
-                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
-                                </div>
-                            </div>
-                            <h3>Jeel Thakkar</h3>
-                            <p>Social Media Manager</p>
                         </div>
                     </div>
                     <div class="item">

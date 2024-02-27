@@ -6,12 +6,12 @@ const tooltipList = [...tooltipTriggerList].map(
 );
 
 $(".team-slider").owlCarousel({
-    loop: false,
+    loop: true,
     margin: 15,
     nav: true,
     dots: false,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 10000,
     responsive: {
         0: {
             items: 2,
