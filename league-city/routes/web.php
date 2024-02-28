@@ -25,6 +25,8 @@ Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
 
 Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
+Route::get('/package', [App\Http\Controllers\PackageController::class, 'index']);
+
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
 
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);
@@ -52,7 +54,9 @@ Route::get('terms-and-conditions', [App\Http\Controllers\TermsController::class,
 
 Route::get('privacy-policy', [App\Http\Controllers\PrivacyPolicyController::class, 'index']);
 
-Route::get('sitemap.xml', function() { return \Illuminate\Support\Facades\Redirect::to('sitemap.xml'); });
+Route::get('sitemap.xml', function () {
+    return \Illuminate\Support\Facades\Redirect::to('sitemap.xml');
+});
 
 
 /* Route::get('/', function () { return view('auth/login'); }); */
@@ -148,22 +152,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('products-delete/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
 
-    
+
     /* Routes for Seo Data */
     Route::get('seo-data', [App\Http\Controllers\backend\admin\SeoDataController::class, 'index']);
 
     Route::get('seo-data/create', [App\Http\Controllers\backend\admin\SeoDataController::class, 'create']);
 
     Route::post('seo-data/create', [App\Http\Controllers\backend\admin\SeoDataController::class, 'store']);
-    
+
     Route::get('seo-data/edit/{service_id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'edit']);
-    
+
     Route::post('seo-data/edit/{service_id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'update']);
-    
+
     Route::get('seo-data-delete/{id}', [App\Http\Controllers\backend\admin\SeoDataController::class, 'destroy']);
 
 
-    
+
 
     /* All Routes for Industry */
     Route::get('industry', [IndustryController::class, 'index'])->name('industry');
@@ -177,8 +181,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('industry/{id}', [IndustryController::class, 'update'])->name('industry.update');
 
     Route::get('industry-delete/{id}', [IndustryController::class, 'destroy'])->name('industry.destroy');
-    
-    
+
+
 
     /* All Routes for Website Banner */
     Route::get('website-banner', [WebsiteBannersController::class, 'index'])->name('website-banner');
@@ -192,7 +196,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('website-banner/{id}', [WebsiteBannersController::class, 'update'])->name('website-banner.update');
 
     Route::get('website-banner-delete/{id}', [WebsiteBannersController::class, 'destroy'])->name('website-banner.destroy');
-    
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

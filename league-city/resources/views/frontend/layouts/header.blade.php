@@ -22,6 +22,21 @@
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('products'); }}">Products</a>
                         </li> --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Packages
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">SEO Packages</a></li>
+                                <li><a class="dropdown-item" href="#">PPC Packages</a></li>
+                                <li><a class="dropdown-item" href="#">SMM Packages</a></li>
+                                <li><a class="dropdown-item" href="#">ORM Packages</a></li>
+                                <li><a class="dropdown-item" href="#">Logo Designing</a></li>
+                                <li><a class="dropdown-item" href="#">SMO Packages</a></li>
+                                <li><a class="dropdown-item" href="#">Website Maintenance</a></li>
+                                <li><a class="dropdown-item" href="#">Website Packages</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>
                         </li>
@@ -51,6 +66,21 @@
                 </li>
                 <li>
                     <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Packages
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">SEO Packages</a></li>
+                        <li><a class="dropdown-item" href="#">PPC Packages</a></li>
+                        <li><a class="dropdown-item" href="#">SMM Packages</a></li>
+                        <li><a class="dropdown-item" href="#">ORM Packages</a></li>
+                        <li><a class="dropdown-item" href="#">Logo Designing</a></li>
+                        <li><a class="dropdown-item" href="#">SMO Packages</a></li>
+                        <li><a class="dropdown-item" href="#">Website Maintenance</a></li>
+                        <li><a class="dropdown-item" href="#">Website Packages</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>

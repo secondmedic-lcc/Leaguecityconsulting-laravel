@@ -407,7 +407,8 @@ h6 .light {
     transition: var(--transition);
     position: relative;
 }
-.header .navbar .nav-link:after {
+.header .navbar .nav-link:before,
+.header .navbar .nav-link.show:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -418,12 +419,30 @@ h6 .light {
     opacity: 0;
     transition: var(--transition);
 }
-.header .navbar .nav-link:hover:after {
+.header .navbar .nav-link:hover:before {
     opacity: 1;
 }
-.header .navbar .nav-link:hover {
+.header .navbar .nav-link.show:before {
+    opacity: 1;
+}
+.header .navbar .nav-link:hover,
+.header .navbar .nav-link.show {
     background-color: rgba(0, 0, 0, 0.3);
 }
+.header .navbar .dropdown-menu {
+    margin-top: 5px;
+    background-color: var(--darkgreycolor);
+    border-radius: 0px;
+    padding: 0px;
+}
+.header .navbar .dropdown-menu a {
+    color: var(--whitecolor);
+    padding: 10px 25px;
+}
+.header .navbar .dropdown-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .header .navbar .btn {
     text-transform: uppercase;
     padding: 10px 20px;
@@ -466,7 +485,7 @@ h6 .light {
     box-shadow: none;
 }
 .header-sidebar .offcanvas-body {
-    padding: 0px 15px 15px;
+    padding: 0px 15px 20px;
 }
 .header-sidebar ul.menus {
     margin: 0 -15px 20px;
@@ -481,6 +500,24 @@ h6 .light {
     font-family: var(--fontSemiBold);
     text-transform: uppercase;
     font-size: 14px;
+    position: relative;
+}
+.header-sidebar ul.menus li a.dropdown-toggle::after {
+    right: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.header-sidebar ul.menus .dropdown-menu {
+    position: relative !important;
+    transform: unset !important;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0px;
+}
+.header-sidebar ul.menus .dropdown-menu a {
+    padding: 12px 20px 12px 30px;
+    text-transform: capitalize;
 }
 .header-sidebar .web-btn {
     margin-bottom: 20px;
@@ -2659,3 +2696,276 @@ h6 .light {
     }
 }
 /* Team Section Work End */
+
+/* Package Info Work Start */
+.package-info .heading-info {
+    font-size: 20px;
+    line-height: 30px;
+}
+@media (max-width: 767px) {
+    .package-info .heading-info {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+/* Package Info Work End */
+
+/* Package Section Work Start */
+.package .box {
+    padding: 30px;
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.package .box .box-heading {
+    background-color: var(--darkgreycolor);
+    padding: 0px 45px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    width: 80%;
+    margin-left: -45px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.package .box .box-heading:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 60px;
+    border-right: 30px solid transparent;
+    border-top: 60px solid var(--darkgreycolor);
+}
+.package .box .box-heading:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    border-left: 7.5px solid transparent;
+    border-top: 7.5px solid #bebebe;
+    border-right: 7.5px solid #bebebe;
+    border-bottom: 7.5px solid transparent;
+}
+.package .box p {
+    margin: 0px;
+    font-size: 20px;
+}
+.package .box .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .package .box {
+        padding: 0px 15px 15px;
+    }
+    .package .box .box-heading {
+        padding: 0px 20px;
+        height: 50px;
+        font-size: 18px;
+        margin-left: -15px;
+        margin-bottom: 10px;
+        width: 50%;
+    }
+    .package .box .box-heading:after {
+        right: -25px;
+        width: 25px;
+        height: 50px;
+        border-right: 25px solid transparent;
+        border-top: 50px solid var(--darkgreycolor);
+    }
+    .package .box .box-heading:before {
+        display: none;
+    }
+    .package .box p {
+        font-size: 16px;
+    }
+    .package .box .btn {
+        margin-top: 10px;
+    }
+}
+/* Package Section Work End */
+
+/* Package Includeds Work Start */
+.package-includes * {
+    color: white;
+}
+.package-includes .box {
+    margin-top: 40px;
+}
+.package-includes .box img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+.package-includes .box .box-h {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.package-includes .box p {
+    font-size: 18px;
+    line-height: 30px;
+}
+@media (max-width: 991px) {
+    .package-includes .box img {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .package-includes .box img {
+        height: 140px;
+        margin-bottom: 15px;
+    }
+    .package-includes .box .box-h {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .package-includes .box p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .package-includes .box {
+        margin-top: 20px;
+    }
+}
+/* Package Includeds Work End */
+
+/* Pricing Work Start */
+.pricing .box {
+    margin-top: 20px;
+    padding: 0px 30px 30px;
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.pricing .box .box-heading {
+    background-color: var(--darkgreycolor);
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 24px;
+    line-height: 30px;
+    position: relative;
+    margin: -20px auto 20px;
+}
+.pricing .box .box-heading:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    border-left: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #bebebe;
+    border-bottom: 10px solid #bebebe;
+}
+.pricing .box .box-heading:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    border-left: 10px solid #bebebe;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #bebebe;
+}
+.pricing .box .box-heading small {
+    font-size: 14px;
+    font-family: var(--fontRegular);
+}
+.pricing .box p {
+    margin: 0px;
+    font-size: 20px;
+}
+.pricing .box .list {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 0px;
+    text-align: left;
+    list-style: none;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.pricing .box .list + .list {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.pricing .box .list li:first-child {
+    font-family: var(--fontSemiBold);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+.pricing .box .list li {
+    display: flex;
+    gap: 10px;
+    padding: 3px 0px;
+    line-height: 22px;
+}
+.pricing .box .list li i {
+    margin-top: 4px;
+}
+.pricing .box .small-text {
+    margin: 20px 0px 10px;
+    font-size: 14px;
+}
+.pricing .box .btn {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .pricing .box {
+        margin-top: 15px;
+        padding: 0px 15px 15px;
+    }
+    .pricing .box .box-heading {
+        padding: 15px;
+        font-size: 18px;
+        line-height: 22px;
+        margin: -15px auto 10px;
+    }
+    .pricing .box .box-heading small {
+        font-size: 12px;
+    }
+    .pricing .box .box-heading:before {
+        left: -15px;
+        width: 15px;
+        height: 15px;
+        border-left: 7.5px solid transparent;
+        border-top: 7.5px solid transparent;
+        border-right: 7.5px solid #bebebe;
+        border-bottom: 7.5px solid #bebebe;
+    }
+    .pricing .box .box-heading:after {
+        right: -15px;
+        width: 15px;
+        height: 15px;
+        border-left: 7.5px solid #bebebe;
+        border-top: 7.5px solid transparent;
+        border-right: 7.5px solid transparent;
+        border-bottom: 7.5px solid #bebebe;
+    }
+    .pricing .box p {
+        font-size: 14px;
+    }
+    .pricing .box .list {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .pricing .box .list li {
+        padding: 1px 0px;
+    }
+    .pricing .box .small-text {
+        margin: 10px 0px 5px;
+    }
+}
+/* Pricing Work End */
