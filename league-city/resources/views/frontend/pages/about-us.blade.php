@@ -62,7 +62,7 @@
             <div class="col-lg-6">
                 <h2 class="section-heading with-p mb-2">Rajneesh Diwedi</h2>
                 <div class="line"></div>
-                <p class="heading-info text-white">Chief Executive Officer</p>
+                <p class="heading-info text-white">CEO</p>
                 <p class="mb-0">As CEO, I'm excited to introduce League City Consulting, a company specializing in creating top-quality websites, custom software, and keeping your IT systems running smoothly, all tailored specifically to your needs. Our team of experts, from developers and designers to IT whizzes, are here to listen to what you want and make it happen. We pride ourselves on delivering projects on time and exceeding your expectations.So, if you're looking for amazing results and a way to shine in the digital world, look no further than League City Consulting! We appreciate you considering us.
                 </p>
             </div>
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <h3>Ravi Prakash</h3>
-                            <p>Chief Technology Officer</p>
+                            <p>CTO, COO</p>
                         </div>
                     </div>
                     <div class="item">
