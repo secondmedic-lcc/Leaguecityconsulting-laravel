@@ -9,7 +9,7 @@
                                 <img src="{{ asset('includes-frontend'); }}/images/logo-white.png" alt="League City Consulting white company Logo">
                             </a>
                         </div>
-                        <p>League City Consulting crafts elegant solutions for simple and complex business problems... <a href="{{ url('about-us'); }}" class="web-clr">Read More</a></p>
+                        <p>League City Consulting crafts elegant solutions for simple and complex business problems.</p>
                     </div>
                     <!-- <div class="form-group mt-lg-4 mt-3 mb-0">
                         <input type="text" class="form-control" placeholder="Your Email Address">

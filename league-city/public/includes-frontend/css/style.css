@@ -13,7 +13,7 @@
 }
 :root {
     --darkgreycolor: #181c2d;
-    --themecolor: #e13e3e;
+    --themecolor: #de2f2f;
     --themecolorhover: #c92424;
     --bgcolor: #0f121d;
     --blackcolor: #000;
@@ -85,7 +85,7 @@ h6 .light {
     color: var(--themecolor);
 }
 .text-grey {
-    color: grey;
+    color: #696969;
 }
 .btn {
     padding: 15px 30px;
@@ -473,7 +473,7 @@ h6 .light {
     padding: 25px 20px;
 }
 .header-sidebar .sidebar-logo img {
-    width: auto;
+    width: 112px;
     height: 28px;
     object-fit: contain;
 }
@@ -534,7 +534,7 @@ h6 .light {
         padding: 15px 0px;
     }
     .header .navbar .logo {
-        width: auto;
+        width: 112px;
         height: 28px;
     }
     .header .navbar .web-btn {
@@ -691,6 +691,9 @@ h6 .light {
 }
 
 @media (max-width: 767px) {
+    .services .services-slider-height {
+        min-height: 329px;
+    }
     .services {
         margin-top: -75px;
     }
@@ -761,6 +764,9 @@ h6 .light {
     }
 }
 @media (max-width: 567px) {
+    .recent-work .work-slider-height {
+        min-height: 274px;
+    }
     .recent-work .box {
         background-position: 50% center;
         position: relative;
@@ -839,6 +845,7 @@ h6 .light {
     background-position: center;
     background-size: cover;
     position: relative;
+    height: 700px;
 }
 .industries * {
     color: var(--whitecolor);
@@ -895,6 +902,7 @@ h6 .light {
     right: 25px;
 }
 @media (max-width: 991px) {
+    .industries,
     .industries .box {
         height: 529px;
     }
@@ -902,6 +910,9 @@ h6 .light {
 @media (max-width: 767px) {
     .industries .section-heading {
         padding-top: 20px;
+    }
+    .industries {
+        height: 329px;
     }
     .industries .box {
         height: 329px;
@@ -959,7 +970,9 @@ h6 .light {
     filter: invert(1);
 }
 .technology .left-side .nav-link img {
+    width: 50px;
     height: 50px;
+    object-fit: contain;
     margin-bottom: 5px;
 }
 .technology .right-side {
@@ -1019,6 +1032,7 @@ h6 .light {
         justify-content: start;
     }
     .technology .left-side .nav-link img {
+        width: 30px;
         height: 30px;
     }
     .technology .left-side .nav-link {
@@ -1291,10 +1305,8 @@ h6 .light {
         margin-bottom: 10px;
     }
     .footer .footer-info .logo img {
-        width: 150px;
-        height: 37px;
-        object-fit: contain;
-        object-position: left;
+        width: 112px;
+        height: 28px;
     }
     .footer .footer-info p {
         font-size: 14px;
@@ -2233,6 +2245,7 @@ h6 .light {
 }
 .blog .box a {
     text-decoration: none;
+    width: 100%;
 }
 .blog-info-list {
     padding-left: 0px;

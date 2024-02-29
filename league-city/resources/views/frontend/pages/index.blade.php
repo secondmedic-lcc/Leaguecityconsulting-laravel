@@ -24,94 +24,96 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-heading">Revolutionary Software Solutions</h2>
-                    <div class="owl-carousel services-slider">
+                    <div class="services-slider-height">
+                        <div class="owl-carousel services-slider">
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Mobile App Development</h3>
-                                    <p>We design and build captivating apps that drive results.</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>Mobile App Development</h3>
+                                        <p>We design and build captivating apps that drive results.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="Web Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Web <br>Development</h3>
-                                    <p>We craft stunning websites and web apps that drive results</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="Web Development image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>Web <br>Development</h3>
+                                        <p>We craft stunning websites and web apps that drive results</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Custom Software Development
-                                    </h3>
-                                    <p>We nurture your concept to life as a powerful digital solution.</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>Custom Software Development
+                                        </h3>
+                                        <p>We nurture your concept to life as a powerful digital solution.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>UI/UX Development
-                                    </h3>
-                                    <p>Beyond pixels and code, we build your digital dreams</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Development image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>UI/UX Development
+                                        </h3>
+                                        <p>Beyond pixels and code, we build your digital dreams</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>E-Commerce Development</h3>
-                                    <p>We build a loyal online community with your high-performance store.</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>E-Commerce Development</h3>
+                                        <p>We build a loyal online community with your high-performance store.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="Graphic Designing image">
-                                </div>
-                                <div class="content">
-                                    <h3>Graphic <br>Designing</h3>
-                                    <p>Beyond beauty, beyond function Design's boundless realm.</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="Graphic Designing image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>Graphic <br>Designing</h3>
+                                        <p>Beyond beauty, beyond function Design's boundless realm.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security image">
-                                </div>
-                                <div class="content">
-                                    <h3>Cyber <br>Security</h3>
-                                    <p>See the unseen threats Stay vigilant, stay secure.</p>
+                            <div class="item">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>Cyber <br>Security</h3>
+                                        <p>See the unseen threats Stay vigilant, stay secure.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                     <div class="btnrow text-center">
                         <a href="{{ url('services') }}" class="btn web-btn">View All Services</a>
@@ -130,21 +132,23 @@
                 </div>
             </div>
         </div>
-        <div class="owl-carousel work-slider">
-            @foreach($portfolio as $p)
-            <div class="item">
-                <div class="box" style="background-image: url({{ asset($p['image']); }})">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
-                            <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
-                            <p>{{ $p['sub_heading'] }}</p>
-                            <!-- <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a> -->
+        <div class="work-slider-height">
+            <div class="owl-carousel work-slider">
+                @foreach($portfolio as $p)
+                <div class="item">
+                    <div class="box" style="background-image: url({{ asset($p['image']); }})">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
+                                <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
+                                <p>{{ $p['sub_heading'] }}</p>
+                                <!-- <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
         <div class="btnrow text-center">
             <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
@@ -303,16 +307,16 @@
                                     </div>
                                     <ul>
                                         <li>
-                                            Crafting Solutions for iOS Ecosystem 
+                                            Crafting Solutions for iOS Ecosystem
                                         </li>
                                         <li>
-                                            Tailored Solutions for Android Platforms 
+                                            Tailored Solutions for Android Platforms
                                         </li>
                                         <li>
-                                            Innovative Apps with Flutter Framework 
+                                            Innovative Apps with Flutter Framework
                                         </li>
                                         <li>
-                                            Cross-Platform Excellence with React Native 
+                                            Cross-Platform Excellence with React Native
                                         </li>
                                         <li>
                                             Unifying Platforms with Cross-Platform Development
@@ -321,13 +325,13 @@
                                             Blending Technologies in Hybrid App Development
                                         </li>
                                         <li>
-                                            Prototyping with MVP Development 
+                                            Prototyping with MVP Development
                                         </li>
-                                        
+
                                         <li>
-                                            Engaging Experience with Progressive Web Apps 
+                                            Engaging Experience with Progressive Web Apps
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -343,36 +347,36 @@
                                     <div class="text-center">
                                         <h3>Application Development</h3>
                                         <p>
-                                            
-Elevate your business with our custom app development, featuring exceptional design and seamless cross-platform compatibility.</p>
+
+                                            Elevate your business with our custom app development, featuring exceptional design and seamless cross-platform compatibility.</p>
                                     </div>
                                     <ul>
                                         <li>
                                             Crafting Web Applications for Unique Needs
                                         </li>
                                         <li>
-                                            Building Robust E-Commerce Solutions 
+                                            Building Robust E-Commerce Solutions
                                         </li>
                                         <li>
-                                            Customised Solutions for Mobile Platforms 
+                                            Customised Solutions for Mobile Platforms
                                         </li>
                                         <li>
-                                            Streamlining Enterprise Content Management 
+                                            Streamlining Enterprise Content Management
                                         </li>
                                         <li>
                                             Designing and Developing SaaS Applications
                                         </li>
-                                        
+
                                         <li>
-                                            Innovating with Internet of Things Applications 
+                                            Innovating with Internet of Things Applications
                                         </li>
                                         <li>
                                             Harnessing the Power of the Platform for Custom Apps
                                         </li>
                                         <li>
-                                            Revitalizing and Upgrading Applications 
+                                            Revitalizing and Upgrading Applications
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -395,28 +399,28 @@ Elevate your business with our custom app development, featuring exceptional des
                                             Chatbots & predictive analytics
                                         </li>
                                         <li>
-                                            Smart Automation Solutions 
+                                            Smart Automation Solutions
                                         </li>
                                         <li>
-                                            Creative AI Generation 
+                                            Creative AI Generation
                                         </li>
                                         <li>
-                                            Integrating Machine Learning Operations 
+                                            Integrating Machine Learning Operations
                                         </li>
                                         <li>
-                                            Intelligent Cognitive Services 
+                                            Intelligent Cognitive Services
                                         </li>
-                                        
-                                        <li>
-                                            Facial Identification Technology
-                                     </li>
 
                                         <li>
-                                           Linguistic Understanding Technology
+                                            Facial Identification Technology
+                                        </li>
+
+                                        <li>
+                                            Linguistic Understanding Technology
                                         </li>
 
                                         <li>Independent AI Decision Agents</li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -435,31 +439,31 @@ Elevate your business with our custom app development, featuring exceptional des
                                     </div>
                                     <ul>
                                         <li>
-                                           Intuitive UI/UX Design
+                                            Intuitive UI/UX Design
                                         </li>
                                         <li>
-                                           Visual & Interaction Design
+                                            Visual & Interaction Design
                                         </li>
                                         <li>
-                                           Rigorous UI Testing
+                                            Rigorous UI Testing
                                         </li>
                                         <li>
-                                           Enterprise UX
+                                            Enterprise UX
                                         </li>
-                                        
+
                                         <li>
-                                           Responsive Web Design
-                                        </li>
-                                        <li>
-                                           Prototyping & MVP Development 
+                                            Responsive Web Design
                                         </li>
                                         <li>
-                                           Comprehensive Branding
+                                            Prototyping & MVP Development
                                         </li>
                                         <li>
-                                           Website Redesign
+                                            Comprehensive Branding
                                         </li>
-                                        
+                                        <li>
+                                            Website Redesign
+                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -478,13 +482,13 @@ Elevate your business with our custom app development, featuring exceptional des
                                     </div>
                                     <ul>
                                         <li>
-                                            Digital Transformation & Engineering 
+                                            Digital Transformation & Engineering
                                         </li>
                                         <li>
-                                            Enterprise Mobility & Custom Software 
+                                            Enterprise Mobility & Custom Software
                                         </li>
                                         <li>
-                                            Strategic IT Planning & DevOps 
+                                            Strategic IT Planning & DevOps
                                         </li>
                                         <li>
                                             Microservices & Salesforce Expertise
