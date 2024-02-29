@@ -112,11 +112,11 @@
                         <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="Graphic Designing">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>Graphic Designing</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>Graphic Designing</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">Coreldraw</a></li>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>Coreldraw</li>
                         </ul>
                     </div>
                 </div>
