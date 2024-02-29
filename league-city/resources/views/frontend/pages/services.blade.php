@@ -46,14 +46,14 @@
                         <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development by app developer">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">iOS App Development</a></li>
-                            <li><a href="#">Android App Development</a></li>
-                            <li><a href="#">Flutter Development</a></li>
-                            <li><a href="#">React Native App Development</a></li>
-                            <li><a href="#">PWA Development</a></li>
-                            <li><a href="#">Mobile App Maintenance & Support Services</a></li>
+                            <li>iOS App Development</li>
+                            <li>Android App Development</li>
+                            <li>Flutter Development</li>
+                            <li>React Native App Development</li>
+                            <li>PWA Development</li>
+                            <li>Mobile App Maintenance & Support Services</li>
                         </ul>
                     </div>
                 </div>
@@ -64,11 +64,11 @@
                         <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="complete Web Development">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>Web Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>Web Development</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">Front End Development</a></li>
-                            <li><a href="#">Back End Development</a></li>
-                            <li><a href="#">Full Stack Development</a></li>
+                            <li>Front End Development</li>
+                            <li>Back End Development</li>
+                            <li>Full Stack Development</li>
                         </ul>
                     </div>
                 </div>
@@ -79,12 +79,12 @@
                         <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development by expert developers">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>Custom Software Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>Custom Software Development</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">Innovation ignited</a></li>
-                            <li><a href="#">Top-notch expertise</a></li>
-                            <li><a href="#">Agile approach</a></li>
-                            <li><a href="#">Top-Notch Quality Every Time</a></li>
+                            <li>Innovation ignited</li>
+                            <li>Top-notch expertise</li>
+                            <li>Agile approach</li>
+                            <li>Top-Notch Quality Every Time</li>
                         </ul>
                     </div>
                 </div>
@@ -95,12 +95,12 @@
                         <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Developemet by expert designers">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>UI/UX Developemet</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>UI/UX Developemet</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">Branding Services</a></li>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">Coreldraw</a></li>
+                            <li>Branding Services</li>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>Coreldraw</li>
                         </ul>
                     </div>
                 </div>
@@ -139,13 +139,13 @@
                         <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development leaguecityconsulting">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>E-Commerce Development</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>E-Commerce Development</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">WordPress Development</a></li>
-                            <li><a href="#">Magento Development</a></li>
-                            <li><a href="#">OpenCart Development</a></li>
-                            <li><a href="#">Shopify Development</a></li>
-                            <li><a href="#">WooCommerce Development</a></li>
+                            <li>WordPress Development</li>
+                            <li>Magento Development</li>
+                            <li>OpenCart Development</li>
+                            <li>Shopify Development</li>
+                            <li>WooCommerce Development</li>
                         </ul>
                     </div>
                 </div>
@@ -156,13 +156,13 @@
                         <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security experts">
                     </div>
                     <div class="details">
-                        <a href="#" class="heading"><span>Cyber Security</span> <i class="fas fa-arrow-right"></i></a>
+                        <div class="heading"><span>Cyber Security</span> <i class="fas fa-arrow-right"></i></div>
                         <ul>
-                            <li><a href="#">Penetration Testing</a></li>
-                            <li><a href="#">Threat Intelligence & Monitoring</a></li>
-                            <li><a href="#">Network Security & Firewall Solutions</a></li>
-                            <li><a href="#">Access Control & Identity Management</a></li>
-                            <li><a href="#">Data Encryption & Backups</a></li>
+                            <li>Penetration Testing</li>
+                            <li>Threat Intelligence & Monitoring</li>
+                            <li>Network Security & Firewall Solutions</li>
+                            <li>Access Control & Identity Management</li>
+                            <li>Data Encryption & Backups</li>
                         </ul>
                     </div>
                 </div>
