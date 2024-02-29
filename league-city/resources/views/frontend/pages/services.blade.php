@@ -1,5 +1,5 @@
 @empty(!$web_banner)
-    
+
 <section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
@@ -29,7 +29,7 @@
 
 @include('frontend.pages.innovative-services')
 
-<section class="services-page bg-dark section-padding">
+<section class="services-page bg-dark section-padding" id="software-engineering">
     <div class="container">
         <div class="row align-items-center service-heading-mb mt-0">
             <div class="col-lg-6">
@@ -122,7 +122,8 @@
                 </div>
             </div> -->
         </div>
-
+        <div id="digital-automation">
+        </div>
         <div class="row align-items-center service-heading-mb">
             <div class="col-lg-6">
                 <h2 class="section-heading">Digital Automation</h2>
