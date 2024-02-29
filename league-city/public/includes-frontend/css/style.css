@@ -1,14 +1,14 @@
 /* Common CSS Start*/
 @font-face {
-    font-family: "Gilroy-Regular, Arial, sans-serif";
+    font-family: "Gilroy-Regular";
     src: url(../fonts/Gilroy-Regular.ttf);
 }
 @font-face {
-    font-family: "Gilroy-Medium, Arial, sans-serif";
+    font-family: "Gilroy-Medium";
     src: url(../fonts/Gilroy-Medium.ttf);
 }
 @font-face {
-    font-family: "Gilroy-SemiBold, Arial, sans-serif";
+    font-family: "Gilroy-SemiBold";
     src: url(../fonts/Gilroy-SemiBold.ttf);
 }
 :root {
@@ -24,9 +24,9 @@
     --gradientlefttoright: linear-gradient(90deg, #3790c2 0%, #ecdc6a 100%);
     --icongradient: linear-gradient(180deg, #3790c2 0, #c20c0e 100%);
 
-    --fontSemiBold: "Gilroy-SemiBold, Arial, sans-serif";
-    --fontMedium: "Gilroy-Medium, Arial, sans-serif";
-    --fontRegular: "Gilroy-Regular, Arial, sans-serif";
+    --fontSemiBold: "Gilroy-SemiBold", Arial, sans-serif;
+    --fontMedium: "Gilroy-Medium", Arial, sans-serif;
+    --fontRegular: "Gilroy-Regular", Arial, sans-serif;
 
     --transition: all ease-in-out 0.4s;
 }
