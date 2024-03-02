@@ -64,6 +64,7 @@ class PackagesController extends Controller
             $data['yearly_inr'] = $request->yearly_inr;
             $data['yearly_usd'] = $request->yearly_usd;
             $data['description'] = $request->description;
+            $data['show_front'] = $request->show_front;
 
             $result = Packages::create($data);
 
@@ -78,7 +79,7 @@ class PackagesController extends Controller
 
             $result2 = SeoData::create($data2);
 
-            return redirect()->route('packages')->with('success', 'packages created successfully.');
+            return redirect()->route('packages')->with('success', 'Packages created successfully.');
         
         }else{
         
@@ -124,6 +125,7 @@ class PackagesController extends Controller
         $data['yearly_inr'] = $request->yearly_inr;
         $data['yearly_usd'] = $request->yearly_usd;
         $data['description'] = $request->description;
+        $data['show_front'] = $request->show_front;
 
         $url_slug = Str::slug($request->name."-");
         $data['url_slug'] = $url_slug;
@@ -147,7 +149,7 @@ class PackagesController extends Controller
             SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->update($data2);
         }
 
-        return redirect()->route('packages')->with('success', 'packages updated successfully.');
+        return redirect()->route('packages')->with('success', 'Packages updated successfully.');
     }
 
     public function destroy($id)
@@ -156,27 +158,7 @@ class PackagesController extends Controller
 
         $result = Packages::where(array('id'=>$id))->update($data);
 
-        return redirect()->route('packages')->with('success', 'packages deleted successfully.');
+        return redirect()->route('packages')->with('success', 'Packages deleted successfully.');
     }
     
-
-    public function update_description(Request $request, $id)
-    {
-        $data = $request->validate([
-            'desc_heading' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
-        $check = Packages::where(array('status'=>1,'id'=>$id))->update($data);
-
-        if($check > 0){
-
-            return redirect()->back()->with('success', 'packages updated successfully.');
-
-        }else{
-            
-            return redirect()->back()->with('error', 'Something went wrong');
-
-        }
-    }
 }

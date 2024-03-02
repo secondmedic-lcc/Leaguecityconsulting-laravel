@@ -24,6 +24,7 @@ return new class extends Migration
             $table->float('yearly_inr')->nullable();
             $table->float('yearly_usd')->nullable();
             $table->text('description')->nullable();
+            $table->tinyInteger('show_front')->default(1);
             $table->tinyInteger('status')->default(1);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

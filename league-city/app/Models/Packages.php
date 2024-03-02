@@ -21,6 +21,7 @@ class Packages extends Model
         'yearly_inr',
         'yearly_usd',
         'description',
+        'show_front',
         'status',
     ];
 }

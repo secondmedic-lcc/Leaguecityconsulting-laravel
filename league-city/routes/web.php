@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\admin\BlogsController;
 use App\Http\Controllers\backend\admin\ProductsController;
 use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\WebsiteBannersController;
+use App\Http\Controllers\backend\admin\PackagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -196,6 +197,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('website-banner/{id}', [WebsiteBannersController::class, 'update'])->name('website-banner.update');
 
     Route::get('website-banner-delete/{id}', [WebsiteBannersController::class, 'destroy'])->name('website-banner.destroy');
+
+
+    
+    /* All Routes for Packages */
+    Route::get('packages', [PackagesController::class, 'index'])->name('packages');
+
+    Route::get('packages/create', [PackagesController::class, 'create'])->name('packages.create');
+
+    Route::post('packages', [PackagesController::class, 'store'])->name('packages.store');
+
+    Route::get('packages/{id}', [PackagesController::class, 'edit'])->name('packages.edit');
+
+    Route::post('packages/{id}', [PackagesController::class, 'update'])->name('packages.update');
+
+    Route::get('packages-delete/{id}', [PackagesController::class, 'destroy'])->name('packages.destroy');
+
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);
