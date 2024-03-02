@@ -25,7 +25,7 @@ Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
 
 Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
-Route::get('/package', [App\Http\Controllers\PackageController::class, 'index']);
+Route::get('/packages', [App\Http\Controllers\PackageController::class, 'index']);
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
 

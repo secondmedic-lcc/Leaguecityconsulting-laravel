@@ -22,6 +22,9 @@
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('products'); }}">Products</a>
                         </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('packages'); }}">SEO Packages</a>
+                        </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Packages
@@ -66,6 +69,9 @@
                 </li>
                 <li>
                     <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url('packages'); }}">SEO Packages</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
