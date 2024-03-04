@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\admin\ProductsController;
 use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\WebsiteBannersController;
 use App\Http\Controllers\backend\admin\PackagesController;
+use App\Http\Controllers\backend\admin\PackageIncludesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,6 +225,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('packages-sub-keypoints/{id}', [PackagesController::class, 'subKeyPoints_update'])->name('packages.sub-keypoints.update');
 
     Route::get('packages-sub-keypoints-delete/{id}', [PackagesController::class, 'deleteSubKeyPoint'])->name('packages.sub-keypoints.delete');
+
+    
+    /* All Routes for Packages  Includes*/
+    Route::get('package-includes', [PackageIncludesController::class, 'index'])->name('package.includes');
+
+    Route::get('package-includes/create', [PackageIncludesController::class, 'create'])->name('package.includes.create');
+
+    Route::post('package-includes', [PackageIncludesController::class, 'store'])->name('package.includes.store');
+
+    Route::get('package-includes/{id}', [PackageIncludesController::class, 'edit'])->name('package.includes.edit');
+
+    Route::post('package-includes/{id}', [PackageIncludesController::class, 'update'])->name('package.includes.update');
+
+    Route::get('package-includes-delete/{id}', [PackageIncludesController::class, 'destroy'])->name('package.includes.destroy');
+
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

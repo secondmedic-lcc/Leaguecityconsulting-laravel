@@ -26,7 +26,7 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Portfolio</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Portfolio</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -37,7 +37,7 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'blogs') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Blogs</span></font>
+                        <font><i class="bx bxs-image"></i> <span>Manage Blogs</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -48,7 +48,7 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'products') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Products</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Products</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -59,7 +59,7 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'industry') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Industry</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Industry</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -70,7 +70,7 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'website-banner') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Banner</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Banner</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -82,7 +82,7 @@
                 <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-gift"></i> <span>Manage Seo Data</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Seo Data</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -93,12 +93,23 @@
 
                 <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Packages</span></font>
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Packages</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{ route('packages.create'); }}">Add Packages</a></li>
                         <li><a class="dropdown-item" href="{{ route('packages'); }}">Packages List</a></li>
+                    </ul>
+                </li>
+
+                <li class="mb-1 dropdown {{ ($current_page == 'package-includes') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-dashboard"></i> <span>Packages Includes</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('package.includes.create'); }}">Add Includes</a></li>
+                        <li><a class="dropdown-item" href="{{ route('package.includes'); }}">Includes List</a></li>
                     </ul>
                 </li>
 
