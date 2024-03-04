@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label class="form-label" for="">Meta Title</label>
+                            <label class="form-label" for="">Description</label>
                             <textarea class="form-control text-dark" name="description" required value="{{ old('description') }}" rows="5" >{{ old('description') }}</textarea>
                         </div>
                         <div class="col-md-12 text-center">

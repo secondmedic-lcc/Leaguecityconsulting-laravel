@@ -130,7 +130,7 @@
 @endif
 
 
-@if($current_page == "packages")
+@if(@$current_page == "packages")
 <script>
     
     function addKeyPoints() { 
