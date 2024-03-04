@@ -1,4 +1,4 @@
-<section class="page-banner section-padding" style="background-image: url(https://www.leaguecityconsulting.com//uploads/banner/1707720250-image.jpg);">
+<section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/package-banner.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -103,14 +103,14 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/website-audit.png" alt="">
                 </div>
             </div>
         </div>
         <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/content-audit.png" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Content Audit</h3>
@@ -127,7 +127,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/conversion-tracking.png" alt="">
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@
         <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/tool-setup.png" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Tool Setup</h3>
@@ -175,7 +175,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/blog-audit.png" alt="">
                 </div>
             </div>
         </div>
