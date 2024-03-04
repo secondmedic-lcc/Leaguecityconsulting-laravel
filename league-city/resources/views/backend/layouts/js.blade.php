@@ -130,5 +130,19 @@
 @endif
 
 
+@if($current_page == "packages")
+<script>
+    
+    function addKeyPoints() { 
+        
+        $('.key_points').append('<div class="row mt-2"><div class="col-md-10"><input type="text" name="key_point[]" class="form-control p-2 text-dark" /></div><div class="col-md-2"> <button type="button" class="btn btn-danger  w-100"  onclick="deleteParentWorking(this)"><i class="fa fa-trash"></i></button> </div></div> </div>');
+    }
+
+  	function deleteParentWorking(n) {
+    	n.parentNode.parentNode.parentNode.removeChild(n.parentNode.parentNode);
+  	}
+</script>
+@endif
+
 </body>
 </html>

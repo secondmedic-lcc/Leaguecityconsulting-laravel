@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         @include('backend.layouts.alert')
 
-        <form action="{{ route('industry'); }}" method="POST" autocomplete="off" enctype="multipart/form-data" >
+        <form action="{{ route('packages.store'); }}" method="POST" autocomplete="off" enctype="multipart/form-data" >
         @csrf
             <div class="card h-auto">
                 <div class="card-body">
@@ -57,11 +57,25 @@
                                     <input type="text" name="key_point[]" class="form-control p-2 text-dark" />
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" class="btn btn-success w-100">
+                                    <button type="button" class="btn btn-success w-100"  onclick="addKeyPoints();">
                                         <i class="fa fa-plus"></i>
-                                    </button>
+                                    </button> 
                                 </div>
                             </div>
+                            <div class="key_points"></div>
+                        </div>
+                        
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Title</label>
+                            <textarea name="meta_title" rows="3" class="form-control">{{ old('meta_title') }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Key</label>
+                            <textarea name="meta_key" rows="3" class="form-control">{{ old('meta_key') }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Description</label>
+                            <textarea name="meta_description" rows="3" class="form-control">{{ old('meta_description') }}</textarea>
                         </div>
                         <div class="col-md-12 text-center mt-5">
                             <button type="submit" class="btn web-btn w-50">

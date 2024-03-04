@@ -91,7 +91,7 @@
                     </ul>
                 </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'packages') ? 'active' : ''; }}">
+                <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-user"></i> <span>Manage Packages</span></font>
                         <span class="bx bx-chevron-right"></span>

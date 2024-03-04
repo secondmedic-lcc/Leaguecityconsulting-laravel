@@ -1,65 +1,122 @@
-@empty(!$industry)
+@empty(!$packages)
     
-    <div class="row">
-        <div class="col-lg-12">
-            @include('backend.layouts.alert')
+<div class="row">
+    <div class="col-lg-12">
+        @include('backend.layouts.alert')
 
-            <form action="{{ url('admin/industry'); }}/{{ $industry->id; }}" method="POST" autocomplete="off" enctype="multipart/form-data" >
-            @csrf
-                <div class="card h-auto">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label" for="">Product Name</label>
-                                <input type="text" class="form-control" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ $industry->name }}" />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label" for="">Product URL</label>
-                                <input type="text" class="form-control" name="industry_url"  value="{{ $industry->industry_url; }}" />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label" for="">Product Heading</label>
-                                <input type="text" class="form-control" name="heading" required value="{{ $industry->heading; }}" />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label" for="">Product Sub Heading</label>
-                                <input type="text" class="form-control" name="sub_heading" required value="{{ $industry->sub_heading; }}" />
-                            </div>
-                            <div class="col-md-3 mb-2">
-                                <label class="form-label" for="">Product Image</label>
-                                <input type="file" class="form-control"  name="industry_image" onchange="readURL(this);" accept="image/*" />
-                            </div>
-                            <div class="col-md-2">
-                                <img alt="industry Profile" src="{{ ($industry->industry_image && $industry->industry_image != "") ? asset($industry->industry_image) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
-                            </div>
-                            <div class="col-md-7">
-                                <label class="form-label" for="">Product Description</label>
-                                <textarea name="description" rows="5" class="form-control">{{ $industry->description; }}</textarea>
-                            </div>
-                            <div class="col-md-6 mt-3">
-                                <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="">Meta Title</label>
-                                    <textarea class="form-control text-dark" name="meta_title" required value="{{ @$seo_data->meta_title; }}" >{{ @$seo_data->meta_title; }}</textarea>
+        <form action="{{ route('packages.update',$packages->id); }}" method="POST" autocomplete="off" enctype="multipart/form-data" >
+        @csrf
+            <div class="card h-auto">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Package Name</label>
+                            <input type="text" class="form-control" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ $packages->name; }}" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Package Heading</label>
+                            <input type="text" class="form-control" name="heading" required value="{{ $packages->heading; }}" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Package Type</label>
+                            <select class="form-control js-example-basic-single" required name="package_for">
+                                <option value="">-- Select Package Type --</option>
+                                <option value="seo-packages" {{ ($packages->package_for == 'seo-packages') ? 'selected' : ''; }}>SEO Packages</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Package Show In Front</label>
+                            <select class="form-control js-example-basic-single" required name="show_front">
+                                <option value="">-- Show Package In Front --</option>
+                                <option value="1" {{ ($packages->show_front == 1) ? 'selected' : ''; }} >Yes</option>
+                                <option value="0" {{ ($packages->show_front == 0) ? 'selected' : ''; }} >No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label" for="">Monthly Inr</label>
+                            <input type="text" class="form-control"  onkeypress="return /[0-9]/i.test(event.key)" minlength="2" maxlength="6" name="monthly_inr" required value="{{ $packages->monthly_inr; }}" />
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label" for="">Monthly USD</label>
+                            <input type="text" class="form-control"  onkeypress="return /[0-9]/i.test(event.key)" minlength="2" maxlength="6" name="monthly_usd" required value="{{ $packages->monthly_usd; }}" />
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label" for="">Yearly Inr</label>
+                            <input type="text" class="form-control"  onkeypress="return /[0-9]/i.test(event.key)" minlength="2" maxlength="6" name="yearly_inr" required value="{{ $packages->yearly_inr; }}" />
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label" for="">Yearly USD</label>
+                            <input type="text" class="form-control"  onkeypress="return /[0-9]/i.test(event.key)" minlength="2" maxlength="6" name="yearly_usd" required value="{{ $packages->yearly_usd; }}" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="">Package Description</label>
+                            <textarea name="description" rows="5" class="form-control">{{ $packages->description; }}</textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="">Enter Key Points</label>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <input type="text" name="key_point[]" class="form-control p-2 text-dark" />
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="">Meta Key</label>
-                                    <textarea class="form-control text-dark" name="meta_key" required value="{{ @$seo_data->meta_key; }}" >{{ @$seo_data->meta_key; }}</textarea>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success w-100"  onclick="addKeyPoints();">
+                                        <i class="fa fa-plus"></i>
+                                    </button> 
                                 </div>
                             </div>
-                            <div class="col-md-6  mt-3">
-                                <label for="">Meta Description</label>
-                                <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ @$seo_data->meta_description; }}</textarea>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn" >
-                                    Update industry
-                                </button>
-                            </div>
+                            <div class="key_points"></div>
+                        </div>
+                        
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Title</label>
+                            <textarea name="meta_title" rows="3" class="form-control">{{ $seo_data->meta_title; }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Key</label>
+                            <textarea name="meta_key" rows="3" class="form-control">{{ $seo_data->meta_key; }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label class="form-label" for="">Meta Description</label>
+                            <textarea name="meta_description" rows="3" class="form-control">{{ $seo_data->meta_description; }}</textarea>
+                        </div>
+                        <div class="col-md-12 text-center mt-5">
+                            <button type="submit" class="btn web-btn w-50">
+                                Update Package
+                            </button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
+        </form>
+    </div>
+
+    
+    <div class="col-md-12">
+
+        <div class="row">
+            @foreach($packagesKeyPoint as $keyPoint)
+                <div class="col-md-4">
+                   <form action="{{ route('packages.update.keypoint',$keyPoint->id); }}" method="post">
+                    @csrf
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="key_point" value="{{ $keyPoint->key_point; }}" />
+                                </div>
+                                <div class="col-sm-6 mt-3">
+                                    <button type="submit" class="btn btn-primary w-100">Update</button>
+                                </div>
+                                <div class="col-sm-6 mt-3">
+                                    <a class="btn btn-danger w-100 btn-delete" href="javascript:void(0);"  url={{ route('packages.delete.keypoint',$keyPoint->id) }}  >Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                   </form>
+                </div>
+            @endforeach
         </div>
-    </div>   
+
+    </div>
+</div>
 
 @endempty

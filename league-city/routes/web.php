@@ -213,6 +213,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('packages-delete/{id}', [PackagesController::class, 'destroy'])->name('packages.destroy');
 
+    Route::post('packages-key-point/{id}', [PackagesController::class, 'updateKeyPoint'])->name('packages.update.keypoint');
+
+    Route::get('packages-key-point/{id}', [PackagesController::class, 'deleteKeyPoint'])->name('packages.delete.keypoint');
+
+    Route::get('packages-sub-keypoints/{id}', [PackagesController::class, 'subKeyPoints'])->name('packages.sub-keypoints');
+
+    Route::post('packages-sub-keypoints', [PackagesController::class, 'subKeyPoints_store'])->name('packages.sub-keypoints.store');
+
+    Route::post('packages-sub-keypoints/{id}', [PackagesController::class, 'subKeyPoints_update'])->name('packages.sub-keypoints.update');
+
+    Route::get('packages-sub-keypoints-delete/{id}', [PackagesController::class, 'deleteSubKeyPoint'])->name('packages.sub-keypoints.delete');
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

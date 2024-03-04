@@ -23,10 +23,11 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Image</th>
+                                <th>Package For</th>
                                 <th>Name</th>
                                 <th>Heading</th>
-                                <th>Sub Heading</th>
+                                <th>In Front</th>
+                                <th>Created At</th>
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
@@ -37,13 +38,15 @@
                             @foreach($packages as $s)
                                 <tr>
                                     <td>{{ $a++; }}</td>
-                                    <td>
-                                        <img src="{{ asset($s['product_image']); }}" alt="Image" width="100" height="auto" />
-                                    </td>
+                                    <td>{{ $s['package_for']; }}</td>
                                     <td>{{ $s['name']; }}</td>
                                     <td>{{ $s['heading']; }}</td>
-                                    <td>{{ $s['sub_heading']; }}</td>
+                                    <td>{{ ($s['show_front'] == 1) ? "Show" : "Hide"; }}</td>
+                                    <td>{{ date("d M, Y", strtotime($s['created_at'])); }}</td>
                                     <td class="text-end">
+                                        <a href="{{ route('packages.sub-keypoints', $s['id']); }}" class="btn btn-primary text-white">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
                                         <a href={{ url('/admin/packages/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
                                             <i class="fa fa-edit"></i>
                                         </a>
