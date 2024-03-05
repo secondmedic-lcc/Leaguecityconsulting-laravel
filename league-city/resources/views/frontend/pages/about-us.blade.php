@@ -51,10 +51,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="ceo-img">
-                    <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/rajneeshdiwedi.png');">
+                    <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rajneeshdiwedi.webp');">
                     </div>
                     <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                        <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/rajneeshdiwedi.png');">
+                        <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rajneeshdiwedi.webp');">
                         </div>
                     </div>
                 </div>
@@ -81,10 +81,10 @@
                 <div class="owl-carousel team-slider">
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/raviprakash.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/raviprakash.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/raviprakash.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/raviprakash.webp');">
                                 </div>
                             </div>
                             <h3>Ravi Prakash</h3>
@@ -93,10 +93,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jeelthakkar.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jeelthakkar.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jeelthakkar.webp');">
                                 </div>
                             </div>
                             <h3>Jeel Thakkar</h3>
@@ -105,10 +105,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/aniketnamdeo.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/aniketnamdeo.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/aniketnamdeo.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/aniketnamdeo.webp');">
                                 </div>
                             </div>
                             <h3>Aniket Namdeo</h3>
@@ -117,10 +117,22 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/sanjayadtani.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/harmeet-saggi.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/sanjayadtani.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/harmeet-saggi.webp');">
+                                </div>
+                            </div>
+                            <h3>Harmeet Saggi</h3>
+                            <p>Executive Assistant to CEO</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="box">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/sanjayadtani.webp');">
+                            </div>
+                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/sanjayadtani.webp');">
                                 </div>
                             </div>
                             <h3>Sanjay Adtani</h3>
@@ -129,10 +141,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jiteshvishwakarma.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jiteshvishwakarma.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jiteshvishwakarma.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jiteshvishwakarma.webp');">
                                 </div>
                             </div>
                             <h3>Jitesh Vishwakarma</h3>
@@ -141,10 +153,10 @@
                     </div>
                     <!-- <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.webp');">
                                 </div>
                             </div>
                             <h3>Shubham Shinde</h3>
@@ -153,10 +165,10 @@
                     </div> -->
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/swapnilgawde.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/swapnilgawde.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/swapnilgawde.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/swapnilgawde.webp');">
                                 </div>
                             </div>
                             <h3>Swapnil Gawde</h3>
@@ -165,10 +177,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/rohitrajput.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rohitrajput.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/rohitrajput.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rohitrajput.webp');">
                                 </div>
                             </div>
                             <h3>Rohit Rajput</h3>
@@ -177,10 +189,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahulchatterjee.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahulchatterjee.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahulchatterjee.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahulchatterjee.webp');">
                                 </div>
                             </div>
                             <h3>Rahul Chatterjee</h3>
@@ -189,10 +201,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahulshah.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahulshah.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahulshah.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahulshah.webp');">
                                 </div>
                             </div>
                             <h3>Rahul Shah</h3>
@@ -201,10 +213,10 @@
                     </div>
                     <!-- <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.webp');">
                                 </div>
                             </div>
                             <h3>Himanshu Devgade</h3>
@@ -213,10 +225,10 @@
                     </div> -->
                     <!-- <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jitendrapratapsingh.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jitendrapratapsingh.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jitendrapratapsingh.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/jitendrapratapsingh.webp');">
                                 </div>
                             </div>
                             <h3>Jitendra Pratap Singh</h3>
@@ -225,10 +237,10 @@
                     </div> -->
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahuladtani.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahuladtani.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/rahuladtani.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahuladtani.webp');">
                                 </div>
                             </div>
                             <h3>Rahul Adtani</h3>
@@ -237,10 +249,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/nitish.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/nitish.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/nitish.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/nitish.webp');">
                                 </div>
                             </div>
                             <h3>Nitish</h3>
@@ -249,10 +261,10 @@
                     </div>
                     <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/prateekchouhan.png');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/prateekchouhan.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/prateekchouhan.png');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/prateekchouhan.webp');">
                                 </div>
                             </div>
                             <h3>Prateek Chouhan</h3>
