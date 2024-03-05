@@ -382,6 +382,46 @@ h6 .light {
 }
 /* Common CSS End */
 
+/* Common Modal Work Start */
+.btn-close {
+    position: absolute;
+    top: -30px;
+    opacity: 1;
+    right: 0px;
+    color: white;
+    filter: invert(1);
+    box-shadow: none !important;
+    padding: 0px;
+    font-size: 20px;
+}
+.modal-content {
+    border-radius: 0px;
+}
+.modal-header {
+    padding: 20px 30px;
+    position: relative;
+    border-radius: 0px;
+    border: none;
+}
+.modal-header * {
+    color: white;
+}
+.modal-header + .line {
+    height: 8px;
+}
+.modal-body {
+    padding: 30px;
+}
+@media (max-width: 767px) {
+    .modal-header {
+        padding: 20px;
+    }
+    .modal-body {
+        padding: 20px;
+    }
+}
+/* Common Modal Work End */
+
 /* Header Work Start */
 .header .navbar {
     background-color: var(--darkgreycolor);
@@ -2726,9 +2766,16 @@ h6 .light {
 
 /* Package Section Work Start */
 .package .box {
-    padding: 30px;
     border: 1px solid var(--bordercolor);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.package .box .img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.package .box .box-body {
+    padding: 0px 30px 30px;
 }
 .package .box .box-heading {
     background-color: var(--darkgreycolor);
@@ -2738,10 +2785,11 @@ h6 .light {
     align-items: center;
     color: white;
     font-size: 24px;
-    width: 85%;
+    width: 90%;
     margin-left: -45px;
     position: relative;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 .package .box .box-heading:after {
     content: "";
@@ -2767,14 +2815,58 @@ h6 .light {
 }
 .package .box p {
     margin: 0px;
-    font-size: 20px;
+    font-size: 16px;
 }
 .package .box .btn {
     margin-top: 20px;
     width: 100%;
 }
+.package .box.big-box {
+    background-size: 70% auto;
+    background-position: center right;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.package .box.big-box:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 0) 70%
+    );
+}
+.package .box.big-box * {
+    position: relative;
+}
+.package .box.big-box .box-body {
+    padding: 30px;
+}
+.package .box.big-box .box-heading {
+    margin-top: 0px;
+    width: 50.4%;
+}
+.package .box.big-box p {
+    font-family: var(--fontMedium);
+    font-size: 18px;
+}
+.package .box.big-box .btn {
+    width: auto;
+}
+@media (max-width: 991px) {
+    .package .box.big-box .box-heading {
+        width: 77.38%;
+    }
+}
 @media (max-width: 767px) {
-    .package .box {
+    .package .box .img {
+        height: 190px;
+    }
+    .package .box .box-body {
         padding: 0px 15px 15px;
     }
     .package .box .box-heading {
@@ -2783,7 +2875,8 @@ h6 .light {
         font-size: 18px;
         margin-left: -15px;
         margin-bottom: 10px;
-        width: 50%;
+        margin-top: 15px;
+        width: 80%;
     }
     .package .box .box-heading:after {
         right: -25px;
@@ -2796,10 +2889,32 @@ h6 .light {
         display: none;
     }
     .package .box p {
-        font-size: 16px;
+        font-size: 14px;
     }
     .package .box .btn {
-        margin-top: 10px;
+        margin-top: 15px;
+    }
+    .package .box.big-box {
+        background-size: auto 190px;
+        background-position: center top;
+        padding-top: 190px;
+    }
+    .package .box.big-box:before {
+        display: none;
+    }
+    .package .box.big-box .box-heading {
+        margin-top: 15px;
+        width: 80%;
+    }
+    .package .box.big-box .box-body {
+        padding: 0px 15px 15px;
+    }
+    .package .box.big-box p {
+        font-size: 14px;
+        font-family: var(--fontRegular);
+    }
+    .package .box.big-box .btn {
+        width: 100%;
     }
 }
 /* Package Section Work End */
@@ -2808,8 +2923,27 @@ h6 .light {
 .package-includes * {
     color: white;
 }
+.package-includes .box:nth-child(2) {
+    padding-top: 0px;
+    margin-top: 20px;
+}
+.package-includes .box:nth-child(2):before {
+    display: none;
+}
 .package-includes .box {
     margin-top: 60px;
+    padding-top: 60px;
+    position: relative;
+}
+.package-includes .box:before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    background-color: var(--whitecolor);
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
 }
 .package-includes .box img {
     width: 100%;
@@ -2830,6 +2964,13 @@ h6 .light {
     }
 }
 @media (max-width: 767px) {
+    .package-includes .box {
+        margin-top: 40px;
+        padding-top: 40px;
+    }
+    .package-includes .box:before {
+        width: 250px;
+    }
     .package-includes .box img {
         height: 140px;
         margin-bottom: 15px;
@@ -2841,9 +2982,6 @@ h6 .light {
     .package-includes .box p {
         font-size: 14px;
         line-height: 20px;
-    }
-    .package-includes .box {
-        margin-top: 20px;
     }
 }
 /* Package Includeds Work End */
@@ -2899,7 +3037,7 @@ h6 .light {
 }
 .pricing .box p {
     margin: 0px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .pricing .box .list {
     margin-top: 20px;
@@ -2987,3 +3125,38 @@ h6 .light {
     }
 }
 /* Pricing Work End */
+
+/* pricingModalForm Work Start */
+.pricing-modal .selected-package {
+    width: 100%;
+}
+.pricing-modal .selected-package .package-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--whitecolor);
+    margin-bottom: 10px;
+}
+.pricing-modal .selected-package h3 {
+    font-size: 24px;
+    margin: 0px;
+    color: var(--whitecolor);
+}
+.pricing-modal .selected-package p {
+    margin: 0px;
+}
+.pricing-modal .btn {
+    margin-top: 30px;
+}
+@media (max-width: 767px) {
+    .pricing-modal .selected-package h3 {
+        font-size: 18px;
+    }
+    .pricing-modal .selected-package .package-h {
+        margin-bottom: 5px;
+    }
+    .pricing-modal .btn {
+        margin-top: 10px;
+    }
+}
+/* pricingModalForm Work End */

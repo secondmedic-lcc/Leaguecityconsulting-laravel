@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label>
-                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="javascript:void(0)" class="web-clr">Privacy Policy</a></p>
+                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="privacy-policy" class="web-clr">Privacy Policy</a></p>
                                         </label>
                                     </div>
                                     <div class="col-md-6">

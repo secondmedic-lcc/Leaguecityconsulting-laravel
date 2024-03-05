@@ -48,27 +48,48 @@
         <div class="row g-3 g-md-5 justify-content-center">
             <div class="col-lg-4 col-md-6">
                 <div class="box">
-                    <h3 class="box-heading">Small Business</h3>
-
-                    <p><b>20,000 INR / 250 USD</b> Monthly</p>
-                    <p>Best for Small Business</p>
-                    <a href="#pricing" class="btn web-btn">View Details</a>
+                    <img src="{{ asset('includes-frontend'); }}/images/small-business.webp" class="img" alt="">
+                    <div class="box-body">
+                        <h3 class="box-heading">Small Business</h3>
+                        <p><b>20,000 INR / 250 USD Monthly</b></p>
+                        <p>Best for Small Business</p>
+                        <a href="#pricing" class="btn web-btn">View Details</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="box">
-                    <h3 class="box-heading">Mid Size Business</h3>
-                    <p><b>30,000 INR / 400 USD</b> Monthly</p>
-                    <p>Best for Mid Size Business</p>
-                    <a href="#pricing" class="btn web-btn">View Details</a>
+                    <img src="{{ asset('includes-frontend'); }}/images/mid-size-business.webp" class="img" alt="">
+                    <div class="box-body">
+                        <h3 class="box-heading">Mid Size Business</h3>
+                        <p><b>30,000 INR / 400 USD Monthly</b></p>
+                        <p>Best for Mid Size Business</p>
+                        <a href="#pricing" class="btn web-btn">View Details</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="box">
-                    <h3 class="box-heading">eCommerce SEO</h3>
-                    <p><b>45,000 INR / 600 USD</b> Monthly</p>
-                    <p>Best for eCommerce Business</p>
-                    <a href="#pricing" class="btn web-btn">View Details</a>
+                    <img src="{{ asset('includes-frontend'); }}/images/ecommerceseo.webp" class="img" alt="">
+                    <div class="box-body">
+                        <h3 class="box-heading">eCommerce SEO</h3>
+                        <p><b>45,000 INR / 600 USD Monthly</b></p>
+                        <p>Best for eCommerce Business</p>
+                        <a href="#pricing" class="btn web-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="box big-box" style="background-image: url('{{ asset('includes-frontend'); }}/images/enterprise.webp');">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="box-heading">Enterprise</h3>
+                                <p>Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.</p>
+                                <a href="" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Enquire Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,7 +102,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <h2 class="section-heading with-p">What is included in our SEO packages?</h2>
-                <p class="heading-info text-white mb-0">Explore the benefits of our monthly SEO packages, designed to enhance your website's visibility and ranking through secure SEO practices. Discover what our packages include below.</p>
+                <p class="heading-info text-white">Explore the benefits of our monthly SEO packages, designed to enhance your website's visibility and ranking through secure SEO practices. Discover what our packages include below.</p>
             </div>
         </div>
         <div class="box">
@@ -263,7 +284,7 @@
                         <li><i class="fas fa-times-circle text-danger"></i> Call</li>
                     </ul>
                     <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn">Get Started Now</a>
+                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -339,7 +360,7 @@
                         <li><i class="fas fa-check-circle text-success"></i> Call</li>
                     </ul>
                     <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn">Get Started Now</a>
+                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -415,11 +436,64 @@
                         <li><i class="fas fa-check-circle text-success"></i> Call</li>
                     </ul>
                     <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn">Get Started Now</a>
+                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade pricing-modal" id="pricingModalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="selected-package">
+                    <div class="package-h">
+                        <h3>Small Business</h3>
+                        <p>SEO Packages</p>
+                    </div>
+                    <div class="price">
+                        <p><b>20,000 INR/250 USD</b> Monthly</p>
+                        <p>EXCLUSIVE OF ALL TAXES</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line w-100 m-0"></div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="">Full Name*</label>
+                            <input class="form-control" name="" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Mobile Number*</label>
+                            <input class="form-control" name="" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Email*</label>
+                            <input type="email" class="form-control" name="" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Location*</label>
+                            <input class="form-control" name="" required />
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">About Your Project</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <button type="submit" class="btn web-btn" name="form-btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('frontend.pages.query-form')
