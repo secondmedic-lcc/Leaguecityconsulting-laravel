@@ -52,7 +52,7 @@
 
                     <p><b>20,000 INR / 250 USD</b> Monthly</p>
                     <p>Best for Small Business</p>
-                    <a href="#" class="btn web-btn">Basic SEO Plan</a>
+                    <a href="#pricing" class="btn web-btn">View Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -60,7 +60,7 @@
                     <h3 class="box-heading">Mid Size Business</h3>
                     <p><b>30,000 INR / 400 USD</b> Monthly</p>
                     <p>Best for Mid Size Business</p>
-                    <a href="#" class="btn web-btn">Advance SEO Plan</a>
+                    <a href="#pricing" class="btn web-btn">View Details</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -68,7 +68,7 @@
                     <h3 class="box-heading">eCommerce SEO</h3>
                     <p><b>45,000 INR / 600 USD</b> Monthly</p>
                     <p>Best for eCommerce Business</p>
-                    <a href="#" class="btn web-btn">eCommerce SEO Plan</a>
+                    <a href="#pricing" class="btn web-btn">View Details</a>
                 </div>
             </div>
         </div>
@@ -81,13 +81,13 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <h2 class="section-heading with-p">What is included in our SEO packages?</h2>
-                <p class="heading-info text-white">Explore the benefits of our monthly SEO packages, designed to enhance your website's visibility and ranking through secure SEO practices. Discover what our packages include below.</p>
+                <p class="heading-info text-white mb-0">Explore the benefits of our monthly SEO packages, designed to enhance your website's visibility and ranking through secure SEO practices. Discover what our packages include below.</p>
             </div>
         </div>
-        <div class="box mt-0">
+        <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/keyword.webp" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Keyword Research</h3>
@@ -103,14 +103,14 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/website-audit.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/website-audit.webp" alt="">
                 </div>
             </div>
         </div>
         <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/content-audit.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/content-audit.webp" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Content Audit</h3>
@@ -127,14 +127,14 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/conversion-tracking.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/conversion-tracking.webp" alt="">
                 </div>
             </div>
         </div>
         <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/competitor-audit.webp" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Competitor Audit</h3>
@@ -151,14 +151,14 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/keyword.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/backend-audit.webp" alt="">
                 </div>
             </div>
         </div>
         <div class="box">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="{{ asset('includes-frontend'); }}/images/tool-setup.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/tool-setup.webp" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="box-h">Tool Setup</h3>
@@ -175,14 +175,14 @@
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('includes-frontend'); }}/images/blog-audit.png" alt="">
+                    <img src="{{ asset('includes-frontend'); }}/images/blog-audit.webp" alt="">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="pricing section-padding">
+<section class="pricing section-padding" id="pricing">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
