@@ -76,8 +76,8 @@
                                     <div class="col-md-6">
                                         <div class="content">
                                             <i class="far fa-play-circle"></i>
-                                            <h3>Group Conferencing</h3>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste accusamus error molestiae sed quis recusandae obcaecati, eius enim necessitatibus unde fugiat odit non tenetur possimus! Alias perferendis consectetur eligendi sequi?</p>
+                                            <h3>{{ $p['heading']; }}</h3>
+                                            <p>{{ $p['description']; }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

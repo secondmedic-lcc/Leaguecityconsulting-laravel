@@ -54,15 +54,21 @@
                 @csrf
                     
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
                             <input type="hidden" class="form-control" value="{{ $portfolio_details['id']; }}" name="portfolio_id" />
                         </div>
-
-                        <div class="col-md-4">
-                            <input type="file" name="images[]" multiple class="form-control"  accept="image/*" />
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" name="heading" placeholder="Enter Heading" />
                         </div>
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="description" placeholder="Enter Description" />
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="file" name="images" multiple class="form-control"  accept="image/*" />
+                        </div>
+                        <div class="col-md-2 text-center">
                             <button type="submit" class="btn web-btn w-100">
                                 Uplaod Images
                             </button>
@@ -77,6 +83,7 @@
                         <div class="col-md-2">
                             <div class="card">
                                 <div class="card-body">
+                                    <small>{{ $g['heading']; }}</small>
                                     <img src="{{ asset($g->image); }}" width="100%" alt="Gallery Image" />
                                 </div>
                                 <div class="card-footer p-0">

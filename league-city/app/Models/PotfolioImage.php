@@ -12,6 +12,6 @@ class PotfolioImage extends Model
     protected $table = "portfolio_images";
     protected $primaryKey = "id";
     protected $fillable = [
-        'portfolio_id', 'image', 'status',
+        'portfolio_id', 'heading', 'description', 'image', 'status',
     ];
 }

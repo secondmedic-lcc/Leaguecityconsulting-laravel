@@ -58,13 +58,12 @@ class PortfolioController extends Controller
 		$url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);
         $pathFragments = explode('-', $this->path);
-        $portfolio_id = end($pathFragments);
 
         $portfolio = Portfolio::where(array('status'=>1,'url_slug'=>$this->path))->first();
 
-        $portfolio['portfolio_services'] = PortfolioServices::where(array('status'=>1,'portfolio_id'=>$portfolio_id))->get();
+        $portfolio['portfolio_services'] = PortfolioServices::where(array('status'=>1,'portfolio_id'=>$portfolio->id))->get();
 
-        $portfolio['portfolio_images'] = PotfolioImage::where(array('status'=>1,'portfolio_id'=>$portfolio_id))->get();
+        $portfolio['portfolio_images'] = PotfolioImage::where(array('status'=>1,'portfolio_id'=>$portfolio->id))->get();
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 

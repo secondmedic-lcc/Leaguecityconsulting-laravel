@@ -20,30 +20,35 @@ class PotfolioImageController extends Controller
 
         $validator = Validator::make($request->all(), [
             'portfolio_id' => 'required|max:50',
-            'images' => 'required|array',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'images' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
         if ($validator->fails()) {
 
             return redirect()->back()->withErrors($validator)->withInput();
-
+        
         } else{
 
-            foreach ($request->file('images') as $image) {
-                
-                $filename = time() . '-portfolio-screenshot' . $image->getClientOriginalName();
-                
-                $image->move(public_path('uploads/portfolio-screenshot'), $filename);
+            $data = [
+                'portfolio_id' => $request->portfolio_id,
+                'heading' => $request->heading,
+                'description' => $request->description,
+            ];
+          
+            if(!empty($request->images)){
+                    
+                $imageName = time().'-portfolio.'.$request->images->extension();
 
-                $img = "uploads/portfolio-screenshot/".$filename;
-        
-                $data = ['image' => $img,'portfolio_id'=>$request->portfolio_id];
+                $request->images->move(public_path('uploads/portfolio-screenshot'), $imageName);
 
-                $result =  PotfolioImage::create($data);
+                $image = "uploads/portfolio-screenshot/".$imageName;
+
+                $data += ['image'=>$image];
             }
 
-            if(count($request->file('images')) > 0){
+            $check = PotfolioImage::create($data);
+
+            if($check->id > 0){
                 return redirect()->back()->with('success', 'Portfolio Added successfully');
             }else{
                 return redirect()->back()->with('error', 'Something went Wrong');
@@ -55,7 +60,7 @@ class PotfolioImageController extends Controller
       
         $image = PotfolioImage::where(array('id'=>$id))->get()->first();
 
-        unlink($image->image);
+        @unlink($image->image);
 
         $result = PotfolioImage::where(array('id'=>$id))->delete();
 
