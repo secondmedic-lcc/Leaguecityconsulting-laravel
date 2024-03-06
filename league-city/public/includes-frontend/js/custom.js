@@ -1,3 +1,5 @@
+AOS.init();
+
 const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]'
 );

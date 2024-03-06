@@ -2,7 +2,7 @@
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
                     <h1 class="section-heading">
                         <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution <span class="light">Company</span>
                     </h1>
@@ -23,8 +23,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-heading">Revolutionary Software Solutions</h2>
-                    <div class="services-slider-height">
+                    <h2 class="section-heading" data-aos="fade-up" data-aos-delay="100">Revolutionary Software Solutions</h2>
+                    <div class="services-slider-height" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel services-slider">
 
                             <div class="item">
@@ -115,7 +115,7 @@
 
                         </div>
                     </div>
-                    <div class="btnrow text-center">
+                    <div class="btnrow text-center" data-aos="zoom-in">
                         <a href="{{ url('services') }}" class="btn web-btn">View All Services</a>
                     </div>
                 </div>
@@ -126,13 +126,13 @@
     <section class="recent-work section-padding pb-0">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1 text-center">
+                <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
                     <p class="heading-info text-white">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
                 </div>
             </div>
         </div>
-        <div class="work-slider-height">
+        <div class="work-slider-height" data-aos="zoom-in" data-aos-delay="200">
             <div class="owl-carousel work-slider">
                 @foreach($portfolio as $p)
                 <div class="item">
@@ -150,7 +150,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="btnrow text-center">
+        <div class="btnrow text-center" data-aos="zoom-in">
             <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
         </div>
     </section>
@@ -158,14 +158,14 @@
     <section class="explore section-padding">
         <div class="container">
             <div class="row g-0">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="zoom-in-right" data-aos-delay="100">
                     <div class="box">
                         <h2>Speed, Agility, Innovation: Your keys to success</h2>
                         <p>Empower your business to evolve. Agile solutions, crafted for your unique transformation.</p>
                         <a href="{{ url('services') }}" class="btn white-btn">Explore</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="200">
                     <div class="box left-border">
                         <h2>Unlocking Industry Potential Through Digital Innovation</h2>
                         <p>Beyond trends, beyond limits. Explore the uncharted territories of your business.Unleash new possibilities in Business.</p>
@@ -177,7 +177,7 @@
     </section>
 </div>
 
-<section class="industries" style="background-image: url({{ asset('includes-frontend'); }}/images/healthcarelifescience.webp)">
+<section class="industries" style="background-image: url({{ asset('includes-frontend'); }}/images/healthcarelifescience.webp)" data-aos="zoom-in" data-aos-delay="100">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -262,7 +262,7 @@
 <section class="technology section-padding pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">Transforming Industries with Next-Gen Innovation</h2>
                 <p class="heading-info">Beyond automation, beyond disruption. We engineer human-centered innovation with powerful simplicity. Unleash your unexpected tomorrow..</p>
             </div>
@@ -271,31 +271,31 @@
             <div class="col-lg-12">
                 <div class="left-side">
                     <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">
+                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true" data-aos="fade-up" data-aos-delay="100">
                             <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.svg" alt="Mobile App Development image"> <br />
                             Mobile App Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">
+                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false" data-aos="fade-up" data-aos-delay="200">
                             <img src="{{ asset('includes-frontend'); }}/images/app-development.svg" alt="App Development image"> <br />
                             Application Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
+                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false" data-aos="fade-up" data-aos-delay="300">
                             <img src="{{ asset('includes-frontend'); }}/images/aiautomation.svg" alt="AI & Automation image"> <br />
                             AI & Automation</button>
 
-                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">
+                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false" data-aos="fade-up" data-aos-delay="400">
                             <img src="{{ asset('includes-frontend'); }}/images/uiux.svg" alt="UI/UX Services image"> <br />
                             UI/UX Services</button>
 
-                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">
+                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false" data-aos="fade-up" data-aos-delay="500">
                             <img src="{{ asset('includes-frontend'); }}/images/itconsulting.svg" alt="IT Consulting image"> <br />
                             IT Consulting</button>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="600">
                 <div class="right-side bg-dark">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
@@ -524,17 +524,18 @@
 <section class="blog section-padding pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">What's New At LeagueCity?</h2>
                 <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
             </div>
         </div>
         <div class="row">
             <div class="owl-carousel blog-slider">
+                @php $i=2; @endphp
                 @foreach($blog as $b)
                 @php $url = url('blogs')."/".$b['url_slug']; @endphp
                 <div class="item">
-                    <div class="box">
+                    <div class="box" data-aos="fade-up" data-aos-delay="{{ $i++ }}00">
                         <a href="{{ $url; }}">
                             <div class="image">
                                 <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title'] }}">
@@ -554,7 +555,7 @@
             </div>
         </div>
     </div>
-    <div class="btnrow text-center">
+    <div class="btnrow text-center" data-aos="zoom-in">
         <a href="{{ url('blogs'); }}" class="btn web-btn">View All</a>
     </div>
 </section>

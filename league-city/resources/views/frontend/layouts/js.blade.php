@@ -1,6 +1,7 @@
 <script src="{{ asset('includes-frontend'); }}/js/jquery.min.js"></script>
 <script src="{{ asset('includes-frontend'); }}/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('includes-frontend'); }}/js/owl.carousel.js"></script>
+<script src="{{ asset('includes-frontend'); }}/js/aos.js"></script>
 <script src="{{ asset('includes-frontend'); }}/js/custom.js"></script>
 
 
@@ -38,7 +39,7 @@
 </script>
 
 <script>
-    function copyUrl(){
+    function copyUrl() {
 
         var currentUrl = window.location.href;
         var tempInput = $('<input>');
@@ -46,7 +47,7 @@
         tempInput.val(currentUrl).select();
         document.execCommand('copy');
         tempInput.remove();
-        
+
         swal("Thank you!", "Url Copyed Successfully", "success");
     }
 </script>
