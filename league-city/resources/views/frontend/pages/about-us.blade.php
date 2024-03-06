@@ -215,6 +215,18 @@
                     </div>
                     <div class="item">
                         <div class="box">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/kajalswaroop.webp');">
+                            </div>
+                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/kajalswaroop.webp');">
+                                </div>
+                            </div>
+                            <h3>Kajal Swaroop</h3>
+                            <p>Jr. Accountant.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rahulchatterjee.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
