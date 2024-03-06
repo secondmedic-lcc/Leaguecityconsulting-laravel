@@ -8,21 +8,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Package Type</label>
+                            <select class="form-control js-example-basic-single" required disabled >
+                                <option value="">-- Select Package Type --</option>
+                                @foreach($package_types as $p)
+                                    <option value="{{ $p['id'] }}" {{ (isset($_GET['package_id']) && $_GET['package_id'] != "") ? ($_GET['package_id'] == $p['id'] )? 'selected' : '' : '' }} >{{ $p['package_name'] }}</option>
+                                @endforeach
+                            </select>
+                            <input type="hidden" value="{{ $_GET['package_id']; }}" name="package_for" >
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Package Name</label>
                             <input type="text" class="form-control" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ old('name') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Package Heading</label>
                             <input type="text" class="form-control" name="heading" required value="{{ old('heading') }}" />
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="">Package Type</label>
-                            <select class="form-control js-example-basic-single" required name="package_for">
-                                <option value="">-- Select Package Type --</option>
-                                @foreach($package_types as $p)
-                                    <option value="{{ $p['package_slug'] }}" {{ (old('package_for') != "") ? (old('package_for') == $p['package_slug'] )? 'selected' : '' : '' }} >{{ $p['package_name'] }}</option>
-                                @endforeach
-                            </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Package Show In Front</label>

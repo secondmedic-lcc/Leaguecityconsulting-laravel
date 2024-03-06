@@ -22,7 +22,7 @@
                             <select class="form-control js-example-basic-single" required name="package_for">
                                 <option value="">-- Select Package Type --</option>
                                 @foreach($package_types as $p)
-                                    <option value="{{ $p['package_slug'] }}"  {{ ($packages->package_for == $p['package_slug']) ? 'selected' : ''; }} >{{ $p['package_name'] }}</option>
+                                    <option value="{{ $p['id'] }}"  {{ ($packages->package_for == $p['id']) ? 'selected' : ''; }} >{{ $p['package_name'] }}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -6,16 +6,10 @@
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="mb-1">Packages List</h6>
+                        <h6 class="mb-1">Manage Package Plans List</h6>
                     </div>
-                    <div class="dropdown  filter-dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class='bx bx-menu-alt-right'></i>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><h6>Quick Actions</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('packages.create'); }}">Add Packages</a></li>
-                        </ul>
+                    <div class="filter-dropdown">
+                        <a class="btn btn-primary" href="{{ url('admin/packages/create?package_id='.@$_GET['package_id']); }}">Add Plans</a>
                     </div>
                 </div>
                 <div class="table-responsive web-overflow mt-4">
@@ -23,9 +17,10 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Package For</th>
                                 <th>Name</th>
                                 <th>Heading</th>
+                                <th>Monthly</th>
+                                <th>USD</th>
                                 <th>In Front</th>
                                 <th>Created At</th>
                                 <th class="text-end">Action</th>
@@ -38,13 +33,14 @@
                             @foreach($packages as $s)
                                 <tr>
                                     <td>{{ $a++; }}</td>
-                                    <td>{{ $s['package_for']; }}</td>
                                     <td>{{ $s['name']; }}</td>
                                     <td>{{ $s['heading']; }}</td>
+                                    <td>{{ $s['monthly_inr']; }}</td>
+                                    <td>{{ $s['monthly_usd']; }}</td>
                                     <td>{{ ($s['show_front'] == 1) ? "Show" : "Hide"; }}</td>
                                     <td>{{ date("d M, Y", strtotime($s['created_at'])); }}</td>
                                     <td class="text-end">
-                                        <a href="{{ route('packages.sub-keypoints', $s['id']); }}" class="btn btn-primary text-white">
+                                        <a href="{{ route('packages.sub-keypoints', $s['id']); }}" class="btn btn-primary text-white" target="_blank" >
                                             <i class="fa fa-plus"></i>
                                         </a>
                                         <a href={{ url('/admin/packages/'.$s['id']) }} class="btn btn-warning btn-xs text-white">

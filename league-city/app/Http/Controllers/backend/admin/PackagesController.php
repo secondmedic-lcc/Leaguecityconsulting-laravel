@@ -18,11 +18,19 @@ class PackagesController extends Controller
     {
         $page_name = "packages/list";
         
-        $page_title = "Manage packages";
+        $page_title = "Manage Package Plans";
         
         $current_page = "packages";
 
-        $packages = Packages::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+        if(isset($_GET['package_id']) && $_GET['package_id'] != ""){
+
+            $packages = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id']))->orderBy('id','desc')->paginate(20);
+
+        }else{
+           
+            $packages = Packages::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+
+        }
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','packages'));
 
@@ -32,7 +40,7 @@ class PackagesController extends Controller
     {
         $page_name = "packages/add";
         
-        $page_title = "Manage packages";
+        $page_title = "Manage Package Plans";
         
         $current_page = "packages";
 
@@ -102,7 +110,7 @@ class PackagesController extends Controller
 
                 $result2 = SeoData::create($data2);
 
-                return redirect()->route('packages')->with('success', 'Packages created successfully.');
+                return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages created successfully.');
             
             }else{
             
@@ -116,7 +124,7 @@ class PackagesController extends Controller
     {
         $page_name = "packages/edit";
         
-        $page_title = "Manage packages";
+        $page_title = "Manage Package Plans";
         
         $current_page = "packages";
         
@@ -188,7 +196,7 @@ class PackagesController extends Controller
 
             SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->update($data2);
 
-            return redirect()->back()->with('success', 'Packages updated successfully.');
+            return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages updated successfully.');
         }
     }
 
@@ -198,7 +206,7 @@ class PackagesController extends Controller
 
         $result = Packages::where(array('id'=>$id))->update($data);
 
-        return redirect()->route('packages')->with('success', 'Packages deleted successfully.');
+        return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages deleted successfully.');
     }
     
 

@@ -51,11 +51,15 @@
                                 <td>{{ $packageType->package_slug }}</td>
                                 <td>{{ $packageType->status == 1 ? 'Active' : 'Inactive' }}</td>
                                 <td>
-                                    <a href="{{ route('package.types.edit', $packageType->id) }}" class="btn btn-primary text-white">
+                                    <a href="{{ route('package.types.edit', $packageType->id) }}" class="btn btn-warning text-white my-2">
                                         <i class="fa fa-edit"></i>
                                     </a>
+
+                                    <a href="{{ url('admin/packages?package_id='.$packageType->id); }}" class="btn btn-primary my-2 text-white">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
                                     
-                                    <a href="javascript:void(0);" url={{ route('package.types.destroy', $packageType->id) }} class="btn btn-danger text-white btn-delete">
+                                    <a href="javascript:void(0);" url={{ route('package.types.destroy', $packageType->id) }} class="btn btn-danger text-white btn-delete my-2">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
