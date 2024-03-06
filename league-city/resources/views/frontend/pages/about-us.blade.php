@@ -60,11 +60,13 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="section-heading with-p mb-2">Rajneesh Diwedi</h2>
+                <h2 class="section-heading with-p mb-2">Rajneesh Diwedi, <span class="heading-info">CEO</span></h2>
                 <div class="line"></div>
-                <p class="heading-info text-white">CEO</p>
-                <p class="mb-0">As CEO, I'm excited to introduce League City Consulting, a company specializing in creating top-quality websites, custom software, and keeping your IT systems running smoothly, all tailored specifically to your needs. Our team of experts, from developers and designers to IT whizzes, are here to listen to what you want and make it happen. We pride ourselves on delivering projects on time and exceeding your expectations.So, if you're looking for amazing results and a way to shine in the digital world, look no further than League City Consulting! We appreciate you considering us.
-                </p>
+                <p class="heading-info text-white">Greetings, I am Rajneesh Dwivedi, CEO of League City Consulting. Welcome to the League City Consulting website.</p>
+                <p>At League City Consulting, we have established ambitious objectives and have collaborated with leading experts in various fields. Through delivering unparalleled solutions, we aim to achieve sustained growth amidst challenging external landscapes.</p>
+                <p>In our pursuit to become a premier consulting firm, we remain committed to pushing boundaries across development, technology, quality assurance, safety, and environmental sustainability.</p>
+                <p> Through our cutting-edge offerings and client-centric approach, we are dedicated to delivering exceptional value to all stakeholders. We sincerely appreciate your ongoing interest and support for League City Consulting.</p>
+                <p class="mb-0">Thank you.</p>
             </div>
         </div>
     </div>
@@ -141,6 +143,18 @@
                     </div>
                     <div class="item">
                         <div class="box">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/geetanjalikagra.webp');">
+                            </div>
+                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/geetanjalikagra.webp');">
+                                </div>
+                            </div>
+                            <h3>Geetanjali Kagra</h3>
+                            <p>HR</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jiteshvishwakarma.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
@@ -151,18 +165,30 @@
                             <p>Motion Graphics Designer</p>
                         </div>
                     </div>
-                    <!-- <div class="item">
+                    <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.webp');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/shubhamshinde.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/shubhamshinde.webp');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/shubhamshinde.webp');">
                                 </div>
                             </div>
                             <h3>Shubham Shinde</h3>
                             <p>Social Media Ads Manager</p>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="item">
+                        <div class="box">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/sumeetkaur.webp');">
+                            </div>
+                            <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/sumeetkaur.webp');">
+                                </div>
+                            </div>
+                            <h3>Sumeet Kaur</h3>
+                            <p>Digital Marketing Assistant</p>
+                        </div>
+                    </div>
                     <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/swapnilgawde.webp');">
@@ -211,18 +237,18 @@
                             <p>Software Developer</p>
                         </div>
                     </div>
-                    <!-- <div class="item">
+                    <div class="item">
                         <div class="box">
-                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.webp');">
+                            <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/himanshudevgade.webp');">
                             </div>
                             <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend'); }}/images/shape.svg')">
-                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/himanshudevgade.webp');">
+                                <div class="shape" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/himanshudevgade.webp');">
                                 </div>
                             </div>
                             <h3>Himanshu Devgade</h3>
                             <p>Software Developer</p>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/jitendrapratapsingh.webp');">

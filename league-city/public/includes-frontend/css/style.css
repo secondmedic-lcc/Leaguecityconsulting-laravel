@@ -2593,6 +2593,10 @@ h6 .light {
 }
 .ceo-section .heading-info {
     font-size: 18px;
+    font-family: var(--fontMedium);
+}
+.ceo-section p {
+    margin-bottom: 10px;
 }
 .ceo-section .ceo-img {
     position: relative;
@@ -2676,8 +2680,8 @@ h6 .light {
     padding-top: 40px;
 }
 .team-section .box .main-img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     background-size: auto 190px;
     background-position: top center;
     background-repeat: no-repeat;
