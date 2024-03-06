@@ -62,7 +62,7 @@
             <div class="col-lg-6">
                 <h2 class="section-heading with-p mb-2">Rajneesh Diwedi, <span class="heading-info">CEO</span></h2>
                 <div class="line"></div>
-                <p class="heading-info text-white">Greetings, I am Rajneesh Dwivedi, CEO of League City Consulting. Welcome to the League City Consulting website.</p>
+                <p class="heading-info text-white">Greetings, I am Rajneesh Dwivedi, CEO of League City Consulting.</p>
                 <p>At League City Consulting, we have established ambitious objectives and have collaborated with leading experts in various fields. Through delivering unparalleled solutions, we aim to achieve sustained growth amidst challenging external landscapes.</p>
                 <p>In our pursuit to become a premier consulting firm, we remain committed to pushing boundaries across development, technology, quality assurance, safety, and environmental sustainability.</p>
                 <p> Through our cutting-edge offerings and client-centric approach, we are dedicated to delivering exceptional value to all stakeholders. We sincerely appreciate your ongoing interest and support for League City Consulting.</p>
