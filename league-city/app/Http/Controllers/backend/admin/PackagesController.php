@@ -177,7 +177,7 @@ class PackagesController extends Controller
                 }
             }
 
-            $page_link = "packages/".Str::slug($request->name."-".$id);
+            $page_link = "packages/". $url_slug;
             $data2['page_link'] = $page_link;
             $data2['service_id'] = $id;
             $data2['page_name'] = "packages-details";

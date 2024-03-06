@@ -1,18 +1,15 @@
 @php
-use App\Models\SeoData;
+    use App\Models\SeoData;
 
-$link = str_replace(url('') . '/', '', request()->url());
+    $link = str_replace(url('') . '/', '', request()->url());
 
-if ($link != '' && $link != null && $link != url('')) {
-$page_link = $link;
-} else {
-$page_link = 'home';
-}
+    if ($link != '' && $link != null && $link != url('')) {
+       
+        $page_link = $link;
+    
+    } else { $page_link = 'home';  }
 
-$seo_data = SeoData::where(['page_link' => $page_link])
-->get()
-->first();
-
+    $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 @endphp
 
 <!DOCTYPE html>

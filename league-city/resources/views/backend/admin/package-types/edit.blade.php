@@ -19,9 +19,21 @@
                             <label for="package_slug">Package Slug</label>
                             <input type="text" class="form-control" id="package_slug" name="package_slug" value="{{ $packageType->package_slug }}" required>
                         </div>
-                        <div class="col-md-4 mt-3">
+                        <div class="col-md-4 form-group mt-3">
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="{{ route('package.types') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <label class="form-label" for="">Meta Title</label>
+                            <textarea class="form-control text-dark" name="meta_title" required value="{{ @$seo_data->meta_title; }}" >{{ @$seo_data->meta_title; }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <label class="form-label" for="">Meta Key</label>
+                            <textarea class="form-control text-dark" name="meta_key" required value="{{ @$seo_data->meta_key; }}" >{{ @$seo_data->meta_key; }}</textarea>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <label class="form-label" for="">Meta Description</label>
+                            <textarea name="meta_description" class="form-control text-dark"  required>{{ @$seo_data->meta_description; }}</textarea>
                         </div>
                     </div>
                 </form>

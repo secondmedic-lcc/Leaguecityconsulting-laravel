@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PackageTypes;
+use App\Models\SeoData;
 
 class PackageTypesController extends Controller
 {
@@ -40,8 +41,10 @@ class PackageTypesController extends Controller
         $page_title = "Manage Package Type";
         
         $current_page = "package-types";
+        
+        $seo_data = SeoData::where(array('service_id'=>$packageType->id,'page_name'=>'package-type'))->get()->first();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','packageType'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','packageType','seo_data'));
     }
 
     public function update(Request $request, PackageTypes $packageType)
@@ -52,6 +55,23 @@ class PackageTypesController extends Controller
         ]);
 
         $packageType->update($request->all());
+
+        $page_link = "packages/". $request->package_slug;
+        $data2['page_link'] = $page_link;
+        $data2['service_id'] = $packageType->id;
+        $data2['page_name'] = "package-type";
+        $data2['meta_title'] = $request->meta_title;
+        $data2['meta_key'] = $request->meta_key;
+        $data2['meta_description'] = $request->meta_description;
+        $data2['canonical'] = $page_link;
+        
+        $check = SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$packageType->id))->first();
+
+        if(empty($check)){
+            SeoData::insert($data2);
+        }else{
+            SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$packageType->id))->update($data2);
+        }
 
         return redirect()->route('package.types')->with('success', 'Package type updated successfully.');
     }
