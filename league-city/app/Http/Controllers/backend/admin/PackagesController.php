@@ -8,6 +8,7 @@ use App\Models\Packages;
 use App\Models\PackageKeyPoint;
 use App\Models\SeoData;
 use App\Models\PackageSubKeyPoint;
+use App\Models\PackageTypes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,7 +36,9 @@ class PackagesController extends Controller
         
         $current_page = "packages";
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page'));
+        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','package_types'));
     }
 
     public function store(Request $request)
@@ -123,7 +126,9 @@ class PackagesController extends Controller
         
         $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'packages-details'))->get()->first();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','packages','seo_data','packagesKeyPoint'));
+        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','packages','seo_data','packagesKeyPoint','package_types'));
     }
 
     public function update(Request $request, $id)

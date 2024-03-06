@@ -11,7 +11,9 @@
                             <label class="form-label" for="">Package For</label>
                             <select class="form-control js-example-basic-single" required name="package_for">
                                 <option value="">-- Select Package For --</option>
-                                <option value="seo-packages">SEO Packages</option>
+                                @foreach($package_types as $p)
+                                    <option value="{{ $p['package_slug'] }}" {{ (old('package_for') != "") ? (old('package_for') == $p['package_slug'] )? 'selected' : '' : '' }} >{{ $p['package_name'] }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">

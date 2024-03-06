@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\WebsiteBannersController;
 use App\Http\Controllers\backend\admin\PackagesController;
 use App\Http\Controllers\backend\admin\PackageIncludesController;
+use App\Http\Controllers\backend\admin\PackageTypesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -240,6 +241,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('package-includes-delete/{id}', [PackageIncludesController::class, 'destroy'])->name('package.includes.destroy');
 
+
+    /* All Routes for Package Types */
+    Route::get('package-types', [PackageTypesController::class, 'index'])->name('package.types');
+
+    Route::post('package-types', [PackageTypesController::class, 'store'])->name('package.types.store');
+
+    Route::get('package-types/{packageType}', [PackageTypesController::class, 'edit'])->name('package.types.edit');
+
+    Route::post('package-types/{packageType}', [PackageTypesController::class, 'update'])->name('package.types.update');
+
+    Route::get('package-types-delete/{id}', [PackageTypesController::class, 'destroy'])->name('package.types.destroy');
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

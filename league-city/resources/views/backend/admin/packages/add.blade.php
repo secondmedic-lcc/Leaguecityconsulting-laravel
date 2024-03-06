@@ -19,15 +19,17 @@
                             <label class="form-label" for="">Package Type</label>
                             <select class="form-control js-example-basic-single" required name="package_for">
                                 <option value="">-- Select Package Type --</option>
-                                <option value="seo-packages">SEO Packages</option>
+                                @foreach($package_types as $p)
+                                    <option value="{{ $p['package_slug'] }}" {{ (old('package_for') != "") ? (old('package_for') == $p['package_slug'] )? 'selected' : '' : '' }} >{{ $p['package_name'] }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Package Show In Front</label>
                             <select class="form-control js-example-basic-single" required name="show_front">
                                 <option value="">-- Show Package In Front --</option>
-                                <option value="1" {{ (old('show_front') == 1) ? 'selected' : ''; }} >Yes</option>
-                                <option value="0" {{ (old('show_front') == 0) ? 'selected' : ''; }} >No</option>
+                                <option value="1" {{  (old('show_front') != "") ? (old('show_front') == 1) ? 'selected' : '' : ''; }} >Yes</option>
+                                <option value="0" {{ (old('show_front') != "") ? (old('show_front') == 0) ? 'selected' : '' : ''; }} >No</option>
                             </select>
                         </div>
                         <div class="col-md-3 mb-3">

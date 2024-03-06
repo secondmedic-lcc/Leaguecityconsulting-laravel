@@ -91,6 +91,16 @@
                     </ul>
                 </li>
 
+                <li class="mb-1 dropdown {{ ($current_page == 'package-types') ? 'active' : ''; }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-image"></i> <span>Man. Package Type</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('package.types'); }}">Package Type List</a></li>
+                    </ul>
+                </li>
+
                 <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage Packages</span></font>

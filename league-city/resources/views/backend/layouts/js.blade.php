@@ -144,5 +144,21 @@
 </script>
 @endif
 
+
+
+
+@if(@$current_page == "package-types")
+<script>
+    $('#package_name').change(function(e){
+
+        var slug = $(this).val();
+
+        var name = slug.toLowerCase().trim();
+
+        $('#package_slug').val(name.replace(/\s+/g, '-'));
+    });
+</script>
+@endif
+
 </body>
 </html>

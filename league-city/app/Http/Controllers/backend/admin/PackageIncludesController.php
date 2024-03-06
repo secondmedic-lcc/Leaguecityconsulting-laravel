@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PackageIncludes;
+use App\Models\PackageTypes;
 
 class PackageIncludesController extends Controller
 {
@@ -30,7 +31,9 @@ class PackageIncludesController extends Controller
         
         $current_page = "package-includes";
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page'));
+        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','package_types'));
     }
 
     public function store(Request $request)
@@ -67,7 +70,9 @@ class PackageIncludesController extends Controller
         
         $includes = PackageIncludes::where(array('status'=>1,'id'=>$id))->get()->first();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','includes'));
+        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','includes','package_types'));
     }
 
     public function update(Request $request, $id)
