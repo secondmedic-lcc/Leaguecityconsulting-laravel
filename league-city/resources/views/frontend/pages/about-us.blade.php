@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="section-heading with-p mb-2">Rajneesh Diwedi, <span class="heading-info">CEO</span></h2>
+                <h2 class="section-heading with-p mb-2">Rajneesh Diwedi <span class="heading-info">CEO</span></h2>
                 <div class="line"></div>
                 <p class="heading-info text-white">Greetings, I am Rajneesh Dwivedi, CEO of League City Consulting.</p>
                 <p>At League City Consulting, we have established ambitious objectives and have collaborated with leading experts in various fields. Through delivering unparalleled solutions, we aim to achieve sustained growth amidst challenging external landscapes.</p>
