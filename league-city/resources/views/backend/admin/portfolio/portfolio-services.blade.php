@@ -22,10 +22,10 @@
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
                         </div>
 
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <label>Description Heading</label>
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ ($portfolio_details['desc_heading'] != '' && $portfolio_details['desc_heading'] != null) ? $portfolio_details['desc_heading'] : $portfolio_details['sub_heading']; }}" />
-                        </div>
+                        </div> --}}
                         <div class="col-md-12 mt-3">
                             <label>Portfolio Description</label>
                             <textarea name="description" class="form-control text-dark" cols="30" rows="5">{{ $portfolio_details['description']; }}</textarea>
