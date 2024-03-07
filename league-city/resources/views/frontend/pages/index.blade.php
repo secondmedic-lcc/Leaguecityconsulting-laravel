@@ -264,7 +264,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">Transforming Industries with Next-Gen Innovation</h2>
-                <p class="heading-info">Beyond automation, beyond disruption. We engineer human-centered innovation with powerful simplicity. Unleash your unexpected tomorrow..</p>
+                <p class="heading-info">Beyond automation, beyond disruption. We engineer human-centered innovation with powerful simplicity. Unleash your unexpected tomorrow.</p>
             </div>
         </div>
         <div class="row g-0">

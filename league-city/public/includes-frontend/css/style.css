@@ -76,7 +76,7 @@ h6 .light {
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 40px;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.8);
 }
 .section-heading + .heading-info.text-white {
     color: rgba(255, 255, 255, 0.8) !important;
@@ -2088,6 +2088,9 @@ h6 .light {
     border: none;
     position: relative;
 }
+.portfolio-process .accordion .accordion-item:last-child {
+    margin-bottom: 0px;
+}
 .portfolio-process .accordion .accordion-button:before {
     position: absolute;
     content: "";
@@ -2130,6 +2133,7 @@ h6 .light {
 
 .portfolio-whychoose .box {
     padding: 30px;
+    height: 100%;
     border: 1px solid var(--bordercolor);
     background-color: var(--whitecolor);
     transition: all 0.3s ease-in-out;
@@ -2166,7 +2170,7 @@ h6 .light {
         margin-bottom: 15px;
     }
     .singleportfolio .box {
-        padding: 20px;
+        padding: 15px;
     }
     .singleportfolio .box .icon {
         font-size: 22px;
@@ -2201,6 +2205,9 @@ h6 .light {
         padding: 10px 20px;
         font-size: 16px;
     }
+    .portfolio-process .accordion .accordion-item {
+        margin-bottom: 10px;
+    }
     .portfolio-process .accordion .accordion-body {
         padding: 0px 20px 20px;
         font-size: 14px;
@@ -2209,7 +2216,7 @@ h6 .light {
         margin-bottom: 5px;
     }
     .portfolio-whychoose .box {
-        padding: 20px;
+        padding: 15px;
     }
     .portfolio-whychoose .box i {
         font-size: 22px;
@@ -3162,3 +3169,47 @@ h6 .light {
     }
 }
 /* pricingModalForm Work End */
+
+/* Single Service Work Start */
+.service-technologies * {
+    color: var(--whitecolor);
+}
+.service-technologies .box {
+    background-color: #202028;
+    text-align: center;
+    padding: 30px;
+    height: 100%;
+}
+.service-technologies .box img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.service-technologies .box p {
+    font-family: var(--fontMedium);
+    font-size: 18px;
+    margin: 0px;
+}
+.service-portfolio-process {
+    padding-top: 60px;
+    margin-top: 0px;
+}
+.service-portfolio-process .section-heading {
+    color: var(--blackcolor);
+}
+@media (max-width: 767px) {
+    .service-technologies .box {
+        padding: 15px;
+    }
+    .service-technologies .box img {
+        margin-bottom: 15px;
+    }
+    .service-technologies .box p {
+        font-size: 16px;
+    }
+    .service-portfolio-process {
+        padding-top: 20px;
+    }
+}
+/* Single Service Work End */

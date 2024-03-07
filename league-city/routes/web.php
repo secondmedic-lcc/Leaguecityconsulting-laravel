@@ -31,6 +31,7 @@ Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::class, 'index']);
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
+Route::get('/singleservice', [App\Http\Controllers\SingleServiceController::class, 'index']);
 
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);
 
@@ -201,7 +202,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('website-banner-delete/{id}', [WebsiteBannersController::class, 'destroy'])->name('website-banner.destroy');
 
 
-    
+
     /* All Routes for Packages */
     Route::get('packages', [PackagesController::class, 'index'])->name('packages');
 
@@ -227,7 +228,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('packages-sub-keypoints-delete/{id}', [PackagesController::class, 'deleteSubKeyPoint'])->name('packages.sub-keypoints.delete');
 
-    
+
     /* All Routes for Packages  Includes*/
     Route::get('package-includes', [PackageIncludesController::class, 'index'])->name('package.includes');
 
