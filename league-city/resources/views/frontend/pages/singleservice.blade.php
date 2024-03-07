@@ -139,6 +139,49 @@
     </div>
 </section>
 
+
+<section class="portfolio-whychoose section-padding pb-0">
+    <div class="container">
+        <div class="row align-items-center portfolio-heading-mb">
+            <div class="col-lg-6">
+                <h2 class="section-heading">Why Choose League City for Mobile App Development?</h2>
+            </div>
+            <div class="col-lg-6">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ullam quas quibusdam odit sapiente nemo tempore laborum error neque ducimus? Ab sapiente nam illum quae adipisci delectus? Sint, impedit sequi!</p>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="box">
+                    <i class="fas fa-percent"></i>
+                    <h3>Qualified App Developers</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="box">
+                    <i class="fas fa-percent"></i>
+                    <h3>Client-centric Approach</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="box">
+                    <i class="fas fa-percent"></i>
+                    <h3>Best UX/UI Experts</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="box">
+                    <i class="fas fa-percent"></i>
+                    <h3>Dedicated Teams</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="service-portfolio-process portfolio-process section-padding pb-0">
     <div class="container">
         <div class="row">
@@ -148,7 +191,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-lg-8 offset-lg-2">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -210,49 +253,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="portfolio-whychoose section-padding pb-0">
-    <div class="container">
-        <div class="row align-items-center portfolio-heading-mb">
-            <div class="col-lg-6">
-                <h2 class="section-heading">Why Choose League City for Mobile App Development?</h2>
-            </div>
-            <div class="col-lg-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ullam quas quibusdam odit sapiente nemo tempore laborum error neque ducimus? Ab sapiente nam illum quae adipisci delectus? Sint, impedit sequi!</p>
-            </div>
-        </div>
-        <div class="row g-3">
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Qualified App Developers</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Client-centric Approach</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Best UX/UI Experts</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Dedicated Teams</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
                 </div>
             </div>
         </div>
