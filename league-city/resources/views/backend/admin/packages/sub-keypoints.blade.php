@@ -3,6 +3,7 @@
     <div class="col-md-12">
         @include('backend.layouts.alert')
         <div class="card">
+        
             <div class="card-body">
                 <form action="{{ route('packages.sub-keypoints.store'); }}" method="POST">
                 @csrf
@@ -11,12 +12,9 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Select Key Point</label>
-                                <select class="form-control js-example-basic-single" required name="keypoint_id">
-                                    <option value="">-- Select Key Point --</option>
-                                    @foreach($packagesKeyPoint as $k)
-                                        <option value="{{ $k->id; }}" {{ (old('sub_keypoints') == $k->id) ? 'selected' : ''; }} >{{ $k->key_point; }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" value="{{ $packagesKeyPoint->key_point; }}" class="form-control text-dark" disabled />
+
+                                <input type="hidden" name="keypoint_id" id="keypoint_id" value="{{ $packagesKeyPoint->id; }}" />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -59,12 +57,9 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <select class="form-control js-example-basic-single" required name="keypoint_id">
-                                            <option value="">-- Select Key Point --</option>
-                                            @foreach($packagesKeyPoint as $k)
-                                                <option value="{{ $k->id; }}" {{ ($subkeyPoint->keypoint_id == $k->id) ? 'selected' : ''; }} >{{ $k->key_point; }}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" value="{{ $packagesKeyPoint->key_point; }}" class="form-control text-dark" disabled />
+        
+                                        <input type="hidden" name="keypoint_id" id="keypoint_id" value="{{ $packagesKeyPoint->id; }}" />
                                     </div>
                                 </div>
                                 <div class="col-md-3">

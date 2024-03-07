@@ -91,7 +91,7 @@
                     </ul>
                 </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'package-types' || $current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
+                <li class="mb-1 dropdown {{ ($current_page == 'package-types' || $current_page == 'packages' || $current_page == 'sub-keypoints' || $current_page == 'package-includes') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage Package</span></font>
                         <span class="bx bx-chevron-right"></span>
@@ -112,7 +112,7 @@
                     </ul>
                 </li> --}}
 
-                <li class="mb-1 dropdown {{ ($current_page == 'package-includes') ? 'active' : ''; }}">
+                {{-- <li class="mb-1 dropdown {{ ($current_page == 'package-includes') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Packages Includes</span></font>
                         <span class="bx bx-chevron-right"></span>
@@ -121,7 +121,7 @@
                         <li><a class="dropdown-item" href="{{ route('package.includes.create'); }}">Add Includes</a></li>
                         <li><a class="dropdown-item" href="{{ route('package.includes'); }}">Includes List</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

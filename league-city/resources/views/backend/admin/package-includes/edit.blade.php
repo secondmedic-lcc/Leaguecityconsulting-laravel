@@ -11,12 +11,9 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label" for="">Package For</label>
-                            <select class="form-control js-example-basic-single" required name="package_for">
-                                <option value="">-- Select Package For --</option>
-                                @foreach($package_types as $p)
-                                    <option value="{{ $p['package_slug'] }}"  {{ ($includes->package_for == $p['package_slug']) ? 'selected' : ''; }} >{{ $p['package_name'] }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" value="{{ $package_types->package_name; }}" class="form-control text-dark" disabled />
+    
+                            <input type="hidden" name="package_for" id="package_for" value="{{ $package_types->id; }}" />
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label" for="">Title</label>

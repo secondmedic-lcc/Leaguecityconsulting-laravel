@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PackageTypes;
 use App\Models\SeoData;
+use App\Models\PackagePageDetails;
 
 class PackageTypesController extends Controller
 {
@@ -84,6 +85,49 @@ class PackageTypesController extends Controller
         $result = PackageTypes::where(array('id'=>$id))->update($data);
 
         return redirect()->route('package.types')->with('success', 'Package type deleted successfully.');
+    }
+
+    public function package_page_details(Request $request, $id) {
+        
+
+        $packagePageDetails = PackagePageDetails::where('package_id', $id)->first();
+
+        if(@$request->main_heading != "" && @$request->sub_heading != ""){
+
+            $data = [
+                'package_id' => $id,
+                'main_heading' => $request->main_heading,
+                'sub_heading' => $request->sub_heading,
+            ];
+        }
+
+        if(@$request->enterprise_title != "" && @$request->enterprise_details != ""){
+
+            $data = [
+                'package_id' => $id,
+                'enterprise_title' => $request->enterprise_title,
+                'enterprise_details' => $request->enterprise_details,
+            ];
+        }
+
+        if(@$request->includes_heading != "" && @$request->includes_details != ""){
+
+            $data = [
+                'package_id' => $id,
+                'includes_heading' => $request->includes_heading,
+                'includes_details' => $request->includes_details,
+            ];
+        }
+        
+
+        if ($packagePageDetails) {
+            $packagePageDetails->update($data);
+        } else {
+            PackagePageDetails::create($data);
+        }
+
+        return redirect()->back()->with('success', 'Package page details updated successfully.');
+
     }
 }
 

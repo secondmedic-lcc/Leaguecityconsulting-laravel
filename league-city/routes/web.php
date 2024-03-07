@@ -207,7 +207,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('packages/create', [PackagesController::class, 'create'])->name('packages.create');
 
-    Route::post('packages', [PackagesController::class, 'store'])->name('packages.store');
+    Route::post('packages/store/{id}/{name}', [PackagesController::class, 'store'])->name('packages.store');
 
     Route::get('packages/{id}', [PackagesController::class, 'edit'])->name('packages.edit');
 
@@ -219,7 +219,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('packages-key-point/{id}', [PackagesController::class, 'deleteKeyPoint'])->name('packages.delete.keypoint');
 
-    Route::get('packages-sub-keypoints/{id}', [PackagesController::class, 'subKeyPoints'])->name('packages.sub-keypoints');
+    Route::get('packages-sub-keypoints/{package_id}/{keypoint}', [PackagesController::class, 'subKeyPoints'])->name('packages.sub-keypoints');
 
     Route::post('packages-sub-keypoints', [PackagesController::class, 'subKeyPoints_store'])->name('packages.sub-keypoints.store');
 
@@ -252,6 +252,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('package-types/{packageType}', [PackageTypesController::class, 'update'])->name('package.types.update');
 
     Route::get('package-types-delete/{id}', [PackageTypesController::class, 'destroy'])->name('package.types.destroy');
+
+    Route::post('package/details/{packageType}', [PackageTypesController::class, 'package_page_details'])->name('package.page.details');
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

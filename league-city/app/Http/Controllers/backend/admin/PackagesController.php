@@ -9,6 +9,8 @@ use App\Models\PackageKeyPoint;
 use App\Models\SeoData;
 use App\Models\PackageSubKeyPoint;
 use App\Models\PackageTypes;
+use App\Models\PackagePageDetails;
+use App\Models\PackageIncludes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,17 +24,17 @@ class PackagesController extends Controller
         
         $current_page = "packages";
 
-        if(isset($_GET['package_id']) && $_GET['package_id'] != ""){
+        $small = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id'],'name'=>'small'))->first();
+        
+        $mid = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id'],'name'=>'mid'))->first();
+        
+        $large = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id'],'name'=>'large'))->first();
+       
+        $packagePageDetails = PackagePageDetails::where('package_id', $_GET['package_id'])->first();
 
-            $packages = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id']))->orderBy('id','desc')->paginate(20);
+        $includes = PackageIncludes::where(array('status'=>1,'package_for'=>$_GET['package_id']))->orderBy('id','desc')->paginate(20);
 
-        }else{
-           
-            $packages = Packages::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
-
-        }
-
-        return view('backend/admin/main', compact('page_name','page_title','current_page','packages'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','small','mid','large','packagePageDetails','includes'));
 
     }
 
@@ -44,22 +46,20 @@ class PackagesController extends Controller
         
         $current_page = "packages";
 
-        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+        $package = Packages::where(array('status'=>1,'package_for'=>$_GET['package_id'],'name'=>$_GET['business_type']))->first();
+        
+        $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$package->id))->get();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','package_types'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','package','packagesKeyPoint'));
     }
 
-    public function store(Request $request)
+
+    public function store(Request $request, $id, $name)
     {
         $validator = Validator::make($request->all(), [
-            'package_for' => 'required|string',
-            'name' => 'required|string',
-            'heading' => 'required|string',
+            'package_for' => 'required',
             'monthly_inr' => 'required',
             'monthly_usd' => 'required',
-            'yearly_inr' => 'required',
-            'yearly_usd' => 'required',
-            'description' => 'string',
         ]);
 
         if ($validator->fails()) {
@@ -68,147 +68,80 @@ class PackagesController extends Controller
 
         } else{
           
-            $url_slug = Str::slug($request->name."-");
-            
-            $check = Packages::where(array('url_slug'=>$url_slug))->first();
+            $check = Packages::where(array('url_slug'=>$name,'package_for'=>$id))->first();
 
             if(empty($check)){
 
                 $data['package_for'] = $request->package_for;
-                $data['name'] = $request->name;
-                $data['url_slug'] = $url_slug;
-                $data['heading'] = $request->heading;
+                $data['name'] = $name;
+                $data['url_slug'] = $name;
                 $data['monthly_inr'] = $request->monthly_inr;
                 $data['monthly_usd'] = $request->monthly_usd;
                 $data['yearly_inr'] = $request->yearly_inr;
                 $data['yearly_usd'] = $request->yearly_usd;
-                $data['description'] = $request->description;
-                $data['show_front'] = $request->show_front;
+                $data['show_front'] = 1;
 
                 $result = Packages::create($data);
-        
-                if(count($request->key_point) > 0){
-                
-                    foreach($request->key_point as $key => $k){
 
-                        $key_data['package_id'] = $result->id;
+                if($request->key_point != ""){
 
-                        $key_data['key_point'] = $k;
+                    if(count($request->key_point) > 0){
+                    
+                        foreach($request->key_point as $key => $k){
 
-                        PackageKeyPoint::create($key_data);
+                            if($k != ""){
+
+                                $key_data['package_id'] = $result->id;
+
+                                $key_data['key_point'] = $k;
+
+                                PackageKeyPoint::create($key_data);
+                            }
+                        }
                     }
                 }
 
-                $page_link = "packages/". $url_slug;
-                $data2['page_link'] = $page_link;
-                $data2['page_name'] = "packages-details";
-                $data2['meta_title'] = $request->meta_title;
-                $data2['meta_key'] = $request->meta_key;
-                $data2['meta_description'] = $request->meta_description;
-                $data2['canonical'] = $page_link;
-                $data2['service_id'] = $result->id;
-
-                $result2 = SeoData::create($data2);
-
-                return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages created successfully.');
+                return redirect()->back()->with('success', 'Packages created successfully.');
             
             }else{
-            
-                return redirect()->back()->with('error', 'Another Product Already Exist From this Name')->withInput();
-            
-            }
-        }
-    }
+                
+                $data['package_for'] = $request->package_for;
+                $data['name'] = $name;
+                $data['url_slug'] = $name;
+                $data['monthly_inr'] = $request->monthly_inr;
+                $data['monthly_usd'] = $request->monthly_usd;
+                $data['yearly_inr'] = $request->yearly_inr;
+                $data['yearly_usd'] = $request->yearly_usd;
+                $data['show_front'] = 1;
 
-    public function edit($id)
-    {
-        $page_name = "packages/edit";
-        
-        $page_title = "Manage Package Plans";
-        
-        $current_page = "packages";
-        
-        $packages = Packages::where(array('status'=>1,'id'=>$id))->get()->first();
-        
-        $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$id))->get();
-        
-        $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'packages-details'))->get()->first();
+                Packages::where(array('name'=>$name,'package_for'=>$id))->update($data);
 
-        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+                if($request->key_point != ""){
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','packages','seo_data','packagesKeyPoint','package_types'));
-    }
+                    if(count($request->key_point) > 0){
 
-    public function update(Request $request, $id)
-    {
-        $validator = Validator::make($request->all(), [
-            'package_for' => 'required|string',
-            'name' => 'required|string',
-            'heading' => 'required|string',
-            'monthly_inr' => 'required',
-            'monthly_usd' => 'required',
-            'yearly_inr' => 'required',
-            'yearly_usd' => 'required',
-            'description' => 'string',
-        ]);
-
-        if ($validator->fails()) {
-
-            return redirect()->back()->withErrors($validator)->withInput();
-
-        } else{
-          
-            $data['package_for'] = $request->package_for;
-            $data['name'] = $request->name;
-            $data['heading'] = $request->heading;
-            $data['monthly_inr'] = $request->monthly_inr;
-            $data['monthly_usd'] = $request->monthly_usd;
-            $data['yearly_inr'] = $request->yearly_inr;
-            $data['yearly_usd'] = $request->yearly_usd;
-            $data['description'] = $request->description;
-            $data['show_front'] = $request->show_front;
-
-            $url_slug = Str::slug($request->name."-");
-            $data['url_slug'] = $url_slug;
-
-            Packages::where(array('status'=>1,'id'=>$id))->update($data);
-
-            if(count($request->key_point) > 0 && $request->key_point[0] != "" ){
-
-                foreach($request->key_point as $key => $k){
-
-                    $key_data['package_id'] = $id;
-
-                    $key_data['key_point'] = $k;
+                        $da = Packages::where(array('name'=>$name,'package_for'=>$id))->first();
                     
-                    PackageKeyPoint::create($key_data);
+                        foreach($request->key_point as $key => $k){
+
+                            if($k != ""){
+
+                                $key_data['package_id'] = $da->id;
+
+                                $key_data['key_point'] = $k;
+
+                                PackageKeyPoint::create($key_data);
+                            }
+                        }
+                    }
                 }
+
+                return redirect()->back()->with('success', 'Packages created successfully.');
+            
             }
-
-            $page_link = "packages/". $url_slug;
-            $data2['page_link'] = $page_link;
-            $data2['service_id'] = $id;
-            $data2['page_name'] = "packages-details";
-            $data2['meta_title'] = $request->meta_title;
-            $data2['meta_key'] = $request->meta_key;
-            $data2['meta_description'] = $request->meta_description;
-            $data2['canonical'] = $page_link;
-
-            SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$id))->update($data2);
-
-            return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages updated successfully.');
         }
     }
 
-    public function destroy($id)
-    {
-        $data = array('status' =>0);
-
-        $result = Packages::where(array('id'=>$id))->update($data);
-
-        return redirect("/admin/packages?package_id=".$request->package_for)->with('success', 'Packages deleted successfully.');
-    }
-    
 
     public function updateKeyPoint(Request $request, $id)
     {
@@ -229,7 +162,7 @@ class PackagesController extends Controller
     }
     
 
-    public function subKeyPoints($id)
+    public function subKeyPoints($pacakage_id, $keypoint)
     {
         $page_name = "packages/sub-keypoints";
         
@@ -237,11 +170,11 @@ class PackagesController extends Controller
         
         $current_page = "sub-keypoints";
         
-        $packages = Packages::where(array('status'=>1,'id'=>$id))->get()->first();
+        $packages = Packages::where(array('status'=>1,'id'=>$pacakage_id))->get()->first();
         
-        $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$id))->get();
+        $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$pacakage_id,'id'=>$keypoint))->first();
         
-        $packageSubKeyPoint = PackageSubKeyPoint::where(array('status'=>1,'package_id'=>$id))->orderBy('id','desc')->get();
+        $packageSubKeyPoint = PackageSubKeyPoint::where(array('status'=>1,'package_id'=>$pacakage_id,'keypoint_id'=>$keypoint))->orderBy('id','desc')->get();
         
         return view('backend/admin/main', compact('page_name','page_title','current_page','packages','packagesKeyPoint','packageSubKeyPoint'));
     }

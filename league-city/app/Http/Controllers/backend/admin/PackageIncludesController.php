@@ -30,8 +30,8 @@ class PackageIncludesController extends Controller
         $page_title = "Manage Package Includes";
         
         $current_page = "package-includes";
-
-        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+        
+        $package_types = PackageTypes::where(array('status'=>1,'id'=>@$_GET['package_id']))->orderBy('package_name','asc')->first();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','package_types'));
     }
@@ -57,7 +57,7 @@ class PackageIncludesController extends Controller
 
         $result = PackageIncludes::create($data);
 
-        return redirect()->route('package.includes')->with('success', 'Package Includes created successfully.');
+        return redirect()->back()->with('success', 'Package Includes created successfully.');
     }
 
     public function edit($id)
@@ -70,7 +70,7 @@ class PackageIncludesController extends Controller
         
         $includes = PackageIncludes::where(array('status'=>1,'id'=>$id))->get()->first();
 
-        $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')->get();
+        $package_types = PackageTypes::where(array('status'=>1,'id'=>$includes->package_for))->orderBy('package_name','asc')->first();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','includes','package_types'));
     }
@@ -96,7 +96,7 @@ class PackageIncludesController extends Controller
 
         PackageIncludes::where(array('status'=>1,'id'=>$id))->update($data);
 
-        return redirect()->route('package.includes')->with('success', 'Package Includes updated successfully.');
+        return redirect()->back()->with('success', 'Package Includes updated successfully.');
     }
 
     public function destroy($id)
@@ -105,7 +105,7 @@ class PackageIncludesController extends Controller
 
         $result = PackageIncludes::where(array('id'=>$id))->update($data);
 
-        return redirect()->route('package.includes')->with('success', 'Package Includes deleted successfully.');
+        return redirect()->back()->with('success', 'Package Includes deleted successfully.');
     }
     
 }
