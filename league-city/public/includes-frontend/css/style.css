@@ -1006,40 +1006,32 @@ h6 .light {
     border-color: var(--themecolor);
     color: var(--whitecolor);
 }
-.technology .left-side .nav-link:hover img,
-.technology .left-side .nav-link.active img {
-    filter: invert(1);
-}
-.technology .left-side .nav-link img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: 5px;
-}
 .technology .right-side {
-    padding: 30px;
-    height: 100%;
+    padding: 40px;
+    min-height: 368px;
     color: var(--whitecolor);
+}
+.technology .right-side img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
 }
 .technology .right-side h3 {
     font-family: var(--fontMedium);
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-.technology .right-side p {
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 22px;
     margin-bottom: 20px;
-    font-size: 18px;
 }
 .technology .right-side ul {
     list-style: none;
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 5px;
+    margin-bottom: 0px;
 }
 .technology .right-side ul li {
-    font-size: 18px;
     padding-left: 22px;
     position: relative;
     width: calc(50% - 7.5px);
@@ -1057,25 +1049,26 @@ h6 .light {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     left: 0px;
-    top: 50%;
-    transform: translate(0, -50%);
+    top: 8px;
     transition: all 0.5s ease-in-out;
 }
-/* .technology .right-side ul li a:hover {
-    color: var(--themecolor);
-    padding-left: 6px;
+.technology .right-side .btn {
+    margin-top: 30px;
 }
-.technology .right-side ul li a:hover:before {
-    background-color: var(--themecolor);
-} */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     .technology .left-side .nav-pills {
         justify-content: start;
     }
-    .technology .left-side .nav-link img {
-        width: 30px;
-        height: 30px;
+    .technology .right-side img {
+        width: 250px;
+        height: 150px;
+        margin-bottom: 15px;
     }
+    .technology .left-side .nav-link {
+        margin: 0px;
+    }
+}
+@media (max-width: 767px) {
     .technology .left-side .nav-link {
         font-size: 12px;
         padding: 10px 15px;
@@ -1083,8 +1076,9 @@ h6 .light {
         min-width: auto;
     }
     .technology .right-side {
-        padding: 15px;
+        padding: 20px 15px;
     }
+
     .technology .right-side h3 {
         font-size: 16px;
         line-height: 22px;
@@ -1093,7 +1087,7 @@ h6 .light {
     .technology .right-side p {
         font-size: 14px;
         line-height: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     .technology .right-side ul {
         gap: 5px;
@@ -1103,6 +1097,9 @@ h6 .light {
         font-size: 14px;
         line-height: 20px;
         padding-right: 0px;
+    }
+    .technology .right-side .btn {
+        margin-top: 15px;
     }
 }
 /* Technologies Work End */

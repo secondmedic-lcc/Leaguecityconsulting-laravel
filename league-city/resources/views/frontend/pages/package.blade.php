@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-center">SEO Packages</h2>
+                <h2 class="section-heading text-center">{{ $package_types->package_name; }}</h2>
             </div>
         </div>
         <div class="row g-3 g-md-5 justify-content-center">
@@ -115,7 +115,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-center">SEO Packages</h2>
+                <h2 class="section-heading text-center">{{ $package_types->package_name; }}</h2>
             </div>
         </div>
         <div class="row g-3 g-md-5 justify-content-center">
@@ -124,7 +124,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="box">
                         <h3 class="box-heading">{{ Str::ucfirst($plan['package']->name) }} Size Business <br />
-                            <small>SEO Packages</small>
+                            <small>{{ $package_types->package_name; }}</small>
                         </h3>
                         <p><b>{{ $plan['package']->monthly_inr; }} INR/{{ $plan['package']->monthly_usd; }} USD</b> Monthly</p>
                         <p>EXCLUSIVE OF ALL TAXES</p>
