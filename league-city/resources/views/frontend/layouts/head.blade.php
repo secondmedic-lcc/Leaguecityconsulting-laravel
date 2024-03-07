@@ -1,15 +1,15 @@
 @php
-    use App\Models\SeoData;
+use App\Models\SeoData;
 
-    $link = str_replace(url('') . '/', '', request()->url());
+$link = str_replace(url('') . '/', '', request()->url());
 
-    if ($link != '' && $link != null && $link != url('')) {
-       
-        $page_link = $link;
-    
-    } else { $page_link = 'home';  }
+if ($link != '' && $link != null && $link != url('')) {
 
-    $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
+$page_link = $link;
+
+} else { $page_link = 'home'; }
+
+$seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 @endphp
 
 <!DOCTYPE html>
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/owl.theme.default.css">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/aos.css">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/style.css">
     <link rel="icon" type="image/x-icon" href="{{ asset('includes-frontend') }}/images/favicon.png">
 

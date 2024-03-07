@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="box">
                     <div class="row">
-                        <div class="col-lg-8 col-md-12">
+                        <div class="col-lg-8 col-md-12" data-aos="fade-up" data-aos-delay="100">
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
                             <form action="{{ url('contact-us'); }}" id="contact-form" method="POST">
@@ -53,7 +53,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="300">
                             <div class="right-side bg-blue">
                                 <h3>Get In Touch</h3>
                                 <p>Unleash the power of personalized assistance. Your questions, our expertise.</p>

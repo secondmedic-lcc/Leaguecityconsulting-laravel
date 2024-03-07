@@ -980,7 +980,8 @@ h6 .light {
 }
 .technology .left-side .nav-pills {
     flex-flow: nowrap;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-direction: unset !important;
     justify-content: center;
 }
