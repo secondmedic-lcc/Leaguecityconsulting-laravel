@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Mobile Number*</label>
-                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" />
+                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">

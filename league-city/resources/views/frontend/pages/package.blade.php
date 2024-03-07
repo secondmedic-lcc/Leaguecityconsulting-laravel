@@ -144,7 +144,7 @@
                                 @endforeach
                             </ul>
                         @endforeach
-                        <p class="small-text">T&C Apply</p>
+                        <p  class="small-text"><a href="{{ url('terms-and-conditions'); }}" target="_blank" >T&C Apply</a></p>
                         <a href="javascript:void(0);" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $plan['package']->name; }}" packageType="{{ $package_types->package_name; }}" packageInr="{{ $plan['package']->monthly_inr; }}" packageUsd="{{ $plan['package']->monthly_usd; }}" >Get Started Now</a>
                     </div>
                 </div>
@@ -176,27 +176,27 @@
                 <form action="{{ url(''); }}" method="POST">
                     @csrf
                     <input type="hidden" name="package_type" id="package_type">
-                    <input type="hidden" name="package_name" id="package_name">
+                    <input type="hidden" name="plan_name" id="plan_name">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="">Full Name*</label>
-                            <input class="form-control" name="" required />
+                            <input class="form-control" name="name" required onkeypress="return /[A-Za-z ]/i.test(event.key)" />
                         </div>
                         <div class="col-md-6">
                             <label for="">Mobile Number*</label>
-                            <input class="form-control" name="" required />
+                            <input class="form-control" name="contact" required  onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" />
                         </div>
                         <div class="col-md-6">
                             <label for="">Email*</label>
-                            <input type="email" class="form-control" name="" required />
+                            <input type="email" class="form-control" name="email" required />
                         </div>
                         <div class="col-md-6">
                             <label for="">Location*</label>
-                            <input class="form-control" name="" required />
+                            <input class="form-control" name="location" required onkeypress="return /[A-Za-z ]/i.test(event.key)" />
                         </div>
                         <div class="col-md-12">
                             <label for="">About Your Project</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="about"></textarea>
                         </div>
                         <div class="col-md-12">
                             <div class="text-center">

@@ -10,6 +10,7 @@ use App\Models\PackageIncludes;
 use App\Models\Packages;
 use App\Models\PackageKeyPoint;
 use App\Models\PackageSubKeyPoint;
+use App\Models\PackageRequest;
 
 class PackageController extends Controller
 {
@@ -79,5 +80,53 @@ class PackageController extends Controller
         }
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb','package_types','details','property','plans','plans_list'));
+    }
+
+    
+    public function store(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:50',
+            'email' => 'required|max:50',
+            'contact' => 'required|min:8|max:12',
+            'location' => 'required|max:50',
+            'about' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput();
+
+        } else{
+
+            $data['name'] = $request->name;
+            $data['email'] = $request->email;
+            $data['contact'] = $request->contact;
+            $data['location'] = $request->location;
+            $data['plan'] = $request->plan_name;
+            $data['package'] = $request->package_type;
+            $data['about'] = $request->about;
+
+            $result = PackageRequest::create($data);
+            
+            $mail_var = array(
+                'var1' => $request->name,
+                'var2' => $request->email,
+                'var3' => $request->contact,
+                'var4' => $request->location,
+                'var5' => $request->plan,
+                'var6' =>  $request->package,
+                'var7' =>  $request->about,
+                'var8' => "",
+            );
+            
+            // send_mail($request->email, '1901CR', $mail_var);
+
+            if($result->id > 0){
+                return redirect()->back()->with('success', 'Thank you for requesting');
+            }else{
+                return redirect()->back()->with('error', 'Something went Wrong');
+            }
+        }
     }
 }

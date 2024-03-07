@@ -75,7 +75,7 @@
         let formattedPackageName = packageName.charAt(0).toUpperCase() + packageName.slice(1);
 
         $('#packageName').text(formattedPackageName);
-        $('#package_name').val(formattedPackageName);
+        $('#plan_name').val(formattedPackageName);
         
         let packageType = $(this).attr('packageType');
         
