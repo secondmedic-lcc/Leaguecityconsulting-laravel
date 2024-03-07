@@ -382,7 +382,7 @@
     </div>
 </section>
 
-<!-- Modal -->
+
 <div class="modal fade pricing-modal" id="pricingModalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
