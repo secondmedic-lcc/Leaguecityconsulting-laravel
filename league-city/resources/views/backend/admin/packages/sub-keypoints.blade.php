@@ -53,6 +53,7 @@
     {{-- <div class="col-md-12">
         <h4 class="card py-2 text-center">List of Sub Key Points</h4>
     </div> --}}
+<div class="row">
     <div class="col-md-12">
         <div class="row">
             @foreach($packageSubKeyPoint as $subkeyPoint)

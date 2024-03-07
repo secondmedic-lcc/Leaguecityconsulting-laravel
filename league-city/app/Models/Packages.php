@@ -15,12 +15,10 @@ class Packages extends Model
         'package_for',
         'name',
         'url_slug',
-        'heading',
         'monthly_inr',
         'monthly_usd',
         'yearly_inr',
         'yearly_usd',
-        'description',
         'show_front',
         'status',
     ];
