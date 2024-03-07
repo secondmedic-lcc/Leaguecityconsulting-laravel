@@ -1,3 +1,9 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <h4 class="mb-0">{{ @$packageTypes->package_name." - ".Str::ucfirst($packages->name)." - ".Str::ucfirst($packagesKeyPoint->key_point); }}</h4>
+    </div>
+</div>
+
 <div class="row">
 
     <div class="col-md-12">

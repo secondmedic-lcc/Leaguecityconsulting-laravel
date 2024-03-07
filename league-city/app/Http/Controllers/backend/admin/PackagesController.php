@@ -34,7 +34,9 @@ class PackagesController extends Controller
 
         $includes = PackageIncludes::where(array('status'=>1,'package_for'=>$_GET['package_id']))->orderBy('id','desc')->paginate(20);
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','small','mid','large','packagePageDetails','includes'));
+        $packageTypes = PackageTypes::where(array('status'=>1,'id'=>$_GET['package_id']))->first();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','small','mid','large','packagePageDetails','includes','packageTypes'));
 
     }
 
@@ -50,7 +52,9 @@ class PackagesController extends Controller
         
         $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$package->id))->get();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','package','packagesKeyPoint'));
+        $packageTypes = PackageTypes::where(array('status'=>1,'id'=>$_GET['package_id']))->first();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','package','packagesKeyPoint','packageTypes'));
     }
 
 
@@ -173,10 +177,12 @@ class PackagesController extends Controller
         $packages = Packages::where(array('status'=>1,'id'=>$pacakage_id))->get()->first();
         
         $packagesKeyPoint = PackageKeyPoint::where(array('status'=>1,'package_id'=>$pacakage_id,'id'=>$keypoint))->first();
+
+        $packageTypes = PackageTypes::where(array('status'=>1,'id'=>$pacakage_id))->first();
         
         $packageSubKeyPoint = PackageSubKeyPoint::where(array('status'=>1,'package_id'=>$pacakage_id,'keypoint_id'=>$keypoint))->orderBy('id','desc')->get();
         
-        return view('backend/admin/main', compact('page_name','page_title','current_page','packages','packagesKeyPoint','packageSubKeyPoint'));
+        return view('backend/admin/main', compact('page_name','page_title','current_page','packages','packagesKeyPoint','packageSubKeyPoint','packageTypes'));
     }
     
 
