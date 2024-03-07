@@ -66,6 +66,34 @@
 </script>
 
 
+
+@if(@$current_page == "package-type")
+<script>
+    $('.btn-form').click(function(e){
+
+        let packageName = $(this).attr('packageName');
+        let formattedPackageName = packageName.charAt(0).toUpperCase() + packageName.slice(1);
+
+        $('#packageName').text(formattedPackageName);
+        $('#package_name').val(formattedPackageName);
+        
+        let packageType = $(this).attr('packageType');
+        
+        $('#packageType').text(packageType);
+        $('#package_type').val(packageType);
+        
+        let packageInr = $(this).attr('packageInr');
+        
+        $('#packageInr').text(packageInr);
+        
+        let packageUsd = $(this).attr('packageUsd');
+        
+        $('#packageUsd').text(packageUsd);
+
+    });
+</script>
+@endif
+
 </body>
 
 </html>

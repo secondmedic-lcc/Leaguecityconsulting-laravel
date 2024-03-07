@@ -66,7 +66,7 @@
                             <div class="col-md-6">
                                 <h3 class="box-heading">{{ @$details->enterprise_title }}</h3>
                                 <p>{{ @$details->enterprise_details }}</p>
-                                <a href="" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Enquire Now</a>
+                                <a href="javascript:void(0)" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $details->enterprise_title; }}" packageType="{{ $package_types->package_name; }}" packageInr="" packageUsd="" >Enquire Now</a>
                             </div>
                         </div>
                     </div>
@@ -145,239 +145,11 @@
                             </ul>
                         @endforeach
                         <p class="small-text">T&C Apply</p>
-                        <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
+                        <a href="javascript:void(0);" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $plan['package']->name; }}" packageType="{{ $package_types->package_name; }}" packageInr="{{ $plan['package']->monthly_inr; }}" packageUsd="{{ $plan['package']->monthly_usd; }}" >Get Started Now</a>
                     </div>
                 </div>
             @endforeach
 
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <h3 class="box-heading">Small Business <br />
-                        <small>SEO Packages</small>
-                    </h3>
-                    <p><b>20,000 INR/250 USD</b> Monthly</p>
-                    <p>EXCLUSIVE OF ALL TAXES</p>
-                    <ul class="list">
-                        <li>WEBSITE REVIEW & ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Max 10 Keywords</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website & Competitor Analysis</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Duplicity Check</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Initial Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keywords Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>ON PAGE SEO ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Meta Tags Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Canonicalization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> URL Structure</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Image Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Heading Tag Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website Speed Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Robots.txt</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Sitemap Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics & Search Console Setup</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Blog Optimization</li>
-                    </ul>
-                    <ul class="list">
-                        <li>LOCAL SEO SETUP</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Map Integration on website</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google My Business Page Setup and Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Citations – 5</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Classifieds – 2</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CONTENT MARKETING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Posting (500 – 700 words) – 1</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Article Writing(500 – 700 words) – 1</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Onsite Blog (1000 – 1500 words) – 1</li>
-                    </ul>
-                    <ul class="list">
-                        <li>EMAIL OUTREACH</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Guest Blogging</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Broken Backlink Building</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Resource Link Building</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Alerts and Mention</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Link Roundups</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Competitor Backlink Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>OFF PAGE SEO</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Social Sharing – 30(Total)</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Social Sharing</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Slide Submissions – 1</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Text Infographic Creation – 1</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Video Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Q & A – 1</li>
-                    </ul>
-                    <ul class="list">
-                        <li>MONTHLY REPORTING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keyword Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Acquired Links Report</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CLIENT SUPPORT</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Email</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Chat</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Call</li>
-                    </ul>
-                    <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <h3 class="box-heading">Mid Size Business <br />
-                        <small>SEO Packages</small>
-                    </h3>
-                    <p><b>30,000 INR/400 USD</b> Monthly</p>
-                    <p>EXCLUSIVE OF ALL TAXES</p>
-                    <ul class="list">
-                        <li>WEBSITE REVIEW & ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Max 15 Keywords</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website & Competitor Analysis</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Duplicity Check</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Initial Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keywords Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>ON PAGE SEO ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Meta Tags Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Canonicalization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> URL Structure</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Image Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Heading Tag Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website Speed Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Robots.txt</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Sitemap Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics & Search Console Setup</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Optimization – 5 Posts</li>
-                    </ul>
-                    <ul class="list">
-                        <li>LOCAL SEO SETUP</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Map Integration on website</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google My Business Page Setup and Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Citations – 10</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Classifieds – 5</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CONTENT MARKETING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Posting (500 – 700 words) – 3</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Article Writing(500 – 700 words) – 3</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Onsite Blog (1000 – 1500 words) – 3</li>
-                    </ul>
-                    <ul class="list">
-                        <li>EMAIL OUTREACH</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Guest Blogging</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Broken Backlink Building</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Resource Link Building</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Alerts and Mention</li>
-                        <li><i class="fas fa-times-circle text-danger"></i> Link Roundups</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Competitor Backlink Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>OFF PAGE SEO</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Social Sharing – 40(Total)</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Social Sharing</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Slide Submissions – 2</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Text Infographic Creation – 2</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Video Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Q & A – 3</li>
-                    </ul>
-                    <ul class="list">
-                        <li>MONTHLY REPORTING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keyword Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Acquired Links Report</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CLIENT SUPPORT</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Email</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Chat</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Call</li>
-                    </ul>
-                    <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="box">
-                    <h3 class="box-heading">Large Or Ecommerce <br />
-                        <small>SEO Packages</small>
-                    </h3>
-                    <p><b>45, 000 INR/600 USD</b> Monthly</p>
-                    <p>EXCLUSIVE OF ALL TAXES</p>
-                    <ul class="list">
-                        <li>WEBSITE REVIEW & ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Max 40 Keywords</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website & Competitor Analysis</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Duplicity Check</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Initial Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keywords Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>ON PAGE SEO ANALYSIS</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Meta Tags Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Canonicalization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> URL Structure</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Content Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Image Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Heading Tag Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Website Speed Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Robots.txt</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Sitemap Creation</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics & Search Console Setup</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Optimization – 5 Posts</li>
-                    </ul>
-                    <ul class="list">
-                        <li>LOCAL SEO SETUP</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Map Integration on website</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google My Business Page Setup and Optimization</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Citations – 15</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Local Classifieds – 10</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CONTENT MARKETING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Posting (500 – 700 words) – 4</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Article Writing(500 – 700 words) – 4</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Onsite Blog (1000 – 1500 words) – 4</li>
-                    </ul>
-                    <ul class="list">
-                        <li>EMAIL OUTREACH</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Guest Blogging</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Broken Backlink Building</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Resource Link Building</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Alerts and Mention</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Link Roundups</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Competitor Backlink Research</li>
-                    </ul>
-                    <ul class="list">
-                        <li>OFF PAGE SEO</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Social Sharing – 50(Total)</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Blog Social Sharing</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Slide Submissions – 2</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Text Infographic Creation – 3</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Video-1 Minute (Product Based)</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Q & A – 5</li>
-                    </ul>
-                    <ul class="list">
-                        <li>MONTHLY REPORTING</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Keyword Ranking Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Google Analytics Report</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Acquired Links Report</li>
-                    </ul>
-                    <ul class="list">
-                        <li>CLIENT SUPPORT</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Email</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Chat</li>
-                        <li><i class="fas fa-check-circle text-success"></i> Call</li>
-                    </ul>
-                    <p class="small-text">T&C Apply</p>
-                    <a href="#" class="btn web-btn" data-bs-toggle="modal" data-bs-target="#pricingModalForm">Get Started Now</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -390,18 +162,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="selected-package">
                     <div class="package-h">
-                        <h3>Small Business</h3>
-                        <p>SEO Packages</p>
+                        <h3><label id="packageName"></label> Business</h3>
+                        <p id="packageType">SEO Packages</p>
                     </div>
                     <div class="price">
-                        <p><b>20,000 INR/250 USD</b> Monthly</p>
+                        <p><b><span id="packageInr"></span> INR/ <span id="packageUsd"></span> USD</b> Monthly</p>
                         <p>EXCLUSIVE OF ALL TAXES</p>
                     </div>
                 </div>
             </div>
             <div class="line w-100 m-0"></div>
             <div class="modal-body">
-                <form action="">
+                <form action="{{ url(''); }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="package_type" id="package_type">
+                    <input type="hidden" name="package_name" id="package_name">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="">Full Name*</label>
