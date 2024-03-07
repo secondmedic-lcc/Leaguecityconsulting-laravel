@@ -183,7 +183,7 @@ class PortfolioController extends Controller
     public function update_description(Request $request, $id)
     {
         $data = $request->validate([
-            'desc_heading' => 'required|string',
+            /*'desc_heading' => 'required|string',*/
             'description' => 'required|string',
         ]);
 
