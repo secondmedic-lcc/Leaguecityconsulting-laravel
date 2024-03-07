@@ -272,246 +272,246 @@
                 <div class="left-side">
                     <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true" data-aos="fade-up" data-aos-delay="100">
-                            <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.svg" alt="Mobile App Development image"> <br />
                             Mobile App Development
                         </button>
 
                         <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false" data-aos="fade-up" data-aos-delay="200">
-                            <img src="{{ asset('includes-frontend'); }}/images/app-development.svg" alt="App Development image"> <br />
                             Application Development
                         </button>
 
                         <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false" data-aos="fade-up" data-aos-delay="300">
-                            <img src="{{ asset('includes-frontend'); }}/images/aiautomation.svg" alt="AI & Automation image"> <br />
+
                             AI & Automation</button>
 
                         <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false" data-aos="fade-up" data-aos-delay="400">
-                            <img src="{{ asset('includes-frontend'); }}/images/uiux.svg" alt="UI/UX Services image"> <br />
+
                             UI/UX Services</button>
 
                         <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false" data-aos="fade-up" data-aos-delay="500">
-                            <img src="{{ asset('includes-frontend'); }}/images/itconsulting.svg" alt="IT Consulting image"> <br />
+
                             IT Consulting</button>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="600">
-                <div class="right-side bg-dark">
+            <div class="col-lg-12">
+                <div class="right-side bg-dark" data-aos="flip-left">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
-                                    <div class="text-center">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('includes-frontend'); }}/images/mobileapp.webp" alt="Mobile App Development">
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="content">
                                         <h3>Mobile App Development</h3>
-                                        <p>We are providing complete mobile app solutions, where we specialize in developing Native Android, iOS, and Cross-Platform Apps.</p>
+                                        <div class="line"></div>
+                                        <ul>
+                                            <li>
+                                                Crafting Solutions for iOS Ecosystem
+                                            </li>
+                                            <li>
+                                                Tailored Solutions for Android Platforms
+                                            </li>
+                                            <li>
+                                                Innovative Apps with Flutter Framework
+                                            </li>
+                                            <li>
+                                                Cross-Platform Excellence with React Native
+                                            </li>
+                                            <li>
+                                                Unifying Platforms with Cross-Platform Development
+                                            </li>
+                                            <li>
+                                                Blending Technologies in Hybrid App Development
+                                            </li>
+                                            <li>
+                                                Prototyping with MVP Development
+                                            </li>
+                                            <li>
+                                                Engaging Experience with Progressive Web Apps
+                                            </li>
+                                        </ul>
+                                        <div class="text-end">
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                        </div>
                                     </div>
-                                    <ul>
-                                        <li>
-                                            Crafting Solutions for iOS Ecosystem
-                                        </li>
-                                        <li>
-                                            Tailored Solutions for Android Platforms
-                                        </li>
-                                        <li>
-                                            Innovative Apps with Flutter Framework
-                                        </li>
-                                        <li>
-                                            Cross-Platform Excellence with React Native
-                                        </li>
-                                        <li>
-                                            Unifying Platforms with Cross-Platform Development
-                                        </li>
-                                        <li>
-                                            Blending Technologies in Hybrid App Development
-                                        </li>
-                                        <li>
-                                            Prototyping with MVP Development
-                                        </li>
-
-                                        <li>
-                                            Engaging Experience with Progressive Web Apps
-                                        </li>
-
-                                    </ul>
                                 </div>
                             </div>
-                            <div class="btnrow text-center">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                            </div>
+
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel" aria-labelledby="v-pills-appdevelopment-tab">
-
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
-                                    <div class="text-center">
-                                        <h3>Application Development</h3>
-                                        <p>
-
-                                            Elevate your business with our custom app development, featuring exceptional design and seamless cross-platform compatibility.</p>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            Crafting Web Applications for Unique Needs
-                                        </li>
-                                        <li>
-                                            Building Robust E-Commerce Solutions
-                                        </li>
-                                        <li>
-                                            Customised Solutions for Mobile Platforms
-                                        </li>
-                                        <li>
-                                            Streamlining Enterprise Content Management
-                                        </li>
-                                        <li>
-                                            Designing and Developing SaaS Applications
-                                        </li>
-
-                                        <li>
-                                            Innovating with Internet of Things Applications
-                                        </li>
-                                        <li>
-                                            Harnessing the Power of the Platform for Custom Apps
-                                        </li>
-                                        <li>
-                                            Revitalizing and Upgrading Applications
-                                        </li>
-
-                                    </ul>
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('includes-frontend'); }}/images/application-development.webp" alt="Application Development">
                                 </div>
-                            </div>
-                            <div class="btnrow text-center">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                <div class="col-lg-8">
+                                    <div class="content">
+                                        <h3>Application Development</h3>
+                                        <div class="line"></div>
+                                        <ul>
+                                            <li>
+                                                Crafting Web Applications for Unique Needs
+                                            </li>
+                                            <li>
+                                                Building Robust E-Commerce Solutions
+                                            </li>
+                                            <li>
+                                                Customised Solutions for Mobile Platforms
+                                            </li>
+                                            <li>
+                                                Streamlining Enterprise Content Management
+                                            </li>
+                                            <li>
+                                                Designing and Developing SaaS Applications
+                                            </li>
+
+                                            <li>
+                                                Innovating with Internet of Things Applications
+                                            </li>
+                                            <li>
+                                                Harnessing the Power of the Platform for Custom Apps
+                                            </li>
+                                            <li>
+                                                Revitalizing and Upgrading Applications
+                                            </li>
+                                        </ul>
+                                        <div class="text-end">
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab">
-
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
-                                    <div class="text-center">
-                                        <h3>AI & Automation</h3>
-                                        <p>Maximize your business potential with our AI & Automation services, covering development, and maintenance of advanced technologies.</p>
-                                    </div>
-                                    <ul>
-
-                                        <li>
-                                            Chatbots & predictive analytics
-                                        </li>
-                                        <li>
-                                            Smart Automation Solutions
-                                        </li>
-                                        <li>
-                                            Creative AI Generation
-                                        </li>
-                                        <li>
-                                            Integrating Machine Learning Operations
-                                        </li>
-                                        <li>
-                                            Intelligent Cognitive Services
-                                        </li>
-
-                                        <li>
-                                            Facial Identification Technology
-                                        </li>
-
-                                        <li>
-                                            Linguistic Understanding Technology
-                                        </li>
-
-                                        <li>Independent AI Decision Agents</li>
-
-                                    </ul>
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('includes-frontend'); }}/images/ai.webp" alt="AI & Automation">
                                 </div>
-                            </div>
-                            <div class="btnrow text-center">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                <div class="col-lg-8">
+                                    <div class="content">
+                                        <h3>AI & Automation</h3>
+                                        <div class="line"></div>
+                                        <ul>
+                                            <li>
+                                                Chatbots & predictive analytics
+                                            </li>
+                                            <li>
+                                                Smart Automation Solutions
+                                            </li>
+                                            <li>
+                                                Creative AI Generation
+                                            </li>
+                                            <li>
+                                                Integrating Machine Learning Operations
+                                            </li>
+                                            <li>
+                                                Intelligent Cognitive Services
+                                            </li>
+
+                                            <li>
+                                                Facial Identification Technology
+                                            </li>
+
+                                            <li>
+                                                Linguistic Understanding Technology
+                                            </li>
+
+                                            <li>Independent AI Decision Agents</li>
+                                        </ul>
+                                        <div class="text-end">
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel" aria-labelledby="v-pills-uiux-tab">
-
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
-                                    <div class="text-center">
-                                        <h3>UI/UX Services</h3>
-                                        <p>Our UI/UX services prioritize empathy and in-depth user research to enhance product usability, accessibility, and satisfaction.</p>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            Intuitive UI/UX Design
-                                        </li>
-                                        <li>
-                                            Visual & Interaction Design
-                                        </li>
-                                        <li>
-                                            Rigorous UI Testing
-                                        </li>
-                                        <li>
-                                            Enterprise UX
-                                        </li>
-
-                                        <li>
-                                            Responsive Web Design
-                                        </li>
-                                        <li>
-                                            Prototyping & MVP Development
-                                        </li>
-                                        <li>
-                                            Comprehensive Branding
-                                        </li>
-                                        <li>
-                                            Website Redesign
-                                        </li>
-
-                                    </ul>
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('includes-frontend'); }}/images/uiux.webp" alt="Mobile App Development">
                                 </div>
-                            </div>
-                            <div class="btnrow text-center">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                <div class="col-lg-8">
+                                    <div class="content">
+                                        <h3>UI/UX Services</h3>
+                                        <div class="line"></div>
+                                        <ul>
+                                            <li>
+                                                Intuitive UI/UX Design
+                                            </li>
+                                            <li>
+                                                Visual & Interaction Design
+                                            </li>
+                                            <li>
+                                                Rigorous UI Testing
+                                            </li>
+                                            <li>
+                                                Enterprise UX
+                                            </li>
+
+                                            <li>
+                                                Responsive Web Design
+                                            </li>
+                                            <li>
+                                                Prototyping & MVP Development
+                                            </li>
+                                            <li>
+                                                Comprehensive Branding
+                                            </li>
+                                            <li>
+                                                Website Redesign
+                                            </li>
+                                        </ul>
+                                        <div class="text-end">
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel" aria-labelledby="v-pills-itconsulting-tab">
-                            <div class="row">
-                                <div class="col-lg-10 offset-lg-1">
-                                    <div class="text-center">
-                                        <h3>IT Consulting</h3>
-                                        <p>
-                                            Get expert IT Consulting for swift process improvement, tech planning, and cybersecurity, ensuring efficient software transformation.</p>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            Digital Transformation & Engineering
-                                        </li>
-                                        <li>
-                                            Enterprise Mobility & Custom Software
-                                        </li>
-                                        <li>
-                                            Strategic IT Planning & DevOps
-                                        </li>
-                                        <li>
-                                            Microservices & Salesforce Expertise
-                                        </li>
-                                        <li>
-                                            Custom Web and Mobile Apps
-                                        </li>
-                                        <li>
-                                            Security Risk Assessments
 
-
-
-                                        </li>
-                                        <li>
-                                            Cloud and Data Migration
-                                        </li>
-                                        <li>Salesforce Expertise
-                                        </li>
-                                    </ul>
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('includes-frontend'); }}/images/itconsulting.webp" alt="Mobile App Development">
                                 </div>
-                            </div>
-                            <div class="btnrow text-center">
-                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                <div class="col-lg-8">
+                                    <div class="content">
+                                        <h3>IT Consulting</h3>
+                                        <div class="line"></div>
+                                        <ul>
+                                            <li>
+                                                Digital Transformation & Engineering
+                                            </li>
+                                            <li>
+                                                Enterprise Mobility & Custom Software
+                                            </li>
+                                            <li>
+                                                Strategic IT Planning & DevOps
+                                            </li>
+                                            <li>
+                                                Microservices & Salesforce Expertise
+                                            </li>
+                                            <li>
+                                                Custom Web and Mobile Apps
+                                            </li>
+                                            <li>
+                                                Security Risk Assessments
+                                            </li>
+                                            <li>
+                                                Cloud and Data Migration
+                                            </li>
+                                            <li>Salesforce Expertise
+                                            </li>
+                                        </ul>
+                                        <div class="text-end">
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
