@@ -142,7 +142,6 @@
                                 <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
                                 <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
                                 <p>{{ $p['sub_heading'] }}</p>
-                                <!-- <a href="{{ url('singleportfolio'); }}" target="_blank" class="btn web-btn">View Project Details</a> -->
                             </div>
                         </div>
                     </div>
