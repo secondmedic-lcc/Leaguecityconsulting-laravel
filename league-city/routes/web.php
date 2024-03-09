@@ -49,9 +49,6 @@ Route::get('/blogs', [App\Http\Controllers\BlogsController::class, 'index']);
 
 Route::get('blogs/{url}', [App\Http\Controllers\BlogsController::class, 'blog_details']);
 
-Route::get('/singleblog', [App\Http\Controllers\SingleBlogController::class, 'index']);
-
-
 Route::get('/products', [App\Http\Controllers\ProductsController::class, 'index']);
 
 Route::get('products/{url}', [App\Http\Controllers\ProductsController::class, 'products_details']);
