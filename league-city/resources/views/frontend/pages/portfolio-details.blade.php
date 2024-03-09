@@ -56,7 +56,8 @@
     </div>
 </section>
 
-@if(!empty($portfolio['portfolio_images']))
+
+@if(count($portfolio['portfolio_images']) > 0)
 <section class="portfolio-standout section-padding">
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
