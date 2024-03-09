@@ -100,7 +100,7 @@
         const form = document.querySelector('form');
         var data = new FormData(form);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', "{{ route('plan-request'); }}");
+        xhr.open('POST', "{{ url('api/packages/store'); }}");
         xhr.send(data);
         xhr.onerror = () => {
             swal("Error!", "Network Error" , "error");
@@ -127,6 +127,17 @@
                 button.removeAttribute("disabled");
             }
         };
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('myPlanForm');
+        var submitButton = document.getElementById('plan-form-btn');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
+        });
     });
 </script>
 @endif

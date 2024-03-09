@@ -173,7 +173,7 @@
             </div>
             <div class="line w-100 m-0"></div>
             <div class="modal-body">
-                <form class="plan-request" method="POST">
+                <form id="myPlanForm" action="{{ route('plan-request'); }}" method="POST" autocomplete="off" >
                     @csrf
                     <input type="hidden" name="package_type" id="package_type">
                     <input type="hidden" name="plan_name" id="plan_name">
@@ -200,7 +200,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="text-center">
-                                <button type="submit" class="btn web-btn" name="form-btn">Submit</button>
+                                <button type="submit" class="btn web-btn" id="plan-form-btn" name="form-btn">Submit</button>
                             </div>
                         </div>
                     </div>
