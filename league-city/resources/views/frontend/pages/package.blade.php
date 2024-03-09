@@ -173,7 +173,7 @@
             </div>
             <div class="line w-100 m-0"></div>
             <div class="modal-body">
-                <form action="{{ url(''); }}" method="POST">
+                <form class="plan-request" method="POST">
                     @csrf
                     <input type="hidden" name="package_type" id="package_type">
                     <input type="hidden" name="plan_name" id="plan_name">

@@ -30,6 +30,8 @@ Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
 Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::class, 'index']);
 
+Route::post('/packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('plan-request');
+
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
 
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);

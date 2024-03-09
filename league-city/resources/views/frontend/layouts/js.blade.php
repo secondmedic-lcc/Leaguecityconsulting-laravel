@@ -68,6 +68,7 @@
 
 
 @if(@$current_page == "package-type")
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $('.btn-form').click(function(e){
 
@@ -90,6 +91,42 @@
         
         $('#packageUsd').text(packageUsd);
 
+    });
+
+    $('.plan-request').on('submit', function(e) {
+        e.preventDefault();
+        const button = document.querySelector("button[type=submit]");
+        button.setAttribute("disabled", true);
+        const form = document.querySelector('form');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "{{ route('plan-request'); }}");
+        xhr.send(data);
+        xhr.onerror = () => {
+            swal("Error!", "Network Error" , "error");
+        };
+        xhr.onload  = (new_res) => {
+            
+            let response_new = xhr.responseText;
+            let result = JSON.parse(response_new);
+            console.log(result.msg);
+            if(xhr.readyState === 4 && xhr.status === 200 && result.success == true) {
+                
+                swal(
+                    "Thank You!", 
+                    "Thank you for your Request", 
+                    "success"
+                );
+                
+                button.removeAttribute("disabled");
+                form.reset();
+                $('.modal').modal('hide');
+
+            }else{
+                swal("Error!", result.error, "error");
+                button.removeAttribute("disabled");
+            }
+        };
     });
 </script>
 @endif

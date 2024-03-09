@@ -83,50 +83,48 @@ class PackageController extends Controller
     }
 
     
-    public function store(Request $request){
+    public function store(){
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:50',
-            'email' => 'required|max:50',
-            'contact' => 'required|min:8|max:12',
-            'location' => 'required|max:50',
-            'about' => 'required',
-        ]);
+        extract($_POST);
 
-        if ($validator->fails()) {
+        $data['name'] = $name;
+        $data['email'] = $email;
+        $data['mobile'] = $contact;
+        $data['location'] = $location;
+        $data['plan'] = $plan_name;
+        $data['package'] = $package_type;
+        $data['about'] = $about;
 
-            return redirect()->back()->withErrors($validator)->withInput();
+        $result = PackageRequest::create($data);
 
-        } else{
+        $mail_var = array(
+            'var1' => $name,
+            'var2' => $email,
+            'var3' => $contact,
+            'var4' => $location,
+            'var5' => $plan_name,
+            'var6' => $package_type,
+            'var7' => $about,
+            'var8' => "",
+        );
 
-            $data['name'] = $request->name;
-            $data['email'] = $request->email;
-            $data['contact'] = $request->contact;
-            $data['location'] = $request->location;
-            $data['plan'] = $request->plan_name;
-            $data['package'] = $request->package_type;
-            $data['about'] = $request->about;
+        send_mail($email, '0903PR', $mail_var);
 
-            $result = PackageRequest::create($data);
+        if ($result->id > 0) {
             
-            $mail_var = array(
-                'var1' => $request->name,
-                'var2' => $request->email,
-                'var3' => $request->contact,
-                'var4' => $request->location,
-                'var5' => $request->plan,
-                'var6' =>  $request->package,
-                'var7' =>  $request->about,
-                'var8' => "",
-            );
-            
-            // send_mail($request->email, '1901CR', $mail_var);
+            return response()->json([
+                'success' => true,
+                'message' => 'Thank you for requesting',
+            ]);
 
-            if($result->id > 0){
-                return redirect()->back()->with('success', 'Thank you for requesting');
-            }else{
-                return redirect()->back()->with('error', 'Something went Wrong');
-            }
+        } else {
+            
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        
         }
     }
+    
 }
