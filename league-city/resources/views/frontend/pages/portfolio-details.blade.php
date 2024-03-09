@@ -75,7 +75,7 @@
                             <div class="row align-items-end">
                                 <div class="col-md-6">
                                     <div class="content">
-                                        <i class="far fa-play-circle"></i>
+                                        {{-- <i class="far fa-play-circle"></i> --}}
                                         <h3>{{ $p['heading']; }}</h3>
                                         <p>{{ $p['description']; }}</p>
                                     </div>
