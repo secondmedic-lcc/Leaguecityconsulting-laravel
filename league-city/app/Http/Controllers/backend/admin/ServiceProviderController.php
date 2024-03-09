@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\ContactRequest;
+use App\Models\PackageRequest;
 
 class ServiceProviderController extends Controller
 {
@@ -24,6 +25,19 @@ class ServiceProviderController extends Controller
         $current_page = "leads";
 
         $request = ContactRequest::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','request'));
+    }
+
+    public function package_request() {
+
+        $page_name = "service-provider/package-request";
+        
+        $page_title = "Manage Plan Requests";
+        
+        $current_page = "package-request";
+
+        $request = PackageRequest::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','request'));
     }

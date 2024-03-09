@@ -1,5 +1,5 @@
 @empty(!$web_banner)
-    
+
 <section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
@@ -43,14 +43,14 @@
         </div>
         <div class="row g-3">
             @foreach($portfolio['portfolio_services'] as $p)
-                <div class="col-md-6 col-lg-4">
-                    <div class="box">
-                        <i class="{{ $p['service_icon'] }} icon"></i>
-                        <i class="{{ $p['service_icon'] }} big-icon"></i>
-                        <h3>{{ $p['service_title'] }}</h3>
-                        <p>{{ $p['service_details'] }}</p>
-                    </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box">
+                    <i class="{{ $p['service_icon'] }} icon"></i>
+                    <i class="{{ $p['service_icon'] }} big-icon"></i>
+                    <h3>{{ $p['service_title'] }}</h3>
+                    <p>{{ $p['service_details'] }}</p>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -71,20 +71,20 @@
                 <div class="box">
                     <div class="owl-carousel standout-slider">
                         @foreach($portfolio['portfolio_images'] as $p)
-                            <div class="item">
-                                <div class="row align-items-end">
-                                    <div class="col-md-6">
-                                        <div class="content">
-                                            <i class="far fa-play-circle"></i>
-                                            <h3>{{ $p['heading']; }}</h3>
-                                            <p>{{ $p['description']; }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="{{ asset($p['image']); }}" alt="Group Conferencing">
+                        <div class="item">
+                            <div class="row align-items-end">
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <i class="far fa-play-circle"></i>
+                                        <h3>{{ $p['heading']; }}</h3>
+                                        <p>{{ $p['description']; }}</p>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <img src="{{ asset($p['image']); }}" alt="Group Conferencing">
+                                </div>
                             </div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -205,7 +205,7 @@
     </div>
 </section>
 
-<section class="portfolio-whychoose section-padding pb-0">
+<!-- <section class="portfolio-whychoose section-padding pb-0">
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
             <div class="col-lg-6">
@@ -227,6 +227,6 @@
             <?php } ?>
         </div>
     </div>
-</section>
+</section> -->
 
 @include('frontend.pages.query-form')

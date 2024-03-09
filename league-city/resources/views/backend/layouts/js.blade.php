@@ -14,7 +14,7 @@
 <script src="{{ asset('includes-backend/js/second-medic.js'); }}"></script>
 
 
-@if(@$current_page == "leads")
+@if(@$current_page == "leads" || @$current_page == "package-request")
 <script>
     $('.btn-view').click(function(){
         var message = $(this).attr('message');

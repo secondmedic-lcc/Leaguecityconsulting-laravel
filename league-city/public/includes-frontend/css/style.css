@@ -76,7 +76,7 @@ h6 .light {
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 40px;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.8);
 }
 .section-heading + .heading-info.text-white {
     color: rgba(255, 255, 255, 0.8) !important;
@@ -2016,7 +2016,7 @@ h6 .light {
 }
 
 .portfolio-standout .box {
-    padding: 30px;
+    padding: 30px 0px 0px 30px;
     background: url("../images/slider-bg.jpg") center;
     background-size: cover;
     position: relative;
@@ -2026,7 +2026,7 @@ h6 .light {
     color: white;
 }
 .portfolio-standout .box .content {
-    padding-bottom: 70px;
+    padding-bottom: 100px;
 }
 .portfolio-standout .box i {
     font-size: 40px;
@@ -2043,19 +2043,19 @@ h6 .light {
 .portfolio-standout .box img {
     width: 100%;
     height: 350px;
-    background-color: #eee;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: bottom right;
 }
 .portfolio-standout .owl-nav .owl-prev {
     left: 0px;
-    bottom: 0px;
+    bottom: 30px;
     transform: unset;
     top: unset;
 }
 .portfolio-standout .owl-nav .owl-next {
     left: 60px;
-    bottom: 0px;
+    bottom: 30px;
     transform: unset;
     top: unset;
 }
@@ -2087,6 +2087,9 @@ h6 .light {
     background-color: #202028;
     border: none;
     position: relative;
+}
+.portfolio-process .accordion .accordion-item:last-child {
+    margin-bottom: 0px;
 }
 .portfolio-process .accordion .accordion-button:before {
     position: absolute;
@@ -2130,6 +2133,7 @@ h6 .light {
 
 .portfolio-whychoose .box {
     padding: 30px;
+    height: 100%;
     border: 1px solid var(--bordercolor);
     background-color: var(--whitecolor);
     transition: all 0.3s ease-in-out;
@@ -2155,18 +2159,13 @@ h6 .light {
     margin: 0px;
 }
 
-@media (max-width: 991px) {
-    .portfolio-standout .box .content {
-        padding-bottom: 70px;
-    }
-}
 @media (max-width: 767px) {
     .portfolio-heading-mb {
         text-align: center;
         margin-bottom: 15px;
     }
     .singleportfolio .box {
-        padding: 20px;
+        padding: 15px;
     }
     .singleportfolio .box .icon {
         font-size: 22px;
@@ -2179,10 +2178,11 @@ h6 .light {
         margin-bottom: 5px;
     }
     .portfolio-standout .box {
-        padding: 20px;
+        padding: 20px 0px 0px 20px;
     }
     .portfolio-standout .box .content {
         padding-bottom: 20px;
+        padding-right: 20px;
     }
     .portfolio-standout .box i {
         font-size: 22px;
@@ -2197,9 +2197,18 @@ h6 .light {
     .portfolio-standout .box img {
         height: 200px;
     }
+    .portfolio-standout .owl-nav .owl-prev {
+        bottom: 20px;
+    }
+    .portfolio-standout .owl-nav .owl-next {
+        bottom: 20px;
+    }
     .portfolio-process .accordion button {
         padding: 10px 20px;
         font-size: 16px;
+    }
+    .portfolio-process .accordion .accordion-item {
+        margin-bottom: 10px;
     }
     .portfolio-process .accordion .accordion-body {
         padding: 0px 20px 20px;
@@ -2209,7 +2218,7 @@ h6 .light {
         margin-bottom: 5px;
     }
     .portfolio-whychoose .box {
-        padding: 20px;
+        padding: 15px;
     }
     .portfolio-whychoose .box i {
         font-size: 22px;
@@ -3162,3 +3171,47 @@ h6 .light {
     }
 }
 /* pricingModalForm Work End */
+
+/* Single Service Work Start */
+.service-technologies * {
+    color: var(--whitecolor);
+}
+.service-technologies .box {
+    background-color: #202028;
+    text-align: center;
+    padding: 30px;
+    height: 100%;
+}
+.service-technologies .box img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.service-technologies .box p {
+    font-family: var(--fontMedium);
+    font-size: 18px;
+    margin: 0px;
+}
+.service-portfolio-process {
+    padding-top: 60px;
+    margin-top: 0px;
+}
+.service-portfolio-process .section-heading {
+    color: var(--blackcolor);
+}
+@media (max-width: 767px) {
+    .service-technologies .box {
+        padding: 15px;
+    }
+    .service-technologies .box img {
+        margin-bottom: 15px;
+    }
+    .service-technologies .box p {
+        font-size: 16px;
+    }
+    .service-portfolio-process {
+        padding-top: 20px;
+    }
+}
+/* Single Service Work End */

@@ -66,6 +66,82 @@
 </script>
 
 
+
+@if(@$current_page == "package-type")
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $('.btn-form').click(function(e){
+
+        let packageName = $(this).attr('packageName');
+        let formattedPackageName = packageName.charAt(0).toUpperCase() + packageName.slice(1);
+
+        $('#packageName').text(formattedPackageName);
+        $('#plan_name').val(formattedPackageName);
+        
+        let packageType = $(this).attr('packageType');
+        
+        $('#packageType').text(packageType);
+        $('#package_type').val(packageType);
+        
+        let packageInr = $(this).attr('packageInr');
+        
+        $('#packageInr').text(packageInr);
+        
+        let packageUsd = $(this).attr('packageUsd');
+        
+        $('#packageUsd').text(packageUsd);
+
+    });
+
+    $('.plan-request').on('submit', function(e) {
+        e.preventDefault();
+        const button = document.querySelector("button[type=submit]");
+        button.setAttribute("disabled", true);
+        const form = document.querySelector('form');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "{{ url('api/packages/store'); }}");
+        xhr.send(data);
+        xhr.onerror = () => {
+            swal("Error!", "Network Error" , "error");
+        };
+        xhr.onload  = (new_res) => {
+            
+            let response_new = xhr.responseText;
+            let result = JSON.parse(response_new);
+            console.log(result.msg);
+            if(xhr.readyState === 4 && xhr.status === 200 && result.success == true) {
+                
+                swal(
+                    "Thank You!", 
+                    "Thank you for your Request", 
+                    "success"
+                );
+                
+                button.removeAttribute("disabled");
+                form.reset();
+                $('.modal').modal('hide');
+
+            }else{
+                swal("Error!", result.error, "error");
+                button.removeAttribute("disabled");
+            }
+        };
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('myPlanForm');
+        var submitButton = document.getElementById('plan-form-btn');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
+        });
+    });
+</script>
+@endif
+
 </body>
 
 </html>

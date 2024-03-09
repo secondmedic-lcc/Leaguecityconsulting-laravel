@@ -23,6 +23,12 @@
                         <font><i class="bx bxs-user-pin"></i> <span>Contact Request</span></font>
                     </a>
                 </li>
+                
+                <li class="mb-1 {{ ($current_page == 'package-request') ? 'active' : ''; }}">
+                    <a href="{{ url('admin/plan-request') }}">
+                        <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
+                    </a>
+                </li>
 
                 <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
