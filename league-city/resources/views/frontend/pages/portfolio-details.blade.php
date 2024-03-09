@@ -56,6 +56,7 @@
     </div>
 </section>
 
+@if(!empty($portfolio['portfolio_images']))
 <section class="portfolio-standout section-padding">
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
@@ -92,6 +93,8 @@
         </div>
     </div>
 </section>
+@endif
+
 <section class="portfolio-process section-padding bg-dark">
     <div class="container">
         <div class="row">
