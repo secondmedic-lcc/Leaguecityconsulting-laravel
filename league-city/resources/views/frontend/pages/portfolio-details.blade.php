@@ -34,7 +34,7 @@
             <div class="row align-items-center portfolio-heading-mb">
                 <div class="col-lg-6">
                     <h2 class="section-heading">{{ $portfolio['name'] }}</h2>
-                    <h4>{{ ($portfolio['desc_heading'] != '' && $portfolio['desc_heading'] != null) ? $portfolio['desc_heading'] : $portfolio['sub_heading']; }}</h4>
+                    {{-- <h4>{{ ($portfolio['desc_heading'] != '' && $portfolio['desc_heading'] != null) ? $portfolio['desc_heading'] : $portfolio['sub_heading']; }}</h4> --}}
                 </div>
                 <div class="col-lg-6">
                     <?php echo $portfolio['description']; ?>
