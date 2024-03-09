@@ -82,6 +82,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
 
+    /* All Routes for Contact Request */
+    Route::get('plan-request', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'package_request']);
+
+    Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
+
 
     /* All Routes for Customers */
     Route::get('customers', [CustomersController::class, 'index']);
