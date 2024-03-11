@@ -160,5 +160,28 @@
 </script>
 @endif
 
+
+@if(@$current_page == "portfolio")
+<script>
+    $('.btn-edit').click(function(e){
+        
+        let data = $(this);
+
+        let heading = data.attr('heading');
+        $('#heading').val(heading);
+
+        let description = data.attr('description');
+        $('#port-description').val(description);
+
+        $('#images').removeAttr('required');
+
+        let action = data.attr('serviceId');
+
+        $('#portfolio-form').attr('action',`{{ url('/admin/portfolio-images/'); }}/`+action);
+
+    });
+</script>
+@endif
+
 </body>
 </html>

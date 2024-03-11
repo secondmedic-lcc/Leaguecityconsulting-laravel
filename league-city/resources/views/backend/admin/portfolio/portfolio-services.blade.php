@@ -50,7 +50,7 @@
                 <h6>Portfolio Screen Shots</h6>
             </div>
             <div class="card-body pb-0">
-                <form action="{{ url('admin/portfolio-images'); }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                <form action="{{ url('admin/portfolio-images'); }}" id="portfolio-form" method="POST" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                     
                     <div class="row">
@@ -59,18 +59,18 @@
                             <input type="hidden" class="form-control" value="{{ $portfolio_details['id']; }}" name="portfolio_id" />
                         </div>
                         <div class="col-md-2">
-                            <input type="text" class="form-control" name="heading" placeholder="Enter Heading" />
+                            <input type="text" class="form-control text-dark" name="heading" id="heading" placeholder="Enter Heading" />
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="description" placeholder="Enter Description" />
+                            <input type="text" class="form-control text-dark" name="description" id="port-description" placeholder="Enter Description" />
                         </div>
 
                         <div class="col-md-2">
-                            <input type="file" name="images" multiple class="form-control"  accept="image/*" />
+                            <input type="file" name="images" id="images" class="form-control"  accept="image/*" required />
                         </div>
                         <div class="col-md-2 text-center">
                             <button type="submit" class="btn web-btn w-100">
-                                Uplaod Images
+                                Uplaod
                             </button>
                         </div>
                     </div>
@@ -87,7 +87,10 @@
                                     <img src="{{ asset($g->image); }}" width="100%" alt="Gallery Image" />
                                 </div>
                                 <div class="card-footer p-0">
-                                    <a href="javascript:void(0);" url={{ url('admin/portfolio-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100">Delete</a>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
+                                        <a href="javascript:void(0);" url={{ url('admin/portfolio-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

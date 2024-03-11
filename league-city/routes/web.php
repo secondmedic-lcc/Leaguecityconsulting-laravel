@@ -128,6 +128,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     /* All Routes for Portfolio Images */
     Route::post('portfolio-images', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'store']);
+    
+    Route::post('portfolio-images/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'update'])->name('portfolio-images.update');
 
     Route::get('portfolio-images-delete/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'destroy']);
 

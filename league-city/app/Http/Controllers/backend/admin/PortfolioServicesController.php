@@ -33,7 +33,7 @@ class PortfolioServicesController extends Controller
 
         $portfolio_details = Portfolio::where(array('status'=>1,'id'=>$_GET['portfolio_id']))->first();
         
-        $portfolio_images = PotfolioImage::where(array('status' => 1))->get();
+        $portfolio_images = PotfolioImage::where(array('status' => 1,'portfolio_id'=>$_GET['portfolio_id']))->get();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio','portfolio_service','portfolio_images','portfolio_details'));
 
