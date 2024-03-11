@@ -36,7 +36,7 @@
                         <h3><span class="light">{{ $p['name']; }}</span><br> {{ $p['heading']; }}</h3>
                         <p>{{ $p['sub_heading']; }}</p>
                     </div>
-                    <a href="{{ $url; }}" target="_blank" class="btn web-btn">View Project Details</a>
+                    {{-- <a href="{{ $url; }}" target="_blank" class="btn web-btn">View Project Details</a> --}}
                 </div>
             </div>
 
