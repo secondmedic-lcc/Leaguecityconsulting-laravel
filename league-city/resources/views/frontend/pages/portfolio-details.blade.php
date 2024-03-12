@@ -74,7 +74,7 @@
                     <div class="owl-carousel standout-slider">
                         @foreach($portfolio['portfolio_images'] as $p)
                         <div class="item">
-                            <div class="row align-items-end">
+                            <div class="row align-items-center">
                                 <div class="col-md-6">
                                     <div class="content">
                                         {{-- <i class="far fa-play-circle"></i> --}}
@@ -202,7 +202,7 @@
                     </div>
 
 
-                    
+
                 </div>
             </div>
         </div>
