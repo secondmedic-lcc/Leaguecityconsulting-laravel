@@ -74,12 +74,30 @@
                     <div class="owl-carousel standout-slider">
                         @foreach($portfolio['portfolio_images'] as $p)
                         <div class="item">
-                            <div class="row align-items-center">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="content">
                                         {{-- <i class="far fa-play-circle"></i> --}}
                                         <h3>{{ $p['heading']; }}</h3>
                                         <p>{{ $p['description']; }}</p>
+                                        <a href="#" class="btn web-btn">Visit Website</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="{{ asset($p['image']); }}" alt="Group Conferencing">
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        @foreach($portfolio['portfolio_images'] as $p)
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        {{-- <i class="far fa-play-circle"></i> --}}
+                                        <h3>{{ $p['heading']; }}</h3>
+                                        <p>{{ $p['description']; }}</p>
+                                        <a href="#" class="btn web-btn">Visit Website</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -105,7 +123,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-lg-8 offset-lg-2">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
