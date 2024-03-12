@@ -2042,7 +2042,7 @@ h6 .light {
     height: 350px;
     display: block;
     object-fit: contain;
-    object-position: bottom right;
+    object-position: center;
 }
 .portfolio-standout .owl-nav .owl-prev {
     left: 0px;
