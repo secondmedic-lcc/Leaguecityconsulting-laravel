@@ -1,4 +1,4 @@
-<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/services-banner.jpg);">
+<section class="page-banner section-padding" style="background-image: url({{ asset('includes-frontend'); }}/images/services-banner.webp);">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">

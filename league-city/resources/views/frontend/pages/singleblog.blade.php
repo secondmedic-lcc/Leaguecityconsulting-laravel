@@ -168,7 +168,7 @@
                     <div class="box">
                         <a href="#">
                             <div class="image">
-                                <img src="{{ asset('includes-frontend'); }}/images/aichatbots.jpg" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
+                                <img src="{{ asset('includes-frontend'); }}/images/aichatbots.webp" alt="AI Chatbots: Transforming Customer Experiences with Digital Companions">
                             </div>
                         </a>
                         <div>
@@ -185,7 +185,7 @@
                     <div class="box">
                         <a href="#">
                             <div class="image">
-                                <img src="{{ asset('includes-frontend'); }}/images/generativeai.jpg" alt="What is Generative AI? A Guide to Its Magic">
+                                <img src="{{ asset('includes-frontend'); }}/images/generativeai.webp" alt="What is Generative AI? A Guide to Its Magic">
                             </div>
                         </a>
                         <div>
@@ -202,7 +202,7 @@
                     <div class="box">
                         <a href="#">
                             <div class="image">
-                                <img src="{{ asset('includes-frontend'); }}/images/powerofai.jpg" alt="The Power of AI Chatbots: Simplifying Your Digital Experience">
+                                <img src="{{ asset('includes-frontend'); }}/images/powerofai.webp" alt="The Power of AI Chatbots: Simplifying Your Digital Experience">
                             </div>
                         </a>
                         <div>

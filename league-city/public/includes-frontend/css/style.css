@@ -588,7 +588,7 @@ h6 .light {
 /* Banner Work Start */
 .banner {
     min-height: 100vh;
-    background: url("../images/banner3.jpg") center;
+    background: url("../images/banner3.webp") center;
     background-size: cover;
     position: relative;
     padding: 250px 0px 50px;
@@ -2017,7 +2017,7 @@ h6 .light {
 
 .portfolio-standout .box {
     padding: 30px;
-    background: url("../images/slider-bg.jpg") center;
+    background: url("../images/slider-bg.webp") center;
     background-size: cover;
     position: relative;
     z-index: 2;

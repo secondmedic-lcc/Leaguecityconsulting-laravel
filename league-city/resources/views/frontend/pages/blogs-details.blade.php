@@ -27,7 +27,7 @@
                     <li>Read Time : <span class="text-grey">{{ $single_blog->read_time }}</span></li>
                 </ul>
                 <div class="image-box">
-                    <img src="{{ ($single_blog->detail_image != '' && $single_blog->detail_image != null) ? asset($single_blog->detail_image) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $single_blog->blog_title }} image">
+                    <img src="{{ ($single_blog->detail_image != '' && $single_blog->detail_image != null) ? asset($single_blog->detail_image) : asset('includes-frontend/images/aichatbots.webp'); }}" alt="{{ $single_blog->blog_title }} image">
                 </div>
                 <div class="content">
                     @php
@@ -104,7 +104,7 @@
                     <div class="box">
                         <a href="{{ $url; }}">
                             <div class="image">
-                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title'] }} image">
+                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.webp'); }}" alt="{{ $b['blog_title'] }} image">
                             </div>
                         </a>
                         <div>

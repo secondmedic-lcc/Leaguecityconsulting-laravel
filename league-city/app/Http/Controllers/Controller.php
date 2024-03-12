@@ -14,22 +14,25 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function __construct(){ }
+    function __construct()
+    {
+    }
 
-    public function index(){
-        
+    public function index()
+    {
+
         $page_name = "index";
-        
+
         $page_title = "home";
-        
+
         $current_page = "home";
 
-        $schema_image = "includes-frontend/images/logo-white.png";
-        
-        $blog = Blogs::where(array('status'=>1))->orderBy('id','desc')->limit(5)->get();
+        $schema_image = "includes-frontend/images/logo-white.webp";
 
-        $portfolio = Portfolio::where(array('status'=>1))->orderBy('id','desc')->limit(5)->get();
+        $blog = Blogs::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        return view('frontend/main', compact('page_name','page_title','current_page','blog','portfolio', 'schema_image'));
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image'));
     }
 }

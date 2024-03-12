@@ -43,7 +43,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/aos.css">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/style.css">
-    <link rel="icon" type="image/x-icon" href="{{ asset('includes-frontend') }}/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="{{ asset('includes-frontend') }}/images/favicon.webp">
 
     @if (!empty($seo_data))
     <link rel="canonical" href="{{ @$seo_data->canonical != null && @$seo_data->canonical != '' ? url('') . '/' . $seo_data->canonical : url()->current() }}" />
@@ -60,7 +60,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 
     <meta property="og:description" content="{{ $seo_data->meta_description }}">
 
-    <meta property="og:image" property="og:image" content="{{ $seo_data->meta_image != null && $seo_data->meta_image != '' ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.png') }}">
+    <meta property="og:image" property="og:image" content="{{ $seo_data->meta_image != null && $seo_data->meta_image != '' ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.webp') }}">
 
     <meta property="og:title" content="{{ $seo_data->meta_title }}">
 
@@ -70,7 +70,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 
     <meta name="twitter:description" content="{{ $seo_data->meta_description }}">
 
-    <meta name="twitter:image0" content="{{ $seo_data->meta_image != null && $seo_data->meta_image != '' ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.png') }}">
+    <meta name="twitter:image0" content="{{ $seo_data->meta_image != null && $seo_data->meta_image != '' ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.webp') }}">
     @else
     <title>League City Consulting</title>
     @endif
@@ -83,7 +83,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
             "name": "leaguecityconsulting",
             "description": "League City Consulting offers top-rated web design, development, and innovative software solutions. Explore our expertise in mobile app development for iOS, Android, Flutter, React Native, and more.",
             "url": "https://www.leaguecityconsulting.com",
-            "logo": "https://www.leaguecityconsulting.com/includes-frontend/images/logo-white.png",
+            "logo": "https://www.leaguecityconsulting.com/includes-frontend/images/logo-white.webp",
             "foundingDate": "2019",
             "address": {
                 "@type": "PostalAddress",
@@ -158,7 +158,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
         {
             "@context": "https://schema.org/",
             "@type": "ImageObject",
-            "contentUrl": "{{ asset($schema_image) ? asset($schema_image) : asset('includes-frontend/images/logo-white.png') }}",
+            "contentUrl": "{{ asset($schema_image) ? asset($schema_image) : asset('includes-frontend/images/logo-white.webp') }}",
             "license": "https://www.leaguecityconsulting.com/terms-and-conditions",
             "acquireLicensePage": "https://www.leaguecityconsulting.com/terms-and-conditions",
             "creditText": "LeagueCityConsulting",

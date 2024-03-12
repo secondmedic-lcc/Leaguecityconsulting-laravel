@@ -1,4 +1,4 @@
-<section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/package-banner.jpg');">
+<section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/package-banner.webp');">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -66,7 +66,7 @@
                             <div class="col-md-6">
                                 <h3 class="box-heading">{{ @$details->enterprise_title }}</h3>
                                 <p>{{ @$details->enterprise_details }}</p>
-                                <a href="javascript:void(0)" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $details->enterprise_title; }}" packageType="{{ $package_types->package_name; }}" packageInr="" packageUsd="" >Enquire Now</a>
+                                <a href="javascript:void(0)" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $details->enterprise_title; }}" packageType="{{ $package_types->package_name; }}" packageInr="" packageUsd="">Enquire Now</a>
                             </div>
                         </div>
                     </div>
@@ -86,27 +86,27 @@
             </div>
         </div>
         @foreach($property as $key => $p)
-            <div class="box">
-                <div class="row align-items-center">
-                    @if($key % 2 == 0)
-                        <div class="col-lg-6 order-1">
-                            <img src="{{ asset($p->includes_image) }}" alt="">
-                        </div>
-                        <div class="col-lg-6 order-2">
-                            <h3 class="box-h">{{ $p->title }}</h3>
-                            <p class="mb-0">{{ $p->description }}</p>
-                        </div>
-                    @else
-                        <div class="col-lg-6 order-2 order-lg-1">
-                            <h3 class="box-h">{{ $p->title }}</h3>
-                            <p class="mb-0">{{ $p->description }}</p>
-                        </div>
-                        <div class="col-lg-6 order-1 order-lg-2">
-                            <img src="{{ asset($p->includes_image) }}" alt="">
-                        </div>
-                    @endif
+        <div class="box">
+            <div class="row align-items-center">
+                @if($key % 2 == 0)
+                <div class="col-lg-6 order-1">
+                    <img src="{{ asset($p->includes_image) }}" alt="">
                 </div>
+                <div class="col-lg-6 order-2">
+                    <h3 class="box-h">{{ $p->title }}</h3>
+                    <p class="mb-0">{{ $p->description }}</p>
+                </div>
+                @else
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h3 class="box-h">{{ $p->title }}</h3>
+                    <p class="mb-0">{{ $p->description }}</p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="{{ asset($p->includes_image) }}" alt="">
+                </div>
+                @endif
             </div>
+        </div>
         @endforeach
     </div>
 </section>
@@ -121,33 +121,33 @@
         <div class="row g-3 g-md-5 justify-content-center">
 
             @foreach($plans_list as $plan)
-                <div class="col-lg-4 col-md-6">
-                    <div class="box">
-                        <h3 class="box-heading">{{ Str::ucfirst($plan['package']->name) }} Size Business <br />
-                            <small>{{ $package_types->package_name; }}</small>
-                        </h3>
-                        <p><b>{{ $plan['package']->monthly_inr; }} INR/{{ $plan['package']->monthly_usd; }} USD</b> Monthly</p>
-                        <p>EXCLUSIVE OF ALL TAXES</p>
-                        
-                        @foreach($plan['keypoints'] as $keypoint)
-                            <ul class="list">
-                                <li>{{ $keypoint->key_point; }}</li>
-                                @foreach($keypoint->sub_key as $subKey)
-                                    <li>
-                                        @if($subKey->includes == 1)
-                                            <i class="fas fa-check-circle text-success"></i>
-                                        @else
-                                            <i class="fas fa-times-circle text-danger"></i>
-                                        @endif
-                                        {{ $subKey->sub_keypoint; }}
-                                    </li>
-                                @endforeach
-                            </ul>
+            <div class="col-lg-4 col-md-6">
+                <div class="box">
+                    <h3 class="box-heading">{{ Str::ucfirst($plan['package']->name) }} Size Business <br />
+                        <small>{{ $package_types->package_name; }}</small>
+                    </h3>
+                    <p><b>{{ $plan['package']->monthly_inr; }} INR/{{ $plan['package']->monthly_usd; }} USD</b> Monthly</p>
+                    <p>EXCLUSIVE OF ALL TAXES</p>
+
+                    @foreach($plan['keypoints'] as $keypoint)
+                    <ul class="list">
+                        <li>{{ $keypoint->key_point; }}</li>
+                        @foreach($keypoint->sub_key as $subKey)
+                        <li>
+                            @if($subKey->includes == 1)
+                            <i class="fas fa-check-circle text-success"></i>
+                            @else
+                            <i class="fas fa-times-circle text-danger"></i>
+                            @endif
+                            {{ $subKey->sub_keypoint; }}
+                        </li>
                         @endforeach
-                        <p  class="small-text"><a href="{{ url('terms-and-conditions'); }}" target="_blank" >T&C Apply</a></p>
-                        <a href="javascript:void(0);" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $plan['package']->name; }}" packageType="{{ $package_types->package_name; }}" packageInr="{{ $plan['package']->monthly_inr; }}" packageUsd="{{ $plan['package']->monthly_usd; }}" >Get Started Now</a>
-                    </div>
+                    </ul>
+                    @endforeach
+                    <p class="small-text"><a href="{{ url('terms-and-conditions'); }}" target="_blank">T&C Apply</a></p>
+                    <a href="javascript:void(0);" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $plan['package']->name; }}" packageType="{{ $package_types->package_name; }}" packageInr="{{ $plan['package']->monthly_inr; }}" packageUsd="{{ $plan['package']->monthly_usd; }}">Get Started Now</a>
                 </div>
+            </div>
             @endforeach
 
         </div>
@@ -173,7 +173,7 @@
             </div>
             <div class="line w-100 m-0"></div>
             <div class="modal-body">
-                <form id="myPlanForm" action="{{ route('plan-request'); }}" method="POST" autocomplete="off" >
+                <form id="myPlanForm" action="{{ route('plan-request'); }}" method="POST" autocomplete="off">
                     @csrf
                     <input type="hidden" name="package_type" id="package_type">
                     <input type="hidden" name="plan_name" id="plan_name">
@@ -184,7 +184,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="">Mobile Number*</label>
-                            <input class="form-control" name="contact" required  onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" />
+                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" />
                         </div>
                         <div class="col-md-6">
                             <label for="">Email*</label>

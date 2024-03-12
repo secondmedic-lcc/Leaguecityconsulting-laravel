@@ -30,7 +30,7 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development image">
+                                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.webp" alt="Mobile App Development image">
                                     </div>
                                     <div class="content">
                                         <h3>Mobile App Development</h3>
@@ -537,7 +537,7 @@
                     <div class="box" data-aos="fade-up" data-aos-delay="{{ $i++ }}00">
                         <a href="{{ $url; }}">
                             <div class="image">
-                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title'] }}">
+                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.webp'); }}" alt="{{ $b['blog_title'] }}">
                             </div>
                         </a>
                         <div>

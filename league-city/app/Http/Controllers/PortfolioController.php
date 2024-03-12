@@ -18,12 +18,12 @@ class PortfolioController extends Controller
 
         $current_page = "portfolio";
 
-        $portfolio = Portfolio::where(array('status'=>1))->orderBy('id','desc')->get();
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->get();
 
-        $schema_image = asset('includes-frontend/images/logo-white.png');
+        $schema_image = asset('includes-frontend/images/logo-white.webp');
 
-        $seo_data_breadcrumb = 
-        '<script type="application/ld+json">
+        $seo_data_breadcrumb =
+            '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -44,9 +44,9 @@ class PortfolioController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio','schema_image', 'seo_data_breadcrumb'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'portfolio', 'schema_image', 'seo_data_breadcrumb'));
     }
-    
+
     public function portfolio_details()
     {
         $page_name = "portfolio-details";
@@ -54,25 +54,25 @@ class PortfolioController extends Controller
         $page_title = "portfolio details";
 
         $current_page = "portfolio-details";
-        
-		$url = $_SERVER['REQUEST_URI'];
+
+        $url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);
         $pathFragments = explode('-', $this->path);
 
-        $portfolio = Portfolio::where(array('status'=>1,'url_slug'=>$this->path))->first();
+        $portfolio = Portfolio::where(array('status' => 1, 'url_slug' => $this->path))->first();
 
-        $portfolio['portfolio_services'] = PortfolioServices::where(array('status'=>1,'portfolio_id'=>$portfolio->id))->get();
+        $portfolio['portfolio_services'] = PortfolioServices::where(array('status' => 1, 'portfolio_id' => $portfolio->id))->get();
 
-        $portfolio['portfolio_images'] = PotfolioImage::where(array('status'=>1,'portfolio_id'=>$portfolio->id))->get();
+        $portfolio['portfolio_images'] = PotfolioImage::where(array('status' => 1, 'portfolio_id' => $portfolio->id))->get();
 
-        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+        $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
 
-        $schema_image = @$web_banner['banner_image']; 
+        $schema_image = @$web_banner['banner_image'];
 
-        $portfolio_name = $portfolio['name'] ;
+        $portfolio_name = $portfolio['name'];
 
-        $seo_data_breadcrumb = 
-        '<script type="application/ld+json">
+        $seo_data_breadcrumb =
+            '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -88,17 +88,17 @@ class PortfolioController extends Controller
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Portfolio",
-                        "item": "'.url('/portfolio').'"
+                        "item": "' . url('/portfolio') . '"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "'.$portfolio['name'].'"
+                        "name": "' . $portfolio['name'] . '"
                     }
                 ]
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','portfolio' ,'web_banner','schema_image', 'seo_data_breadcrumb'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'portfolio', 'web_banner', 'schema_image', 'seo_data_breadcrumb'));
     }
 }

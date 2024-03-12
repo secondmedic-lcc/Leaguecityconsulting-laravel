@@ -43,7 +43,7 @@
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.jpg" alt="Mobile App Development by app developer">
+                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.webp" alt="Mobile App Development by app developer">
                     </div>
                     <div class="details">
                         <div class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></div>

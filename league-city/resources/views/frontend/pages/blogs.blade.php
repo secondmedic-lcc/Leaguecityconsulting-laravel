@@ -1,5 +1,5 @@
 @empty(!$web_banner)
-    
+
 <section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
@@ -38,7 +38,7 @@
                 <div class="box">
                     <a href="{{ $url; }}">
                         <div class="image">
-                            <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.jpg'); }}" alt="{{ $b['blog_title']; }}">
+                            <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.webp'); }}" alt="{{ $b['blog_title']; }}">
                         </div>
                     </a>
                     <div>
