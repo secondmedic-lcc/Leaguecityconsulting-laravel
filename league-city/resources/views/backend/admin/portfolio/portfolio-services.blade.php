@@ -58,7 +58,7 @@
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
                             <input type="hidden" class="form-control" value="{{ $portfolio_details['id']; }}" name="portfolio_id" />
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <input type="text" class="form-control text-dark" name="heading" id="heading" placeholder="Enter Heading" />
                         </div>
                         <div class="col-md-4">
@@ -68,7 +68,10 @@
                         <div class="col-md-2">
                             <input type="file" name="images" id="images" class="form-control"  accept="image/*" required />
                         </div>
-                        <div class="col-md-2 text-center">
+                        <div class="col-md-4 mt-2">
+                            <input type="text" class="form-control text-dark" name="portfolio_url" id="portfolio-url" placeholder="Project URL" />
+                        </div>
+                        <div class="col-md-2 text-center mt-2">
                             <button type="submit" class="btn web-btn w-100">
                                 Uplaod
                             </button>

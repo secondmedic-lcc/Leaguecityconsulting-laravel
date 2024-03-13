@@ -33,6 +33,7 @@ class PotfolioImageController extends Controller
                 'portfolio_id' => $request->portfolio_id,
                 'heading' => $request->heading,
                 'description' => $request->description,
+                'portfolio_url' => $request->portfolio_url,
             ];
           
             if(!empty($request->images)){
@@ -74,6 +75,7 @@ class PotfolioImageController extends Controller
                 'portfolio_id' => $request->portfolio_id,
                 'heading' => $request->heading,
                 'description' => $request->description,
+                'portfolio_url' => $request->portfolio_url,
             ];
           
             if(!empty($request->images)){

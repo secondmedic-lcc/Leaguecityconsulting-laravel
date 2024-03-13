@@ -80,7 +80,7 @@
                                         {{-- <i class="far fa-play-circle"></i> --}}
                                         <h3>{{ $p['heading']; }}</h3>
                                         <p>{{ $p['description']; }}</p>
-                                        <a href="#" class="btn web-btn">Visit Website</a>
+                                        <a href="{{$p['portfolio_url']}}" class="btn web-btn" target="_blank">Visit Website</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
