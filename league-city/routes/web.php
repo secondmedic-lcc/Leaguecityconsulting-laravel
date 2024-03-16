@@ -57,6 +57,8 @@ Route::get('terms-and-conditions', [App\Http\Controllers\TermsController::class,
 
 Route::get('privacy-policy', [App\Http\Controllers\PrivacyPolicyController::class, 'index']);
 
+Route::get('/singleproduct', [App\Http\Controllers\SingleProductController::class, 'index']);
+
 Route::get('sitemap.xml', function () {
     return \Illuminate\Support\Facades\Redirect::to('sitemap.xml');
 });
@@ -128,7 +130,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     /* All Routes for Portfolio Images */
     Route::post('portfolio-images', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'store']);
-    
+
     Route::post('portfolio-images/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'update'])->name('portfolio-images.update');
 
     Route::get('portfolio-images-delete/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'destroy']);

@@ -2075,6 +2075,10 @@ h6 .light {
     position: relative;
     z-index: 1;
 }
+.service-portfolio-process {
+    padding-top: 60px;
+    margin-top: 0px;
+}
 .portfolio-process * {
     color: white;
 }
@@ -2199,6 +2203,9 @@ h6 .light {
     }
     .portfolio-standout .owl-nav .owl-next {
         bottom: 20px;
+    }
+    .service-portfolio-process {
+        padding-top: 20px;
     }
     .portfolio-process .accordion button {
         padding: 10px 20px;
@@ -3170,6 +3177,10 @@ h6 .light {
 /* pricingModalForm Work End */
 
 /* Single Service Work Start */
+.service-technologies {
+    padding-top: 200px;
+    margin-top: -200px;
+}
 .service-technologies * {
     color: var(--whitecolor);
 }
@@ -3190,13 +3201,6 @@ h6 .light {
     font-size: 18px;
     margin: 0px;
 }
-.service-portfolio-process {
-    padding-top: 60px;
-    margin-top: 0px;
-}
-.service-portfolio-process .section-heading {
-    color: var(--blackcolor);
-}
 @media (max-width: 767px) {
     .service-technologies .box {
         padding: 15px;
@@ -3206,9 +3210,6 @@ h6 .light {
     }
     .service-technologies .box p {
         font-size: 16px;
-    }
-    .service-portfolio-process {
-        padding-top: 20px;
     }
 }
 /* Single Service Work End */
