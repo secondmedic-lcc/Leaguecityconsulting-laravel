@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">Software Engineering</span>
-                <h1 class="section-heading">Mobile App<span class="light">Development</span></h1>
+                <span class="heading-top">Attendance App</span>
+                <h1 class="section-heading">7'O Clock <span class="light">Attendance App</span></h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ex temporibus ullam maxime expedita modi excepturi nam molestias.</p>
             </div>
         </div>
