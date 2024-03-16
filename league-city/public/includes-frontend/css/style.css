@@ -3213,3 +3213,29 @@ h6 .light {
     }
 }
 /* Single Service Work End */
+
+/*  Products Work Start  */
+.products-page .row {
+    align-items: center;
+}
+.products-page img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.products-page.bg-dark * {
+    color: var(--whitecolor);
+}
+@media (max-width: 767px) {
+    .products-page img {
+        height: 200px;
+    }
+    .products-page .left-side {
+        order: 1;
+        margin-bottom: 15px;
+    }
+    .products-page .right-side {
+        order: 2;
+    }
+}
+/*  Products Work End  */
