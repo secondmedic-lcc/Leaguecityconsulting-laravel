@@ -42,6 +42,7 @@ class WebsiteBannersController extends Controller
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'details' => 'required|string',
+            'banner_image' => 'mimes:webp|max:150'
         ]);
 
         if(!empty($request->banner_image)){

@@ -39,7 +39,8 @@
                                 </div>
                                 <div class="col-md-4 mb-2">
                                     <label class="form-label" for="">Meta Image</label>
-                                    <input type="file" class="form-control" name="meta_image" onchange="readURL(this);" accept="image/*" />
+                                    <input type="file" class="form-control" name="meta_image" onchange="readURL(this);" accept="image/webp" />
+                                    <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                                 </div>
                                 <div class="col-md-2 mt-3">
                                     <img alt="Meta Image" src="{{ ($seo_data->meta_image != null && $seo_data->meta_image != "") ? asset($seo_data->meta_image) : asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded" width="100%" height="auto" id="img_preview" />

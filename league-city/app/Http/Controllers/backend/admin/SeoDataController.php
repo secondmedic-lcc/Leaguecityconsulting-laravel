@@ -47,7 +47,8 @@ class SeoDataController extends Controller
             'page_link' => 'required',
             'meta_title' => 'required',
             'meta_key' => 'required',
-            'meta_description' => 'required'
+            'meta_description' => 'required',
+            'meta_image' => 'mimes:webp|max:150'
         ]);
 
         if ($validator->fails()) {
@@ -63,6 +64,7 @@ class SeoDataController extends Controller
             $data['meta_description'] = $request->meta_description;
             $data['canonical'] = $request->canonical;
             $data['meta_schema'] = $request->meta_schema;
+            
 
             $check = SeoData::where(array('page_name'=>$data['page_name'],'page_link'=>$data['page_link']))->first();
 

@@ -43,6 +43,7 @@ class ProductsController extends Controller
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'description' => 'required|string',
+            'product_image' => 'mimes:webp|max:150'
         ]);
 
         $url_slug = Str::slug($request->name."-");
@@ -111,6 +112,7 @@ class ProductsController extends Controller
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'description' => 'required|string',
+            'product_image' => 'mimes:webp|max:150'
         ]);
           
         if(!empty($request->product_image)){

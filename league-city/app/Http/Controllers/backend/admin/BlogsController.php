@@ -52,6 +52,7 @@ class BlogsController extends Controller
             'blog_details' => 'required|string',
             'description' => 'required|string',
             'read_time' => 'string',
+            'blog_image' => 'mimes:webp|max:150'
         ]);
 
         if ($validator->fails()) {
@@ -146,6 +147,8 @@ class BlogsController extends Controller
             'blog_details' => 'required|string',
             'description' => 'required|string',
             'read_time' => 'string',
+            'blog_image' => 'mimes:webp|max:100',
+            'detail_image' => 'mimes:webp|max:150'
         ]);
 
         if ($validator->fails()) {

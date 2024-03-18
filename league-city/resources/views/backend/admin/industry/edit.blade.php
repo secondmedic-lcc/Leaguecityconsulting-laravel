@@ -27,7 +27,8 @@
                             </div>
                             <div class="col-md-3 mb-2">
                                 <label class="form-label" for="">Product Image</label>
-                                <input type="file" class="form-control"  name="industry_image" onchange="readURL(this);" accept="image/*" />
+                                <input type="file" class="form-control"  name="industry_image" onchange="readURL(this);" accept="image/webp" />
+                                <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                             </div>
                             <div class="col-md-2">
                                 <img alt="industry Profile" src="{{ ($industry->industry_image && $industry->industry_image != "") ? asset($industry->industry_image) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />

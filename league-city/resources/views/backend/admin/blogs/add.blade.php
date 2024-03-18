@@ -21,14 +21,16 @@
                         </div>
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="">Blog Image</label>
-                            <input type="file" class="form-control" required name="blog_image" onchange="readURL(this);" accept="image/*" value="{{ old('blog_image') }}" />
+                            <input type="file" class="form-control" required name="blog_image" onchange="readURL(this);" accept="image/webp" value="{{ old('blog_image') }}" />
+                            <small class="text-danger">(Upload only WEBP image format less than 100 KB)</small>
                         </div>
                         <div class="col-md-2">
                             <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
                         </div>
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="">Blog Detail Image</label>
-                            <input type="file" class="form-control" name="detail_image" onchange="readURL2(this);" accept="image/*" value="{{ old('detail_image') }}" />
+                            <input type="file" class="form-control" name="detail_image" onchange="readURL2(this);" accept="image/webp" value="{{ old('detail_image') }}" />
+                            <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                         </div>
                         <div class="col-md-2 mb-2">
                             <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}"  class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview2" />

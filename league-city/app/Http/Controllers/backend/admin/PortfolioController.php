@@ -42,6 +42,7 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
+            'portfolio_image' => 'mimes:webp|max:150'
         ]);
           
         if(!empty($request->portfolio_image)){
@@ -120,6 +121,7 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
+            'portfolio_image' => 'mimes:webp|max:150'
         ]);
           
         if(!empty($request->portfolio_image)){

@@ -25,7 +25,8 @@
                         </div>
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="">Portfolio Image</label>
-                            <input type="file" class="form-control" required name="portfolio_image" onchange="readURL(this);" accept="image/*" />
+                            <input type="file" class="form-control" required name="portfolio_image" onchange="readURL(this);" accept="image/webp" />
+                            <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                         </div>
                         <div class="col-md-2">
                             <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />

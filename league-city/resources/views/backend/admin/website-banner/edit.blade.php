@@ -41,7 +41,8 @@
                             </div>
                             <div class="col-md-3 mb-2">
                                 <label class="form-label" for="">Banner Image</label>
-                                <input type="file" class="form-control"  name="banner_image" onchange="readURL(this);" accept="image/*" />
+                                <input type="file" class="form-control"  name="banner_image" onchange="readURL(this);" accept="image/webp" />
+                                <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                             </div>
                             <div class="col-md-2">
                                 <img alt="banner Image" src="{{ ($banner->banner_image && $banner->banner_image != "") ? asset($banner->banner_image) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
