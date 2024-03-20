@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-center">{{ $package_types->package_name; }}</h2>
+                <h2 class="section-heading text-center">{{ @$package_types->package_name; }}</h2>
             </div>
         </div>
         <div class="row g-3 g-md-5 justify-content-center">
@@ -66,7 +66,7 @@
                             <div class="col-md-6">
                                 <h3 class="box-heading">{{ @$details->enterprise_title }}</h3>
                                 <p>{{ @$details->enterprise_details }}</p>
-                                <a href="javascript:void(0)" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ $details->enterprise_title; }}" packageType="{{ $package_types->package_name; }}" packageInr="" packageUsd="">Enquire Now</a>
+                                <a href="javascript:void(0)" class="btn web-btn btn-form" data-bs-toggle="modal" data-bs-target="#pricingModalForm" packageName="{{ @$details->enterprise_title; }}" packageType="{{ $package_types->package_name; }}" packageInr="" packageUsd="">Enquire Now</a>
                             </div>
                         </div>
                     </div>
