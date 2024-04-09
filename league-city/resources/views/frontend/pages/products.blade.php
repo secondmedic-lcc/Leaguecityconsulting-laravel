@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <span class="heading-top">Products</span>
-                <h1 class="section-heading">League City Consulting<span class="light">Products</span></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ex temporibus ullam maxime expedita modi excepturi nam molestias.</p>
+                <span class="heading-top">Our Products</span>
+                <h1 class="section-heading">Elevating Businesses<span class="light">with Our Premier Products</span></h1>
+                <p>League City Consulting: Transforming Businesses with Strategic Solutions. Achieve Success, Together.</p>
             </div>
         </div>
     </div>
