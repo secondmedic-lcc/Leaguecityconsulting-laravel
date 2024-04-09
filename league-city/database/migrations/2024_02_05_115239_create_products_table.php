@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string("name")->nullable();
             $table->string("url_slug")->nullable();
             $table->string("product_url")->nullable();
-            $table->string("heading")->nullable();
-            $table->string("sub_heading")->nullable();
             $table->string("product_image")->nullable();
             $table->longText('description')->nullable();
             $table->tinyInteger("status")->default(1);
