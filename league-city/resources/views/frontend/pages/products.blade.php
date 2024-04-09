@@ -21,7 +21,7 @@
                     <div class="col-lg-7 offset-lg-1 col-md-7 right-side">
                         <h2 class="section-heading with-p">{{ $p['name']; }}</h2>
                         <p class="heading-info">{{ $p['description']; }}</p>
-                        <a href="{{ $url; }}" class="btn web-btn">Explore More</a>
+                        <a href="{{ $p['product_url']; }}" target="_blank" class="btn web-btn">Explore More</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="col-lg-7 col-md-7 right-side">
                         <h2 class="section-heading with-p">{{ $p['name']; }}</h2>
                         <p class="heading-info">{{ $p['description']; }}</p>
-                        <a href="{{ $url; }}" class="btn web-btn">Explore More</a>
+                        <a href="{{ $p['product_url']; }}" target="_blank" class="btn web-btn">Explore More</a>
                     </div>
                     <div class="col-lg-4 offset-lg-1 col-md-5 left-side">
                         <img src="{{ asset($p['product_image']); }}" alt="{{ $p['name']; }}" />
