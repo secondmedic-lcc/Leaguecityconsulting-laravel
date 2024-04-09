@@ -40,10 +40,7 @@ class ProductsController extends Controller
         $data = $request->validate([
             'name' => 'required|string',
             'product_url' => 'required|string',
-            'heading' => 'required|string',
-            'sub_heading' => 'required|string',
-            'description' => 'required|string',
-            'product_image' => 'mimes:webp|max:150'
+            'description' => 'required|string'
         ]);
 
         $url_slug = Str::slug($request->name."-");
@@ -84,6 +81,7 @@ class ProductsController extends Controller
             }else{
                 return redirect()->back()->with('error', 'Something went Wrong');
             }
+            
         }else{
             return redirect()->back()->with('error', 'Another Product Already Exist From this Name');
         }
@@ -109,13 +107,14 @@ class ProductsController extends Controller
         $data = $request->validate([
             'name' => 'required|string',
             'product_url' => 'required|string',
-            'heading' => 'required|string',
-            'sub_heading' => 'required|string',
             'description' => 'required|string',
-            'product_image' => 'mimes:webp|max:150'
         ]);
           
         if(!empty($request->product_image)){
+            
+            $imageNa = Products::where(array('status'=>1,'id'=>$id))->first();
+
+            unlink($imageNa->product_image);
                 
             $imageName = time().'-image.'.$request->product_image->extension();
 

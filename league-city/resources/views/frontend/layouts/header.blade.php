@@ -24,9 +24,9 @@ $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('products'); }}">Products</a>
-                        </li> --}}
+                        </li>
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('packages'); }}">Packages</a>
                         </li> --}}

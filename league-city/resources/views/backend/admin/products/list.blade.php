@@ -25,8 +25,7 @@
                                 <th>Id</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Heading</th>
-                                <th>Sub Heading</th>
+                                <th>Details</th>
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
@@ -41,8 +40,7 @@
                                         <img src="{{ asset($s['product_image']); }}" alt="Image" width="100" height="auto" />
                                     </td>
                                     <td>{{ $s['name']; }}</td>
-                                    <td>{{ $s['heading']; }}</td>
-                                    <td>{{ $s['sub_heading']; }}</td>
+                                    <td>{{ $s['description']; }}</td>
                                     <td class="text-end">
                                         <a href={{ url('/admin/products/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
                                             <i class="fa fa-edit"></i>

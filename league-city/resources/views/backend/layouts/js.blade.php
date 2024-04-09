@@ -97,7 +97,7 @@
     </script>
 @endif
 
-@if(@$current_page == "portfolio" || @$current_page == "blogs" || @$current_page == "products")
+@if(@$current_page == "portfolio" || @$current_page == "blogs")
     <script>
         CKEDITOR.replace("description");
     </script>
