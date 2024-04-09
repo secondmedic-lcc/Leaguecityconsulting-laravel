@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>League City Consulting</title>
-    <link rel="shortcut icon" href="{{ asset('includes-backend/images/favicon.webp'); }}" />
+    <link rel="shortcut icon" href="{{ asset('includes-frontend/images/favicon.webp'); }}" />
 
     <link rel="stylesheet" href="{{ asset('includes-backend/css/font-awesome.min.css'); }}">
     <link rel="stylesheet" href="{{ asset('includes-backend/css/boxicons.css'); }}">
