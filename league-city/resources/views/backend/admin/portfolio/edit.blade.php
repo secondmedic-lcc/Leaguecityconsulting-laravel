@@ -42,6 +42,15 @@
                             </div>
                             <div class="col-md-6 mt-3">
                                 <div class="col-md-12 mb-3">
+                                    <label class="form-label" for="">Category</label>
+                                    <select class="form-control js-example-basic-single" name="category">
+                                        <option value="" selected disabled> </option>
+                                        @foreach($category as $c)
+                                            <option value="{{ $c->id }}" {{ ($portfolio->category == $c->id) ? 'selected' : ''; }} >{{ $c->category_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-3">
                                     <label class="form-label" for="">Meta Title</label>
                                     <textarea class="form-control text-dark" name="meta_title" required value="{{ @$seo_data->meta_title; }}" >{{ @$seo_data->meta_title; }}</textarea>
                                 </div>

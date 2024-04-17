@@ -263,6 +263,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('package-types-delete/{id}', [PackageTypesController::class, 'destroy'])->name('package.types.destroy');
 
     Route::post('package/details/{packageType}', [PackageTypesController::class, 'package_page_details'])->name('package.page.details');
+
+    
+    /* Create Routes for Category */
+    Route::get('category', [App\Http\Controllers\backend\admin\CategoryController::class, 'index'])->name("category.create");
+
+    Route::post('category', [App\Http\Controllers\backend\admin\CategoryController::class, 'store'])->name("category.store");
+
+    Route::get('category-list', [App\Http\Controllers\backend\admin\CategoryController::class, 'list'])->name("category");
+
+    Route::get('category/{id}', [App\Http\Controllers\backend\admin\CategoryController::class, 'edit'])->name("category.edit");
+
+    Route::post('category/{id}', [App\Http\Controllers\backend\admin\CategoryController::class, 'update'])->name("category.update");
+
+    Route::get('category-delete/{id}', [App\Http\Controllers\backend\admin\CategoryController::class, 'destroy'])->name("category.destory");
+
+
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

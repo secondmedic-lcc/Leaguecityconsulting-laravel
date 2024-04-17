@@ -40,12 +40,21 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-12 mb-3">
+                                <label class="form-label" for="">Category</label>
+                                <select class="form-control js-example-basic-single" name="category">
+                                    <option value="" selected disabled> </option>
+                                    @foreach($category as $c)
+                                        <option value="{{ $c->id }}" {{ (old('category') == $c->id) ? 'selected' : ''; }} >{{ $c->category_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-12 mb-3">
                                 <label class="form-label" for="">Meta Title</label>
-                                <textarea class="form-control text-dark" name="meta_title" required value="{{ old('meta_title') }}" ></textarea>
+                                <textarea class="form-control text-dark" name="meta_title" rows="3" required value="{{ old('meta_title') }}" ></textarea>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="form-label" for="">Meta Key</label>
-                                <textarea class="form-control text-dark" name="meta_key" required value="{{ old('meta_key') }}" ></textarea>
+                                <textarea class="form-control text-dark" name="meta_key" rows="3" required value="{{ old('meta_key') }}" ></textarea>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">

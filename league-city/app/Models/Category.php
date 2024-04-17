@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class Category extends Model
 {
     use HasFactory;
-
-    protected $table = 'portfolio';
+    
+    protected $table = "category";
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'category', 'name', 'url_slug', 'project_url', 'heading', 'sub_heading', 'logo', 'image', 'banner', 'desc_heading', 'description', 'status'
+        'category_name',
+        'category_slug',
+        'category_img',
+        'status',
     ];
 }

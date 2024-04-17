@@ -29,6 +29,18 @@
                         <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
                     </a>
                 </li>
+                
+                <li class="mb-2 dropdown {{ $current_page == 'category' ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-rocket"></i> <span>Manage Category</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('category.create') }}">Add Category</a></li>
+                        <li><a class="dropdown-item" href="{{ route('category') }}">Category List</a></li>
+                    </ul>
+                </li>
 
                 <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

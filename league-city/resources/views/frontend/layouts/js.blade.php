@@ -142,6 +142,24 @@
 </script>
 @endif
 
+@if($current_page == 'portfolio')
+    <script>
+        $('.portfolio-filter').click(function(e){
+
+            var category = $(this).attr('category');
+            $('.portfolio-filter').removeClass('active');
+            $('#category'+category).addClass('active');
+
+            if(category == 'all'){
+                $('.portfolio-view').removeClass('d-none');
+            } else {
+                $('.portfolio-view').addClass('d-none');
+                $('.portfolio-view-'+category).removeClass('d-none');
+            }
+        });
+    </script>
+@endif
+
 </body>
 
 </html>

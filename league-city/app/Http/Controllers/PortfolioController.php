@@ -7,6 +7,7 @@ use App\Models\Portfolio;
 use App\Models\PortfolioServices;
 use App\Models\PotfolioImage;
 use App\Models\WebsiteBanners;
+use App\Models\Category;
 
 class PortfolioController extends Controller
 {
@@ -19,6 +20,8 @@ class PortfolioController extends Controller
         $current_page = "portfolio";
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->get();
+
+        $category = Category::where(array('status' => 1))->orderBy('id', 'asc')->get();
 
         $schema_image = asset('includes-frontend/images/logo-white.webp');
 
@@ -44,7 +47,7 @@ class PortfolioController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'portfolio', 'schema_image', 'seo_data_breadcrumb'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'portfolio', 'schema_image', 'seo_data_breadcrumb','category'));
     }
 
     public function portfolio_details()

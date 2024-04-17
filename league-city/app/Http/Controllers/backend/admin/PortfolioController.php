@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Portfolio;
 use App\Models\SeoData;
+use App\Models\Category;
 use Illuminate\Support\Str;
 
 class PortfolioController extends Controller
@@ -32,12 +33,15 @@ class PortfolioController extends Controller
         
         $current_page = "portfolio";
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page'));
+        $category = Category::where(array('status' => 1))->orderBy('category_name', 'asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','category'));
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
+            'category' => 'required',
             'name' => 'required|string',
             'project_url' => 'required|string',
             'heading' => 'required|string',
@@ -111,12 +115,15 @@ class PortfolioController extends Controller
         
         $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'portfolio-details'))->get()->first();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio','seo_data'));
+        $category = Category::where(array('status' => 1))->orderBy('category_name', 'asc')->get();
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio','seo_data','category'));
     }
 
     public function update(Request $request, $id)
     {
         $data = $request->validate([
+            'category' => 'required',
             'name' => 'required|string',
             'project_url' => 'required|string',
             'heading' => 'required|string',
