@@ -328,6 +328,35 @@ h6 .light {
     margin: 20px 0px;
 }
 
+.creative-tabs {
+    flex-flow: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.creative-tabs .nav-link {
+    white-space: nowrap;
+    text-align: left;
+    color: var(--blackcolor);
+    border-radius: 0;
+    padding: 12px 25px;
+    font-family: var(--fontSemiBold);
+    font-size: 16px;
+    transition: var(--transition);
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+.creative-tabs .nav-link:hover,
+.creative-tabs .nav-link.active {
+    background-color: var(--themecolor);
+    border-color: var(--themecolor);
+    color: var(--whitecolor);
+}
+
 @media (max-width: 767px) {
     body {
         font-size: 14px;
@@ -378,6 +407,16 @@ h6 .light {
     .line {
         margin: 15px 0px;
         width: 60px;
+    }
+    .creative-tabs {
+        justify-content: start;
+        flex-wrap: unset;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .creative-tabs .nav-link {
+        font-size: 12px;
+        padding: 10px 15px;
     }
 }
 /* Common CSS End */
