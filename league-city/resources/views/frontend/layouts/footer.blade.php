@@ -2,7 +2,7 @@
     <section class="footer section-padding bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-sm-6 col-12">
                     <div class="footer-info">
                         <div class="logo">
                             <a href="{{ url('/'); }}">
@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-sm-6 col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
                         <li><a href="services#software-engineering">Mobile App Development</a></li>
@@ -36,14 +36,14 @@
                         <li><a href="services#software-engineering">UI/UX Development</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Digital Automation</h2>
                     <ul class="list">
                         <li><a href="services#digital-automation">E-Commerce Development</a></li>
                         <li><a href="services#digital-automation">Cyber Security</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-sm-6 col-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-lg-2 col-sm-6 col-6">
                     <h2 class="footer-h">Quick Links</h2>
                     <ul class="list">
                         <li><a href="{{ url('about-us') }}">About Us</a></li>
