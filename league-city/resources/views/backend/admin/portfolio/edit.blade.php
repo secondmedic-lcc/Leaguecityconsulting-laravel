@@ -1,4 +1,5 @@
 @empty(!$portfolio)
+@php $categoryList = explode(",",$portfolio->category);  @endphp
     
     <div class="row">
         <div class="col-lg-12">
@@ -43,10 +44,10 @@
                             <div class="col-md-6 mt-3">
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="">Category</label>
-                                    <select class="form-control js-example-basic-single" name="category">
-                                        <option value="" selected disabled> </option>
+                                    <select class="form-control js-example-basic-multiple" multiple="multiple" name="category[]">
+                                        <option value="" disabled> </option>
                                         @foreach($category as $c)
-                                            <option value="{{ $c->id }}" {{ ($portfolio->category == $c->id) ? 'selected' : ''; }} >{{ $c->category_name }}</option>
+                                            <option value="{{ $c->id }}" {{ in_array($c->id, $categoryList) ? 'selected' : ''; }} >{{ $c->category_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -41,7 +41,6 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'category' => 'required',
             'name' => 'required|string',
             'project_url' => 'required|string',
             'heading' => 'required|string',
@@ -80,6 +79,8 @@ class PortfolioController extends Controller
         if(empty($check)){
 
             $data['url_slug'] = $url_slug;
+
+            $data['category'] = implode(",", $request->category);
 
             $result = Portfolio::create($data);
 
@@ -156,6 +157,8 @@ class PortfolioController extends Controller
 
         $url_slug = Str::slug($request->name."-");
         $data['url_slug'] = $url_slug;
+
+        $data['category'] = implode(",", $request->category);
 
         Portfolio::where(array('status'=>1,'id'=>$id))->update($data);
 

@@ -31,8 +31,14 @@
         </div>
        
         <div class="row g-3">
-            @foreach($portfolio as $p) @php $url = url('portfolio')."/".$p->url_slug; @endphp
-                <div class="col-lg-4 col-md-6 portfolio-view-{{ $p['category']; }} portfolio-view">
+            @foreach($portfolio as $p) 
+                @php $url = url('portfolio')."/".$p->url_slug; 
+                     $categoryList = explode(",",@$p->category);
+                    $catData = "";
+                    foreach ($categoryList as $c) {
+                        $catData .= " portfolio-view-".$c;
+                    } @endphp
+                <div class="col-lg-4 col-md-6 {{ $catData; }} portfolio-view">
                     <div class="box">
                         @if($p['logo'] != null && $p['logo'] != "")
                         <img src="{{ asset($p['logo']); }}" class="logo" alt="{{ $p['name']; }}">
