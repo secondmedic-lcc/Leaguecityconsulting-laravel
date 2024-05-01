@@ -3279,3 +3279,7 @@ h6 .light {
     }
 }
 /*  Products Work End  */
+
+.fadeeffect {
+    animation: fadeeffect 1s linear 0s 1;
+}

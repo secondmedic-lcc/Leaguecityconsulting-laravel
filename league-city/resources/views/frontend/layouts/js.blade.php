@@ -70,25 +70,25 @@
 @if(@$current_page == "package-type")
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $('.btn-form').click(function(e){
+    $('.btn-form').click(function(e) {
 
         let packageName = $(this).attr('packageName');
         let formattedPackageName = packageName.charAt(0).toUpperCase() + packageName.slice(1);
 
         $('#packageName').text(formattedPackageName);
         $('#plan_name').val(formattedPackageName);
-        
+
         let packageType = $(this).attr('packageType');
-        
+
         $('#packageType').text(packageType);
         $('#package_type').val(packageType);
-        
+
         let packageInr = $(this).attr('packageInr');
-        
+
         $('#packageInr').text(packageInr);
-        
+
         let packageUsd = $(this).attr('packageUsd');
-        
+
         $('#packageUsd').text(packageUsd);
 
     });
@@ -103,33 +103,33 @@
         xhr.open('POST', "{{ url('api/packages/store'); }}");
         xhr.send(data);
         xhr.onerror = () => {
-            swal("Error!", "Network Error" , "error");
+            swal("Error!", "Network Error", "error");
         };
-        xhr.onload  = (new_res) => {
-            
+        xhr.onload = (new_res) => {
+
             let response_new = xhr.responseText;
             let result = JSON.parse(response_new);
             console.log(result.msg);
-            if(xhr.readyState === 4 && xhr.status === 200 && result.success == true) {
-                
+            if (xhr.readyState === 4 && xhr.status === 200 && result.success == true) {
+
                 swal(
-                    "Thank You!", 
-                    "Thank you for your Request", 
+                    "Thank You!",
+                    "Thank you for your Request",
                     "success"
                 );
-                
+
                 button.removeAttribute("disabled");
                 form.reset();
                 $('.modal').modal('hide');
 
-            }else{
+            } else {
                 swal("Error!", result.error, "error");
                 button.removeAttribute("disabled");
             }
         };
     });
 
-    
+
     document.addEventListener('DOMContentLoaded', function() {
         var form = document.getElementById('myPlanForm');
         var submitButton = document.getElementById('plan-form-btn');
@@ -143,21 +143,23 @@
 @endif
 
 @if($current_page == 'portfolio')
-    <script>
-        $('.portfolio-filter').click(function(e){
+<script>
+    $('.portfolio-filter').click(function(e) {
 
-            var category = $(this).attr('category');
-            $('.portfolio-filter').removeClass('active');
-            $('#category'+category).addClass('active');
+        var category = $(this).attr('category');
+        $('.portfolio-filter').removeClass('active');
+        $('#category-' + category).addClass('active');
 
-            if(category == 'all'){
-                $('.portfolio-view').removeClass('d-none');
-            } else {
-                $('.portfolio-view').addClass('d-none');
-                $('.portfolio-view-'+category).removeClass('d-none');
-            }
-        });
-    </script>
+        $('.portfolio-view').removeClass('fadeeffect');
+        if (category == 'all') {
+            $('.portfolio-view').removeClass('d-none');
+        } else {
+            $('.portfolio-view').addClass('d-none');
+            $('.portfolio-view-' + category).removeClass('d-none');
+            $('.portfolio-view-' + category).addClass('fadeeffect');
+        }
+    });
+</script>
 @endif
 
 </body>
