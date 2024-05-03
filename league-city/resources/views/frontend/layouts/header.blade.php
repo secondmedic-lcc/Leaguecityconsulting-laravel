@@ -14,39 +14,7 @@ $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')-
                     <span class="navbar-toggler-icon"></span>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('about-us'); }}">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('services'); }}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('products'); }}">Products</a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ url('packages'); }}">Packages</a>
-                        </li> --}}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Packages
-                            </a>
-                            <ul class="dropdown-menu">
-                                @foreach($package_types as $p)
-                                <li>
-                                    <a class="dropdown-item" href="{{ url('packages/'.$p->package_slug); }}">{{ $p->package_name; }}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>
-                        </li>
-                    </ul>
-                    <a href="{{ url('contact-us'); }}" class="btn web-btn">Let's Connect</a>
+                    @include('frontend/layouts/header-menu')
                 </div>
             </div>
         </nav>
@@ -62,39 +30,7 @@ $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')-
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="menus">
-                <li>
-                    <a class="nav-link" href="{{ url('about-us'); }}">About Us</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="{{ url('services'); }}">Services</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>
-                </li>
-                {{-- <li>
-                    <a class="nav-link" href="{{ url('packages'); }}">SEO Packages</a>
-                </li> --}}
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Packages
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">SEO Packages</a></li>
-                        <li><a class="dropdown-item" href="#">PPC Packages</a></li>
-                        <li><a class="dropdown-item" href="#">SMM Packages</a></li>
-                        <li><a class="dropdown-item" href="#">ORM Packages</a></li>
-                        <li><a class="dropdown-item" href="#">Logo Designing</a></li>
-                        <li><a class="dropdown-item" href="#">SMO Packages</a></li>
-                        <li><a class="dropdown-item" href="#">Website Maintenance</a></li>
-                        <li><a class="dropdown-item" href="#">Website Packages</a></li>
-                    </ul>
-                </li> -->
-                <li>
-                    <a class="nav-link" href="{{ url('blogs'); }}">Blogs</a>
-                </li>
-            </ul>
-            <a href="{{ url('contact-us'); }}" class="btn web-btn w-100">Let's Connect</a>
+            @include('frontend/layouts/header-menu')
             <ul class="social-icons">
                 <li>
                     <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>

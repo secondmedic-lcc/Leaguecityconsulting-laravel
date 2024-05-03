@@ -33,6 +33,7 @@
 body {
     font-family: var(--fontRegular);
     color: var(--blackcolor);
+    padding: 0px !important;
 }
 a {
     color: var(--blackcolor);
@@ -566,42 +567,47 @@ h6 .light {
 .header-sidebar .offcanvas-body {
     padding: 0px 15px 20px;
 }
-.header-sidebar ul.menus {
-    margin: 0 -15px 20px;
+.header-sidebar .navbar-nav {
+    width: calc(100% + 30px);
+    margin: 0 -15px 20px !important;
     padding: 0;
     list-style: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.header-sidebar ul.menus li a {
+.header-sidebar .navbar-nav li a {
     padding: 15px 20px;
-    color: white;
+    color: white !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-family: var(--fontSemiBold);
     text-transform: uppercase;
     font-size: 14px;
     position: relative;
 }
-.header-sidebar ul.menus li a.dropdown-toggle::after {
+.header-sidebar .navbar-nav li a.dropdown-toggle::after {
     right: 20px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
 }
-.header-sidebar ul.menus .dropdown-menu {
+.header-sidebar .navbar-nav .dropdown-menu {
     position: relative !important;
     transform: unset !important;
     border-radius: 0px;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 0px;
 }
-.header-sidebar ul.menus .dropdown-menu a {
+.header-sidebar .navbar-nav .dropdown-menu a {
     padding: 12px 20px 12px 30px;
     text-transform: capitalize;
+}
+.header-sidebar .navbar-nav .dropdown-menu a:hover {
+    background-color: var(--themecolor);
 }
 .header-sidebar .web-btn {
     margin-bottom: 20px;
     padding: 10px 20px;
     font-size: 14px;
+    width: 100%;
 }
 @media (max-width: 1200px) {
     .header .navbar .nav-link {
