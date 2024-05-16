@@ -3289,3 +3289,332 @@ h6 .light {
 .fadeeffect {
     animation: fadeeffect 1s linear 0s 1;
 }
+
+/* saas campaign 1 work start */
+
+.campaign-banner {
+    padding: 40px 0 80px;
+    background-image: url("../images/campaign/campaign-banner-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.campaign-banner .banner-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-40%, 0);
+    width: 470px;
+}
+
+.campaign-banner .logo {
+    height: 60px;
+}
+
+.campaign-banner h1 {
+    font-size: 46px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 60px;
+    color: var(--whitecolor);
+}
+
+.campaign-banner ul {
+    margin: 0;
+    margin-top: 40px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.campaign-banner ul li {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #bdb7b7;
+    margin-top: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.campaign-banner ul li::before {
+    content: "";
+    clear: both;
+    display: block;
+    background: url(../images/campaign/tick-icon.webp) top center no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+
+.campaign-banner .form-box {
+    background-color: var(--whitecolor);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 7%);
+}
+
+.campaign-banner .form-box .box-heading {
+    background-color: var(--themecolor);
+    padding: 20px;
+    color: var(--whitecolor);
+}
+
+.campaign-banner .form-box .box-heading p {
+    margin-bottom: 0;
+}
+
+.campaign-banner .form-box form {
+    padding: 20px;
+}
+
+.campaign-review .content-box-outer {
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    border: 1px solid #e2e9ef;
+    box-shadow: 0 0 15px 0 rgba(22, 101, 216, 0.1);
+    border-radius: 10px;
+    position: relative;
+    margin: 10px;
+    margin-top: 40px;
+}
+
+.campaign-review .content-box-outer .quote-icon {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    background-image: var(--gradienttoptobottom);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--whitecolor);
+}
+
+.campaign-review .content-box-outer .content-box {
+    padding: 40px 20px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.campaign-review .content-box-outer .content-box p {
+    margin-bottom: 0;
+}
+
+.campaign-review .content-box-outer .cust-img-box {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.campaign-review .content-box-outer .cust-img-box .profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.campaign-review .content-box-outer .cust-img-box .profile img {
+    width: 40px;
+    height: 40px;
+}
+
+.campaign-review .content-box-outer .cust-img-box .profile-text h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.campaign-review .content-box-outer .cust-img-box .profile-text h6 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.campaign-review .owl-dots {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.campaign-review .owl-dots .owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #eee;
+    margin-right: 5px;
+}
+
+.campaign-review .owl-dots .owl-dot.active {
+    background-color: var(--themecolor);
+}
+
+.campaign-why-choose {
+    background-color: #de2f2f10;
+    margin-top: 60px;
+}
+
+.campaign-why-choose .why-choose-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.campaign-why-choose .why-choose-box .choose-inner-div {
+    display: flex;
+    align-items: center;
+    width: 48%;
+}
+
+.campaign-why-choose .why-choose-box .choose-inner-div img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.campaign-why-choose .counter-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    margin-top: 60px;
+}
+
+.campaign-why-choose .counter-box p {
+    margin-bottom: 0;
+}
+
+.campaign-why-choose .counter-box .count-div {
+    border-right: 1px solid #e0e0e0;
+    padding: 0 80px 0 40px;
+}
+
+.campaign-services {
+    margin-top: 0;
+}
+
+.campaign-services * {
+    color: var(--blackcolor);
+}
+
+.campaign-services .web-btn {
+    color: var(--whitecolor) !important;
+}
+
+.campaign-services .box .content h3 {
+    color: var(--whitecolor) !important;
+}
+
+.campaign-services .owl-prev {
+    left: -60px;
+    background-color: var(--themecolor) !important;
+    color: var(--whitecolor) !important;
+}
+
+.campaign-services .owl-prev span {
+    color: var(--whitecolor) !important;
+}
+
+.campaign-services .owl-next {
+    right: -60px;
+    background-color: var(--themecolor) !important;
+    color: var(--whitecolor) !important;
+}
+
+.campaign-services .owl-next span {
+    color: var(--whitecolor) !important;
+}
+
+.campaign-recent-work .section-heading {
+    color: var(--blackcolor);
+}
+
+.campaign-recent-work .heading-info {
+    color: var(--blackcolor);
+}
+
+.campaign-recent-work .owl-prev {
+    left: -60px;
+    background-color: var(--themecolor) !important;
+    color: var(--whitecolor) !important;
+    border: none !important;
+}
+
+.campaign-recent-work .owl-prev span {
+    color: var(--whitecolor) !important;
+}
+
+.campaign-recent-work .owl-next {
+    right: -60px;
+    background-color: var(--themecolor) !important;
+    color: var(--whitecolor) !important;
+    border: none !important;
+}
+
+.campaign-recent-work .owl-next span {
+    color: var(--whitecolor) !important;
+}
+
+@media (max-width: 1199px) {
+    .campaign-banner .banner-img {
+        display: none;
+    }
+
+    .campaign-services .owl-prev {
+        top: unset;
+        bottom: -70px;
+        left: 50%;
+        transform: translate(-100%, 0);
+    }
+
+    .campaign-services .owl-next {
+        top: unset;
+        bottom: -70px;
+        left: 50%;
+        transform: translate(30%, 0);
+    }
+
+    .campaign-services .btnrow {
+        margin-top: 90px;
+    }
+
+    .campaign-why-choose .counter-box {
+        flex-wrap: wrap;
+    }
+
+    .campaign-why-choose .counter-box .count-div {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .campaign-why-choose .counter-box .count-div {
+        padding: 20px 10px 10px;
+    }
+
+    .campaign-banner .form-box {
+        margin-top: 30px;
+    }
+
+    .campaign-why-choose .why-choose-box {
+        margin-top: unset;
+        margin: 20px 0;
+    }
+
+    .campaign-services .btnrow {
+        margin-top: 0;
+    }
+}
+
+/* saas campaign 1 work end */

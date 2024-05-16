@@ -33,11 +33,14 @@ Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::
 Route::post('/packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('plan-request');
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
+
 Route::get('/singleservice', [App\Http\Controllers\SingleServiceController::class, 'index']);
 
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);
 
 Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
+
+Route::get('/saas-campaign-1', [App\Http\Controllers\SaasCampaign1Controller::class, 'index']);
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index']);
 

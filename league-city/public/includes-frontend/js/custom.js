@@ -136,3 +136,29 @@ $(".blog-slider").owlCarousel({
         },
     },
 });
+
+
+
+$(".campaign-review-slider").owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: true,
+    responsive: {
+        0: {
+            items: 1.5,
+            nav: false,
+            center: true,
+        },
+        400: {
+            items: 1,
+            nav: false,
+        },
+        767: {
+            items: 2,
+        },
+        1200: {
+            items: 4,
+        },
+    },
+});
