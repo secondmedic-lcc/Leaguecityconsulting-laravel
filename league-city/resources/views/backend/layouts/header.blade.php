@@ -25,8 +25,14 @@
                 </li>
                 
                 <li class="mb-1 {{ ($current_page == 'package-request') ? 'active' : ''; }}">
-                    <a href="{{ url('admin/plan-request') }}">
+                    <a href="{{ url('admin/plan-requests') }}">
                         <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
+                    </a>
+                </li>
+                
+                <li class="mb-1 {{ ($current_page == 'campaign') ? 'active' : ''; }}">
+                    <a href="{{ route('campaign.list') }}">
+                        <font><i class="bx bxs-user-pin"></i> <span>Campaign Request</span></font>
                     </a>
                 </li>
                 

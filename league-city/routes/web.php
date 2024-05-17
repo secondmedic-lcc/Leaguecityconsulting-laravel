@@ -30,7 +30,7 @@ Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
 Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::class, 'index']);
 
-Route::post('/packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('plan-request');
+Route::post('packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('packages-request');
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
 
@@ -40,7 +40,9 @@ Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'ind
 
 Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
 
-Route::get('/saas-campaign-1', [App\Http\Controllers\SaasCampaign1Controller::class, 'index']);
+Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index']);
+
+Route::post('campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'store'])->name('campaign.store');
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index']);
 
@@ -73,11 +75,11 @@ Auth::routes();
 
 Route::get('/register', [App\Http\Controllers\backend\LoginController::class, 'logout']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
 
-    Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index']);
 
     /* All Routes for Contact Request */
     Route::get('contact-request', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'index']);
@@ -85,7 +87,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
 
     /* All Routes for Contact Request */
-    Route::get('plan-request', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'package_request']);
+    Route::get('plan-requests', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'package_request']);
 
     Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
 
@@ -281,6 +283,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('category-delete/{id}', [App\Http\Controllers\backend\admin\CategoryController::class, 'destroy'])->name("category.destory");
 
+    
+    Route::get('campaign', [App\Http\Controllers\backend\admin\CampaignController::class, 'index'])->name('campaign.list');
+
+    Route::get('campaign-delete/{id}', [App\Http\Controllers\backend\admin\CampaignController::class, 'destroy'])->name("campaign.destory");
 
 });
 

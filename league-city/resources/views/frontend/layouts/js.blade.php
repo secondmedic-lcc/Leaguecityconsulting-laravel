@@ -5,7 +5,7 @@
 <script src="{{ asset('includes-frontend'); }}/js/custom.js"></script>
 
 
-@if (session('success') != '')
+@if(session('success') != '')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     swal("Thank you!", "{{ session('success') }}", "success");
@@ -158,6 +158,22 @@
             $('.portfolio-view-' + category).removeClass('d-none');
             $('.portfolio-view-' + category).addClass('fadeeffect');
         }
+    });
+</script>
+@endif
+
+
+
+@if($current_page == 'saas-campaign')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('campaign-form');
+        var submitButton = document.getElementById('campaign-btn');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
+        });
     });
 </script>
 @endif

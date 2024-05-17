@@ -25,28 +25,44 @@
                         <h4>Connect With Us</h4>
                         <p>Get No Obligation Free Quote!</p>
                     </div>
-                    <form action="">
+                    @if ($errors->any())
+                        <div class="alert alert-danger pb-2">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{ route('campaign.store'); }}" method="post" id="campaign-form">
+                        @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" />
                             <label for="floatingInput">Your Full Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput2" placeholder="email">
+                            <input type="email" class="form-control" id="floatingInput2" placeholder="email" name="email" />
                             <label for="floatingInput2">Email Address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput3" placeholder="number">
+                            <input type="text" class="form-control" id="floatingInput3" placeholder="number" onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" name="contact" />
                             <label for="floatingInput3">Phone Number</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput4" placeholder="country">
-                            <label for="floatingInput4">Country</label>
+                            {{-- <input type="text" class="form-control" id="floatingInput4" placeholder="country"> --}}
+                            {{-- <label for="floatingInput4">Country</label> --}}
+                            <select class="form-control" id="floatingInput4" name="country" >
+                                <option value="" selected disabled>Country</option>
+                                @foreach($country as $c)
+                                    <option value="{{ $c->country_id; }}">{{ $c->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 70px"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="message" style="height: 70px"></textarea>
                             <label for="floatingTextarea2">Your Requirements</label>
                         </div>
-                        <button class="web-btn btn w-100 mt-4">Submit</button>
+                        <button class="web-btn btn w-100 mt-4" id="campaign-btn">Submit</button>
                     </form>
                 </div>
             </div>
