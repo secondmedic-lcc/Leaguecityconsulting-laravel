@@ -260,7 +260,7 @@
                     </div>
                 </div>
                 <p class="mt-5 mb-1"><b>Talk to our consultants</b></p>
-                <a href="#" class="btn web-btn">Contact Us Now</a>
+                <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
             </div>
         </div>
     </div>
@@ -365,7 +365,7 @@
                 </div>
                 <div class="btnrow text-center">
                     <p class="mt-5 mb-1"><b>Ready to discuss?</b></p>
-                    <a href="" class="btn web-btn">Contact Us Now</a>
+                    <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
                 </div>
             </div>
         </div>
@@ -444,9 +444,6 @@
                                                 Engaging Experience with Progressive Web Apps
                                             </li>
                                         </ul>
-                                        <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -489,9 +486,6 @@
                                                 Revitalizing and Upgrading Applications
                                             </li>
                                         </ul>
-                                        <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -533,9 +527,6 @@
 
                                             <li>Independent AI Decision Agents</li>
                                         </ul>
-                                        <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -577,9 +568,6 @@
                                                 Website Redesign
                                             </li>
                                         </ul>
-                                        <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -620,9 +608,6 @@
                                             <li>Salesforce Expertise
                                             </li>
                                         </ul>
-                                        <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -661,9 +646,9 @@
             @endforeach
         </div>
     </div>
-    <div class="btnrow text-center">
-        <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
-    </div>
+    {{-- <div class="btnrow text-center">
+        <a href="#campaign-form" class="btn web-btn">See Our Portfolio</a>
+    </div> --}}
 </section>
 
 <section class="pricing section-padding" id="pricing">
@@ -799,8 +784,8 @@
                             3rd Party APIs Integrations
                         </li>
                     </ul>
-                    <p class="small-text"><a href="" target="_blank">T&C Apply</a></p>
-                    <a href="" class="btn web-btn btn-form">Get Started Now</a>
+                    <p class="small-text"><a href="#campaign-form" target="_blank">T&C Apply</a></p>
+                    <a href="#campaign-form" class="btn web-btn btn-form">Get Started Now</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -926,8 +911,8 @@
                             3rd Party APIs Integrations
                         </li>
                     </ul>
-                    <p class="small-text"><a href="" target="_blank">T&C Apply</a></p>
-                    <a href="" class="btn web-btn btn-form">Get Started Now</a>
+                    <p class="small-text"><a href="#campaign-form" target="_blank">T&C Apply</a></p>
+                    <a href="#campaign-form" class="btn web-btn btn-form">Get Started Now</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -1053,8 +1038,8 @@
                             3rd Party APIs Integrations
                         </li>
                     </ul>
-                    <p class="small-text"><a href="" target="_blank">T&C Apply</a></p>
-                    <a href="" class="btn web-btn btn-form">Get Started Now</a>
+                    <p class="small-text"><a href="#campaign-form" target="_blank">T&C Apply</a></p>
+                    <a href="#campaign-form" class="btn web-btn btn-form">Get Started Now</a>
                 </div>
             </div>
 
