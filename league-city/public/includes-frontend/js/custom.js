@@ -137,8 +137,6 @@ $(".blog-slider").owlCarousel({
     },
 });
 
-
-
 $(".campaign-review-slider").owlCarousel({
     loop: true,
     margin: 0,
@@ -146,9 +144,8 @@ $(".campaign-review-slider").owlCarousel({
     dots: true,
     responsive: {
         0: {
-            items: 1.5,
+            items: 1,
             nav: false,
-            center: true,
         },
         400: {
             items: 1,

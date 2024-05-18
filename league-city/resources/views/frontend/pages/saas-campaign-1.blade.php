@@ -26,13 +26,13 @@
                         <p>Get No Obligation Free Quote!</p>
                     </div>
                     @if ($errors->any())
-                        <div class="alert alert-danger pb-2">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger pb-2">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
                     <form action="{{ route('campaign.store'); }}" method="post" id="campaign-form">
                         @csrf
@@ -51,10 +51,10 @@
                         <div class="form-floating mb-3">
                             {{-- <input type="text" class="form-control" id="floatingInput4" placeholder="country"> --}}
                             {{-- <label for="floatingInput4">Country</label> --}}
-                            <select class="form-control" id="floatingInput4" name="country" >
+                            <select class="form-control" id="floatingInput4" name="country">
                                 <option value="" selected disabled>Country</option>
                                 @foreach($country as $c)
-                                    <option value="{{ $c->country_id; }}">{{ $c->name }}</option>
+                                <option value="{{ $c->country_id; }}">{{ $c->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -205,8 +205,6 @@
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-2.png" alt="">
                         <h6>Complete Peace of Mind</h6>
                     </div>
-                </div>
-                <div class="why-choose-box">
                     <div class="choose-inner-div">
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-3.png" alt="">
                         <h6>Cost-Effective Services</h6>
@@ -215,8 +213,6 @@
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-4.png" alt="">
                         <h6>Daily / Weekly / Monthly Reporting</h6>
                     </div>
-                </div>
-                <div class="why-choose-box">
                     <div class="choose-inner-div">
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-5.png" alt="">
                         <h6>24*7 Dedicated Support</h6>
@@ -225,8 +221,6 @@
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-6.png" alt="">
                         <h6>Transparent & Smooth Communication</h6>
                     </div>
-                </div>
-                <div class="why-choose-box">
                     <div class="choose-inner-div">
                         <img src="{{ asset('includes-frontend'); }}/images/campaign/camp-why-choose-7.png" alt="">
                         <h6>100% Quality Assurance</h6>
@@ -259,7 +253,7 @@
                         <p>Satisfied Customers</p>
                     </div>
                 </div>
-                <p class="mt-5 mb-1"><b>Talk to our consultants</b></p>
+                <p class="md:mt-5 mb-1 mt-3"><b>Talk to our consultants</b></p>
                 <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
             </div>
         </div>
@@ -267,7 +261,7 @@
 </section>
 
 
-<section class="services campaign-services section-padding">
+<section class="services campaign-services section-padding pb-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -364,7 +358,7 @@
                     </div>
                 </div>
                 <div class="btnrow text-center">
-                    <p class="mt-5 mb-1"><b>Ready to discuss?</b></p>
+                    <p class="md:mt-5 mb-1 mt-3"><b>Ready to discuss?</b></p>
                     <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
                 </div>
             </div>
@@ -372,7 +366,7 @@
     </div>
 </section>
 
-<section class="technology section-padding">
+<section class="technology section-padding pb-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
@@ -619,8 +613,55 @@
     </div>
 </section>
 
+<section class="recent-work section-padding campaign-recent-work pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
+                <p class="heading-info">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
+            </div>
+        </div>
+    </div>
+    <div class="work-slider-height" data-aos="zoom-in" data-aos-delay="200">
+        <div class="owl-carousel work-slider">
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/secondmedic.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/secmed-white.png" class="logo" alt="SecondMedic app">
+                            <h2><span class="light">SecondMedic</span><br> Telehealth Platform App</h2>
+                            <p>Secondmedic app is a telehealth platform that connects users with medical professionals for virtual medical visits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/rrvm.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/rrvm-logo.png" class="logo" alt="SecondMedic app">
+                            <h2><span class="light">RRVM</span><br> School App</h2>
+                            <p>RRVM app is a comprehensive digital platform designed to streamline various aspects of the educational experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/vivavalet.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="SecondMedic app">
+                            <h2><span class="light">VivaValet</span><br> Elder Services App</h2>
+                            <p>We care for your older.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<section class="recent-work section-padding campaign-recent-work">
+<!-- <section class="recent-work section-padding campaign-recent-work">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
@@ -646,12 +687,9 @@
             @endforeach
         </div>
     </div>
-    {{-- <div class="btnrow text-center">
-        <a href="#campaign-form" class="btn web-btn">See Our Portfolio</a>
-    </div> --}}
-</section>
+</section> -->
 
-<section class="pricing section-padding" id="pricing">
+<section class="pricing section-padding pb-0" id="pricing">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">

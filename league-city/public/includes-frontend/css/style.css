@@ -1230,6 +1230,7 @@ h6 .light {
     display: block;
     text-decoration: none;
     margin: 0px;
+    line-break: anywhere;
 }
 .contactus .contact-list li a:hover {
     color: var(--themecolor) !important;
@@ -3467,19 +3468,25 @@ h6 .light {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 30px 15px;
     width: 100%;
 }
 
 .campaign-why-choose .why-choose-box .choose-inner-div {
     display: flex;
     align-items: center;
-    width: 48%;
+    width: calc(50% - 7.5px);
+    gap: 20px;
 }
 
 .campaign-why-choose .why-choose-box .choose-inner-div img {
     width: 50px;
-    margin-right: 20px;
+    height: 50px;
+    object-fit: contain;
+}
+.campaign-why-choose .why-choose-box .choose-inner-div h6 {
+    margin: 0px;
 }
 
 .campaign-why-choose .counter-box {
@@ -3487,7 +3494,7 @@ h6 .light {
     align-items: center;
     justify-content: space-between;
     padding: 30px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #c88c8c;
     margin-top: 60px;
 }
 
@@ -3496,8 +3503,9 @@ h6 .light {
 }
 
 .campaign-why-choose .counter-box .count-div {
-    border-right: 1px solid #e0e0e0;
-    padding: 0 80px 0 40px;
+    border-right: 1px solid #c88c8c;
+    padding: 0px 15px;
+    width: 25%;
 }
 
 .campaign-services {
@@ -3592,24 +3600,96 @@ h6 .light {
     .campaign-why-choose .counter-box {
         flex-wrap: wrap;
     }
-
+}
+@media (max-width: 992px) {
+    .campaign-why-choose .counter-box {
+        padding: 15px;
+        gap: 15px 0px;
+    }
     .campaign-why-choose .counter-box .count-div {
-        padding: 30px;
+        width: 50%;
+    }
+    .campaign-why-choose .counter-box p {
+        font-size: 14px;
+        line-height: 18px;
     }
 }
-
 @media (max-width: 767px) {
-    .campaign-why-choose .counter-box .count-div {
-        padding: 20px 10px 10px;
+    .campaign-banner {
+        padding: 20px 0px;
     }
-
+    .campaign-banner .logo {
+        height: 45px;
+    }
+    .campaign-banner h1 {
+        font-size: 25px;
+        margin: 15px 0px;
+    }
+    .campaign-banner h5 {
+        font-size: 14px;
+        color: var(--whitecolor);
+    }
+    .campaign-banner ul {
+        margin-top: 20px;
+    }
+    .campaign-banner ul li {
+        font-weight: 500;
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--whitecolor);
+    }
     .campaign-banner .form-box {
-        margin-top: 30px;
+        margin-top: 20px;
     }
-
+    .campaign-banner .form-box .box-heading {
+        padding: 15px;
+    }
+    .campaign-banner .form-box .box-heading h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .campaign-banner .form-box form {
+        padding: 15px;
+    }
+    .campaign-review .content-box-outer {
+        margin-top: 28px;
+    }
+    .campaign-review .owl-dots {
+        bottom: -20px;
+    }
+    .campaign-review .content-box-outer .cust-img-box .profile-text h5 {
+        font-size: 16px;
+    }
+    .campaign-why-choose {
+        margin-top: 20px;
+    }
     .campaign-why-choose .why-choose-box {
-        margin-top: unset;
-        margin: 20px 0;
+        gap: 15px;
+        align-items: start;
+    }
+    .campaign-why-choose .why-choose-box .choose-inner-div {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .campaign-why-choose .why-choose-box .choose-inner-div img {
+        width: 40px;
+        height: 40px;
+    }
+    .campaign-why-choose .why-choose-box .choose-inner-div h6 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .campaign-why-choose .counter-box {
+        margin-top: 20px;
+        padding: 15px 0px;
+    }
+    .campaign-why-choose .counter-box .count-div h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .campaign-why-choose .counter-box .count-div:nth-child(2) {
+        border: none;
     }
 
     .campaign-services .btnrow {
