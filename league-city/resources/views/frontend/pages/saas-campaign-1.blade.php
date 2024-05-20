@@ -5,8 +5,7 @@
 </style>
 
 <section class="campaign-banner">
-    <img src="{{ asset('includes-frontend') }}/images/campaign/saas-campaign-banner-img.webp" alt="img"
-        class="banner-img">
+    <img src="{{ asset('includes-frontend') }}/images/campaign/saas-campaign-banner-img.webp" alt="img" class="banner-img">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-6">
@@ -27,30 +26,26 @@
                         <p>Get No Obligation Free Quote!</p>
                     </div>
                     @if ($errors->any())
-                        <div class="alert alert-danger pb-2">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger pb-2">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
                     <form action="{{ route('campaign.store') }}" method="post" id="campaign-form">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name"
-                                name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" />
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" />
                             <label for="floatingInput">Your Full Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput2" placeholder="email"
-                                name="email" />
+                            <input type="email" class="form-control" id="floatingInput2" placeholder="email" name="email" />
                             <label for="floatingInput2">Email Address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput3" placeholder="number"
-                                onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12"
-                                pattern="[6-9]{1}[0-9]{9}" name="contact" />
+                            <input type="text" class="form-control" id="floatingInput3" placeholder="number" onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" pattern="[6-9]{1}[0-9]{9}" name="contact" />
                             <label for="floatingInput3">Phone Number</label>
                         </div>
                         <div class="form-floating mb-3">
@@ -59,13 +54,12 @@
                             <select class="form-control" id="floatingInput4" name="country">
                                 <option value="" selected disabled>Country</option>
                                 @foreach ($country as $c)
-                                    <option value="{{ $c->country_id }}">{{ $c->name }}</option>
+                                <option value="{{ $c->country_id }}">{{ $c->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="message"
-                                style="height: 70px"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="message" style="height: 70px"></textarea>
                             <label for="floatingTextarea2">Your Requirements</label>
                         </div>
                         <button class="web-btn btn w-100 mt-4" id="campaign-btn">Submit</button>
@@ -99,8 +93,7 @@
                             </div>
                             <div class="cust-img-box">
                                 <div class="profile">
-                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp"
-                                        alt="">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
                                     <h5>Gerald Lindhorst</h5>
@@ -123,8 +116,7 @@
                             </div>
                             <div class="cust-img-box">
                                 <div class="profile">
-                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp"
-                                        alt="">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
                                     <h5>Gerald Lindhorst</h5>
@@ -147,8 +139,7 @@
                             </div>
                             <div class="cust-img-box">
                                 <div class="profile">
-                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp"
-                                        alt="">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
                                     <h5>Gerald Lindhorst</h5>
@@ -171,8 +162,7 @@
                             </div>
                             <div class="cust-img-box">
                                 <div class="profile">
-                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp"
-                                        alt="">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
                                     <h5>Gerald Lindhorst</h5>
@@ -195,8 +185,7 @@
                             </div>
                             <div class="cust-img-box">
                                 <div class="profile">
-                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp"
-                                        alt="">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
                                     <h5>Gerald Lindhorst</h5>
@@ -221,50 +210,41 @@
             <div class="col-lg-6">
                 <div class="why-choose-box">
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-1.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-1.png" alt="">
                         <h6>Experienced Mobile App Developers</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-2.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-2.png" alt="">
                         <h6>Complete Peace of Mind</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-3.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-3.png" alt="">
                         <h6>Cost-Effective Services</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-4.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-4.png" alt="">
                         <h6>Daily / Weekly / Monthly Reporting</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-5.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-5.png" alt="">
                         <h6>24*7 Dedicated Support</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-6.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-6.png" alt="">
                         <h6>Transparent & Smooth Communication</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-7.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-7.png" alt="">
                         <h6>100% Quality Assurance</h6>
                     </div>
                     <div class="choose-inner-div">
-                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-8.png"
-                            alt="">
+                        <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-8.png" alt="">
                         <h6>No Hidden Costs, 0 Overheads</h6>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-img.webp" alt=""
-                    class="w-100">
+                <img src="{{ asset('includes-frontend') }}/images/campaign/camp-why-choose-img.webp" alt="" class="w-100">
             </div>
             <div class="col-lg-12 text-center">
                 <div class="counter-box">
@@ -303,8 +283,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp"
-                                        alt="Mobile App Development image">
+                                    <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp" alt="Mobile App Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Mobile App Development</h3>
@@ -316,8 +295,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/web-development.webp"
-                                        alt="Web Development image">
+                                    <img src="{{ asset('includes-frontend') }}/images/web-development.webp" alt="Web Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Web <br>Development</h3>
@@ -329,8 +307,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/custom-software-development.webp"
-                                        alt="Custom Software Development image">
+                                    <img src="{{ asset('includes-frontend') }}/images/custom-software-development.webp" alt="Custom Software Development image">
                                 </div>
                                 <div class="content">
                                     <h3>Custom Software Development
@@ -343,8 +320,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/ui-ux-development.webp"
-                                        alt="UI/UX Development image">
+                                    <img src="{{ asset('includes-frontend') }}/images/ui-ux-development.webp" alt="UI/UX Development image">
                                 </div>
                                 <div class="content">
                                     <h3>UI/UX Development
@@ -357,8 +333,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/ecommerce-development.webp"
-                                        alt="E-Commerce Development image">
+                                    <img src="{{ asset('includes-frontend') }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
                                 </div>
                                 <div class="content">
                                     <h3>E-Commerce Development</h3>
@@ -370,8 +345,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/graphic-designing.webp"
-                                        alt="Graphic Designing image">
+                                    <img src="{{ asset('includes-frontend') }}/images/graphic-designing.webp" alt="Graphic Designing image">
                                 </div>
                                 <div class="content">
                                     <h3>Graphic <br>Designing</h3>
@@ -383,8 +357,7 @@
                         <div class="item">
                             <div class="box">
                                 <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/cyber-security.webp"
-                                        alt="Cyber Security image">
+                                    <img src="{{ asset('includes-frontend') }}/images/cyber-security.webp" alt="Cyber Security image">
                                 </div>
                                 <div class="content">
                                     <h3>Cyber <br>Security</h3>
@@ -416,35 +389,24 @@
         <div class="row g-0">
             <div class="col-lg-12">
                 <div class="left-side">
-                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist"
-                        aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-mobileapp" type="button" role="tab"
-                            aria-controls="v-pills-mobileapp" aria-selected="true">
+                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true">
                             Mobile App Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-appdevelopment" type="button" role="tab"
-                            aria-controls="v-pills-appdevelopment" aria-selected="false">
+                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false">
                             Application Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai"
-                            aria-selected="false">
+                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
 
                             AI & Automation</button>
 
-                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-uiux" type="button" role="tab"
-                            aria-controls="v-pills-uiux" aria-selected="false">
+                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false">
 
                             UI/UX Services</button>
 
-                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-itconsulting" type="button" role="tab"
-                            aria-controls="v-pills-itconsulting" aria-selected="false">
+                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false">
 
                             IT Consulting</button>
                     </div>
@@ -453,12 +415,10 @@
             <div class="col-lg-12">
                 <div class="right-side bg-dark">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel"
-                            aria-labelledby="v-pills-mobileapp-tab">
+                        <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend') }}/images/mobileapp.webp"
-                                        alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/mobileapp.webp" alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -496,12 +456,10 @@
 
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel"
-                            aria-labelledby="v-pills-appdevelopment-tab">
+                        <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel" aria-labelledby="v-pills-appdevelopment-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend') }}/images/application-development.webp"
-                                        alt="Application Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/application-development.webp" alt="Application Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -580,12 +538,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel"
-                            aria-labelledby="v-pills-uiux-tab">
+                        <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel" aria-labelledby="v-pills-uiux-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend') }}/images/uiux.webp"
-                                        alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/uiux.webp" alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -623,13 +579,11 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel"
-                            aria-labelledby="v-pills-itconsulting-tab">
+                        <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel" aria-labelledby="v-pills-itconsulting-tab">
 
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend') }}/images/itconsulting.webp"
-                                        alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/itconsulting.webp" alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -684,73 +638,59 @@
     <div class="work-slider-height" data-aos="zoom-in" data-aos-delay="200">
         <div class="owl-carousel work-slider">
             <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/secondmedic.jpg')">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/secondmedic.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/secmed-white.png" class="logo"
-                                alt="SecondMedic app">
+                            <img src="{{ asset('includes-frontend') }}/images/secmed-white.png" class="logo" alt="SecondMedic app">
                             <h2><span class="light">SecondMedic</span><br> Online Healthcare App</h2>
                             <p>SecondMedic is an online healthcare platform designed to meet all your healthcare needs.
                             </p>
-                            <button data-bs-toggle="modal" data-bs-target="#secondmedicModal"
-                                class="btn web-btn">Click Here</button>
+                            <button data-bs-toggle="modal" data-bs-target="#secondmedicModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/rrvm.jpg')">
+            <!-- <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/rrvm.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/rrvm.png" class="logo"
-                                alt="RRVM app">
+                            <img src="{{ asset('includes-frontend') }}/images/rrvm.png" class="logo" alt="RRVM app">
                             <h2><span class="light">RRVM</span><br> School Management App</h2>
-                            <p>RRVM is a school management app that simplifies academic and administrative tasks with
-                                ease.</p>
+                            <p>RRVM is a school management app that simplifies academic and administrative tasks with ease.</p>
                             <a href="#" class="btn web-btn">Click Here</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/vivavalet.jpg')">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/vivavalet.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/vivavalet.png" class="logo"
-                                alt="VivaValet app">
+                            <img src="{{ asset('includes-frontend') }}/images/vivavalet.png" class="logo" alt="VivaValet app">
                             <h2><span class="light">VivaValet</span><br> Online Eldercare App</h2>
-                            <p>VivaValet offers trusted services for seniors, including transportation, home repairs,
-                                cleaning, and meal delivery.</p>
-                            <button data-bs-toggle="modal" data-bs-target="#vivavaletModal" class="btn web-btn">Click
-                                Here</button>
+                            <p>VivaValet offers trusted services for seniors, including transportation, home repairs, cleaning, and meal delivery.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#vivavaletModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/jkbajar.jpg')">
+            <!-- <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/jkbajar.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/jkbajar.png" class="logo"
-                                alt="SecondMedic app">
+                            <img src="{{ asset('includes-frontend') }}/images/jkbajar.png" class="logo" alt="SecondMedic app">
                             <h2><span class="light">JK Bajar</span><br> Online Grocery App</h2>
-                            <p>Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery
-                                of a wide range of products.</p>
+                            <p>Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.</p>
                             <a href="#" class="btn web-btn">Click Here</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> -->
+            <!-- <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/uyp.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/uyp.png" class="logo"
-                                alt="UYP app">
+                            <img src="{{ asset('includes-frontend') }}/images/uyp.png" class="logo" alt="UYP app">
                             <h2><span class="light">UYP</span><br> E-commerce App</h2>
                             <p>UYP is an online e-commerce fashion shop offering trendy, high-quality clothing for
                                 men, women, and children.</p>
@@ -758,23 +698,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/fandora.jpg')">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/fandora.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/fandora.png" class="logo"
-                                alt="Fandora app">
+                            <img src="{{ asset('includes-frontend') }}/images/fandora.png" class="logo" alt="Fandora app">
                             <h2><span class="light">Fandora</span><br> Content IP Investment App</h2>
-                            <p>FANDORA lets you co-own and invest in your favorite films, music tracks, and more,
-                                central to the entertainment business.</p>
-                            <a href="#" class="btn web-btn">Click Here</a>
+                            <p>FANDORA lets you co-own and invest in your favorite films, music tracks, and more, central to the entertainment business.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#fandoraModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="box"
                     style="background-image: url('{{ asset('includes-frontend') }}/images/cctv.jpg')">
                     <div class="row">
@@ -788,7 +725,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -1189,14 +1126,12 @@
         </div>
     </div>
 </section>
-<a href="https://api.whatsapp.com/send/?phone=+919987577439&text=We’re here to assist with all your IT needs, Thank you for choosing LeagueCityConsulting"
-    target="_blank" class="campaign-whatsapp">
+<a href="https://api.whatsapp.com/send/?phone=+919987577439&text=We’re here to assist with all your IT needs, Thank you for choosing LeagueCityConsulting" target="_blank" class="campaign-whatsapp">
     <img src="{{ asset('includes-frontend') }}/images/whatsapp.png" alt="Whatsapp">
 </a>
 
 <!-- SecondMedic Screenshot Modal -->
-<div class="modal fade app-screenshot-modal" id="secondmedicModal" tabindex="-1"
-    aria-labelledby="secondmedicModalLabel" aria-hidden="true">
+<div class="modal fade app-screenshot-modal" id="secondmedicModal" tabindex="-1" aria-labelledby="secondmedicModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header pb-0">
@@ -1206,19 +1141,19 @@
             <div class="modal-body">
                 <div class="owl-carousel app-screenshot-slider">
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed1.jpg" alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed1.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed2.jpg" alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed2.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed3.jpg" alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed3.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed4.jpg" alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed4.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed5.jpg" alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/secondmedic/secmed5.webp" alt="Application">
                     </div>
                 </div>
             </div>
@@ -1227,8 +1162,7 @@
 </div>
 
 <!-- Vivavalet Screenshot Modal -->
-<div class="modal fade app-screenshot-modal" id="vivavaletModal" tabindex="-1"
-    aria-labelledby="vivavaletModalLabel" aria-hidden="true">
+<div class="modal fade app-screenshot-modal" id="vivavaletModal" tabindex="-1" aria-labelledby="vivavaletModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header pb-0">
@@ -1238,20 +1172,50 @@
             <div class="modal-body">
                 <div class="owl-carousel app-screenshot-slider">
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet1.webp"
-                            alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet1.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet2.webp"
-                            alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet2.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet3.webp"
-                            alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet3.webp" alt="Application">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet4.webp"
-                            alt="Application">
+                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet4.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/vivavalet/vivavalet5.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- fandora Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="fandoraModal" tabindex="-1" aria-labelledby="fandoraModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="fandoraModalLabel">Fandora</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/fandora/fandora1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/fandora/fandora2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/fandora/fandora3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/fandora/fandora4.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/fandora/fandora5.webp" alt="Application">
                     </div>
                 </div>
             </div>
