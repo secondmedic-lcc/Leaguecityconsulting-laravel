@@ -781,7 +781,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img src="{{ asset('includes-frontend') }}/images/cctv.png" class="logo"
                                 alt="CCTV app">
-                            <h2><span class="light">CCTV</span><br> E-commerce App</h2>
+                            <h2><span class="light">CCTV VAALA</span><br> E-commerce App</h2>
                             <p>CCTV Vaala is an ecommerce platform specializing in the sale of premium security cameras.
                             </p>
                             <a href="#" class="btn web-btn">Click Here</a>
