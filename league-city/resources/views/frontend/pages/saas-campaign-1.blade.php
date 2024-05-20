@@ -629,8 +629,9 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img src="{{ asset('includes-frontend'); }}/images/secmed-white.png" class="logo" alt="SecondMedic app">
-                            <h2><span class="light">SecondMedic</span><br> Telehealth Platform App</h2>
-                            <p>Secondmedic app is a telehealth platform that connects users with medical professionals for virtual medical visits.</p>
+                            <h2><span class="light">SecondMedic</span><br> Online Healthcare App</h2>
+                            <p>SecondMedic is an online healthcare platform designed to meet all your healthcare needs.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#secondmedicModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
@@ -639,9 +640,10 @@
                 <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/rrvm.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend'); }}/images/rrvm-logo.png" class="logo" alt="SecondMedic app">
-                            <h2><span class="light">RRVM</span><br> School App</h2>
-                            <p>RRVM app is a comprehensive digital platform designed to streamline various aspects of the educational experience.</p>
+                            <img src="{{ asset('includes-frontend'); }}/images/rrvm.png" class="logo" alt="RRVM app">
+                            <h2><span class="light">RRVM</span><br> School Management App</h2>
+                            <p>RRVM is a school management app that simplifies academic and administrative tasks with ease.</p>
+                            <a href="#" class="btn web-btn">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -650,9 +652,58 @@
                 <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/vivavalet.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="SecondMedic app">
-                            <h2><span class="light">VivaValet</span><br> Elder Services App</h2>
-                            <p>We care for your older.</p>
+                            <img src="{{ asset('includes-frontend'); }}/images/vivavalet.png" class="logo" alt="VivaValet app">
+                            <h2><span class="light">VivaValet</span><br> Online Eldercare App</h2>
+                            <p>VivaValet offers trusted services for seniors, including transportation, home repairs, cleaning, and meal delivery.</p>
+                            <button data-bs-toggle="modal" data-bs-target="#vivavaletModal" class="btn web-btn">Click Here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/jkbajar.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/jkbajar.png" class="logo" alt="SecondMedic app">
+                            <h2><span class="light">JK Bajar</span><br> Online Grocery App</h2>
+                            <p>Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.</p>
+                            <a href="#" class="btn web-btn">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/uyp.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/uyp.png" class="logo" alt="UYP app">
+                            <h2><span class="light">UYP</span><br> E-commerce App</h2>
+                            <p>UYP offers trendy summer clothing for men, women, and kids with free shipping on prepaid orders.</p>
+                            <a href="#" class="btn web-btn">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/fandora.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/fandora.png" class="logo" alt="Fandora app">
+                            <h2><span class="light">Fandora</span><br> Content IP Investment App</h2>
+                            <p>Fandora: Discover, stream, and enjoy music and podcasts seamlessly across all your devices.</p>
+                            <a href="#" class="btn web-btn">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend'); }}/images/cctv.jpg')">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img src="{{ asset('includes-frontend'); }}/images/cctv.png" class="logo" alt="CCTV app">
+                            <h2><span class="light">CCTV</span><br> E-commerce App</h2>
+                            <p>CCTV Vaala is an ecommerce platform specializing in the sale of premium security cameras.</p>
+                            <a href="#" class="btn web-btn">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -660,34 +711,6 @@
         </div>
     </div>
 </section>
-
-<!-- <section class="recent-work section-padding campaign-recent-work">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
-                <p class="heading-info">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
-            </div>
-        </div>
-    </div>
-    <div class="work-slider-height">
-        <div class="owl-carousel work-slider">
-            @foreach($portfolio as $p)
-            <div class="item">
-                <div class="box" style="background-image: url({{ asset($p['image']); }})">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
-                            <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
-                            <p>{{ $p['sub_heading'] }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section> -->
 
 <section class="pricing section-padding pb-0" id="pricing">
     <div class="container">
@@ -1084,6 +1107,67 @@
         </div>
     </div>
 </section>
+<a href="https://api.whatsapp.com/send/?phone=+919987577439&text=We’re here to assist with all your IT needs, Thank you for choosing LeagueCityConsulting" target="_blank" class="campaign-whatsapp">
+    <img src="{{ asset('includes-frontend'); }}/images/whatsapp.png" alt="Whatsapp">
+</a>
 
+<!-- SecondMedic Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="secondmedicModal" tabindex="-1" aria-labelledby="secondmedicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="secondmedicModalLabel">SecondMedic</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic/secmed1.jpg" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic/secmed2.jpg" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic/secmed3.jpg" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic/secmed4.jpg" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/secondmedic/secmed5.jpg" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vivavalet Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="vivavaletModal" tabindex="-1" aria-labelledby="vivavaletModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="vivavaletModalLabel">VivaValet</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/vivavalet/vivavalet1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/vivavalet/vivavalet2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/vivavalet/vivavalet3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend'); }}/images/vivavalet/vivavalet4.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('frontend.pages.query-form')

@@ -159,3 +159,29 @@ $(".campaign-review-slider").owlCarousel({
         },
     },
 });
+
+$(".app-screenshot-slider").owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 10000,
+    responsive: {
+        0: {
+            items: 1.5,
+            nav: false,
+            center: true,
+        },
+        400: {
+            items: 2,
+            nav: false,
+        },
+        767: {
+            items: 3,
+        },
+        1200: {
+            items: 3,
+        },
+    },
+});
