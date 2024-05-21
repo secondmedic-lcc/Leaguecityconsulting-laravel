@@ -3603,6 +3603,7 @@ h6 .light {
     border-radius: 20px;
     object-fit: contain;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 .app-screenshot-slider .owl-nav button {
     background-color: var(--themecolor) !important;

@@ -628,14 +628,14 @@
 <section class="recent-work section-padding campaign-recent-work pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
                 <p class="heading-info">We understand customer actions, emotions, and unspoken desires. Through design
                     and technology, we create solutions that make a real difference.</p>
             </div>
         </div>
     </div>
-    <div class="work-slider-height" data-aos="zoom-in" data-aos-delay="200">
+    <div class="work-slider-height">
         <div class="owl-carousel work-slider">
             <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/secondmedic.jpg')">
@@ -650,18 +650,18 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="item">
+            <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/rrvm.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img src="{{ asset('includes-frontend') }}/images/rrvm.png" class="logo" alt="RRVM app">
                             <h2><span class="light">RRVM</span><br> School Management App</h2>
                             <p>RRVM is a school management app that simplifies academic and administrative tasks with ease.</p>
-                            <a href="#" class="btn web-btn">Click Here</a>
+                            <button data-bs-toggle="modal" data-bs-target="#rrvmModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/vivavalet.jpg')">
                     <div class="row">
@@ -674,19 +674,19 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="item">
+            <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/jkbajar.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img src="{{ asset('includes-frontend') }}/images/jkbajar.png" class="logo" alt="SecondMedic app">
                             <h2><span class="light">JK Bajar</span><br> Online Grocery App</h2>
                             <p>Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.</p>
-                            <a href="#" class="btn web-btn">Click Here</a>
+                            <button data-bs-toggle="modal" data-bs-target="#jkModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <!-- <div class="item">
+            </div>
+            <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/uyp.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -694,11 +694,11 @@
                             <h2><span class="light">UYP</span><br> E-commerce App</h2>
                             <p>UYP is an online e-commerce fashion shop offering trendy, high-quality clothing for
                                 men, women, and children.</p>
-                            <a href="#" class="btn web-btn">Click Here</a>
+                            <button data-bs-toggle="modal" data-bs-target="#uypModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="item">
                 <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/fandora.jpg')">
                     <div class="row">
@@ -711,21 +711,19 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="item">
-                <div class="box"
-                    style="background-image: url('{{ asset('includes-frontend') }}/images/cctv.jpg')">
+            <div class="item">
+                <div class="box" style="background-image: url('{{ asset('includes-frontend') }}/images/cctv.jpg')">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img src="{{ asset('includes-frontend') }}/images/cctv.png" class="logo"
-                                alt="CCTV app">
+                            <img src="{{ asset('includes-frontend') }}/images/cctv.png" class="logo" alt="CCTV app">
                             <h2><span class="light">CCTV VAALA</span><br> E-commerce App</h2>
                             <p>CCTV Vaala is an ecommerce platform specializing in the sale of premium security cameras.
                             </p>
-                            <a href="#" class="btn web-btn">Click Here</a>
+                            <button data-bs-toggle="modal" data-bs-target="#cctvModal" class="btn web-btn">Click Here</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
@@ -1192,6 +1190,102 @@
     </div>
 </div>
 
+<!-- JKBajar Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="jkModal" tabindex="-1" aria-labelledby="jkModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="jkModalLabel">JK Bajar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/jkbazar/jk3.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- UYP Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="uypModal" tabindex="-1" aria-labelledby="uypModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="uypModalLabel">UYP</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/uyp/uyp1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/uyp/uyp2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/uyp/uyp3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/uyp/uyp4.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RRVM Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="rrvmModal" tabindex="-1" aria-labelledby="rrvmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="rrvmModalLabel">Ram Ratna Vidya Mandir</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/rrvm/rrvm3.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- fandora Screenshot Modal -->
 <div class="modal fade app-screenshot-modal" id="fandoraModal" tabindex="-1" aria-labelledby="fandoraModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -1216,6 +1310,40 @@
                     </div>
                     <div class="item">
                         <img src="{{ asset('includes-frontend') }}/images/fandora/fandora5.webp" alt="Application">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- cctvvaala Screenshot Modal -->
+<div class="modal fade app-screenshot-modal" id="cctvModal" tabindex="-1" aria-labelledby="cctvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header pb-0">
+                <h1 class="modal-title" id="cctvModalLabel">CCTVVAALA</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-carousel app-screenshot-slider">
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv3.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv1.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv2.webp" alt="Application">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('includes-frontend') }}/images/cctvvaala/cctv3.webp" alt="Application">
                     </div>
                 </div>
             </div>
