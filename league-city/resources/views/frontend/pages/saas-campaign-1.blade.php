@@ -86,9 +86,7 @@
                             </div>
                             <div class="content-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil quis ipsum
-                                    quo sunt, perspiciatis ad neque quasi expedita blanditiis. Lorem ipsum dolor sit,
-                                    amet consectetur adipisicing elit.
+                                    I cannot recommend LeagueCity Consulting enough. Their team of experts are top-notch and provide exceptional IT solutions and support to their clients.
                                 </p>
                             </div>
                             <div class="cust-img-box">
@@ -96,8 +94,8 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Gerald Lindhorst</h5>
-                                    <h6>Director Gleichklang Limited</h6>
+                                    <h5>Baldev Singh</h5>
+                                    <h6>12/02/2024</h6>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +107,7 @@
                             </div>
                             <div class="content-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil quis ipsum
-                                    quo sunt, perspiciatis ad neque quasi expedita blanditiis. Lorem ipsum dolor sit,
-                                    amet consectetur adipisicing elit.
+                                    What I appreciated most about LeagueCity Consulting was their personalized approach. They truly care about their clients and go above and beyond to ensure that you receive the best possible services.
                                 </p>
                             </div>
                             <div class="cust-img-box">
@@ -119,8 +115,8 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Gerald Lindhorst</h5>
-                                    <h6>Director Gleichklang Limited</h6>
+                                    <h5>Jaidev Das</h5>
+                                    <h6>24/01/2024</h6>
                                 </div>
                             </div>
                         </div>
@@ -132,9 +128,7 @@
                             </div>
                             <div class="content-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil quis ipsum
-                                    quo sunt, perspiciatis ad neque quasi expedita blanditiis. Lorem ipsum dolor sit,
-                                    amet consectetur adipisicing elit.
+                                    The process was incredibly easy and straightforward. I was connected with a highly qualified IT Professional who took the time to review my requirements and provide me with best service.
                                 </p>
                             </div>
                             <div class="cust-img-box">
@@ -142,8 +136,8 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Gerald Lindhorst</h5>
-                                    <h6>Director Gleichklang Limited</h6>
+                                    <h5>Rishi Kumar</h5>
+                                    <h6>20/03/2024</h6>
                                 </div>
                             </div>
                         </div>
@@ -155,9 +149,7 @@
                             </div>
                             <div class="content-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil quis ipsum
-                                    quo sunt, perspiciatis ad neque quasi expedita blanditiis. Lorem ipsum dolor sit,
-                                    amet consectetur adipisicing elit.
+                                    LeagueCity Consulting provided exceptional service, guiding us through a seamless transition to a more robust IT system. Their team is knowledgeable, responsive, and a pleasure to work with.
                                 </p>
                             </div>
                             <div class="cust-img-box">
@@ -165,8 +157,8 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Gerald Lindhorst</h5>
-                                    <h6>Director Gleichklang Limited</h6>
+                                    <h5>Aman Agrawal</h5>
+                                    <h6>10/03/2024</h6>
                                 </div>
                             </div>
                         </div>
@@ -178,9 +170,7 @@
                             </div>
                             <div class="content-box">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil quis ipsum
-                                    quo sunt, perspiciatis ad neque quasi expedita blanditiis. Lorem ipsum dolor sit,
-                                    amet consectetur adipisicing elit.
+                                    Choosing LeagueCity Consulting was one of the best decisions for our company. Their innovative solutions and prompt support have greatly enhanced our productivity. We couldn't be happier!
                                 </p>
                             </div>
                             <div class="cust-img-box">
@@ -188,8 +178,29 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Gerald Lindhorst</h5>
-                                    <h6>Director Gleichklang Limited</h6>
+                                    <h5>Prashant Verma</h5>
+                                    <h6>30/03/2024</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-box-outer">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="content-box">
+                                <p>
+                                    LeagueCity Consulting transformed our IT infrastructure. Their expertise and proactive approach have significantly improved our system's efficiency and security. Highly recommend!
+                                </p>
+                            </div>
+                            <div class="cust-img-box">
+                                <div class="profile">
+                                    <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h5>Nidhi Mishra</h5>
+                                    <h6>08/02/2024</h6>
                                 </div>
                             </div>
                         </div>
