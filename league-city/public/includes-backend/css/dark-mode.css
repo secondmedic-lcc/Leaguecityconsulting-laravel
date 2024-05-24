@@ -1,7 +1,7 @@
 :root {
     --whitecolor: #212121;
     --blackcolor: #ffffff;
-    --websitecolor: #7367f0;
+    --websitecolor: #19838a;
     --websitelightcolor: #7367f02b;
     --bodycolor: #acacac;
     --lightgreycolor: #181818;
@@ -125,5 +125,5 @@ h6 {
 }
 
 .sidebar-nav > .sidebar-brand img {
-    content: url("../images/logo-white.webp");
+    content: url("../../includes-frontend/images/logo-white.webp");
 }

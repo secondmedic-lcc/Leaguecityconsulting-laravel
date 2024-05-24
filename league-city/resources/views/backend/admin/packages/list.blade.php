@@ -171,7 +171,7 @@
                         <a class="btn btn-primary" href="{{ url('admin/package-includes/create?package_id='.@$_GET['package_id']); }}">Add Package Property</a>
                     </div>
                 </div>
-                <div class="table-responsive web-overflow mt-4">
+                <div class="table-responsive web-overflow">
                     <table class="table">
                         <thead>
                             <tr>
@@ -229,7 +229,7 @@
                         <a class="btn btn-primary" href="{{ url('admin/packages/create?package_id='.@$_GET['package_id']); }}">Add Plans</a>
                     </div>
                 </div>
-                <div class="table-responsive web-overflow mt-4">
+                <div class="table-responsive web-overflow">
                     <table class="table">
                         <thead>
                             <tr>

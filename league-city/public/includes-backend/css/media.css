@@ -1,4 +1,4 @@
-@media (min-width:992px) and (max-width:1227px) {
+@media (min-width: 992px) and (max-width: 1227px) {
     .statistics .box {
         display: block;
         text-align: center;
@@ -135,8 +135,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
-
+@media (min-width: 768px) and (max-width: 991px) {
     #wrapper.toggled #sidebar-wrapper {
         width: 75px;
     }
@@ -313,8 +312,7 @@
     }
 }
 
-@media (max-width:767px) {
-
+@media (max-width: 767px) {
     body {
         font-size: 12px;
     }
@@ -377,7 +375,7 @@
     }
 
     #sidebar-wrapper {
-        width: 100%;
+        width: 75%;
         left: 0;
     }
 
@@ -460,7 +458,7 @@
     }
 
     .rightside {
-        padding: 65px 20px 90px;
+        padding: 65px 15px 90px;
     }
 
     .aboutus-card .page-heading.publication {
@@ -548,7 +546,6 @@
         margin-bottom: 10px;
     }
 
-
     .single-blog-div ul {
         justify-content: space-between;
     }
@@ -580,7 +577,6 @@
         width: 100%;
         margin-top: 15px;
     }
-
 
     .price-card .price-inner-card {
         margin: 20px 0px 0px;
@@ -766,5 +762,19 @@
         margin-bottom: 5px;
         font-family: var(--headingfont);
         font-weight: bold;
+    }
+
+    /* .table-responsive table {
+        white-space: nowrap;
+    } */
+
+    .table-list-mobile .table-list-detail {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        width: 100%;
+        padding: 10px 10px 0;
     }
 }

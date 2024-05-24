@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="table-responsive web-overflow mt-4">
+                <div class="table-responsive web-overflow">
                     <table class="table">
                         <thead>
                             <tr>

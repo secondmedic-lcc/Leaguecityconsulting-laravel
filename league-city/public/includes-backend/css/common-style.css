@@ -17,9 +17,11 @@
     --websitefont: "Montserrat-Regular";
     --mediumfont: "Montserrat-Medium";
     --headingfont: "Montserrat-SemiBold";
-    --websitebackground: linear-gradient(118deg,
-            #7367f0,
-            rgba(115, 103, 240, 0.7));
+    --websitebackground: linear-gradient(
+        118deg,
+        #7367f0,
+        rgba(115, 103, 240, 0.7)
+    );
     --websiteboxshadow: 0 0 10px rgb(115 103 240 / 60%);
 }
 
@@ -123,7 +125,7 @@ a:hover {
 .btn-primary {
     border: none;
     font-size: 14px;
-    background: var(--websitebackground);
+    background-color: var(--websitecolor) !important;
     color: var(--whitecolor);
     padding: 10px 20px;
     transition: all 0.3s 0s linear;
@@ -523,7 +525,10 @@ a:hover {
     font-size: 12px;
 }
 
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.input-group
+    > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+        .valid-feedback
+    ):not(.invalid-tooltip):not(.invalid-feedback) {
     margin-left: 0px;
 }
 
@@ -552,7 +557,9 @@ a:hover {
     line-height: 41px !important;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
     height: 41px !important;
     top: 0px !important;
     right: 15px !important;
@@ -587,7 +594,8 @@ a:hover {
     padding: 6px 15px !important;
 }
 
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+.select2-container--default
+    .select2-results__option--highlighted.select2-results__option--selectable {
     background: var(--websitebackground) !important;
 }
 
@@ -602,13 +610,17 @@ a:hover {
     padding: 8px 15px 10px !important;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
     margin-top: 0px !important;
     margin-left: 0px !important;
     margin-right: 5px;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__display {
     color: var(--blackcolor);
 }
 

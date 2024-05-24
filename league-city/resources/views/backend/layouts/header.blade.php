@@ -1,4 +1,3 @@
-
 <div id="wrapper" class="toggled">
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
@@ -6,163 +5,161 @@
             <i class="fa fa-angle-double-left"></i>
         </button>
         @if(@Auth::user()->user_type == 'admin')
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand d-none d-md-block">
-                    <a href="{{ url('admin/dashboard') }}">
-                        <span><img src="{{ asset('includes-backend/images/logo.png'); }}" alt="League City"></span>
-                    </a>
-                </li>
-                <li class="mb-2 {{ ($current_page == 'dashboard') ? 'active' : ''; }}">
-                    <a href="{{ url('admin/dashboard') }}">
-                        <font><i class="bx bxs-dashboard"></i> <span>Dashboard</span></font>
-                    </a>
-                </li>
-                
-                <li class="mb-1 {{ ($current_page == 'leads') ? 'active' : ''; }}">
-                    <a href="{{ url('admin/contact-request') }}">
-                        <font><i class="bx bxs-user-pin"></i> <span>Contact Request</span></font>
-                    </a>
-                </li>
-                
-                <li class="mb-1 {{ ($current_page == 'package-request') ? 'active' : ''; }}">
-                    <a href="{{ url('admin/plan-requests') }}">
-                        <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
-                    </a>
-                </li>
-                
-                <li class="mb-1 {{ ($current_page == 'campaign') ? 'active' : ''; }}">
-                    <a href="{{ route('campaign.list') }}">
-                        <font><i class="bx bxs-user-pin"></i> <span>Campaign Request</span></font>
-                    </a>
-                </li>
-                
-                <li class="mb-2 dropdown {{ $current_page == 'category' ? 'active' : '' }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-rocket"></i> <span>Manage Category</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('category.create') }}">Add Category</a></li>
-                        <li><a class="dropdown-item" href="{{ route('category') }}">Category List</a></li>
-                    </ul>
-                </li>
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand d-none d-md-block">
+                <a href="{{ url('admin/dashboard') }}">
+                    <span><img src="{{ asset('includes-backend/images/logo.png'); }}" alt="League City"></span>
+                </a>
+            </li>
+            <li class="mb-2 {{ ($current_page == 'dashboard') ? 'active' : ''; }}">
+                <a href="{{ url('admin/dashboard') }}">
+                    <font><i class="bx bxs-dashboard"></i> <span>Dashboard</span></font>
+                </a>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Portfolio</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('portfolio.create'); }}">Add Portfolio</a></li>
-                        <li><a class="dropdown-item" href="{{ route('portfolio'); }}">Portfolio List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 {{ ($current_page == 'leads') ? 'active' : ''; }}">
+                <a href="{{ url('admin/contact-request') }}">
+                    <font><i class="bx bxs-user-pin"></i> <span>Contact Request</span></font>
+                </a>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'blogs') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-image"></i> <span>Manage Blogs</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('blogs.create'); }}">Add Blogs</a></li>
-                        <li><a class="dropdown-item" href="{{ route('blogs'); }}">Blogs List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 {{ ($current_page == 'package-request') ? 'active' : ''; }}">
+                <a href="{{ url('admin/plan-requests') }}">
+                    <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
+                </a>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'products') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Products</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('products.create'); }}">Add Products</a></li>
-                        <li><a class="dropdown-item" href="{{ route('products'); }}">Products List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 {{ ($current_page == 'campaign') ? 'active' : ''; }}">
+                <a href="{{ route('campaign.list') }}">
+                    <font><i class="bx bxs-user-pin"></i> <span>Campaign Request</span></font>
+                </a>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'industry') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Industry</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('industry.create'); }}">Add Industry</a></li>
-                        <li><a class="dropdown-item" href="{{ route('industry'); }}">Industry List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-2 dropdown {{ $current_page == 'category' ? 'active' : '' }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-rocket"></i> <span>Manage Category</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('category.create') }}">Add Category</a></li>
+                    <li><a class="dropdown-item" href="{{ route('category') }}">Category List</a></li>
+                </ul>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'website-banner') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Banner</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('website-banner.create'); }}">Add Banner</a></li>
-                        <li><a class="dropdown-item" href="{{ route('website-banner'); }}">Banner List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 dropdown {{ ($current_page == 'portfolio') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Portfolio</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('portfolio.create'); }}">Add Portfolio</a></li>
+                    <li><a class="dropdown-item" href="{{ route('portfolio'); }}">Portfolio List</a></li>
+                </ul>
+            </li>
 
-                <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Seo Data</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ url('/admin/seo-data/create') }}">Create SEO Data</a></li>
-                        <li><a class="dropdown-item" href="{{ url('/admin/seo-data') }}">List of Seo Data</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 dropdown {{ ($current_page == 'blogs') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-image"></i> <span>Manage Blogs</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('blogs.create'); }}">Add Blogs</a></li>
+                    <li><a class="dropdown-item" href="{{ route('blogs'); }}">Blogs List</a></li>
+                </ul>
+            </li>
 
-                <li class="mb-1 dropdown {{ ($current_page == 'package-types' || $current_page == 'packages' || $current_page == 'sub-keypoints' || $current_page == 'package-includes') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Package</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('package.types'); }}">Package Type List</a></li>
-                    </ul>
-                </li>
+            <li class="mb-1 dropdown {{ ($current_page == 'products') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Products</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('products.create'); }}">Add Products</a></li>
+                    <li><a class="dropdown-item" href="{{ route('products'); }}">Products List</a></li>
+                </ul>
+            </li>
 
-                {{-- <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Manage Packages</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('packages.create'); }}">Add Packages</a></li>
-                        <li><a class="dropdown-item" href="{{ route('packages'); }}">Packages List</a></li>
-                    </ul>
-                </li> --}}
+            <li class="mb-1 dropdown {{ ($current_page == 'industry') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Industry</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('industry.create'); }}">Add Industry</a></li>
+                    <li><a class="dropdown-item" href="{{ route('industry'); }}">Industry List</a></li>
+                </ul>
+            </li>
 
-                {{-- <li class="mb-1 dropdown {{ ($current_page == 'package-includes') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-dashboard"></i> <span>Packages Includes</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('package.includes.create'); }}">Add Includes</a></li>
-                        <li><a class="dropdown-item" href="{{ route('package.includes'); }}">Includes List</a></li>
-                    </ul>
-                </li> --}}
+            <li class="mb-1 dropdown {{ ($current_page == 'website-banner') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Banner</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('website-banner.create'); }}">Add Banner</a></li>
+                    <li><a class="dropdown-item" href="{{ route('website-banner'); }}">Banner List</a></li>
+                </ul>
+            </li>
 
-                {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
-                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>
-                        <span class="bx bx-chevron-right"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ url('/admin/customers'); }}">Add Customers</a></li>
-                        <li><a class="dropdown-item" href="{{ url('/admin/customers-list'); }}">Customers List</a></li>
-                    </ul>
-                </li> --}}
+            <li class="dropdown {{ $current_page == 'seo-data' ? 'active' : '' }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Seo Data</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ url('/admin/seo-data/create') }}">Create SEO Data</a></li>
+                    <li><a class="dropdown-item" href="{{ url('/admin/seo-data') }}">List of Seo Data</a></li>
+                </ul>
+            </li>
+
+            <li class="mb-1 dropdown {{ ($current_page == 'package-types' || $current_page == 'packages' || $current_page == 'sub-keypoints' || $current_page == 'package-includes') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Package</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('package.types'); }}">Package Type List</a></li>
+                </ul>
+            </li>
+
+            {{-- <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
+            <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <font><i class="bx bxs-dashboard"></i> <span>Manage Packages</span></font>
+                <span class="bx bx-chevron-right"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{{ route('packages.create'); }}">Add Packages</a></li>
+                <li><a class="dropdown-item" href="{{ route('packages'); }}">Packages List</a></li>
             </ul>
+            </li> --}}
+
+            {{-- <li class="mb-1 dropdown {{ ($current_page == 'package-includes') ? 'active' : ''; }}">
+            <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <font><i class="bx bxs-dashboard"></i> <span>Packages Includes</span></font>
+                <span class="bx bx-chevron-right"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{{ route('package.includes.create'); }}">Add Includes</a></li>
+                <li><a class="dropdown-item" href="{{ route('package.includes'); }}">Includes List</a></li>
+            </ul>
+            </li> --}}
+
+            {{-- <li class="mb-1 dropdown {{ ($current_page == 'customers') ? 'active' : ''; }}">
+            <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <font><i class="bx bxs-user"></i> <span>Manage Customers</span></font>
+                <span class="bx bx-chevron-right"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{{ url('/admin/customers'); }}">Add Customers</a></li>
+                <li><a class="dropdown-item" href="{{ url('/admin/customers-list'); }}">Customers List</a></li>
+            </ul>
+            </li> --}}
+        </ul>
         @endif
     </nav>
-    
-    
-    
+
+
+
     <div class="rightside" id="page-content-wrapper">
         <header>
             <section class="header">
@@ -189,9 +186,9 @@
                                 <a class="dropdown-toggle d-none d-md-flex" href="javascript:;" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div>
                                         @if(@Auth::user())
-                                            <h6>{{ Auth::user()->name; }}</h6>
+                                        <h6>{{ Auth::user()->name; }}</h6>
                                         @else
-                                            <h6>{{ Str::ucfirst(session('user_name')); }}</h6>
+                                        <h6>{{ Str::ucfirst(session('user_name')); }}</h6>
                                         @endif
                                         <p>{{ Str::ucfirst(Auth::user()->user_type); }}</p>
                                     </div>

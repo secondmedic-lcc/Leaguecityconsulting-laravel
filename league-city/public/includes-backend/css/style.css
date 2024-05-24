@@ -3,7 +3,7 @@
     --websitefont: "Montserrat-Regular";
     --mediumfont: "Montserrat-Medium";
     --headingfont: "Montserrat-SemiBold";
-    --websitebackground: linear-gradient(118deg, #12BC95, #1F68C6);
+    --websitebackground: linear-gradient(118deg, #12bc95, #1f68c6);
     --websiteboxshadow: 0 0 10px rgb(31 104 198 / 60%);
 }
 
@@ -108,7 +108,8 @@
 .sidebar-nav li.active a,
 .sidebar-nav li.active a:hover,
 .sidebar-nav li.active a:focus {
-    background: var(--websitebackground);
+    /* background: var(--websitebackground); */
+    background-color: var(--websitecolor);
     color: var(--whitecolor);
     box-shadow: var(--websiteboxshadow);
 }
@@ -2915,17 +2916,17 @@
     line-height: 22px;
 }
 
-.web-btn{
+.web-btn {
     background-color: var(--websitebackground);
 }
 
-.commission{
+.commission {
     text-align: center;
     display: flex;
     justify-content: center;
 }
 
-.commission .btn-commission{
+.commission .btn-commission {
     width: 80%;
     display: block;
     border: 1px solid gainsboro;
@@ -2933,32 +2934,29 @@
     padding: 50px;
 }
 
-
 /* .pagination svg.w-5.h-5{
     width: 50px !important;
 } */
 
-
-.pagination svg.w-5.h-5{
+.pagination svg.w-5.h-5 {
     width: 40px !important;
-  }
-  
-  .pagination div:first-child {
+}
+
+.pagination div:first-child {
     display: none !important;
-  }
-  
-  .pagination .rounded-md{
+}
+
+.pagination .rounded-md {
     background: transparent !important;
-  }
-  
-  
-  .pagination .rounded-md{
+}
+
+.pagination .rounded-md {
     background: var(--bglight) !important;
     border: none !important;
     box-shadow: none !important;
-  }
-  
-  .pagination .rounded-md .duration-150{
+}
+
+.pagination .rounded-md .duration-150 {
     width: 100px !important;
     border: none !important;
     border-radius: 5px !important;
@@ -2966,15 +2964,34 @@
     height: 60px !important;
     background: #018a95 !important;
     color: white !important;
-  }
-  
-  .pagination .rounded-md span:first-child{
+}
+
+.pagination .rounded-md span:first-child {
     border: none !important;
     border-radius: 5px !important;
     background: #018a95 !important;
     color: white !important;
-  }
-  
-  .pagination .rounded-md span:nth-child(2) span {
+}
+
+.pagination .rounded-md span:nth-child(2) span {
     margin: 0 5px !important;
-  }
+}
+
+/* admin-dash work start */
+
+.admin-dash .card {
+    min-height: 140.1px;
+}
+
+.admin-dash .card h6 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.admin-dash .card i {
+    font-size: 20px;
+    color: var(--websitecolor);
+    margin-bottom: 15px;
+}
+
+/* admin-dash work end */

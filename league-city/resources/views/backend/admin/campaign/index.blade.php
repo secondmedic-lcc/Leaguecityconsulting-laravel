@@ -4,7 +4,7 @@
         
         <div class="card member-statistics h-auto billing-table">
             <div class="card-body">
-                <div class="table-responsive web-overflow mt-4">
+                <div class="table-responsive web-overflow">
                     <table class="table">
                         <thead>
                             <tr>
