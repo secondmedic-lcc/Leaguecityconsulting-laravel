@@ -150,7 +150,6 @@
         $('.portfolio-filter').removeClass('active');
         $('#category-' + category).addClass('active');
 
-        $('.portfolio-view').removeClass('fadeeffect');
         if (category == 'all') {
             $('.portfolio-view').removeClass('d-none');
         } else {
@@ -158,6 +157,10 @@
             $('.portfolio-view-' + category).removeClass('d-none');
             $('.portfolio-view-' + category).addClass('fadeeffect');
         }
+
+        setTimeout(() => {
+            $('.portfolio-view').removeClass('fadeeffect');
+        }, 500);
     });
 </script>
 @endif
