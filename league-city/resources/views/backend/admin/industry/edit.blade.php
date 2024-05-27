@@ -25,13 +25,13 @@
                                 <label class="form-label" for="">Product Sub Heading</label>
                                 <input type="text" class="form-control" name="sub_heading" required value="{{ $industry->sub_heading; }}" />
                             </div>
-                            <div class="col-md-3 mb-2">
+                            <div class="col-md-3 mb-4 col-8">
                                 <label class="form-label" for="">Product Image</label>
                                 <input type="file" class="form-control"  name="industry_image" onchange="readURL(this);" accept="image/webp" />
                                 <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                             </div>
-                            <div class="col-md-2">
-                                <img alt="industry Profile" src="{{ ($industry->industry_image && $industry->industry_image != "") ? asset($industry->industry_image) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
+                            <div class="col-md-2 col-4">
+                                <img alt="industry Profile" src="{{ ($industry->industry_image && $industry->industry_image != "") ? asset($industry->industry_image) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded w-100" height="auto" id="img_preview" />
                             </div>
                             <div class="col-md-7">
                                 <label class="form-label" for="">Product Description</label>

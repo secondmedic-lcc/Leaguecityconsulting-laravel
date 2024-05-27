@@ -37,13 +37,13 @@
                             <label class="form-label" for="">Banner Details</label>
                             <input type="text" class="form-control" name="details" required value="{{ old('details') }}" />
                         </div>
-                        <div class="col-md-3 mb-2">
+                        <div class="col-md-3 mb-2 col-8">
                             <label class="form-label" for="">Banner Image</label>
                             <input type="file" class="form-control" required name="banner_image" onchange="readURL(this);"  value="{{ old('banner_image') }}"  accept="image/webp" />
                             <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                         </div>
-                        <div class="col-md-2">
-                            <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
+                        <div class="col-md-2 col-4">
+                            <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded w-100" width="100" height="auto" id="img_preview" />
                         </div>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn" >

@@ -1,10 +1,10 @@
 <div class="row">
 
     <div class="col-md-12">
-        <div class="card">
+        <div class="card package-type-card">
             <div class="card-header bg-white py-2">
                 <div class="card-title">
-                    <h5 class="mb-0">Add Package Type</h5>
+                    <h6 class="mb-0">Add Package Type</h6>
                 </div>
             </div>
             <div class="card-body">
@@ -28,23 +28,24 @@
 
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header bg-white py-2">
-                <h5 class="mb-0">List of Package Types</h5>
+            <div class="card-header bg-white py-3">
+                <h6 class="mb-0">List of Package Types</h6>
             </div>
             <div class="card-body">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Package Name</th>
-                            <th>Package Slug</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $a = 1; @endphp
-                        @foreach($packageTypes as $packageType)
+                <div class="table-responsive web-overflow">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Package Name</th>
+                                <th>Package Slug</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php $a = 1; @endphp
+                            @foreach($packageTypes as $packageType)
                             <tr>
                                 <td>{{ $a++; }}</td>
                                 <td>{{ $packageType->package_name }}</td>
@@ -58,15 +59,16 @@
                                     <a href="{{ url('admin/packages?package_id='.$packageType->id); }}" class="btn btn-primary my-2 text-white">
                                         <i class="fa fa-plus"></i>
                                     </a>
-                                    
+
                                     <a href="javascript:void(0);" url={{ route('package.types.destroy', $packageType->id) }} class="btn btn-danger text-white btn-delete my-2">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -127,3 +127,7 @@ h6 {
 .sidebar-nav > .sidebar-brand img {
     content: url("../../includes-frontend/images/logo-white.webp");
 }
+
+.bg-white {
+    background-color: transparent !important;
+}

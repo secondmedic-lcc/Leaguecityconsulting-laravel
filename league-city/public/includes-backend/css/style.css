@@ -2995,3 +2995,16 @@
 }
 
 /* admin-dash work end */
+
+.package-type-card .card-title {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .package-type-card input {
+        margin-bottom: 15px;
+    }
+    .package-type-card textarea {
+        margin-bottom: 15px;
+    }
+}

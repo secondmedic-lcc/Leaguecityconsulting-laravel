@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="table-responsive web-overflow">
-                    <table class="table">
+                    <table class="table table-list-mobile">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -43,7 +43,7 @@
                                     <td>{{ $s['page_name'] }}</td>
                                     <td>{{ ($s['provide_name'] != "") ? $s['provide_name'] : "Normal Page" }}</td>
                                     <td>{{ $s['meta_title'] }}</td>
-                                    <td>{{ $s['meta_key'] }}</td>
+                                    <td class="table-list-detail">{{ $s['meta_key'] }}</td>
                                     <td class="text-end">
                                         <a href={{ url('/admin/seo-data/edit/' . $s['id']) }}
                                             class="btn btn-warning btn-xs text-white">

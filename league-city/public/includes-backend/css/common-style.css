@@ -309,7 +309,7 @@ a:hover {
 .table tr th,
 .table tr td {
     padding: 15px 10px;
-    border-bottom: 1px dashed var(--greyrgb);
+    border-bottom: 1px dashed #8383831a;
     min-width: 30px;
     vertical-align: middle;
     /* white-space: nowrap; */

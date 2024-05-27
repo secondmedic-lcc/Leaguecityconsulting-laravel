@@ -1,13 +1,13 @@
 <div class="card mt-3">
     <div class="card-body">
-        <h4 class="mb-0">{{ @$packageTypes->package_name; }}</h4>
+        <h5 class="mb-0">{{ @$packageTypes->package_name; }}</h5>
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm-12">
         @include('backend.layouts.alert')
-        <div class="card">
+        <div class="card package-type-card">
             <div class="card-body">
                 <form action="{{ url('admin/package/details/'.@$_GET['package_id']) }}" method="POST">
                     @csrf
@@ -33,7 +33,7 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <div class="card">
+        <div class="card package-type-card">
             <form action="{{ url('/admin/packages/store/'.@$_GET['package_id'].'/small'); }}" method="post">
                 @csrf
                 <input type="hidden" value="{{ $_GET['package_id'] }}" name="package_for" />
@@ -46,7 +46,7 @@
                         <label for="includes_details">Small Monthly Business USD</label>
                         <input type="text" class="form-control" value="{{ @$small->monthly_usd }}" name="monthly_usd" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <div class="d-flex justify-ceontent-between">
                             <button type="submit" class="btn btn-primary w-50 mx-2">Update</button>
                             <a href="{{ url('admin/packages/create?package_id='.@$_GET['package_id'].'&business_type=small') }}" target="_blank" class="btn btn-warning w-50 mx-2">Add Key</a>
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card">
+        <div class="card package-type-card">
             <form action="{{ url('/admin/packages/store/'.@$_GET['package_id'].'/mid'); }}" method="post">
                 @csrf
                 <input type="hidden" value="{{ $_GET['package_id'] }}" name="package_for" />
@@ -70,7 +70,7 @@
                         <label for="includes_details">Mid Size Monthly Business USD</label>
                         <input type="text" class="form-control" value="{{ @$mid->monthly_usd }}" name="monthly_usd" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <div class="d-flex justify-ceontent-between">
                             <button type="submit" class="btn btn-primary w-50 mx-2">Update</button>
                             <a href="{{ url('admin/packages/create?package_id='.@$_GET['package_id'].'&business_type=mid') }}" target="_blank" class="btn btn-warning w-50 mx-2">Add Key</a>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card">
+        <div class="card package-type-card">
             <form action="{{ url('/admin/packages/store/'.@$_GET['package_id'].'/large'); }}" method="post">
                 @csrf
                 <input type="hidden" value="{{ $_GET['package_id'] }}" name="package_for" />
@@ -94,9 +94,9 @@
                         <label for="includes_details">Large Monthly Business USD</label>
                         <input type="text" class="form-control" value="{{ @$large->monthly_usd }}" name="monthly_usd" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <div class="d-flex justify-ceontent-between">
-                            <button type="submit" class="btn btn-primary w-50 mx-2">Update</button> 
+                            <button type="submit" class="btn btn-primary w-50 mx-2">Update</button>
                             <a href="{{ url('admin/packages/create?package_id='.@$_GET['package_id'].'&business_type=large') }}" target="_blank" class="btn btn-warning w-50 mx-2">Add Key</a>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="card">
+        <div class="card package-type-card">
             <div class="card-body">
                 <form action="{{ url('admin/package/details/'.@$_GET['package_id']) }}" method="POST">
                     @csrf
@@ -134,7 +134,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="card">
+        <div class="card package-type-card">
             <div class="card-body">
                 <form action="{{ url('admin/package/details/'.@$_GET['package_id']) }}" method="POST">
                     @csrf
@@ -160,14 +160,14 @@
 
 <div class="row">
     <div class="col-sm-12">
-        
+
         <div class="card member-statistics h-auto billing-table">
             <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="d-md-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="mb-1">Package Property  List</h6>
+                        <h6 class="mb-md-1 mb-4">Package Property List</h6>
                     </div>
-                    <div class="dropdown  filter-dropdown">
+                    <div class="dropdown filter-dropdown mb-md-0 mb-3">
                         <a class="btn btn-primary" href="{{ url('admin/package-includes/create?package_id='.@$_GET['package_id']); }}">Add Package Property</a>
                     </div>
                 </div>
@@ -183,27 +183,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                             @php $a = 1; @endphp
 
                             @foreach($includes as $s)
-                                <tr>
-                                    <td>{{ $a++; }}</td>
-                                    <td>
-                                        <img src="{{ asset($s['includes_image']); }}" class="img rounded" alt="Includes Image">
-                                    </td>
-                                    <td>{{ $s['title']; }}</td>
-                                    <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
-                                    <td class="text-end">
-                                        <a href={{ route('package.includes.edit',$s['id']) }} class="btn btn-warning btn-xs text-white">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
+                            <tr>
+                                <td>{{ $a++; }}</td>
+                                <td>
+                                    <img src="{{ asset($s['includes_image']); }}" class="img rounded" alt="Includes Image">
+                                </td>
+                                <td>{{ $s['title']; }}</td>
+                                <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
+                                <td class="text-end">
+                                    <a href={{ route('package.includes.edit',$s['id']) }} class="btn btn-warning btn-xs text-white">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
 
-                                        <a href="javascript:void(0);" url={{ route('package.includes.destroy',$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                    <a href="javascript:void(0);" url={{ route('package.includes.destroy',$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -216,7 +216,7 @@
     </div>
 </div>
 
-{{-- 
+{{--
 <div class="row">
     <div class="col-sm-12">
         <div class="card member-statistics h-auto billing-table">
@@ -227,52 +227,52 @@
                     </div>
                     <div class="filter-dropdown">
                         <a class="btn btn-primary" href="{{ url('admin/packages/create?package_id='.@$_GET['package_id']); }}">Add Plans</a>
-                    </div>
-                </div>
-                <div class="table-responsive web-overflow">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Heading</th>
-                                <th>Monthly</th>
-                                <th>USD</th>
-                                <th>In Front</th>
-                                <th>Created At</th>
-                                <th class="text-end">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            @php $a = 1; @endphp
+</div>
+</div>
+<div class="table-responsive web-overflow">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Heading</th>
+                <th>Monthly</th>
+                <th>USD</th>
+                <th>In Front</th>
+                <th>Created At</th>
+                <th class="text-end">Action</th>
+            </tr>
+        </thead>
+        <tbody>
 
-                            @foreach($packages as $s)
-                                <tr>
-                                    <td>{{ $a++; }}</td>
-                                    <td>{{ $s['name']; }}</td>
-                                    <td>{{ $s['heading']; }}</td>
-                                    <td>{{ $s['monthly_inr']; }}</td>
-                                    <td>{{ $s['monthly_usd']; }}</td>
-                                    <td>{{ ($s['show_front'] == 1) ? "Show" : "Hide"; }}</td>
-                                    <td>{{ date("d M, Y", strtotime($s['created_at'])); }}</td>
-                                    <td class="text-end">
-                                        <a href="{{ route('packages.sub-keypoints', $s['id']); }}" class="btn btn-primary text-white" target="_blank" >
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                        <a href={{ url('/admin/packages/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="javascript:void(0);" url={{ url('/admin/packages-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+            @php $a = 1; @endphp
+
+            @foreach($packages as $s)
+            <tr>
+                <td>{{ $a++; }}</td>
+                <td>{{ $s['name']; }}</td>
+                <td>{{ $s['heading']; }}</td>
+                <td>{{ $s['monthly_inr']; }}</td>
+                <td>{{ $s['monthly_usd']; }}</td>
+                <td>{{ ($s['show_front'] == 1) ? "Show" : "Hide"; }}</td>
+                <td>{{ date("d M, Y", strtotime($s['created_at'])); }}</td>
+                <td class="text-end">
+                    <a href="{{ route('packages.sub-keypoints', $s['id']); }}" class="btn btn-primary text-white" target="_blank">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <a href={{ url('/admin/packages/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="javascript:void(0);" url={{ url('/admin/packages-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
 </div> --}}
