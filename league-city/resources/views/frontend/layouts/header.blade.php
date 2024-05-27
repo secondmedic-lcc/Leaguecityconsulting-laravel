@@ -8,7 +8,7 @@ $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')-
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/'); }}">
-                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.webp" class="logo" alt="League City Consulting Brand Logo"> 
+                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.webp" class="logo" alt="League City Consulting"> 
                 </a>
                 <a class="btn web-btn d-inline-flex d-lg-none menu-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@ $package_types = PackageTypes::where('status',1)->orderBy('package_name','asc')-
         <div class="offcanvas-header">
             <div class="sidebar-logo">
                 <a href="{{ url('/'); }}">
-                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.webp" alt="League City Consulting Brand Logo">
+                    <img src="{{ asset('includes-frontend'); }}/images/logo-white.webp" alt="League City Consulting">
                 </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
