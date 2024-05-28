@@ -3029,6 +3029,16 @@ tr.hide-table-padding td {
     content: "+";
 }
 
+.dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.dataTables_filter input {
+    background-color: #f5f5f5 !important;
+    border: 1px solid #eee;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 10%);
+}
+
 .table .dtr-details {
     width: 100%;
     padding-left: 0;
@@ -3038,14 +3048,15 @@ tr.hide-table-padding td {
     padding-left: 15px !important;
 }
 
-.table .dtr-data {
-    display: block;
-    width: 265px;
-    overflow: hidden;
+.table th {
+    background-color: #eee !important;
 }
 
+.table .dtr-data {
+    white-space: break-spaces;
+}
 .dataTables_length {
-   display: none;
+    display: none;
 }
 
 .dataTables_info {
@@ -3054,4 +3065,14 @@ tr.hide-table-padding td {
 
 .dataTables_paginate {
     display: none;
+}
+
+.table-action-btns {
+    white-space: nowrap;
+}
+
+.table-action-btns a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

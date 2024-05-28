@@ -15,7 +15,7 @@
 <script language="JavaScript" src="{{ asset('includes-backend/js/dataTables.bootstrap.min.js'); }}" type="text/javascript"></script>
 <script language="JavaScript" src="{{ asset('includes-backend/js/dataTables.responsive.min.js'); }}" type="text/javascript"></script>
 
-<script language="JavaScript" src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.min.js" type="text/javascript"></script>
+<script language="JavaScript" src="{{ asset('includes-backend/js/responsive.bootstrap.min.js'); }}" type="text/javascript"></script>
 
 
 @if(@$current_page == "leads" || @$current_page == "package-request" || @$current_page == "campaign")

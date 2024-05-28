@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-12">
         @include('backend.layouts.alert')
-        
+
         <div class="card member-statistics h-auto billing-table">
-            <div class="card-body">
+            <div class="card-header bg-white">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
                         <h6 class="mb-1">Industry List</h6>
@@ -13,12 +13,16 @@
                             <i class='bx bx-menu-alt-right'></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><h6>Quick Actions</h6></li>
+                            <li>
+                                <h6>Quick Actions</h6>
+                            </li>
                             <li><a class="dropdown-item" href="{{ route('website-banner.create'); }}">Add Industry</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="table-responsive web-overflow">
+            </div>
+            <div class="card-body">
+                <!-- <div class="table-responsive web-overflow">
                     <table class="table">
                         <thead>
                             <tr>
@@ -29,33 +33,77 @@
                                 <th>Sub Heading</th>
                                 <th class="text-end">Action</th>
                             </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Heading</th>
+                                <th>Sub Heading</th>
+                                <th class="text-end">Action</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            
+
                             @php $a = 1; @endphp
 
                             @foreach($portfolio as $s)
-                                <tr>
-                                    <td>{{ $a++; }}</td>
-                                    <td>
-                                        <img src="{{ asset($s['banner_image']); }}" alt="Image" width="100" height="auto" />
-                                    </td>
-                                    <td>{{ $s['page_name']; }}</td>
-                                    <td>{{ $s['heading']; }}</td>
-                                    <td>{{ $s['sub_heading']; }}</td>
-                                    <td class="text-end">
-                                        <a href={{ url('/admin/website-banner/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="javascript:void(0);" url={{ url('/admin/website-banner-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>{{ $a++; }}</td>
+                                <td>
+                                    <img src="{{ asset($s['banner_image']); }}" alt="Image" width="100" height="auto" />
+                                </td>
+                                <td>{{ $s['page_name']; }}</td>
+                                <td>{{ $s['heading']; }}</td>
+                                <td>{{ $s['sub_heading']; }}</td>
+                                <td class="text-end">
+                                    <a href={{ url('/admin/website-banner/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="javascript:void(0);" url={{ url('/admin/website-banner-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
+                </div> -->
+                <table id="tableDrop" class="table dt-responsive nowrap" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Heading</th>
+                            <th>Sub Heading</th>
+                            <th class="text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @php $a = 1; @endphp
+
+                        @foreach($portfolio as $s)
+                        <tr>
+                            <td>{{ $a++; }}</td>
+                            <td>
+                                <img src="{{ asset($s['banner_image']); }}" alt="Image" width="100" height="auto" />
+                            </td>
+                            <td>{{ $s['page_name']; }}</td>
+                            <td>{{ $s['heading']; }}</td>
+                            <td>{{ $s['sub_heading']; }}</td>
+                            <td class="text-end">
+                                <a href={{ url('/admin/website-banner/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="javascript:void(0);" url={{ url('/admin/website-banner-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

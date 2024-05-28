@@ -93,7 +93,7 @@ table.dataTable thead .sorting_desc_disabled:after {
     right: 8px;
     display: block;
     font-family: boxicons !important;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 @media (max-width: 767px) {

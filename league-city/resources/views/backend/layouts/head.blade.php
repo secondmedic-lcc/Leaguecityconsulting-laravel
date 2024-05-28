@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('includes-backend/css/dataTables.bootstrap.min.css'); }}" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('includes-backend/css/responsive.bootstrap.min.css'); }}" />
 
     <link rel="stylesheet" href="{{ asset('includes-backend/css/select2.min.css'); }}">
 
