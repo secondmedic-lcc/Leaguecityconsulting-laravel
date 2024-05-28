@@ -3008,3 +3008,50 @@
         margin-bottom: 15px;
     }
 }
+
+tr.hide-table-padding td {
+    padding: 0;
+}
+
+.expand-button {
+    position: relative;
+}
+
+.accordion-toggle .expand-button:after {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    content: "-";
+}
+
+.accordion-toggle.collapsed .expand-button:after {
+    content: "+";
+}
+
+.table .dtr-details {
+    width: 100%;
+    padding-left: 0;
+}
+
+.table .child {
+    padding-left: 15px !important;
+}
+
+.table .dtr-data {
+    display: block;
+    width: 265px;
+    overflow: hidden;
+}
+
+.dataTables_length {
+   display: none;
+}
+
+.dataTables_info {
+    display: none;
+}
+
+.dataTables_paginate {
+    display: none;
+}
