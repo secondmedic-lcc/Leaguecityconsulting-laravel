@@ -36,7 +36,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th class="table-id">ID</th>
                                 <th>Package Name</th>
                                 <th>Package Slug</th>
                                 <th>Status</th>
@@ -72,7 +72,7 @@
                 <table id="tableDrop" class="table dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th class="table-id">ID</th>
                             <th>Package Name</th>
                             <th>Package Slug</th>
                             <th>Status</th>

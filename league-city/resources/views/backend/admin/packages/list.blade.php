@@ -175,7 +175,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="table-id">ID</th>
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Created At</th>
@@ -233,7 +233,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th class="table-id">ID</th>
                 <th>Name</th>
                 <th>Heading</th>
                 <th>Monthly</th>

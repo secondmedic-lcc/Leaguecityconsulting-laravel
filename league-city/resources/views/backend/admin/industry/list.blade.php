@@ -26,7 +26,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="table-id">ID</th>
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Heading</th>
@@ -63,7 +63,7 @@
                 <table id="tableDrop" class="table dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th class="table-id">ID</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Heading</th>

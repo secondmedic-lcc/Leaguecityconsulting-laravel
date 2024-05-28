@@ -26,7 +26,7 @@
                     <table class="table table-list-mobile">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="table-id">ID</th>
                                 <th>Page</th>
                                 <th>Service</th>
                                 <th>Meta Title</th>
@@ -61,7 +61,7 @@
                 <table id="tableDrop" class="table dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th class="table-id">ID</th>
                             <th>Page</th>
                             <th>Service</th>
                             <th>Meta Title</th>

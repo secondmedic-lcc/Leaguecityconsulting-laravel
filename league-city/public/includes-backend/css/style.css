@@ -3076,3 +3076,7 @@ tr.hide-table-padding td {
     align-items: center;
     justify-content: center;
 }
+
+.table .table-id {
+    width: 30px;
+}

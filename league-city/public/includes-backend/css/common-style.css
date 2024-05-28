@@ -344,6 +344,8 @@ a:hover {
     padding: 0px;
     font-size: 18px;
     color: var(--greycolor);
+    margin-right: 10px;
+    margin-top: 5px;
 }
 
 .table tr td .btn:hover {

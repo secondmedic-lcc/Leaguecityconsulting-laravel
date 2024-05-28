@@ -169,7 +169,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="table-id">ID</th>
                                 <th>Project</th>
                                 <th>Title</th>
                                 <th width="50%">Details</th>

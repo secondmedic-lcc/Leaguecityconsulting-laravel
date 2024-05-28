@@ -22,7 +22,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="table-id">ID</th>
                                 <th>Image</th>
                                 <th>Package For</th>
                                 <th>Name</th>
