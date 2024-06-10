@@ -70,6 +70,113 @@
     </div>
 </section>
 
+
+<section class="services campaign-services section-padding pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-heading text-center">Our Services</h2>
+                <div class="services-slider-height">
+                    <div class="owl-carousel services-slider">
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp" alt="Mobile App Development image">
+                                </div>
+                                <div class="content">
+                                    <h3>Mobile App Development</h3>
+                                    <p>We design and build captivating apps that drive results.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/web-development.webp" alt="Web Development image">
+                                </div>
+                                <div class="content">
+                                    <h3>Web <br>Development</h3>
+                                    <p>We craft stunning websites and web apps that drive results</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/custom-software-development.webp" alt="Custom Software Development image">
+                                </div>
+                                <div class="content">
+                                    <h3>Custom Software Development
+                                    </h3>
+                                    <p>We nurture your concept to life as a powerful digital solution.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/ui-ux-development.webp" alt="UI/UX Development image">
+                                </div>
+                                <div class="content">
+                                    <h3>UI/UX Development
+                                    </h3>
+                                    <p>Beyond pixels and code, we build your digital dreams</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
+                                </div>
+                                <div class="content">
+                                    <h3>E-Commerce Development</h3>
+                                    <p>We build a loyal online community with your high-performance store.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/graphic-designing.webp" alt="Graphic Designing image">
+                                </div>
+                                <div class="content">
+                                    <h3>Graphic <br>Designing</h3>
+                                    <p>Beyond beauty, beyond function Design's boundless realm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/cyber-security.webp" alt="Cyber Security image">
+                                </div>
+                                <div class="content">
+                                    <h3>Cyber <br>Security</h3>
+                                    <p>See the unseen threats Stay vigilant, stay secure.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="btnrow text-center">
+                    <p class="md:mt-5 mb-1 mt-3"><b>Ready to discuss?</b></p>
+                    <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="campaign-review section-padding">
     <div class="container">
         <div class="row">
@@ -278,111 +385,6 @@
                 </div>
                 <p class="md:mt-5 mb-1 mt-3"><b>Talk to our consultants</b></p>
                 <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="services campaign-services section-padding pb-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-heading text-center">Our Services</h2>
-                <div class="services-slider-height">
-                    <div class="owl-carousel services-slider">
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp" alt="Mobile App Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Mobile App Development</h3>
-                                    <p>We design and build captivating apps that drive results.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/web-development.webp" alt="Web Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Web <br>Development</h3>
-                                    <p>We craft stunning websites and web apps that drive results</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/custom-software-development.webp" alt="Custom Software Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>Custom Software Development
-                                    </h3>
-                                    <p>We nurture your concept to life as a powerful digital solution.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/ui-ux-development.webp" alt="UI/UX Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>UI/UX Development
-                                    </h3>
-                                    <p>Beyond pixels and code, we build your digital dreams</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
-                                </div>
-                                <div class="content">
-                                    <h3>E-Commerce Development</h3>
-                                    <p>We build a loyal online community with your high-performance store.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/graphic-designing.webp" alt="Graphic Designing image">
-                                </div>
-                                <div class="content">
-                                    <h3>Graphic <br>Designing</h3>
-                                    <p>Beyond beauty, beyond function Design's boundless realm.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="box">
-                                <div class="images">
-                                    <img src="{{ asset('includes-frontend') }}/images/cyber-security.webp" alt="Cyber Security image">
-                                </div>
-                                <div class="content">
-                                    <h3>Cyber <br>Security</h3>
-                                    <p>See the unseen threats Stay vigilant, stay secure.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="btnrow text-center">
-                    <p class="md:mt-5 mb-1 mt-3"><b>Ready to discuss?</b></p>
-                    <a href="#campaign-form" class="btn web-btn">Contact Us Now</a>
-                </div>
             </div>
         </div>
     </div>

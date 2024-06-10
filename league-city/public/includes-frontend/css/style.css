@@ -3372,6 +3372,15 @@ h6 .light {
     padding: 20px;
 }
 
+.campaign-banner
+    .form-box
+    .form-floating
+    > .form-control:not(:placeholder-shown)
+    ~ label {
+    transform: scale(0.85) translateY(-1.1rem) translateX(0.15rem);
+    width: 100%;
+}
+
 .campaign-review .content-box-outer {
     height: 100%;
     transition: all 0.3s ease-in-out;
