@@ -22,8 +22,8 @@
 <script>
     $('.btn-view').click(function() {
         var message = $(this).attr('message');
-        $('#modal-title').text("Contact Request Message");
-        $('#modal-message').text(message);
+        $('#viewModel #modal-title').text("Message");
+        $('#viewModel #modal-message').text(message);
     });
 </script>
 @endif
@@ -183,6 +183,22 @@
 
     });
 </script>
+@endif
+
+@if(@$current_page == "campaign")
+    <script>
+        $('.btn-edit').click(function(e){
+            
+            let campaign_id = $(this).attr('campaign_id');
+            let request_status = $(this).attr('request_status');
+            let remark = $(this).attr('remark');
+
+            $('#editModel #campaign_id').val(campaign_id);
+            $('#editModel #request_status').val(request_status);
+            $('#editModel #remark').val(remark);
+
+        });
+    </script>
 @endif
 
 </body>

@@ -288,6 +288,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('campaign-delete/{id}', [App\Http\Controllers\backend\admin\CampaignController::class, 'destroy'])->name("campaign.destory");
 
+    Route::post('campaign/update', [App\Http\Controllers\backend\admin\CampaignController::class, 'update'])->name('campaign.update');
+
 });
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);

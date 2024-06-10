@@ -17,6 +17,8 @@ class Campaign extends Model
         'contact',
         'country',
         'message',
+        'request_status',
+        'remark',
         'status',
     ];
 }

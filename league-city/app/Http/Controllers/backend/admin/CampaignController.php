@@ -26,6 +26,19 @@ class CampaignController extends Controller
         return view('backend/admin/main', compact('page_name','page_title','current_page','request'));
     }
 
+    public function update(Request $request) {
+       
+        $data = array('request_status' =>$request->request_status,'remark' =>$request->remark);
+
+        $result = Campaign::where(array('id'=>$request->campaign_id))->update($data);
+        
+        if($result > 0){
+            return redirect()->back()->with('success', 'Campaign Status Updated successfully');
+        }else{
+            return redirect()->back()->with('error', 'Something went Wrong');
+        }
+    }
+
     public function destroy($id) {
        
         /* $result = ServiceProvider::where(array('id'=>$id))->delete(); */
