@@ -76,6 +76,7 @@
 
                         @foreach ($list as $s)
                         @php $imgUrl = ($s['category_img'] != "" && $s['category_img'] != null) ? $s['category_img'] : "uploads/default.jpg"; @endphp
+                        @php $deleteUrl = route('category.destory', $s['id']); @endphp
                         <tr>
                             <td>{{ $a++ }}</td>
                             <td>{{ Str::ucfirst($s['category_name']); }}</td>
@@ -89,7 +90,7 @@
                                     <a href={{ route('category.edit', $s['id']) }} class="btn btn-warning btn-xs text-white">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0);" url={{ route('category.destory', $s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>

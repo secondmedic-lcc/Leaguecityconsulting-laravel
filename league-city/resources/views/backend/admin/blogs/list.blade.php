@@ -74,6 +74,7 @@
                         @php $a = 1; @endphp
 
                         @foreach($blog as $s)
+                        @php $deleteUrl = url('/admin/blogs-delete/'.$s['id']); @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>{{ $s['blog_title']; }}</td>
@@ -87,7 +88,7 @@
                                     <a href={{ url('/admin/blogs/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0);" url={{ url('/admin/blogs-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>

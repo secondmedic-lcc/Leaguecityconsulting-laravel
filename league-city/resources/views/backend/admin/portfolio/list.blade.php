@@ -68,8 +68,8 @@
                             <th class="table-id">ID</th>
                             <th>Name</th>
                             <th>Heading</th>
-                            <th>Sub Heading</th>
                             <th>Image</th>
+                            <th>Sub Heading</th>
                             <th class="text-end">Action</th>
                         </tr>
                     </thead>
@@ -78,14 +78,15 @@
                         @php $a = 1; @endphp
 
                         @foreach($portfolio as $s)
+                        @php $deleteUrl = url('/admin/portfolio-delete/'.$s['id']); @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>{{ $s['name']; }}</td>
                             <td>{{ $s['heading']; }}</td>
-                            <td class="table-list-detail">{{ $s['sub_heading']; }}</td>
                             <td>
                                 <img src="{{ asset($s['image']); }}" alt="Image" width="100" height="auto" />
                             </td>
+                            <td class="table-list-detail">{{ $s['sub_heading']; }}</td>
                             <td class="text-end">
                                 <div class="table-action-btns">
                                     <a href={{ url('/admin/portfolio/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
@@ -94,7 +95,7 @@
                                     <a href={{ url('/admin/portfolio-services?portfolio_id='.$s['id']); }} class="btn btn-primary btn-xs text-white">
                                         <i class="fa fa-plus"></i>
                                     </a>
-                                    <a href="javascript:void(0);" url={{ url('/admin/portfolio-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>

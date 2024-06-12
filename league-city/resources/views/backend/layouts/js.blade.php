@@ -83,6 +83,23 @@
             }
         });
     });
+
+    function deleteData(url) {
+        swal({
+            title: "Are you sure?",
+            text: "Are you sure to delete this data",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                window.location.href = url;
+                return true;
+            } else {
+                return false;
+            }
+        });
+    }
 </script>
 
 @if(@$current_page == "portfolio" || @$current_page == "blogs" || @$current_page == "products" || @$current_page == "industry" || @$current_page == "website-banner" || @$current_page == "package-includes" || @$current_page == "category")
@@ -186,19 +203,19 @@
 @endif
 
 @if(@$current_page == "campaign")
-    <script>
-        $('.btn-edit').click(function(e){
-            
-            let campaign_id = $(this).attr('campaign_id');
-            let request_status = $(this).attr('request_status');
-            let remark = $(this).attr('remark');
+<script>
+    $('.btn-edit').click(function(e) {
 
-            $('#editModel #campaign_id').val(campaign_id);
-            $('#editModel #request_status').val(request_status);
-            $('#editModel #remark').val(remark);
+        let campaign_id = $(this).attr('campaign_id');
+        let request_status = $(this).attr('request_status');
+        let remark = $(this).attr('remark');
 
-        });
-    </script>
+        $('#editModel #campaign_id').val(campaign_id);
+        $('#editModel #request_status').val(request_status);
+        $('#editModel #remark').val(remark);
+
+    });
+</script>
 @endif
 
 </body>

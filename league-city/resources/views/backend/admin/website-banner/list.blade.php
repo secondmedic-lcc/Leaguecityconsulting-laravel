@@ -84,6 +84,7 @@
                         @php $a = 1; @endphp
 
                         @foreach($portfolio as $s)
+                        @php $deleteUrl = url('/admin/website-banner-delete/'.$s['id']); @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>
@@ -93,12 +94,14 @@
                             <td>{{ $s['heading']; }}</td>
                             <td>{{ $s['sub_heading']; }}</td>
                             <td class="text-end">
-                                <a href={{ url('/admin/website-banner/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <a href="javascript:void(0);" url={{ url('/admin/website-banner-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
-                                    <i class="fa fa-trash"></i>
-                                </a>
+                                <div class="table-action-btns">
+                                    <a href={{ url('/admin/website-banner/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

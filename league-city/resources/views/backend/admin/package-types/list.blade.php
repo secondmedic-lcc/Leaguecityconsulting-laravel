@@ -76,28 +76,29 @@
                             <th>Package Name</th>
                             <th>Package Slug</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php $a = 1; @endphp
                         @foreach($packageTypes as $packageType)
+                        @php $deleteUrl = route('package.types.destroy', $packageType->id); @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>{{ $packageType->package_name }}</td>
                             <td>{{ $packageType->package_slug }}</td>
                             <td>{{ $packageType->status == 1 ? 'Active' : 'Inactive' }}</td>
-                            <td>
+                            <td class="text-end">
                                 <div class="table-action-btns">
-                                    <a href="{{ route('package.types.edit', $packageType->id) }}" class="btn btn-warning text-white my-2">
+                                    <a href="{{ route('package.types.edit', $packageType->id) }}" class="btn btn-warning text-white">
                                         <i class="fa fa-edit"></i>
                                     </a>
 
-                                    <a href="{{ url('admin/packages?package_id='.$packageType->id); }}" class="btn btn-primary my-2 text-white">
+                                    <a href="{{ url('admin/packages?package_id='.$packageType->id); }}" class="btn btn-primary text-white">
                                         <i class="fa fa-plus"></i>
                                     </a>
 
-                                    <a href="javascript:void(0);" url={{ route('package.types.destroy', $packageType->id) }} class="btn btn-danger text-white btn-delete my-2">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" url={{ route('package.types.destroy', $packageType->id) }} class="btn btn-danger text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>

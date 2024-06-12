@@ -187,6 +187,7 @@
                             @php $a = 1; @endphp
 
                             @foreach($includes as $s)
+                            @php $deleteUrl = route('package.includes.destroy',$s['id']); @endphp
                             <tr>
                                 <td>{{ $a++; }}</td>
                                 <td>
@@ -199,7 +200,7 @@
                                         <i class="fa fa-edit"></i>
                                     </a>
 
-                                    <a href="javascript:void(0);" url={{ route('package.includes.destroy',$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
@@ -248,6 +249,7 @@
             @php $a = 1; @endphp
 
             @foreach($packages as $s)
+            @php $deleteUrl = url('/admin/packages-delete/'.$s['id']); @endphp
             <tr>
                 <td>{{ $a++; }}</td>
                 <td>{{ $s['name']; }}</td>
@@ -263,7 +265,7 @@
                     <a href={{ url('/admin/packages/'.$s['id']) }} class="btn btn-warning btn-xs text-white">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="javascript:void(0);" url={{ url('/admin/packages-delete/'.$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>
