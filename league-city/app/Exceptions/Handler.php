@@ -47,4 +47,11 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+    {
+        // Redirect to a custom 404 page for all exceptions
+        // return response()->view('404', [], 404);
+        // return redirect()->route('404');
+    }
 }

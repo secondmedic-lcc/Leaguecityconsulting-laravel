@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\admin\WebsiteBannersController;
 use App\Http\Controllers\backend\admin\PackagesController;
 use App\Http\Controllers\backend\admin\PackageIncludesController;
 use App\Http\Controllers\backend\admin\PackageTypesController;
+use App\Http\Controllers\ErrorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -301,3 +302,8 @@ Route::get('city/{state_id}', [App\Http\Controllers\HomeController::class, 'city
 Route::get('/industry', [App\Http\Controllers\IndustryController::class, 'index']);
 
 Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'industry_details']);
+
+
+// for error
+// Route::get('/404', [ErrorController::class, 'index'])->name('404');
+Route::fallback([ErrorController::class, 'index']);

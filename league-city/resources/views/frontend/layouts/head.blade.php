@@ -54,6 +54,17 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 
     <meta name="keywords" content="{{ $seo_data->meta_key }}" />
 
+    @php
+        $fullUrl = request()->fullUrl();
+        $noIndex = strpos($fullUrl, '/index.php') !== false;
+    @endphp
+
+    @if($noIndex)
+        <meta name="robots" content="noindex, nofollow">
+    @else
+        <meta name="robots" content="index, follow">
+    @endif
+
     <meta name="description" content="{{ $seo_data->meta_description }}" />
 
     <meta property="og:url" content="{{ url()->current() }}">

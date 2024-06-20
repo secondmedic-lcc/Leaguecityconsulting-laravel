@@ -43,7 +43,7 @@
                                     <div class="col-md-6">
                                         @if($current_page != 'saas-campaign')
                                             <label>
-                                                <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="privacy-policy" class="web-clr">Privacy Policy</a></p>
+                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="{{ url('privacy-policy') }}" class="web-clr">Privacy Policy</a></p>
                                             </label>
                                         @endif
                                     </div>
