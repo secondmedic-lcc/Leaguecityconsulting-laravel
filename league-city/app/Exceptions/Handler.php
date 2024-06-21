@@ -52,6 +52,6 @@ class Handler extends ExceptionHandler
     {
         // Redirect to a custom 404 page for all exceptions
         // return response()->view('404', [], 404);
-        // return redirect()->route('404');
+        return redirect()->route('404');
     }
 }

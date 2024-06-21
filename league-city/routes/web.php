@@ -305,5 +305,5 @@ Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'i
 
 
 // for error
-// Route::get('/404', [ErrorController::class, 'index'])->name('404');
-Route::fallback([ErrorController::class, 'index']);
+Route::get('/404', [ErrorController::class, 'index'])->name('404');
+// Route::fallback([ErrorController::class, 'index'])->name('404fallback');
