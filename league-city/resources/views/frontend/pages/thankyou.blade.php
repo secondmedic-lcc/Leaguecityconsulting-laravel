@@ -18,7 +18,7 @@
                 <div class="content">
                     <img src="{{ asset('includes-frontend') }}/images/check-animate.gif" alt="img">
                     <h4>Request Submitted Successfully</h4>
-                    <p>Our Agent will contact you shortly about your requirements, <br> you can email us at <a href="mailto:info@leaguecityconsulting.com"><b>info@leaguecityconsulting.com</b></a> <br> or call us at <a href="tel:7879782233"><b>+91 78797 82233</b></a></p>
+                    <p>Our Agent will contact you shortly about your requirements, <br> you can email us at <a href="mailto:info@leaguecityconsulting.com"><b>info@leaguecityconsulting.com</b></a> <br> or call us at <a href="tel:+18323305432"><b>+1-832-330-5432</b></a></p>
                 </div>
                 <div class="thankyou-actions">
                     <a href="{{ url('saas-campaign'); }}" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
