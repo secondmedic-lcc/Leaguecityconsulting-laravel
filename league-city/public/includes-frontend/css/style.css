@@ -105,6 +105,14 @@ h6 .light {
     background-color: var(--themecolorhover);
     color: var(--whitecolor);
 }
+.web-btn-grey {
+    background-color: var(--darkgreycolor);
+    color: var(--whitecolor);
+}
+.web-btn-grey:hover {
+    background-color: var(--themecolorhover);
+    color: var(--whitecolor);
+}
 .white-btn {
     background-color: transparent;
     border: 1px solid var(--whitecolor);
@@ -3751,3 +3759,98 @@ h6 .light {
 }
 
 /* saas campaign 1 work end */
+
+/* thankyou work start */
+
+.thankyou {
+    padding: 120px 0;
+}
+
+.thankyou .thankyou-divide {
+    display: block;
+    width: 2px;
+    height: 430px;
+    background-color: var(--bgcolor);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.thankyou .content {
+    text-align: center;
+}
+
+.thankyou .content img {
+    width: 70px;
+    margin-bottom: 30px;
+}
+
+.thankyou .content h4 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.thankyou .content p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 30px;
+    margin-bottom: 40px;
+}
+
+.thankyou .thankyou-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.thankyou .thankyou-actions a {
+    width: 47%;
+}
+
+.thankyou .thankyou-actions a i {
+    margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+    .thankyou {
+        padding: 40px 0;
+    }
+
+    .thankyou .content p {
+        padding: 0;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .thankyou .thankyou-actions {
+        padding: 0;
+    }
+
+    .thankyou .thankyou-actions a {
+        width: 48%;
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .thankyou .thankyou-actions a i {
+        margin-right: 6px;
+    }
+
+    .thankyou .thankyou-actions a.btn {
+        padding: 10px 20px !important;
+        width: auto;
+    }
+
+    .thankyou .content img {
+        margin-bottom: 10px;
+    }
+
+    .thankyou .content h4 {
+        margin-bottom: 15px;
+    }
+}
+
+/* thankyou work end */
