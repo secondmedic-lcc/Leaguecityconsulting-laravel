@@ -15,6 +15,6 @@ class ThankyouController extends Controller
         
         $current_page = "thankyou";
 
-        return view('frontend/main', compact('page_name','page_title','current_page'));
+        return view('frontend/campaign-main', compact('page_name','page_title','current_page'));
     }
 }

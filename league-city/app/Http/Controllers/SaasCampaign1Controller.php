@@ -25,13 +25,12 @@ class SaasCampaign1Controller extends Controller
         
         $country = Country::get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio','country'));
+        return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio','country'));
     }
     
 
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|max:50',
@@ -55,7 +54,7 @@ class SaasCampaign1Controller extends Controller
             $result = Campaign::create($data);
 
             if ($result->id > 0) {
-                return redirect()->back()->with('success', 'Thank you for requesting');
+                return redirect()->route('thankyou');
             } else {
                 return redirect()->back()->with('error', 'Something went Wrong');
             }

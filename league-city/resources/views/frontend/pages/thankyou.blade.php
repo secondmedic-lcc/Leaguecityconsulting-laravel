@@ -21,7 +21,7 @@
                     <p>Our Agent will contact you shortly about your requirements, <br> you can email us at <a href="mailto@info@leaguecityconsulting.com"><b>info@leaguecityconsulting.com</b></a> <br> or call us at <a href="#"><b>+1-832-330-5432</b></a></p>
                 </div>
                 <div class="thankyou-actions">
-                    <a href="profile-sub-detail.php" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
+                    <a href="{{ url('saas-campaign'); }}" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
                 </div>
             </div>
         </div>
