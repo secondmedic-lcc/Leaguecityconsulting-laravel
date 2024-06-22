@@ -3859,7 +3859,6 @@ h6 .light {
 
 /* thankyou work end */
 
-
 .saas-camp-contact {
     position: relative;
 }
@@ -3875,4 +3874,15 @@ h6 .light {
     position: absolute;
     top: 260px;
     left: 400px;
+}
+
+@media (max-width: 767px) {
+    .saas-camp-contact .camp-footer-img {
+        display: none;
+    }
+
+    .saas-camp-contact .camp-footer-btn {
+        position: unset;
+        margin-bottom: 30px;
+    }
 }
