@@ -3858,3 +3858,21 @@ h6 .light {
 }
 
 /* thankyou work end */
+
+
+.saas-camp-contact {
+    position: relative;
+}
+
+.saas-camp-contact .camp-footer-img {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 390px;
+}
+
+.saas-camp-contact .camp-footer-btn {
+    position: absolute;
+    top: 260px;
+    left: 400px;
+}
