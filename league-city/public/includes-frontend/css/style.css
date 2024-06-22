@@ -3764,6 +3764,10 @@ h6 .light {
 
 .thankyou {
     padding: 120px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thankyou .thankyou-divide {
