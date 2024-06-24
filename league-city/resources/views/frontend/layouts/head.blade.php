@@ -67,7 +67,9 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
 
     <meta name="description" content="{{ $seo_data->meta_description }}" />
 
-    <meta property="og:url" content="{{ url()->current() }}">
+    {{-- <meta property="og:url" content="{{ url()->current() }}"> --}}
+
+    <meta property="og:url" content="{{str_replace("http:","https:",url()->current()); }}">
 
     <meta property="og:description" content="{{ $seo_data->meta_description }}">
 
