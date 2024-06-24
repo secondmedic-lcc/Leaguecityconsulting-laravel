@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-6">
                 <img src="{{ asset('includes-frontend') }}/images/logo-white.webp" alt="logo" class="logo">
-                <h1>World’s #1 Mobile App Development Company</h1>
+                <h1>India’s #1 Mobile App Development Company</h1>
                 <h5 class="web-clr">We Turn Your Great Ideas into Amazing Mobile Apps</h5>
                 <ul>
                     <li>Accelerated Development Cycle</li>
@@ -66,7 +66,7 @@
                             {{-- <input type="text" class="form-control" id="floatingInput4" placeholder="country"> --}}
                             {{-- <label for="floatingInput4">Country</label> --}}
                             <select class="form-control" id="floatingInput4" name="country">
-                                <option value="" selected disabled>Country</option>
+                                <option value="" selected disabled>Select State</option>
                                 @foreach ($country as $c)
                                 <option value="{{ $c->country_id }}">{{ $c->name }}</option>
                                 @endforeach
@@ -1410,7 +1410,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Contact</span>
-                                            <a href="tel:+18323305432">+1-832-330-5432</a>
+                                            <a href="tel:+917879782233">+91 78797 82233</a>
                                         </div>
                                     </li>
                                     <li>
@@ -1419,7 +1419,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
+                                            <p>E-8/95, JSV Tower, Basant Kunj, Arera Colony, Bhopal, Madhya Pradesh 462016</p>
                                         </div>
                                     </li>
                                 </ul>

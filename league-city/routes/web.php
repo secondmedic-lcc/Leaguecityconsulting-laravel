@@ -43,6 +43,8 @@ Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'st
 
 Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index']);
 
+Route::get('/india-saas-campaign', [App\Http\Controllers\IndiaSaasCampaignController::class, 'index']);
+
 Route::get('/thankyou', [App\Http\Controllers\ThankyouController::class, 'index'])->name('thankyou');
 
 Route::post('campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'store'])->name('campaign.store');
