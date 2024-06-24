@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Support\Facades\App;
 
 class Handler extends ExceptionHandler
 {
@@ -48,10 +49,13 @@ class Handler extends ExceptionHandler
         });
     }
 
+    
     public function render($request, Throwable $exception)
     {
-        // Redirect to a custom 404 page for all exceptions
-        // return response()->view('404', [], 404);
-        return redirect()->route('404');
+        if (env('APP_ENV') === 'production') {
+            return redirect()->route('404');
+        }
+
+        return parent::render($request, $exception);
     }
 }

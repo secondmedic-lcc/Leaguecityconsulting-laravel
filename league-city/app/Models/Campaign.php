@@ -16,6 +16,7 @@ class Campaign extends Model
         'email',
         'contact',
         'country',
+        'campaign_for',
         'message',
         'request_status',
         'remark',

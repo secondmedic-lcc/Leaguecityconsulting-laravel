@@ -41,9 +41,9 @@ Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'ind
 
 Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
 
-Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index']);
+Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index'])->name('saas.campaign');
 
-Route::get('/india-saas-campaign', [App\Http\Controllers\IndiaSaasCampaignController::class, 'index']);
+Route::get('india-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'indiaCampaign'])->name('india.campaign');
 
 Route::get('/thankyou', [App\Http\Controllers\ThankyouController::class, 'index'])->name('thankyou');
 
@@ -308,6 +308,8 @@ Route::get('/industry', [App\Http\Controllers\IndustryController::class, 'index'
 Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'industry_details']);
 
 
-// for error
-Route::get('/404', [ErrorController::class, 'index'])->name('404');
-// Route::fallback([ErrorController::class, 'index'])->name('404fallback');
+if(env('APP_ENV') == 'production'){
+    Route::get('/404', [ErrorController::class, 'index'])->name('404');
+} else {
+    // Route::fallback([ErrorController::class, 'index'])->name('404fallback');
+}
