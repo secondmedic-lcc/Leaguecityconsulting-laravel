@@ -11,7 +11,8 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Contact</th>
-                            <th>Country</th>
+                            <th>Campaign</th>
+                            <th>Location</th>
                             <th>Enquiry At</th>
                             <th class="text-end">Action</th>
                         </tr>
@@ -24,7 +25,8 @@
                             <td>{{ $s['name']; }}</td>
                             <td>{{ $s['email'] ; }}</td>
                             <td>{{ $s['contact']; }}</td>
-                            <td>{{ $s['country_name']; }}</td>
+                            <td>{{ $s['campaign_for']; }}</td>
+                            <td>{{ $s['location_name']; }}</td>
                             <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
                             <td class="text-end">
                                 <div class="table-action-btns">

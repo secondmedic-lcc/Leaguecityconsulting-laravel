@@ -68,8 +68,8 @@
                             {{-- <label for="floatingInput4">Country</label> --}}
                             <select class="form-control" id="floatingInput4" name="country">
                                 <option value="" selected disabled>Select State</option>
-                                @foreach ($country as $c)
-                                <option value="{{ $c->country_id }}">{{ $c->name }}</option>
+                                @foreach ($state as $c)
+                                <option value="{{ $c->state_id }}">{{ $c->name }}</option>
                                 @endforeach
                             </select>
                         </div>

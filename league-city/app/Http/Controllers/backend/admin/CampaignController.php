@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Campaign;
+use DB;
 
 class CampaignController extends Controller
 {
@@ -21,7 +22,21 @@ class CampaignController extends Controller
         
         $current_page = "campaign";
 
-        $request = Campaign::select('campaign.*','country.name as country_name')->leftJoin('country','country.country_id','campaign.country')->where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+        $request = Campaign::select(
+            'campaign.*',
+            DB::raw('CASE WHEN campaign.campaign_for = "USA Campaign" THEN country.name ELSE state.name END as location_name')
+        )
+        ->leftJoin('country', function($join) {
+            $join->on('campaign.country', '=', 'country.country_id')
+                 ->where('campaign.campaign_for', '=', 'USA Campaign');
+        })
+        ->leftJoin('state', function($join) {
+            $join->on('campaign.country', '=', 'state.state_id')
+                 ->where('campaign.campaign_for', '!=', 'USA Campaign');
+        })
+        ->where('status', 1)
+        ->orderBy('id', 'desc')
+        ->paginate(20);
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','request'));
     }
