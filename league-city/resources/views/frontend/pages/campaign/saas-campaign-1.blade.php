@@ -1389,7 +1389,7 @@
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
                             <img src="{{ asset('includes-frontend') }}/images/campaign/saas-camp-footer.webp" alt="img" class="camp-footer-img">
-                            <a href="#camp-form" class="btn web-btn camp-footer-btn">Go To The Form</a>
+                            <a href="#camp-form" class="btn web-btn camp-footer-btn">Book Now</a>
                         </div>
                         <div class="col-lg-4 col-md-12">
                             <div class="right-side bg-blue">
