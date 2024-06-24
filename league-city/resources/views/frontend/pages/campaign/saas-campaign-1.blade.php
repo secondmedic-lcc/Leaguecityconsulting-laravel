@@ -37,7 +37,7 @@
                 <div class="form-box">
                     <div class="box-heading">
                         <h4>Connect With Us</h4>
-                        <p>Get No Obligation Free Quote!</p>
+                        <!-- <p>Get No Obligation Free Quote!</p> -->
                     </div>
                     @if ($errors->any())
                     <div class="alert alert-danger pb-2">
