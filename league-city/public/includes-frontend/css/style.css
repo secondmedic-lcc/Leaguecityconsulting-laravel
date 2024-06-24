@@ -3372,6 +3372,10 @@ h6 .light {
     color: var(--whitecolor);
 }
 
+.campaign-banner .form-box .box-heading h4 {
+    margin: 0;
+}
+
 .campaign-banner .form-box .box-heading p {
     margin-bottom: 0;
 }
