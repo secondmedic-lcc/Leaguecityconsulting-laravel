@@ -308,8 +308,6 @@ Route::get('/industry', [App\Http\Controllers\IndustryController::class, 'index'
 Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'industry_details']);
 
 
-if(env('APP_ENV') == 'production'){
+if(config('app.env') == 'production') {
     Route::get('/404', [ErrorController::class, 'index'])->name('404');
-} else {
-    // Route::fallback([ErrorController::class, 'index'])->name('404fallback');
 }
