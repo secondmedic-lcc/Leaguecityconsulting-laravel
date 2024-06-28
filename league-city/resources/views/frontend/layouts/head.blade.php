@@ -35,6 +35,20 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16548461586">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16548461586');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('includes-frontend') }}/css/bootstrap.min.css">
@@ -55,14 +69,14 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
     <meta name="keywords" content="{{ $seo_data->meta_key }}" />
 
     @php
-        $fullUrl = request()->fullUrl();
-        $noIndex = strpos($fullUrl, '/index.php') !== false;
+    $fullUrl = request()->fullUrl();
+    $noIndex = strpos($fullUrl, '/index.php') !== false;
     @endphp
 
     @if($noIndex)
-        <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
     @else
-        <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow">
     @endif
 
     <meta name="description" content="{{ $seo_data->meta_description }}" />
