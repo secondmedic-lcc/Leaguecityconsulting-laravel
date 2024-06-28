@@ -15,6 +15,9 @@ class ErrorController extends Controller
         
         $current_page = "404";
 
-        return view('frontend/main', compact('page_name','page_title','current_page'));
+        // return view('frontend/main', compact('page_name','page_title','current_page'));
+        return response()
+        ->view('frontend/main', compact('page_name', 'page_title', 'current_page'))
+        ->setStatusCode(404);
     }
 }
