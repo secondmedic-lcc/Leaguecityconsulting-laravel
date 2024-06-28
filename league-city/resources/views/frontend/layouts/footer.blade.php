@@ -30,17 +30,17 @@
                 <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
-                        <li><a href="services#software-engineering">Mobile App Development</a></li>
-                        <li><a href="services#software-engineering">Web Development</a></li>
-                        <li><a href="services#software-engineering">Custom Software Development</a></li>
-                        <li><a href="services#software-engineering">UI/UX Development</a></li>
+                        <li><a href="{{ url('services#software-engineering'); }}">Mobile App Development</a></li>
+                        <li><a href="{{ url('services#software-engineering'); }}">Web Development</a></li>
+                        <li><a href="{{ url('services#software-engineering'); }}">Custom Software Development</a></li>
+                        <li><a href="{{ url('services#software-engineering'); }}">UI/UX Development</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Digital Automation</h2>
                     <ul class="list">
-                        <li><a href="services#digital-automation">E-Commerce Development</a></li>
-                        <li><a href="services#digital-automation">Cyber Security</a></li>
+                        <li><a href="{{ url('services#digital-automation') }}">E-Commerce Development</a></li>
+                        <li><a href="{{ url('services#digital-automation') }}">Cyber Security</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6 col-6">
