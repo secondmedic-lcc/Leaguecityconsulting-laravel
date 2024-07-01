@@ -79,6 +79,19 @@
                 </ul>
             </li>
 
+            <li class="mb-1 dropdown {{ ($current_page == 'services') ? 'active' : ''; }}">
+                <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <font><i class="bx bxs-dashboard"></i> <span>Manage Services</span></font>
+                    <span class="bx bx-chevron-right"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ route('services.create'); }}">Add Services</a></li>
+                    <li><a class="dropdown-item" href="{{ route('services'); }}">Services List</a></li>
+                </ul>
+            </li>
+
+            
+
             <li class="mb-1 dropdown {{ ($current_page == 'industry') ? 'active' : ''; }}">
                 <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <font><i class="bx bxs-dashboard"></i> <span>Manage Industry</span></font>

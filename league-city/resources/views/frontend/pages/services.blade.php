@@ -39,26 +39,33 @@
                 <p>Empowering your digital transformation: Partner with us to build mobile apps, web, and software that are an extension of your vision.</p>
             </div>
         </div>
+      
         <div class="row">
+          
+            @foreach($services as $p)
+            @php $url = url('services')."/".$p->url_slug; @endphp
             <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
-                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.webp" alt="Mobile App Development by app developer">
+                        <img src="{{ asset($p->image); }}" alt="Mobile App Development by app developer">
+
                     </div>
                     <div class="details">
-                        <div class="heading"><span>Mobile App Development</span> <i class="fas fa-arrow-right"></i></div>
-                        <ul>
+                        <div class="heading"><span>{{$p->name}}</span> <a href="{{$url }}"><i class="fas fa-arrow-right"></i></a></div>
+                        <?php echo $p->description ?>
+                        {{-- <ul>
                             <li>iOS App Development</li>
                             <li>Android App Development</li>
                             <li>Flutter Development</li>
                             <li>React Native App Development</li>
                             <li>PWA Development</li>
                             <li>Mobile App Maintenance & Support Services</li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            @endforeach
+            {{-- <div class="col-lg-6">
                 <div class="box">
                     <div class="image">
                         <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="complete Web Development">
@@ -104,7 +111,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- <div class="col-lg-6">
                 <div class="box">
@@ -122,9 +129,10 @@
                 </div>
             </div> -->
         </div>
+     
         <div id="digital-automation">
         </div>
-        <div class="row align-items-center service-heading-mb">
+        {{-- <div class="row align-items-center service-heading-mb">
             <div class="col-lg-6">
                 <h2 class="section-heading">Digital Automation</h2>
             </div>
@@ -167,7 +175,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 

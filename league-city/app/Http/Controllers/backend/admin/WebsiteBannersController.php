@@ -92,7 +92,7 @@ class WebsiteBannersController extends Controller
             
             $image_path = WebsiteBanners::where(array('id'=>$id))->first();
 
-            unlink($image_path->banner_image);
+            @unlink($image_path->banner_image);
 
             $imageName = time().'-image.'.$request->banner_image->extension();
 

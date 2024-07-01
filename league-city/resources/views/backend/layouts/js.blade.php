@@ -120,7 +120,13 @@
 
 @if(@$current_page == "portfolio" || @$current_page == "blogs")
 <script>
-    CKEDITOR.replace("description");
+    CKEDITOR.replace("description"); 
+</script>
+@endif
+
+@if(@$current_page == "services")
+<script>
+    CKEDITOR.replace("description"); 
 </script>
 @endif
 
@@ -201,6 +207,33 @@
     });
 </script>
 @endif
+
+@if(@$current_page == "services")
+<script>
+    $('.btn-edit').click(function(e) {
+
+        let data = $(this);
+
+        let heading = data.attr('heading');
+        $('#heading').val(heading);
+
+        let description = data.attr('description');
+        $('#port-description').val(description);
+
+        let projrct_url = data.attr('projrct_url');
+        $('#project_url').val(projrct_url);
+
+        $('#images').removeAttr('required');
+
+        let action = data.attr('serviceId');
+
+        $('#services-form').attr('action', `{{ url('/admin/services-images/'); }}/` + action);
+
+    });
+</script>
+@endif
+
+
 
 @if(@$current_page == "campaign")
 <script>

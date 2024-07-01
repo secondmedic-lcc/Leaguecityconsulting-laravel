@@ -19,6 +19,7 @@
                                 <option value="portfolio-details">Portfolio Details</option>
                                 <option value="industry-details">Industry Details</option>
                                 <option value="products-details">Products Details</option>
+                                <option value="singleservice">Services Details</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
