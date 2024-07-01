@@ -50,7 +50,7 @@ class PortfolioController extends Controller
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'portfolio', 'schema_image', 'seo_data_breadcrumb','category'));
     }
 
-    public function portfolio_details()
+    public function portfolio_details($url="")
     {
         $page_name = "portfolio-details";
 
@@ -58,11 +58,11 @@ class PortfolioController extends Controller
 
         $current_page = "portfolio-details";
 
-        $url = $_SERVER['REQUEST_URI'];
+        /*  $url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);
-        $pathFragments = explode('-', $this->path);
+        $pathFragments = explode('-', $this->path);  */
 
-        $portfolio = Portfolio::where(array('status' => 1, 'url_slug' => $this->path))->first();
+        $portfolio = Portfolio::where(array('status' => 1, 'url_slug' => $url))->first();
 
         $portfolio['portfolio_services'] = PortfolioServices::where(array('status' => 1, 'portfolio_id' => $portfolio->id))->get();
 
