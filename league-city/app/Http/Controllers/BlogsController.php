@@ -48,7 +48,7 @@ class BlogsController extends Controller
     }
 
 
-    public function blog_details()
+    public function blog_details($url = "")
     {
         $page_name = "blogs-details";
 
@@ -56,13 +56,14 @@ class BlogsController extends Controller
 
         $current_page = "blogs-details";
 
-        $url = $_SERVER['REQUEST_URI'];
+        /*$url = $_SERVER['REQUEST_URI'];
+
         $this->path = pathinfo($url, PATHINFO_BASENAME);
         $pathFragments = explode('-', $this->path);
-        $blog_id = end($pathFragments);
+        $blog_id = end($pathFragments); */
 
-        $single_blog = Blogs::where(array('status' => 1, 'url_slug' => $this->path))->first();
-
+        $single_blog = Blogs::where(array('status' => 1, 'url_slug' => $url))->first();
+        
         $blog = Blogs::where(array('status' => 1))->orderBy('id', 'desc')->limit(6)->get();
 
         $schema_image = @$single_blog->detail_image;

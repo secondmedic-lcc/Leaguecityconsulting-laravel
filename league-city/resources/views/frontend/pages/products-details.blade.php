@@ -1,6 +1,6 @@
-@empty(!$product_details)
+{{-- @empty(!$product_details) --}}
     
-@empty(!$web_banner)
+{{-- @empty(!$web_banner) --}}
     
 <section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
@@ -14,7 +14,7 @@
     </div>
 </section>
 
-@endempty
+{{-- @endempty --}}
 
 <nav aria-label="breadcrumb">
     <div class="container">
@@ -160,4 +160,4 @@
 </section>
 
 @include('frontend.pages.query-form')
-@endempty
+{{-- @endempty --}}
