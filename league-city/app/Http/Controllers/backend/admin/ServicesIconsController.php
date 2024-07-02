@@ -38,9 +38,9 @@ class ServicesIconsController extends Controller
                     
                 $imageName = time().'-services.'.$request->icon->extension();
 
-                $request->icon->move(public_path('uploads/services-icons'), $imageName);
+                $request->icon->move(public_path('uploads/services'), $imageName);
 
-                $image = "uploads/services-icons/".$imageName;
+                $image = "uploads/services/".$imageName;
 
                 $data += ['icon'=>$image];
             }
@@ -82,9 +82,9 @@ class ServicesIconsController extends Controller
                     
                 $imageName = time().'-services.'.$request->icon->extension();
 
-                $request->icon->move(public_path('uploads/services-icons'), $imageName);
+                $request->icon->move(public_path('uploads/services'), $imageName);
 
-                $image = "uploads/services-icons/".$imageName;
+                $image = "uploads/services/".$imageName;
 
                 $data += ['icon'=>$image];
             }

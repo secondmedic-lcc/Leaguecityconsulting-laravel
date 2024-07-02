@@ -104,7 +104,6 @@ class ServicesController extends Controller
                 ]
             }
         </script>';
-        //  print_r($services); exit;
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb','services'));
     }

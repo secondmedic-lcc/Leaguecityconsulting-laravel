@@ -41,9 +41,9 @@ class ServicesImagesController extends Controller
                     
                 $imageName = time().'-services.'.$request->images->extension();
 
-                $request->images->move(public_path('uploads/services-screenshot'), $imageName);
+                $request->images->move(public_path('uploads/services'), $imageName);
 
-                $image = "uploads/services-screenshot/".$imageName;
+                $image = "uploads/services/".$imageName;
 
                 $data += ['image'=>$image];
             }
@@ -83,9 +83,9 @@ class ServicesImagesController extends Controller
                     
                 $imageName = time().'-services.'.$request->images->extension();
 
-                $request->images->move(public_path('uploads/services-screenshot'), $imageName);
+                $request->images->move(public_path('uploads/services'), $imageName);
 
-                $image = "uploads/services-screenshot/".$imageName;
+                $image = "uploads/services/".$imageName;
 
                 $data += ['image'=>$image];
             }
