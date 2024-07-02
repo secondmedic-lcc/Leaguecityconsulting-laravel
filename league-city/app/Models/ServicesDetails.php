@@ -12,6 +12,6 @@ class ServicesDetails extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'services_id', 'service_icon', 'service_title', 'service_details', 'status'
+        'services_id', 'data_for','service_icon', 'service_title', 'service_details', 'status'
     ];
 }

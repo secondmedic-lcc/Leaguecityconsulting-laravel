@@ -66,7 +66,8 @@ class ServicesController extends Controller
 
         $services = Services::where(array('status' => 1, 'url_slug' => $this->path))->first();
         
-        $services['services_details'] = ServicesDetails::where(array('status' => 1, 'services_id' => $services->id))->get();
+        $services['services_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'main-details'))->get();
+        $services['services_sub_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'sub-details'))->get();
 
         $services['services_images'] = ServicesImages::where(array('status' => 1, 'services_id' => $services->id))->get();
 

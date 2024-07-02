@@ -49,7 +49,7 @@
                     {{-- <h4>Lorem ipsum is a simply dummy text.</h4> --}}
                 </div>
                 <div class="col-lg-6">
-                    <?php echo $services['heading']; ?>
+                    <?php echo $services['sub_heading']; ?>
                 </div>
             </div>
         </div>
@@ -113,10 +113,10 @@
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
             <div class="col-lg-6">
-                <h2 class="section-heading">Exclusive features that make us stand out.</h2>
+                <h2 class="section-heading">{{ $services['section_heading'] }}</h2>
             </div>
             <div class="col-lg-6">
-                <p>League City Portfolio: Where Innovation Thrives. Explore our diverse projects, each a testament to excellence. Discover a dynamic showcase of impactful solutions and successful collaborations.</p>
+                <?php echo $services['desc_heading']; ?>
             </div>
         </div>
         <div class="row">
@@ -222,21 +222,28 @@
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
             <div class="col-lg-6">
-                <h2 class="section-heading">Why Choose League City for Mobile App Development?</h2>
+                <h2 class="section-heading">{{ $services['section_heading1'] }}
+                    {{-- Why Choose League City for Mobile App Development? --}}
+                </h2>
             </div>
             <div class="col-lg-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ullam quas quibusdam odit sapiente nemo tempore laborum error neque ducimus? Ab sapiente nam illum quae adipisci delectus? Sint, impedit sequi!</p>
-            </div>
+                <?php echo $services['desc_heading']; ?>          
+              </div>
         </div>
         <div class="row g-3">
+          
+         
+            @foreach($services['services_sub_details'] as $p)
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Qualified App Developers</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                    <i class="{{ $p['service_icon'] }} icon"></i>
+                    <i class="{{ $p['service_icon'] }} big-icon"></i>
+                    <h3>{{ $p['service_title'] }}</h3>
+                    <p>{{ $p['service_details'] }}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-6">
+            @endforeach
+            {{-- <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
                     <i class="fas fa-percent"></i>
                     <h3>Client-centric Approach</h3>
@@ -256,7 +263,7 @@
                     <h3>Dedicated Teams</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

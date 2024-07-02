@@ -46,9 +46,11 @@ class ServicesDetailsController extends Controller
             'services_id' => 'required|string',
             'service_icon' => 'required|string',
             'service_title' => 'required|string',
-            'service_details' => 'required|string'
+            'service_details' => 'required|string',
+             'data_for' => 'required|string',
         ]);
           
+  
         ServicesDetails::create($data);
 
         return redirect()->back()->with('success', ' Services Details created successfully.');
@@ -76,7 +78,8 @@ class ServicesDetailsController extends Controller
             'services_id' => 'required|string',
             'service_icon' => 'required|string',
             'service_title' => 'required|string',
-            'service_details' => 'required|string'
+            'service_details' => 'required|string',
+         
         ]);
 
      
@@ -95,5 +98,6 @@ class ServicesDetailsController extends Controller
         return redirect()->back()->with('success', 'Services deleted successfully.');
     }
 
+ 
 
 }

@@ -127,6 +127,7 @@
 @if(@$current_page == "services")
 <script>
     CKEDITOR.replace("description"); 
+    CKEDITOR.replace("sub_heading"); 
 </script>
 @endif
 

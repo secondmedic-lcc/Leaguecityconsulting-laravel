@@ -18,17 +18,40 @@
                     <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label> Heading</label>
-
                             <input type="text" class="form-control text-dark" name="heading" value="{{ $services_sec['heading']; }}" readonly disabled />
                         </div>
 
                         <div class="col-md-12 mt-3">
-                            <label>Services Description</label>
-                            <textarea name="description" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['description']; }}</textarea>
+                            <label>Services Sub Heading</label>
+                            <textarea name="sub_heading" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['sub_heading']; }}</textarea>
+                        </div>
+        
+                        <div class="col-md-6 mt-3">
+                            <label>Section sub Heading</label>
+                            <input type="text" class="form-control text-dark" name="section_heading" value="{{ $services_sec['section_heading']; }}"  />
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label>Services Desc Heading</label>
+                            <textarea name="desc_heading" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['desc_heading']; }}</textarea>
                         </div>
 
+                       
+
+                       
+                        <div class="col-md-6 mt-3">
+                            <label>Services Sub Heading</label>
+                            <input type="text" class="form-control text-dark" name="section_heading1" value="{{ $services_sec['section_heading1']; }}"  />
+                        </div>
+
+                        
+                        <div class="col-md-6 mt-3">
+                            <label>Section Heading </label>
+                            <textarea name="section_sub_heading1" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['section_sub_heading1']; }}</textarea>
+                        </div>
+
+                        
                         <div class="col-md-12 text-center mt-4">
                             <button type="submit" class="btn web-btn w-50">
                                 Update Details
@@ -61,7 +84,7 @@
                             <input type="text" class="form-control text-dark" name="heading" id="heading" placeholder="Enter Heading" />
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control text-dark" name="description" id="port-description" placeholder="Enter Description" />
+                            <input type="text" class="form-control text-dark" name="description1" id="port-description" placeholder="Enter Description" />
                         </div>
 
                         <div class="col-md-2">
@@ -90,9 +113,11 @@
                                 </div>
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
-
                                         <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" project_url="{{ $g['project_url']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
-                                        <a href="javascript:void(0);" url={{ url('admin/services-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
+                                        
+                                        <a href="javascript:void(0);" url={{ url('/admin/services-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
+                                      
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +172,7 @@
                                 </div>
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
-                                        <a href="javascript:void(0);" url={{ url('admin/services-icons-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
+                                        <a href="javascript:void(0);" url={{ url('/admin/services-icons-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +195,7 @@
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label class="form-label" for="">services details</label>
                             
                         @if(isset($_GET['services_id']) && $_GET['services_id'] != "")
@@ -187,7 +212,16 @@
                         </select>
                         @endif
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">services details</label>
+                            <select class="form-control js-example-basic-single" name="data_for">
+                                <option value="" selected disabled > -- Select -- </option>
+                                <option value="main-details">Main Details</option>
+                                <option value="sub-details">Sub Details</option>
+                              
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
                             <label class="form-label" for="">Service Title</label>
                             <input type="text" class="form-control" name="service_title" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ old('service_title') }}" />
                         </div>

@@ -74,7 +74,7 @@ class ServicesImagesController extends Controller
             $data = [
                 'services_id' => $request->services_id,
                 'heading' => $request->heading,
-                'description' => $request->description,
+                'description' => $request->description1,
                 'project_url' => $request->project_url,
             ];
           

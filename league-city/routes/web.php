@@ -184,7 +184,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('services-details-delete/{id}', [ServicesDetailsController::class, 'destroy'])->name('services-details-services.destroy');
 
- 
+
     /* All Routes for Portfolio Images */
  Route::post('services-images', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'store']);
 

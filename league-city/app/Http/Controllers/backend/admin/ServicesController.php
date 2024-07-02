@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Services;
 use App\Models\SeoData;
+use App\Models\ServicesDetails;
 use Illuminate\Support\Str;
 
 class ServicesController extends Controller
@@ -162,8 +163,11 @@ class ServicesController extends Controller
     {
      
         $data = $request->validate([
-            /*'desc_heading' => 'required|string',*/
-            'description' => 'required|string',
+          'desc_heading' => 'required|string',
+            'sub_heading' => 'required|string',
+            'section_heading1' => 'required|string',
+            'section_sub_heading1' => 'required|string',
+            'section_heading' => 'required|string',
         ]);
 
         $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
@@ -178,4 +182,5 @@ class ServicesController extends Controller
 
         }
     }
+   
 }
