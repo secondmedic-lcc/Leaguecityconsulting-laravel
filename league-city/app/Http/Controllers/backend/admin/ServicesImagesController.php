@@ -47,7 +47,6 @@ class ServicesImagesController extends Controller
 
                 $data += ['image'=>$image];
             }
-
             $check = ServicesImages::create($data);
 
             if($check->id > 0){
@@ -79,6 +78,7 @@ class ServicesImagesController extends Controller
                 'project_url' => $request->project_url,
             ];
           
+          
             if(!empty($request->images)){
                     
                 $imageName = time().'-services.'.$request->images->extension();
@@ -89,6 +89,8 @@ class ServicesImagesController extends Controller
 
                 $data += ['image'=>$image];
             }
+            
+
 
             $check = ServicesImages::where(array('id'=>$id))->update($data);
 

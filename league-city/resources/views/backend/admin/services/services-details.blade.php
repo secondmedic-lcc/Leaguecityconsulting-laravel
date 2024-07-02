@@ -13,9 +13,9 @@
                 <h6>Services Details</h6>
             </div>
             <div class="card-body">
-                <form action="{{ url('admin/services-details-services'); }}/{{ $services_sec['services_id']; }}" method="POST" autocomplete="off">
+            <form action="{{ url('admin/services-details'); }}/{{ $services_sec['id']; }}" method="POST" autocomplete="off">
                 @csrf
-                    <input type="hidden" class="form-control" value="{{ $services_sec['services_id']; }}" name="services_id" />
+                    <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
 
                     <div class="row">
                         <div class="col-md-6">
@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col-lg-12">
@@ -90,7 +91,7 @@
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
 
-                                        <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
+                                        <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" project_url="{{ $g['project_url']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
                                         <a href="javascript:void(0);" url={{ url('admin/services-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
                                     </div>
                                 </div>
@@ -146,8 +147,6 @@
                                 </div>
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
-
-                                        {{-- <a href="javascript:void(0);" name="{{ $g['name']; }}" icon="{{ $g['icon']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a> --}}
                                         <a href="javascript:void(0);" url={{ url('admin/services-icons-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
                                     </div>
                                 </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Services;
-use App\Models\ServicesDetails;
 use App\Models\SeoData;
 use Illuminate\Support\Str;
 
@@ -58,17 +57,6 @@ class ServicesController extends Controller
             $data2['meta_image'] = $image;
         }
           
-        if(!empty($request->logo)){
-                
-            $imageName = time().'-logo.'.$request->logo->extension();
-
-            $request->logo->move(public_path('uploads/services'), $imageName);
-
-            $image = "uploads/services/".$imageName;
-
-            $data += array('logo'=>$image);
-        }
-        
         $url_slug = Str::slug($request->name."-");
         
         $check = Services::where(array('url_slug'=>$url_slug))->first();
@@ -121,36 +109,22 @@ class ServicesController extends Controller
             'name' => 'required|string',
             'heading' => 'required|string',
             'description' => 'required|string',
-            'services_image' => 'mimes:webp|max:150'
         ]);
           
-        if(!empty($request->services_image)){
+        if(!empty($request->image)){
                 
-            $imageName = time().'-image.'.$request->services_image->extension();
+            $imageName = time().'-image.'.$request->image->extension();
 
-            $request->services_image->move(public_path('uploads/services'), $imageName);
+            $request->image->move(public_path('uploads/services'), $imageName);
 
             $image = "uploads/services/".$imageName;
 
             $data += array('image'=>$image);
             $data2['meta_image'] = $image;
         }
-          
-        if(!empty($request->logo)){
-                
-            $imageName = time().'-logo.'.$request->logo->extension();
-
-            $request->logo->move(public_path('uploads/services'), $imageName);
-
-            $image = "uploads/services/".$imageName;
-
-            $data += array('logo'=>$image);
-        }
 
         $url_slug = Str::slug($request->name."-");
         $data['url_slug'] = $url_slug;
-
-        // $data['category'] = implode(",", $request->category);
 
         Services::where(array('status'=>1,'id'=>$id))->update($data);
 
@@ -184,5 +158,24 @@ class ServicesController extends Controller
         return redirect()->route('services')->with('success', 'Services deleted successfully.');
     }
   
+    public function update_description(Request $request, $id)
+    {
+     
+        $data = $request->validate([
+            /*'desc_heading' => 'required|string',*/
+            'description' => 'required|string',
+        ]);
 
+        $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
+        
+        if($check > 0){
+            return redirect()->back()->with('success', 'services Data updated successfully.');
+
+
+        }else{
+            
+            return redirect()->back()->with('error', 'Something went wrong');
+
+        }
+    }
 }

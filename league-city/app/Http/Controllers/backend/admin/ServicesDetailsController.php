@@ -94,4 +94,6 @@ class ServicesDetailsController extends Controller
 
         return redirect()->back()->with('success', 'Services deleted successfully.');
     }
+
+
 }

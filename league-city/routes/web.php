@@ -169,6 +169,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('services-delete/{id}', [ServicesController::class, 'delete'])->name('services-delete');
 
+    Route::post('/services-details/{id}', [ServicesController::class, 'update_description'])->name('services-details.update_description');
+
+
 
     /* All Routes for Portfolio Services */
     Route::get('/services-details', [ServicesDetailsController::class, 'index'])->name('services-details');
@@ -188,7 +191,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
  Route::post('services-images/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'update'])->name('services-images.update');
 
  Route::get('services-images-delete/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'destroy']);
-
 
  Route::post('services-icons', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'store']);
 
