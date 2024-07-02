@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2023 at 07:00 AM
--- Server version: 8.0.35-0ubuntu0.22.04.1
+-- Generation Time: Jul 02, 2024 at 05:29 AM
+-- Server version: 8.0.37-0ubuntu0.22.04.3
 -- PHP Version: 8.1.2-1ubuntu2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,53 +18,108 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dsa_secmed`
+-- Database: `leaguecityconsulting`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agents`
+-- Table structure for table `blogs`
 --
 
-CREATE TABLE `agents` (
+CREATE TABLE `blogs` (
   `id` bigint UNSIGNED NOT NULL,
-  `agent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agent_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agent_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agent_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `blog_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `url_slug` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_details` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `read_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `detail_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `agents`
+-- Dumping data for table `blogs`
 --
 
-INSERT INTO `agents` (`id`, `agent_id`, `agent_name`, `agent_contact`, `agent_email`, `status`, `created_at`, `updated_at`) VALUES
-(1, '2EMFOVNDMUJ8', 'Agent Name', '9876543210', 'agent@gmail.com', '1', '2023-11-22 11:54:17', '2023-11-22 11:54:17');
+INSERT INTO `blogs` (`id`, `blog_title`, `url_slug`, `blog_details`, `description`, `read_time`, `blog_image`, `detail_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'AI Chatbots: Transforming Customer Experiences with Digital Companions', 'ai-chatbots-transforming-customer-experiences-with-digital-companions', 'In a world where assistance is as simple as chatting with a friend, AI chatbots emerge as the magical digital pals reshaping customer experiences. These virtual colleagues work tirelessly to make interactions smoother and more personalized, revolutionizing the way we seek help. Let\'s dive into the realm of AI chatbots, where technology meets friendliness to create an extraordinary digital experience', '<p>In a world where assistance is as simple as chatting with a friend, AI chatbots emerge as the magical digital pals reshaping customer experiences. These virtual colleagues work tirelessly to make interactions smoother and more personalized, revolutionizing the way we seek help. Let&#39;s dive into the realm of AI chatbots, where technology meets friendliness to create an extraordinary digital experience.</p>\r\n\r\n<h2>Understanding AI Chatbots:</h2>\r\n\r\n<h3>Definition:</h3>\r\n\r\n<p>AI chatbots are your digital companions, programmed to converse like humans, offering a comfortable and familiar interaction with technology.</p>\r\n\r\n<h3>How They Work:</h3>\r\n\r\n<p>Powered by artificial intelligence, these bots learn from countless conversations to decode human language, providing accurate and tailored responses. They have become digital language experts, bridging the gap between humans and technology.</p>\r\n\r\n<h3>Types of AI Chatbots:</h3>\r\n\r\n<ul>\r\n	<li>Scripted Chatbots: Follow predetermined paths, often found on websites.</li>\r\n	<li>Smart Chatbots: Use AI to understand and respond to unique queries.</li>\r\n	<li>NLP Chatbots: Understand context, intent, and emotions behind human language.</li>\r\n	<li>Virtual Assistants: Multitaskers like Siri, Alexa, or Google Assistant.</li>\r\n	<li>Social Media Chatbots: Engage users on platforms like Facebook or Twitter.</li>\r\n	<li>Voice-Enabled Chatbots: Respond to voice commands, integrating with voice assistants.</li>\r\n</ul>\r\n\r\n<h2>Role of AI Chatbots in Enhancing Customer Experience:</h2>\r\n\r\n<h3>Enhanced Customer Experience:</h3>\r\n\r\n<p>AI chatbots act as 24/7 virtual assistants, providing quick responses and resolutions. They eliminate waiting times and confusion, making each interaction easy and pleasant.</p>\r\n\r\n<h3>Benefits for Consumers:</h3>\r\n\r\n<ul>\r\n	<li>Instant Help: Swift and helpful responses without prolonged waiting.</li>\r\n	<li>24/7 Availability: Continuous support without the need for breaks.</li>\r\n	<li>Efficient Multitasking: Handling multiple queries simultaneously for faster service.</li>\r\n	<li>Consistent Service: Providing reliable and uniform assistance.</li>\r\n	<li>Data-Driven Improvements: Learning from customer feedback for continuous enhancement.</li>\r\n</ul>\r\n\r\n<h3>Real-world Examples:</h3>\r\n\r\n<p>Major companies like Starbucks, Uber, and Amazon utilize AI chatbots to streamline customer interactions, showcasing their efficiency and versatility.</p>\r\n\r\n<h2>Importance of Customer Experience:</h2>\r\n\r\n<h3>Definition:</h3>\r\n\r\n<p>Customer experience encompasses every interaction shaping customers&#39; impressions of a brand, emphasizing the significance of positive and memorable engagements.</p>\r\n\r\n<h3>Why It Matters:</h3>\r\n\r\n<p>Happy customers are the VIPs of business, contributing to brand loyalty and positive word-of-mouth. AI chatbots play a crucial role in creating seamless interactions, enhancing overall customer satisfaction.</p>\r\n\r\n<h2>Challenges in Implementing AI Chatbots:</h2>\r\n\r\n<h3>1. Understanding Context:</h3>\r\n\r\n<p>Chatbots may struggle to grasp the context of complex queries, leading to potential misunderstandings.</p>\r\n\r\n<h3>2. Dealing with Complex Queries:</h3>\r\n\r\n<p>Chatbots may falter when faced with intricate or unusual queries beyond their programmed expertise.</p>\r\n\r\n<h3>3. Lack of Personal Touch:</h3>\r\n\r\n<p>While helpful, chatbots lack the warmth and personal touch of human interactions.</p>\r\n\r\n<h3>4. Privacy Concerns:</h3>\r\n\r\n<p>Some users may be hesitant to share private information with chatbots, raising privacy concerns.</p>\r\n\r\n<h3>5. Implementation Costs:</h3>\r\n\r\n<p>Setting up and maintaining chatbots can incur substantial costs, akin to investing in high-tech gadgets.</p>\r\n\r\n<h3>6. Technical Glitches:</h3>\r\n\r\n<p>Like any technology, chatbots may experience occasional malfunctions, impacting their reliability.</p>\r\n\r\n<h2>The Future of AI Chatbots:</h2>\r\n\r\n<h3>Trends:</h3>\r\n\r\n<ul>\r\n	<li>Improved Conversations: Chatbots evolving to engage in more natural and human-like conversations.</li>\r\n	<li>Remembering Chats: Enhancements enabling chatbots to recall past interactions for more personalized engagements.</li>\r\n	<li>Personal Touch: Chatbots becoming adept at understanding user preferences for a more tailored experience.</li>\r\n</ul>\r\n\r\n<h3>What&#39;s Coming Next:</h3>\r\n\r\n<ul>\r\n	<li>Always Available: Envisioning 24/7 customer support, ensuring assistance is available whenever needed.</li>\r\n	<li>Smarter Problem-Solving: Chatbots evolving to handle complex issues independently.</li>\r\n	<li>Ubiquitous Presence: Anticipating chatbots on websites, apps, and social media, ensuring widespread accessibility.</li>\r\n	<li>Emotional Intelligence: Future chatbots understanding and responding to user emotions, a breakthrough seen in healthcare chatbots.</li>\r\n</ul>\r\n\r\n<p>As we navigate the future of AI chatbots, tech companies like are at the forefront, shaping communication on a global scale. The story of chatbots continues, promising even better and more personal experiences. Embrace the conversations of tomorrow, as the future of AI chatbots knocks on our digital doors, offering a blend of technology and human connection. Together, we are not just witnessing the future; we are actively shaping it. Cheers to the exciting journey ahead!</p>', '30 Minutes', 'uploads/blogs/1708517137-image.webp', 'uploads/blogs/1708517137-detail.webp', 1, '2024-02-02 14:15:18', '2024-02-21 17:38:32'),
+(2, 'What is Generative AI? A Guide to Its Magic', 'what-is-generative-ai-a-guide-to-its-magic', 'Generative AI is a fascinating technology that acts like a smart artist on a computer, creating new things such as pictures or text by learning from examples. In simple terms, it\'s like having a computer that can be creative and generate content independently.', '<p>Generative AI is a fascinating technology that acts like a smart artist on a computer, creating new things such as pictures or text by learning from examples. In simple terms, it&#39;s like having a computer that can be creative and generate content independently.</p>\r\n\r\n<h2>How Generative AI Works: The Basics</h2>\r\n\r\n<p>Generative AI uses intelligent algorithms to produce authentic-looking and sounding content, including images, text, and music. It operates like a classy brain, drawing inspiration from human-like minds and utilizing a neural network to analyze and process data.</p>\r\n\r\n<h2>Types of Generative AI Explained</h2>\r\n\r\n<h3><strong>1. Generative Adversarial Networks (GANs):</strong></h3>\r\n\r\n<p>GANs bring together a generator and a discriminator in a creative dance. The generator produces new things, and the discriminator evaluates their quality, leading to realistic and creative outputs.</p>\r\n\r\n<h3><strong>2. Variational Autoencoders (VAEs):</strong></h3>\r\n\r\n<p>VAEs experiment with different styles, learning by reconstructing input data in various ways. They are great for generating diverse outputs within a given set of data.</p>\r\n\r\n<h3><strong>3. AutoRegressive Models:</strong></h3>\r\n\r\n<p>These models predict what comes next in a sequence, making them effective for tasks like language generation. GPT models fall into this category, creating coherent text passages based on context.</p>\r\n\r\n<h3><strong>4. Boltzmann Machines:</strong></h3>\r\n\r\n<p>Think of Boltzmann Machines as brainstorming buddies. They generate new ideas by considering relationships between different data points, often used in recommendation systems.</p>\r\n\r\n<h3><strong>5. Transformer Models:</strong></h3>\r\n\r\n<p>Transformers are multitasking magicians, handling different types of data. GPT models, a subset of transformers, excel in generating human-like text.</p>\r\n\r\n<h3><strong>6. Deep Belief Networks (DBNs):</strong></h3>\r\n\r\n<p>DBNs act like detectives uncovering hidden patterns in data, proficient in tasks like feature learning.</p>\r\n\r\n<h3><strong>7. Creative Text-to-Image Models:</strong></h3>\r\n\r\n<p>Some models specialize in transforming text descriptions into images, showcasing the intersection of language and image generation.</p>\r\n\r\n<h3><strong>8. StyleGAN (Generative Adversarial Networks for Style Transfer):</strong></h3>\r\n\r\n<p>StyleGAN allows artists to control the style of generated content, transferring artistic styles between images.</p>\r\n\r\n<h3><strong>9. Recurrent Neural Networks (RNNs):</strong></h3>\r\n\r\n<p>RNNs are like time-traveling storytellers, considering previous information when generating new content, suitable for tasks involving sequences.</p>\r\n\r\n<h3><strong>10. Conditional Generative Models:</strong></h3>\r\n\r\n<p>These models create outputs based on specific conditions or inputs, making them valuable for generating content tailored to particular requirements.</p>\r\n\r\n<h2>Generative NLP: Mastering Language with AI</h2>\r\n\r\n<p>Generative NLP, or Generative Natural Language Processing, is a subset of Generative AI that focuses on language. It acts like a digital wordsmith, understanding and generating human-like text. GPT models demonstrate the language mastery of Generative NLP.</p>\r\n\r\n<h2>Power of Transformer Learning Models in Generative AI</h2>\r\n\r\n<p>Transformers, at the heart of Generative AI, excel in parallel processing, making them highly efficient. They understand relationships between words, allowing them to generate coherent and contextually relevant content. Transformers, like GPT-3.5, are built on this architecture, demonstrating efficiency in language tasks.</p>\r\n\r\n<h2>Key Components of Transformers in Generative AI</h2>\r\n\r\n<h3><strong>1. Self-Attention Mechanism:</strong></h3>\r\n\r\n<p>Allows the model to weigh different words differently based on relevance, capturing long-range dependencies in data.</p>\r\n\r\n<h3><strong>2. Multi-Head Attention:</strong></h3>\r\n\r\n<p>Employs multiple attention heads for parallelized attention, enhancing the model&#39;s ability to capture diverse patterns and dependencies.</p>\r\n\r\n<h3><strong>3. Positional Encoding:</strong></h3>\r\n\r\n<p>Provides an understanding of token positions in a sequence, addressing a limitation of the original Transformer architecture.</p>\r\n\r\n<h2>Power of Language Models in Generative AI</h2>\r\n\r\n<p>Language models, a subset of Generative AI, specialize in understanding and generating human-like text. GPT-3.5, with 175 billion parameters, is a potent example. These models go beyond mere understanding, producing coherent and contextually relevant text.</p>\r\n\r\n<h2>Key Components of Language Models in Generative AI</h2>\r\n\r\n<h3><strong>1. Attention Mechanism:</strong></h3>\r\n\r\n<p>Weighs different words differently based on relevance, capturing dependencies and nuances.</p>\r\n\r\n<h3><strong>2. Contextual Embedding:</strong></h3>\r\n\r\n<p>Represents words considering the context in which they appear, adjusting their representation based on surrounding words.</p>\r\n\r\n<h3><strong>3. Recurrent Neural Networks (RNNs) vs. Transformers:</strong></h3>\r\n\r\n<p>RNNs process sequences incrementally, while Transformers excel in parallel processing, selecting based on task demands.</p>\r\n\r\n<h2>Transformers vs. Language Models: Decoding the Difference</h2>\r\n\r\n<p>While transformer learning models lay the groundwork for quick learning, language models serve as the expressive voice of Generative AI. Transformers focus on data processing efficiency and context understanding, while language models excel in language generation, making them adept storytellers.</p>\r\n\r\n<h2>Final Takeaway:</h2>\r\n\r\n<p>Generative AI holds endless possibilities, from reshaping design to revolutionizing language communication. However, with great power comes great responsibility. Addressing issues like bias and privacy ensures that Generative AI contributes positively to our digital world, fostering a creative revolution for the benefit of all.</p>\r\n\r\n<p>Embrace the future of Generative AI technology, where innovation meets possibility. Join hands with leading tech companies to shape a future powered by limitless creativity.</p>\r\n\r\n<p>Generative AI is a fascinating technology that acts like a smart artist on a computer, creating new things such as pictures or text by learning from examples. In simple terms, it&#39;s like having a computer that can be creative and generate content independently.</p>\r\n\r\n<h2>How Generative AI Works: The Basics</h2>\r\n\r\n<p>Generative AI uses intelligent algorithms to produce authentic-looking and sounding content, including images, text, and music. It operates like a classy brain, drawing inspiration from human-like minds and utilizing a neural network to analyze and process data.</p>\r\n\r\n<h2>Types of Generative AI Explained</h2>\r\n\r\n<h3><strong>1. Generative Adversarial Networks (GANs):</strong></h3>\r\n\r\n<p>GANs bring together a generator and a discriminator in a creative dance. The generator produces new things, and the discriminator evaluates their quality, leading to realistic and creative outputs.</p>\r\n\r\n<h3><strong>2. Variational Autoencoders (VAEs):</strong></h3>\r\n\r\n<p>VAEs experiment with different styles, learning by reconstructing input data in various ways. They are great for generating diverse outputs within a given set of data.</p>\r\n\r\n<h3><strong>3. AutoRegressive Models:</strong></h3>\r\n\r\n<p>These models predict what comes next in a sequence, making them effective for tasks like language generation. GPT models fall into this category, creating coherent text passages based on context.</p>\r\n\r\n<h3><strong>4. Boltzmann Machines:</strong></h3>\r\n\r\n<p>Think of Boltzmann Machines as brainstorming buddies. They generate new ideas by considering relationships between different data points, often used in recommendation systems.</p>\r\n\r\n<h3><strong>5. Transformer Models:</strong></h3>\r\n\r\n<p>Transformers are multitasking magicians, handling different types of data. GPT models, a subset of transformers, excel in generating human-like text.</p>\r\n\r\n<h3><strong>6. Deep Belief Networks (DBNs):</strong></h3>\r\n\r\n<p>DBNs act like detectives uncovering hidden patterns in data, proficient in tasks like feature learning.</p>\r\n\r\n<h3><strong>7. Creative Text-to-Image Models:</strong></h3>\r\n\r\n<p>Some models specialize in transforming text descriptions into images, showcasing the intersection of language and image generation.</p>\r\n\r\n<h3><strong>8. StyleGAN (Generative Adversarial Networks for Style Transfer):</strong></h3>\r\n\r\n<p>StyleGAN allows artists to control the style of generated content, transferring artistic styles between images.</p>\r\n\r\n<h3><strong>9. Recurrent Neural Networks (RNNs):</strong></h3>\r\n\r\n<p>RNNs are like time-traveling storytellers, considering previous information when generating new content, suitable for tasks involving sequences.</p>\r\n\r\n<h3><strong>10. Conditional Generative Models:</strong></h3>\r\n\r\n<p>These models create outputs based on specific conditions or inputs, making them valuable for generating content tailored to particular requirements.</p>\r\n\r\n<h2>Generative NLP: Mastering Language with AI</h2>\r\n\r\n<p>Generative NLP, or Generative Natural Language Processing, is a subset of Generative AI that focuses on language. It acts like a digital wordsmith, understanding and generating human-like text. GPT models demonstrate the language mastery of Generative NLP.</p>\r\n\r\n<h2>Power of Transformer Learning Models in Generative AI</h2>\r\n\r\n<p>Transformers, at the heart of Generative AI, excel in parallel processing, making them highly efficient. They understand relationships between words, allowing them to generate coherent and contextually relevant content. Transformers, like GPT-3.5, are built on this architecture, demonstrating efficiency in language tasks.</p>\r\n\r\n<h2>Key Components of Transformers in Generative AI</h2>\r\n\r\n<h3><strong>1. Self-Attention Mechanism:</strong></h3>\r\n\r\n<p>Allows the model to weigh different words differently based on relevance, capturing long-range dependencies in data.</p>\r\n\r\n<h3><strong>2. Multi-Head Attention:</strong></h3>\r\n\r\n<p>Employs multiple attention heads for parallelized attention, enhancing the model&#39;s ability to capture diverse patterns and dependencies.</p>\r\n\r\n<h3><strong>3. Positional Encoding:</strong></h3>\r\n\r\n<p>Provides an understanding of token positions in a sequence, addressing a limitation of the original Transformer architecture.</p>\r\n\r\n<h2>Power of Language Models in Generative AI</h2>\r\n\r\n<p>Language models, a subset of Generative AI, specialize in understanding and generating human-like text. GPT-3.5, with 175 billion parameters, is a potent example. These models go beyond mere understanding, producing coherent and contextually relevant text.</p>\r\n\r\n<h2>Key Components of Language Models in Generative AI</h2>\r\n\r\n<h3><strong>1. Attention Mechanism:</strong></h3>\r\n\r\n<p>Weighs different words differently based on relevance, capturing dependencies and nuances.</p>\r\n\r\n<h3><strong>2. Contextual Embedding:</strong></h3>\r\n\r\n<p>Represents words considering the context in which they appear, adjusting their representation based on surrounding words.</p>\r\n\r\n<h3><strong>3. Recurrent Neural Networks (RNNs) vs. Transformers:</strong></h3>\r\n\r\n<p>RNNs process sequences incrementally, while Transformers excel in parallel processing, selecting based on task demands.</p>\r\n\r\n<h2>Transformers vs. Language Models: Decoding the Difference</h2>\r\n\r\n<p>While transformer learning models lay the groundwork for quick learning, language models serve as the expressive voice of Generative AI. Transformers focus on data processing efficiency and context understanding, while language models excel in language generation, making them adept storytellers.</p>\r\n\r\n<h2>Final Takeaway:</h2>\r\n\r\n<p>Generative AI holds endless possibilities, from reshaping design to revolutionizing language communication. However, with great power comes great responsibility. Addressing issues like bias and privacy ensures that Generative AI contributes positively to our digital world, fostering a creative revolution for the benefit of all.</p>\r\n\r\n<p>Embrace the future of Generative AI technology, where innovation meets possibility. Join hands with leading tech companies to shape a future powered by limitless creativity.</p>', '35 Minutes', 'uploads/blogs/1706863696-image.webp', 'uploads/blogs/1708517006-detail.webp', 1, '2024-02-02 14:18:16', '2024-02-21 17:39:37'),
+(3, 'The Power of AI Chatbots: Simplifying Your Digital Experience', 'the-power-of-ai-chatbots-simplifying-your-digital-experience', 'In a world where help is just a chat away, imagine having a virtual friend at your service—no more waiting on hold or drowning in a sea of emails. That\'s the magic of AI chatbots! These digital pals act as your virtual colleagues, enhancing customer experiences and making things smoother and more personal.', '<p>In a world where help is just a chat away, imagine having a virtual friend at your service&mdash;no more waiting on hold or drowning in a sea of emails. That&#39;s the magic of AI chatbots! These digital pals act as your virtual colleagues, enhancing customer experiences and making things smoother and more personal.</p>\r\n\r\n<h2>Unveiling the World of AI Chatbots</h2>\r\n\r\n<p>AI chatbots aren&#39;t just techy robots; they&#39;re like your virtual buddies that work around the clock. They&#39;ve mastered the art of conversation, understanding your questions, and solving problems with a digital high-five. No more one-size-fits-all replies; these bots are here to make your life easier.</p>\r\n\r\n<h2>How AI Chatbots Work: A Friendly Chat</h2>\r\n\r\n<p>Imagine them as your digital pals, trained to talk like humans and making your interactions feel as comfy as chatting with a friend.</p>\r\n\r\n<h3><strong>1. Definition of AI Chatbots:</strong></h3>\r\n\r\n<p>AI chatbots are computer programs trained to talk like humans, creating a comfy interaction with technology.</p>\r\n\r\n<h3><strong>2. How They Work:</strong></h3>\r\n\r\n<p>These clever bots use artificial intelligence as their secret sauce, learning from countless conversations to understand how we talk and what we mean.</p>\r\n\r\n<h3><strong>3. Different Types of AI Chatbots:</strong></h3>\r\n\r\n<p>From scripted ones on websites to NLP chatbots with advanced language skills, they&#39;re like different chatbot friends&mdash;some stick to the script, while others are more free-spirited.</p>\r\n\r\n<h3><strong>4. Role of AI Chatbots in Enhancing Customer Experience:</strong></h3>\r\n\r\n<p>Picture having a helpful friend by your side 24/7, ready to assist with warmth. AI chatbots make every chat easy and nice, providing instant help, 24/7 availability, efficient multitasking, and consistent service.</p>\r\n\r\n<h3><strong>5. Real-world Examples of Businesses Using AI Chatbots:</strong></h3>\r\n\r\n<p>Starbucks, Uber, and Amazon are just a few examples of businesses using chatbots to streamline services and enhance customer experiences.</p>\r\n\r\n<h2>The Importance of Customer Experience</h2>\r\n\r\n<p>Customer experience is the overall feeling and impression customers have about a brand. Happy customers stick around, tell their friends, and keep coming back. Technology, including AI chatbots, plays a significant role in creating positive customer experiences.</p>\r\n\r\n<h2>Challenges in Implementing AI Chatbots</h2>\r\n\r\n<p>While AI chatbots bring immense benefits, there are some challenges to consider:</p>\r\n\r\n<h3><strong>1. Understanding Context:</strong></h3>\r\n\r\n<p>Chatbots might get confused and provide wrong answers, especially in complex queries.</p>\r\n\r\n<h3><strong>2. Dealing with Complex Queries:</strong></h3>\r\n\r\n<p>Chatbots may struggle with complicated or unusual queries outside their expertise.</p>\r\n\r\n<h3><strong>3. Lack of Personal Touch:</strong></h3>\r\n\r\n<p>Despite being helpful, chatbots can&#39;t provide the warm, personal touch of chatting with a real person.</p>\r\n\r\n<h3><strong>4. Privacy Concerns:</strong></h3>\r\n\r\n<p>Some individuals may worry about sharing private information with chatbots.</p>\r\n\r\n<h3><strong>5. Implementation Costs:</strong></h3>\r\n\r\n<p>Setting up and maintaining chatbots can be costly, akin to purchasing a high-tech gadget.</p>\r\n\r\n<h3><strong>6. Technical Glitches:</strong></h3>\r\n\r\n<p>Like any technology, chatbots may experience glitches that can impact their functionality.</p>\r\n\r\n<h2>The Future of AI Chatbots in Customer Experience</h2>\r\n\r\n<p>The world of AI chatbots is evolving, offering better conversations, remembering past chats, and providing a more personal touch. The future promises round-the-clock availability, smarter problem-solving, and integration into various digital platforms.</p>\r\n\r\n<p>As we step into this future, companies like Codiant are at the forefront, developing chatbots for different industries and making communication automatic worldwide.</p>\r\n\r\n<p>In conclusion, AI chatbots are not just machines; they represent the convergence of technology and human connection. From trends that make chatbots the tech stars of the future to the prediction of AI chatbots becoming your best digital friend, the journey is exciting.</p>\r\n\r\n<p>Whether you&#39;re ready or not, the future of AI chatbots is knocking on our digital doors. Here&#39;s to embracing the conversations of tomorrow!</p>', '25 Minutes', 'uploads/blogs/1706863791-image.webp', 'uploads/blogs/1708516823-detail.webp', 1, '2024-02-02 14:19:51', '2024-02-21 17:39:46'),
+(4, 'Unlocking the Power of Web Development: Essentials for a Successful Online Presence', 'unlocking-the-power-of-web-development-essentials-for-a-successful-online-presence', 'Web development is the backbone of the internet, enabling the creation of websites and web applications that we use daily. From simple personal blogs to complex e-commerce platforms, web development covers a wide range of activities that ensure websites are functional, visually appealing, and user-friendly. In this blog, we’ll explore the fundamentals of web development, its importance, and the key components involved in building a website.', '<p>Web development is the backbone of the internet, enabling the creation of websites and web applications that we use daily. From simple personal blogs to complex e-commerce platforms, web development covers a wide range of activities that ensure websites are functional, visually appealing, and user-friendly. In this blog, we&rsquo;ll explore the fundamentals of web development, its importance, and the key components involved in building a website.</p>\r\n\r\n<h2>What is Web Development?</h2>\r\n\r\n<p>Web development refers to the process of building and maintaining websites. It encompasses several aspects, including web design, web content development, client-side/server-side scripting, and network security configuration. The primary goal of web development is to create a seamless user experience through efficient functionality and engaging visuals.</p>\r\n\r\n<h2>Importance of Web Development</h2>\r\n\r\n<p><strong>1. First Impressions Matter:</strong> Your website is often the first interaction potential customers have with your business. A well-designed and functional site creates a positive first impression, building trust and encouraging users to explore further.&nbsp;&nbsp;</p>\r\n\r\n<p><strong>2. Accessibility and Usability:</strong> Effective web development ensures that a website is accessible to all users, including those with disabilities. It also focuses on usability, making sure that visitors can easily navigate the site and find the information they need.</p>\r\n\r\n<p><strong>3. SEO and Visibility:</strong> Proper web development practices enhance a site&rsquo;s search engine optimization (SEO), improving its visibility in search engine results. This drives organic traffic, increasing the chances of attracting and retaining customers.</p>\r\n\r\n<p><strong>4. Performance and Speed:</strong> Users expect fast-loading websites. Efficient web development optimizes a site&rsquo;s performance, reducing load times and preventing potential visitors from leaving due to slow speeds.</p>\r\n\r\n<p><strong>5. Security:</strong> With the rise of cyber threats, security is a critical aspect of web development. Implementing robust security measures protects both the website and its users from malicious attacks.</p>\r\n\r\n<h2>Key Components of Web Development</h2>\r\n\r\n<h3>1. Front-End Development</h3>\r\n\r\n<p>Front-end development, also known as client-side development, involves creating the visual and interactive aspects of a website that users directly interact with. Key technologies used in front-end development include:</p>\r\n\r\n<p><strong>HTML (HyperText Markup Language):</strong> The foundational language of the web, HTML structures the content on a website.</p>\r\n\r\n<p><strong>CSS (Cascading Style Sheets):</strong> CSS styles the HTML content, controlling the layout, colors, fonts, and overall appearance.</p>\r\n\r\n<p><strong>JavaScript</strong>: JavaScript adds interactivity and dynamic elements to a website, such as sliders, form validations, and animations.</p>\r\n\r\n<p>Front-end developers ensure that the website is responsive, meaning it looks and functions well on various devices and screen sizes.</p>\r\n\r\n<h3>2. Back-End Development</h3>\r\n\r\n<p>Back-end development, or server-side development, focuses on the behind-the-scenes functionality of a website. This involves managing databases, server logic, and application integration. Key technologies used in back-end development include:</p>\r\n\r\n<p><strong>Programming Languages:</strong> Common languages include PHP, Python, Ruby, and Java. These languages handle the server-side logic and interactions.</p>\r\n\r\n<p><strong>Databases:</strong> Databases store and manage data for websites. Popular databases include MySQL, PostgreSQL, and MongoDB.</p>\r\n\r\n<p><strong>Server Management:</strong> This involves configuring and maintaining the servers that host the website, ensuring they run smoothly and efficiently.</p>\r\n\r\n<p>Back-end developers work to ensure that the front-end of the website interacts seamlessly with the server and database, providing a smooth user experience.</p>\r\n\r\n<h3>3. Full-Stack Development</h3>\r\n\r\n<p>Full-stack development encompasses both front-end and back-end development. Full-stack developers are skilled in both areas, allowing them to build entire websites and web applications from start to finish. They understand how different parts of a web project interact and can handle the entire development process, from designing the user interface to setting up the server infrastructure.</p>\r\n\r\n<h2>The Web Development Process</h2>\r\n\r\n<p>The web development process involves several stages, each critical to the successful creation of a website:</p>\r\n\r\n<p><strong>1. Planning and Research:</strong> This initial stage involves understanding the project&rsquo;s goals, target audience, and technical requirements. It includes creating a project plan, timeline, and budget.</p>\r\n\r\n<p><strong>2. Design:</strong> The design phase focuses on creating the visual elements of the website. Designers create wireframes and prototypes to map out the site&rsquo;s layout and user interface.</p>\r\n\r\n<p><strong>3. Development:</strong> During the development phase, front-end and back-end developers work together to build the website. This includes coding, integrating databases, and setting up servers.</p>\r\n\r\n<p><strong>4. Testing: </strong>Testing is crucial to ensure that the website functions correctly and is free of bugs. This involves testing for functionality, performance, security, and compatibility across different browsers and devices.</p>\r\n\r\n<p><strong>5. Deployment:</strong> Once the website passes testing, it is deployed to a live server, making it accessible to users.</p>\r\n\r\n<p><strong>6. Maintenance and Updates:</strong> Web development doesn&rsquo;t end with deployment. Regular maintenance and updates are essential to keep the website secure, functional, and up-to-date with the latest technologies.</p>\r\n\r\n<h2>Conclusion</h2>\r\n\r\n<p>Web development is a dynamic and essential field that powers the internet. From creating visually appealing designs to ensuring robust functionality and security, web developers play a crucial role in shaping the online experience. Whether you&rsquo;re a business looking to establish an online presence or an aspiring developer, understanding the fundamentals of web development is key to success in the digital age.</p>\r\n\r\n<p>At League City Consulting, we specialize in delivering top-notch <a href=\"https://www.leaguecityconsulting.com/services\"><strong><em>web development services </em></strong></a>tailored to your unique needs. Our team of expert developers is dedicated to creating websites that not only look great but also perform exceptionally well. Contact us today to learn more about how we can help you achieve your web development goals.</p>\r\n\r\n<p>&nbsp;</p>', '2 mins', 'uploads/blogs/1719312407-image.webp', 'uploads/blogs/1719312407-detail.webp', 1, '2024-06-25 16:16:47', '2024-06-25 16:16:47'),
+(5, 'Demystifying Mobile App Development: Your Guide to Building a Winning App in 2024', 'demystifying-mobile-app-development-your-guide-to-building-a-winning-app-in-2024', 'In today\'s hyper-connected world, mobile apps are no longer a luxury - they\'re a necessity. Whether you\'re a business owner, entrepreneur, or simply have a great idea, a well-designed mobile app can revolutionize the way you connect with your audience and achieve your goals. But for those unfamiliar with the app development process, it can seem daunting. Fear not! This comprehensive guide will break down mobile app development into bite-sized pieces, guiding you from concept to launch.', '<p>In today&#39;s hyper-connected world, mobile apps are no longer a luxury - they&#39;re a necessity. Whether you&#39;re a business owner, entrepreneur, or simply have a great idea, a well-designed mobile app can revolutionize the way you connect with your audience and achieve your goals. But for those unfamiliar with the app development process, it can seem daunting. Fear not! This comprehensive guide will break down mobile app development into bite-sized pieces, guiding you from concept to launch.</p>\r\n\r\n<h2>&nbsp;1. Identifying Your App Idea and Target Audience:&nbsp;</h2>\r\n\r\n<p>The journey begins with a spark: your app idea! Is it a game, a productivity tool, a social media platform, or something entirely new? Once you have a core concept, clearly define your target audience. Who will benefit most from your app? Understanding their needs, pain points, and mobile habits is crucial for creating a user-centric experience.</p>\r\n\r\n<h2>&nbsp;2. Understanding the Mobile App Development Landscape:&nbsp;</h2>\r\n\r\n<p>There are two main approaches to mobile app development: native and hybrid. Native apps are built specifically for either Android or iOS operating systems, offering optimal performance and user experience. Hybrid apps, on the other hand, use a single codebase to create apps that function on both platforms. While convenient, they may have limitations in functionality and customization. Consider factors like budget, desired features, and target audience when making this decision.</p>\r\n\r\n<h2>&nbsp;3. Crafting a Winning App Design:&nbsp;</h2>\r\n\r\n<p>First impressions matter, especially in the app store. A user-friendly and visually appealing design is essential for keeping users engaged. Here are some key design principles:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Simple and Intuitive Interface:</strong> Your app should be easy to navigate, with clear menus and actions. Users shouldn&#39;t have to struggle to find what they need.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Visually Appealing Design:</strong> Incorporate high-quality graphics and a cohesive color scheme that reflects your brand identity.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Responsive Design:</strong> Ensure your app adapts seamlessly to different screen sizes and device orientations.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>&nbsp;4. Developing Your App&#39;s Functionality:&nbsp;</h2>\r\n\r\n<p>Now comes the technical part! This involves coding your app to bring its features to life. For native app development, you&#39;ll need expertise in languages like Swift for iOS or Java/Kotlin for Android. If you lack in-house development resources, consider partnering with a <ins><a href=\"https://www.leaguecityconsulting.com/services#software-engineering\"><em><strong>mobile app development</strong></em> </a></ins>company like League City Consulting.Their experienced developers can translate your vision into a functional and robust app.</p>\r\n\r\n<h2>&nbsp;5. Testing and Refining:&nbsp;</h2>\r\n\r\n<p>Before hitting the app store, rigorous testing is crucial. This involves identifying and fixing bugs, ensuring optimal performance across different devices, and gathering user feedback through beta testing. A well-tested app not only provides a smooth user experience but also avoids negative reviews that could impact your app&#39;s success.</p>\r\n\r\n<h2>&nbsp;6. Launching Your App and Beyond:&nbsp;</h2>\r\n\r\n<p>Congratulations! Your app is ready to take center stage. Submitting it to the respective app stores (Google Play Store for Android and App Store for iOS) involves following specific guidelines and fees.</p>\r\n\r\n<p>Launch doesn&#39;t signify the end - it&#39;s just the beginning! Here are some ongoing considerations:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>App Store Optimization (ASO): </strong>Optimize your app listing with relevant keywords, screenshots, and descriptions to increase discover ability in app store searches.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Marketing and Promotion:</strong> Develop a marketing strategy to generate buzz around your app. Utilize social media, content marketing, and influencer partnerships to reach your target audience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Analytics and User Feedback:</strong> Regularly monitor user engagement metrics and gather feedback. Use this data to identify areas for improvement and keep your app evolving to meet user needs.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>&nbsp;Partnering with League City Consulting for Mobile App Development Success&nbsp;</h2>\r\n\r\n<p>Building a successful mobile app requires expertise, resources, and a strategic approach. League City Consulting&nbsp;can be your one-stop shop for all things mobile app development. Our team of seasoned developers, designers, and marketing specialists will work closely with you to transform your app idea into a reality. We offer:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Expert Consultation:</strong> Gain valuable insights and guidance throughout the development process.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong><ins><a href=\"https://www.leaguecityconsulting.com/blogs/building-your-dream-tool-a-guide-to-custom-software-development\"><em>Custom App Development</em></a></ins>:</strong> We build tailored apps that meet your specific needs and target audience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Agile Development Methodology:</strong> We prioritize continuous improvement and user feedback to ensure your app stays ahead of the curve.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Marketing and App Store Optimization:</strong> Maximize your app&#39;s visibility and reach.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Get started on your mobile app journey today! Contact League City Consulting for a free consultation and let&#39;s turn your app idea into a thriving mobile success story.</p>', '3 min', 'uploads/blogs/1719382267-image.webp', 'uploads/blogs/1719382267-detail.webp', 1, '2024-06-26 11:41:07', '2024-06-27 15:56:11'),
+(6, 'Building Your Dream Tool: A Guide to Custom Software Development', 'building-your-dream-tool-a-guide-to-custom-software-development', 'Imagine having a computer program that perfectly fits your business needs. It automates tedious tasks, streamlines workflows, and gives you valuable insights – all tailored to your unique operations. This is the magic of custom software development. In this blog post, we\'ll break down everything you need to know about custom software development, from understanding its benefits to navigating the development process. We\'ll also explore how League City Consulting can help you bring your software vision to life.', '<p>Imagine having a computer program that perfectly fits your business needs. It automates tedious tasks, streamlines workflows, and gives you valuable insights &ndash; all tailored to your unique operations. This is the magic of custom software development.</p>\r\n\r\n<p>In this blog post, we&#39;ll break down everything you need to know about custom software development, from understanding its benefits to navigating the development process. We&#39;ll also explore how League City Consulting can help you bring your software vision to life.</p>\r\n\r\n<h2>Why Choose Custom Software?&nbsp;</h2>\r\n\r\n<p>Off-the-shelf software is readily available, but it often comes with limitations. It might not cater to your specific needs, forcing you to adapt your processes to the software. This can be inefficient and frustrating.</p>\r\n\r\n<p>Custom software, on the other hand, is built from the ground up to address your exact requirements. It offers a whole host of benefits:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Increased Efficiency:</strong> Eliminate manual work and automate repetitive tasks, freeing up your team&#39;s time and energy for more strategic work.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Improved Accuracy:</strong> Reduce human error with automated processes and built-in validation checks.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Enhanced Security:</strong> Tailored security features can protect your sensitive data better than generic software.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Scalability:</strong> Your software can grow alongside your business, adapting to your changing needs.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Competitive Advantage:</strong> Stand out from the crowd with a unique solution that addresses your specific challenges.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>So, You Want Custom Software? Here&#39;s How it Works&nbsp;</h2>\r\n\r\n<p>The process of building custom software can be broken down into several key stages:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Discovery &amp; Planning:</strong> This initial phase involves defining your business goals, identifying pain points, and outlining the functionalities you need in the software. League City Consulting can work with you during this stage to develop a clear project roadmap and user stories &ndash; detailed descriptions of how users will interact with the software.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Design &amp; Development:</strong> Here, your vision comes to life. Designers create user interfaces (UI) that are intuitive and user-friendly. Developers, then, translate those designs into functional code. League City Consulting&#39;s team of experienced developers can work in various programming languages to create a robust and efficient software solution.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Testing &amp; Deployment:</strong> Rigorous testing ensures the software functions as intended and is free of bugs. Once everything is tested and approved, League City Consulting can help deploy the software seamlessly into your existing infrastructure.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Maintenance &amp; Support:</strong> Software evolves. League City Consulting can provide ongoing maintenance and support to ensure your software remains secure, up-to-date, and adapts to your changing requirements.</p>\r\n	</li>\r\n</ol>\r\n\r\n<h2>Who Needs Custom Software?&nbsp;</h2>\r\n\r\n<p>Custom software is a powerful tool that can benefit businesses of all sizes and across all industries. Here are some examples:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>E-commerce:</strong> Create a custom online store with features specifically designed to improve customer experience and boost sales.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Finance:</strong> Develop software to automate financial processes, generate reports, and manage investments.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Healthcare:</strong> Streamline patient records, automate appointment scheduling, and enhance communication between doctors and patients.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Manufacturing:</strong> Implement software to track inventory, optimize production processes, and improve quality control.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>The Takeaway: Building Your Dream with League City Consulting&nbsp;</h2>\r\n\r\n<p><a href=\"https://www.leaguecityconsulting.com/services#software-engineering\"><em><strong>Custom software development</strong></em></a> might seem daunting, but with the right partner by your side, it can be a rewarding journey. League City Consulting has a team of experienced professionals who can guide you through every step of the process, from initial brainstorming to successful software launch and ongoing support.</p>\r\n\r\n<p>Contact League City Consulting today to discuss your software needs and discover how custom development can unlock the full potential of your business.</p>', '3 min', 'uploads/blogs/1719462833-image.webp', 'uploads/blogs/1719462833-detail.webp', 1, '2024-06-27 10:03:53', '2024-06-27 16:24:51');
+INSERT INTO `blogs` (`id`, `blog_title`, `url_slug`, `blog_details`, `description`, `read_time`, `blog_image`, `detail_image`, `status`, `created_at`, `updated_at`) VALUES
+(7, 'Mastering the User Experience: A Guide to UI/UX Development', 'mastering-the-user-experience-a-guide-to-uiux-development', 'In today\'s digital world, websites and applications are no longer just functional tools; they\'re immersive experiences. Users expect interfaces that are not only easy to navigate but also esthetically pleasing and intuitive. This is where UI/UX development comes in. But what exactly is it, and why is it so important?', '<p>In today&#39;s digital world, websites and applications are no longer just functional tools; they&#39;re immersive experiences. Users expect interfaces that are not only easy to navigate but also esthetically pleasing and intuitive. This is where UI/UX development comes in. But what exactly is it, and why is it so important?</p>\r\n\r\n<h2>Understanding UI/UX Development</h2>\r\n\r\n<p>UI/UX development refers to the process of designing and building user interfaces (UI) and user experiences (UX). Let&#39;s break down these terms:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>User Interface (UI):</strong> This is the visual layer of a website or application. It encompasses everything a user interacts with, including buttons, menus, layouts, typography, and color schemes.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>User Experience (UX):</strong> This refers to the overall experience a user has when interacting with a product. It considers usability, functionality, information architecture, and emotional design.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Why is UI/UX Development Important?</h2>\r\n\r\n<p>Think of your favorite website or app. It&#39;s likely easy to use, visually appealing, and allows you to accomplish your tasks efficiently. This is no coincidence &ndash; it&#39;s the result of careful UI/UX development. Here&#39;s why it matters:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Increased User Engagement:</strong> A well-designed UI/UX keeps users engaged and coming back for more. When users find something easy and enjoyable to use, they&#39;re more likely to spend time on it and explore its features.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Improved Conversion Rates:</strong> Whether you&#39;re selling a product, offering a service, or promoting a cause, a user-friendly interface can significantly increase conversions. By guiding users through the desired actions seamlessly, UI/UX development helps you achieve your goals.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Enhanced Brand Image:</strong> A well-designed website or application reflects positively on your brand. It conveys professionalism, trustworthiness, and attention to detail, ultimately strengthening your brand identity.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Reduced Development Costs:</strong> Investing in UI/UX development upfront can save you money in the long run. By identifying and addressing usability issues early on, you avoid costly redesigns and rework later in the development process.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>The UI/UX Development Process</h2>\r\n\r\n<p>The UI/UX development process typically involves several stages:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Research &amp; Planning:</strong> This stage involves understanding your target audience, their needs, and the goals of your website or application. League City Consulting can help you conduct user research and create user personas to gain valuable insights.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Information Architecture:</strong> Here, you define the content hierarchy and navigation structure of your product. This ensures users can find the information they need quickly and easily.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Wireframing &amp; Prototyping:</strong> Wireframes are low-fidelity blueprints that outline the basic layout and functionality of your interface. Prototypes are more interactive versions that allow users to test the flow and usability of your design.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Visual Design:</strong> This stage focuses on the aesthetics of your UI. It includes choosing colors, fonts, and imagery that create a visually appealing and consistent user experience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Usability Testing: </strong>Throughout the design process, it&#39;s crucial to test your UI/UX with real users. This helps identify any usability issues and ensures your product is truly user-friendly.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Development &amp; Deployment:</strong> Once the UI/UX design is finalized, developers translate it into a functional website or application.</p>\r\n	</li>\r\n</ol>\r\n\r\n<h2>The Role of UI/UX Developers</h2>\r\n\r\n<p>UI/UX developers are the creative minds behind the user experience. They possess a unique blend of skills, including:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Understanding of user psychology:</strong> UI/UX developers understand how users think and behave, allowing them to design interfaces that are intuitive and meet user needs.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Strong visual design skills:</strong> They have a keen eye for aesthetics and can create visually appealing interfaces that are consistent with your brand identity.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Knowledge of usability principles:</strong> UI/UX developers understand the principles of good design, such as information hierarchy, consistency, and user-friendliness.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Technical proficiency:</strong> While not necessarily programmers themselves, UI/UX developers should have a good understanding of <ins><a href=\"https://www.leaguecityconsulting.com/blogs/unlocking-the-power-of-web-development-essentials-for-a-successful-online-presence\"><em><strong>web development</strong></em></a></ins> principles to ensure their designs are feasible and functional.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Conclusion</h2>\r\n\r\n<p>UI/UX development is a critical aspect of creating successful websites and applications. By investing in a well-designed user experience, you can increase user engagement, conversions, and brand loyalty. If you&#39;re looking to create a product that users love, consider partnering with a reputable UI/UX design firm like League City Consulting. Their expertise can help you craft an experience that sets you apart from the competition.</p>\r\n\r\n<p>&nbsp;</p>', '3min', 'uploads/blogs/1719552591-image.webp', 'uploads/blogs/1719552591-detail.webp', 1, '2024-06-28 10:59:51', '2024-06-28 10:59:51'),
+(8, 'Conquering the Digital Marketplace: Your Guide to E-Commerce Development', 'conquering-the-digital-marketplace-your-guide-to-e-commerce-development', 'The world of commerce is undergoing a dramatic shift. Gone are the days of relying solely on brick-and-mortar stores. Today, the internet reigns supreme, offering a vast digital marketplace for businesses of all sizes. If you\'re looking to tap into this ever-growing potential, then e-commerce development is the key.', '<p>The world of commerce is undergoing a dramatic shift. Gone are the days of relying solely on brick-and-mortar stores. Today, the internet reigns supreme, offering a vast digital marketplace for businesses of all sizes. If you&#39;re looking to tap into this ever-growing potential, then e-commerce development is the key.</p>\r\n\r\n<h2>What is E-Commerce Development?</h2>\r\n\r\n<p>E-commerce development refers to the process of creating an online store where customers can browse, select, and purchase products or services. This involves a range of elements, including:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Website design and development:</strong> Building a user-friendly and visually appealing website that showcases your products and simplifies the buying process.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Shopping cart functionality: </strong>Integrating a secure and efficient system for customers to add items to their cart, track their orders, and make payments.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Payment gateway integration:</strong> Enabling secure transactions through trusted payment processors like PayPal or Stripe.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Inventory management:</strong> Setting up a system to track your stock levels and ensure smooth order fulfillment.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Marketing and promotion:</strong> Devising strategies to attract visitors to your online store and convert them into paying customers.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Why Choose E-Commerce Development?</h2>\r\n\r\n<p>The benefits of e-commerce development are numerous:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Global Reach: </strong>Expand your customer base beyond geographical limitations. Anyone with an internet connection can find and purchase your products.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>24/7 Availability:</strong> Your store is always open! Customers can browse and shop at their convenience, day or night.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Reduced Costs:</strong> Eliminate the need for physical store overheads like rent, utilities, and staffing.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Scalability: </strong>Easily adapt to business growth by adding new products, managing promotions, and scaling your online infrastructure.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Data-Driven Insights:</strong> Gain valuable data on customer behavior, preferences, and purchasing patterns through website analytics.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Enhanced Customer Engagement: </strong>Personalize the shopping experience, offer real-time support, and build stronger customer relationships.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Steps to E-Commerce Development Success</h2>\r\n\r\n<p>While the world of e-commerce may seem daunting, here&#39;s a breakdown of the key steps involved in developing your online store:</p>\r\n\r\n<h3>1. Define Your Business Goals and Target Audience:</h3>\r\n\r\n<ul>\r\n	<li>\r\n	<p>What products or services will you offer?</p>\r\n	</li>\r\n	<li>\r\n	<p>Who is your ideal customer? (age, demographics, interests)</p>\r\n	</li>\r\n	<li>\r\n	<p>What are your sales and revenue targets?</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Understanding your niche and target audience helps shape your online store&#39;s design, product selection, and marketing strategies.</p>\r\n\r\n<h3>2. Choose the Right E-Commerce Platform:</h3>\r\n\r\n<p>There are numerous e-commerce platforms available, each with its own strengths and features. Popular options include Shopify, BigCommerce, Wix, and WooCommerce (for WordPress users). Consider factors like scalability, ease of use, cost, and available features when making your selection.</p>\r\n\r\n<h3>3. Design Your Online Store:</h3>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>User-friendliness: </strong>Make navigation intuitive and ensure a seamless buying journey.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Visually Appealing:</strong> Create a professional and appealing website layout that reflects your brand identity.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>High-Quality Product Images and Descriptions:</strong> Showcase your products in detail with clear descriptions that address customer needs.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h3>4. Secure Payment Processing:</h3>\r\n\r\n<p>Integrate a trusted and secure payment gateway to ensure safe and reliable transactions for your customers.</p>\r\n\r\n<h3>5. Optimize for Search Engines (SEO):</h3>\r\n\r\n<p>Implement <a href=\"https://www.leaguecityconsulting.com/packages/seo-packages\"><em><strong>SEO best practices</strong></em></a> to help potential customers find your online store organically through search engines like Google.</p>\r\n\r\n<h3>6. Marketing and Promotion:</h3>\r\n\r\n<p>Develop a marketing strategy to attract visitors to your website. Utilize social media, email marketing, paid advertising, and content marketing to reach your target audience.</p>\r\n\r\n<h2>League City Consulting: Your Partner in E-Commerce Success</h2>\r\n\r\n<p>Developing a successful e-commerce store requires expertise and planning. Consider partnering with a company like League City Consulting, a leading provider of e-commerce development services. Their team of experienced professionals can help you navigate every aspect of the process, from platform selection and website design to marketing and customer service solutions.</p>\r\n\r\n<p>By following these steps and working with an experienced e-commerce development partner, you can conquer the digital marketplace and establish a thriving online presence for your business.</p>\r\n\r\n<h2>Additional Tips for E-Commerce Success:</h2>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Focus on Customer Service:</strong> Offer exceptional customer service to build trust and loyalty with your customers.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Mobile Optimization:</strong> Ensure your online store is mobile-friendly for seamless browsing and purchasing on smartphones and tablets.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Data Security:</strong> Prioritize data security by implementing strong security measures to protect customer information.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Maintain Your Store:</strong> Regularly update your website with new products, promotions, and content.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Embrace the Future of Commerce</h2>\r\n\r\n<p>The world of e-commerce is constantly evolving, offering exciting new possibilities for businesses of all sizes. By taking the plunge into e-commerce development, you&#39;re not just setting up an online store, you&#39;re positioning yourself for future success. With the right strategy, dedication, and a touch of creativity, you can transform your business and thrive in the ever-expanding digital marketplace.</p>', '4 min', 'uploads/blogs/1719638084-image.webp', 'uploads/blogs/1719638084-detail.webp', 1, '2024-06-29 10:44:44', '2024-07-01 11:31:40'),
+(9, 'How To Craft a Winning SEO Content Strategy for Your Business: Attract, Engage, Convert', 'how-to-craft-a-winning-seo-content-strategy-for-your-business-attract-engage-convert', 'In today\'s digital world, ranking high on search engines is crucial for any business. It\'s the golden ticket to attracting new customers, boosting brand awareness, and ultimately driving sales. But how do you achieve that coveted top spot on search engine result pages (SERPs)? The answer lies in a powerful tool: a well-defined SEO content strategy.', '<p>In today&#39;s digital world, ranking high on search engines is crucial for any business. It&#39;s the golden ticket to attracting new customers, boosting brand awareness, and ultimately driving sales. But how do you achieve that coveted top spot on search engine result pages (SERPs)? The answer lies in a powerful tool: a well-defined SEO content strategy.</p>\r\n\r\n<p>Think of your SEO content strategy as a roadmap. It outlines the content you&#39;ll create, the keywords you&#39;ll target, and how you&#39;ll optimize it all to resonate with search engines and, more importantly, your target audience.</p>\r\n\r\n<p>Here&#39;s a step-by-step guide to crafting a winning SEO content strategy that will turn your website into a customer magnet:</p>\r\n\r\n<h2>Step 1: Know Your Audience Inside Out</h2>\r\n\r\n<p>Before you start churning out content, put yourself in your ideal customer&#39;s shoes. Who are they? What are their challenges and pain points? What kind of information are they actively searching for online?</p>\r\n\r\n<p>Conduct market research, analyze competitor content, and leverage social media to understand your target audience&#39;s needs and interests. This buyer persona will be the foundation for creating content that truly connects with them.</p>\r\n\r\n<h2>Step 2: Keyword Research: Uncovering the Search Landscape</h2>\r\n\r\n<p>Keywords are the search terms people use to find information online. Keyword research helps you identify the specific phrases and questions your target audience is typing into search engines.</p>\r\n\r\n<p>There are many free and paid keyword research tools available. Use them to discover relevant keywords with high search volume and low competition. Think beyond single words and explore long-tail keywords - more specific phrases that indicate higher search intent (meaning, the user is further along in the buying journey).</p>\r\n\r\n<h2>Step 3: Content Planning: From Brainstorming to Calendar</h2>\r\n\r\n<p>Now that you understand your audience and their search queries, it&#39;s time to brainstorm content ideas.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Focus on Value:</strong> Don&#39;t just create content for the sake of it. Focus on providing valuable, informative content that solves your audience&#39;s problems or answers their questions.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Variety is Key:</strong> Don&#39;t get stuck in a rut. Experiment with different content formats like blog posts, infographics, videos, case studies, and white papers to cater to diverse learning styles and preferences.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Content Calendar:</strong> Organize your content creation process with a content calendar. This helps maintain consistency and ensures you&#39;re covering all the bases across different topics and keywords.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Step 4: Craft Compelling Content that Converts</h2>\r\n\r\n<p>Once you have a solid content plan, it&#39;s time to roll up your sleeves and start creating! Here are some key ingredients for high-performing SEO content:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Quality Content is King:</strong> Prioritize well-written, informative, and engaging content. Ensure your content is factually accurate, easy to understand, and free of grammatical errors.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Keyword Optimization:</strong> Integrate your target keywords naturally throughout your content, but don&#39;t overdo it. Focus on creating content that reads naturally and provides value, not keyword stuffing.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Captivating Headlines:</strong> Write clear, concise, and attention-grabbing headlines that accurately reflect the content and entice users to click.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Optimize for Readability:</strong> Break up your text with subheadings, bullet points, and images to improve readability and user experience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Internal Linking:</strong> Link to relevant pages within your website to improve user navigation and keep visitors engaged for longer.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Step 5: Beyond the Page: Content Promotion is Key</h2>\r\n\r\n<p>Creating great content is only half the battle. To maximize its impact, you need a robust content promotion strategy.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Social Media Powerhouse:</strong> Utilize social media platforms like Twitter, LinkedIn, and Facebook to share your content and engage with your audience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Email Marketing Magic:</strong> Email marketing is a fantastic way to promote your content directly to your subscriber base.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Industry Outreach:</strong> Build relationships with influencers and industry publications in your niche. Consider guest blogging opportunities or collaborating on content creation.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2>Step 6: Measure, Analyze, and Adapt</h2>\r\n\r\n<p>SEO is a continuous process. Don&#39;t expect overnight results. Use website analytics tools like Google Search Console to track your content&#39;s performance. See which keywords are driving traffic, what content resonates best with your audience, and identify areas for improvement.</p>\r\n\r\n<h2>Need Help Crafting a Winning SEO Content Strategy?</h2>\r\n\r\n<p>Developing and implementing a successful SEO content strategy can be a complex undertaking. Here&#39;s where League City Consulting can help. Our team of experienced SEO specialists can guide you through every step of the process, from keyword research and content creation to optimization and promotion.</p>\r\n\r\n<p>We&#39;ll work closely with you to understand your unique business goals and target audience. We&#39;ll then develop a customized SEO content strategy that attracts qualified leads, boosts brand awareness, and ultimately drives sales growth. League City Consulting offers a comprehensive suite of <a href=\"https://www.leaguecityconsulting.com/packages/seo-packages\"><em><strong>SEO services</strong></em></a>, including on-page optimization, technical SEO audits, competitor analysis, and link-building strategies.</p>\r\n\r\n<p>Contact League City Consulting today for a free consultation and let us help you unlock the power of SEO to achieve your online marketing objectives. Visit our website &nbsp;to learn more about our SEO services and how we can help your business thrive in the digital landscape.</p>', '4 min', 'uploads/blogs/1719818891-image.webp', 'uploads/blogs/1719818891-detail.webp', 1, '2024-07-01 12:58:11', '2024-07-01 13:02:50');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `api_lab`
+-- Table structure for table `campaign`
 --
 
-CREATE TABLE `api_lab` (
-  `api_lab_id` int NOT NULL,
-  `api_key` text NOT NULL,
-  `api_token` text NOT NULL,
-  `api_response` text NOT NULL,
-  `last_update` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `campaign` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `campaign_for` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci,
+  `request_status` enum('pending','confirmed','cancelled') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `remark` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `api_lab`
+-- Dumping data for table `campaign`
 --
 
-INSERT INTO `api_lab` (`api_lab_id`, `api_key`, `api_token`, `api_response`, `last_update`) VALUES
-(1, 'GrwOFRa2mZST7Yrpw7ciDhaqxSpQw8wc.mazjmv2OrGhGwMabQtddnQ==', 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImRCeDZZWXdmSjBKOHF5dXBKOHA5eFEiLCJ0eXAiOiJhdCtqd3QifQ.eyJuYmYiOjE3MDE2NTg0MTUsImV4cCI6MTcwMTY2MjAxNSwiaXNzIjoiaHR0cHM6Ly9hdXRoc2VydmVyaWRzLmF6dXJld2Vic2l0ZXMubmV0IiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IjAwMDAxMzM1MjciLCJzY29wZSI6WyJhcGkxIl19.W7CbTYeLxlrkuM06Lql_gSaJG0UiSYr-O0J8WjjZb30Yo2i1n-dY9N77ostuoOyLE8gQZ8U2IqZjS-QGrwyDQLtPkhNVgi0l8x87DtCkSSalJ1XtqOQpuCD5663T2xfMAlrrW88oUqdt2z9RvMWacqUTX5qgdheova9e9x4aOztIV6gehjYesSurGHdcn3lJzHLK7NvSsouy1mWdg5gbHbr-PeLgB6jCe5B37MZ-hQ42fhHAZXhgBM67RUkElmf1NAmE9O-zhTviyj8oYaHmyH64C-V7aWIZ-_vVJoXw4auCOk_P-q18fWM_-9O5eFIrHCJ1uDhKKchCb2-uFlmbkw', '{\"apiKey\":\"GrwOFRa2mZST7Yrpw7ciDhaqxSpQw8wc.mazjmv2OrGhGwMabQtddnQ==\",\"accessToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImRCeDZZWXdmSjBKOHF5dXBKOHA5eFEiLCJ0eXAiOiJhdCtqd3QifQ.eyJuYmYiOjE3MDE2NTg0MTUsImV4cCI6MTcwMTY2MjAxNSwiaXNzIjoiaHR0cHM6Ly9hdXRoc2VydmVyaWRzLmF6dXJld2Vic2l0ZXMubmV0IiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IjAwMDAxMzM1MjciLCJzY29wZSI6WyJhcGkxIl19.W7CbTYeLxlrkuM06Lql_gSaJG0UiSYr-O0J8WjjZb30Yo2i1n-dY9N77ostuoOyLE8gQZ8U2IqZjS-QGrwyDQLtPkhNVgi0l8x87DtCkSSalJ1XtqOQpuCD5663T2xfMAlrrW88oUqdt2z9RvMWacqUTX5qgdheova9e9x4aOztIV6gehjYesSurGHdcn3lJzHLK7NvSsouy1mWdg5gbHbr-PeLgB6jCe5B37MZ-hQ42fhHAZXhgBM67RUkElmf1NAmE9O-zhTviyj8oYaHmyH64C-V7aWIZ-_vVJoXw4auCOk_P-q18fWM_-9O5eFIrHCJ1uDhKKchCb2-uFlmbkw\",\"userType\":\"DSA\",\"userTypeId\":3,\"response\":\"Success\",\"respId\":\"RES00001\",\"name\":\"SECONDOPINE SOLUTIONS PRIVATE LIMITED \",\"email\":\"durgesh.mishra@secondmedic.com\",\"exists\":\"YES\",\"verKey\":\"VER000069\",\"mobile\":\"9931360269\",\"loyaltyDiscount\":null,\"uId\":null,\"address\":null,\"updateMandatory\":\"\",\"androidVerKey\":\"\",\"iosVerKey\":\"\",\"trackingPrivilege\":\"N\",\"petCtAccess\":\"Y\",\"dsaWebLink\":\"2163E\",\"assignType\":null,\"otpAccess\":\"N\",\"isPrepaid\":\"Y\",\"covidMessage\":\"Covid positive reports will be shared as per the local municipal corporation guidelines\",\"internalClient\":false,\"agreeMentLink\":\"\",\"isAgreed\":1,\"uType\":0,\"status\":true,\"exceptionalPincode\":null,\"hcLchc\":null}', '2023-12-04 19:29:28');
+INSERT INTO `campaign` (`id`, `name`, `email`, `contact`, `campaign_for`, `country`, `message`, `request_status`, `remark`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Aniket league city campaign', 'aniket.namdeo@secondmedic.com', '7000027558', 'USA Campaign', '74', 'mobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile appmobile app', 'pending', NULL, 1, '2024-06-24 15:51:19', '2024-06-24 15:51:19'),
+(2, 'Aniket new', 'aniket.namdeo@secondmedic.com', '7000027558', 'USA Campaign', '101', 'test', 'pending', NULL, 1, '2024-06-24 16:00:26', '2024-06-24 16:00:26'),
+(3, 'Aniket new', 'aniket.namdeo@secondmedic.com', '7000027558', 'India Campaign', '10', 'test', 'pending', NULL, 1, '2024-06-24 16:04:27', '2024-06-24 16:04:27'),
+(4, 'Nitish test', 'nitishshewani2@gmail.com', '9630369753', 'USA Campaign', '3', 'asd masvbdn asda sd', 'pending', NULL, 1, '2024-06-24 17:31:05', '2024-06-24 17:31:05'),
+(5, 'Rajneesh Dwivedi', 'ravipnmd@gmail.com', '7879782233', 'India Campaign', '18', 'sddsdss', 'pending', NULL, 1, '2024-06-24 21:52:39', '2024-06-24 21:52:39'),
+(6, 'Rajneesh Dwivedi', 'ravipnmd@gmail.com', '7879782233', 'India Campaign', '18', 'sddsdss', 'pending', NULL, 1, '2024-06-24 22:02:59', '2024-06-24 22:02:59'),
+(7, 'TEST 1', 'test@email.com', '9090909090', 'USA Campaign', '3', 'test', 'pending', NULL, 1, '2024-06-26 18:00:37', '2024-06-26 18:00:37'),
+(8, 'TEST 1', 'test@email.com', '9090909090', 'USA Campaign', '7', 'test', 'pending', NULL, 1, '2024-06-27 09:30:51', '2024-06-27 09:30:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` bigint UNSIGNED NOT NULL,
+  `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`, `category_slug`, `category_img`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Website', 'website', NULL, 1, '2024-04-17 10:05:57', '2024-04-17 10:05:57'),
+(2, 'Android App', 'android-app', NULL, 1, '2024-04-17 10:06:42', '2024-04-17 10:06:42'),
+(3, 'IOS App', 'ios-app', NULL, 1, '2024-04-17 10:06:53', '2024-04-17 10:06:53'),
+(4, 'Figma Design', 'figma-design', NULL, 1, '2024-04-17 10:07:02', '2024-04-17 10:07:02'),
+(5, 'Logo Design', 'logo-design', NULL, 1, '2024-04-17 10:07:08', '2024-04-17 10:07:10'),
+(6, 'Graphic Design', 'graphic-design', NULL, 1, '2024-04-17 10:07:24', '2024-04-17 10:07:24'),
+(7, 'SEO', 'seo', NULL, 1, '2024-04-17 10:07:31', '2024-04-17 10:08:55');
 
 -- --------------------------------------------------------
 
@@ -48056,16 +48111,38 @@ INSERT INTO `city` (`city_id`, `name`, `state_id`) VALUES
 
 CREATE TABLE `contact_request` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `message` longtext COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `budget` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact_request`
+--
+
+INSERT INTO `contact_request` (`id`, `name`, `email`, `contact`, `budget`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Rahul Shah', 'rahul.shah@secondmedic.com', '7898335057', '5000', 'Testing About Us', 1, '2024-02-05 14:47:49', '2024-02-05 14:47:49'),
+(2, 'Aniket Namdeo', 'aniket.namdeo@secondmedic.com', '7000027558', '100', 'Testing About Us', 1, '2024-02-07 13:29:02', '2024-02-07 13:29:02'),
+(3, 'Aniket Namdeo', 'aniket.namdeo@secondmedic.com', '7000027558', '100', 'Testing', 1, '2024-02-07 13:30:03', '2024-02-07 13:30:03'),
+(4, 'Aniket Namdeo', 'aniket.namdeo@secondmedic.com', '7000027558', '1000', 'test 2', 1, '2024-02-07 13:31:02', '2024-02-07 13:31:02'),
+(5, 'Amierul Hakkem Bin Norazam', 'amierulhakkembinnorazam@gmail.com', '6011538090', '100', 'Visa Card', 1, '2024-02-11 20:59:30', '2024-02-11 20:59:30'),
+(6, 'Aniket Namdeo', 'aniket.namdeo@secondmedic.com', '7000027558', '1232213123', 'test', 1, '2024-03-27 14:10:54', '2024-03-27 14:10:54'),
+(7, 'test aniket', 'aniket.namdeo@secondmedic.com', '7000027558', '5600', 'test aniket secondmedic', 1, '2024-05-02 21:34:15', '2024-05-02 21:34:15'),
+(8, 'test aniket', 'aniket.namdeo@secondmedic.com', '7000027558', '24000', 'test', 1, '2024-05-20 14:05:13', '2024-05-20 14:05:13'),
+(9, 'Jordan K.', 'pat@aneesho.com', '8102440753', '01', 'Just wanted to ask if you would be interested in getting external help with graphic design? We do all design work like banners, advertisements, brochures, logos, flyers, etc. for a fixed monthly fee.   We don\'t charge for each task. What kind of work do you need on a regular basis? Let me know and I\'ll share my portfolio with you.', 1, '2024-05-22 16:14:35', '2024-05-22 16:14:35'),
+(10, 'Nitish Test', 'nitishshewani2@gmail.com', '9630369753', '123123123', 'test test test', 1, '2024-05-22 19:10:32', '2024-05-22 19:10:32'),
+(11, 'Nitish test', 'nitishshewani2@gmail.com', '9630369753', '123123', 'test test test', 1, '2024-05-22 19:11:22', '2024-05-22 19:11:22'),
+(12, 'Rahul Shah', 'rahul.shah@secondmedic.com', '7898335057', '5000', 'Testing About Us', 1, '2024-05-23 09:50:37', '2024-05-23 09:50:37'),
+(13, 'Test 2', 'admin@admin.com', '9630369753', '123123', 'test test test', 1, '2024-05-24 12:16:31', '2024-05-24 12:16:31'),
+(14, 'Rahul Shah', 'rahul.shah@secondmedic.com', '7898335057', '5000', 'Testing About Us', 1, '2024-06-10 12:04:37', '2024-06-10 12:04:37'),
+(15, 'Test 2', 'admin@admin.com', '9630369753', '123123', 'asdasdasdasdasd', 1, '2024-06-10 12:05:10', '2024-06-10 12:05:10'),
+(16, 'Nitish', 'nitishshewani2@gmail.com', '9630369753', '123123', 'test test test', 1, '2024-06-10 15:46:42', '2024-06-10 15:46:42'),
+(17, 'Aniket new', 'aniket.namdeo@secondmedic.com', '7000027558', '230', 'test aniket', 1, '2024-06-22 14:32:23', '2024-06-22 14:32:23');
 
 -- --------------------------------------------------------
 
@@ -48075,8 +48152,8 @@ CREATE TABLE `contact_request` (
 
 CREATE TABLE `country` (
   `country_id` bigint UNSIGNED NOT NULL,
-  `sortname` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sortname` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `phonecode` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -48330,253 +48407,7 @@ INSERT INTO `country` (`country_id`, `sortname`, `name`, `phonecode`) VALUES
 (243, 'YE', 'Yemen', 967),
 (244, 'YU', 'Yugoslavia', 38),
 (245, 'ZM', 'Zambia', 260),
-(246, 'ZW', 'Zimbabwe', 263),
-(247, 'AF', 'Afghanistan', 93),
-(248, 'AL', 'Albania', 355),
-(249, 'DZ', 'Algeria', 213),
-(250, 'AS', 'American Samoa', 1684),
-(251, 'AD', 'Andorra', 376),
-(252, 'AO', 'Angola', 244),
-(253, 'AI', 'Anguilla', 1264),
-(254, 'AQ', 'Antarctica', 0),
-(255, 'AG', 'Antigua And Barbuda', 1268),
-(256, 'AR', 'Argentina', 54),
-(257, 'AM', 'Armenia', 374),
-(258, 'AW', 'Aruba', 297),
-(259, 'AU', 'Australia', 61),
-(260, 'AT', 'Austria', 43),
-(261, 'AZ', 'Azerbaijan', 994),
-(262, 'BS', 'Bahamas The', 1242),
-(263, 'BH', 'Bahrain', 973),
-(264, 'BD', 'Bangladesh', 880),
-(265, 'BB', 'Barbados', 1246),
-(266, 'BY', 'Belarus', 375),
-(267, 'BE', 'Belgium', 32),
-(268, 'BZ', 'Belize', 501),
-(269, 'BJ', 'Benin', 229),
-(270, 'BM', 'Bermuda', 1441),
-(271, 'BT', 'Bhutan', 975),
-(272, 'BO', 'Bolivia', 591),
-(273, 'BA', 'Bosnia and Herzegovina', 387),
-(274, 'BW', 'Botswana', 267),
-(275, 'BV', 'Bouvet Island', 0),
-(276, 'BR', 'Brazil', 55),
-(277, 'IO', 'British Indian Ocean Territory', 246),
-(278, 'BN', 'Brunei', 673),
-(279, 'BG', 'Bulgaria', 359),
-(280, 'BF', 'Burkina Faso', 226),
-(281, 'BI', 'Burundi', 257),
-(282, 'KH', 'Cambodia', 855),
-(283, 'CM', 'Cameroon', 237),
-(284, 'CA', 'Canada', 1),
-(285, 'CV', 'Cape Verde', 238),
-(286, 'KY', 'Cayman Islands', 1345),
-(287, 'CF', 'Central African Republic', 236),
-(288, 'TD', 'Chad', 235),
-(289, 'CL', 'Chile', 56),
-(290, 'CN', 'China', 86),
-(291, 'CX', 'Christmas Island', 61),
-(292, 'CC', 'Cocos (Keeling) Islands', 672),
-(293, 'CO', 'Colombia', 57),
-(294, 'KM', 'Comoros', 269),
-(295, 'CG', 'Republic Of The Congo', 242),
-(296, 'CD', 'Democratic Republic Of The Congo', 242),
-(297, 'CK', 'Cook Islands', 682),
-(298, 'CR', 'Costa Rica', 506),
-(299, 'CI', 'Cote D\'Ivoire (Ivory Coast)', 225),
-(300, 'HR', 'Croatia (Hrvatska)', 385),
-(301, 'CU', 'Cuba', 53),
-(302, 'CY', 'Cyprus', 357),
-(303, 'CZ', 'Czech Republic', 420),
-(304, 'DK', 'Denmark', 45),
-(305, 'DJ', 'Djibouti', 253),
-(306, 'DM', 'Dominica', 1767),
-(307, 'DO', 'Dominican Republic', 1809),
-(308, 'TP', 'East Timor', 670),
-(309, 'EC', 'Ecuador', 593),
-(310, 'EG', 'Egypt', 20),
-(311, 'SV', 'El Salvador', 503),
-(312, 'GQ', 'Equatorial Guinea', 240),
-(313, 'ER', 'Eritrea', 291),
-(314, 'EE', 'Estonia', 372),
-(315, 'ET', 'Ethiopia', 251),
-(316, 'XA', 'External Territories of Australia', 61),
-(317, 'FK', 'Falkland Islands', 500),
-(318, 'FO', 'Faroe Islands', 298),
-(319, 'FJ', 'Fiji Islands', 679),
-(320, 'FI', 'Finland', 358),
-(321, 'FR', 'France', 33),
-(322, 'GF', 'French Guiana', 594),
-(323, 'PF', 'French Polynesia', 689),
-(324, 'TF', 'French Southern Territories', 0),
-(325, 'GA', 'Gabon', 241),
-(326, 'GM', 'Gambia The', 220),
-(327, 'GE', 'Georgia', 995),
-(328, 'DE', 'Germany', 49),
-(329, 'GH', 'Ghana', 233),
-(330, 'GI', 'Gibraltar', 350),
-(331, 'GR', 'Greece', 30),
-(332, 'GL', 'Greenland', 299),
-(333, 'GD', 'Grenada', 1473),
-(334, 'GP', 'Guadeloupe', 590),
-(335, 'GU', 'Guam', 1671),
-(336, 'GT', 'Guatemala', 502),
-(337, 'XU', 'Guernsey and Alderney', 44),
-(338, 'GN', 'Guinea', 224),
-(339, 'GW', 'Guinea-Bissau', 245),
-(340, 'GY', 'Guyana', 592),
-(341, 'HT', 'Haiti', 509),
-(342, 'HM', 'Heard and McDonald Islands', 0),
-(343, 'HN', 'Honduras', 504),
-(344, 'HK', 'Hong Kong S.A.R.', 852),
-(345, 'HU', 'Hungary', 36),
-(346, 'IS', 'Iceland', 354),
-(347, 'IN', 'India', 91),
-(348, 'ID', 'Indonesia', 62),
-(349, 'IR', 'Iran', 98),
-(350, 'IQ', 'Iraq', 964),
-(351, 'IE', 'Ireland', 353),
-(352, 'IL', 'Israel', 972),
-(353, 'IT', 'Italy', 39),
-(354, 'JM', 'Jamaica', 1876),
-(355, 'JP', 'Japan', 81),
-(356, 'XJ', 'Jersey', 44),
-(357, 'JO', 'Jordan', 962),
-(358, 'KZ', 'Kazakhstan', 7),
-(359, 'KE', 'Kenya', 254),
-(360, 'KI', 'Kiribati', 686),
-(361, 'KP', 'Korea North', 850),
-(362, 'KR', 'Korea South', 82),
-(363, 'KW', 'Kuwait', 965),
-(364, 'KG', 'Kyrgyzstan', 996),
-(365, 'LA', 'Laos', 856),
-(366, 'LV', 'Latvia', 371),
-(367, 'LB', 'Lebanon', 961),
-(368, 'LS', 'Lesotho', 266),
-(369, 'LR', 'Liberia', 231),
-(370, 'LY', 'Libya', 218),
-(371, 'LI', 'Liechtenstein', 423),
-(372, 'LT', 'Lithuania', 370),
-(373, 'LU', 'Luxembourg', 352),
-(374, 'MO', 'Macau S.A.R.', 853),
-(375, 'MK', 'Macedonia', 389),
-(376, 'MG', 'Madagascar', 261),
-(377, 'MW', 'Malawi', 265),
-(378, 'MY', 'Malaysia', 60),
-(379, 'MV', 'Maldives', 960),
-(380, 'ML', 'Mali', 223),
-(381, 'MT', 'Malta', 356),
-(382, 'XM', 'Man (Isle of)', 44),
-(383, 'MH', 'Marshall Islands', 692),
-(384, 'MQ', 'Martinique', 596),
-(385, 'MR', 'Mauritania', 222),
-(386, 'MU', 'Mauritius', 230),
-(387, 'YT', 'Mayotte', 269),
-(388, 'MX', 'Mexico', 52),
-(389, 'FM', 'Micronesia', 691),
-(390, 'MD', 'Moldova', 373),
-(391, 'MC', 'Monaco', 377),
-(392, 'MN', 'Mongolia', 976),
-(393, 'MS', 'Montserrat', 1664),
-(394, 'MA', 'Morocco', 212),
-(395, 'MZ', 'Mozambique', 258),
-(396, 'MM', 'Myanmar', 95),
-(397, 'NA', 'Namibia', 264),
-(398, 'NR', 'Nauru', 674),
-(399, 'NP', 'Nepal', 977),
-(400, 'AN', 'Netherlands Antilles', 599),
-(401, 'NL', 'Netherlands The', 31),
-(402, 'NC', 'New Caledonia', 687),
-(403, 'NZ', 'New Zealand', 64),
-(404, 'NI', 'Nicaragua', 505),
-(405, 'NE', 'Niger', 227),
-(406, 'NG', 'Nigeria', 234),
-(407, 'NU', 'Niue', 683),
-(408, 'NF', 'Norfolk Island', 672),
-(409, 'MP', 'Northern Mariana Islands', 1670),
-(410, 'NO', 'Norway', 47),
-(411, 'OM', 'Oman', 968),
-(412, 'PK', 'Pakistan', 92),
-(413, 'PW', 'Palau', 680),
-(414, 'PS', 'Palestinian Territory Occupied', 970),
-(415, 'PA', 'Panama', 507),
-(416, 'PG', 'Papua new Guinea', 675),
-(417, 'PY', 'Paraguay', 595),
-(418, 'PE', 'Peru', 51),
-(419, 'PH', 'Philippines', 63),
-(420, 'PN', 'Pitcairn Island', 0),
-(421, 'PL', 'Poland', 48),
-(422, 'PT', 'Portugal', 351),
-(423, 'PR', 'Puerto Rico', 1787),
-(424, 'QA', 'Qatar', 974),
-(425, 'RE', 'Reunion', 262),
-(426, 'RO', 'Romania', 40),
-(427, 'RU', 'Russia', 70),
-(428, 'RW', 'Rwanda', 250),
-(429, 'SH', 'Saint Helena', 290),
-(430, 'KN', 'Saint Kitts And Nevis', 1869),
-(431, 'LC', 'Saint Lucia', 1758),
-(432, 'PM', 'Saint Pierre and Miquelon', 508),
-(433, 'VC', 'Saint Vincent And The Grenadines', 1784),
-(434, 'WS', 'Samoa', 684),
-(435, 'SM', 'San Marino', 378),
-(436, 'ST', 'Sao Tome and Principe', 239),
-(437, 'SA', 'Saudi Arabia', 966),
-(438, 'SN', 'Senegal', 221),
-(439, 'RS', 'Serbia', 381),
-(440, 'SC', 'Seychelles', 248),
-(441, 'SL', 'Sierra Leone', 232),
-(442, 'SG', 'Singapore', 65),
-(443, 'SK', 'Slovakia', 421),
-(444, 'SI', 'Slovenia', 386),
-(445, 'XG', 'Smaller Territories of the UK', 44),
-(446, 'SB', 'Solomon Islands', 677),
-(447, 'SO', 'Somalia', 252),
-(448, 'ZA', 'South Africa', 27),
-(449, 'GS', 'South Georgia', 0),
-(450, 'SS', 'South Sudan', 211),
-(451, 'ES', 'Spain', 34),
-(452, 'LK', 'Sri Lanka', 94),
-(453, 'SD', 'Sudan', 249),
-(454, 'SR', 'Suriname', 597),
-(455, 'SJ', 'Svalbard And Jan Mayen Islands', 47),
-(456, 'SZ', 'Swaziland', 268),
-(457, 'SE', 'Sweden', 46),
-(458, 'CH', 'Switzerland', 41),
-(459, 'SY', 'Syria', 963),
-(460, 'TW', 'Taiwan', 886),
-(461, 'TJ', 'Tajikistan', 992),
-(462, 'TZ', 'Tanzania', 255),
-(463, 'TH', 'Thailand', 66),
-(464, 'TG', 'Togo', 228),
-(465, 'TK', 'Tokelau', 690),
-(466, 'TO', 'Tonga', 676),
-(467, 'TT', 'Trinidad And Tobago', 1868),
-(468, 'TN', 'Tunisia', 216),
-(469, 'TR', 'Turkey', 90),
-(470, 'TM', 'Turkmenistan', 7370),
-(471, 'TC', 'Turks And Caicos Islands', 1649),
-(472, 'TV', 'Tuvalu', 688),
-(473, 'UG', 'Uganda', 256),
-(474, 'UA', 'Ukraine', 380),
-(475, 'AE', 'United Arab Emirates', 971),
-(476, 'GB', 'United Kingdom', 44),
-(477, 'US', 'United States', 1),
-(478, 'UM', 'United States Minor Outlying Islands', 1),
-(479, 'UY', 'Uruguay', 598),
-(480, 'UZ', 'Uzbekistan', 998),
-(481, 'VU', 'Vanuatu', 678),
-(482, 'VA', 'Vatican City State (Holy See)', 39),
-(483, 'VE', 'Venezuela', 58),
-(484, 'VN', 'Vietnam', 84),
-(485, 'VG', 'Virgin Islands (British)', 1284),
-(486, 'VI', 'Virgin Islands (US)', 1340),
-(487, 'WF', 'Wallis And Futuna Islands', 681),
-(488, 'EH', 'Western Sahara', 212),
-(489, 'YE', 'Yemen', 967),
-(490, 'YU', 'Yugoslavia', 38),
-(491, 'ZM', 'Zambia', 260),
-(492, 'ZW', 'Zimbabwe', 263);
+(246, 'ZW', 'Zimbabwe', 263);
 
 -- --------------------------------------------------------
 
@@ -48586,15 +48417,15 @@ INSERT INTO `country` (`country_id`, `sortname`, `name`, `phonecode`) VALUES
 
 CREATE TABLE `customers` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dob` date DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `current_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Unactive',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `contact` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profile_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Unactive',
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48604,14 +48435,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `dob`, `contact`, `email`, `gender`, `profile_image`, `password`, `current_status`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Rahul Shah', '2000-01-03', '7898335057', 'rahul.shah@secondmedic.com', 'Male', NULL, NULL, 'Active', '1', '2023-12-04 15:54:59', '2023-12-14 09:56:41'),
-(2, NULL, NULL, '9051507385', '', NULL, NULL, NULL, 'Active', '1', '2023-12-05 12:12:38', '2023-12-05 12:15:48'),
-(3, NULL, NULL, '7000027558', '', NULL, NULL, NULL, 'Active', '1', '2023-12-11 09:53:57', '2023-12-14 11:26:46'),
-(4, NULL, NULL, '8789727379', '', NULL, NULL, NULL, 'Active', '1', '2023-12-13 10:04:55', '2023-12-13 10:04:55'),
-(5, NULL, NULL, '+918850825664', '', NULL, NULL, NULL, 'Active', '1', '2023-12-13 10:30:51', '2023-12-13 10:30:51'),
-(6, NULL, NULL, '8850825664', '', NULL, NULL, NULL, 'Active', '1', '2023-12-13 10:32:36', '2023-12-13 10:33:04'),
-(7, NULL, NULL, '7000027558edeedededefefefefefeefefeeffeef', '', NULL, NULL, NULL, 'Active', '1', '2023-12-13 11:55:36', '2023-12-13 11:55:36'),
-(8, NULL, NULL, '7000027558qedefdafafddafa', '', NULL, NULL, NULL, 'Active', '1', '2023-12-13 11:57:47', '2023-12-13 11:57:47');
+(1, 'Rahul Shah', '2000-01-03', '7898335057', 'rahul@gmail.com', NULL, NULL, '827ccb0eea8a706c4c34a16891f84e7b', 'Active', '1', '2023-12-25 10:56:27', '2023-12-25 10:56:27');
 
 -- --------------------------------------------------------
 
@@ -48621,19 +48445,19 @@ INSERT INTO `customers` (`id`, `name`, `dob`, `contact`, `email`, `gender`, `pro
 
 CREATE TABLE `customer_address` (
   `id` bigint UNSIGNED NOT NULL,
-  `customer_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `house_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `landmark` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `default_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `customer_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `house_no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `landmark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `default_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48643,127 +48467,7 @@ CREATE TABLE `customer_address` (
 --
 
 INSERT INTO `customer_address` (`id`, `customer_id`, `name`, `email`, `contact`, `house_no`, `address`, `landmark`, `pincode`, `city`, `state`, `country`, `default_address`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', 'Rahul Shah', 'rahul.shah@secondmedic.com', '7898335057', 'Test Address', 'Test Address', 'Test Address', '462023', '2145', '21', '101', '1', '1', '2023-12-04 19:19:48', '2023-12-04 19:19:48');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `doctors`
---
-
-CREATE TABLE `doctors` (
-  `id` bigint UNSIGNED NOT NULL,
-  `user_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_password` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_pin` int DEFAULT NULL,
-  `user_date` date NOT NULL,
-  `user_time` time NOT NULL,
-  `user_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Doctor',
-  `user_alt_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_city` int DEFAULT NULL,
-  `user_state` int DEFAULT NULL,
-  `user_country` int DEFAULT NULL,
-  `user_pincode` text COLLATE utf8mb4_unicode_ci,
-  `user_address` text COLLATE utf8mb4_unicode_ci,
-  `user_gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_dob` date DEFAULT NULL,
-  `user_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'public/default-user.webp',
-  `user_age` int DEFAULT NULL,
-  `refer_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_recover_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_approve` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_signature` text COLLATE utf8mb4_unicode_ci,
-  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `doctor_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `social_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `doctors`
---
-
-INSERT INTO `doctors` (`id`, `user_title`, `user_name`, `country_code`, `user_contact`, `user_email`, `user_password`, `user_pin`, `user_date`, `user_time`, `user_status`, `user_type`, `user_alt_contact`, `user_city`, `user_state`, `user_country`, `user_pincode`, `user_address`, `user_gender`, `user_dob`, `user_image`, `user_age`, `refer_key`, `user_recover_code`, `user_approve`, `user_signature`, `registration_number`, `doctor_id`, `social_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Dr', 'Ayushma Puri', NULL, '8755447875', 'ayushmaicy07@gmail.com', 'f925916e2754e5e03f75dd58a5733251', NULL, '2023-11-25', '06:46:56', 'Active', 'Doctor', '8755447875', 4933, 38, 101, '000000', 'Test Address', 'Female', '1990-01-01', 'uploads/user_image/1700811645_user_image.webp', 33, NULL, NULL, NULL, 'uploads/user_signature/1700811645_user_signature.jpg', 'TEST123456', 'GLLDWOVCT1WO', NULL, '1', '2023-11-24 07:40:45', '2023-11-25 06:46:56'),
-(2, 'Dr', 'Kovid Pandey', NULL, '8527416151', 'kovidpanday@gmail.com', 'f925916e2754e5e03f75dd58a5733251', NULL, '2023-11-25', '06:46:47', 'Active', 'Doctor', '8527416151', 4933, 38, 101, '000000', 'Test Address', 'Male', '1990-01-01', 'uploads/user_image/1700812091_user_image.webp', 33, NULL, NULL, NULL, 'uploads/user_signature/1700812091_user_signature.jpg', 'TEST123456', 'ZZNPAJPIVJJ9', NULL, '1', '2023-11-24 07:48:11', '2023-11-25 06:46:47'),
-(3, 'Dr', 'DAYANAND SINGH', NULL, '9720964620', 'drdayanandsingh2@gmail.com', 'f925916e2754e5e03f75dd58a5733251', NULL, '2023-11-25', '06:46:37', 'Active', 'Doctor', '9720964620', 5297, 39, 101, '247667', 'RAILWAY ROAD ROORKEE', 'Male', '1970-01-01', 'uploads/user_image/1700812513_user_image.webp', 53, NULL, NULL, NULL, 'uploads/user_signature/1700812513_user_signature.png', 'TEST123456', 'DNCCPZAGNET1', NULL, '1', '2023-11-24 07:55:13', '2023-11-25 06:46:37'),
-(4, 'Dr', 'Abhijeet Rathi', NULL, '8171463073', 'drabhijeetrathi02@gmail.com', 'f925916e2754e5e03f75dd58a5733251', NULL, '2023-11-25', '06:46:29', 'Active', 'Doctor', '8171463073', 2707, 22, 101, '000000', 'Test Address', 'Male', '1995-01-01', 'uploads/user_image/1700812718_user_image.webp', 28, NULL, NULL, NULL, 'uploads/user_signature/1700812718_user_signature.jpg', 'TEST123456', 'EA41LCRWBIZD', NULL, '1', '2023-11-24 07:58:38', '2023-11-25 06:46:29'),
-(5, 'Dr', 'Syed Mukhtar Mohiuddin', NULL, '7658927641', 'drmukhtar7@gmail.com', 'f925916e2754e5e03f75dd58a5733251', NULL, '2023-11-25', '06:46:21', 'Active', 'Doctor', '7658927641', 4460, 36, 101, '500057', 'Mednas Health Care Center ,10-03-291/10', 'Male', '1985-01-01', 'uploads/user_image/1700813035_user_image.webp', 38, NULL, NULL, NULL, 'uploads/user_signature/1700813035_user_signature.png', 'TEST123456', '0TIXXUOF3UB7', NULL, '1', '2023-11-24 08:03:55', '2023-11-25 06:46:21');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `doctor_consult_leads`
---
-
-CREATE TABLE `doctor_consult_leads` (
-  `id` bigint UNSIGNED NOT NULL,
-  `customer_id` int DEFAULT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `doctor_id` int NOT NULL,
-  `meeting_room_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dob` date NOT NULL,
-  `message` longtext COLLATE utf8mb4_unicode_ci,
-  `state` int NOT NULL,
-  `consultation_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `consultation_price` float NOT NULL,
-  `payment_status` tinyint NOT NULL DEFAULT '0',
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `doctor_consult_leads`
---
-
-INSERT INTO `doctor_consult_leads` (`id`, `customer_id`, `service_provider_id`, `doctor_id`, `meeting_room_id`, `name`, `gender`, `email`, `contact`, `dob`, `message`, `state`, `consultation_type`, `consultation_price`, `payment_status`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 1, 'd31a-qln2-933v', 'Rahul Shah', 'Male', 'rahul.shah@secondmedic.com', '7898335057', '2000-01-03', 'testing', 1, 'video-consultation', 149, 1, 1, '2023-12-11 16:18:13', '2023-12-11 16:18:25'),
-(2, 3, NULL, 1, '9aa3-41z5-b6kc', 'test', 'Male', 'aniket.namdeo@secondmedic', '7000027558', '2013-12-12', 'test', 10, 'video-consultation', 149, 1, 1, '2023-12-13 17:26:14', '2023-12-13 17:26:39'),
-(3, 1, NULL, 3, 'dlcl-n9im-47nx', 'Rahul Shah', 'Male', 'rahul.shah@secondmedic.com', '7898335057', '2000-01-03', 'tesitng', 21, 'video-consultation', 149, 1, 1, '2023-12-14 09:56:55', '2023-12-14 10:41:26');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `doctor_details`
---
-
-CREATE TABLE `doctor_details` (
-  `id` bigint UNSIGNED NOT NULL,
-  `doctor_id` int NOT NULL,
-  `qualification` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `experience` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `language` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `chat_consultation` float NOT NULL,
-  `video_consultation` float NOT NULL,
-  `available_from` time NOT NULL,
-  `available_to` time NOT NULL,
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `doctor_details`
---
-
-INSERT INTO `doctor_details` (`id`, `doctor_id`, `qualification`, `experience`, `language`, `chat_consultation`, `video_consultation`, `available_from`, `available_to`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'MBBS, DNB (Gynecology)', '4', 'English, Hindi', 99, 149, '10:00:00', '18:00:00', 1, '2023-11-24 07:40:45', '2023-11-25 06:46:56'),
-(2, 2, 'MBBS', '5', 'English, Hindi', 99, 149, '16:00:00', '23:59:00', 1, '2023-11-24 07:48:11', '2023-11-25 06:46:47'),
-(3, 3, 'M.D. (Physician)', '23', 'English, Hindi and Russian', 99, 149, '07:00:00', '11:00:00', 1, '2023-11-24 07:55:13', '2023-11-25 06:46:37'),
-(4, 4, 'MBBS ,General Physician', '2', 'English', 99, 149, '18:00:00', '22:00:00', 1, '2023-11-24 07:58:38', '2023-11-25 06:46:29'),
-(5, 5, 'MBBS, MD , Fellowship in Diabetes Mellitus (UK)', '7', 'English', 99, 149, '00:00:00', '07:00:00', 1, '2023-11-24 08:03:55', '2023-11-25 06:46:21');
+(1, '1', 'Rahul Shah', 'rahul@gmail.com', '7898335057', 'Ward No 30 room no 123', 'Pachkhora waidhan', 'Near Ronak Kirana shop', '486886', '2440', '21', '101', '1', '1', '2023-12-25 10:56:27', '2023-12-25 10:56:27');
 
 -- --------------------------------------------------------
 
@@ -48773,11 +48477,11 @@ INSERT INTO `doctor_details` (`id`, `doctor_id`, `qualification`, `experience`, 
 
 CREATE TABLE `email_template` (
   `id` bigint UNSIGNED NOT NULL,
-  `module_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `template_name` longtext COLLATE utf8mb4_unicode_ci,
-  `subject` longtext COLLATE utf8mb4_unicode_ci,
-  `title` longtext COLLATE utf8mb4_unicode_ci,
-  `content` longtext COLLATE utf8mb4_unicode_ci,
+  `module_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template_name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `subject` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -48788,7 +48492,8 @@ CREATE TABLE `email_template` (
 --
 
 INSERT INTO `email_template` (`id`, `module_id`, `template_name`, `subject`, `title`, `content`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1205PO', 'Pharmacy Prescription', 'Pharmacy Prescription', 'Pharmacy Prescription', '<div style=\"margin-left: 20px;\">\n <br/>Dear User <br/><br/>your request has been submited successfully. Details are mentioned below:<br/><br/>Name: @var1 <br/><br/> Email Address: @var2 <br/><br/> Contact Number: @var3 <br/><br/> Remark: @var4 <br/><br/> Address: @var5 <br/><br/> Prescription: @var6 <br/> <p><strong>Thank you for contacting Second Medic. Our executive will call you very shortly</strong></p><table><tr><td>\n<p><a style=\"color:#000;padding:0px;font-weight:bold\" href=\"https://api.whatsapp.com/send/?phone=+91&nbsp;9431171784&amp;text=Hi! SecondMedic, I would like to know about Health Care Services\" style=\"text-decoration:none; color:#0000FF;\"><img class=\"alignnone wp-image-10863 entered lazyloaded\" src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\" alt=\"\" width=\"208\" height=\"50\" data-lazy-src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\" data-ll-status=\"loaded\"></p>\n</td></tr></table> \n</div>', 1, '2023-12-05 06:29:16', '2023-12-05 06:29:16');
+(1, '1901CR', 'League City Consulting', 'League City Consulting', 'League City Consulting', '<div style=\"margin-left: 20px;\">\n    <br />Dear User <br /><br />your request has been submitted successfully. Details are mentioned\n    below:<br /><br />Name: @var1 <br /><br /> Email Address: @var2 <br /><br /> Contact Number: @var3 <br /><br />\n    Budget: @var4 <br /><br /> About Project: @var5 <br />\n    <p>\n        <strong>\n            Thank you for contacting League City Consulting. Our executive will call you very shortly\n        </strong>\n    </p>\n    <table>\n        <tr>\n            <td>\n                <p>\n                    <a style=\"color:#000;padding:0px;font-weight:bold\"\n                        href=\"https://api.whatsapp.com/send/?phone=+1 8323305432&amp;text=Hi! League City Consulting, I would like to know about your Services\"\n                        style=\"text-decoration:none; color:#0000FF;\">\n                        <img class=\"alignnone wp-image-10863 entered lazyloaded\"\n                            src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\"\n                            alt=\"\" width=\"208\" height=\"50\"\n                            data-lazy-src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\"\n                            data-ll-status=\"loaded\">\n                        </a>\n                </p>\n            </td>\n        </tr>\n    </table>\n</div>\n', 1, '2023-12-05 06:29:16', '2023-12-05 06:29:16'),
+(2, '0903PR', 'League City Consulting', 'League City Consulting', 'Thank you for Request', '<div style=\"margin-left: 20px;\">\r\n    <br />Dear User <br /><br />your request has been submitted successfully. Details are mentioned\r\n    below:<br /><br />Name: @var1 <br /><br /> Email Address: @var2 <br /><br /> Contact Number: @var3 <br /><br />\r\n    Location: @var4 <br /><br /> Plan: @var5 <br /><br /> Package: @var6 <br /><br /> About Project: @var7 <br />\r\n    <p>\r\n        <strong>\r\n            Thank you for contacting League City Consulting. Our executive will call you very shortly\r\n        </strong>\r\n    </p>\r\n    <table>\r\n        <tr>\r\n            <td>\r\n                <p>\r\n                    <a style=\"color:#000;padding:0px;font-weight:bold\"\r\n                        href=\"https://api.whatsapp.com/send/?phone=+1 8323305432&amp;text=Hi! League City Consulting, I would like to know about your Services\"\r\n                        style=\"text-decoration:none; color:#0000FF;\">\r\n                        <img class=\"alignnone wp-image-10863 entered lazyloaded\"\r\n                            src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\"\r\n                            alt=\"\" width=\"208\" height=\"50\"\r\n                            data-lazy-src=\"https://queensveda.b-cdn.net/wp-content/uploads/2022/10/whatsapp-logo-copy-s-400x96.png\"\r\n                            data-ll-status=\"loaded\">\r\n                        </a>\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</div>\r\n', 1, '2023-12-05 11:59:16', '2023-12-05 11:59:16');
 
 -- --------------------------------------------------------
 
@@ -48798,1358 +48503,33 @@ INSERT INTO `email_template` (`id`, `module_id`, `template_name`, `subject`, `ti
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery_images`
+-- Table structure for table `industry`
 --
 
-CREATE TABLE `gallery_images` (
+CREATE TABLE `industry` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_slug` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `industry_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `industry_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `gallery_images`
---
-
-INSERT INTO `gallery_images` (`id`, `service_provider_id`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.31_f8171716.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(2, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.29_29c6ffc7.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(3, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.30_2b71fbf8.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(4, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.30_37353c44.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(5, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.30_a6e21a16.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(6, 2, 'uploads/gallery_images/1701668139_WhatsApp Image 2023-12-02 at 15.57.29_4eb59949.jpg', 1, '2023-12-04 11:05:39', '2023-12-04 11:05:39'),
-(7, 1, 'uploads/gallery_images/1702532860_gallery4.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40'),
-(8, 1, 'uploads/gallery_images/1702532860_store.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40'),
-(9, 1, 'uploads/gallery_images/1702532860_about.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40'),
-(10, 1, 'uploads/gallery_images/1702532860_gallery.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40'),
-(11, 1, 'uploads/gallery_images/1702532860_gallery2.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40'),
-(12, 1, 'uploads/gallery_images/1702532860_gallery3.webp', 1, '2023-12-14 11:17:40', '2023-12-14 11:17:40');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `homecare_leads`
---
-
-CREATE TABLE `homecare_leads` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `customer_id` int DEFAULT NULL,
-  `service` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `message` longtext COLLATE utf8mb4_unicode_ci,
-  `service_charge` float DEFAULT NULL,
-  `service_status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `homecare_leads`
---
-
-INSERT INTO `homecare_leads` (`id`, `service_provider_id`, `customer_id`, `service`, `name`, `email`, `contact`, `message`, `service_charge`, `service_status`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, NULL, 'Nursing', 'test', 'aniket.namdeo@secondmedic', '7000027558', 'test', NULL, 'pending', 1, '2023-12-13 12:34:41', '2023-12-13 12:34:41');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `homecare_nurse`
---
-
-CREATE TABLE `homecare_nurse` (
-  `id` bigint UNSIGNED NOT NULL,
-  `nurse_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_password` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_date` date NOT NULL,
-  `user_time` time NOT NULL,
-  `user_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Nurse',
-  `user_alt_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_city` int DEFAULT NULL,
-  `user_state` int DEFAULT NULL,
-  `user_country` int DEFAULT NULL,
-  `user_pincode` text COLLATE utf8mb4_unicode_ci,
-  `user_address` text COLLATE utf8mb4_unicode_ci,
-  `user_gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_dob` date DEFAULT NULL,
-  `user_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'public/default-user.webp',
-  `user_age` int DEFAULT NULL,
-  `user_recover_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_approve` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labs`
---
-
-CREATE TABLE `labs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `lab_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lab_route_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lab_logo` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lab_content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lab_qms` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `show_front` int NOT NULL DEFAULT '1' COMMENT '1-show,0-hide',
-  `location_config` enum('0','1','2','3') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '0=no pincode & city & Locality, 1=pincode only,2=city & pincode,3=only city',
-  `sort_order` int NOT NULL DEFAULT '50',
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `labs`
---
-
-INSERT INTO `labs` (`id`, `lab_name`, `lab_route_name`, `lab_logo`, `lab_content`, `lab_qms`, `show_front`, `location_config`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Thyrocare', 'thyrocare', 'uploads/labs/1700721609_lab_logo.webp', 'Thyrocare Technologies Limited is India\'s first and most advanced Totally Automated Laboratory having its strong presence in more than 2000 cities / towns in India and internationally. Thyrocare is India\'s first fully automated diagnostic laboratory with a focus on providing quality at affordable costs to laboratories and hospitals in India and other countries. Thyrocare operates with a Centralized Processing Laboratory (CPL) in Mumbai - India for esoteric tests; and Regional Processing Laboratory in major metro cities of India and other parts of Asia. We have focus on strong technologies, strong brands and strong systems that enable all laboratories to give their clients the best of science and technology at an affordable cost. With a belief that \'Quality\' is the heart of any intelligent management, Thyrocare became one of the first Indian diagnostic laboratories to obtain internationally renowned quality accreditations like ISO 9001-2000 rating as early as 2001 and CAP (College of American Pathologists) certification in 2007.\r\n\r\n\r\nLab Name: Thyrocare Technologies Limited\r\nLab Address: D-37/1, MIDC, Turbhe, Opp. Sandoz400703\r\nLab Registration Status: Public Limited Company\r\nLab Contact Number: 8971221916\r\nListed through LFS Healthcare Private Limited.', NULL, 1, '0', 50, 1, '2023-11-23 06:40:09', '2023-11-23 06:40:09');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labs_category`
---
-
-CREATE TABLE `labs_category` (
-  `id` bigint UNSIGNED NOT NULL,
-  `category_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category_detail` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category_image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `category_parent` int NOT NULL DEFAULT '0',
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `labs_category`
---
-
-INSERT INTO `labs_category` (`id`, `category_name`, `category_detail`, `category_image`, `category_parent`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Covid Panel', 'COVIDRELATED PROFILE', NULL, 0, 1, '2023-11-23 08:39:09', '2023-11-23 08:39:09'),
-(2, 'Women Health And Reproductive Disorders', 'Women Health And Reproductive Disorders', NULL, 0, 1, '2023-11-23 08:41:20', '2023-11-23 08:41:20'),
-(3, 'Full Body Health Check Panels', 'Good health is not a target, it is your way of living. You can get a complete understanding of your health and the implications of your everyday choices with this full-body health checkup.', NULL, 0, 1, '2023-11-23 08:42:34', '2023-11-23 08:42:34'),
-(4, 'Covid19', 'Covid-19 Test', NULL, 0, 1, '2023-11-23 08:44:29', '2023-11-23 08:44:29'),
-(5, 'Health Checkup Packages', 'Health Checkup Packages', NULL, 0, 1, '2023-11-23 08:44:51', '2023-11-23 08:44:51'),
-(6, 'Popular Packages', 'Popular Packages', NULL, 0, 1, '2023-11-23 08:45:12', '2023-11-23 08:45:12'),
-(7, 'AAROGYAM SPECIAL', 'AAROGYAM SPECIAL CHECKUP', NULL, 0, 1, '2023-11-23 08:45:39', '2023-11-23 08:45:39'),
-(8, 'Aarogyam / Anandham - Popular Packages', 'Aarogyam / Anandham', NULL, 0, 1, '2023-11-23 08:46:36', '2023-11-23 08:46:36'),
-(9, 'Single Profile', 'Individual Profile', NULL, 0, 1, '2023-11-23 08:47:01', '2023-11-23 08:47:01'),
-(10, 'Wellness Packages', 'Wellness Packages', NULL, 0, 1, '2023-11-23 08:47:36', '2023-11-23 08:47:36'),
-(11, 'Disorders of Skin', 'Disorders of Skin', NULL, 0, 1, '2023-11-23 08:47:54', '2023-11-23 08:47:54'),
-(12, 'Tumor Marker', 'Tumor Marker', NULL, 0, 1, '2023-11-23 08:48:19', '2023-11-23 08:48:19'),
-(13, 'Senior Citizen Special Packages', 'Senior Citizen Special Packages', NULL, 0, 1, '2023-11-23 08:48:34', '2023-11-23 08:48:34'),
-(14, 'Thyrocare Mumbai', 'Thyrocare Mumbai', NULL, 0, 1, '2023-11-23 08:49:52', '2023-11-23 08:49:52'),
-(15, 'Profile', 'Combination of tests', NULL, 0, 1, '2023-11-23 08:50:19', '2023-11-23 08:50:19'),
-(16, 'Fever', 'Fever', NULL, 0, 1, '2023-11-23 08:50:42', '2023-11-23 08:50:42');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labs_package`
---
-
-CREATE TABLE `labs_package` (
-  `id` bigint UNSIGNED NOT NULL,
-  `lab_vendor_id` int DEFAULT NULL,
-  `package_category` int DEFAULT NULL,
-  `package_sub_category` int DEFAULT NULL,
-  `package_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `package_test_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `package_short_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `package_image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `package_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `package_mrp` int NOT NULL,
-  `package_price` int NOT NULL,
-  `package_gst` int NOT NULL,
-  `show_front` tinyint NOT NULL DEFAULT '1',
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `report_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `labs_package`
---
-
-INSERT INTO `labs_package` (`id`, `lab_vendor_id`, `package_category`, `package_sub_category`, `package_name`, `package_test_name`, `package_short_description`, `package_image`, `package_description`, `package_mrp`, `package_price`, `package_gst`, `show_front`, `status`, `created_at`, `updated_at`, `report_code`) VALUES
-(1, 1, 5, NULL, 'Test Package', 'Test Package', 'Test Package Description', 'uploads/labs/1700734588_package_image.jpg', '<p>Test Package Description</p>', 0, 0, 0, 1, 0, '0000-00-00 00:00:00', '2023-11-25 05:53:17', NULL),
-(2, 1, 1, NULL, 'Post Covid Care', 'POST COVID CARE', 'Post Covid Care Basic', 'uploads/labs/1700734470_package_image.webp', '<p><strong>Post Covid Care</strong> for those who have recovered from COVID recently. Study says that even after you fully recovered from the COVID infection, COVID-19 can have lingering impact on your body organs for many days or even months. We at SecondMedic provides you with best price for <strong>Post Covid Care</strong>&nbsp;with free home collection.&nbsp;This checkup helps you assess your overall health. It will help you identify major chronic illnesses such as diabetes, liver and thyroid functioning, as well as any deficiencies. Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Post Covid Care</strong>&nbsp;package can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><big><strong>How can you benefit from Post Covid Care?&nbsp;</strong></big></h3>\r\n\r\n<p>Thyrocare&#39;s professionals will perform the&nbsp;<strong>Post Covid Care&nbsp;package</strong>, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><big><strong>Post Covid Care&nbsp;package&nbsp;FAQ</strong></big></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Post Covid Care&nbsp;package?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since <strong>Post Covid Care&nbsp;package</strong> is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Post Covid Care&nbsp;package?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 2000, 1199, 1199, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:14:30', 'PROJ1021766'),
-(3, 1, 1, NULL, 'Post Covid Care Advance', 'POST COVID CARE - ADVANCED', 'Post Covid Care Advance', 'uploads/labs/1700734431_package_image.webp', '<p><strong>Post Covid Care Advance</strong> for those who have recovered from COVID recently. Study says that even after you fully recovered from the COVID infection, COVID-19 can have lingering impact on your body organs for many days or even months. We at SecondMedic provides you with best price for <strong>Post Covid Care Advance</strong>&nbsp;with free home collection.&nbsp;This checkup helps you assess your overall health. It will help you identify major chronic illnesses such as diabetes, liver and thyroid functioning, as well as any deficiencies. Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Post Covid Care Advance</strong> can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><big><strong>How can you benefit from Post Covid Care Advance?</strong></big></h3>\r\n\r\n<p>Thyrocare&#39;s professionals will perform the&nbsp;<strong>Post Covid Care Advance</strong>, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><big><strong>Post Covid Care Advance&nbsp;FAQ</strong></big></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Post Covid Care Advance?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since <strong>Post Covid Care Advance</strong> is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Post Covid Care Advance?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 5000, 1799, 1799, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:13:51', 'PROJ1021767'),
-(4, 1, 1, NULL, 'Covid Infection Monitoring Advanced', 'COVID INFECTION MONITORING - ADVANCED', 'Covid Infection Monitoring Advanced', 'uploads/labs/1700734399_package_image.webp', '<p><strong>Covid Infection Monitoring Advanced</strong> is an advanced profile with a comprehensive range of tests including D-dimer, Interleukin-6, C-reactive protein, Ferritin, and Lactate dehydrogenase, Complete hemogram, Aspartate aminotransferase, Alanine transaminase, Gamma-glutamyltransferase, Creatinine - serum, and Erythrocyte sedimentation rate. These tests will keep you reassured about your overall health and keep you from feeling overwhelmed or anxious during the course of the infection. These tests monitor the levels of essential biomarkers that may signal secondary infection or inflammation, as well as disease status, therapeutic response, and disease progression.</p>\r\n\r\n<p>This checkup helps you assess your overall health.&nbsp;Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Covid Infection Monitoring Advanced&nbsp;</strong>can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><big><strong>How can you benefit from Covid Infection Monitoring Advanced?</strong></big></h3>\r\n\r\n<p>Thyrocare&#39;s professionals will perform the&nbsp;<strong>Covid Infection Monitoring Advanced</strong>, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><big><strong>Covid Infection Monitoring Advanced&nbsp;FAQ</strong></big></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Covid Infection Monitoring Advanced?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since <strong>Covid Infection Monitoring Advanced</strong> is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Covid Infection Monitoring Advanced?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 5000, 2299, 2299, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:11:38', 'PROJ1021765'),
-(5, 1, 2, NULL, 'Double Marker - First Trimester', 'DOUBLE MARKER - FIRST TRIMESTER', 'Double Marker - First Trimester', 'uploads/labs/1700734371_package_image.webp', '<h3><strong>Importance&#39;s&nbsp;of Thyrocare Double Marker - First Trimester</strong></h3>\r\n\r\n<p><strong>Double Marker - First Trimester :-&nbsp;</strong>The double marker test, also known as maternal serum screening, is&nbsp;<strong>part of a more comprehensive screening called the first trimester screening</strong>. It&#39;s not a definitive test. Instead, it&#39;s classified as a predictive test, which means its results report the likelihood of chromosomal abnormalities.&nbsp;We at <strong><a href=\"https://www.secondmedic.com/\" target=\"_blank\">SecondMedic</a></strong> provides you with <strong>best price for Double Marker - First Trimester&nbsp;</strong>with <strong>free home collection</strong>.&nbsp;This checkup helps you assess your overall health. It will help you identify major chronic illnesses such as diabetes, liver and thyroid functioning, as well as any deficiencies. Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Double Marker - First Trimester</strong> can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><strong>How can you benefit from Double Marker - First Trimester?</strong></h3>\r\n\r\n<p><strong><a href=\"https://www.secondmedic.com/lab/thyrocare/\" target=\"_blank\">Thyrocare</a></strong>&nbsp;professionals will perform the&nbsp;<strong>Double Marker - First Trimester</strong>&nbsp;health checkup package, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><strong>Full Body Health Standard&nbsp;FAQ</strong></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Double Marker - First Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since Double Marker - First Trimester is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Double Marker - First Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 4500, 2200, 2200, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:11:24', 'P198'),
-(6, 1, 2, NULL, 'Triple Marker - Second Trimester', 'TRIPLE MARKER - SECOND TRIMESTER', 'Triple Marker - Second Trimester', 'uploads/labs/1700734349_package_image.webp', '<h3><strong>Importance&#39;s&nbsp;of Thyrocare Triple Marker - Second Trimester</strong></h3>\r\n\r\n<p><strong>Triple Marker - Second Trimester :-&nbsp;&nbsp;</strong>The Triple Test is&nbsp;a blood test performed during pregnancy to help you and your physician learn more about your developing baby. Its purpose is to SCREEN for possible neural tube defects, Down syndrome and Trisomy 18 in the developing baby.&nbsp;We at <strong><a href=\"https://www.secondmedic.com/\" target=\"_blank\">SecondMedic</a></strong> provides you with <strong>best price for Triple Marker - Second Trimester&nbsp;</strong>with <strong>free home collection</strong>.&nbsp;This checkup helps you assess your overall health. It will help you identify major chronic illnesses such as diabetes, liver and thyroid functioning, as well as any deficiencies. Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Triple Marker - Second Trimester</strong> can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><strong>How can you benefit from Triple Marker - Second Trimester?</strong></h3>\r\n\r\n<p><strong><a href=\"https://www.secondmedic.com/lab/thyrocare/\" target=\"_blank\">Thyrocare</a></strong>&nbsp;professionals will perform the&nbsp;<strong>Triple Marker - Second Trimester</strong> health checkup package, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><strong>Triple Marker - Second Trimester&nbsp;FAQ</strong></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Triple Marker - Second Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since Triple Marker - Second Trimester is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Triple Marker - Second Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 5200, 2500, 2500, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:11:09', 'P142'),
-(7, 1, 2, NULL, 'Quadruple Marker - Second Trimester', 'QUADRUPLE MARKER - SECOND TRIMESTER', 'Quadruple Marker - Second Trimester', 'uploads/labs/1700734322_package_image.webp', '<h3><strong>Importance&#39;s&nbsp;of Quadruple Marker - Second Trimester</strong></h3>\r\n\r\n<p><strong>Quadruple Marker - Second Trimester&nbsp;</strong>The quadruple screen test is&nbsp;<strong>a blood test done during pregnancy to determine whether the baby is at risk for certain birth defects</strong>. A blood test can be performed between the 15th and 22nd weeks of the pregnancy to determine whether the baby is at risk for certain birth defects..&nbsp;We at <strong><a href=\"https://www.secondmedic.com/\" target=\"_blank\">SecondMedic</a></strong> provides you with <strong>best price for Quadruple Marker - Second Trimester&nbsp;</strong>with <strong>free home collection</strong>.&nbsp;This checkup helps you assess your overall health. It will help you identify major chronic illnesses such as diabetes, liver and thyroid functioning, as well as any deficiencies. Diagnosing such problems at the right time can help you identify the best treatment options and reduce risks. Thyrocare&#39;s&nbsp;<strong>Quadruple Marker - Second Trimester</strong> can help you with early detection.</p>\r\n\r\n<h2>&nbsp;</h2>\r\n\r\n<h3><strong>How can you benefit from Quadruple Marker - Second Trimester?</strong></h3>\r\n\r\n<p><strong><a href=\"https://www.secondmedic.com/lab/thyrocare/\" target=\"_blank\">Thyrocare</a></strong>&nbsp;professionals will perform the&nbsp;<strong>Quadruple Marker - Second Trimester</strong> health checkup package, which includes blood testing. All of the tests will be carried out at their labs, which are spread across India. Health education that is both useful and reliable.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3><strong>Quadruple Marker - Second Trimester&nbsp;FAQ</strong></h3>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<p><strong>1. How long will the results take?</strong></p>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<p><strong>2. What is the process for the sample collection?</strong></p>\r\n\r\n<p><strong>Answer:</strong> As soon as the order is placed with us, our team will reach out to you on your registered number (please ensure your phone is reachable) to confirm the order. Once you connect with Thyrocare&#39;s team member a payment link will be sent to you on your number via SMS/Email. Our highly professional, trained and vaccinated Thyrocare&#39;s eMedic would be at your doorstep at the slot booked by you (available slots can be seen on order confirmation page).</p>\r\n\r\n<hr />\r\n<p><strong>3. When should I take Quadruple Marker - Second Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since Quadruple Marker - Second Trimester is a fasting profile, it is best to get it done early in the morning.</p>\r\n\r\n<hr />\r\n<p><strong>4. Any precautions to be taken prior to task Quadruple Marker - Second Trimester?</strong></p>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least 10 to 12 hours before the test.</p>', 6000, 2700, 2700, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:10:50', 'P249'),
-(8, 1, 3, NULL, 'AAROGYAM 1.2', 'AAROGYAM 1.2 WITH UTSH', 'Be in charge of your health and care. Prioritize yourself and master your good health with this Aarogyam 1.2', 'uploads/labs/1700734298_package_image.webp', '<h2><strong>Thyrocare Aarogyam 1.2 Profile:&nbsp;</strong></h2>\r\n\r\n<p><strong>Aarogyam 1.2</strong>&nbsp;Profile is a full body checkup, also known as comprehensive health screenings, are evaluations of an individual&#39;s overall health status. <strong>Aarogyam 1.2</strong> is a&nbsp;preventive package refers to a set of measures or actions taken to prevent a potential problem or illness from occurring. This can include things like vaccinations, screenings, and lifestyle changes. For example, a preventive package for heart disease might include regular exercise, a healthy diet, and regular check-ups with a doctor.</p>\r\n\r\n<p><strong>Thyrocare Aarogyam 1.2</strong> Profile contains&nbsp;<strong>89 </strong>Tests including:&nbsp;Iron Deficiency, Lipid, Diabetes, Cardiac Risk Marker, Liver etc., and many more.&nbsp;</p>\r\n\r\n<p>Sample Type: <strong>Blood</strong>, <strong>10-12 </strong>Hours Fasting Required</p>\r\n\r\n<p>Home Collection: <strong>Possible</strong></p>\r\n\r\n<h2>Benefits of Thyrocare Aarogyam 1.2 Profile</h2>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h2><strong>FAQ</strong></h2>\r\n\r\n<h3><big><small><strong>1. When will Aarogyam 1.2&#39;s results be available?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<h3><big><small><strong>2. What is the Price of Thyrocare Aarogyam 1.2&nbsp;Profile?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong> At&nbsp;<strong>SecondMedic&nbsp;</strong>only you can book<strong>&nbsp;Thyrocare Aarogyam 1.2&nbsp;Profile</strong>&nbsp;at Just Rs&nbsp;<strong>1330</strong>/- Only.&nbsp;</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>3. When should One&nbsp;take Thyrocare Aarogyam 1.2&nbsp;test?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since&nbsp;<strong>Aarogyam 1.2</strong>&nbsp;is a Preventive Checkup, it&#39;s recommended to get tested&nbsp;<strong>Twice&nbsp;</strong>a Year for your Good Health Monitoring.</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>4. How many test&#39;s are included in Thyrocare Aarogyam 1.2 test?&nbsp;</strong></small></big></h3>\r\n\r\n<p><strong>Answer: </strong>In <strong>Aarogyam 1.2</strong> Profile total <strong>89 </strong>Parameters are included.&nbsp;</p>', 2200, 1799, 0, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:10:33', 'PROJ1035300'),
-(9, 1, 3, NULL, 'AAROGYAM 1.4', 'AAROGYAM 1.4 WITH UTSH', 'Be in charge of your health and care. Prioritize yourself and master your good health with this Aarogyam 1.4', 'uploads/labs/1700734276_package_image.webp', '<h2><strong>Thyrocare Aarogyam 1.4 Package:</strong></h2>\r\n\r\n<p><strong>Aarogyam 1.4 Package</strong>, also known as comprehensive health screenings, are evaluations of an individual&#39;s overall health status. They typically include a physical examination, a review of medical history and lifestyle habits, and a variety of laboratory tests to check for common health problems such as heart disease, cancer, diabetes, and thyroid disorders. The specific tests included in a full body screening may vary depending on the individual&#39;s age, sex, and risk factors. The goal of <strong>Aarogyam 1.4</strong>&nbsp;<strong>Package </strong>testing is to identify potential health issues early, so they can be treated or managed before they become more serious.</p>\r\n\r\n<p><strong>Thyrocare Aarogyam 1.4 package </strong>contains <strong>103 </strong>Tests including: Diabetes, Iron Deficiency, Cardiac Risk Marker, CBC, Vitamins and many More.&nbsp;</p>\r\n\r\n<p>Sample Type: <strong>Blood</strong>, <strong>10-12 </strong>Hours of Fasting Required.&nbsp;</p>\r\n\r\n<p>Home Collection: <strong>Possible</strong></p>\r\n\r\n<h2>Benefits of Thyrocare Aarogyam 1.4 Package:</h2>\r\n\r\n<ul>\r\n	<li>\r\n	<p>You will be able to achieve all of your health goals with the results of the<strong>&nbsp;Aarogyam 1.4 Package.&nbsp;</strong></p>\r\n	</li>\r\n	<li>\r\n	<p>Early disease detection and treatment are possible.</p>\r\n	</li>\r\n	<li>\r\n	<p>The test aids doctors in managing your serious health issues such as thyroid, diabetes, hypertension, kidney disorders, and liver ailments more easily.</p>\r\n	</li>\r\n	<li>\r\n	<p>The&nbsp;<strong>Aarogyam 1.4 Package&nbsp;</strong>helps you to get rid of certain serious health problems in the early stages with the right treatments.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2><strong>FAQ</strong></h2>\r\n\r\n<h3><big><small><strong>1. By when will Aarogyam 1.4&#39;s package results be available?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<h3><big><small><strong>2. What is the Price of Thyrocare Aarogyam 1.4 Package?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong> Only at&nbsp;<strong>SecondMedic </strong>book <strong>Thyrocare Aarogyam 1.4&nbsp;Package</strong> worth 3800 just at <strong>2650</strong>/- Only. And avail Free Dr.Conusltation post result.&nbsp;</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>3. When should One&nbsp;take Thyrocare Aarogyam 1.4&nbsp;Package?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since&nbsp;<strong>Aarogyam 1.4</strong>&nbsp;is a Preventive Checkup, it&#39;s recommended to get tested&nbsp;<strong>Twice&nbsp;</strong>a Year for your Good Health Monitoring.</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>4. What are the Thyrocare Aarogyam 1.4 Package test details?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;Thyrocare Aarogyam 1.4 package </strong>contains <strong>103 Tests </strong>including: Diabetes, Iron Deficiency, Cardiac Risk Marker, CBC, Vitamins and many More.</p>', 3800, 3300, 0, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:10:15', 'PROJ1035528'),
-(10, 1, 3, NULL, 'AAROGYAM 1.7', 'AAROGYAM 1.7 WITH UTSH', 'Be in charge of your health and care. Prioritize yourself and master your good health with this Aarogyam 1.7', 'uploads/labs/1700734249_package_image.webp', '<h2><strong>Thyrocare Aarogyam 1.7 Package:</strong></h2>\r\n\r\n<p><strong>Thyrocare Aarogyam 1.7 Package</strong>&nbsp;is a comprehensive medical examination that evaluates an individual&#39;s overall health status. It typically includes tests such as blood tests, imaging scans, cardiovascular assessments, and other tests relevant to an individual&#39;s age, gender, medical history, and lifestyle. The aim of <strong>Thyrocare Aarogyam 1.7 Package </strong>is to identify any potential health issues and provide a complete picture of an individual&#39;s health status, enabling early detection and treatment of any issues.&nbsp;</p>\r\n\r\n<p><strong>Thyrocare Aarogyam 1.7 Package</strong> contains <strong>109 </strong>tests including: Iron Deficiency, Diabetes, LFT, KFT, Cardiac Risk Marker, Testosterone Hormone, Vitamins and many More.&nbsp;</p>\r\n\r\n<p>Sample Type: <strong>Blood</strong>, <strong>10-12</strong> Hours Fasting Required</p>\r\n\r\n<p>Home Collection: <strong>Possible</strong></p>\r\n\r\n<h2>Benefits of Aarogyam 1.7 Package:</h2>\r\n\r\n<ul>\r\n	<li>\r\n	<p>On the basis of<strong> Aarogyam 1.7</strong> test&nbsp;result, you will be able to accomplish all your health goals.&bull;&nbsp;</p>\r\n	</li>\r\n	<li>\r\n	<p>It detects illnesses at an early stage.&bull;&nbsp;</p>\r\n	</li>\r\n	<li>\r\n	<p>The test aids doctors in managing your serious health issues such as thyroid, diabetes, hypertension, kidney disorders, and liver ailments more easily.&bull;</p>\r\n	</li>\r\n	<li>\r\n	<p>&nbsp;After a complete analysis of this health checkup, your doctor may recommend proper medications and better lifestyle and diet modification strategies.&bull;&nbsp;</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Aarogyam 1.7 Package</strong>&nbsp;helps you to get rid of certain serious health problems in the early stages with the right treatments.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h2><strong>FAQ</strong></h2>\r\n\r\n<h3><big><small><strong>1. By when will Aarogyam 1.7&#39;s package results be available?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<h3><big><small><strong>2. What are the Thyrocare Aarogyam 1.7&nbsp;Package test details?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;<strong>Thyrocare Aarogyam 1.7&nbsp;package&nbsp;</strong>contains&nbsp;<strong>109&nbsp;Tests&nbsp;</strong>including:Iron Deficiency, Diabetes, LFT, KFT, Cardiac Risk Marker, Testosterone Hormone, Vitamins and many More.&nbsp;</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>3. What is the Price of Thyrocare Aarogyam 1.7&nbsp;Package?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Only at&nbsp;<strong>SecondMedic&nbsp;</strong>book&nbsp;<strong>Thyrocare Aarogyam 1.7&nbsp;Package</strong>&nbsp;worth 4800&nbsp;just at&nbsp;<strong>3400</strong>/- Only. And avail Free Dr.Conusltation post result.&nbsp;</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>4. </strong></small></big><big><small><strong>Precautions that should be followed before providing a blood sample for Aarogyam 1.7&nbsp;PackageTesting?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Do not eat or drink anything except water at least&nbsp;<strong>10 to 12</strong>&nbsp;hours before the test.</p>\r\n\r\n<p>&nbsp;</p>', 5500, 3999, 3400, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:10:00', 'PROJ1035532'),
-(11, 1, 3, NULL, 'AAROGYAM 1.8', 'AAROGYAM 1.8 WITH UTSH', 'Be in charge of your health and care. Prioritize yourself and master your good health with this Aarogyam 1.8', 'uploads/labs/1700734225_package_image.webp', '<h2><strong>Thyrocare Aarogyam 1.8 Package:</strong></h2>\r\n\r\n<p><strong>Thyrocare Aarogyam 1.8</strong>&nbsp;<strong>Package </strong>also know as&nbsp;Preventive package, is a set of measures taken to prevent the occurrence of a potential problem or illness. It can include regular check-ups, screenings, vaccines, lifestyle changes, and other proactive steps taken to maintain health and well-being. The goal of&nbsp;&nbsp;<strong>Aarogyam 1.8&nbsp;Package</strong> is to identify and address health risks before they become more serious issues.</p>\r\n\r\n<p><strong>Aarogyam 1.8 Package</strong> contains <strong>117 </strong>tests including: Iron Deficiency, CBC, Diabetes, KFT, LFT, Thyroid, Cardiac Risk Mareker, Toxic Elements, Electrolytes and many More.&nbsp;</p>\r\n\r\n<p>Sample Type: <strong>Blood</strong>, <strong>10-12</strong> hours of Fasting Required</p>\r\n\r\n<p>Home Collection: <strong>Possible</strong></p>\r\n\r\n<h2><strong>Benefits of Thyrocare Aarogyam 1.8 Package</strong></h2>\r\n\r\n<ul>\r\n	<li>\r\n	<p>An assessment of your chances of becoming ill.</p>\r\n	</li>\r\n	<li>\r\n	<p>Early detection of a potentially life-threatening health condition.</p>\r\n	</li>\r\n	<li>\r\n	<p>Increase the chances of early treatment and, in some cases, cure.</p>\r\n	</li>\r\n	<li>\r\n	<p>Consistent monitoring of pre-existing medical conditions to reduce the risk of complications.</p>\r\n	</li>\r\n	<li>\r\n	<p>If you improve your lifestyle, the results of both the check-up can help you live longer.</p>\r\n	</li>\r\n	<li>Avoiding expensive emergency treatments to keep your overall healthcare costs down.</li>\r\n</ul>\r\n\r\n<h2><strong>&nbsp;FAQ</strong></h2>\r\n\r\n<h3><big><small><strong>1. By when will Aarogyam 1.8&#39;s results be available?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;You will receive your reports through SMS and Email from Thyrocare<strong> within 24/48 hours</strong></p>\r\n\r\n<hr />\r\n<h3><big><small><strong>2. What is the Price of Thyrocare Aarogyam 1.8&nbsp;Package?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;Only at&nbsp;<strong>SecondMedic&nbsp;</strong>you can book<strong>&nbsp;</strong><strong>Book Thyrocare Aarogyam 1.8&nbsp;Package </strong>worth 5400&nbsp;just at <strong>3750/- </strong>Only<strong>. </strong>And avail Free Doctor consultation post report.&nbsp;</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>3. When should One&nbsp;take Thyrocare Aarogyam 1.8&nbsp;Package?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:&nbsp;</strong>Since&nbsp;<strong>Aarogyam 1.8</strong>&nbsp;is a Preventive Checkup, it&#39;s recommended to get tested&nbsp;<strong>Twice&nbsp;</strong>a Year for your Good Health Monitoring.</p>\r\n\r\n<hr />\r\n<h3><big><small><strong>4. </strong></small></big><big><small><strong>What are the Thyrocare Aarogyam 1.8&nbsp;Package test details?</strong></small></big></h3>\r\n\r\n<p><strong>Answer:</strong>&nbsp;<strong>Thyrocare Aarogyam 1.8&nbsp;package&nbsp;</strong>contains&nbsp;<strong>117&nbsp;Tests&nbsp;</strong>including:Iron Deficiency, Diabetes, LFT, KFT, Cardiac Risk Marker, Testosterone Hormone, Vitamins and many More.&nbsp;</p>', 6500, 4500, 0, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:09:46', 'PROJ1035271'),
-(12, 1, 4, NULL, 'Covid-19 (RT-PCR)', 'COVID-19', 'COVID-19 RT PCR, Reporting time would be 24 – 48 hours.', 'uploads/labs/1700734205_package_image.webp', '<p><big><strong>Covid 19 RT-PCR</strong> Test is considered to be most effective test that can identify the virus that causes COVID-19. Nasal and Throat swabs of an individual are collected under the observation of a healthcare practitioner. Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties. In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome and kidney failure.</big></p>\r\n\r\n<p><big>- This test checks if you have an active COVID infection</big></p>\r\n\r\n<p><big>- Detects the presence of SARS-CoV-2 virus</big></p>\r\n\r\n<hr />\r\n<p>&diams;For all Cities, COVID RT-PCR rate is <strong>Rs. 700</strong>&nbsp;except Kolkata, Bangalore and Chennai.</p>\r\n\r\n<p><strong>&diams;</strong>For<strong> Kolkata, COVID RT-PCR </strong>rate<strong> </strong>is<strong> Rs. 1,100.</strong></p>\r\n\r\n<p><strong>&diams;</strong>For<strong> Chennai, COVID RT-PCR </strong>rate<strong> </strong>is<strong> Rs. 1,200.</strong></p>\r\n\r\n<p><strong>&diams;</strong>For<strong> Bangalore, COVID RT-PCR </strong>rate<strong> </strong>is<strong> Rs. 750.</strong></p>\r\n\r\n<hr />\r\n<p><big><strong>Notes:-</strong></big></p>\r\n\r\n<p><big><strong>1.</strong> All ICMR guidelines have to be followed without fail.</big></p>\r\n\r\n<p><big><strong>2</strong>.Copy of patient Govt Id (aadhar card) is mandatory.</big></p>\r\n\r\n<p><big><strong>3.</strong> If details are not found proper, order would be cancelled.</big></p>\r\n\r\n<p><big><strong>4. </strong>Reporting time would be<strong> 24 &ndash; 48 hours</strong>.</big></p>\r\n\r\n<p><big><strong>5. </strong>Report will have<strong> QR code</strong> and is valid for<strong> domestic </strong>and <strong>international travel</strong>.</big></p>\r\n\r\n<p><big>Appointment team will call you to fix appointment.</big></p>', 1000, 700, 0, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:10:05', NULL),
-(13, 1, 5, NULL, 'BASIC CHECKUP', 'AAROGYAM WINTER BASIC WITH UTSH', 'BASIC CHECKUP', 'uploads/labs/1700734185_package_image.webp', '<h2><strong>Thyrocare Aarogyam Basic - Your Path to Better Health</strong></h2>\r\n\r\n<p>Are you ready to take charge of your health? Thyrocare brings you the Aarogyam Basic package, a full body health checkup that includes 64 essential tests to screen your health status. At a <strong>special offer of just ₹999</strong>, you can ensure that you&#39;re in the best possible shape. This package focuses on key health parameters, including Lipid, Liver, Thyroid, Electrolytes, Diabetic, Kidney, Iron, Complete Hemogram, Vitamin D, and B12.</p>\r\n\r\n<h3><strong>Who Can Avail This Test?</strong></h3>\r\n\r\n<p>The Aarogyam Basic package is suitable for individuals of all age groups. Whether you&#39;re looking to monitor your health or need a baseline assessment, this package is an excellent choice. The tests in this package can be done with a fasting profile, making it convenient and efficient for everyone.</p>\r\n\r\n<pre>\r\n<strong>Sample Type:</strong> Blood</pre>\r\n\r\n<p>At Thyrocare, we use blood samples to perform these tests, ensuring accurate and reliable results. Our state-of-the-art laboratory and highly trained staff guarantee precision and quality in every test conducted.</p>\r\n\r\n<h3><strong>About Thyrocare:</strong></h3>\r\n\r\n<p>Thyrocare is a pioneer in the diagnostic industry, offering IT-enabled, 24*7, fully automated diagnostic laboratory services. Our vast laboratory spans over 200,000 sq. ft., allowing us to process 100,000+ specimens and 400,000+ clinical chemistry investigations per night. We take pride in our error-free processing and quick turnaround time, thanks to our air-cargo logistics and IT-enabled barcoded bi-directional operating systems. This unmatched speed factor ensures that your samples are processed efficiently, no matter when they arrive from various parts of the country.</p>\r\n\r\n<h3><strong>Our Accreditations and Certifications:</strong></h3>\r\n\r\n<ul>\r\n	<li>NABL- and CAP-accredited</li>\r\n	<li>NGSP- and ISO-certified</li>\r\n	<li>ICMR-approved</li>\r\n</ul>\r\n\r\n<p>Choose Thyrocare, the World&#39;s Largest and Most Reliable Diagnostic Centre:</p>\r\n\r\n<p>With the widest diagnostic network in India, Thyrocare ensures that your health is in the best hands. We are dedicated to providing accurate, reliable, and timely health assessment services.</p>\r\n\r\n<h3><strong>Frequently Asked Questions (FAQs):</strong></h3>\r\n\r\n<p><strong>Q1:</strong> What does the Thyrocare Aarogyam Basic package include?</p>\r\n\r\n<p><strong>Ans:</strong> The Aarogyam Basic package includes 64 fundamental tests that cover Lipid, Liver, Thyroid, Electrolytes, Diabetic, Kidney, Iron, Complete Hemogram, Vitamin D, and B12.</p>\r\n\r\n<hr />\r\n<p><strong>Q2:</strong> How much does the Aarogyam Basic package cost?</p>\r\n\r\n<p><strong>Ans:</strong> Our special offer lets you avail of this package at just ₹999.</p>\r\n\r\n<hr />\r\n<p><strong>Q3:</strong> Is fasting required for the tests in this package?</p>\r\n\r\n<p><strong>Ans:</strong> Yes, fasting is required for the Aarogyam Basic package, but it ensures accurate and reliable results.</p>\r\n\r\n<hr />\r\n<p><strong>Q4:</strong> Who can avail of the Aarogyam Basic package?</p>\r\n\r\n<p><strong>Ans:</strong> This package is suitable for individuals of all age groups, making it accessible to anyone looking to monitor their health.</p>\r\n\r\n<hr />\r\n<p><strong>Q5:</strong> How do I book the Aarogyam Basic package?</p>\r\n\r\n<p><strong>Ans:</strong> You can easily book the Aarogyam Basic package through our website or by contacting our customer service.</p>\r\n\r\n<p>&nbsp;</p>', 1999, 999, 999, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:09:45', 'PROJ1040771'),
-(14, 1, 5, NULL, 'EXECUTIVE CHECKUP', 'AAROGYAM WINTER ADVANCED WITH UTSH', 'EXECUTIVE CHECKUP', 'uploads/labs/1700734164_package_image.webp', '<h2><strong>Welcome to Thyrocare - Your Trusted Health Partner</strong></h2>\r\n\r\n<p>Are you looking for a comprehensive health checkup to ensure your well-being? Look no further than Thyrocare Executive Checkup. Our full-body health checkup package offers 75 essential tests at an incredible price of just Rs. 1199.</p>\r\n\r\n<h3><strong>Thyrocare Executive Checkup: Unlock Your Health Potential</strong></h3>\r\n\r\n<p><em>Why Choose Thyrocare Executive Checkup?</em></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Full Body Health Checkup:</strong> Our package covers 75 fundamental tests that help screen your health status, ensuring you have a clear picture of your well-being.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Wide Range of Tests:</strong> With tests such as Cardiac Risk Markers, Lipid, Liver, Thyroid, Diabetic, Kidney, Elements, Iron, Complete Hemogram, Vitamin D &amp; B12, you&#39;ll receive a comprehensive assessment of your health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Special Offer:</strong> Take advantage of our exclusive special offer, available at just Rs. 1299. We believe in making quality healthcare affordable and accessible.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>For All Ages:</strong> Thyrocare Executive Checkup is suitable for people of all age groups. No matter your age, we&#39;ve got your health covered.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type:</strong> The sample type for this package is blood, ensuring accurate and reliable results.</p>\r\n	</li>\r\n</ol>\r\n\r\n<h3><strong>About Thyrocare: Leading the Way in Diagnostic Services</strong></h3>\r\n\r\n<p>Thyrocare is a pioneer in the diagnostic industry with a state-of-the-art, IT-enabled, 24*7 fully automated diagnostic laboratory spanning over 200,000 sq. ft. Our capabilities include processing more than 100,000 specimens and conducting over 400,000 clinical chemistry investigations every night. Our dedication to precision and speed sets us apart:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Accreditations:</strong> NABL- and CAP-accredited, NGSP- and ISO-certified, ICMR-approved.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>World&#39;s Largest Diagnostic Centre:</strong> We take pride in being the world&#39;s largest and most reliable diagnostic center.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network:</strong> Our network spans across India, making high-quality healthcare accessible to all.</p>\r\n	</li>\r\n</ul>\r\n\r\n<h3><strong>Frequently Asked Questions (FAQs)</strong></h3>\r\n\r\n<p><strong>Q1. What is Thyrocare Executive Checkup?</strong></p>\r\n\r\n<p><strong>Ans:</strong>Thyrocare Executive Checkup is a comprehensive health screening package that includes 75 essential tests to assess your health status. It covers a wide range of parameters, from cardiac risk markers to vitamin levels.</p>\r\n\r\n<hr />\r\n<p><strong>2. How much does Thyrocare Executive Checkup cost?</strong></p>\r\n\r\n<p><strong>Ans:</strong>You can avail this special offer for just Rs. 1299. We believe in offering quality healthcare at an affordable price.</p>\r\n\r\n<hr />\r\n<p><strong>3. Who can take the Thyrocare Executive Checkup?</strong></p>\r\n\r\n<p><strong>Ans:</strong>This package is suitable for individuals of all age groups. It is ideal for those seeking a thorough health assessment.</p>\r\n\r\n<hr />\r\n<p><strong>4. What is the sample type for the tests?</strong></p>\r\n\r\n<p><strong>Ans:</strong>The sample type for Thyrocare Executive Checkup is blood, ensuring the accuracy of the results.</p>\r\n\r\n<hr />\r\n<p><strong>5. Where can I find a Thyrocare Executive Checkup center near me?</strong></p>\r\n\r\n<p><strong>Ans:</strong>Thyrocare has the widest diagnostic network in India. You can locate a center near you using our website or by contacting our customer support.</p>\r\n\r\n<hr />\r\n<p>Invest in your health with Thyrocare Executive Checkup today. With 75 vital tests and unbeatable affordability, you&#39;re just a step away from comprehensive health insights. Take charge of your well-being now!</p>', 2400, 1199, 1299, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:09:05', 'PROJ1042217');
-INSERT INTO `labs_package` (`id`, `lab_vendor_id`, `package_category`, `package_sub_category`, `package_name`, `package_test_name`, `package_short_description`, `package_image`, `package_description`, `package_mrp`, `package_price`, `package_gst`, `show_front`, `status`, `created_at`, `updated_at`, `report_code`) VALUES
-(15, 1, 6, NULL, 'FAMILY CHECKUP', 'AAROGYAM C WITH UTSH,COMPLETE URINE ANALYSIS,FBS,SERUM ELECTROLYTES', 'FAMILY CHECKUP', 'uploads/labs/1700734135_package_image.webp', '<p>Are you looking for a comprehensive health checkup for your family at an unbeatable price? Thyrocare Family Checkup is your answer! We offer a full-body health screening package that includes a whopping 98 tests, covering all the fundamental aspects of your health. Whether you are concerned about your Lipid profile, Liver function, Thyroid health, Iron levels, Diabetes risk, Kidney function, Complete Hemogram, Hormone levels, Urinogram, Electrolytes, or Vitamins D &amp; B12, our package has it all.</p>\r\n\r\n<p><strong>Why Choose Thyrocare Family Checkup?</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Affordable Pricing</strong>: Our special offer prices make top-notch health screening accessible to everyone. For just Rs. 1699, you can get a comprehensive insight into your health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Suitable for All Ages</strong>: This package is designed to accommodate all age groups. Whether you&#39;re getting it for yourself, your parents, or even your children, the Thyrocare Family Checkup is tailored to your needs.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Fasting Profile</strong>: Worried about fasting before your health checkup? With Thyrocare, you can avail this package with or without fasting, ensuring convenience for all.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type</strong>: We use blood samples to conduct these tests, ensuring accuracy and reliability in the results.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>About Thyrocare</strong></p>\r\n\r\n<p>At Thyrocare, we take pride in being a leader in the diagnostic industry. Our IT-enabled, 24/7 diagnostic laboratory spans over 200,000 sq. ft., ensuring error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations per night. We achieve an unmatched speed factor by utilizing air-cargo logistics and IT-enabled barcoded bi-directional operating systems. This enables quick turnaround time for sample processing, regardless of when they arrive from various parts of the country.</p>\r\n\r\n<p><strong>Our Accreditations</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL Accreditation</strong>: We are accredited by the National Accreditation Board for Testing and Calibration Laboratories (NABL), assuring the highest standards in testing.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>CAP Accreditation</strong>: We have also earned the prestigious College of American Pathologists (CAP) accreditation, reflecting our commitment to quality.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP Certification</strong>: Our services are certified by the National Glycohemoglobin Standardization Program (NGSP), ensuring accurate diabetes testing.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ISO Certification</strong>: We are ISO-certified, further validating our quality management systems.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR Approval</strong>: We have received approval from the Indian Council of Medical Research (ICMR), reflecting our adherence to research and development in the medical field.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Widest Diagnostic Network in India</strong></p>\r\n\r\n<p>Thyrocare takes pride in being the world&#39;s largest and most reliable diagnostic center. With the widest diagnostic network in India, we are committed to providing you with the best in health diagnostics.</p>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs)</strong></p>\r\n\r\n<p><strong>Q1. How do I book the Thyrocare Family Checkup package?</strong> Booking is easy! You can visit our website and book the package online, or you can call our toll-free number for assistance.</p>\r\n\r\n<p><strong>Q2. Can children also undergo the Thyrocare Family Checkup?</strong> Absolutely! This package is suitable for all age groups, making it perfect for children, adults, and senior citizens.</p>\r\n\r\n<p><strong>Q3. Do I need to fast before the tests?</strong> No, you can choose to take the tests with or without fasting, depending on your convenience.</p>\r\n\r\n<p><strong>Q4. How long does it take to receive the test results?</strong> Our advanced systems ensure a quick turnaround time. You can expect your results within a short timeframe.</p>\r\n\r\n<p><strong>Q5. Is Thyrocare&#39;s lab open 24/7?</strong> Yes, our IT-enabled diagnostic laboratory operates 24/7 to provide you with the utmost convenience.</p>\r\n\r\n<p>Experience the Thyrocare advantage with our Family Checkup package. Your health is our priority, and we are here to help you stay on top of it. Don&#39;t miss our special offer &ndash; book your family&#39;s health checkup today!</p>', 3200, 1599, 1599, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:08:50', 'PROJ1042222'),
-(16, 1, 7, NULL, 'AAROGYAM MALE', 'AAROGYAM MALE WITH UTSH', 'AAROGYAM MALE', 'uploads/labs/1700734114_package_image.webp', '<p><strong>Introduction:</strong> Welcome to Thyrocare Aarogyam Male, your gateway to a healthier, more informed life. Our advanced health checkup package, designed exclusively for men, offers a holistic view of your well-being. With a focus on preventive healthcare, our package encompasses 99 essential tests, ensuring a thorough screening of your health status. Priced at just Rs. 1999, this limited-time special offer is your key to affordable health monitoring.</p>\r\n\r\n<p><strong>Why Choose Thyrocare Aarogyam Male?</strong> Our Aarogyam Male package is specially curated to cater to the unique health needs of men. With a focus on preventive care, we offer you a comprehensive array of tests that cover cardiac risk markers, complete hemogram, diabetes, iron levels, lipid profile, liver function, kidney function, thyroid hormones, vitamin levels, pancreatic health, and electrolyte balance. This fasting profile is suitable for men of all ages who seek valuable insights into their health.</p>\r\n\r\n<p><strong>About Thyrocare:</strong> At Thyrocare, we take pride in our state-of-the-art, IT-enabled diagnostic laboratory spanning over 200,000 sq. ft. We are dedicated to processing over 100,000 specimens and performing 400,000+ clinical chemistry investigations each night. With cutting-edge air-cargo logistics and IT-driven, barcoded bi-directional operating systems, we guarantee quick turnaround times. Our laboratory is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved, making us the most reliable diagnostic center in the world. We boast the widest diagnostic network across India, ensuring that healthcare is accessible to all.</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What tests are included in the Thyrocare Aarogyam Male package?</strong> The Aarogyam Male package consists of 99 tests, covering crucial areas such as cardiac risk markers, complete hemogram, diabetes, iron levels, lipid profile, liver function, kidney function, thyroid hormones, vitamin levels, pancreatic health, and electrolyte balance.</p>\r\n\r\n<p><strong>2. Who can avail the Aarogyam Male health checkup?</strong> This health package is designed for men of all age groups who are looking to take charge of their health and gain insights into their well-being.</p>\r\n\r\n<p><strong>3. Is fasting necessary for the Aarogyam Male profile?</strong> Yes, fasting is required for at least 10-12 hours before the test to ensure accurate results.</p>\r\n\r\n<p><strong>4. What is the cost of the Aarogyam Male package?</strong> For a limited time, you can avail of the Aarogyam Male package at the special price of just Rs. 1999.</p>\r\n\r\n<p><strong>5. How can I book the Thyrocare Aarogyam Male package?</strong> Booking is easy! Simply visit our website, select the Aarogyam Male package, and schedule your test at your convenience. We have a vast network of sample collection centers for your convenience.</p>\r\n\r\n<p><strong>6. What sets Thyrocare apart from other diagnostic centers?</strong> Thyrocare is the world&#39;s largest and most reliable diagnostic center, with NABL and CAP accreditations, NGSP and ISO certifications, and ICMR approval. Our vast network ensures that healthcare is accessible across India.</p>\r\n\r\n<p>&nbsp;</p>', 4000, 1999, 1999, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:08:31', 'PROJ1038753'),
-(17, 1, 2, NULL, 'AAROGYAM FEMALE', 'AAROGYAM FEMALE WITH UTSH', 'AAROGYAM FEMALE', 'uploads/labs/1700734093_package_image.webp', '<p>Welcome to Thyrocare Aarogyam Female - Your Path to Health and Wellness</p>\r\n\r\n<p>Thyrocare&#39;s Aarogyam Female profile is designed with the well-being of women in mind. Our comprehensive health checkup package encompasses 101 essential tests, providing a holistic view of your health status. From cardiac risk markers to thyroid, and from vitamins to hormones, we leave no stone unturned in ensuring you get a complete health assessment. All of this is available at an exclusive price of just Rs. 2000 as a special offer.</p>\r\n\r\n<p><strong>Why Choose Aarogyam Female?</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Complete Health Assessment:</strong> Aarogyam Female offers a wide array of tests covering cardiac risk markers, complete hemogram, diabetics, iron, lipid, liver, kidney, thyroid, vitamins, pancreatic health, electrolytes, and hormones. It&#39;s a one-stop solution for your health evaluation.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Fasting Profile:</strong> This package requires fasting, ensuring accurate results for various parameters. Make sure to follow the fasting guidelines provided when you book your test.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Suitable for All Ages:</strong> Regardless of your age, Aarogyam Female is designed to provide valuable insights into your health. From young adults to seniors, this package caters to everyone.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type:</strong> A simple blood sample is all that&#39;s needed for these tests, making it convenient and minimally invasive.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare is the gold standard in the diagnostic industry. Our fully automated, IT-enabled, and NABL- and CAP-accredited laboratory spans over 200,000 sq. ft., processing more than 100,000 specimens and 400,000 clinical chemistry investigations per night. We&#39;re proud to be the world&#39;s largest and most reliable diagnostic center, with the widest diagnostic network in India. We are also NGSP- and ISO-certified and ICMR-approved.</p>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs):</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Who should consider the Aarogyam Female profile?</strong> Aarogyam Female is suitable for women of all ages, providing a comprehensive health assessment. Whether you&#39;re in your 20s or your 60s, this package is designed to meet your health needs.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Is fasting necessary for the Aarogyam Female profile?</strong> Yes, fasting is required for this profile. It ensures the accuracy of various test parameters. You will receive fasting instructions when booking your test.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>How can I book the Aarogyam Female package?</strong> Booking your test is easy. Visit our website, select the Aarogyam Female package, choose a convenient time slot, and make your payment. You&#39;ll receive a confirmation with all the necessary details.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>What makes Thyrocare the right choice for diagnostics?</strong> Thyrocare&#39;s commitment to quality, cutting-edge technology, and a vast network of collection centers set us apart. We are accredited, certified, and trusted by millions for accurate and reliable test results.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>When can I expect my test results?</strong> Thyrocare&#39;s efficient processing systems ensure quick turnaround times. You can typically expect your test results within a few days. You&#39;ll be notified as soon as they are ready.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Thyrocare Aarogyam Female is not just a health checkup; it&#39;s a step towards a healthier, more informed you. Trust in Thyrocare for accurate, timely, and reliable diagnostics. Your health matters to us.</p>', 4000, 2000, 2000, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:08:14', 'PROJ1042226'),
-(18, 1, 7, NULL, 'COMPLETE CHECKUP', 'AAROGYAM TAX SAVER - ADVANCED WITH UTSH', 'COMPLETE CHECKUP', 'uploads/labs/1700734063_package_image.webp', '<p><strong>Discover Your Health with Thyrocare Complete Checkup</strong></p>\r\n\r\n<p>Are you looking for a comprehensive health checkup that covers all the essential aspects of your well-being? Thyrocare&#39;s Complete Checkup is the perfect solution. With 131 tests designed to screen your health status, this Master Health Checkup Package is a one-stop assessment for all your health needs.</p>\r\n\r\n<p><strong>Key Features of Thyrocare Complete Checkup:</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Arthritis Screening:</strong> This package includes tests to check for arthritis markers, ensuring your joint health is in top condition.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Cardiac Risk Markers:</strong> Assess your risk for heart-related issues with advanced cardiac risk marker tests.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Complete Hemogram:</strong> This comprehensive blood test evaluates your overall health and helps in detecting various disorders.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Diabetics Screening:</strong> Keep diabetes in check with dedicated tests that monitor your glucose levels.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Iron, Lipid, Liver, and Kidney:</strong> Get insights into your iron levels, lipid profile, and the health of your liver and kidneys.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Thyroid Function:</strong> Ensure your thyroid is functioning optimally with a thorough thyroid profile assessment.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Vitamin and Pancreatic Tests:</strong> Discover your vitamin levels and monitor your pancreatic health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Electrolytes and Hormone Profile:</strong> These tests help in maintaining the right balance of electrolytes and assessing hormone levels.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Toxic Elements Screening:</strong> Detect the presence of harmful elements in your body that may impact your health.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Pricing That Fits Your Budget:</strong></p>\r\n\r\n<p>For a limited time, you can avail the Thyrocare Complete Checkup at an exclusive price of just Rs. 3599. This is a special offer to help you take control of your health without breaking the bank.</p>\r\n\r\n<p><strong>Who Can Benefit from This Checkup:</strong></p>\r\n\r\n<p>This comprehensive health check is suitable for individuals of all age groups. Whether you are young or old, the Thyrocare Complete Checkup is designed to provide a detailed snapshot of your health.</p>\r\n\r\n<p><strong>Sample Type: Blood</strong></p>\r\n\r\n<p>For your convenience, all tests in the package require a simple blood sample, making the process hassle-free.</p>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare is a pioneer in the diagnostic industry, offering IT-enabled, 24*7, fully automated diagnostic laboratory services. With a vast infrastructure spanning over 200,000 sq. ft., Thyrocare processes over 100,000 specimens and 400,000 clinical chemistry investigations each night. Our state-of-the-art facilities, air-cargo logistics, and IT-enabled systems ensure rapid sample processing from across the country.</p>\r\n\r\n<p><strong>Our Accreditations:</strong></p>\r\n\r\n<ul>\r\n	<li>NABL and CAP accredited</li>\r\n	<li>NGSP and ISO certified</li>\r\n	<li>ICMR approved</li>\r\n</ul>\r\n\r\n<p><strong>Widest Diagnostic Network in India:</strong></p>\r\n\r\n<p>Thyrocare is proud to be the largest and most reliable diagnostic center in India, providing services at the widest diagnostic network across the nation.</p>', 7500, 3599, 3599, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:07:57', 'PROJ1042223'),
-(19, 1, 3, NULL, 'AAROGYAM X', 'AAROGYAM X WITH UTSH', 'Thyrocare Aarogyam X is an advance full body checkup consisting of 135 parameters that includes everything that you will need for your full body checkup. #Thyrocare #Aarogyam X', 'uploads/labs/1700734041_package_image.webp', '<p><strong>Welcome to Thyrocare Aarogyam X Profile</strong></p>\r\n\r\n<p>Are you concerned about your health and well-being? Thyrocare Aarogyam X Profile is your comprehensive solution for proactive health screening. With 135 essential tests, this profile is designed to evaluate your health status, identify potential health risks, and prevent illnesses before they strike.</p>\r\n\r\n<p><strong>Why Choose Thyrocare Aarogyam X?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>135 Vital Tests</strong>: Our profile includes a wide range of tests covering various health parameters, including Arthritis, Cardiac Risk Markers, Complete Hemogram, Diabetics, Iron, Lipid, Liver, Kidney, Thyroid, Vitamin, Pancreatic, Electrolytes, Hormone, and Toxic Elements.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Affordable</strong>: We understand the importance of affordable healthcare. Thyrocare Aarogyam X is available at a special offer of just Rs. 4299.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Fasting Profile</strong>: Aarogyam X is a fasting profile, ensuring accurate results. It is suitable for individuals of all age groups.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type</strong>: The tests require both blood and urine samples, making it convenient for you to get tested from the comfort of your home.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare, the world&#39;s largest and most reliable diagnostic center, offers the widest diagnostic network in India. Our IT-enabled, 24*7, fully automated laboratory spans over 200,000 sq. ft., capable of processing over 100,000 specimens and 400,000 clinical chemistry investigations per night. We are NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved.</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What is Thyrocare Aarogyam X Profile?</strong> Thyrocare Aarogyam X is a comprehensive health screening profile with 135 tests, covering various health parameters, designed to assess your well-being and identify potential health risks.</p>\r\n\r\n<p><strong>2. How much does Thyrocare Aarogyam X cost?</strong> We offer a special offer at just Rs. 4299 for Thyrocare Aarogyam X, making it an affordable option for proactive health screening.</p>\r\n\r\n<p><strong>3. Who can avail the Aarogyam X test?</strong> Aarogyam X is suitable for individuals of all age groups. It is a fasting profile, ensuring accurate results.</p>\r\n\r\n<p><strong>4. What sample types are required for Aarogyam X tests?</strong> Aarogyam X tests require both blood and urine samples, providing convenience for at-home testing.</p>\r\n\r\n<p><strong>5. How do I book Thyrocare Aarogyam X Profile?</strong> You can easily book your Aarogyam X Profile from the comfort of your home. Visit our website or contact our customer support for assistance.</p>\r\n\r\n<p><strong>6. How soon can I expect the results?</strong> Our IT-enabled laboratory ensures quick turnaround time. You can expect results in a timely manner, providing you with valuable health insights.</p>', 8600, 4299, 4299, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:07:41', 'PROJ1035534'),
-(20, 1, 9, NULL, 'AAROGYAM XL', 'AAROGYAM XL WITH UTSH', 'It is extremely important to keep track of your health post the age of 21. Avail this checkup and keep a watch on any health condition you might have.', 'uploads/labs/1700734021_package_image.jpg', '<p><strong>Welcome to Thyrocare&#39;s Aarogyam XL: A 145-Test Health Checkup Package</strong></p>\r\n\r\n<p>Are you looking for a comprehensive health checkup that covers all the fundamental aspects of your well-being? Look no further! Thyrocare&#39;s Aarogyam XL is here to provide you with a complete assessment of your health status, comprising 145 essential tests. Discover how this specialized profile can help you maintain good health, its suitability for different age groups, sample requirements, and more.</p>\r\n\r\n<p><strong>Why Choose Thyrocare Aarogyam XL?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>145 Comprehensive Tests</strong>: Thyrocare&#39;s Aarogyam XL offers an extensive range of tests, including screenings for Arthritis, Cardiac Risk Markers, Complete Hemogram, Diabetics, Iron, Lipid, Liver, Kidney, Thyroid, Vitamin, Pancreatic, Electrolytes, Hormone, Toxic Elements, Steroid, and more.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Special Offer</strong>: Get this comprehensive health checkup at an exclusive price of just Rs. 5299. Don&#39;t miss out on this limited-time offer to monitor your health effectively.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Suitable for All Ages</strong>: Aarogyam XL is designed to cater to individuals of all age groups. It provides a holistic understanding of your health, making it ideal for both young adults and seniors.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Types</strong>: The tests in this package require blood and urine samples, making it a convenient choice for most individuals.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>About Thyrocare: Your Trusted Diagnostic Partner</strong></p>\r\n\r\n<p>Thyrocare is a pioneer in diagnostic healthcare services, renowned for its IT-enabled, 24*7, fully automated diagnostic laboratory setup. Spanning over 200,000 sq. ft., our facilities ensure error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations every night. Our combination of air-cargo logistics and IT-enabled barcoded bi-directional operating systems guarantees quick turnaround times for sample processing from across the country. Here are some key highlights:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Accreditations</strong>: We are NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved, ensuring the highest standards of quality in our services.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Reliability</strong>: Thyrocare is the world&#39;s largest and most reliable diagnostic center, serving countless individuals with top-notch healthcare diagnostics.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Network</strong>: With the widest diagnostic network in India, Thyrocare ensures that you can access our services no matter where you are in the country.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>FAQs About Thyrocare Aarogyam XL</strong></p>\r\n\r\n<p><em>1. What is the Thyrocare Aarogyam XL package?</em> Thyrocare Aarogyam XL is a comprehensive health checkup package that includes 145 fundamental tests to assess your overall health. It covers a wide range of parameters, including Arthritis, Cardiac Risk Markers, Diabetics, Liver, Kidney, and more.</p>\r\n\r\n<p><em>2. How much does the Aarogyam XL package cost?</em> For a limited time, you can avail of the Thyrocare Aarogyam XL package at a special price of Rs. 5299. Don&#39;t miss this exclusive offer to monitor your health.</p>\r\n\r\n<p><em>3. Is this package suitable for all age groups?</em> Yes, Thyrocare Aarogyam XL is designed to cater to individuals of all age groups, from young adults to seniors. It provides a holistic assessment of your health.</p>\r\n\r\n<p><em>4. What types of samples are required for the tests?</em> The tests in the Aarogyam XL package require both blood and urine samples, ensuring a convenient and thorough health assessment.</p>\r\n\r\n<p><strong>Conclusion</strong></p>\r\n\r\n<p>Thyrocare&#39;s Aarogyam XL is your pathway to comprehensive health assessment at an incredible price. With 145 tests covering a wide array of health parameters, this package is suitable for all age groups and requires blood and urine samples for testing. Partner with Thyrocare, the world&#39;s largest and most reliable diagnostic center, for all your health monitoring needs. Don&#39;t miss out on this exclusive offer and take charge of your health today!</p>', 10600, 5299, 5299, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:07:22', 'PROJ1041157'),
-(21, 1, 5, NULL, 'FOOD INTOLERANCE PROFILE', 'FOOD INTOLERANCE PROFILE', 'Are you constantly suffering from a headache, anxiety, gastrointestinal problems or just feeling unwell or lethargic? You could be intolerant to certain foods. Get tested for intolerance to 217 foods.', 'uploads/labs/1700733993_package_image.jpg', '<p>Are you experiencing digestive discomfort after certain meals? You might be dealing with food intolerance, a condition where your body reacts negatively to specific foods. Thyrocare introduces the Food Intolerance Test, a comprehensive lgG-based panel that can help you identify and manage your food sensitivities. With a special offer of just Rs. 6500, this non-fasting blood test is accessible to individuals of all age groups.</p>\r\n\r\n<p><strong>Uncover Your Food Sensitivities</strong></p>\r\n\r\n<p>Food intolerance can manifest in various ways, including digestive issues, skin problems, headaches, and more. The Thyrocare Food Intolerance Test is a simple and reliable way to pinpoint the foods that may be causing your discomfort. This comprehensive panel analyzes your blood sample and provides a detailed list of foods that you should consider avoiding.</p>\r\n\r\n<p><strong>Why Choose Thyrocare?</strong></p>\r\n\r\n<p>Thyrocare is a renowned diagnostic laboratory with a vast 200,000 sq. ft. IT-enabled, fully automated setup. We process over 100,000 specimens and conduct 400,000 clinical chemistry investigations every night, ensuring error-free and quick results. Our NABL and CAP accreditation, NGSP and ISO certification, and ICMR approval speak to our commitment to quality and accuracy.</p>\r\n\r\n<p><strong>The Thyrocare Advantage</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Non-Fasting Profile</strong>: You don&#39;t need to fast before taking the Food Intolerance Test, making it more convenient for you.</li>\r\n	<li><strong>Wide Age Group Inclusion</strong>: People of all age groups can avail of this test to discover and manage their food sensitivities.</li>\r\n	<li><strong>Blood Sample</strong>: A simple blood sample is all that&#39;s required for the test.</li>\r\n</ul>\r\n\r\n<p><strong>FAQs (Frequently Asked Questions)</strong></p>\r\n\r\n<p><em>Q1: What is food intolerance?</em> Food intolerance occurs when your body exhibits adverse reactions to specific foods, leading to various symptoms like digestive discomfort, skin issues, and headaches.</p>\r\n\r\n<p><em>Q2: How does the Thyrocare Food Intolerance Test work?</em> This test analyzes a blood sample to detect lgG-based reactions to a wide range of foods, helping you identify what you should avoid in your diet.</p>\r\n\r\n<p><em>Q3: Is fasting required for the test?</em> No, the Thyrocare Food Intolerance Test is a non-fasting profile, making it convenient for everyone.</p>\r\n\r\n<p><em>Q4: Can people of all age groups take this test?</em> Yes, individuals of all age groups can avail this test to identify and manage their food sensitivities.</p>\r\n\r\n<p><em>Q5: What makes Thyrocare the right choice for diagnostics?</em> Thyrocare is the world&#39;s largest and most reliable diagnostic center, offering a wide diagnostic network across India. We are accredited, certified, and approved by prestigious organizations, ensuring accurate and quality services.</p>\r\n\r\n<p>Discover a healthier you with the Thyrocare Food Intolerance Test. Take control of your diet, manage your food sensitivities, and live a more comfortable life. Don&#39;t miss our special offer at just Rs. 6500 for a limited time!</p>', 13000, 6500, 6500, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:06:40', 'PROJ1041535'),
-(22, 1, 2, NULL, 'JAANCH INFERTILITY PROFILE BASIC', 'JAANCH - INFERTILITY PROFILE BASIC', 'JAANCH INFERTILITY PROFILE BASIC', 'uploads/labs/1700733966_package_image.webp', '<p>Welcome to Thyrocare, India&#39;s most trusted and world&#39;s largest diagnostic center, known for its precision and reliability. Our commitment to healthcare excellence is embodied in our Jaanch - Infertility Profile Basic, carefully curated by doctors and medical experts to address your fertility concerns.</p>\r\n\r\n<p><strong>Understanding Your Fertility</strong></p>\r\n\r\n<p>Infertility can be a daunting challenge for many couples. Thyrocare&#39;s Jaanch - Infertility Profile Basic is designed to provide insights into your reproductive health. This non-fasting blood test analyzes seven crucial parameters related to important reproductive hormones, shedding light on any potential pregnancy or infertility-related conditions that may require medical attention.</p>\r\n\r\n<p><strong>Key Features of Jaanch - Infertility Profile Basic</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Comprehensive Hormone Assessment:</strong> This profile assesses vital reproductive hormones, offering a holistic view of your fertility health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Curated by Experts:</strong> Our profile is designed by medical experts, ensuring that you receive accurate and reliable results.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Affordable Pricing:</strong> We understand the emotional and financial strains of fertility testing. That&#39;s why we&#39;re offering Jaanch - Infertility Profile Basic at a special price of just Rs. 2200.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>FREE Sample Collection:</strong> When you book this profile, you get the added convenience of free sample collection.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Who Can Benefit?</strong></p>\r\n\r\n<p>The Jaanch - Infertility Profile Basic is suitable for individuals in all age groups, making it accessible to anyone concerned about their fertility. Whether you&#39;re just starting your fertility journey or have been facing challenges in conceiving, this profile can provide valuable insights.</p>\r\n\r\n<p><strong>About Thyrocare</strong></p>\r\n\r\n<p>We take pride in being a pioneer in the diagnostic industry, with an IT-enabled, 24*7, fully automated laboratory spanning over 200,000 sq. ft. We process over 100,000 specimens and 400,000 clinical chemistry investigations every night, ensuring unmatched speed and accuracy.</p>\r\n\r\n<p>Our accreditations include NABL, CAP, NGSP, and ISO certifications, along with the approval of the Indian Council of Medical Research (ICMR). With the widest diagnostic network in India, Thyrocare is the name you can trust for your health.</p>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs)</strong></p>\r\n\r\n<p><strong>Q1: What is the importance of the Jaanch - Infertility Profile Basic?</strong> A1: This profile assesses crucial reproductive hormones, providing insights into potential pregnancy or infertility-related conditions, helping you take informed decisions regarding your fertility.</p>\r\n\r\n<p><strong>Q2: Is this test suitable for both men and women?</strong> A2: Yes, the Jaanch - Infertility Profile Basic is designed to benefit individuals of all genders and age groups.</p>\r\n\r\n<p><strong>Q3: How do I book the test, and what is the cost?</strong> A3: You can easily book the test at just Rs. 2200, and it also includes free sample collection for your convenience.</p>\r\n\r\n<p><strong>Q4: How long does it take to receive the test results?</strong> A4: Our advanced facilities and processes ensure quick turnaround times, with results typically available in a short time frame.</p>\r\n\r\n<p><strong>Q5: Why choose Thyrocare for diagnostic services?</strong> A5: Thyrocare is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved, making us India&#39;s most reliable and trusted diagnostic center.</p>\r\n\r\n<p>Discover the power of knowledge with Thyrocare&#39;s Jaanch - Infertility Profile Basic. Take the first step toward understanding your fertility and achieving your dreams of parenthood. Book your test today!</p>', 4400, 2200, 2200, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:06:23', 'PROJ1041913'),
-(23, 1, 5, NULL, 'MONSOON GASTRO INFECTION PANEL', 'MONSOON GASTRO INFECTION PANEL', 'MONSOON GASTRO INFECTION PANEL', 'uploads/labs/1700733936_package_image.webp', '<p><strong>Introduction:</strong> At Thyrocare, we are committed to your health and well-being. Our Monsoon Gastro Infection Panel is a comprehensive screening package that comprises 29 essential tests to assess your health. Priced at just Rs.1299 during a special offer, this panel is designed to provide valuable insights into your health status. Whether you&#39;re an adult or a child, this non-fasting, blood-based test is suitable for all age groups.</p>\r\n\r\n<p><strong>Thyrocare&#39;s Commitment:</strong> Thyrocare stands as a pioneer in the field of diagnostics, with a vast IT-enabled, fully automated laboratory spanning over 200,000 sq. ft. Our state-of-the-art facility is capable of processing over 100,000 specimens and conducting more than 400,000 clinical chemistry investigations per night. This remarkable setup is complemented by air-cargo logistics and IT-enabled, barcoded bi-directional operating systems. This ensures quick sample processing, regardless of when they arrive, day or night, from various parts of the country.</p>\r\n\r\n<p><strong>Why Choose Thyrocare?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>NABL- and CAP-Accredited: Thyrocare is accredited by the National Accreditation Board for Testing and Calibration Laboratories (NABL) and the College of American Pathologists (CAP), ensuring the highest standards of quality and accuracy in our diagnostic services.</p>\r\n	</li>\r\n	<li>\r\n	<p>NGSP and ISO Certified: Our commitment to quality extends to our certifications from the National Glycohemoglobin Standardization Program (NGSP) and the International Organization for Standardization (ISO).</p>\r\n	</li>\r\n	<li>\r\n	<p>ICMR Approved: Our tests are recognized and approved by the Indian Council of Medical Research (ICMR), reflecting the reliability and trustworthiness of our diagnostic services.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Monsoon Gastro Infection Panel:</strong> Our Monsoon Gastro Infection Panel is the ideal choice for assessing your health, especially during the monsoon season when gastro infections are prevalent. This comprehensive panel includes fundamental tests like fever, liver profile, hepatitis, and a complete hemogram profile. These tests are crucial for early detection and prevention.</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What is included in the Monsoon Gastro Infection Panel?</strong> The panel comprises 29 vital tests, including fever, liver profile, hepatitis, and a complete hemogram profile, all at an unbeatable price of Rs.1299.</p>\r\n\r\n<p><strong>2. Is fasting required for this test?</strong> No, this is a non-fasting profile, making it convenient and accessible for everyone.</p>\r\n\r\n<p><strong>3. Who can avail this test?</strong> This test is suitable for individuals of all age groups, from children to adults, ensuring comprehensive health screening for the entire family.</p>\r\n\r\n<p><strong>4. How can I book the Monsoon Gastro Infection Panel?</strong> You can easily book this test through our website or by visiting any of our diagnostic centers across India.</p>\r\n\r\n<p><strong>5. Why should I choose Thyrocare for my diagnostic needs?</strong> Thyrocare is the world&#39;s largest and most reliable diagnostic center, with a vast network across India, offering top-notch services, accurate results, and quick turnaround times.</p>', 2600, 1299, 1299, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:05:36', NULL),
-(24, 1, 9, NULL, 'STEROID PROFILE', 'STEROID PROFILE', 'STEROID PROFILE', 'uploads/labs/1700733910_package_image.webp', '<p>Welcome to Thyrocare, the world&#39;s largest and most reliable diagnostic center. We offer a Steroid Profile test, a critical diagnostic tool that measures the levels of progesterone and testosterone in both men and women. This test is invaluable for assessing a wide range of conditions, from fertility issues and genetic diseases to the risk of miscarriages and even ectopic pregnancies. One of the key applications of the Steroid Profile test is the detection of hypogonadism in men.</p>\r\n\r\n<p><strong>Why Choose Thyrocare for Your Steroid Profile Test?</strong></p>\r\n\r\n<p>At Thyrocare, we pride ourselves on offering an affordable and accessible Steroid Profile test with a special offer price of just Rs. 3000. No fasting is required before the test, making it convenient for everyone. This test is available to individuals of all age groups, ensuring that we cater to a wide range of healthcare needs.</p>\r\n\r\n<p><strong>About Thyrocare: Your Trusted Diagnostic Partner</strong></p>\r\n\r\n<p>Thyrocare boasts an IT-enabled, 24/7 fully automated diagnostic laboratory, covering an impressive 200,000 sq. ft. This cutting-edge facility is equipped to process over 100,000 specimens and conduct 400,000 clinical chemistry investigations every night. With a combination of air-cargo logistics and IT-enabled barcoded bi-directional operating systems, we guarantee a quick turnaround time for your samples, no matter when they arrive from various parts of the country. Our commitment to excellence is reflected in our accreditations, including NABL, CAP, NGSP, ISO, and ICMR approvals.</p>\r\n\r\n<p><strong>Steroid Profile Test for Hormone Balance</strong></p>\r\n\r\n<p>The Steroid Profile test is an indispensable tool for assessing hormone balance in both men and women. It plays a vital role in identifying and managing various health conditions, such as:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Fertility Issues</strong>: Hormone imbalances can be a contributing factor to fertility problems. The Steroid Profile test provides insights into these imbalances, helping individuals and couples make informed decisions on their path to parenthood.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Risk of Miscarriages</strong>: For expectant mothers, a Steroid Profile test can help gauge the risk of miscarriages. Identifying hormonal irregularities early on can lead to proactive interventions and healthier pregnancies.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Genetic Diseases</strong>: Hormonal imbalances can be linked to certain genetic diseases. Detecting these imbalances through the Steroid Profile test can aid in early diagnosis and management.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Ectopic Pregnancy</strong>: Identifying hormonal imbalances is crucial in the early detection of ectopic pregnancies, a condition that requires immediate medical attention.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Hypogonadism in Men</strong>: Hypogonadism, a condition characterized by low testosterone levels in men, can lead to a range of symptoms, including fatigue, reduced muscle mass, and low libido. The Steroid Profile test is a key tool for assessing and managing this condition.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs):</strong></p>\r\n\r\n<p><strong>Q1: Is fasting required for the Steroid Profile test at Thyrocare?</strong> A1: No, fasting is not necessary for this test, making it a convenient option for everyone.</p>\r\n\r\n<p><strong>Q2: Who can avail the Steroid Profile test?</strong> A2: Individuals of all age groups can benefit from the Steroid Profile test at Thyrocare.</p>\r\n\r\n<p><strong>Q3: How much does the Steroid Profile test cost at Thyrocare?</strong> A3: Thyrocare offers a special price of just Rs. 3000 for the Steroid Profile test.</p>\r\n\r\n<p><strong>Q4: What are the key applications of the Steroid Profile test?</strong> A4: The Steroid Profile test is used to assess fertility, the risk of miscarriages, genetic diseases, ectopic pregnancies, and to detect hypogonadism in men.</p>\r\n\r\n<p><strong>Q5: Is Thyrocare accredited and certified?</strong> A5: Yes, Thyrocare is accredited by NABL and CAP, and we hold certifications from NGSP, ISO, and ICMR.</p>\r\n\r\n<p>At Thyrocare, we understand the importance of affordable and accessible healthcare. Our Steroid Profile test is just one example of our commitment to providing valuable diagnostic services to our clients. Trust us for accurate and reliable hormone assessment, and take the first step towards better health today. With Thyrocare, you&#39;re in safe hands.</p>\r\n\r\n<p>Don&#39;t miss our special offer &ndash; the Steroid Profile test for just Rs. 3000! Contact us today to schedule your test. Your health is our priority.</p>', 6000, 3000, 2800, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:05:10', NULL),
-(25, 1, 2, NULL, 'JAANCH PCOD BASIC SPL OFFER', 'JAANCH - PCOD BASIC', 'JAANCH PCOD BASIC SPL OFFER', 'uploads/labs/1700733883_package_image.webp', '<p>Welcome to Thyrocare&#39;s JAANCH PCOD BASIC SPL OFFER, a comprehensive diagnostic solution designed to assess and address the health concerns of girls and women experiencing symptoms related to Polycystic Ovary Syndrome (PCOD). With 65 specialized tests, our offer provides invaluable insights into hormonal imbalances, reproductive health, and the presence or severity of PCOD.</p>\r\n\r\n<p><strong>About JAANCH PCOD BASIC SPL OFFER</strong></p>\r\n\r\n<p>Our JAANCH PCOD BASIC SPL OFFER is tailored to help individuals who are grappling with symptoms such as irregular periods, heavy menstrual bleeding, acne, excessive body hair growth, hair loss, weight gain, and skin darkening. By availing this offer, you equip your healthcare provider with the necessary information to diagnose the problem accurately and create a treatment plan focused on your specific needs.</p>\r\n\r\n<p><strong>Key Features of JAANCH PCOD BASIC SPL OFFER:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>65 Essential Tests</strong>: Our offer includes an extensive panel of tests that evaluate hormone levels and their functioning, enabling a comprehensive assessment of your reproductive health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>No Fasting Required</strong>: This profile doesn&#39;t require fasting, making it convenient for individuals of all age groups to undergo the tests.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type</strong>: The tests in this package are conducted on a blood sample, ensuring accuracy and reliability.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>The Thyrocare Advantage</strong></p>\r\n\r\n<p>Thyrocare, India&#39;s leading diagnostic center, has gained recognition and trust for its commitment to providing high-quality diagnostic services. With a state-of-the-art, IT-enabled laboratory spanning over 200,000 square feet, we have the capacity to process over 100,000 specimens and perform 400,000+ clinical chemistry investigations every night. Our innovative air-cargo logistics and IT-enabled barcoded bi-directional operating systems ensure quick turnaround times for processing samples from all corners of the country.</p>\r\n\r\n<p><strong>Our Accreditations:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL and CAP Accredited</strong>: Our laboratories are accredited by the National Accreditation Board for Testing and Calibration Laboratories (NABL) and the College of American Pathologists (CAP), ensuring the highest quality standards.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP and ISO Certified</strong>: Thyrocare maintains certifications from the National Glycohemoglobin Standardization Program (NGSP) and the International Organization for Standardization (ISO), guaranteeing accurate and reliable results.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR Approved</strong>: Our diagnostic methods and standards are approved by the Indian Council of Medical Research (ICMR), reflecting our commitment to healthcare excellence.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Widest Diagnostic Network in India</strong></p>\r\n\r\n<p>With an expansive network of diagnostic centers across India, Thyrocare ensures accessible healthcare services to individuals throughout the country. We believe that high-quality diagnostics should be available to everyone, and we strive to make this vision a reality.</p>\r\n\r\n<p><strong>FAQs</strong></p>\r\n\r\n<p><strong>1. Who can avail the JAANCH PCOD BASIC SPL OFFER?</strong></p>\r\n\r\n<ul>\r\n	<li>This offer is available to individuals of all age groups, making it accessible to everyone.</li>\r\n</ul>\r\n\r\n<p><strong>2. How can I book the JAANCH PCOD BASIC SPL OFFER?</strong></p>\r\n\r\n<ul>\r\n	<li>To book this offer, simply visit our website or contact our customer service. Our team will guide you through the process.</li>\r\n</ul>\r\n\r\n<p><strong>3. What do I need to prepare for the tests?</strong></p>\r\n\r\n<ul>\r\n	<li>No fasting is required for these tests, ensuring your convenience.</li>\r\n</ul>\r\n\r\n<p><strong>4. How can I benefit from the FREE home sample collection?</strong></p>\r\n\r\n<ul>\r\n	<li>We offer a FREE home sample collection service, allowing you to undergo tests from the comfort of your own home. Simply book the service, and our team will collect the samples at your doorstep.</li>\r\n</ul>\r\n\r\n<p><strong>5. How long does it take to receive the test results?</strong></p>\r\n\r\n<ul>\r\n	<li>Our efficient processing system ensures quick turnaround times. You can expect to receive your test results within a reasonable timeframe.</li>\r\n</ul>', 7000, 3500, 2250, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:05:35', 'PROJ1042601'),
-(26, 1, 2, NULL, 'JAANCH INFERTILITY PROFILE ADVANCED', 'JAANCH - INFERTILITY PROFILE ADVANCED', 'JAANCH INFERTILITY PROFILE ADVANCED', 'uploads/labs/1700733850_package_image.webp', '<p>Welcome to Jaanch Infertility Profile Advanced by Thyrocare, your path to understanding and addressing potential fertility issues. Our comprehensive package comprises 21 essential tests, carefully selected by experienced doctors to assess the levels and functioning of critical reproductive hormones. Whether you&#39;re struggling to conceive or simply wish to safeguard your fertility, this profile is a valuable step towards informed decisions.</p>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs):</strong></p>\r\n\r\n<p><strong>1. What is Jaanch Infertility Profile Advanced?</strong><br />\r\nJaanch Infertility Profile Advanced is a specialized diagnostic profile created by Thyrocare. It includes 21 tests that examine the levels and functioning of reproductive hormones to help identify potential pregnancy and infertility-related conditions.</p>\r\n\r\n<p><strong>2. Who should consider this profile?</strong><br />\r\nThis profile is suitable for individuals and couples who are experiencing difficulties conceiving a baby or those who wish to proactively monitor their fertility health. It&#39;s available for individuals across various age groups.</p>\r\n\r\n<p><strong>3. What is the sample type for this test?</strong><br />\r\nThe sample type for Jaanch Infertility Profile Advanced is blood. Our non-fasting profile makes it convenient for you to undergo the test without any dietary restrictions.</p>\r\n\r\n<p><strong>4. How much does it cost?</strong><br />\r\nTake advantage of our special offer with a FREE sample collection at an affordable price of Rs. 4000. This cost-effective option ensures you can access comprehensive fertility testing without breaking the bank.</p>\r\n\r\n<p><strong>5. What is Thyrocare&#39;s commitment to quality and accuracy?</strong><br />\r\nThyrocare is proud to be NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. We operate the world&#39;s largest and most reliable diagnostic center with an expansive network across India. Our state-of-the-art facilities and stringent quality control processes ensure accurate and dependable results.</p>\r\n\r\n<p><strong>6. How fast can I expect my test results?</strong><br />\r\nOur IT-enabled, 24*7, fully automated laboratory guarantees a quick turnaround time for sample processing. With a combination of air-cargo logistics and IT-enabled barcoded systems, we strive to provide you with results swiftly, even for samples arriving at any time of the day or night from different parts of the country.</p>\r\n\r\n<p><strong>7. Can I trust Thyrocare for my diagnostic needs?</strong><br />\r\nAbsolutely. Thyrocare&#39;s reputation as India&#39;s widest diagnostic network stems from our unwavering commitment to excellence and reliability. We are dedicated to assisting you on your health journey, including fertility assessment.</p>', 8000, 4000, 3300, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:04:10', NULL);
-INSERT INTO `labs_package` (`id`, `lab_vendor_id`, `package_category`, `package_sub_category`, `package_name`, `package_test_name`, `package_short_description`, `package_image`, `package_description`, `package_mrp`, `package_price`, `package_gst`, `show_front`, `status`, `created_at`, `updated_at`, `report_code`) VALUES
-(27, 1, 10, NULL, 'JAANCH WOMENS HAIRFALL SCREENING ADVANCED', 'JAANCH - WOMENS HAIRFALL SCREENING ADVANCED', 'JAANCH WOMENS HAIRFALL SCREENING ADVANCED', 'uploads/labs/1700733821_package_image.webp', '<p>Welcome to Thyrocare&#39;s Jaanch Womens Hairfall Screening Advanced</p>\r\n\r\n<p>Are you tired of trying various products to combat hair fall without satisfactory results? It&#39;s time to put an end to hearsay methods and get a comprehensive hair fall screening done. Introducing Thyrocare&#39;s newly launched Jaanch Womens Hairfall Screening Advanced profile, curated by expert doctors. This advanced package includes 47 tests that evaluate vital health parameters, addressing the core issues behind hair loss.</p>\r\n\r\n<p><strong>Why Choose Jaanch Womens Hairfall Screening Advanced?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Comprehensive Insights:</strong> Our package offers a holistic view of your health, covering critical areas such as thyroid health, complete blood count, iron deficiency profile, inflammatory markers, hormones, vitamins, minerals, and essential elements.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Affordable Rates:</strong> We understand the importance of affordability. You can get this extensive screening at the special price of Rs. 2749.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Free Home Sample Collection:</strong> Convenience is key. Book now, and we&#39;ll collect your samples from the comfort of your home, free of charge.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting Profile:</strong> No need to fast for this test. It&#39;s hassle-free and designed to accommodate your schedule.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>For All Ages:</strong> This screening is suitable for women of all age groups. Your hair deserves care, regardless of your age.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>At Thyrocare, we are dedicated to providing the most advanced and reliable diagnostic services. Our state-of-the-art, IT-enabled, 24/7 diagnostic laboratory spans over 200,000 sq. ft., ensuring error-free processing of 100,000+ specimens and 400,000+ clinical chemistry investigations every night. Our unmatched speed factor is made possible through a combination of air-cargo logistics and IT-enabled barcoded bi-directional operating systems.</p>\r\n\r\n<p>We take pride in being NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. Thyrocare stands as the world&#39;s largest and most reliable diagnostic center, with the widest diagnostic network in India.</p>\r\n\r\n<hr />\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What is Jaanch Womens Hairfall Screening Advanced?</strong> Jaanch Womens Hairfall Screening Advanced is a comprehensive package of 47 tests that evaluate critical health parameters to identify the underlying causes of hair fall in women.</p>\r\n\r\n<p><strong>2. Is this profile only for a specific age group?</strong> No, this screening is suitable for women of all ages. Hair health is important at every stage of life.</p>\r\n\r\n<p><strong>3. Is fasting required for this test?</strong> No, it&#39;s a non-fasting profile, making it convenient for everyone.</p>\r\n\r\n<p><strong>4. How do I book the Jaanch Womens Hairfall Screening Advanced?</strong> Booking is easy. Simply reach out to us, and we will arrange a free home sample collection for you.</p>\r\n\r\n<p><strong>5. What makes Thyrocare a reliable choice for diagnostics?</strong> Thyrocare is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. We have the world&#39;s largest diagnostic center network in India, and we focus on error-free processing and quick turnaround times.</p>\r\n\r\n<p><strong>6. What can I expect from the test results?</strong> The test results will provide insights into your thyroid health, blood parameters, iron levels, hormonal balance, vitamin and mineral profiles, and more, helping you and your doctor make informed decisions regarding your hair health.</p>', 5000, 2199, 2199, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:03:41', NULL),
-(28, 1, 11, NULL, 'JAANCH WOMENS SKIN CARE CHECKUP', 'JAANCH - WOMENS SKIN CARE CHECKUP', 'JAANCH WOMENS SKIN CARE CHECKUP', 'uploads/labs/1700733792_package_image.webp', '<p>Welcome to Jaanch - Women&#39;s Skin Care Checkup Profile by Thyrocare India!</p>\r\n\r\n<h2>Unveil the Connection Between Skin Health and Overall Well-being</h2>\r\n\r\n<p>Your skin often reflects what&#39;s happening inside your body. It can be a window to your overall health. Jaanch - Women&#39;s Skin Care Checkup Profile is a specialized diagnostic offering, comprising 39 essential tests, carefully crafted to not only address skin concerns but also uncover potential underlying health conditions.</p>\r\n\r\n<h3>What is Jaanch - Women&#39;s Skin Care Checkup?</h3>\r\n\r\n<p>Jaanch - Women&#39;s Skin Care Checkup is a non-fasting diagnostic profile designed specifically for women. It encompasses a diverse range of tests, including blood tests, to provide a comprehensive evaluation of your skin health and its connection to your overall well-being.</p>\r\n\r\n<h3>Key Tests Included in Jaanch - Women&#39;s Skin Care Checkup:</h3>\r\n\r\n<ul>\r\n	<li><strong>Thyroid Function:</strong> Detect thyroid disorders that can impact skin health.</li>\r\n	<li><strong>Vitamin Levels:</strong> Check for deficiencies that may cause skin problems.</li>\r\n	<li><strong>Autoimmune Markers:</strong> Uncover autoimmune disorders affecting the skin.</li>\r\n	<li><strong>Allergy Screening:</strong> Identify allergens contributing to skin issues.</li>\r\n	<li><strong>Infection Markers:</strong> Discover infections linked to skin conditions.</li>\r\n	<li><strong>Hormonal Balance:</strong> Assess hormonal imbalances influencing your skin.</li>\r\n</ul>\r\n\r\n<h3>Affordable Pricing with FREE Home Sample Collection</h3>\r\n\r\n<p>We&#39;re offering Jaanch - Women&#39;s Skin Care Checkup at an incredible price of just Rs.2599. Moreover, we provide the convenience of a FREE home sample collection, ensuring a hassle-free experience.</p>\r\n\r\n<h3>About Thyrocare: Your Trusted Partner in Diagnostics</h3>\r\n\r\n<p>Thyrocare is a name synonymous with accuracy, reliability, and excellence in diagnostic services. Our state-of-the-art, IT-enabled, 24/7 automated laboratory spanning over 200,000 sq. ft. ensures error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations nightly. Our commitment to quality is reflected in our accreditations, including NABL, CAP, NGSP, and ISO, along with the approval of ICMR.</p>\r\n\r\n<h3>India&#39;s Widest Diagnostic Network</h3>\r\n\r\n<p>With the widest diagnostic network across India, Thyrocare is your trusted partner in health. We guarantee quick turnaround times for sample processing, ensuring you receive your results promptly.</p>\r\n\r\n<p>Explore Jaanch - Women&#39;s Skin Care Checkup Profile today and take the first step towards healthier skin and a healthier you. Your skin deserves the best care, and Thyrocare is here to provide it.</p>\r\n\r\n<h2>Frequently Asked Questions (FAQs)</h2>\r\n\r\n<h3>1. Who should consider Jaanch - Women&#39;s Skin Care Checkup?</h3>\r\n\r\n<p>Jaanch - Women&#39;s Skin Care Checkup is tailored for women of all age groups who want to understand and improve their skin health while also checking for underlying health conditions that might be affecting their well-being.</p>\r\n\r\n<h3>2. How can I book Jaanch - Women&#39;s Skin Care Checkup?</h3>\r\n\r\n<p>Booking is easy! Simply visit our website, choose Jaanch - Women&#39;s Skin Care Checkup, and follow the simple booking process. You can also contact our customer support for assistance.</p>\r\n\r\n<h3>3. Is fasting required for this profile?</h3>\r\n\r\n<p>No, Jaanch - Women&#39;s Skin Care Checkup is a non-fasting profile. You can take the tests at your convenience without fasting.</p>\r\n\r\n<h3>4. How do I get my samples collected?</h3>\r\n\r\n<p>We offer a FREE home sample collection service. Our trained professionals will visit your location to collect the samples, ensuring a comfortable and convenient experience for you.</p>\r\n\r\n<h3>5. When will I receive my test results?</h3>\r\n\r\n<p>We understand the importance of quick results. You can expect your Jaanch - Women&#39;s Skin Care Checkup results within a reasonable time frame, ensuring you have the information you need promptly.</p>', 4799, 2599, 2599, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:04:46', 'PROJ1042854'),
-(29, 1, 10, NULL, 'JAANCH MENS HAIRFALL SCREENING ADVANCED', 'JAANCH - MENS HAIRFALL SCREENING ADVANCED', 'JAANCH MENS HAIRFALL SCREENING ADVANCED', 'uploads/labs/1700733762_package_image.webp', '<p><em>Unlock the Secret to Thicker, Healthier Hair with Jaanch Men&#39;s Hairfall Screening Advanced Profile</em></p>\r\n\r\n<p>Are you tired of dealing with excessive hair fall and unsure of its cause? Your hair&#39;s vitality is influenced by both genetic factors and your lifestyle choices. But fret not, Thyrocare presents the ultimate solution &ndash; Jaanch Men&#39;s Hairfall Screening Advanced. Our comprehensive profile delves deep into 43 crucial parameters, covering thyroid health, complete blood count, iron deficiency profile, inflammatory markers, vitamins, minerals, and essential elements. And the best part? It&#39;s affordable for everyone.</p>\r\n\r\n<p><strong>Why Choose Jaanch Men&#39;s Hairfall Screening Advanced Profile?</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>In-Depth Analysis</strong>: Our profile examines 43 vital parameters to identify the root cause of your hair fall, ensuring a comprehensive evaluation.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting</strong>: No need to fast before the test, making it convenient for you.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Age-Friendly</strong>: This test is suitable for all age groups, so everyone can benefit from it.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type</strong>: A simple blood sample is all that&#39;s required.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Uncover the True Cause of Your Hair Fall</strong></p>\r\n\r\n<p>Say goodbye to hair fall mysteries with Jaanch Men&#39;s Hairfall Screening Advanced. This profile goes beyond the surface to reveal what&#39;s affecting your hair, providing you with insights for effective solutions. And now, for a limited time, enjoy a special offer of just Rs. 2749, which includes FREE home sample collection.</p>\r\n\r\n<p><em>About Thyrocare</em></p>\r\n\r\n<p>At Thyrocare, we&#39;ve revolutionized diagnostic testing. Our IT-enabled, 24*7 diagnostic laboratory spans over 200,000 sq. ft., ensuring error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations each night. With a combination of air-cargo logistics and IT-enabled barcoded systems, we ensure a quick turnaround time for processing samples from all over the country, any time of the day or night.</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL and CAP Accredited</strong>: Our commitment to quality is evident through our accreditation from NABL and CAP.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP and ISO Certified</strong>: We meet the highest industry standards, ensuring precision and reliability in our results.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR Approved</strong>: Thyrocare&#39;s tests are approved by the Indian Council of Medical Research.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>World&#39;s Largest Diagnostic Centre</strong>: We pride ourselves as the world&#39;s largest and most reliable diagnostic center.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network in India</strong>: With an extensive network, we&#39;re bringing advanced testing closer to you.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Don&#39;t let hair fall hold you back; discover the root cause with Jaanch Men&#39;s Hairfall Screening Advanced today!</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What is Jaanch Men&#39;s Hairfall Screening Advanced?</strong> Jaanch Men&#39;s Hairfall Screening Advanced is a comprehensive diagnostic profile that examines 43 crucial parameters related to hair health, including thyroid, complete blood count, iron deficiency, inflammatory markers, vitamins, minerals, and essential elements.</p>\r\n\r\n<p><strong>2. Is fasting required for this test?</strong> No, this is a non-fasting profile, making it convenient and easy to schedule.</p>\r\n\r\n<p><strong>3. What age group can avail this test?</strong> Jaanch Men&#39;s Hairfall Screening Advanced is suitable for all age groups, so anyone concerned about hair fall can benefit from it.</p>\r\n\r\n<p><strong>4. What sample type is needed for the test?</strong> A simple blood sample is required for the Jaanch Men&#39;s Hairfall Screening Advanced profile.</p>', 5000, 2749, 2199, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:04:28', 'PROJ1035751'),
-(30, 1, 11, NULL, 'JAANCH MENS SKIN CARE CHECKUP', 'JAANCH - MENS SKIN CARE CHECKUP', 'JAANCH MENS SKIN CARE CHECKUP', 'uploads/labs/1700733718_package_image.webp', '<p>Welcome to Thyrocare&#39;s Jaanch Men&#39;s Skin Care Checkup &ndash; Your Path to Healthy Skin and Wellness</p>\r\n\r\n<p>Are you concerned about your skin health? At Thyrocare, we understand that your skin&#39;s condition can be a reflection of your overall well-being. That&#39;s why we&#39;ve introduced the Jaanch Men&#39;s Skin Care Checkup, a doctor-curated profile with 32 parameters designed to diagnose skin diseases and uncover potential underlying health issues.</p>\r\n\r\n<p><strong>Key Features of Jaanch Men&#39;s Skin Care Checkup:</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>32 Comprehensive Parameters</strong>: Our thorough profile examines various aspects of your health, from skin conditions to potential underlying concerns, such as thyroid disorders, nutrient deficiencies, allergies, infections, and hormonal imbalances.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting Profile</strong>: Convenient and hassle-free, this test doesn&#39;t require fasting, making it accessible to all.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Applicable to All Ages</strong>: People of all age groups can benefit from this essential test.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type - Blood</strong>: A simple blood test provides accurate insights into your skin health and overall well-being.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Why Choose Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare is a pioneer in the diagnostic industry, offering state-of-the-art services to millions across India. With our IT-enabled, 24/7, fully automated diagnostic laboratory, spanning over 200,000 sq. ft., we ensure error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations every night. Our commitment to excellence is evident in our accreditation, certifications, and approvals:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL and CAP Accredited</strong>: We meet the highest standards of quality and accuracy.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP and ISO Certified</strong>: Our processes adhere to international quality benchmarks.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR Approved</strong>: We have the recognition of the Indian Council of Medical Research.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>World&#39;s Largest and Most Reliable Diagnostic Centre</strong>: Trust Thyrocare for precision and reliability.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network in India</strong>: Our extensive network ensures that we are always accessible to you.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Book Your Jaanch Men&#39;s Skin Care Checkup Today:</strong></p>\r\n\r\n<p>Not only can you avail of this comprehensive test at affordable rates, but we&#39;re also offering a special promotion: a FREE sample collection for just Rs. 2399!</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What does the Jaanch Men&#39;s Skin Care Checkup profile include?</strong> The profile includes 32 parameters that diagnose skin diseases and assess potential underlying health conditions, such as thyroid disorders, nutrient deficiencies, allergies, infections, and hormonal imbalances.</p>\r\n\r\n<p><strong>2. Do I need to fast before taking this test?</strong> No, the Jaanch Men&#39;s Skin Care Checkup is a non-fasting profile, making it convenient and accessible to all.</p>\r\n\r\n<p><strong>3. Is there an age limit for this test?</strong> No, individuals of all age groups can benefit from the Jaanch Men&#39;s Skin Care Checkup.</p>\r\n\r\n<p><strong>4. What sample type is required for this test?</strong> This test requires a blood sample, which is a simple and minimally invasive procedure.</p>\r\n\r\n<p><strong>5. How do I book the Jaanch Men&#39;s Skin Care Checkup?</strong> You can book this comprehensive test at affordable rates on our website, and for a limited time, enjoy a FREE sample collection for just Rs. 2399.</p>\r\n\r\n<p><strong>6. How quickly will I receive my test results?</strong> At Thyrocare, our IT-enabled systems ensure a quick turnaround time for processing samples, allowing you to receive your results promptly.</p>\r\n\r\n<p><strong>7. Is Thyrocare a reliable diagnostic center?</strong> Yes, Thyrocare is the world&#39;s largest and most reliable diagnostic center, with NABL and CAP accreditation, ISO certification, and ICMR approval, ensuring the highest quality standards in diagnostics</p>', 4999, 2399, 2399, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:03:37', 'PROJ1035747'),
-(31, 1, 12, NULL, 'JAANCH TUMOUR PANEL MALE', 'JAANCH - TUMOUR PANEL (MALE)', 'JAANCH TUMOUR PANEL MALE', 'uploads/labs/1700733686_package_image.webp', '<p><strong>Welcome to Thyrocare&#39;s Jaanch Tumour Panel Male</strong></p>\r\n\r\n<p>At Thyrocare, we understand the importance of early cancer diagnosis. Our Jaanch Tumour Panel Male is designed to provide you with accurate insights into your health. This panel, consisting of seven crucial parameters, offers a comprehensive assessment to help detect cancer at its earliest stages. With this information, doctors can diagnose the specific type of cancer, plan appropriate treatments, and monitor your progress effectively.</p>\r\n\r\n<p><strong>Why Choose Jaanch Tumour Panel Male?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Early Cancer Detection:</strong> Our panel is your first line of defense against cancer. By identifying cancer in its initial stages, you have a much higher chance of successful treatment.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Comprehensive Analysis:</strong> The panel covers seven parameters, ensuring a thorough examination of your health to provide a clear picture of your condition.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Post-Treatment Monitoring:</strong> If you&#39;ve recently completed cancer treatment, this panel helps monitor your progress and ensures that you remain cancer-free.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Family History or Risk Factors:</strong> If cancer runs in your family or you have risk factors like obesity, smoking, old age, or preexisting health conditions, this panel can provide essential insights.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Convenience:</strong> Our home collection service makes the process hassle-free. You can undergo this test without any fasting requirements.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Why Thyrocare?</strong></p>\r\n\r\n<p>Thyrocare is a trusted name in diagnostic healthcare. Our IT-enabled, 24/7, fully automated laboratory spans over 200,000 sq. ft., ensuring error-free processing of over 100,000 specimens and 400,000 clinical chemistry investigations every night. Our commitment to quality and excellence is reflected in our accreditations:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL and CAP Accredited:</strong> We meet the highest standards of quality and reliability.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP and ISO Certified:</strong> We adhere to stringent international quality standards.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR Approved:</strong> Our services are recognized and approved by the Indian Council of Medical Research.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>World&#39;s Largest Diagnostic Centre:</strong> We are proud to be the world&#39;s largest and most reliable diagnostic center.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network in India:</strong> With an expansive network, we ensure that quality diagnostic services are accessible to all corners of the country.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>FAQs about Jaanch Tumour Panel Male</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Is fasting required for the Jaanch Tumour Panel Male?</strong> No, this panel is non-fasting, making it convenient for you to get tested at your convenience.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>What age group is eligible for this test?</strong> This panel is suitable for individuals of all age groups.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>What is the sample type for this test?</strong> The sample type required for the Jaanch Tumour Panel Male is blood.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>How can I avail of Thyrocare&#39;s home collection service?</strong> Availing our home collection service is easy. Simply schedule an appointment, and our team will come to your doorstep for sample collection.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>What is the cost of the Jaanch Tumour Panel Male?</strong> We are currently offering the Jaanch Tumour Panel Male at an affordable price of Rs. 3000 with free home collection service as a special offer.</p>\r\n	</li>\r\n</ol>', 6000, 3000, 2100, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:01:26', NULL),
-(32, 1, 13, NULL, 'JAANCH DIABETIC PROFILE ADVANCED', 'JAANCH - DIABETIC PROFILE ADVANCED', 'JAANCH DIABETIC PROFILE ADVANCED', 'uploads/labs/1700733610_package_image.webp', '<p>At Thyrocare, we are proud to introduce the Jaanch Diabetic Profile Advanced, a doctor-curated diagnostic package designed to comprehensively assess your blood sugar levels and overall health. This comprehensive package includes a wide range of essential tests, spanning 105 parameters, to provide a detailed overview of your health status.</p>\r\n\r\n<p><strong>What is Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<p>Jaanch Diabetic Profile Advanced is a one-of-a-kind diagnostic package that not only evaluates your blood sugar levels but also delves deeper into your health by assessing cardiac risk markers, thyroid function, lipid and pancreas profiles, kidney function, vitamins, liver function, complete blood count, and more. With diabetes being a potential precursor to various health issues, this profile empowers both individuals and physicians with valuable insights for a proactive and personalized approach to healthcare.</p>\r\n\r\n<p><strong>Key Features of Jaanch Diabetic Profile Advanced:</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>Comprehensive Diabetes Assessment:</strong> This package is specifically designed to evaluate and monitor your blood sugar levels.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting Profile:</strong> You can take this test without fasting, making it convenient for anyone.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Suitable for All Ages:</strong> Regardless of your age, this profile is designed to help individuals of all age groups.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Blood Sample Type:</strong> The test requires a simple blood sample for analysis.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p><strong>Why Choose Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Holistic Health Monitoring:</strong> This package assesses a wide range of health parameters, providing a holistic view of your well-being.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Doctor-Curated:</strong> The package has been curated by medical experts to ensure its effectiveness in diabetes management and overall health monitoring.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Affordable Pricing:</strong> We offer this comprehensive package at an affordable rate of just Rs. 4000, making it accessible to everyone.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Free Sample Collection:</strong> Book now and enjoy the convenience of free sample collection at your doorstep.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare is a leading diagnostic laboratory known for its IT-enabled, 24/7, fully automated setup spanning over 200,000 sq. ft. Our state-of-the-art facilities are equipped to process over 100,000 specimens and conduct 400,000+ clinical chemistry investigations each night. With our advanced air-cargo logistics and IT-enabled barcoded systems, we ensure quick turnaround times for sample processing, no matter when they arrive from across the country.</p>\r\n\r\n<p><strong>Why Choose Thyrocare?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL- and CAP-Accredited:</strong> Our quality standards are recognized and accredited by NABL and CAP.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ISO-Certified:</strong> We adhere to strict ISO quality standards.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR-Approved:</strong> Our diagnostic services are approved by the Indian Council of Medical Research (ICMR).</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>The World&#39;s Largest Diagnostic Centre:</strong> We take pride in being the largest and most reliable diagnostic center globally.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network in India:</strong> With an expansive network, we ensure easy access to our services throughout India.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Experience the Jaanch Diabetic Profile Advanced by Thyrocare and take a proactive step towards managing your health. Book your test today and embark on a journey to a healthier, more informed life.</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>1. What is the importance of monitoring blood sugar levels?</strong></p>\r\n\r\n<p>Regular monitoring of blood sugar levels is crucial for individuals with diabetes or those at risk. It helps in maintaining optimal health, preventing complications, and adjusting treatment plans as needed.</p>\r\n\r\n<p><strong>2. Can I take the Jaanch Diabetic Profile Advanced test without fasting?</strong></p>\r\n\r\n<p>Yes, this profile is designed to be a non-fasting test, offering convenience for individuals who do not wish to fast before the test.</p>\r\n\r\n<p><strong>3. Who can avail the Jaanch Diabetic Profile Advanced test?</strong></p>\r\n\r\n<p>This profile is suitable for individuals of all age groups, making it accessible to a broad range of people concerned about their blood sugar levels and overall health.</p>\r\n\r\n<p><strong>4. How do I book the Jaanch Diabetic Profile Advanced test?</strong></p>\r\n\r\n<p>Booking the test is easy. Simply visit our website, select the Jaanch Diabetic Profile Advanced, and schedule a convenient date and time for the free sample collection.</p>\r\n\r\n<p><strong>5. Is Thyrocare a trusted diagnostic provider?</strong></p>\r\n\r\n<p>Yes, Thyrocare is a leading and trusted name in the diagnostic industry, known for its advanced technology, high-quality standards, and expansive network.</p>\r\n\r\n<p><strong>6. How long does it take to receive test results?</strong></p>\r\n\r\n<p>Our efficient processes ensure quick turnaround times. You can expect to receive your test results within a reasonable timeframe, allowing for prompt action if necessary.</p>\r\n\r\n<p>&nbsp;</p>', 8000, 4000, 1800, 1, 1, '0000-00-00 00:00:00', '2023-11-23 10:00:10', NULL),
-(33, 1, 14, NULL, 'JAANCH - DIABETIC PROFILE ADVANCED', 'JAANCH - DIABETIC PROFILE ADVANCED', 'JAANCH - DIABETIC PROFILE ADVANCED', 'uploads/labs/1700734503_package_image.webp', '<p>Are you looking for a thorough assessment of your diabetes profile and overall health? Thyrocare presents Jaanch Diabetic Profile Advanced, a comprehensive package curated by doctors to provide you with insights into 105 vital parameters. This advanced diagnostic profile goes beyond just checking your blood sugar levels. It includes an array of tests that cover cardiac risk markers, thyroid function tests, lipid, pancreas, and kidney profiles, as well as examinations of your vitamin levels, liver function, and complete blood count.</p>\r\n\r\n<p><strong>Why Choose Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<p>Diabetes can lead to various health complications if not managed properly. Regular monitoring of your diabetes profile is essential, and Jaanch Diabetic Profile Advanced is designed to help you do just that. By tracking multiple health indicators, this profile assists physicians in tailoring specific treatments based on your unique medical condition.</p>\r\n\r\n<p><strong>Key Features of Jaanch Diabetic Profile Advanced:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>105 Comprehensive Parameters:</strong> This package offers a deep dive into your health with 105 parameters, providing a holistic view of your well-being.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting Profile:</strong> You can undergo this test without fasting, making it convenient for all age groups.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type:</strong> The sample required for this profile is blood, ensuring accuracy in the results.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>Affordable Offer:</strong></p>\r\n\r\n<p>Thyrocare is delighted to offer the Jaanch Diabetic Profile Advanced at a special rate of just Rs. 4000. Plus, we&#39;re providing FREE sample collection, making it both accessible and cost-effective.</p>\r\n\r\n<p><strong>About Thyrocare:</strong></p>\r\n\r\n<p>Thyrocare is a leading diagnostic laboratory with an IT-enabled, fully automated setup spanning over 200,000 sq. ft. Our state-of-the-art facility processes over 100,000 specimens and performs 400,000 clinical chemistry investigations each night. With a combination of air-cargo logistics and IT-enabled barcoded systems, we guarantee a quick turnaround time for samples from across the country.</p>\r\n\r\n<p><strong>Accreditations and Certifications:</strong></p>\r\n\r\n<p>We take pride in being NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. Thyrocare is recognized as the world&#39;s largest and most reliable diagnostic center, boasting the widest diagnostic network in India.</p>\r\n\r\n<p>Jaanch Diabetic Profile Advanced - Keeping your health in check has never been easier. Book now and ensure that your diabetes profile and overall health are well-monitored. Don&#39;t miss out on this special offer from Thyrocare.</p>\r\n\r\n<p><strong>Q: What is Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<p>A: Jaanch Diabetic Profile Advanced is a comprehensive diagnostic package curated by doctors to assess various aspects of your diabetes profile and overall health. It includes 105 crucial parameters, such as blood sugar levels, cardiac risk markers, thyroid function tests, lipid, pancreas, and kidney profiles, vitamins, liver function tests, and complete blood count.</p>\r\n\r\n<p><strong>Q: Who can avail the Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<p>A: This profile is available for individuals of all age groups. It is a non-fasting test, which means it can be taken without the need for fasting, making it convenient for a wide range of patients.</p>\r\n\r\n<p><strong>Q: What is the sample type required for Jaanch Diabetic Profile Advanced?</strong></p>\r\n\r\n<p>A: The sample type required for this profile is blood. A blood sample is collected to perform the various tests included in the package.</p>\r\n\r\n<p><strong>Q: Why is regular monitoring of a diabetic profile important?</strong></p>\r\n\r\n<p>A: Diabetes can lead to multiple health complications if not managed effectively. Regular monitoring of your diabetic profile helps in early detection of potential issues and allows physicians to tailor specific treatments based on your unique medical condition.</p>\r\n\r\n<p><strong>Q: How much does the Jaanch Diabetic Profile Advanced cost?</strong></p>\r\n\r\n<p>A: Thyrocare offers the Jaanch Diabetic Profile Advanced at a special rate of Rs. 4000. Additionally, there is a FREE sample collection service, making it an affordable option for those seeking comprehensive health assessments.</p>\r\n\r\n<p><strong>Q: Tell us more about Thyrocare.</strong></p>\r\n\r\n<p>A: Thyrocare is a renowned diagnostic laboratory with a 24*7, IT-enabled, fully automated setup that spans over 200,000 sq. ft. Our advanced facility processes over 100,000 specimens and conducts 400,000 clinical chemistry investigations per night. We use air-cargo logistics and IT-enabled barcoded systems for quick sample processing from various parts of the country, ensuring unmatched speed and accuracy.</p>\r\n\r\n<p><strong>Q: What accreditations and certifications does Thyrocare have?</strong></p>\r\n\r\n<p>A: Thyrocare is proud to be NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. We are recognized as the world&#39;s largest and most reliable diagnostic center, with the widest diagnostic network in India.</p>', 8000, 4000, 4000, 1, 0, '0000-00-00 00:00:00', '2023-11-25 05:53:51', NULL),
-(34, 1, 15, NULL, 'JAANCH DIABETIC PROFILE BASIC', 'JAANCH - DIABETIC PROFILE BASIC', 'Diabetic Advanced package is a proven, tested & Trusted package from Thyrocare and consists of 69 Tests viz. Lipid profile, Liver profile - LFT, Thyroid ...', 'uploads/labs/1700733512_package_image.webp', '<p>Are you looking for a reliable way to monitor your blood sugar levels and overall health? Consider the Jaanch Diabetic Profile Basic, a comprehensive and non-fasting diagnostic test designed to help you stay on top of your health. With 69 essential parameters, this profile is tailored for complete diabetic care, encompassing not only blood sugar but also lipid profile, liver function tests, iron deficiency profile, kidney profile, and thyroid function tests.</p>\r\n\r\n<p>Early detection is crucial for managing diabetes effectively, as there is no cure for this condition. By scheduling regular health checkups and timely treatment, you can minimize the risk associated with diabetes. Plus, if you book this test now, you&#39;ll receive a special offer: FREE sample collection worth Rs. 1500.</p>\r\n\r\n<p><strong>Key Features of Jaanch Diabetic Profile Basic:</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>69 Comprehensive Parameters:</strong> This profile covers an extensive range of health indicators to give you a holistic understanding of your well-being.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Fasting Test:</strong> No need to fast before the test, making it convenient and accessible for everyone.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Suitable for All Ages:</strong> Individuals of any age group can avail of this test, ensuring that it caters to a diverse range of needs.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Sample Type:</strong> The test requires a simple blood sample, making the process hassle-free.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>When you choose Thyrocare, you&#39;re opting for the world&#39;s largest and most reliable diagnostic center. Our IT-enabled, 24*7, fully automated laboratory is spread across a massive 200,000 sq. ft. area. It can process over 100,000 specimens and 400,000 clinical chemistry investigations per night. Our air-cargo logistics and IT-enabled barcoded bi-directional operating systems guarantee a quick turnaround time, regardless of when samples arrive from various parts of the country.</p>\r\n\r\n<p><strong>Why Choose Thyrocare:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>NABL- and CAP-Accredited:</strong> We maintain the highest quality standards and are accredited by NABL and CAP.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>NGSP- and ISO-Certified:</strong> Our certifications assure you of reliable and accurate results.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>ICMR-Approved:</strong> Thyrocare is recognized and approved by the Indian Council of Medical Research (ICMR).</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Widest Diagnostic Network in India:</strong> With the broadest network, we ensure you have easy access to our services.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Let&#39;s take a moment to address some common questions you might have:</p>\r\n\r\n<p><strong>FAQs:</strong></p>\r\n\r\n<p><strong>Q1: Is fasting required for the Jaanch Diabetic Profile Basic?</strong></p>\r\n\r\n<p>A1: No, this is a non-fasting test, making it convenient for individuals with different schedules and dietary preferences.</p>\r\n\r\n<p><strong>Q2: Can people of all age groups avail of this test?</strong></p>\r\n\r\n<p>A2: Yes, this test is suitable for individuals of all ages, ensuring that it caters to a diverse range of needs.</p>\r\n\r\n<p><strong>Q3: How is the sample collected for this test?</strong></p>\r\n\r\n<p>A3: The sample collection for this test is done through a simple blood sample, making the process quick and hassle-free.</p>\r\n\r\n<p><strong>Q4: What is the importance of early diabetes detection?</strong></p>\r\n\r\n<p>A4: Early detection allows for timely management and risk reduction as diabetes has no cure. Regular checkups and prompt treatment are key.</p>\r\n\r\n<p>Now, if you&#39;re ready to take control of your health and opt for the Jaanch Diabetic Profile Basic, remember that Thyrocare offers a special limited-time offer: FREE sample collection worth Rs. 1500. Don&#39;t miss out on this opportunity to prioritize your well-being.</p>', 3000, 1500, 999, 1, 1, '0000-00-00 00:00:00', '2023-11-23 09:58:32', NULL),
-(35, 1, 16, NULL, 'Fever Profile', 'Fever Profile', 'Fever Profile', 'uploads/labs/1700733483_package_image.webp', '<p><strong>Fever Profile Test for Precise Diagnosis</strong></p>\r\n\r\n<p>Are you suffering from an unexplained fever? Thyrocare&#39;s Fever Profile Test is the key to unlocking the mystery behind your elevated temperature. Our specialized diagnostic center, equipped with cutting-edge technology and a vast network across India, is your trusted partner in identifying the exact cause of your fever.</p>\r\n\r\n<p><strong>Unveiling the Root Cause of Fever</strong></p>\r\n\r\n<p>A fever can be a symptom of various underlying health conditions, and identifying its cause at an early stage is crucial for effective treatment. Thyrocare&#39;s Fever Profile Test allows medical experts to pinpoint the precise reason behind your fever, ensuring that you receive the right care for your well-being.</p>\r\n\r\n<p><strong>Non-Fasting Profile for All Ages</strong></p>\r\n\r\n<p>Our Fever Profile Test is designed to be convenient and accessible for everyone. It&#39;s a non-fasting blood test, which means you don&#39;t need to abstain from food before taking the test. Regardless of your age, you can avail this test to gain valuable insights into your health.</p>\r\n\r\n<p><strong>Transparent Pricing</strong></p>\r\n\r\n<p>Wondering about the Fever Profile Test price? We offer competitive rates, and for a limited time, we have a special offer at just Rs. 780. Your health is our priority, and we believe in providing affordable access to vital diagnostic information.</p>\r\n\r\n<p><strong>About Thyrocare: India&#39;s Diagnostic Leader</strong></p>\r\n\r\n<p>Thyrocare is a pioneer in the diagnostic industry, with a state-of-the-art, IT-enabled, 24/7, fully automated laboratory spanning over 200,000 sq. ft. Our commitment to excellence has earned us NABL and CAP accreditation, NGSP and ISO certifications, and approval from the ICMR.</p>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs)</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><strong>What is a Fever Profile Test?</strong> The Fever Profile Test is a comprehensive blood test that helps identify the underlying cause of a fever. It is a valuable tool for healthcare professionals to tailor the appropriate treatment.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Is fasting required before taking the test?</strong> No, the Fever Profile Test is a non-fasting profile, making it convenient for individuals of all age groups to undergo the test without any dietary restrictions.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>How can I avail the special offer of Rs. 780?</strong> To avail the special offer, simply contact our pathology lab. Our friendly staff will guide you through the process and ensure you get the best value for your health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>How quickly will I receive my test results?</strong> At Thyrocare, we prioritize efficiency. Our advanced technology and logistics ensure quick turnaround times, so you can expect your results in a timely manner.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Is Thyrocare a trusted diagnostic provider?</strong> Absolutely! Thyrocare is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. We are proud to be the world&#39;s largest and most reliable diagnostic center with the widest network in India.</p>\r\n	</li>\r\n</ol>', 1400, 780, 700, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:01:53', 'P328'),
-(36, 1, 5, NULL, 'JAANCH MONSOON FEVER PANEL BASIC', 'JAANCH - MONSOON FEVER PANEL BASIC', 'JAANCH MONSOON FEVER PANEL BASIC', 'uploads/labs/1700733449_package_image.webp', '<p>Welcome to Thyrocare, your partner in health. Monsoon brings with it the promise of rain and cool weather, but it also brings a host of infections that can put a damper on your well-being. Don&#39;t let the rainy season ruin your enjoyment. Protect your health with our newly launched doctor-curated Jaanch Monsoon Fever Panel Basic, a comprehensive health check designed to help you stay healthy during this season.</p>\r\n\r\n<p><strong>Jaanch Monsoon Fever Panel Basic - Your Shield Against Monsoon Illness</strong></p>\r\n\r\n<p>This specially designed panel comprises 34 essential parameters, ensuring that you&#39;re well-prepared to combat health problems that the monsoon might bring your way. The panel includes a complete hemogram, cardiac risk markers, and tests for fever and infectious diseases such as dengue, malaria, typhoid, and chikungunya. These tests are crucial, especially when the symptoms of diseases like Dengue and Malaria can be confusingly similar. Our panel provides the right diagnosis, giving you peace of mind.</p>\r\n\r\n<p><strong>Why Choose Jaanch Monsoon Fever Panel Basic?</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Comprehensive Analysis:</strong> Our panel covers a wide range of parameters, offering a holistic view of your health.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Convenience:</strong> You can get tested from the comfort of your home, with FREE home sample collection.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Affordable:</strong> At just Rs. 1499, it&#39;s a special offer that ensures you prioritize your health without breaking the bank.</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>For All Ages:</strong> This non-fasting profile is suitable for all age groups, making it a convenient choice for your entire family.</p>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>About Thyrocare - Your Trusted Health Partner</strong></p>\r\n\r\n<p>Thyrocare is a name you can trust. With our IT-enabled, 24*7, fully automated diagnostic laboratory spanning over 200,000 sq. ft., we are dedicated to processing over 100,000 specimens and 400,000 clinical chemistry investigations each night. Our combination of air-cargo logistics and IT-enabled barcoded bi-directional operating systems ensures quick turnaround time for processing samples from all corners of the country.</p>\r\n\r\n<p>We are proud to be NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved, making us the world&#39;s largest and most reliable diagnostic center with the widest diagnostic network in India.</p>\r\n\r\n<p><strong>Frequently Asked Questions</strong></p>\r\n\r\n<p><strong>Q1: What does the Jaanch Monsoon Fever Panel Basic include?</strong><br />\r\nA1: This panel covers a complete hemogram, cardiac risk markers, and tests for infectious diseases like dengue, malaria, typhoid, and chikungunya.</p>\r\n\r\n<p><strong>Q2: How much does the Jaanch Monsoon Fever Panel Basic cost?</strong><br />\r\nA2: You can avail this special offer for just Rs. 1499, ensuring your health remains a top priority during the monsoon.</p>\r\n\r\n<p><strong>Q3: Is fasting required for this test?</strong><br />\r\nA3: No, this is a non-fasting profile, making it convenient for all age groups.</p>\r\n\r\n<p><strong>Q4: How can I book this panel?</strong><br />\r\nA4: Booking is easy. Visit our website, select the Jaanch Monsoon Fever Panel Basic, and schedule your home sample collection.</p>\r\n\r\n<p><strong>Q5: Is Thyrocare a reliable diagnostic center?</strong><br />\r\nA5: Absolutely! Thyrocare is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved. We are the world&#39;s largest and most trusted diagnostic center in India.</p>', 3000, 1499, 1500, 1, 1, '0000-00-00 00:00:00', '2023-11-23 09:57:29', NULL),
-(37, 1, 5, NULL, 'JAANCH MONSOON FEVER PANEL ADVANCED', 'JAANCH - MONSOON FEVER PANEL ADVANCED', 'JAANCH MONSOON FEVER PANEL ADVANCED', 'uploads/labs/1700733416_package_image.webp', '<p><strong>Introduction:</strong> Welcome to Thyrocare&#39;s Jaanch Monsoon Fever Panel Advanced &ndash; your shield against the health challenges brought by the monsoon season. Monsoon, with its heavy rainfall and increased humidity, can create an environment conducive to various health problems. To ensure your well-being, our doctor-curated panel is designed to diagnose and prevent these monsoon-related health issues. Read on to discover how this comprehensive panel can safeguard your health.</p>\r\n\r\n<p><strong>Understanding Jaanch Monsoon Fever Panel Advanced:</strong> The Jaanch Monsoon Fever Panel Advanced is a specialized health check-up package that comprises 37 essential parameters to assess your overall health during the monsoon season. This non-fasting panel is suitable for individuals of all age groups and involves a simple blood sample collection in the comfort of your home. Priced at just Rs. 2499, it&#39;s an exclusive offer to ensure your well-being during the rainy season.</p>\r\n\r\n<p><strong>Key Parameters:</strong> This advanced panel includes a complete hemogram, cardiac risk markers, and parameters specific to fever and infectious diseases such as dengue, malaria, typhoid, and chikungunya. The symptoms of dengue and malaria can be confusingly similar, often leading to misdiagnosis. Our Jaanch Monsoon Fever Panel Advanced is designed to provide you with the correct diagnosis, helping you seek appropriate treatment promptly.</p>\r\n\r\n<p><strong>Why Choose Jaanch Monsoon Fever Panel Advanced?</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Convenience:</strong> Our home sample collection service ensures you can get tested without leaving the comfort of your home, minimizing exposure to external elements.</li>\r\n	<li><strong>Comprehensive:</strong> With 37 parameters, this panel covers a wide range of health indicators, enabling early detection and prevention.</li>\r\n	<li><strong>Affordability:</strong> At just Rs. 2499, this panel offers exceptional value for comprehensive health assessment.</li>\r\n	<li><strong>Accuracy:</strong> Thyrocare, with its state-of-the-art 24*7 diagnostic laboratory, is NABL- and CAP-accredited, NGSP- and ISO-certified, and ICMR-approved, ensuring the highest standards of precision.</li>\r\n	<li><strong>Speed:</strong> Our advanced logistics and IT systems guarantee a quick turnaround time, even for samples arriving from various parts of the country.</li>\r\n</ul>\r\n\r\n<p><strong>Frequently Asked Questions (FAQs):</strong></p>\r\n\r\n<p><strong>1. Who should consider the Jaanch Monsoon Fever Panel Advanced?</strong></p>\r\n\r\n<ul>\r\n	<li>This panel is suitable for individuals of all age groups looking to safeguard their health during the monsoon season.</li>\r\n</ul>\r\n\r\n<p><strong>2. Can I get tested from home?</strong></p>\r\n\r\n<ul>\r\n	<li>Yes, our home sample collection service allows you to get tested conveniently and safely.</li>\r\n</ul>\r\n\r\n<p><strong>3. How long does it take to receive the results?</strong></p>\r\n\r\n<ul>\r\n	<li>With our advanced systems, you can expect quick results, ensuring timely diagnosis and treatment.</li>\r\n</ul>\r\n\r\n<p><strong>4. Is Thyrocare a reliable diagnostic center?</strong></p>\r\n\r\n<ul>\r\n	<li>Thyrocare is the world&#39;s largest and most reliable diagnostic center, with NABL and CAP accreditation, NGSP and ISO certification, and ICMR approval.</li>\r\n</ul>\r\n\r\n<p><strong>5. Is this panel affordable?</strong></p>\r\n\r\n<ul>\r\n	<li>Absolutely! The Jaanch Monsoon Fever Panel Advanced is available at a special offer price of just Rs. 2499.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Protect Your Health with Jaanch Monsoon Fever Panel Advanced:</strong> Don&#39;t let monsoon-related health issues catch you off guard. Take proactive measures to safeguard your health with Thyrocare&#39;s Jaanch Monsoon Fever Panel Advanced. Book your test today and enjoy the benefits of comprehensive health assessment from the comfort of your home. Trust Thyrocare for accurate, reliable, and affordable diagnostics.</p>', 5000, 2499, 1899, 1, 1, '0000-00-00 00:00:00', '2023-11-29 14:01:00', 'P1261');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labs_tests_allotments`
---
-
-CREATE TABLE `labs_tests_allotments` (
-  `id` bigint UNSIGNED NOT NULL,
-  `labs_package_id` int NOT NULL,
-  `labs_tests_id` int NOT NULL,
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `labs_tests_allotments`
---
-
-INSERT INTO `labs_tests_allotments` (`id`, `labs_package_id`, `labs_tests_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, 21, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(2, 2, 25, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(3, 2, 27, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(4, 2, 51, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(5, 2, 33, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(6, 2, 52, 1, '2023-11-25 04:52:05', '2023-11-25 04:52:05'),
-(7, 2, 53, 1, '2023-11-25 04:53:08', '2023-11-25 04:53:08'),
-(8, 3, 21, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(9, 3, 53, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(10, 3, 27, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(11, 3, 1, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(12, 3, 26, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(13, 3, 51, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(14, 3, 5, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(15, 3, 52, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(16, 3, 9, 1, '2023-11-25 04:55:08', '2023-11-25 04:55:08'),
-(17, 4, 53, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(18, 4, 27, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(19, 4, 19, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(20, 4, 26, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(21, 4, 28, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(22, 4, 20, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(23, 4, 29, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(24, 4, 51, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(25, 4, 5, 1, '2023-11-25 04:56:34', '2023-11-25 04:56:34'),
-(26, 5, 15, 1, '2023-11-25 04:57:07', '2023-11-25 04:57:07'),
-(27, 6, 30, 1, '2023-11-25 04:57:34', '2023-11-25 04:57:34'),
-(28, 6, 15, 1, '2023-11-25 04:57:34', '2023-11-25 04:57:34'),
-(29, 7, 30, 1, '2023-11-25 04:57:58', '2023-11-25 04:57:58'),
-(30, 7, 15, 1, '2023-11-25 04:57:58', '2023-11-25 04:57:58'),
-(31, 8, 4, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(32, 8, 53, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(33, 8, 1, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(34, 8, 54, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(35, 8, 8, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(36, 8, 51, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(37, 8, 5, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(38, 8, 52, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(39, 8, 6, 1, '2023-11-25 04:59:45', '2023-11-25 04:59:45'),
-(40, 9, 30, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(41, 9, 4, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(42, 9, 53, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(43, 9, 1, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(44, 9, 7, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(45, 9, 11, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(46, 9, 13, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(47, 9, 54, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(48, 9, 8, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(49, 9, 51, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(50, 9, 23, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(51, 9, 5, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(52, 9, 52, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(53, 9, 6, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(54, 9, 9, 1, '2023-11-25 05:02:38', '2023-11-25 05:02:38'),
-(55, 10, 2, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(56, 10, 4, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(57, 10, 53, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(58, 10, 1, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(59, 10, 7, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(60, 10, 13, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(61, 10, 54, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(62, 10, 8, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(63, 10, 51, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(64, 10, 23, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(65, 10, 5, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(66, 10, 52, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(67, 10, 6, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(68, 10, 9, 1, '2023-11-25 05:10:43', '2023-11-25 05:10:43'),
-(69, 11, 4, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(70, 11, 53, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(71, 11, 1, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(72, 11, 7, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(73, 11, 11, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(74, 11, 13, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(75, 11, 54, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(76, 11, 8, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(77, 11, 51, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(78, 11, 23, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(79, 11, 5, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(80, 11, 52, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(81, 11, 6, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(82, 11, 9, 1, '2023-11-25 05:14:22', '2023-11-25 05:14:22'),
-(83, 12, 17, 1, '2023-11-25 05:18:16', '2023-11-25 05:18:16'),
-(84, 13, 53, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(85, 13, 1, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(86, 13, 7, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(87, 13, 54, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(88, 13, 8, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(89, 13, 51, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(90, 13, 5, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(91, 13, 52, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(92, 13, 9, 1, '2023-11-25 05:19:19', '2023-11-25 05:19:19'),
-(93, 14, 4, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(94, 14, 53, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(95, 14, 1, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(96, 14, 11, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(97, 14, 13, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(98, 14, 54, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(99, 14, 8, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(100, 14, 51, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(101, 14, 5, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(102, 14, 52, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(103, 14, 9, 1, '2023-11-25 05:20:51', '2023-11-25 05:20:51'),
-(104, 15, 4, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(105, 15, 53, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(106, 15, 24, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(107, 15, 1, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(108, 15, 7, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(109, 15, 13, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(110, 15, 54, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(111, 15, 8, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(112, 15, 51, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(113, 15, 5, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(114, 15, 52, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(115, 15, 9, 1, '2023-11-25 05:22:22', '2023-11-25 05:22:22'),
-(116, 16, 30, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(117, 16, 4, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(118, 16, 53, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(119, 16, 1, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(120, 16, 7, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(121, 16, 13, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(122, 16, 54, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(123, 16, 8, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(124, 16, 51, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(125, 16, 23, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(126, 16, 5, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(127, 16, 52, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(128, 16, 6, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(129, 16, 9, 1, '2023-11-25 05:24:11', '2023-11-25 05:24:11'),
-(130, 17, 4, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(131, 17, 53, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(132, 17, 1, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(133, 17, 7, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(134, 17, 13, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(135, 17, 32, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(136, 17, 54, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(137, 17, 8, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(138, 17, 51, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(139, 17, 23, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(140, 17, 5, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(141, 17, 52, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(142, 17, 6, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(143, 17, 9, 1, '2023-11-25 05:26:35', '2023-11-25 05:26:35'),
-(144, 18, 2, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(145, 18, 4, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(146, 18, 53, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(147, 18, 24, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(148, 18, 1, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(149, 18, 7, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(150, 18, 11, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(151, 18, 13, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(152, 18, 54, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(153, 18, 8, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(154, 18, 51, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(155, 18, 10, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(156, 18, 23, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(157, 18, 5, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(158, 18, 52, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(159, 18, 6, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(160, 18, 9, 1, '2023-11-25 05:28:41', '2023-11-25 05:28:41'),
-(161, 19, 9, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(162, 19, 6, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(163, 19, 52, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(164, 19, 5, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(165, 19, 23, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(166, 19, 10, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(167, 19, 51, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(168, 19, 8, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(169, 19, 54, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(170, 19, 13, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(171, 19, 11, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(172, 19, 7, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(173, 19, 1, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(174, 19, 24, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(175, 19, 53, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(176, 19, 4, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(177, 19, 2, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(178, 20, 9, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(179, 20, 6, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(180, 20, 52, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(181, 20, 5, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(182, 20, 23, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(183, 20, 10, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(184, 20, 51, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(185, 20, 8, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(186, 20, 54, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(187, 20, 13, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(188, 20, 11, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(189, 20, 7, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(190, 20, 1, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(191, 20, 24, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(192, 20, 53, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(193, 20, 4, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(194, 20, 2, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(195, 20, 16, 1, '2023-11-24 23:58:41', '2023-11-24 23:58:41'),
-(196, 21, 46, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(197, 21, 42, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(198, 21, 43, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(199, 21, 44, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(200, 21, 45, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(201, 21, 50, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(202, 21, 47, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(203, 21, 49, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(204, 21, 48, 1, '2023-11-25 05:34:16', '2023-11-25 05:34:16'),
-(205, 22, 32, 1, '2023-11-25 05:34:41', '2023-11-25 05:34:41'),
-(206, 22, 52, 1, '2023-11-25 05:34:41', '2023-11-25 05:34:41'),
-(207, 23, 53, 1, '2023-11-25 05:35:14', '2023-11-25 05:35:14'),
-(208, 23, 31, 1, '2023-11-25 05:35:14', '2023-11-25 05:35:14'),
-(209, 23, 35, 1, '2023-11-25 05:35:14', '2023-11-25 05:35:14'),
-(210, 23, 51, 1, '2023-11-25 05:35:14', '2023-11-25 05:35:14'),
-(211, 24, 16, 1, '2023-11-25 05:35:37', '2023-11-25 05:35:37'),
-(212, 24, 9, 1, '2023-11-25 05:35:37', '2023-11-25 05:35:37'),
-(213, 25, 53, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(214, 25, 1, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(215, 25, 13, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(216, 25, 32, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(217, 25, 8, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(218, 25, 51, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(219, 25, 15, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(220, 25, 5, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(221, 25, 52, 1, '2023-11-25 05:36:25', '2023-11-25 05:36:25'),
-(222, 26, 13, 1, '2023-11-25 05:36:55', '2023-11-25 05:36:55'),
-(223, 26, 32, 1, '2023-11-25 05:36:55', '2023-11-25 05:36:55'),
-(224, 26, 9, 1, '2023-11-25 05:36:55', '2023-11-25 05:36:55'),
-(225, 26, 52, 1, '2023-11-25 05:36:55', '2023-11-25 05:36:55'),
-(226, 27, 2, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(227, 27, 53, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(228, 27, 27, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(229, 27, 11, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(230, 27, 13, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(231, 27, 32, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(232, 27, 54, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(233, 27, 10, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(234, 27, 5, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(235, 27, 52, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(236, 27, 36, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(237, 27, 9, 1, '2023-11-25 05:40:11', '2023-11-25 05:40:11'),
-(238, 28, 2, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(239, 28, 53, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(240, 28, 1, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(241, 28, 13, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(242, 28, 32, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(243, 28, 15, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(244, 28, 52, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(245, 28, 39, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(246, 28, 9, 1, '2023-11-25 05:41:12', '2023-11-25 05:41:12'),
-(247, 29, 2, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(248, 29, 53, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(249, 29, 27, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(250, 29, 11, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(251, 29, 32, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(252, 29, 54, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(253, 29, 10, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(254, 29, 16, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(255, 29, 52, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(256, 29, 9, 1, '2023-11-25 05:42:47', '2023-11-25 05:42:47'),
-(257, 30, 40, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(258, 30, 2, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(259, 30, 53, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(260, 30, 52, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(261, 30, 39, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(262, 30, 9, 1, '2023-11-25 05:43:46', '2023-11-25 05:43:46'),
-(264, 31, 30, 1, '2023-11-25 05:44:19', '2023-11-25 05:44:19'),
-(265, 31, 4, 1, '2023-11-25 05:44:19', '2023-11-25 05:44:19'),
-(266, 32, 4, 1, '2023-11-25 05:46:17', '2023-11-25 05:46:17'),
-(267, 32, 53, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(268, 32, 1, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(269, 32, 7, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(270, 32, 54, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(271, 32, 8, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(272, 32, 51, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(273, 32, 23, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(274, 32, 5, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(275, 32, 52, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(276, 32, 6, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(277, 32, 9, 1, '2023-11-25 05:46:18', '2023-11-25 05:46:18'),
-(278, 34, 53, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(279, 34, 1, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(280, 34, 7, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(281, 34, 54, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(282, 34, 8, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(283, 34, 51, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(284, 34, 5, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(285, 34, 52, 1, '2023-11-25 05:48:28', '2023-11-25 05:48:28'),
-(286, 35, 53, 1, '2023-11-25 05:49:08', '2023-11-25 05:49:08'),
-(287, 35, 31, 1, '2023-11-25 05:49:08', '2023-11-25 05:49:08'),
-(288, 36, 53, 1, '2023-11-25 05:50:02', '2023-11-25 05:50:02'),
-(289, 36, 31, 1, '2023-11-25 05:50:02', '2023-11-25 05:50:02'),
-(290, 36, 18, 1, '2023-11-25 05:50:02', '2023-11-25 05:50:02'),
-(291, 36, 51, 1, '2023-11-25 05:50:02', '2023-11-25 05:50:02'),
-(292, 36, 34, 1, '2023-11-25 05:50:02', '2023-11-25 05:50:02'),
-(293, 37, 4, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46'),
-(294, 37, 53, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46'),
-(295, 37, 31, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46'),
-(296, 37, 18, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46'),
-(297, 37, 51, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46'),
-(298, 37, 34, 1, '2023-11-25 05:50:46', '2023-11-25 05:50:46');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labs_tests_profile`
---
-
-CREATE TABLE `labs_tests_profile` (
-  `id` int UNSIGNED NOT NULL,
-  `test_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `test_image` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `status` tinyint DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `labs_tests_profile`
---
-
-INSERT INTO `labs_tests_profile` (`id`, `test_name`, `test_image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'DIABETES', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(2, 'ARTHRITIS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(3, 'Wait For Name', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 23:43:18'),
-(4, 'CARDIAC RISK MARKERS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(5, 'RENAL', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(6, 'TOXIC ELEMENTS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(7, 'ELECTROLYTES', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(8, 'LIPID', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(9, 'VITAMINS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(10, 'METABOLIC', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(11, 'ELEMENTS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(12, 'URINOGRAM', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(13, 'HORMONE', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(14, 'Wait For Name', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 23:46:35'),
-(15, 'PREGNANCY', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(16, 'STEROID', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(17, 'COVID-19 RT PCR', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(18, 'INFECTION', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(19, 'D-DIMER', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(20, 'INTERLEUKIN-6', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(21, 'CANTIBODIES', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(22, 'HIPERTENSION', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(23, 'PANCREATIC', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(24, 'COMPLETE URINE', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(25, 'Creatinine', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(26, 'ESR', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(27, 'CRP', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(28, 'Ferritin', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(29, 'LDH', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(30, 'CANCER MARKERS', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(31, 'Fever', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(32, 'INFERTILITY', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(33, 'RANDOM BLOOD SUGAR', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(34, 'Others', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(35, 'infection', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(36, 'VDRL', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(37, 'Wait For Name', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 23:41:36'),
-(38, 'Wait For Name', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 23:41:27'),
-(39, 'Total IGE', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(40, 'ANTI - DSDNA', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(41, 'Wait For Name', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 23:45:47'),
-(42, 'Dairy', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(43, 'Fish', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(44, 'Fruits', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(45, 'Meat', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(46, 'Cereals', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(47, 'Nuts', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(48, 'Vegetables', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(49, 'Spices', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(50, 'Miscellaneous', NULL, 1, '2023-11-24 04:39:33', '2023-11-24 04:39:33'),
-(51, 'Liver', NULL, 1, '2023-11-25 04:50:36', '2023-11-25 04:50:36'),
-(52, 'Thyroid', NULL, 1, '2023-11-25 04:51:03', '2023-11-25 04:51:03'),
-(53, 'COMPLETE HEMOGRAM', NULL, 1, '2023-11-25 04:52:51', '2023-11-25 04:52:51'),
-(54, 'IRON DEFICIENCY', NULL, 1, '2023-11-25 04:58:56', '2023-11-25 04:58:56');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lab_package_booking`
---
-
-CREATE TABLE `lab_package_booking` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `lab_id` int NOT NULL,
-  `package_id` int NOT NULL,
-  `customer_id` int NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `booking_for` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_address` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remark` longtext COLLATE utf8mb4_unicode_ci,
-  `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `booking_date` date DEFAULT NULL,
-  `slot_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `package_mrp` float NOT NULL,
-  `package_price` float NOT NULL,
-  `package_gst` float NOT NULL,
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lab_sub_tests`
---
-
-CREATE TABLE `lab_sub_tests` (
-  `id` bigint UNSIGNED NOT NULL,
-  `labs_tests_id` int NOT NULL,
-  `sub_tests_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `lab_sub_tests`
---
-
-INSERT INTO `lab_sub_tests` (`id`, `labs_tests_id`, `sub_tests_name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'AVERAGE BLOOD GLUCOSE (ABG)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(2, 1, 'BLOOD KETONE (D3HB)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(3, 1, 'FASTING BLOOD SUGAR', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(4, 1, 'FRUCTOSAMINE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(5, 1, 'HbA1c', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(6, 1, 'INSULIN - FASTING', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(7, 1, 'URINARY MICROALBUMIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(8, 2, 'ANTI CCP (ACCP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(9, 2, 'ANTI NUCLEAR ANTIBODIES (ANA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(10, 3, 'AMYLASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(11, 23, 'AMYLASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(12, 3, 'LIPASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(13, 23, 'LIPASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(14, 4, 'APO B / APO A1 RATIO (APO B/A1)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(15, 4, 'APOLIPOPROTEIN - A1 (APO-A1)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(16, 4, 'APOLIPOPROTEIN - B (APO-B)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(17, 4, 'HOMOCYSTEINE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(18, 4, 'HIGH SENSITIVITY C-REACTIVE PROTEIN (HS-CRP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(19, 4, 'LIPOPROTEIN (A) [LP(A)]', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(20, 4, 'LP-PLA2', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(21, 5, 'BUN / Sr.CREATININE RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(22, 5, 'BLOOD UREA NITROGEN (BUN)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(23, 5, 'CALCIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(24, 5, 'CYSTATIN C', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(25, 5, 'CREATININE - SERUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(26, 5, 'URI. ALBUMIN/CREATININE RATIO (UA/C)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(27, 5, 'CREATININE - URINE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(28, 5, 'URIC ACID', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(29, 6, 'SILVER', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(30, 6, 'ALUMINIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(31, 6, 'ARSENIC', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(32, 6, 'BARIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(33, 6, 'BERYLLIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(34, 6, 'BISMUTH', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(35, 6, 'CADMIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(36, 6, 'COBALT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(37, 6, 'CHROMIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(38, 6, 'CAESIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(39, 6, 'MERCURY', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(40, 6, 'MANGANESE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(41, 6, 'MOLYBDENUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(42, 6, 'NICKEL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(43, 6, 'LEAD', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(44, 6, 'ANTIMONY', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(45, 6, 'SELENIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(46, 6, 'TIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(47, 6, 'STRONTIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(48, 6, 'THALLIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(49, 6, 'URANIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(50, 6, 'VANADIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(51, 7, 'CHLORIDE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(52, 7, 'POTASSIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(53, 7, 'SODIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(54, 8, 'TOTAL CHOLESTEROL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(55, 8, 'HDL CHOLESTEROL - DIRECT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(56, 8, 'LDL CHOLESTEROL - DIRECT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(57, 8, 'LDL / HDL RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(58, 8, 'NON-HDL CHOLESTEROL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(59, 8, 'TC/ HDL CHOLESTEROL RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(60, 8, 'TRIGLYCERIDES', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(61, 8, 'VLDL CHOLESTEROL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(62, 9, 'VITAMIN D TOTAL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(63, 9, 'VITAMIN D2', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(64, 9, 'VITAMIN D3', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(65, 9, 'VITAMIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(66, 9, 'VITAMIN B-12', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(67, 9, 'VITAMIN B1/THIAMIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(68, 9, 'VITAMIN B2/RIBOFLAVIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(69, 9, 'VITAMIN B3/NICOTINIC ACID', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(70, 9, 'VITAMIN B5/PANTOTHENIC', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(71, 9, 'VITAMIN B6/PYRIDOXAL - 5 - PHOSPHATE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(72, 9, 'VITAMIN B7/BIOTIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(73, 9, 'VITAMIN B9/FOLIC ACID', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(74, 9, 'VITAMIN E', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(75, 9, 'VITAMIN K', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(76, 10, 'MAGNESIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(77, 11, 'SERUM COPPER', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(78, 11, 'SERUM ZINC', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(79, 12, 'SPECIFIC GRAVITY', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(80, 12, 'URINARY BILIRUBIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(81, 12, 'URINE BLOOD', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(82, 12, 'UROBILINOGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(83, 12, 'URINARY GLUCOSE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(84, 12, 'URINE KETONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(85, 12, 'URINARY LEUCOCYTES', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(86, 12, 'NITRITE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(87, 12, 'PH', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(88, 12, 'URINARY PROTEIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(89, 13, 'TESTOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(90, 14, '17 OH PROGESTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(91, 32, '17 OH PROGESTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(92, 14, 'ANTI MULLERIAN HORMONE (AMH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(93, 32, 'ANTI MULLERIAN HORMONE (AMH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(94, 14, 'LUTEINISING HORMONE (LH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(95, 32, 'LUTEINISING HORMONE (LH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(96, 14, 'FOLLICLE STIMULATING HORMONE ( FSH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(97, 32, 'FOLLICLE STIMULATING HORMONE ( FSH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(98, 14, 'DHEA - SULPHATE (DHEAS)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(99, 32, 'DHEA - SULPHATE (DHEAS)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(100, 14, 'PROLACTIN ( PRL)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(101, 32, 'PROLACTIN ( PRL)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(102, 15, 'ESTRADIOL/OESTROGEN (E2)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(103, 38, 'ESTRADIOL/OESTROGEN (E2)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(104, 15, 'PROGESTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(105, 38, 'PROGESTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(106, 16, 'ANDROSTENEDIONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(107, 16, 'ALDOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(108, 16, '17-HYDROXYPROGESTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(109, 16, 'CORTISOL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(110, 16, 'CORTICOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(111, 16, 'DEOXYCORTISOL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(112, 16, 'DEHYDROEPIANDROSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(113, 16, 'DHEA - SULPHATE (DHEAS)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(114, 16, 'ESTRADIOL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(115, 17, 'COVID-19 RT PCR', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(116, 4, 'LACTATE DEHYDROGENASE (LDH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(117, 18, 'INTERLEUKIN-6', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(118, 35, 'INTERLEUKIN-6', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(119, 18, 'PROCALCITONIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(120, 35, 'PROCALCITONIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(121, 19, 'D-DIMER', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(122, 20, 'INTERLEUKIN-6', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(123, 20, 'INTERLEUKIN-6 (il-6)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(124, 21, 'COVID ANTIBODY IGG - C.L.I.A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(125, 21, 'COVID ANTIBODY IGG - ELISA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(126, 21, 'COVID ANTIBODY IGM - ELISA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(127, 21, 'COVID ANTIBODIES-TOTAL (CLIA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(128, 21, 'COVID ANTIBODY TOTAL- ELISA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(129, 9, '25-OH VITAMIN D (TOTAL)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(130, 8, 'HDL / LDL Cholesterol Ratio', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(131, 22, 'ALDOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(132, 3, 'AMYLASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(133, 23, 'AMYLASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(134, 3, 'LIPASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(135, 23, 'LIPASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(136, 16, 'TESTOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(137, 8, 'new', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(138, 6, 'new', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(139, 6, 'Hair profile', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(140, 24, 'SPECIFIC GRAVITY', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(141, 24, 'APPEARANCE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(142, 24, 'BACTERIA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(143, 24, 'URINARY BILIRUBIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(144, 24, 'URINE BLOOD', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(145, 24, 'UROBILINOGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(146, 24, 'BILE PIGMENT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(147, 24, 'BILE SALT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(148, 24, 'CASTS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(149, 24, 'COLOUR', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(150, 24, 'CRYSTALS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(151, 24, 'EPITHELIAL CELLS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(152, 24, 'URINARY GLUCOSE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(153, 24, 'URINE KETONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(154, 24, 'URINARY LEUCOCYTES', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(155, 24, 'NITRITE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(156, 24, 'PH', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(157, 24, 'URINARY PROTEIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(158, 2, 'calcium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(159, 2, 'Phosphorus', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(160, 24, 'CALCIUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(161, 24, 'MICROALBUMIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(162, 24, 'MUCUS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(163, 24, 'PARASITE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(164, 24, 'RED BLOOD CELLS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(165, 24, 'ASCORBIC ACID', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(166, 24, 'VOLUME', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(167, 24, 'YEAST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(168, 25, 'Creatinine', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(169, 26, 'Erythrocyte Sedimentation Rate (ESR)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(170, 5, 'Urea', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(171, 5, 'Phosphorus', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(172, 5, 'Sodium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(173, 5, 'Potassium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(174, 5, 'Chloride', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(175, 1, 'Random or Fasting Blood Sugar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(176, 1, 'Postprandial Blood Sugar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(177, 16, 'Progestrone', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(178, 27, 'C-reactive protein (CRP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(179, 28, 'Ferritin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(180, 29, 'Lactate dehydrogenase (LDH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(181, 19, 'D-Dimer', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(182, 30, 'PROSTATE SPECIFIC ANTIGEN (PSA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(183, 37, 'PROSTATE SPECIFIC ANTIGEN (PSA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(184, 7, 'Phosphorus', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(185, 30, 'CA125', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(186, 37, 'CA125', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(187, 9, 'Folate', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(188, 7, 'ADULT HEMOGLOBIN ELECTROPHORESIS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(189, 2, 'RHEUMATOID FACTOR (RF)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(190, 5, 'INTACT PARATHYROID HORMONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(191, 1, 'C-PEPTIDE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(192, 31, 'PLASMODIUM FALCIPARUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(193, 41, 'PLASMODIUM FALCIPARUM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(194, 31, 'PLASMODIUM VIVAX', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(195, 41, 'PLASMODIUM VIVAX', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(196, 31, 'TYPHOID-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(197, 41, 'TYPHOID-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(198, 31, 'TYPHOID-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(199, 41, 'TYPHOID-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(200, 14, 'ANTI MULLERIAN HORMONE (AMH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(201, 32, 'ANTI MULLERIAN HORMONE (AMH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(202, 14, 'FOLLICLE STIMULATING HORMONE (FSH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(203, 32, 'FOLLICLE STIMULATING HORMONE (FSH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(204, 14, 'LUTEINISING HORMONE (LH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(205, 32, 'LUTEINISING HORMONE (LH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(206, 14, 'PROLACTIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(207, 32, 'PROLACTIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(208, 18, 'HIV - I & II', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(209, 35, 'HIV - I & II', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(210, 18, 'HERPES SIMPLEX VIRUS II (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(211, 35, 'HERPES SIMPLEX VIRUS II (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(212, 18, 'HERPES SIMPLEX VIRUS II (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(213, 35, 'HERPES SIMPLEX VIRUS II (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(214, 18, 'HEPATITIS B SURFACE ANTIGEN (HBSAG)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(215, 35, 'HEPATITIS B SURFACE ANTIGEN (HBSAG)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(216, 15, 'CARDIOLIPIN ANTIBODY (ACL) -IgA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(217, 38, 'CARDIOLIPIN ANTIBODY (ACL) -IgA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(218, 15, 'CARDIOLIPIN ANTIBODY (ACL) -IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(219, 38, 'CARDIOLIPIN ANTIBODY (ACL) -IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(220, 15, 'CARDIOLIPIN ANTIBODY (ACL) -IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(221, 38, 'CARDIOLIPIN ANTIBODY (ACL) -IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(222, 15, 'CYTOMEGALO VIRUS (CMV) - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(223, 38, 'CYTOMEGALO VIRUS (CMV) - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(224, 15, 'CYTOMEGALO VIRUS (CMV) - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(225, 38, 'CYTOMEGALO VIRUS (CMV) - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(226, 15, 'FREE BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(227, 38, 'FREE BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(228, 15, 'HERPES SIMPLEX VIRUS I (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(229, 38, 'HERPES SIMPLEX VIRUS I (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(230, 15, 'HERPES SIMPLEX VIRUS I (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(231, 38, 'HERPES SIMPLEX VIRUS I (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(232, 15, 'PREGNANCY ASSOCIATED PLASMA PROTEIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(233, 38, 'PREGNANCY ASSOCIATED PLASMA PROTEIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(234, 15, 'RUBELLA - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(235, 38, 'RUBELLA - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(236, 15, 'RUBELLA - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(237, 38, 'RUBELLA - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(238, 15, 'TOXO GONDII - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(239, 38, 'TOXO GONDII - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(240, 15, 'TOXO GONDII - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(241, 38, 'TOXO GONDII - IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(242, 30, 'ALPHA FETO PROTEIN (AFP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(243, 37, 'ALPHA FETO PROTEIN (AFP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(244, 30, 'CA 15.3', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(245, 37, 'CA 15.3', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(246, 30, 'CA 19.9', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(247, 37, 'CA 19.9', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(248, 30, 'CARCINO EMBRYONIC ANTIGEN (CEA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(249, 37, 'CARCINO EMBRYONIC ANTIGEN (CEA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(250, 30, 'BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(251, 37, 'BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(252, 30, 'FREE PSA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(253, 37, 'FREE PSA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(254, 37, 'PERCENT FREE PSA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(255, 30, 'PERCENT FREE PSA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(256, 33, 'RANDOM BLOOD SUGAR', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(257, 34, 'ANTI STREPTOLYSIN - O (ASO)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(258, 34, 'COMPLEMENT 3 (C3)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(259, 34, 'C-REACTIVE PROTEIN (CRP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(260, 34, 'RHEUMATOID FACTOR (RF)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(261, 5, 'Blood Urea', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(262, 9, 'Vitamin D Total-25 Hydroxy', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(263, 31, 'SALMONELLA PARATYPHI – A (H)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(264, 41, 'SALMONELLA PARATYPHI – A (H)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(265, 31, 'SALMONELLA PARATYPHI – B (H)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(266, 41, 'SALMONELLA PARATYPHI – B (H)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(267, 31, 'SALMONELLA TYPHI – H', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(268, 41, 'SALMONELLA TYPHI – H', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(269, 31, 'SALMONELLA TYPHI - O', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(270, 41, 'SALMONELLA TYPHI - O', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(271, 18, 'DENGUE NS1 ANTIGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(272, 35, 'DENGUE NS1 ANTIGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(273, 34, 'ERYTHROCYTE SEDIMENTATION RATE (ESR)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(274, 18, 'DENGUE-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(275, 35, 'DENGUE-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(276, 18, 'DENGUE-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(277, 35, 'DENGUE-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(278, 18, 'HEPATITIS A VIRUS ANTIBODY IGM(HAVM) RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(279, 35, 'HEPATITIS A VIRUS ANTIBODY IGM(HAVM) RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(280, 18, 'HEPATITIS E VIRUS ANTIBODY IGM(HEVM) RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(281, 35, 'HEPATITIS E VIRUS ANTIBODY IGM(HEVM) RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(282, 34, 'ANTI NUCLEAR ANTIBODIES (ANA)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(283, 36, 'VDRL (RPR) FOR SYPHILIS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(284, 30, 'ALPHA FETO PROTEIN (AFP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(285, 37, 'ALPHA FETO PROTEIN (AFP)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(286, 38, 'BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(287, 15, 'BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(288, 15, 'UNCONJUGATED ESTRIOL (E3)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(289, 38, 'UNCONJUGATED ESTRIOL (E3)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(290, 15, 'INHIBIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(291, 38, 'INHIBIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(292, 15, 'FREE BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(293, 38, 'FREE BETA HCG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(294, 15, 'PREGNANCY ASSOCIATED PLASMA PROTEIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(295, 38, 'PREGNANCY ASSOCIATED PLASMA PROTEIN A', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(296, 5, 'UREA / SR.CREATININE RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(297, 5, 'UREA (CALCULATED)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(298, 8, 'HDL / LDL RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(299, 8, 'TRIG / HDL RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(300, 8, 'CHOL/HDL RATIO', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(301, 10, 'CORTISOL', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(302, 14, 'SEX HORMONE BINDING GLOBULIN (SHBG)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(303, 32, 'SEX HORMONE BINDING GLOBULIN (SHBG)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(304, 39, 'Total IGE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(305, 40, 'ANTI - DSDNA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(306, 5, 'Est. Glomerular Filtration Rate (eGFR)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(307, 13, 'DHEAS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(308, 24, 'LEUCOCYTE ESTERASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(309, 24, 'OTHER OBSERVATIONS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(310, 24, 'PUS CELLS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(311, 9, 'RETICULOCYTE COUNT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(312, 11, 'Aluminum', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(313, 11, 'Arsenic', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(314, 11, 'Antimony', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(315, 11, 'Bismuth', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(316, 11, 'Beryllium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(317, 11, 'Barium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(318, 11, 'Cadmium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(319, 11, 'Lead', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(320, 11, 'Mercury', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(321, 11, 'Strontium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(322, 11, 'Tin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(323, 11, 'Thallium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(324, 11, 'Uranium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(325, 11, 'Cobalt', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(326, 11, 'Caesim', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(327, 11, 'Chromium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(328, 11, 'Molybdenum', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(329, 11, 'Manganese', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(330, 11, 'Manganese', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(331, 11, 'Nickel', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(332, 11, 'Selenium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(333, 11, 'Vanadium', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(334, 1, 'FASTING BLOOD SUGAR(GLUCOSE)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(335, 18, 'DENGUE - IGG RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(336, 35, 'DENGUE - IGG RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(337, 18, 'DENGUE - IGM RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(338, 35, 'DENGUE - IGM RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(339, 18, 'DENGUE NS1 ANTIGEN RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(340, 35, 'DENGUE NS1 ANTIGEN RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(341, 18, 'H3N2', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(342, 35, 'H3N2', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(343, 4, 'CREATININE PHOSPHOKINASE (MUSCLE/BRAIN)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(344, 4, 'HIGH SENSITIVITY TROPONIN I', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(345, 14, 'PROLACTIN (PRL)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(346, 32, 'PROLACTIN (PRL)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(347, 2, 'PHOSPHOROUS', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(348, 31, 'CHIKUNGUNYA-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(349, 41, 'CHIKUNGUNYA-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(350, 13, 'FREE ANDROGEN INDEX', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(351, 14, 'FREE TESTOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(352, 32, 'FREE TESTOSTERONE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(353, 1, 'HOMA INSULIN RESISTANCE INDEX', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(354, 1, 'QUANTITATIVE INSULIN SENSITIVITY INDEX', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(355, 15, 'HERPES SIMPLEX VIRUS I (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(356, 38, 'HERPES SIMPLEX VIRUS I (HSV)-IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(357, 15, 'HERPES SIMPLEX VIRUS I (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(358, 38, 'HERPES SIMPLEX VIRUS I (HSV)-IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(359, 30, 'CA-125', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(360, 37, 'CA-125', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(361, 15, 'CARDIOLIPIN ANTIBODY (ACL) - IgA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(362, 38, 'CARDIOLIPIN ANTIBODY (ACL) - IgA', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(363, 15, 'CARDIOLIPIN ANTIBODY (ACL) - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(364, 38, 'CARDIOLIPIN ANTIBODY (ACL) - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(365, 1, 'INSULIN - PP', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(366, 18, 'MEASLES ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(367, 35, 'MEASLES ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(368, 18, 'MUMPS ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(369, 35, 'MUMPS ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(370, 18, 'VARICELLA ZOSTER VIRUS ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(371, 35, 'VARICELLA ZOSTER VIRUS ANTIBODY - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(372, 15, 'URINE PREGNANCY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(373, 38, 'URINE PREGNANCY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(374, 18, 'GLUCOSE-6-PHOSPHATE DEHYDROGENASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(375, 35, 'GLUCOSE-6-PHOSPHATE DEHYDROGENASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(376, 2, 'ANTINUCLEAR ANTIBODIES-17 BLOT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(377, 14, 'ANDROSTENEDIONE (A4)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(378, 32, 'ANDROSTENEDIONE (A4)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(379, 18, 'HIV - WESTERN BLOT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(380, 35, 'HIV - WESTERN BLOT', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(381, 10, 'HUMAN GROWTH HORMONE (HGH)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(382, 35, 'FILARIA ANTIGEN RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(383, 18, 'FILARIA ANTIGEN RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(384, 18, 'HEPATITIS C VIRUS - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(385, 35, 'HEPATITIS C VIRUS - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(386, 5, 'BETA2 MICROGLOBULIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(387, 18, '\"HIV-1\', \'RNA QUANTITATIVE PCR\"', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(388, 35, '\"HIV-1\', \'RNA QUANTITATIVE PCR\"', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(389, 18, 'HIV 1/2 ANTIBODY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(390, 35, 'HIV 1/2 ANTIBODY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(391, 18, 'LEPTOSPIRA-IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(392, 35, 'LEPTOSPIRA-IgM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(393, 18, 'ASPERGILLUS GALACTOMANNAN ANTIGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(394, 35, 'ASPERGILLUS GALACTOMANNAN ANTIGEN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(395, 5, 'N ACETYL BETA D GLUCOSAMINIDASE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(396, 18, 'MUMPS ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(397, 35, 'MUMPS ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(398, 5, 'PROPERDIN FACTOR B', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(399, 18, 'VARICELLA ZOSTER VIRUS ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(400, 35, 'VARICELLA ZOSTER VIRUS ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(401, 10, 'PYRUVATE', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(402, 10, 'SIALIC ACID', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(403, 18, 'SYPHILIS RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(404, 35, 'SYPHILIS RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(405, 1, '\"1\', \'5 ANHYDROGLUCITOL\"', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(406, 5, 'ALPHA2 MACROGLOBULIN', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(407, 18, 'ANTIDNASE-B (DNB)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(408, 35, 'ANTIDNASE-B (DNB)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(409, 18, 'ECHINOCOCCUS - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(410, 35, 'ECHINOCOCCUS - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(411, 18, 'ENTAMOEBA HISTOLYTICA - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(412, 35, 'ENTAMOEBA HISTOLYTICA - IGG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(413, 18, 'EPSTEIN BARR VIRAL CAPSID ANTIGEN - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(414, 35, 'EPSTEIN BARR VIRAL CAPSID ANTIGEN - IgG', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(415, 18, '\"HIV-1\', \'RNA QUALITATIVE PCR\"', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(416, 35, '\"HIV-1\', \'RNA QUALITATIVE PCR\"', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(417, 18, 'IGM LOW CONCENTRATION', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(418, 35, 'IGM LOW CONCENTRATION', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(419, 18, 'KALA AZAR ANTIBODY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(420, 35, 'KALA AZAR ANTIBODY RAPID TEST', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(421, 18, 'MEASLES ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(422, 35, 'MEASLES ANTIBODY - IGM', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(423, 42, 'Egg white', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(424, 42, 'Casein', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(425, 42, 'Sheep milk', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(426, 42, 'Goat milk', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(427, 42, 'Egg yolk', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(428, 42, 'Buffalo milk', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(429, 42, 'Alpha-lactalbumin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(430, 42, 'Cows milk', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(431, 42, 'Beta-lactoglobulin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(432, 43, 'Alga espaguette', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(433, 43, 'Alga spirulina', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(434, 43, 'Anchovy', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(435, 43, 'Bass', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(436, 43, 'Carp', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(437, 43, 'Caviar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(438, 43, 'Clam', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(439, 43, 'Cockle', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(440, 43, 'Cod', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(441, 43, 'Crab', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(442, 43, 'Cuttlefish dorado', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(443, 43, 'Sea bream', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(444, 43, 'Eel', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(445, 43, 'Haddock', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(446, 43, 'Hake', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(447, 43, 'Herring', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(448, 43, 'Lobster', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(449, 43, 'Mackerel', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(450, 43, 'Barnacle', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(451, 43, 'Monkfish', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(452, 43, 'Mussel', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(453, 43, 'Octopus', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(454, 43, 'Oyster', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(455, 43, 'Perch', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(456, 43, 'Pike', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(457, 43, 'Plaice', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(458, 43, 'Razor clam', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(459, 43, 'Salmon', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(460, 43, 'Sardine', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(461, 43, 'Scallop', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(462, 43, 'Sole', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(463, 43, 'Squid', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(464, 43, 'Swordfish', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(465, 43, 'Trout', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(466, 43, 'Tuna', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(467, 43, 'Turbot', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(468, 43, 'Winkle', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(469, 43, 'Alga wakame', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(470, 44, 'Apple', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(471, 44, 'Apricot', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(472, 44, 'Avocado', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(473, 44, 'Banana', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(474, 44, 'Blackberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(475, 44, 'Blackcurrant', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(476, 44, 'Blueberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(477, 44, 'Cherry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(478, 44, 'Cranberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(479, 44, 'Date', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(480, 44, 'Fig', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(481, 44, 'Grape', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(482, 44, 'Grapefruit', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(483, 44, 'Guava', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(484, 44, 'Kiwi', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(485, 44, 'Lemon', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(486, 44, 'Lime', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(487, 44, 'Lychee', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(488, 44, 'Mango', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(489, 44, 'Melon (honeydew)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(490, 44, 'Mulberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(491, 44, 'Nectarine', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(492, 44, 'Olive', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(493, 44, 'Orange', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(494, 44, 'Papaya', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(495, 44, 'Peach', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(496, 44, 'Pear', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(497, 44, 'Pineapple', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(498, 44, 'Plum', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(499, 44, 'Pomegranate', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(500, 44, 'Raisin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(501, 44, 'Raspberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(502, 44, 'Redcurrant', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(503, 44, 'Rhubarb', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(504, 44, 'Strawberry', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(505, 44, 'Tangerine', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(506, 44, 'Tomato', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(507, 44, 'Watermelon', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(508, 45, 'Beef', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(509, 45, 'Billy goat', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(510, 45, 'Chiken', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(511, 45, 'Duck', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(512, 45, 'Horse', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(513, 45, 'Lamb', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(514, 45, 'Ostrich', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(515, 45, 'Box', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(516, 45, 'Patridge', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(517, 45, 'Pork', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(518, 45, 'Quail', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(519, 45, 'Rabbit', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(520, 45, 'Turkey', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(521, 45, 'Veal', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(522, 45, 'Venison', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(523, 45, 'Wild boar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(524, 46, 'Buckwheat', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(525, 46, 'Couscous', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(526, 46, 'Durum wheat', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(527, 46, 'Flax seed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(528, 46, 'Millet', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(529, 46, 'Oat', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(530, 46, 'Polenta', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(531, 46, 'Polenta', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(532, 46, 'Quinoa', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(533, 46, 'Rice', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(534, 46, 'Rye flour', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(535, 46, 'Spelt', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(536, 46, 'Transglutaminase', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(537, 46, 'Wheat bran', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(538, 46, 'Barley', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(539, 46, 'Malt', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(540, 46, 'Corn (maize)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(541, 46, 'Gliadin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(542, 46, 'Wheat', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(543, 47, 'Almond', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(544, 47, 'Cashew nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(545, 47, 'Brazil nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(546, 47, 'Cocount', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(547, 47, 'Hazelnut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(548, 47, 'Macadamia nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(549, 47, 'Peanut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(550, 47, 'Pine nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(551, 47, 'Pistachio', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(552, 47, 'Tiger nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(553, 47, 'Walnut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(554, 48, 'Amaranth', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(555, 48, 'Artichoke', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(556, 48, 'Asparagus', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(557, 48, 'Aubergine', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(558, 48, 'Bean (broad)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(559, 48, 'Bean (green)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(560, 48, 'Bean (red kidney)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(561, 48, 'Bean (white haricot)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(562, 48, 'Beetroot', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(563, 48, 'Broccoli', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(564, 48, 'Brussel sprout', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(565, 48, 'Cabbage', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(566, 48, 'Cabbage (red)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(567, 48, 'Caper', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(568, 48, 'Carrot', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(569, 48, 'Cauliflower', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(570, 48, 'Celery', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(571, 48, 'Chard', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(572, 48, 'Chickpea', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(573, 48, 'Chicory', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(574, 48, 'Cucumber', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(575, 48, 'Fennel (leaf)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(576, 48, 'Gourd (squash)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(577, 48, 'Leek', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(578, 48, 'Lentil', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(579, 48, 'Lettuce', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(580, 48, 'Marrow', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(581, 48, 'Onion', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(582, 48, 'Pea', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(583, 48, 'Potato', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(584, 48, 'Radish', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(585, 48, 'Rocket', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(586, 48, 'Shallot', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(587, 48, 'Soybean', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(588, 48, 'Spinach', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(589, 48, 'Sweet potato', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(590, 48, 'Turnip', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(591, 48, 'Watercress', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(592, 48, 'Yuca', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(593, 49, 'Aniseed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(594, 49, 'Basil', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(595, 49, 'Bay leaf', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(596, 49, 'Camomile', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(597, 49, 'Cayenne', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(598, 49, 'Cinnamon', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(599, 49, 'Clove', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(600, 49, 'Coriander leaf', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(601, 49, 'Cumin', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(602, 49, 'Dill', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(603, 49, 'Garlic', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(604, 49, 'Ginger', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(605, 49, 'Aloe vera', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(606, 49, 'Ginkgo', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(607, 49, 'Ginseng', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(608, 49, 'Hops', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(609, 49, 'Liquorice', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(610, 49, 'Marjoram', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(611, 49, 'Mint', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(612, 49, 'Mustard seed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(613, 49, 'Nettle', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(614, 49, 'Nutmeg', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(615, 49, 'Parsley', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(616, 49, 'Peppermint', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(617, 49, 'Red chilli', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(618, 49, 'Rosemary', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(619, 49, 'Saffron', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(620, 49, 'Sage', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(621, 49, 'Tarragon', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(622, 49, 'Thyme', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(623, 49, 'Vanilla', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(624, 50, 'Agar agar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(625, 50, 'Cane sugar', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(626, 50, 'Carob', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(627, 50, 'Chestnut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(628, 50, 'Cocoa bean', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(629, 50, 'Coffee', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(630, 50, 'Cola nut', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(631, 50, 'Honey', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(632, 50, 'Mushroom', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(633, 50, 'Rapeseed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(634, 50, 'Sesame seed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(635, 50, 'Sunflower seed', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(636, 50, 'Tapioca', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(637, 50, 'Tea (black)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(638, 50, 'Tea (green)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(639, 50, 'Yeast (baker\'s)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06'),
-(640, 50, 'Yeast (brewer\'s)', 1, '2023-11-24 05:25:06', '2023-11-24 05:25:06');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `log_data`
---
-
-CREATE TABLE `log_data` (
-  `log_id` bigint NOT NULL,
-  `api_url` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
-  `headers` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
-  `method` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `postfield` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
-  `curl_error` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `response_data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
-  `added_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Dumping data for table `log_data`
---
-
-INSERT INTO `log_data` (`log_id`, `api_url`, `headers`, `method`, `postfield`, `curl_error`, `response_data`, `added_date`) VALUES
-(1, 'https://velso.thyrocare.cloud/api/Login/Login', NULL, NULL, '{\"username\":\"9931360269\",\"password\":\"Remote@2023\",\"portalType\":\"APP\",\"userType\":\"DSA\",\"facebookId\":\"\",\"mobile\":\"\",\"apiKey\":\"\"}', NULL, '{\"apiKey\":\"GrwOFRa2mZST7Yrpw7ciDhaqxSpQw8wc.mazjmv2OrGhGwMabQtddnQ==\",\"accessToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImRCeDZZWXdmSjBKOHF5dXBKOHA5eFEiLCJ0eXAiOiJhdCtqd3QifQ.eyJuYmYiOjE3MDE2NTg0MTUsImV4cCI6MTcwMTY2MjAxNSwiaXNzIjoiaHR0cHM6Ly9hdXRoc2VydmVyaWRzLmF6dXJld2Vic2l0ZXMubmV0IiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IjAwMDAxMzM1MjciLCJzY29wZSI6WyJhcGkxIl19.W7CbTYeLxlrkuM06Lql_gSaJG0UiSYr-O0J8WjjZb30Yo2i1n-dY9N77ostuoOyLE8gQZ8U2IqZjS-QGrwyDQLtPkhNVgi0l8x87DtCkSSalJ1XtqOQpuCD5663T2xfMAlrrW88oUqdt2z9RvMWacqUTX5qgdheova9e9x4aOztIV6gehjYesSurGHdcn3lJzHLK7NvSsouy1mWdg5gbHbr-PeLgB6jCe5B37MZ-hQ42fhHAZXhgBM67RUkElmf1NAmE9O-zhTviyj8oYaHmyH64C-V7aWIZ-_vVJoXw4auCOk_P-q18fWM_-9O5eFIrHCJ1uDhKKchCb2-uFlmbkw\",\"userType\":\"DSA\",\"userTypeId\":3,\"response\":\"Success\",\"respId\":\"RES00001\",\"name\":\"SECONDOPINE SOLUTIONS PRIVATE LIMITED \",\"email\":\"durgesh.mishra@secondmedic.com\",\"exists\":\"YES\",\"verKey\":\"VER000069\",\"mobile\":\"9931360269\",\"loyaltyDiscount\":null,\"uId\":null,\"address\":null,\"updateMandatory\":\"\",\"androidVerKey\":\"\",\"iosVerKey\":\"\",\"trackingPrivilege\":\"N\",\"petCtAccess\":\"Y\",\"dsaWebLink\":\"2163E\",\"assignType\":null,\"otpAccess\":\"N\",\"isPrepaid\":\"Y\",\"covidMessage\":\"Covid positive reports will be shared as per the local municipal corporation guidelines\",\"internalClient\":false,\"agreeMentLink\":\"\",\"isAgreed\":1,\"uType\":0,\"status\":true,\"exceptionalPincode\":null,\"hcLchc\":null}', '2023-12-04 19:29:28'),
-(2, 'https://velso.thyrocare.cloud/api/BookingMaster/DSABooking', NULL, NULL, '{\"ApiKey\":\"GrwOFRa2mZST7Yrpw7ciDhaqxSpQw8wc.mazjmv2OrGhGwMabQtddnQ==\",\"OrderId\":\"ORD041286\",\"customerID\":\"CUS041286\",\"Gender\":\"Male\",\"Address\":\"Test Address, Test Address, Test Address, Bhopal, Madhya Pradesh, India, Picode: 462023\",\"Pincode\":\"400051\",\"Product\":\"POST COVID CARE - ADVANCED\",\"STD\":null,\"PhoneNo\":null,\"Mobile\":\"7898335057\",\"Email\":\"rahul.shah@secondmedic.com\",\"ServiceType\":\"H\",\"OrderBy\":\"DSA\",\"Remarks\":\"Test Booking\",\"refCode\":\"9931360269\",\"ReportCode\":\"PROJ1021767\",\"Rate\":1799,\"HC\":0,\"ApptDate\":\"2023-12-06 07:00\",\"Discount\":0,\"Passon\":0,\"Reports\":\"N\",\"PayType\":\"Postpaid\",\"Margin\":\"0\",\"BenCount\":\"1\",\"BenDataXML\":\"<NewDataSet><Ben_details><Name>Rahul Shah<\\/Name><Age>23<\\/Age><Gender>M<\\/Gender><\\/Ben_details><\\/NewDataSet>\"}', NULL, '{\"orderResponseDetails\":null,\"respId\":\"RES01051\",\"response\":\"Invalid Test\\/Profile\",\"orderNo\":null,\"product\":null,\"serviceType\":null,\"mode\":null,\"reportHardCopy\":null,\"customerRate\":0,\"bookedBy\":null,\"status\":null,\"payType\":null,\"mobile\":null,\"phone\":null,\"address\":null,\"email\":null,\"refOrderId\":null,\"fasting\":null,\"qr\":null,\"collectionType\":null,\"collectionCenters\":null,\"otp\":null}', '2023-12-04 19:29:28');
 
 -- --------------------------------------------------------
 
@@ -50159,7 +48539,7 @@ INSERT INTO `log_data` (`log_id`, `api_url`, `headers`, `method`, `postfield`, `
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -50168,32 +48548,33 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(79, '2014_10_12_100000_create_password_resets_table', 1),
-(80, '2019_08_19_000000_create_failed_jobs_table', 1),
-(81, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(82, '2023_11_07_085110_create_otp_verification_table', 1),
-(84, '2023_11_09_072939_create_partner_type_table', 1),
-(85, '2023_11_09_075355_create_agents_table', 1),
-(91, '2023_11_11_054612_create_country_table', 3),
-(92, '2023_11_11_055537_create_state_table', 4),
-(93, '2023_11_11_060425_create_city_table', 4),
-(100, '2023_11_10_110315_create_customers_table', 5),
-(107, '2023_11_11_091818_create_doctors_table', 6),
-(109, '2023_11_14_072711_create_labs_table', 7),
-(114, '2023_11_14_095524_create_labs_category_table', 9),
-(116, '2023_11_14_094732_create_labs_package_table', 10),
-(117, '2023_11_16_044854_create_homecare_nurse_table', 11),
-(120, '2023_11_08_095447_create_service_provider_table', 12),
-(129, '2023_11_16_115609_create_sp_website_control_table', 13),
-(131, '2023_11_17_114112_create_pharmacy_leads_table', 14),
-(132, '2023_11_18_051521_create_doctor_details_table', 15),
-(134, '2023_11_18_053807_create_doctor_consult_leads_table', 16),
-(136, '2023_11_18_090714_create_homecare_leads_table', 17),
-(137, '2014_10_12_000000_create_users_table', 18),
-(138, '023_11_20_083111_create_labs_profile_table', 19),
-(139, '2023_11_20_092624_create_labs_tests_allotments_table', 20),
-(140, '2023_11_21_042127_create_lab_sub_tests_table', 21),
-(141, '2023_11_11_082107_create_customer_address_table', 22);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2023_11_07_085110_create_otp_verification_table', 1),
+(6, '2023_11_10_110315_create_customers_table', 1),
+(7, '2023_11_11_054612_create_country_table', 1),
+(8, '2023_11_11_055537_create_state_table', 1),
+(9, '2023_11_11_060425_create_city_table', 1),
+(10, '2023_11_11_082107_create_customer_address_table', 1),
+(12, '2024_01_31_113535_create_portfolio_table', 1),
+(13, '2024_01_31_150138_create_portfolio_services_table', 1),
+(14, '2024_02_01_110631_create_portfolio_images_table', 1),
+(15, '2024_02_02_132337_create_blogs_table', 1),
+(16, '2024_02_05_115239_create_products_table', 1),
+(17, '2024_02_12_095438_create_website_banners_table', 1),
+(18, '2023_11_29_114107_create_contact_request_table', 2),
+(19, '2024_02_12_102210_create_seo_data_table', 3),
+(20, '2024_02_12_102623_create_industry_table', 4),
+(21, '2024_03_01_160741_create_packages_table', 5),
+(22, '2024_03_04_101733_create_package_key_point_table', 6),
+(23, '2024_03_04_120555_create_package_sub_keypoints', 6),
+(24, '2024_03_04_141500_create_package_includes_table', 7),
+(25, '2024_03_06_105833_create_package_types_table', 7),
+(27, '2024_03_06_155518_create_package_page_details_table', 8),
+(28, '2024_03_07_161532_create_package_request_table', 9),
+(29, '2024_04_17_144517_create_category_table', 10);
 
 -- --------------------------------------------------------
 
@@ -50204,72 +48585,1063 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `otp_verification` (
   `id` bigint UNSIGNED NOT NULL,
   `user_id` int DEFAULT NULL,
-  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `otp_for` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `otp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_contact` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `otp_for` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `otp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `otp_status` tinyint NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `otp_verification`
---
-
-INSERT INTO `otp_verification` (`id`, `user_id`, `user_email`, `user_contact`, `otp_for`, `otp`, `otp_status`, `created_at`, `updated_at`) VALUES
-(1, 1, '', '7898335057', 'customers', '614881', 1, '2023-12-04 10:24:59', '2023-12-14 09:56:41'),
-(2, 1, 'rahul.shah@secondmedic.com', '7898335057', 'customers', '807879', 1, '2023-12-05 05:50:22', '2023-12-14 09:56:41'),
-(3, 2, '', '9051507385', 'customers', '496188', 1, '2023-12-05 06:42:38', '2023-12-05 12:15:48'),
-(4, 1, 'rahul.shah@secondmedic.com', '7898335057', 'customers', '974057', 1, '2023-12-11 03:50:51', '2023-12-14 09:56:41'),
-(5, 3, '', '7000027558', 'customers', '345592', 1, '2023-12-11 04:23:57', '2023-12-14 11:26:46'),
-(6, 1, 'rahul.shah@secondmedic.com', '7898335057', 'customers', '334925', 1, '2023-12-11 10:47:37', '2023-12-14 09:56:41'),
-(7, 4, '', '8789727379', 'customers', '289915', 0, '2023-12-13 04:34:56', '2023-12-13 04:34:56'),
-(8, 5, '', '+918850825664', 'customers', '790300', 0, '2023-12-13 05:00:51', '2023-12-13 05:00:51'),
-(9, 6, '', '8850825664', 'customers', '575292', 1, '2023-12-13 05:02:36', '2023-12-13 10:33:04'),
-(10, 7, '', '7000027558edeedededefefefefefeefefeeffeef', 'customers', '590639', 0, '2023-12-13 06:25:37', '2023-12-13 06:25:37'),
-(11, 8, '', '7000027558qedefdafafddafa', 'customers', '995014', 0, '2023-12-13 06:27:47', '2023-12-13 06:27:47'),
-(12, 3, '', '7000027558', 'customers', '496088', 1, '2023-12-13 11:55:35', '2023-12-14 11:26:46'),
-(13, 1, 'rahul.shah@secondmedic.com', '7898335057', 'customers', '890955', 1, '2023-12-14 04:26:25', '2023-12-14 09:56:41'),
-(14, 3, '', '7000027558', 'customers', '551967', 1, '2023-12-14 05:56:25', '2023-12-14 11:26:46');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `partner_type`
+-- Table structure for table `packages`
 --
 
-CREATE TABLE `partner_type` (
+CREATE TABLE `packages` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `package_for` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `monthly_inr` double(8,2) DEFAULT NULL,
+  `monthly_usd` double(8,2) DEFAULT NULL,
+  `yearly_inr` double(8,2) DEFAULT NULL,
+  `yearly_usd` double(8,2) DEFAULT NULL,
+  `show_front` tinyint NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `partner_type`
+-- Dumping data for table `packages`
 --
 
-INSERT INTO `partner_type` (`id`, `name`, `code`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Pharmacy Shop', 'SMP', '1', '2023-11-10 05:49:46', '2023-11-10 05:49:46'),
-(2, 'Lab/Diagnostics Center', 'SML', '1', '2023-11-10 05:49:46', '2023-11-10 05:49:46'),
-(3, 'Nurse/Home care', 'SMH', '1', '2023-11-10 05:49:46', '2023-11-10 05:49:46'),
-(4, 'Doctor/Clinic', 'SMC', '1', '2023-11-10 05:49:46', '2023-11-10 05:49:46'),
-(5, 'Other', 'OTH', '1', '2023-11-10 05:49:46', '2023-11-10 05:49:46');
+INSERT INTO `packages` (`id`, `package_for`, `name`, `url_slug`, `monthly_inr`, `monthly_usd`, `yearly_inr`, `yearly_usd`, `show_front`, `status`, `created_at`, `updated_at`) VALUES
+(1, '2', 'small', 'small', 20000.00, 250.00, 200000.00, 2500.00, 1, 1, '2024-03-07 05:39:21', '2024-03-07 05:55:44'),
+(2, '2', 'mid', 'mid', 30000.00, 400.00, 300000.00, 4000.00, 1, 1, '2024-03-07 05:39:33', '2024-03-07 05:58:24'),
+(3, '2', 'large', 'large', 45000.00, 600.00, 450000.00, 6000.00, 1, 1, '2024-03-07 05:39:43', '2024-03-07 05:58:10'),
+(4, '3', 'large', 'large', 65000.00, 900.00, 650000.00, 9000.00, 1, 1, '2024-03-11 10:15:27', '2024-03-11 11:13:17'),
+(5, '3', 'small', 'small', 18000.00, 250.00, 180000.00, 2500.00, 1, 1, '2024-03-11 10:15:37', '2024-03-11 11:02:37'),
+(6, '3', 'mid', 'mid', 35000.00, 500.00, 350000.00, 5000.00, 1, 1, '2024-03-11 10:16:24', '2024-03-11 11:09:09'),
+(7, '6', 'small', 'small', 20000.00, 250.00, 200000.00, 2500.00, 1, 1, '2024-03-11 12:00:41', '2024-03-11 12:21:51'),
+(8, '6', 'mid', 'mid', 25000.00, 300.00, 250000.00, 3000.00, 1, 1, '2024-03-11 12:00:57', '2024-03-11 12:38:06'),
+(9, '6', 'large', 'large', 40000.00, 500.00, 400000.00, 5000.00, 1, 1, '2024-03-11 12:01:07', '2024-03-11 12:55:53'),
+(10, '1', 'small', 'small', 10000.00, 140.00, 100000.00, 1400.00, 1, 1, '2024-03-12 14:43:49', '2024-03-12 15:02:13'),
+(11, '1', 'mid', 'mid', 18000.00, 250.00, 180000.00, 2500.00, 1, 1, '2024-03-12 14:43:57', '2024-03-12 15:03:19'),
+(12, '1', 'large', 'large', 30000.00, 415.00, 300000.00, 4150.00, 1, 1, '2024-03-12 14:44:09', '2024-03-12 15:03:52'),
+(13, '8', 'small', 'small', 10000.00, 150.00, 100000.00, 1500.00, 1, 1, '2024-03-13 12:09:24', '2024-03-13 12:11:08'),
+(14, '8', 'mid', 'mid', 20000.00, 250.00, 200000.00, 2500.00, 1, 1, '2024-03-13 12:09:32', '2024-03-13 12:11:27'),
+(15, '8', 'large', 'large', 35000.00, 420.00, 350000.00, 4200.00, 1, 1, '2024-03-13 12:09:42', '2024-03-13 12:11:46'),
+(16, '7', 'small', 'small', 22000.00, 350.00, 220000.00, 3500.00, 1, 1, '2024-03-13 13:40:26', '2024-03-13 13:43:19'),
+(17, '7', 'mid', 'mid', 40000.00, 500.00, 400000.00, 5000.00, 1, 1, '2024-03-13 13:40:37', '2024-03-13 13:45:28'),
+(18, '7', 'large', 'large', 55000.00, 700.00, 550000.00, 7000.00, 1, 1, '2024-03-13 13:40:49', '2024-03-13 13:56:07'),
+(19, '9', 'small', 'small', 120000.00, 1448.00, NULL, NULL, 1, 1, '2024-03-13 15:15:52', '2024-03-13 16:13:16'),
+(20, '9', 'mid', 'mid', 250000.00, 3015.00, 250000.00, 30150.00, 1, 1, '2024-03-13 15:16:55', '2024-03-13 15:33:39'),
+(21, '9', 'large', 'large', 380000.00, 4585.00, 380000.00, 45850.00, 1, 1, '2024-03-13 15:18:06', '2024-03-13 15:40:31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Table structure for table `package_includes`
 --
 
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
+CREATE TABLE `package_includes` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package_for` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `includes_image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_includes`
+--
+
+INSERT INTO `package_includes` (`id`, `package_for`, `title`, `includes_image`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, '2', 'Keyword Research', 'uploads/includes-image/1709791872-image.webp', 'SEO experts at RankON Technologies conduct thorough keyword research to identify the most appropriate and relevant search terms for your products and services. This crucial step in our SEO process enables us to optimize on-page content and keywords effectively for websites. Our keyword analysis and research are centered around understanding the client\'s target market, ensuring optimal results.', 1, '2024-03-07 06:11:12', '2024-03-07 06:11:12'),
+(2, '2', 'Website Audit & Error Removal', 'uploads/includes-image/1709791894-image.webp', 'We\'ve conducted a thorough site audit to pinpoint any areas of weakness in your website. We\'ve examined things like the overall structure, how easy it is to navigate, the way URLs are organized, the effectiveness of the sitemap, and the architecture of the site. Additionally, we\'ve looked into optimizing the robots file and improving the loading speed to enhance the user experience. These are all critical factors we\'ve focused on to help your website perform better in Google search results.', 1, '2024-03-07 06:11:34', '2024-03-07 06:11:34'),
+(3, '2', 'Content Audit', 'uploads/includes-image/1709791907-image.webp', 'Our SEO team dives deep into our content, carefully examining each page to see where we can make improvements for better SEO performance. We go through everything with a fine-tooth comb, crafting a plan to create and optimize content that will really hit the mark with our audience. From titles and headings to how often keywords appear and where they\'re placed, we leave no stone unturned in our quest to make our content as relevant and engaging as possible.', 1, '2024-03-07 06:11:47', '2024-03-07 06:11:47'),
+(4, '2', 'Conversion Tracking Setup', 'uploads/includes-image/1709791923-image.webp', 'Making sure conversions happen smoothly is our top priority in our SEO efforts. First, we chat with our clients to grasp what a conversion means to them and how valuable it is. Then, we get things set up in Google Analytics during our on-page SEO work, like tracking conversions, setting goals, and assigning values. This setup helps our clients keep tabs on conversions, gauge the effectiveness of our work, and understand how visitors are interacting with their site.', 1, '2024-03-07 06:12:03', '2024-03-07 06:12:03'),
+(5, '2', 'Competitor Audit', 'uploads/includes-image/1709791939-image.webp', 'SEO experts also thoroughly analyze our client\'s competitors to help improve their website\'s performance. We look into factors like their website\'s authority and the strategies they use to build backlinks. This helps us develop a stronger SEO strategy to give our client a competitive edge.', 1, '2024-03-07 06:12:19', '2024-03-07 06:12:19'),
+(6, '2', 'Backlink Audit', 'uploads/includes-image/1709791961-image.webp', 'During the on-page SEO process, we carefully examine the links pointing to our website to weed out any harmful ones. These toxic backlinks can spell trouble down the line, so we make sure to remove any spammy ones that could harm our site\'s reputation and rankings.', 1, '2024-03-07 06:12:41', '2024-03-07 06:12:41'),
+(7, '2', 'Tool Setup', 'uploads/includes-image/1709791977-image.webp', 'At RankON Technologies, we make the most of handy automated tools like Google Analytics, Google Search Console, and Google Tag Manager, among others. These tools help us fine-tune websites, keep track of conversions, and monitor traffic effectively. Additionally, we ensure that essential elements like sitemaps and robots files are set up if they\'re not already in place, enhancing the website\'s performance even further.', 1, '2024-03-07 06:12:57', '2024-03-07 06:12:57'),
+(8, '2', 'Blog Audit', 'uploads/includes-image/1709792000-image.webp', 'Our team thoroughly examines the blog to pinpoint areas where we can make improvements to strengthen the website\'s architecture. We focus on enhancing internal links and optimizing anchor text to improve website usability and achieve quicker results. Additionally, we implement social sharing features to facilitate faster and more effective social media marketing efforts.', 1, '2024-03-07 06:13:20', '2024-03-07 06:13:20'),
+(9, '3', 'Get Help from Social Media Pros!', 'uploads/includes-image/1710136641-image.webp', 'When you hire a seasoned social media management service, your company gains the power to take on the market. Plus, you\'ll have expert teams for designing, writing, and development to meet all your business needs.', 1, '2024-03-11 11:22:35', '2024-03-11 11:27:21'),
+(10, '3', 'Get High-Tech Marketing Tools', 'uploads/includes-image/1710136788-image.webp', 'With a Social Media Marketing Agency, you can use advanced software to boost your business on social media. It\'s a big investment for small businesses, but it can really help them grow, even if they have limited funds.', 1, '2024-03-11 11:29:48', '2024-03-11 11:29:48'),
+(11, '3', 'Get Better at Managing Your Time', 'uploads/includes-image/1710137438-image.webp', 'If you don\'t have a social media marketing agency, it can be tough to make the most out of different social media platforms. You might only manage one or two effectively. By bringing in a social media marketing agency, you can keep all your social media profiles active and well-maintained.', 1, '2024-03-11 11:40:38', '2024-03-11 11:40:38'),
+(12, '3', 'Get More Value from Social Media Marketing', 'uploads/includes-image/1710137912-image.webp', 'With our Social Media Marketing Packages, you can make sure your investment pays off. You will see returns in less time, getting back what you put in.', 1, '2024-03-11 11:48:32', '2024-03-11 11:49:18'),
+(13, '6', 'Save Money with Us', 'uploads/includes-image/1710145348-image.webp', 'Our SMO Packages are affordable yet effective, giving you what you need without breaking the bank. We offer great value without sacrificing quality, helping you achieve your social media goals without overspending. With us, you get results without the hefty price tag.', 1, '2024-03-11 13:52:28', '2024-03-11 16:50:09'),
+(14, '6', 'Meet Our Skilled Team', 'uploads/includes-image/1710145357-image.webp', 'We\'re experts in social media algorithms and can boost your profile the right way. Let us help your online presence thrive with our knowledge. From understanding how platforms work to strategies for growth, we\'ve got you covered. Elevate your profile with our team on your side.', 1, '2024-03-11 13:52:37', '2024-03-11 16:49:54'),
+(15, '6', 'Great Graphics for You', 'uploads/includes-image/1710145365-image.webp', 'We create eye-catching graphics and engaging content tailored to your industry\'s standards. Our exclusive social media posts are designed to captivate your audience and generate interest. Let us elevate your online presence with top-notch visuals and compelling content that aligns perfectly with your brand.', 1, '2024-03-11 13:52:45', '2024-03-11 16:49:33'),
+(16, '1', 'Managing Your Budget', 'uploads/includes-image/1710238265-image.webp', 'You don\'t need to spend any money upfront to set up a Google Ads account or start a campaign. With Google Ads, you\'re in charge of your spending. You can choose how much you want to spend on pay-per-click advertising and adjust it as needed.', 1, '2024-03-12 15:41:05', '2024-03-12 15:41:05'),
+(17, '1', 'Scalability', 'uploads/includes-image/1710238363-image.webp', 'Empower your marketing prowess with the dynamic flexibility of your Google Ads campaign! Seamlessly tailor its scope to match its performance, scaling up for maximum impact or downsizing for precision targeting. Take full control of your budget allocation, ensuring optimal utilization while amplifying the reach of your top-performing ads to achieve unparalleled results.', 1, '2024-03-12 15:42:43', '2024-03-12 16:22:58'),
+(18, '1', 'Analytics', 'uploads/includes-image/1710238755-image.webp', 'Empower your marketing insights with robust analytic tools! Dive deep into the performance of your Google ads, unraveling invaluable data on click-through rates and audience demographics. Unveil the essence of your audience, understand their behaviors, and refine your advertising strategies for unparalleled success.', 1, '2024-03-12 15:49:15', '2024-03-12 16:21:07'),
+(19, '1', 'Intent', 'uploads/includes-image/1710239423-image.webp', 'Unlock the gateway to your audience\'s desires with Google Ads in India! Leverage the unparalleled power of Google\'s search engine to seamlessly connect with individuals actively seeking your offerings. Tap into the vast pool of potential customers, ensuring your message resonates directly with those primed and ready to engage.', 1, '2024-03-12 15:59:08', '2024-03-12 16:22:09'),
+(20, '8', 'Setting Your Website Goals', 'uploads/includes-image/1710316768-image.webp', 'Start by clearly stating what you want your website to achieve. Think about why you need it, who will be using it, what special things you want it to do, how much you can spend on it, and when you need it done. Knowing these things will make it easier to talk to people who can help you make your website.', 1, '2024-03-13 13:29:28', '2024-03-13 13:29:28'),
+(21, '8', 'Find the Best Web Developers for You', 'uploads/includes-image/1710316791-image.webp', 'Find and choose web developers or freelancers who can do what you need. Check if they\'re known for doing good work, have done similar projects before, and have examples that match what you want. Read what other people say about them to see if they\'re good at what they do.', 1, '2024-03-13 13:29:51', '2024-03-13 13:29:51'),
+(22, '8', 'Ask for Detailed Plans', 'uploads/includes-image/1710316807-image.webp', 'Get in touch with the chosen companies and ask them to give you detailed plans that match what you need for your project. These plans should say what services are included, how long it will take, how much it will cost, and if there are any extra fees. It\'s important to make sure the plans they offer fit with what you want to achieve and give you the help you need.', 1, '2024-03-13 13:30:07', '2024-03-13 13:30:07'),
+(23, '8', 'Check the Cost and Benefits', 'uploads/includes-image/1710316825-image.webp', 'Look at how much different web development packages cost, but keep in mind that the cheapest one may not be the best. Think about what you get in terms of features, expertise, support, and overall quality. Sometimes, paying a bit more upfront is worth it for a website that works well and lasts a long time.', 1, '2024-03-13 13:30:25', '2024-03-13 13:30:25'),
+(24, '8', 'Checking Skills and Background', 'uploads/includes-image/1710316847-image.webp', 'Check how good and experienced the web development provider is. Find people who have done similar projects well before. Look at their previous work to see if they\'ve made websites like the one you want.', 1, '2024-03-13 13:30:47', '2024-03-13 13:30:47'),
+(25, '8', 'Talking and Working Together', 'uploads/includes-image/1710316870-image.webp', 'Check how the web development team talks and works with you. It\'s super important to chat openly and work well together for a successful project. Make sure they reply quickly, get what you want, and keep you updated on how things are going.', 1, '2024-03-13 13:31:10', '2024-03-13 13:31:10'),
+(26, '7', 'Security Issues', 'uploads/includes-image/1710320460-image.webp', 'Three critical  Issues demand attention. Firstly, detecting malicious insiders poses a significant threat, requiring robust security measures. Secondly, meticulous scrutiny of SSL certificates is imperative for airtight data protection. Lastly, the risk of running outdated software emphasizes the need for regular updates to fortify system integrity and thwart potential vulnerabilities.', 1, '2024-03-13 14:31:00', '2024-03-13 14:31:00'),
+(27, '7', 'Designing Issues', 'uploads/includes-image/1710320477-image.webp', 'This includes updating existing designs and features, incorporating new design elements and features, refreshing content and images, and regularly adding engaging posts to your blog section, ensuring a dynamic and captivating online presence.', 1, '2024-03-13 14:31:17', '2024-03-13 14:31:17'),
+(28, '7', 'SEO', 'uploads/includes-image/1710320492-image.webp', 'Enhance your website\'s visibility with effective SEO strategies. Elevate your site\'s ranking through content and image optimization techniques. Cultivate quality backlinks to boost credibility and authority. Implementing these practices ensures a holistic approach to improving search engine rankings and driving organic traffic to your platform.', 1, '2024-03-13 14:31:32', '2024-03-13 14:31:32'),
+(29, '7', 'Development Issues', 'uploads/includes-image/1710320510-image.webp', 'We address various concerns to enhance your online presence. From optimizing code and providing domain/hosting assistance to fixing functional and payment gateway bugs, managing e-commerce products, and updating WordPress themes/plug-ins, our comprehensive approach ensures a seamless and efficient website experience.', 1, '2024-03-13 14:31:50', '2024-03-13 14:31:50'),
+(30, '7', 'Performance Issues', 'uploads/includes-image/1710321442-image.webp', 'This includes promptly removing broken links and non-functional pages, ensuring regular backups, optimizing loading speed for smooth user experience, and conducting routine website health checks to maintain optimal functionality and performance.', 1, '2024-03-13 14:47:22', '2024-03-13 14:47:22'),
+(31, '9', 'Custom Solutions', 'uploads/includes-image/1710329281-image.webp', 'At Custom Solutions, we recognize the individuality of each business and its needs. Collaborating closely with you, we tailor custom app solutions to precisely match your objectives. Our approach ensures alignment with your unique goals, delivering a personalized and effective solution for your business.', 0, '2024-03-13 16:58:01', '2024-03-13 17:06:07'),
+(32, '9', 'Expertise', 'uploads/includes-image/1710329795-image.webp', 'Our adept team of developers specializes in creating top-tier mobile applications for iOS, Android, and cross-platform solutions. With extensive experience, we craft high-quality apps that meet your unique needs, ensuring seamless performance and user satisfaction across diverse platforms. Trust us to bring your mobile vision to life.', 1, '2024-03-13 17:06:35', '2024-03-13 17:06:35'),
+(33, '9', 'Custom Solutions', 'uploads/includes-image/1710330145-image.webp', 'At Custom Solutions, we recognize the individuality of each business and its needs. Collaborating closely with you, we tailor custom app solutions to precisely match your objectives. Our approach ensures alignment with your unique goals, delivering a personalized and effective solution for your business.', 1, '2024-03-13 17:12:25', '2024-03-13 17:12:25'),
+(34, '9', 'User-Centric Design', 'uploads/includes-image/1710330165-image.webp', 'In all our apps, we focus on making them easy to use and enjoyable for everyone. Our designers work hard to create interfaces that are simple to understand and look great. We want our users to have a good time using our apps and to want to use them again and again.', 1, '2024-03-13 17:12:45', '2024-03-13 17:12:45'),
+(35, '9', 'Scalability', 'uploads/includes-image/1710330252-image.webp', 'Whether you\'re starting out or growing big, we\'re here to create apps that can handle it all. From launching your first app to expanding your established one, our team specializes in building scalable solutions. We ensure your app grows seamlessly with your business, whether you\'re a startup or an established enterprise.', 1, '2024-03-13 17:14:12', '2024-03-13 17:14:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `package_key_point`
+--
+
+CREATE TABLE `package_key_point` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package_id` int NOT NULL,
+  `key_point` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `includes` tinyint NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_key_point`
+--
+
+INSERT INTO `package_key_point` (`id`, `package_id`, `key_point`, `includes`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Keyword Research', 1, 1, '2024-03-07 05:40:58', '2024-03-07 05:41:11'),
+(2, 1, 'ON PAGE SEO ANALYSIS', 1, 1, '2024-03-07 05:52:58', '2024-03-07 05:53:34'),
+(3, 1, 'LOCAL SEO SETUP', 1, 1, '2024-03-07 05:53:15', '2024-03-07 05:53:44'),
+(4, 1, 'CONTENT MARKETING', 1, 1, '2024-03-07 05:55:14', '2024-03-07 05:55:14'),
+(5, 1, 'EMAIL OUTREACH', 1, 1, '2024-03-07 05:55:23', '2024-03-07 05:55:23'),
+(6, 1, 'OFF PAGE SEO', 1, 1, '2024-03-07 05:55:29', '2024-03-07 05:55:29'),
+(7, 1, 'MONTHLY REPORTING', 1, 1, '2024-03-07 05:55:38', '2024-03-07 05:55:38'),
+(8, 1, 'CLIENT SUPPORT', 1, 1, '2024-03-07 05:55:44', '2024-03-07 05:55:44'),
+(9, 2, 'Keyword Research', 1, 1, '2024-03-07 00:10:58', '2024-03-07 00:11:11'),
+(10, 2, 'ON PAGE SEO ANALYSIS', 1, 1, '2024-03-07 00:22:58', '2024-03-07 00:23:34'),
+(11, 2, 'LOCAL SEO SETUP', 1, 1, '2024-03-07 00:23:15', '2024-03-07 00:23:44'),
+(12, 2, 'CONTENT MARKETING', 1, 1, '2024-03-07 00:25:14', '2024-03-07 00:25:14'),
+(13, 2, 'EMAIL OUTREACH', 1, 1, '2024-03-07 00:25:23', '2024-03-07 00:25:23'),
+(14, 2, 'OFF PAGE SEO', 1, 1, '2024-03-07 00:25:29', '2024-03-07 00:25:29'),
+(15, 2, 'MONTHLY REPORTING', 1, 1, '2024-03-07 00:25:38', '2024-03-07 00:25:38'),
+(16, 2, 'CLIENT SUPPORT', 1, 1, '2024-03-07 00:25:44', '2024-03-07 00:25:44'),
+(17, 3, 'Keyword Research', 1, 1, '2024-03-07 00:10:58', '2024-03-07 00:11:11'),
+(18, 3, 'ON PAGE SEO ANALYSIS', 1, 1, '2024-03-07 00:22:58', '2024-03-07 00:23:34'),
+(19, 3, 'LOCAL SEO SETUP', 1, 1, '2024-03-07 00:23:15', '2024-03-07 00:23:44'),
+(20, 3, 'CONTENT MARKETING', 1, 1, '2024-03-07 00:25:14', '2024-03-07 00:25:14'),
+(21, 3, 'EMAIL OUTREACH', 1, 1, '2024-03-07 00:25:23', '2024-03-07 00:25:23'),
+(22, 3, 'OFF PAGE SEO', 1, 1, '2024-03-07 00:25:29', '2024-03-07 00:25:29'),
+(23, 3, 'MONTHLY REPORTING', 1, 1, '2024-03-07 00:25:38', '2024-03-07 00:25:38'),
+(24, 3, 'CLIENT SUPPORT', 1, 1, '2024-03-07 00:25:44', '2024-03-07 00:25:44'),
+(25, 5, 'Main Points', 1, 1, '2024-03-11 10:20:07', '2024-03-11 11:04:47'),
+(26, 5, 'Facebook Marketing', 1, 1, '2024-03-11 10:26:23', '2024-03-11 11:04:55'),
+(27, 5, 'Instagram Marketing', 1, 1, '2024-03-11 11:02:37', '2024-03-11 11:04:58'),
+(28, 6, 'Main Points', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(29, 6, 'Facebook Marketing', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(30, 6, 'Instagram Marketing', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(31, 6, 'LinkedIn Marketing', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(32, 6, 'Youtube Marketing', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(33, 6, 'Twitter Marketing', 1, 1, '2024-03-11 11:09:09', '2024-03-11 11:09:09'),
+(34, 4, 'Main Points', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(35, 4, 'Facebook Marketing', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(36, 4, 'Instagram Marketing', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(37, 4, 'LinkedIn Marketing', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(38, 4, 'Youtube Marketing', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(39, 4, 'Twitter Marketing', 1, 1, '2024-03-11 11:13:17', '2024-03-11 11:13:17'),
+(40, 7, 'Main Points', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(41, 7, 'Facebook Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(42, 7, 'Instagram Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(43, 7, 'LinkedIn Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(44, 7, 'Youtube Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(45, 7, 'Twitter Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(46, 7, 'Pinterest Management', 1, 1, '2024-03-11 12:21:51', '2024-03-11 12:21:51'),
+(47, 8, 'Main Points', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(48, 8, 'FACEBOOK MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(49, 8, 'Instagram MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(50, 8, 'LINKEDIN MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(51, 8, 'YOUTUBE MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(52, 8, 'TWITTER MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(53, 8, 'PINTEREST MANAGEMENT', 1, 1, '2024-03-11 12:38:06', '2024-03-11 12:38:06'),
+(54, 9, 'Main Points', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(55, 9, 'Facebook Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(56, 9, 'Instagram Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(57, 9, 'LinkedIn Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(58, 9, 'Youtube Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(59, 9, 'Twitter Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(60, 9, 'Pinterest Management', 1, 1, '2024-03-11 12:55:53', '2024-03-11 12:55:53'),
+(61, 10, 'Main Points', 1, 1, '2024-03-12 15:02:13', '2024-03-12 15:02:13'),
+(62, 10, 'PPC CAMPAIGN MANAGEMENT', 1, 1, '2024-03-12 15:02:13', '2024-03-12 15:02:13'),
+(63, 10, 'VALUE ADDS', 1, 1, '2024-03-12 15:02:13', '2024-03-12 15:02:13'),
+(64, 10, 'REPORTING', 1, 1, '2024-03-12 15:02:13', '2024-03-12 15:02:13'),
+(65, 11, 'Main Points', 1, 1, '2024-03-12 15:03:19', '2024-03-12 15:03:19'),
+(66, 11, 'PPC CAMPAIGN MANAGEMENT', 1, 1, '2024-03-12 15:03:19', '2024-03-12 15:03:19'),
+(67, 11, 'VALUE ADDS', 1, 1, '2024-03-12 15:03:19', '2024-03-12 15:03:19'),
+(68, 11, 'REPORTING', 1, 1, '2024-03-12 15:03:19', '2024-03-12 15:03:19'),
+(69, 12, 'Main Points', 1, 1, '2024-03-12 15:03:52', '2024-03-12 15:03:52'),
+(70, 12, 'PPC CAMPAIGN MANAGEMENT', 1, 1, '2024-03-12 15:03:52', '2024-03-12 15:03:52'),
+(71, 12, 'VALUE ADDS', 1, 1, '2024-03-12 15:03:52', '2024-03-12 15:03:52'),
+(72, 12, 'REPORTING', 1, 1, '2024-03-12 15:03:52', '2024-03-12 15:03:52'),
+(73, 13, 'Main Points', 1, 1, '2024-03-13 12:11:08', '2024-03-13 12:11:08'),
+(74, 14, 'Main Points', 1, 1, '2024-03-13 12:11:27', '2024-03-13 12:11:27'),
+(75, 15, 'Main Points', 1, 1, '2024-03-13 12:11:46', '2024-03-13 12:11:46'),
+(76, 16, 'Main Points', 1, 1, '2024-03-13 13:43:19', '2024-03-13 13:43:19'),
+(77, 17, 'Main Points', 1, 1, '2024-03-13 13:45:28', '2024-03-13 13:45:28'),
+(78, 18, 'Main Points', 1, 1, '2024-03-13 13:56:07', '2024-03-13 13:56:07'),
+(79, 19, 'Main Points', 1, 1, '2024-03-13 15:27:50', '2024-03-13 15:32:44'),
+(80, 20, 'Main Points', 1, 1, '2024-03-13 15:33:39', '2024-03-13 15:33:39'),
+(81, 21, 'Main Points', 1, 1, '2024-03-13 15:40:31', '2024-03-13 15:40:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `package_page_details`
+--
+
+CREATE TABLE `package_page_details` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package_id` int NOT NULL,
+  `main_heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_heading` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `enterprise_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `enterprise_details` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `includes_heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `includes_details` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_page_details`
+--
+
+INSERT INTO `package_page_details` (`id`, `package_id`, `main_heading`, `sub_heading`, `enterprise_title`, `enterprise_details`, `includes_heading`, `includes_details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Optimal SEO Solutions for Enhanced Website Visibility, Organic Ranking Boost, Increased Traffic, and Sales Uplift', 'Elevate Your Digital Presence with League City Consulting\'s Dynamic SEO SolutionsPosition your business for success with League City Consulting, a distinguished search engine optimization firm. Our SEO packages extend beyond mere search engine rankings – they are meticulously crafted to enhance your overall online performance, drive conversions, fortify domain authority, and amplify brand visibility.', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'What is included in our SEO packages?', 'Explore the benefits of our monthly SEO packages, designed to enhance your website\'s visibility and ranking through secure SEO practices. Discover what our packages include below.', 1, '2024-03-07 05:39:09', '2024-03-07 05:40:08'),
+(2, 3, 'Why You Should Go for Social Media Marketing Packages for Your Business?', 'Social media marketing means getting more people to visit your website using social media sites. When you do it well, it can really help your business by bringing in lots of potential customers and increasing sales. Basically, it\'s about making posts on social media platforms to promote your brand and reach your marketing goals.', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'Reasons To Hire A Social Media Marketing Company', 'Gain expertise, save time, boost brand visibility, engage audiences, analyze data effectively, and maximize ROI with a social media marketing company.', 1, '2024-03-11 10:18:19', '2024-03-11 10:57:25'),
+(3, 6, 'Boost Your Business with Social Media Optimization Packages', 'By choosing SMO packages, you\'ll strengthen connections with your customers, improve brand awareness, build relationships, and increase conversions. We offer three affordable SMO packages ranging from  250 USD to 500 USD per month. Explore our Social Media Optimization Pricing Plans below!', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'How Do Our SMO Packages Benefit You?', 'Boost online presence with our SMO packages: enhanced visibility, increased engagement, and strategic social media growth for business success.', 1, '2024-03-11 12:00:01', '2024-03-11 14:15:42'),
+(4, 1, 'Budget-Friendly Google Ads Management Packages', 'If you\'re new to online marketing, getting leads from search engines takes time. For faster results, consider PPC packages. But be cautious: trust certified PPC experts for Google ads services. At league city consulting, our Google ads-certified professionals, with years of experience, ensure your money and efforts aren\'t wasted.', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'Top Reasons to Invest in PPC Packages', 'Before delving into the Google Ads Pricing Models, it\'s crucial to understand the advantages of advertising on Google in USA.', 1, '2024-03-12 15:00:12', '2024-03-12 15:12:02'),
+(5, 8, 'Top-quality web design packages at unbeatable prices.', 'Looking for budget-friendly website development options in the USA? League City Consulting has just what you need! We offer affordable packages tailored for small businesses, ensuring quality without breaking the bank. Don\'t miss out on our special offer! Contact us for a free consultation and select the perfect web development package for your needs today!', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'How to Select the Optimal Web Development Packages?', 'Picking the perfect web development package needs some thought and checking different things. Here\'s how you can choose the right one:', 1, '2024-03-13 12:08:46', '2024-03-13 13:28:42'),
+(6, 7, 'Efficient Website Maintenance Packages for Flawless Operations', 'While there are many companies that can help fix website problems fast, League City Consulting stands out as a reliable choice that won\'t break the bank. We have a lot of skills to solve your website issues, and our maintenance packages are affordable and flexible. We\'re here to be your dependable partner for keeping your website running smoothly without costing you too much.', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'Solutions Covered in Our Website Maintenance Pricing Plan', 'Your website serves as your digital storefront and crucial first impression for potential customers. To ensure it impresses and inspires action, consider League City Consulting for comprehensive website maintenance services. Our packages address all website needs, allowing you to focus on your business while we handle your online presence effectively.', 1, '2024-03-13 13:34:45', '2024-03-13 14:00:57'),
+(7, 9, 'Best Mobile App Development Packages at Unbeatable Prices', 'Discover our tailored mobile app development packages, lauded by our satisfied clients. Choose from a diverse range designed to meet your business needs. Find the perfect fit for your enterprise and unlock its potential with our comprehensive solutions.', 'Enterprise', 'Contact our Enterprise Solutions team to discuss your unique requirements and discover how our pricing packages can propel your business towards unmatched success. Your journey to excellence starts here.', 'Why Choose League City Consulting for Your App Development Needs?', 'League City Consulting is your top choice for app development needs. Our team brings expertise to the table, crafting custom solutions with a focus on user-centric design. We ensure scalability, providing a tailored approach that guarantees success for your unique project. Choose excellence with League City Consulting.', 1, '2024-03-13 15:19:26', '2024-03-13 16:53:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `package_request`
+--
+
+CREATE TABLE `package_request` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_request`
+--
+
+INSERT INTO `package_request` (`id`, `package`, `plan`, `name`, `mobile`, `email`, `location`, `about`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'SEO Packages', 'Small', 'Rahul Shah', '7898335057', 'rahul.shah@secondmedic.com', 'Bhopal', 'Testing Here', 1, '2024-03-09 12:46:42', '2024-03-09 12:46:42'),
+(2, 'PPC Packages', 'Mid', 'Aniket Namdeo', '7000027558', 'aniket.namdeo@secondmedic.com', 'india', 'test project', 1, '2024-03-27 14:09:09', '2024-03-27 14:09:09'),
+(3, 'PPC Packages', 'Mid', 'Aniket Namdeo', '7000027558', 'aniket.namdeo@secondmedic.com', 'india', 'test', 1, '2024-03-27 14:09:56', '2024-03-27 14:09:56'),
+(4, 'App Development', 'Large', 'Rahul Shah', '7898335057', 'rahul.shah@secondmedic.com', 'Bhopal', 'Testing Data', 1, '2024-05-23 09:53:23', '2024-05-23 09:53:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `package_sub_keypoints`
+--
+
+CREATE TABLE `package_sub_keypoints` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package_id` int NOT NULL,
+  `keypoint_id` int NOT NULL,
+  `sub_keypoint` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `includes` tinyint NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_sub_keypoints`
+--
+
+INSERT INTO `package_sub_keypoints` (`id`, `package_id`, `keypoint_id`, `sub_keypoint`, `includes`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Max 10 Keywords', 1, 1, '2024-03-07 08:09:38', '2024-03-07 08:09:38'),
+(2, 1, 1, 'Website & Competitor Analysis', 1, 1, '2024-03-07 08:09:52', '2024-03-07 08:09:52'),
+(3, 1, 1, 'Content Duplicity Check', 1, 1, '2024-03-07 08:09:59', '2024-03-07 08:09:59'),
+(4, 1, 1, 'Initial Ranking Report', 1, 1, '2024-03-07 08:10:06', '2024-03-07 08:10:06'),
+(5, 1, 1, 'Keywords Research', 1, 1, '2024-03-07 08:10:15', '2024-03-07 08:10:15'),
+(6, 1, 2, 'Meta Tags Creation', 1, 1, '2024-03-07 08:11:11', '2024-03-07 08:11:11'),
+(7, 1, 2, 'Canonicalization', 1, 1, '2024-03-07 08:11:18', '2024-03-07 08:11:18'),
+(8, 1, 2, 'URL Structure', 1, 1, '2024-03-07 08:11:23', '2024-03-07 08:11:23'),
+(9, 1, 2, 'Content Optimization', 1, 1, '2024-03-07 08:11:28', '2024-03-07 08:11:28'),
+(10, 1, 2, 'Image Optimization', 1, 1, '2024-03-07 08:11:35', '2024-03-07 08:11:35'),
+(11, 1, 2, 'Heading Tag Optimization', 1, 1, '2024-03-07 08:11:47', '2024-03-07 08:11:47'),
+(12, 1, 2, 'Website Speed Optimization', 1, 1, '2024-03-07 08:11:56', '2024-03-07 08:11:56'),
+(13, 1, 2, 'Robots.txt', 1, 1, '2024-03-07 08:12:06', '2024-03-07 08:12:06'),
+(14, 1, 2, 'Sitemap Creation', 1, 1, '2024-03-07 08:12:15', '2024-03-07 08:12:15'),
+(15, 1, 2, 'Google Analytics & Search Console Setup', 1, 1, '2024-03-07 08:12:21', '2024-03-07 08:12:21'),
+(16, 1, 2, 'Blog Optimization', 0, 1, '2024-03-07 08:12:29', '2024-03-07 08:12:29'),
+(17, 2, 9, 'Max 15 Keywords', 1, 1, '2024-03-07 08:12:51', '2024-03-07 08:12:51'),
+(18, 2, 9, 'Website & Competitor Analysis', 1, 1, '2024-03-07 08:12:57', '2024-03-07 08:12:57'),
+(19, 2, 9, 'Content Duplicity Check', 1, 1, '2024-03-07 08:13:02', '2024-03-07 08:13:02'),
+(20, 2, 9, 'Initial Ranking Report', 1, 1, '2024-03-07 08:13:08', '2024-03-07 08:13:08'),
+(21, 2, 9, 'Keywords Research', 1, 1, '2024-03-07 08:13:14', '2024-03-07 08:13:14'),
+(22, 2, 10, 'Meta Tags Creation', 1, 1, '2024-03-07 08:14:06', '2024-03-07 08:14:06'),
+(23, 2, 10, 'Canonicalization', 1, 1, '2024-03-07 08:14:13', '2024-03-07 08:14:13'),
+(24, 2, 10, 'URL Structure', 1, 1, '2024-03-07 08:14:21', '2024-03-07 08:14:21'),
+(25, 2, 10, 'Content Optimization', 1, 1, '2024-03-07 08:14:28', '2024-03-07 08:14:28'),
+(26, 2, 10, 'Image Optimization', 1, 1, '2024-03-07 08:14:36', '2024-03-07 08:14:36'),
+(27, 2, 10, 'Heading Tag Optimization', 1, 1, '2024-03-07 08:14:42', '2024-03-07 08:14:42'),
+(28, 2, 10, 'Website Speed Optimization', 1, 1, '2024-03-07 08:14:49', '2024-03-07 08:14:49'),
+(29, 2, 10, 'Robots.txt', 1, 1, '2024-03-07 08:14:55', '2024-03-07 08:14:55'),
+(30, 2, 10, 'Sitemap Creation', 1, 1, '2024-03-07 08:15:02', '2024-03-07 08:15:02'),
+(31, 2, 10, 'Google Analytics & Search Console Setup', 1, 1, '2024-03-07 08:15:08', '2024-03-07 08:15:08'),
+(32, 2, 10, 'Blog Optimization – 5 Posts', 1, 1, '2024-03-07 08:15:16', '2024-03-07 08:15:16'),
+(33, 3, 17, 'Max 40 Keywords', 1, 1, '2024-03-07 02:42:51', '2024-03-07 02:42:51'),
+(34, 3, 17, 'Website & Competitor Analysis', 1, 1, '2024-03-07 02:42:57', '2024-03-07 02:42:57'),
+(35, 3, 17, 'Content Duplicity Check', 1, 1, '2024-03-07 02:43:02', '2024-03-07 02:43:02'),
+(36, 3, 17, 'Initial Ranking Report', 1, 1, '2024-03-07 02:43:08', '2024-03-07 02:43:08'),
+(37, 3, 17, 'Keywords Research', 1, 1, '2024-03-07 02:43:14', '2024-03-07 02:43:14'),
+(38, 3, 18, 'Meta Tags Creation', 1, 1, '2024-03-07 02:44:06', '2024-03-07 02:44:06'),
+(39, 3, 18, 'Canonicalization', 1, 1, '2024-03-07 02:44:13', '2024-03-07 02:44:13'),
+(40, 3, 18, 'URL Structure', 1, 1, '2024-03-07 02:44:21', '2024-03-07 02:44:21'),
+(41, 3, 18, 'Content Optimization', 1, 1, '2024-03-07 02:44:28', '2024-03-07 02:44:28'),
+(42, 3, 18, 'Image Optimization', 1, 1, '2024-03-07 02:44:36', '2024-03-07 02:44:36'),
+(43, 3, 18, 'Heading Tag Optimization', 1, 1, '2024-03-07 02:44:42', '2024-03-07 02:44:42'),
+(44, 3, 18, 'Website Speed Optimization', 1, 1, '2024-03-07 02:44:49', '2024-03-07 02:44:49'),
+(45, 3, 18, 'Robots.txt', 1, 1, '2024-03-07 02:44:55', '2024-03-07 02:44:55'),
+(46, 3, 18, 'Sitemap Creation', 1, 1, '2024-03-07 02:45:02', '2024-03-07 02:45:02'),
+(47, 3, 18, 'Google Analytics & Search Console Setup', 1, 1, '2024-03-07 02:45:08', '2024-03-07 02:45:08'),
+(48, 3, 18, 'Blog Optimization – 5 Posts', 1, 1, '2024-03-07 02:45:16', '2024-03-07 02:45:16'),
+(49, 5, 25, 'Ads Spend – Rs.10,000 (It will be paid to ads platform)', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(50, 5, 25, 'Agency Ad Management Fee: 8K INR', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(51, 5, 25, 'Account Management – 2', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(52, 5, 25, 'Creation Of Campaign – 1', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(53, 5, 26, 'Facebook Marketing', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(54, 5, 26, 'Facebook Business Manager Set Up', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(55, 5, 26, 'Pixel Installation', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:11:13'),
+(56, 5, 26, 'Custom Conversion Creation', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:11:07'),
+(57, 5, 26, 'Remarketing', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:11:00'),
+(58, 5, 26, 'Custom Audience Creation', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(59, 5, 26, 'Creation Of Automated Rules', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:10:54'),
+(60, 5, 26, 'Facebook Analytics Report Creation', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(61, 5, 26, 'Ad Campaign Monitoring', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(62, 5, 26, 'Catalogue Creation', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:10:46'),
+(63, 5, 26, 'Dynamic Ads Creation', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:10:39'),
+(64, 5, 26, 'Instant Experience Ads Creation', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:10:33'),
+(65, 5, 26, 'Customization Of Ad Placements', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(66, 5, 26, 'A/B Testing Of Ad Set, Creative & Placement', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:10:25'),
+(67, 5, 26, 'Carousel And Collection Ads', 0, 1, '2024-03-11 05:29:52', '2024-03-11 11:09:46'),
+(68, 5, 26, 'Traffic Monitoring', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(69, 5, 26, 'Monthly Report', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(70, 5, 27, 'Audience Research', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(71, 5, 27, 'Instagram Ads Creative Creation & Design', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(72, 5, 27, 'Instagram Ads Monitoring And Management', 1, 1, '2024-03-11 05:29:52', '2024-03-11 05:29:52'),
+(73, 6, 28, 'Ads Spend – Rs.25,000 (paid to platform)', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(74, 6, 28, 'Our Management Fee – Rs. 15,000', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(75, 6, 28, 'Account Management – 3', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(76, 6, 28, 'Creation Of Campaign – 3', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(77, 6, 29, 'Facebook Business Manager Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(78, 6, 29, 'Pixel Installation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(79, 6, 29, 'Custom Conversion Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(80, 6, 29, 'Remarketing', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(81, 6, 29, 'Custom Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(82, 6, 29, 'Creation Of Automated Rules', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(83, 6, 29, 'Facebook Analytics Report Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(84, 6, 29, 'Ad Campaign Monitoring', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(85, 6, 29, 'Catalogue Creation', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:03:44'),
+(86, 6, 29, 'Dynamic Ads Creation', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:03:50'),
+(87, 6, 29, 'Instant Experience Ads Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(88, 6, 29, 'Customization Of Ad Placements', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(89, 6, 29, 'A/B Testing Of Ad Set, Creative And  Placement', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:12:05'),
+(90, 6, 29, 'Remarketing Video Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(91, 6, 29, 'Video Ads With Promotion Of Your Products', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(92, 6, 29, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(93, 6, 30, 'Audience Research', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(94, 6, 30, 'Instagram Ads Creative Creation & Design', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(95, 6, 30, 'Instagram Ads Monitoring And Management', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(96, 6, 31, 'Campaign Manager Account Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(97, 6, 31, 'LinkedIn Insight Tag Installation', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:11:02'),
+(98, 6, 31, 'Creation Of Custom Conversion', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(99, 6, 31, 'Ads Monitoring', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(100, 6, 31, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(101, 6, 32, 'Youtube Ad Account Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(102, 6, 32, 'Skippable In-Stream Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(103, 6, 32, 'Non-Skippable In-Stream Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(104, 6, 32, 'Bumper Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(105, 6, 32, 'Discovery Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:53'),
+(106, 6, 32, 'Youtube Video Sequence Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:47'),
+(107, 6, 32, 'Detailed Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(108, 6, 32, 'Custom Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(109, 6, 32, 'A/B Testing Of Targeting', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(110, 6, 32, 'Remarketing Video Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(111, 6, 32, 'Video Ads With Promotion Of Your Products', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:38'),
+(112, 6, 32, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(113, 6, 33, 'Tweet Engagement Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(114, 6, 33, 'Video Or GIF View Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:26'),
+(115, 6, 33, 'Awareness Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(116, 6, 33, 'Website Conversion Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:19'),
+(117, 6, 33, 'In-stream Video View Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:14'),
+(118, 6, 33, 'Follower Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(119, 6, 33, 'App Install Ads', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:08'),
+(120, 6, 33, 'App Reengagement', 0, 1, '2024-03-11 05:50:53', '2024-03-11 12:10:03'),
+(121, 6, 33, 'Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(122, 6, 33, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(123, 4, 34, 'Ads Spend – Rs.50,000', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(124, 4, 34, 'Our Management Fee – Rs. 25,000', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(125, 4, 34, 'Account Management – 5', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(126, 4, 34, 'Creation Of Campaign – 6', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(127, 4, 35, 'Facebook Business Manager Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(128, 4, 35, 'Pixel Installation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(129, 4, 35, 'Custom Conversion Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(130, 4, 35, 'Remarketing', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(131, 4, 35, 'Custom Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(132, 4, 35, 'Creation Of Automated Rules', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(133, 4, 35, 'Facebook Analytics Report Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(134, 4, 35, 'Ad Campaign Monitoring', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(135, 4, 35, 'Catalogue Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(136, 4, 35, 'Dynamic Ads Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(137, 4, 35, 'Instant Experience Ads Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(138, 4, 35, 'Customization Of Ad Placements', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(139, 4, 35, 'A/B Testing Of Ad Set, Creative And  Placement', 1, 1, '2024-03-11 05:50:53', '2024-03-11 12:12:16'),
+(140, 4, 35, 'Remarketing Video Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(141, 4, 35, 'Video Ads With Promotion Of Your Products', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(142, 4, 35, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(143, 4, 36, 'Audience Research', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(144, 4, 36, 'Instagram Ads Creative Creation & Design', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(145, 4, 36, 'Instagram Ads Monitoring And Management', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(146, 4, 37, 'Campaign Manager Account Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(147, 4, 37, 'LinkedIn Insight Tag Installation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(148, 4, 37, 'Creation Of Custom Conversion', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(149, 4, 37, 'Ads Monitoring', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(150, 4, 37, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(151, 4, 38, 'Youtube Ad Account Set Up', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(152, 4, 38, 'Skippable In-Stream Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(153, 4, 38, 'Non-Skippable In-Stream Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(154, 4, 38, 'Bumper Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(155, 4, 38, 'Discovery Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(156, 4, 38, 'Youtube Video Sequence Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(157, 4, 38, 'Detailed Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(158, 4, 38, 'Custom Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(159, 4, 38, 'A/B Testing Of Targeting', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(160, 4, 38, 'Remarketing Video Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(161, 4, 38, 'Video Ads With Promotion Of Your Products', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(162, 4, 38, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(163, 4, 39, 'Tweet Engagement Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(164, 4, 39, 'Video Or GIF View Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(165, 4, 39, 'Awareness Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(166, 4, 39, 'Website Conversion Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(167, 4, 39, 'In-stream Video View Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(168, 4, 39, 'Follower Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(169, 4, 39, 'App Install Ads', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(170, 4, 39, 'App Reengagement', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(171, 4, 39, 'Audience Creation', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(172, 4, 39, 'Monthly Report', 1, 1, '2024-03-11 05:50:53', '2024-03-11 05:50:53'),
+(173, 6, 29, 'Carousel And Collection Ads', 0, 1, '2024-03-11 12:07:18', '2024-03-11 12:07:18'),
+(174, 4, 35, 'Carousel And Collection Ads', 1, 1, '2024-03-11 12:07:29', '2024-03-11 12:07:48'),
+(175, 7, 40, 'Setting Goals', 1, 1, '2024-03-11 12:22:17', '2024-03-11 12:22:17'),
+(176, 7, 40, 'Account Management – 2 (FB & IG)', 1, 1, '2024-03-11 12:22:27', '2024-03-11 12:22:27'),
+(177, 7, 40, 'Hashtag Research', 1, 1, '2024-03-11 12:22:34', '2024-03-11 12:22:34'),
+(178, 7, 40, 'Content Strategy Creation', 1, 1, '2024-03-11 12:22:41', '2024-03-11 12:22:41'),
+(179, 7, 41, 'Page Creation', 1, 1, '2024-03-11 12:23:46', '2024-03-11 12:23:46'),
+(180, 7, 41, 'Facebook Cover And Profile Pic Creation', 1, 1, '2024-03-11 12:23:52', '2024-03-11 12:23:52'),
+(181, 7, 41, 'Page Optimization', 1, 1, '2024-03-11 12:23:57', '2024-03-11 12:23:57'),
+(182, 7, 41, 'Posting Per Week – 3', 1, 1, '2024-03-11 12:24:02', '2024-03-11 12:24:02'),
+(183, 7, 41, 'Facebook Story Creation', 0, 1, '2024-03-11 12:24:08', '2024-03-11 12:24:08'),
+(184, 7, 41, 'Post Sharing In Groups', 0, 1, '2024-03-11 12:24:12', '2024-03-11 12:24:12'),
+(185, 7, 41, 'Video Posting(Provide By Client)', 0, 1, '2024-03-11 12:24:19', '2024-03-11 12:24:19'),
+(186, 7, 41, 'Page Monitoring', 1, 1, '2024-03-11 12:24:24', '2024-03-11 12:24:24'),
+(187, 7, 41, 'Facebook Tabs Creation', 0, 1, '2024-03-11 12:24:30', '2024-03-11 12:24:30'),
+(188, 7, 41, 'Call To Action Button Creation', 1, 1, '2024-03-11 12:24:38', '2024-03-11 12:24:38'),
+(189, 7, 41, 'Influencer Research', 0, 1, '2024-03-11 12:24:50', '2024-03-11 12:24:50'),
+(190, 7, 41, 'Creation Of Facebook Polls/ Quizs', 0, 1, '2024-03-11 12:24:58', '2024-03-11 12:24:58'),
+(191, 7, 41, 'Responding To Comments', 0, 1, '2024-03-11 12:25:04', '2024-03-11 12:25:04'),
+(192, 7, 41, 'Competitor Analysis', 0, 1, '2024-03-11 12:25:21', '2024-03-11 12:25:21'),
+(193, 7, 42, 'Page Creation', 1, 1, '2024-03-11 12:25:58', '2024-03-11 12:25:58'),
+(194, 7, 42, 'Page Optimization', 1, 1, '2024-03-11 12:26:02', '2024-03-11 12:26:02'),
+(195, 7, 42, 'Posting Per Week – 3', 1, 1, '2024-03-11 12:26:07', '2024-03-11 12:26:07'),
+(196, 7, 42, 'Engagement Strategy', 1, 1, '2024-03-11 12:26:13', '2024-03-11 12:26:13'),
+(197, 7, 42, 'Instagram Stories Creation', 0, 1, '2024-03-11 12:26:20', '2024-03-11 12:26:20'),
+(198, 7, 42, 'Competitors Analysis', 1, 1, '2024-03-11 12:26:26', '2024-03-11 12:26:26'),
+(199, 7, 42, 'Responding to comment', 1, 1, '2024-03-11 12:26:32', '2024-03-11 12:26:32'),
+(200, 7, 42, 'Link With Facebook Page', 1, 1, '2024-03-11 12:26:37', '2024-03-11 12:26:37'),
+(201, 7, 42, 'IGTV Upload (Video provided by Client)', 1, 1, '2024-03-11 12:26:47', '2024-03-11 12:26:57'),
+(202, 7, 42, 'Outreach With Influencers', 0, 1, '2024-03-11 12:27:04', '2024-03-11 12:27:04'),
+(203, 7, 42, 'Image Tagging', 0, 1, '2024-03-11 12:27:12', '2024-03-11 12:27:12'),
+(204, 7, 42, 'Instagram Analytics Monitoring', 1, 1, '2024-03-11 12:27:24', '2024-03-11 12:27:24'),
+(205, 7, 43, 'Profile Creation', 1, 1, '2024-03-11 12:27:56', '2024-03-11 12:27:56'),
+(206, 7, 43, 'Profile Pic & Cover Pic Creation', 1, 1, '2024-03-11 12:28:01', '2024-03-11 12:28:01'),
+(207, 7, 43, 'Profile Optimization', 1, 1, '2024-03-11 12:28:08', '2024-03-11 12:28:08'),
+(208, 7, 43, 'Company Page Creation', 1, 1, '2024-03-11 12:28:14', '2024-03-11 12:28:14'),
+(209, 7, 43, 'Competitors Analysis', 0, 1, '2024-03-11 12:28:19', '2024-03-11 12:28:19'),
+(210, 7, 43, 'Video Posting (Provide By Client)', 1, 1, '2024-03-11 12:28:26', '2024-03-11 12:28:26'),
+(211, 7, 43, 'Posting Per Week – 3', 1, 1, '2024-03-11 12:28:31', '2024-03-11 12:28:31'),
+(212, 7, 43, 'Creation Of Showcase Page', 0, 1, '2024-03-11 12:28:38', '2024-03-11 12:28:38'),
+(213, 7, 43, 'Invite Connection To Like Your Page', 0, 1, '2024-03-11 12:28:45', '2024-03-11 12:28:45'),
+(214, 7, 43, 'Responding To Comments', 0, 1, '2024-03-11 12:28:54', '2024-03-11 12:28:54'),
+(215, 7, 43, 'Relevant Group Joining', 0, 1, '2024-03-11 12:29:00', '2024-03-11 12:29:00'),
+(216, 7, 43, 'Sharing In Groups', 0, 1, '2024-03-11 12:29:05', '2024-03-11 12:29:05'),
+(217, 7, 44, 'Channel Creation', 1, 1, '2024-03-11 12:29:37', '2024-03-11 12:29:37'),
+(218, 7, 44, 'Channel Pic & Cover Pic Creation', 1, 1, '2024-03-11 12:29:42', '2024-03-11 12:29:42'),
+(219, 7, 44, 'Video Optimization (Video Provided By Client) – 1', 1, 1, '2024-03-11 12:29:51', '2024-03-11 12:29:51'),
+(220, 7, 44, 'Thumbnail Creation', 1, 1, '2024-03-11 12:29:57', '2024-03-11 12:29:57'),
+(221, 7, 44, 'Keyword Research', 1, 1, '2024-03-11 12:30:02', '2024-03-11 12:30:02'),
+(222, 7, 44, 'Youtube Status Posting*', 0, 1, '2024-03-11 12:30:08', '2024-03-11 12:30:08'),
+(223, 7, 44, 'Comment Moderation', 0, 1, '2024-03-11 12:30:21', '2024-03-11 12:30:21'),
+(224, 7, 44, 'End Screen Cards Creation', 1, 1, '2024-03-11 12:30:36', '2024-03-11 12:30:36'),
+(225, 7, 44, 'Information Cards Creation', 1, 1, '2024-03-11 12:30:42', '2024-03-11 12:30:42'),
+(226, 7, 44, 'Video Tags Creation', 1, 1, '2024-03-11 12:30:46', '2024-03-11 12:30:46'),
+(227, 7, 44, 'Playlist Creation', 0, 1, '2024-03-11 12:30:50', '2024-03-11 12:30:50'),
+(228, 7, 44, 'Video Creation', 0, 1, '2024-03-11 12:30:56', '2024-03-11 12:30:56'),
+(229, 7, 44, 'Youtube Analytics Monitoring', 0, 1, '2024-03-11 12:31:01', '2024-03-11 12:31:01'),
+(230, 7, 44, 'Competitors Analysis', 0, 1, '2024-03-11 12:31:05', '2024-03-11 12:31:05'),
+(231, 7, 44, 'Video Backlinks', 0, 1, '2024-03-11 12:31:11', '2024-03-11 12:31:11'),
+(232, 7, 45, 'Profile Creation', 1, 1, '2024-03-11 12:31:58', '2024-03-11 12:31:58'),
+(233, 7, 45, 'Profile & Background Picture Creation', 1, 1, '2024-03-11 12:32:06', '2024-03-11 12:32:06'),
+(234, 7, 45, 'Tweet Per Week – 3', 1, 1, '2024-03-11 12:32:14', '2024-03-11 12:32:14'),
+(235, 7, 45, 'Retweets', 0, 1, '2024-03-11 12:32:19', '2024-03-11 12:32:19'),
+(236, 7, 45, 'List Creation', 0, 1, '2024-03-11 12:32:23', '2024-03-11 12:32:23'),
+(237, 7, 45, 'Active In Trending Hashtag', 0, 1, '2024-03-11 12:32:28', '2024-03-11 12:32:28'),
+(238, 7, 45, 'Creation Of Poll', 0, 1, '2024-03-11 12:32:33', '2024-03-11 12:32:33'),
+(239, 7, 45, 'Following Industry Related People', 0, 1, '2024-03-11 12:32:40', '2024-03-11 12:32:40'),
+(240, 7, 45, 'Creation Of Moments', 0, 1, '2024-03-11 12:32:44', '2024-03-11 12:32:44'),
+(241, 7, 45, 'Twitter Analytics Monitoring', 0, 1, '2024-03-11 12:32:52', '2024-03-11 12:32:52'),
+(242, 7, 46, 'Profile Creation', 1, 1, '2024-03-11 12:33:12', '2024-03-11 12:33:12'),
+(243, 7, 46, 'Board Creation – 2', 1, 1, '2024-03-11 12:33:17', '2024-03-11 12:33:17'),
+(244, 7, 46, 'Content Creation', 1, 1, '2024-03-11 12:33:21', '2024-03-11 12:33:21'),
+(245, 7, 46, 'Posting Per Week – 3', 1, 1, '2024-03-11 12:33:25', '2024-03-11 12:33:25'),
+(246, 7, 46, 'Business Account Creation', 0, 1, '2024-03-11 12:33:31', '2024-03-11 12:33:31'),
+(247, 7, 46, 'Monthly Visitors Analysis', 0, 1, '2024-03-11 12:33:36', '2024-03-11 12:33:36'),
+(248, 7, 46, 'Follow Relevant Account And Boards', 0, 1, '2024-03-11 12:33:42', '2024-03-11 12:33:42'),
+(249, 7, 46, 'Inviting Relevant Pinners On Board', 0, 1, '2024-03-11 12:33:47', '2024-03-11 12:33:47'),
+(250, 8, 47, 'Setting Goals', 1, 1, '2024-03-11 12:38:38', '2024-03-11 12:38:38'),
+(251, 8, 47, 'Account Management – 3', 1, 1, '2024-03-11 12:38:48', '2024-03-11 12:39:42'),
+(252, 8, 47, 'Hashtag Research', 1, 1, '2024-03-11 12:38:55', '2024-03-11 12:38:55'),
+(253, 8, 47, 'Content Strategy Creation', 1, 1, '2024-03-11 12:39:00', '2024-03-11 12:39:00'),
+(254, 8, 48, 'Page Creation', 1, 1, '2024-03-11 12:40:27', '2024-03-11 12:40:27'),
+(255, 8, 48, 'Facebook Cover And Profile Pic Creation', 1, 1, '2024-03-11 12:40:37', '2024-03-11 12:40:37'),
+(256, 8, 48, 'Page Optimization', 1, 1, '2024-03-11 12:40:42', '2024-03-11 12:40:42'),
+(257, 8, 48, 'Posting Per Week – 6', 1, 1, '2024-03-11 12:40:56', '2024-03-11 12:40:56'),
+(258, 8, 48, 'Facebook Story Creation', 1, 1, '2024-03-11 12:41:04', '2024-03-11 12:41:04'),
+(259, 8, 48, 'Post Sharing In Groups', 0, 1, '2024-03-11 12:41:09', '2024-03-11 12:41:09'),
+(260, 8, 48, 'Video Posting (Provide By Client)', 1, 1, '2024-03-11 12:41:16', '2024-03-11 12:41:16'),
+(261, 8, 48, 'Page Monitoring', 1, 1, '2024-03-11 12:41:22', '2024-03-11 12:41:22'),
+(262, 8, 48, 'Facebook Tabs Creation', 1, 1, '2024-03-11 12:41:31', '2024-03-11 12:41:31'),
+(263, 8, 48, 'Call To Action Button Creation', 1, 1, '2024-03-11 12:41:35', '2024-03-11 12:41:35'),
+(264, 8, 48, 'Influencer Research', 0, 1, '2024-03-11 12:41:40', '2024-03-11 12:41:40'),
+(265, 8, 48, 'Creation Of Facebook Polls/ Quizs', 1, 1, '2024-03-11 12:41:49', '2024-03-11 12:41:49'),
+(266, 8, 48, 'Responding To Comments', 0, 1, '2024-03-11 12:41:56', '2024-03-11 12:41:56'),
+(267, 8, 48, 'Page Monitoring', 1, 1, '2024-03-11 12:42:01', '2024-03-11 12:42:01'),
+(268, 8, 48, 'Competitor Analysis', 0, 1, '2024-03-11 12:42:06', '2024-03-11 12:42:06'),
+(269, 8, 49, 'Page Creation', 1, 1, '2024-03-11 12:42:16', '2024-03-11 12:42:16'),
+(270, 8, 49, 'Page Optimization', 1, 1, '2024-03-11 12:42:22', '2024-03-11 12:42:22'),
+(271, 8, 49, 'Posting Per Week – 6 (Linked Posts)', 1, 1, '2024-03-11 12:42:30', '2024-03-11 12:42:30'),
+(272, 8, 49, 'Engagement Strategy', 1, 1, '2024-03-11 12:42:36', '2024-03-11 12:42:36'),
+(273, 8, 49, 'Instagram Stories Creation', 1, 1, '2024-03-11 12:42:43', '2024-03-11 12:42:43'),
+(274, 8, 49, 'Competitors Analysis', 0, 1, '2024-03-11 12:43:24', '2024-03-11 12:43:24'),
+(275, 8, 49, 'Responding to comment', 0, 1, '2024-03-11 12:43:28', '2024-03-11 12:43:28'),
+(276, 8, 49, 'Link With Facebook Page', 1, 1, '2024-03-11 12:43:33', '2024-03-11 12:43:33'),
+(277, 8, 49, 'IGTV Upload (Video provided by Client)', 1, 1, '2024-03-11 12:43:42', '2024-03-11 12:43:42'),
+(278, 8, 49, 'Outreach With Influencers', 0, 1, '2024-03-11 12:43:47', '2024-03-11 12:43:47'),
+(279, 8, 49, 'Image Tagging', 1, 1, '2024-03-11 12:43:52', '2024-03-11 12:43:52'),
+(280, 8, 49, 'Instagram Analytics Monitoring', 1, 1, '2024-03-11 12:44:00', '2024-03-11 12:44:00'),
+(281, 8, 50, 'Profile Creation', 1, 1, '2024-03-11 12:44:17', '2024-03-11 12:44:17'),
+(282, 8, 50, 'Profile Pic & Cover Pic Creation', 1, 1, '2024-03-11 12:44:22', '2024-03-11 12:44:22'),
+(283, 8, 50, 'Profile Optimization', 1, 1, '2024-03-11 12:44:27', '2024-03-11 12:44:27'),
+(284, 8, 50, 'Company Page Creation', 1, 1, '2024-03-11 12:44:31', '2024-03-11 12:44:31'),
+(285, 8, 50, 'Competitors Analysis', 0, 1, '2024-03-11 12:44:38', '2024-03-11 12:44:38'),
+(286, 8, 50, 'Video Posting (Provide By Client)', 1, 1, '2024-03-11 12:44:48', '2024-03-11 12:44:48'),
+(287, 8, 50, 'Posting Per Week – 6', 1, 1, '2024-03-11 12:44:56', '2024-03-11 12:44:56'),
+(288, 8, 50, 'Creation Of Showcase Page', 0, 1, '2024-03-11 12:45:01', '2024-03-11 12:45:01'),
+(289, 8, 50, 'Invite Connection To Like Your Page', 1, 1, '2024-03-11 12:45:10', '2024-03-11 12:45:10'),
+(290, 8, 50, 'Responding To Comments', 0, 1, '2024-03-11 12:45:19', '2024-03-11 12:45:19'),
+(291, 8, 50, 'Relevant Group Joining', 1, 1, '2024-03-11 12:45:27', '2024-03-11 12:45:27'),
+(292, 8, 50, 'Sharing In Groups', 1, 1, '2024-03-11 12:45:37', '2024-03-11 12:45:37'),
+(293, 8, 51, 'Channel Creation', 1, 1, '2024-03-11 12:45:56', '2024-03-11 12:45:56'),
+(294, 8, 51, 'Channel Pic & Cover Pic Creation', 1, 1, '2024-03-11 12:46:02', '2024-03-11 12:46:02'),
+(295, 8, 51, 'Video Optimization (Video Provided By Client) – 3', 1, 1, '2024-03-11 12:46:11', '2024-03-11 12:46:11'),
+(296, 8, 51, 'Thumbnail Creation', 1, 1, '2024-03-11 12:46:18', '2024-03-11 12:46:18'),
+(297, 8, 51, 'Keyword Research', 1, 1, '2024-03-11 12:46:24', '2024-03-11 12:46:24'),
+(298, 8, 51, 'Youtube Status Posting*', 0, 1, '2024-03-11 12:46:28', '2024-03-11 12:46:28'),
+(299, 8, 51, 'Comment Moderation', 0, 1, '2024-03-11 12:46:34', '2024-03-11 12:46:34'),
+(300, 8, 51, 'End Screen Cards Creation', 1, 1, '2024-03-11 12:46:40', '2024-03-11 12:46:40'),
+(301, 8, 51, 'Information Cards Creation', 1, 1, '2024-03-11 12:46:50', '2024-03-11 12:46:50'),
+(302, 8, 51, 'Video Tags Creation', 1, 1, '2024-03-11 12:46:54', '2024-03-11 12:46:54'),
+(303, 8, 51, 'Playlist Creation', 1, 1, '2024-03-11 12:47:00', '2024-03-11 12:47:00'),
+(304, 8, 51, 'Video Creation', 0, 1, '2024-03-11 12:47:07', '2024-03-11 12:47:07'),
+(305, 8, 51, 'Youtube Analytics Monitoring', 1, 1, '2024-03-11 12:47:13', '2024-03-11 12:47:13'),
+(306, 8, 51, 'Competitors Analysis', 0, 1, '2024-03-11 12:47:19', '2024-03-11 12:47:19'),
+(307, 8, 51, 'Video Backlinks', 0, 1, '2024-03-11 12:48:43', '2024-03-11 12:48:43'),
+(308, 7, 41, 'Page Monitoring', 1, 1, '2024-03-11 12:50:36', '2024-03-11 12:50:36'),
+(309, 8, 52, 'Profile Creation', 1, 1, '2024-03-11 12:51:25', '2024-03-11 12:51:25'),
+(310, 8, 52, 'Profile & Background Picture Creation', 1, 1, '2024-03-11 12:51:35', '2024-03-11 12:51:35'),
+(311, 8, 52, 'Profile & Background Picture Creation', 1, 0, '2024-03-11 12:51:36', '2024-03-11 12:51:41'),
+(312, 8, 52, 'Tweet Per Week – 6', 1, 1, '2024-03-11 12:51:45', '2024-03-11 12:51:45'),
+(313, 8, 52, 'Retweets', 1, 1, '2024-03-11 12:51:50', '2024-03-11 12:51:50'),
+(314, 8, 52, 'List Creation', 0, 1, '2024-03-11 12:51:56', '2024-03-11 12:51:56'),
+(315, 8, 52, 'Active In Trending Hashtag', 1, 1, '2024-03-11 12:52:01', '2024-03-11 12:52:01'),
+(316, 8, 52, 'Creation Of Poll', 1, 1, '2024-03-11 12:52:06', '2024-03-11 12:52:06'),
+(317, 8, 52, 'Following Industry Related People', 1, 1, '2024-03-11 12:52:14', '2024-03-11 12:52:14'),
+(318, 8, 52, 'Creation Of Moments', 0, 1, '2024-03-11 12:52:19', '2024-03-11 12:52:19'),
+(319, 8, 52, 'Twitter Analytics Monitoring', 1, 1, '2024-03-11 12:52:24', '2024-03-11 12:52:24'),
+(320, 8, 53, 'Profile Creation', 1, 1, '2024-03-11 12:52:35', '2024-03-11 12:52:35'),
+(321, 8, 53, 'Board Creation – 4', 1, 1, '2024-03-11 12:52:41', '2024-03-11 12:52:41'),
+(322, 8, 53, 'Content Creation', 1, 1, '2024-03-11 12:52:47', '2024-03-11 12:52:47'),
+(323, 8, 53, 'Posting Per Week – 6', 1, 1, '2024-03-11 12:52:52', '2024-03-11 12:52:52'),
+(324, 8, 53, 'Business Account Creation', 1, 1, '2024-03-11 12:52:58', '2024-03-11 12:52:58'),
+(325, 8, 53, 'Monthly Visitors Analysis', 0, 1, '2024-03-11 12:53:03', '2024-03-11 12:53:03'),
+(326, 8, 53, 'Follow Relevant Account And Boards', 1, 1, '2024-03-11 12:53:09', '2024-03-11 12:53:09'),
+(327, 8, 53, 'Inviting Relevant Pinners On Board', 0, 1, '2024-03-11 12:53:15', '2024-03-11 12:53:15'),
+(328, 9, 54, 'Setting Goals', 1, 1, '2024-03-11 12:56:53', '2024-03-11 12:56:53'),
+(329, 9, 54, 'Account Management – 6', 1, 1, '2024-03-11 12:56:59', '2024-03-11 12:56:59'),
+(330, 9, 54, 'Hashtag Research', 1, 1, '2024-03-11 12:57:03', '2024-03-11 12:57:03'),
+(331, 9, 54, 'Content Strategy Creation', 1, 1, '2024-03-11 12:57:08', '2024-03-11 12:57:08'),
+(332, 9, 55, 'Page Creation', 1, 1, '2024-03-11 12:57:18', '2024-03-11 12:57:18'),
+(333, 9, 55, 'Facebook Cover And Profile Pic Creation', 1, 1, '2024-03-11 12:57:24', '2024-03-11 12:57:24'),
+(334, 9, 55, 'Page Optimization', 1, 1, '2024-03-11 12:57:29', '2024-03-11 12:57:29'),
+(335, 9, 55, 'Posting Per Week – 10', 1, 1, '2024-03-11 12:58:04', '2024-03-11 12:58:04'),
+(336, 9, 55, 'Facebook Story Creation', 1, 1, '2024-03-11 12:58:09', '2024-03-11 12:58:09'),
+(337, 9, 55, 'Post Sharing In Groups', 1, 1, '2024-03-11 12:58:15', '2024-03-11 12:58:15'),
+(338, 9, 55, 'Video Posting(Provide By Client)', 1, 1, '2024-03-11 12:58:21', '2024-03-11 12:58:21'),
+(339, 9, 55, 'Page Monitoring', 1, 1, '2024-03-11 12:58:27', '2024-03-11 12:58:27'),
+(340, 9, 55, 'Facebook Tabs Creation', 1, 1, '2024-03-11 12:58:32', '2024-03-11 12:58:32'),
+(341, 9, 55, 'Call To Action Button Creation', 1, 1, '2024-03-11 12:58:37', '2024-03-11 12:58:37'),
+(342, 9, 55, 'Influencer Research', 1, 1, '2024-03-11 12:58:41', '2024-03-11 12:58:41'),
+(343, 9, 55, 'Creation Of Facebook Polls/ Quizs', 1, 1, '2024-03-11 12:58:51', '2024-03-11 12:58:51'),
+(344, 9, 55, 'Responding To Comments', 1, 1, '2024-03-11 12:58:56', '2024-03-11 12:58:56'),
+(345, 9, 55, 'Page Monitoring', 1, 1, '2024-03-11 12:59:01', '2024-03-11 12:59:01'),
+(346, 9, 55, 'Competitor Analysis', 1, 1, '2024-03-11 12:59:09', '2024-03-11 12:59:09'),
+(347, 9, 56, 'Page Creation', 1, 1, '2024-03-11 12:59:38', '2024-03-11 12:59:38'),
+(348, 9, 56, 'Page Optimization', 1, 1, '2024-03-11 12:59:43', '2024-03-11 12:59:43'),
+(349, 9, 56, 'Posting Per Week – 10', 1, 1, '2024-03-11 12:59:47', '2024-03-11 12:59:47'),
+(350, 9, 56, 'Engagement Strategy', 1, 1, '2024-03-11 12:59:51', '2024-03-11 12:59:51'),
+(351, 9, 56, 'Instagram Stories Creation', 1, 1, '2024-03-11 12:59:55', '2024-03-11 12:59:55'),
+(352, 9, 56, 'Competitors Analysis', 1, 1, '2024-03-11 13:00:00', '2024-03-11 13:00:00'),
+(353, 9, 56, 'Responding to comment', 1, 1, '2024-03-11 13:00:04', '2024-03-11 13:00:04'),
+(354, 9, 56, 'Link With Facebook Page', 1, 1, '2024-03-11 13:00:09', '2024-03-11 13:00:09'),
+(355, 9, 56, 'IGTV Upload (Video provided by Client)', 1, 1, '2024-03-11 13:00:17', '2024-03-11 13:00:17'),
+(356, 9, 56, 'Outreach With Influencers', 1, 1, '2024-03-11 13:00:22', '2024-03-11 13:00:22'),
+(357, 9, 56, 'Image Tagging', 1, 1, '2024-03-11 13:00:26', '2024-03-11 13:00:26'),
+(358, 9, 56, 'Instagram Analytics Monitoring', 1, 1, '2024-03-11 13:00:30', '2024-03-11 13:00:30'),
+(359, 9, 57, 'Profile Creation', 1, 1, '2024-03-11 13:42:45', '2024-03-11 13:42:45'),
+(360, 9, 57, 'Profile Pic & Cover Pic Creation', 1, 1, '2024-03-11 13:42:50', '2024-03-11 13:42:50'),
+(361, 9, 57, 'Profile Optimization', 1, 1, '2024-03-11 13:42:55', '2024-03-11 13:42:55'),
+(362, 9, 57, 'Company Page Creation', 1, 1, '2024-03-11 13:43:01', '2024-03-11 13:43:01'),
+(363, 9, 57, 'Competitors Analysis', 1, 1, '2024-03-11 13:43:06', '2024-03-11 13:43:06'),
+(364, 9, 57, 'Video Posting (Provide By Client)', 1, 1, '2024-03-11 13:43:11', '2024-03-11 13:43:11'),
+(365, 9, 57, 'Posting Per Week – 10', 1, 1, '2024-03-11 13:43:16', '2024-03-11 13:43:16'),
+(366, 9, 57, 'Creation Of Showcase Page', 1, 1, '2024-03-11 13:43:23', '2024-03-11 13:43:23'),
+(367, 9, 57, 'Invite Connection To Like Your Page', 1, 1, '2024-03-11 13:43:27', '2024-03-11 13:43:27'),
+(368, 9, 57, 'Responding To Comments', 1, 1, '2024-03-11 13:43:33', '2024-03-11 13:43:33'),
+(369, 9, 57, 'Relevant Group Joining', 1, 1, '2024-03-11 13:43:38', '2024-03-11 13:43:38'),
+(370, 9, 57, 'Sharing In Groups', 1, 1, '2024-03-11 13:43:43', '2024-03-11 13:43:43'),
+(371, 9, 58, 'Channel Creation', 1, 1, '2024-03-11 13:44:14', '2024-03-11 13:44:14'),
+(372, 9, 58, 'Channel Pic & Cover Pic Creation', 1, 1, '2024-03-11 13:44:18', '2024-03-11 13:44:18'),
+(373, 9, 58, 'Video Optimization(Video Provided By Client) – 6', 1, 1, '2024-03-11 13:44:23', '2024-03-11 13:44:23'),
+(374, 9, 58, 'Thumbnail Creation', 1, 1, '2024-03-11 13:44:29', '2024-03-11 13:44:29'),
+(375, 9, 58, 'Keyword Research', 1, 1, '2024-03-11 13:44:35', '2024-03-11 13:44:35'),
+(376, 9, 58, 'Youtube Status Posting*', 1, 1, '2024-03-11 13:44:40', '2024-03-11 13:44:40'),
+(377, 9, 58, 'Comment Moderation', 1, 1, '2024-03-11 13:44:45', '2024-03-11 13:44:45'),
+(378, 9, 58, 'End Screen Cards Creation', 1, 1, '2024-03-11 13:44:50', '2024-03-11 13:44:50'),
+(379, 9, 58, 'Information Cards Creation', 1, 1, '2024-03-11 13:44:54', '2024-03-11 13:44:54'),
+(380, 9, 58, 'Video Tags Creation', 1, 1, '2024-03-11 13:44:59', '2024-03-11 13:44:59'),
+(381, 9, 58, 'Playlist Creation', 1, 1, '2024-03-11 13:45:03', '2024-03-11 13:45:03'),
+(382, 9, 58, 'Video Creation - 1 Video/Month (1 Min)', 1, 1, '2024-03-11 13:45:12', '2024-03-11 13:47:35'),
+(383, 9, 58, 'Youtube Analytics Monitoring', 1, 1, '2024-03-11 13:45:22', '2024-03-11 13:45:22'),
+(384, 9, 58, 'Competitors Analysis', 1, 1, '2024-03-11 13:45:27', '2024-03-11 13:45:27'),
+(385, 9, 58, 'Video Backlinks', 1, 1, '2024-03-11 13:45:32', '2024-03-11 13:45:32'),
+(386, 9, 59, 'Profile Creation', 1, 1, '2024-03-11 13:45:58', '2024-03-11 13:45:58'),
+(387, 9, 59, 'Profile & Background Picture Creation', 1, 1, '2024-03-11 13:46:03', '2024-03-11 13:46:03'),
+(388, 9, 59, 'Tweet Per Week – 10', 1, 1, '2024-03-11 13:46:08', '2024-03-11 13:46:08'),
+(389, 9, 59, 'Retweets', 1, 1, '2024-03-11 13:46:13', '2024-03-11 13:46:13'),
+(390, 9, 59, 'List Creation', 1, 1, '2024-03-11 13:46:17', '2024-03-11 13:46:17'),
+(391, 9, 59, 'Active In Trending Hashtag', 1, 1, '2024-03-11 13:46:21', '2024-03-11 13:46:21'),
+(392, 9, 59, 'Creation Of Poll', 1, 1, '2024-03-11 13:46:26', '2024-03-11 13:46:26'),
+(393, 9, 59, 'Following Industry Related People', 1, 1, '2024-03-11 13:46:31', '2024-03-11 13:46:31'),
+(394, 9, 59, 'Creation Of Moments', 1, 1, '2024-03-11 13:46:37', '2024-03-11 13:46:37'),
+(395, 9, 59, 'Twitter Analytics Monitoring', 1, 1, '2024-03-11 13:46:42', '2024-03-11 13:46:42'),
+(396, 9, 60, 'Profile Creation', 1, 1, '2024-03-11 13:48:41', '2024-03-11 13:48:41'),
+(397, 9, 60, 'Board Creation – 6', 1, 1, '2024-03-11 13:48:45', '2024-03-11 13:48:45'),
+(398, 9, 60, 'Content Creation', 1, 1, '2024-03-11 13:48:51', '2024-03-11 13:48:51'),
+(399, 9, 60, 'Posting Per Week – 10', 1, 1, '2024-03-11 13:48:57', '2024-03-11 13:48:57'),
+(400, 9, 60, 'Business Account Creation', 1, 1, '2024-03-11 13:49:03', '2024-03-11 13:49:03'),
+(401, 9, 60, 'Monthly Visitors Analysis', 1, 1, '2024-03-11 13:49:08', '2024-03-11 13:49:08'),
+(402, 9, 60, 'Follow Relevant Account And Boards', 1, 1, '2024-03-11 13:49:15', '2024-03-11 13:49:15'),
+(403, 9, 60, 'Inviting Relevant Pinners On Board', 1, 1, '2024-03-11 13:49:23', '2024-03-11 13:49:23'),
+(404, 1, 3, 'Google Map Integration on website', 1, 1, '2024-03-11 16:55:30', '2024-03-11 16:55:30'),
+(405, 1, 3, 'Google My Business Page Setup and Optimization', 1, 1, '2024-03-11 16:55:37', '2024-03-11 16:55:37'),
+(406, 1, 3, 'Local Citations – 5', 1, 1, '2024-03-11 16:55:42', '2024-03-11 16:55:42'),
+(407, 1, 3, 'Local Classifieds – 2', 1, 1, '2024-03-11 16:55:47', '2024-03-11 16:55:47'),
+(408, 1, 4, 'Blog Posting (500 – 700 words) – 1', 1, 1, '2024-03-11 16:56:11', '2024-03-11 16:56:11'),
+(409, 1, 4, 'Article Writing(500 – 700 words) – 1', 1, 1, '2024-03-11 16:56:16', '2024-03-11 16:56:16'),
+(410, 1, 4, 'Onsite Blog (1000 – 1500 words) – 1', 1, 1, '2024-03-11 16:56:20', '2024-03-11 16:56:20'),
+(411, 1, 5, 'Guest Blogging', 0, 1, '2024-03-11 16:56:51', '2024-03-11 16:57:28'),
+(412, 1, 5, 'Broken Backlink Building', 0, 1, '2024-03-11 16:56:55', '2024-03-11 16:57:26'),
+(413, 1, 5, 'Resource Link Building', 0, 1, '2024-03-11 16:57:01', '2024-03-11 16:57:22'),
+(414, 1, 5, 'Alerts and Mention', 0, 1, '2024-03-11 16:57:04', '2024-03-11 16:57:19'),
+(415, 1, 5, 'Link Roundups', 0, 1, '2024-03-11 16:57:08', '2024-03-11 16:57:17'),
+(416, 1, 5, 'Competitor Backlink Research', 1, 1, '2024-03-11 16:57:31', '2024-03-11 16:57:31'),
+(417, 1, 6, 'Social Sharing – 30 (Total)', 1, 1, '2024-03-11 16:58:07', '2024-03-11 16:58:07'),
+(418, 1, 6, 'Blog Social Sharing', 1, 1, '2024-03-11 16:58:11', '2024-03-11 16:58:11'),
+(419, 1, 6, 'Slide Submissions – 1', 1, 1, '2024-03-11 16:58:15', '2024-03-11 16:58:15'),
+(420, 1, 6, 'Text Infographic Creation – 1', 1, 1, '2024-03-11 16:58:19', '2024-03-11 16:58:19'),
+(421, 1, 6, 'Video Creation', 0, 1, '2024-03-11 16:58:28', '2024-03-11 16:58:28'),
+(422, 1, 6, 'Q & A – 1', 1, 1, '2024-03-11 16:58:32', '2024-03-11 16:58:32'),
+(423, 1, 7, 'Keyword Ranking Report', 1, 1, '2024-03-11 16:58:58', '2024-03-11 16:58:58'),
+(424, 1, 7, 'Google Analytics Report', 1, 1, '2024-03-11 16:59:02', '2024-03-11 16:59:02'),
+(425, 1, 7, 'Acquired Links Report', 1, 1, '2024-03-11 16:59:06', '2024-03-11 16:59:06'),
+(426, 1, 8, 'Email', 1, 1, '2024-03-11 16:59:24', '2024-03-11 16:59:24'),
+(427, 1, 8, 'Chat', 1, 1, '2024-03-11 16:59:29', '2024-03-11 16:59:29'),
+(428, 1, 8, 'Call', 0, 1, '2024-03-11 16:59:34', '2024-03-11 16:59:34'),
+(429, 2, 11, 'Google Map Integration on website', 1, 1, '2024-03-11 17:00:56', '2024-03-11 17:00:56'),
+(430, 2, 11, 'Google My Business Page Setup and Optimization', 1, 1, '2024-03-11 17:01:01', '2024-03-11 17:01:01'),
+(431, 2, 11, 'Local Citations – 10', 1, 1, '2024-03-11 17:01:05', '2024-03-11 17:01:05'),
+(432, 2, 11, 'Local Classifieds – 5', 1, 1, '2024-03-11 17:01:11', '2024-03-11 17:01:11'),
+(433, 2, 12, 'Blog Posting (500 – 700 words) – 3', 1, 1, '2024-03-11 17:01:32', '2024-03-11 17:01:32'),
+(434, 2, 12, 'Article Writing(500 – 700 words) – 3', 1, 1, '2024-03-11 17:01:37', '2024-03-11 17:01:37'),
+(435, 2, 12, 'Onsite Blog (1000 – 1500 words) – 3', 1, 1, '2024-03-11 17:01:43', '2024-03-11 17:01:43'),
+(436, 2, 13, 'Guest Blogging', 1, 1, '2024-03-11 17:02:19', '2024-03-11 17:02:19'),
+(437, 2, 13, 'Broken Backlink Building', 1, 1, '2024-03-11 17:02:25', '2024-03-11 17:02:25'),
+(438, 2, 13, 'Resource Link Building', 0, 1, '2024-03-11 17:02:30', '2024-03-11 17:02:30'),
+(439, 2, 13, 'Alerts and Mention', 1, 1, '2024-03-11 17:02:35', '2024-03-11 17:02:35'),
+(440, 2, 13, 'Link Roundups', 0, 1, '2024-03-11 17:02:39', '2024-03-11 17:02:39'),
+(441, 2, 13, 'Competitor Backlink Research', 1, 1, '2024-03-11 17:02:43', '2024-03-11 17:02:43'),
+(442, 2, 14, 'Social Sharing – 40 (Total)', 1, 1, '2024-03-11 17:03:22', '2024-03-11 17:03:22'),
+(443, 2, 14, 'Social Sharing – 40 (Total)', 1, 0, '2024-03-11 17:03:22', '2024-03-11 17:03:25'),
+(444, 2, 14, 'Blog Social Sharing', 1, 1, '2024-03-11 17:03:30', '2024-03-11 17:03:30'),
+(445, 2, 14, 'Slide Submissions – 2', 1, 1, '2024-03-11 17:03:34', '2024-03-11 17:03:34'),
+(446, 2, 14, 'Text Infographic Creation – 2', 1, 1, '2024-03-11 17:03:39', '2024-03-11 17:03:39'),
+(447, 2, 14, 'Video Creation', 1, 1, '2024-03-11 17:03:43', '2024-03-11 17:03:43'),
+(448, 2, 14, 'Q & A – 3', 1, 1, '2024-03-11 17:03:48', '2024-03-11 17:03:48'),
+(449, 2, 15, 'Keyword Ranking Report', 1, 1, '2024-03-11 17:04:07', '2024-03-11 17:04:07'),
+(450, 2, 15, 'Google Analytics Report', 1, 1, '2024-03-11 17:04:11', '2024-03-11 17:04:11'),
+(451, 2, 15, 'Acquired Links Report', 1, 1, '2024-03-11 17:04:15', '2024-03-11 17:04:15'),
+(452, 2, 16, 'Email', 1, 1, '2024-03-11 17:04:32', '2024-03-11 17:04:32'),
+(453, 2, 16, 'Chat', 1, 1, '2024-03-11 17:04:38', '2024-03-11 17:04:38'),
+(454, 2, 16, 'Call', 1, 1, '2024-03-11 17:04:43', '2024-03-11 17:04:43'),
+(455, 3, 19, 'Google Map Integration on website', 1, 1, '2024-03-11 17:05:15', '2024-03-11 17:05:15'),
+(456, 3, 19, 'Google My Business Page Setup and Optimization', 1, 1, '2024-03-11 17:05:20', '2024-03-11 17:05:20'),
+(457, 3, 19, 'Local Citations – 15', 1, 1, '2024-03-11 17:05:24', '2024-03-11 17:05:24'),
+(458, 3, 19, 'Local Classifieds – 10', 1, 1, '2024-03-11 17:05:28', '2024-03-11 17:05:28'),
+(459, 3, 20, 'Blog Posting (500 – 700 words) – 4', 1, 1, '2024-03-11 17:05:47', '2024-03-11 17:05:47'),
+(460, 3, 20, 'Article Writing(500 – 700 words) – 4', 1, 1, '2024-03-11 17:05:54', '2024-03-11 17:05:54'),
+(461, 3, 20, 'Onsite Blog (1000 – 1500 words) – 4', 1, 1, '2024-03-11 17:06:03', '2024-03-11 17:06:03'),
+(462, 3, 21, 'Guest Blogging', 1, 1, '2024-03-11 17:06:23', '2024-03-11 17:06:23'),
+(463, 3, 21, 'Broken Backlink Building', 1, 1, '2024-03-11 17:06:27', '2024-03-11 17:06:27'),
+(464, 3, 21, 'Resource Link Building', 1, 1, '2024-03-11 17:06:34', '2024-03-11 17:06:34'),
+(465, 3, 21, 'Alerts and Mention', 1, 1, '2024-03-11 17:06:39', '2024-03-11 17:06:39'),
+(466, 3, 21, 'Link Roundups', 1, 1, '2024-03-11 17:06:45', '2024-03-11 17:06:45'),
+(467, 3, 21, 'Competitor Backlink Research', 1, 1, '2024-03-11 17:06:49', '2024-03-11 17:06:49'),
+(468, 3, 22, 'Social Sharing – 50 (Total)', 1, 1, '2024-03-11 17:07:38', '2024-03-11 17:07:38'),
+(469, 3, 22, 'Blog Social Sharing', 1, 1, '2024-03-11 17:07:42', '2024-03-11 17:07:42'),
+(470, 3, 22, 'Slide Submissions – 2', 1, 1, '2024-03-11 17:07:45', '2024-03-11 17:07:45'),
+(471, 3, 22, 'Text Infographic Creation – 3', 1, 1, '2024-03-11 17:07:49', '2024-03-11 17:07:49'),
+(472, 3, 22, 'Video-1 Minute (Product Based)', 1, 1, '2024-03-11 17:07:53', '2024-03-11 17:07:53'),
+(473, 3, 22, 'Q & A – 5', 1, 1, '2024-03-11 17:07:57', '2024-03-11 17:07:57'),
+(474, 3, 23, 'Keyword Ranking Report', 1, 1, '2024-03-11 17:08:08', '2024-03-11 17:08:08'),
+(475, 3, 23, 'Google Analytics Report', 1, 1, '2024-03-11 17:08:13', '2024-03-11 17:08:13'),
+(476, 3, 23, 'Acquired Links Report', 1, 1, '2024-03-11 17:08:17', '2024-03-11 17:08:17'),
+(477, 3, 24, 'Email', 1, 1, '2024-03-11 17:08:25', '2024-03-11 17:08:25'),
+(478, 3, 24, 'Chat', 1, 1, '2024-03-11 17:08:33', '2024-03-11 17:08:33'),
+(479, 3, 24, 'Call', 1, 1, '2024-03-11 17:08:36', '2024-03-11 17:08:36'),
+(480, 10, 61, 'Campaign – 1', 1, 1, '2024-03-12 15:04:52', '2024-03-12 15:04:52'),
+(481, 10, 61, 'AD Groups – 2', 1, 1, '2024-03-12 15:04:56', '2024-03-12 15:04:56'),
+(482, 10, 61, 'Ad Copies – Maximum 6', 1, 1, '2024-03-12 15:05:01', '2024-03-12 15:05:01'),
+(483, 10, 61, 'No. of Keywords-50', 1, 1, '2024-03-12 15:05:06', '2024-03-12 15:05:06'),
+(484, 10, 61, 'Search Ads', 1, 1, '2024-03-12 15:05:11', '2024-03-12 15:05:11'),
+(485, 10, 61, 'Display Ads', 0, 1, '2024-03-12 15:05:22', '2024-03-12 15:05:22'),
+(486, 10, 61, 'Gmail Ads', 0, 1, '2024-03-12 15:05:26', '2024-03-12 15:05:26'),
+(487, 10, 61, 'Video Ads', 0, 1, '2024-03-12 15:05:30', '2024-03-12 15:05:30'),
+(488, 10, 61, 'Shopping Ads', 0, 1, '2024-03-12 15:05:37', '2024-03-12 15:05:37'),
+(489, 10, 61, 'App Promotion Ads', 0, 1, '2024-03-12 15:05:45', '2024-03-12 15:05:45'),
+(490, 10, 61, 'Remarketing List', 0, 1, '2024-03-12 15:05:51', '2024-03-12 15:05:51'),
+(491, 10, 61, 'Conversion Tracking', 1, 1, '2024-03-12 15:05:56', '2024-03-12 15:05:56'),
+(492, 10, 62, 'Competitor Analysis – Yes', 1, 1, '2024-03-12 15:06:49', '2024-03-12 15:06:49'),
+(493, 10, 62, 'Keyword Optimization – Yes', 1, 1, '2024-03-12 15:06:54', '2024-03-12 15:06:54'),
+(494, 10, 62, 'Ad Copy Optimization – Yes', 1, 1, '2024-03-12 15:06:59', '2024-03-12 15:06:59'),
+(495, 10, 63, 'ROI Analysis', 0, 1, '2024-03-12 15:08:27', '2024-03-12 15:08:27'),
+(496, 10, 63, 'Landing Page Optimization', 0, 1, '2024-03-12 15:08:31', '2024-03-12 15:08:31'),
+(497, 10, 64, 'Reports – Monthly', 1, 1, '2024-03-12 15:08:49', '2024-03-12 15:08:49'),
+(498, 10, 64, 'Dedicated Account Manager', 0, 1, '2024-03-12 15:08:55', '2024-03-12 15:08:55'),
+(499, 10, 64, 'Support – Email, Chat', 1, 1, '2024-03-12 15:09:00', '2024-03-12 15:09:00'),
+(500, 11, 65, 'Campaign – 2', 1, 1, '2024-03-12 15:11:31', '2024-03-12 15:11:31'),
+(501, 11, 65, 'AD Groups – 6', 1, 1, '2024-03-12 15:11:35', '2024-03-12 15:11:35'),
+(502, 11, 65, 'Ad Copies – Maximum 15', 1, 1, '2024-03-12 15:11:40', '2024-03-12 15:11:40'),
+(503, 11, 65, 'No. of Keywords-100', 1, 1, '2024-03-12 15:12:25', '2024-03-12 15:12:25'),
+(504, 11, 65, 'Search Ads', 1, 1, '2024-03-12 15:12:30', '2024-03-12 15:12:30'),
+(505, 11, 65, 'Display Ads', 1, 1, '2024-03-12 15:12:34', '2024-03-12 15:12:34'),
+(506, 11, 65, 'Gmail Ads', 1, 1, '2024-03-12 15:12:43', '2024-03-12 15:12:43'),
+(507, 11, 65, 'Video Ads', 1, 1, '2024-03-12 15:12:47', '2024-03-12 15:12:47'),
+(508, 11, 65, 'Shopping Ads', 0, 1, '2024-03-12 15:12:55', '2024-03-12 15:13:02'),
+(509, 11, 65, 'App Promotion Ads', 1, 1, '2024-03-12 15:13:06', '2024-03-12 15:13:06'),
+(510, 11, 65, 'Remarketing List', 1, 1, '2024-03-12 15:13:13', '2024-03-12 15:13:13'),
+(511, 11, 65, 'Conversion Tracking', 1, 1, '2024-03-12 15:13:18', '2024-03-12 15:13:18'),
+(512, 11, 65, 'Competitor Analysis – Yes', 1, 0, '2024-03-12 15:13:27', '2024-03-12 15:14:09'),
+(513, 11, 65, 'Keyword Optimization – Yes', 1, 0, '2024-03-12 15:13:57', '2024-03-12 15:14:12'),
+(514, 11, 65, 'Ad Copy Optimization – Yes', 1, 0, '2024-03-12 15:14:02', '2024-03-12 15:14:14'),
+(515, 11, 66, 'Competitor Analysis – Yes', 1, 1, '2024-03-12 15:14:30', '2024-03-12 15:14:30'),
+(516, 11, 66, 'Keyword Optimization – Yes', 1, 1, '2024-03-12 15:14:34', '2024-03-12 15:14:34'),
+(517, 11, 66, 'Ad Copy Optimization – Yes', 1, 1, '2024-03-12 15:14:38', '2024-03-12 15:14:38'),
+(518, 11, 67, 'ROI Analysis', 1, 1, '2024-03-12 15:15:01', '2024-03-12 15:15:01'),
+(519, 11, 67, 'Landing Page Optimization', 1, 1, '2024-03-12 15:15:06', '2024-03-12 15:15:06'),
+(520, 11, 68, 'Reports – Monthly', 1, 1, '2024-03-12 15:15:18', '2024-03-12 15:15:18'),
+(521, 11, 68, 'Dedicated Account Manager', 0, 1, '2024-03-12 15:15:24', '2024-03-12 15:15:24'),
+(522, 11, 68, 'Support – Email, Chat', 1, 1, '2024-03-12 15:15:29', '2024-03-12 15:15:29'),
+(523, 12, 69, 'Campaign- 5', 1, 1, '2024-03-12 15:24:52', '2024-03-12 15:24:52'),
+(524, 12, 69, 'AD Groups – 10', 1, 1, '2024-03-12 15:24:56', '2024-03-12 15:24:56'),
+(525, 12, 69, 'Ad Copies – Maximum 50', 1, 1, '2024-03-12 15:25:01', '2024-03-12 15:25:01'),
+(526, 12, 69, 'No. of Keywords-150', 1, 1, '2024-03-12 15:25:06', '2024-03-12 15:25:06'),
+(527, 12, 69, 'Search Ads', 1, 1, '2024-03-12 15:25:09', '2024-03-12 15:25:09'),
+(528, 12, 69, 'Display Ads', 1, 1, '2024-03-12 15:25:13', '2024-03-12 15:25:13'),
+(529, 12, 69, 'Gmail Ads', 1, 1, '2024-03-12 15:25:18', '2024-03-12 15:25:18'),
+(530, 12, 69, 'Video Ads', 1, 1, '2024-03-12 15:25:22', '2024-03-12 15:25:22'),
+(531, 12, 69, 'Shopping Ads', 1, 1, '2024-03-12 15:25:27', '2024-03-12 15:25:27'),
+(532, 12, 69, 'App Promotion Ads', 1, 1, '2024-03-12 15:25:33', '2024-03-12 15:25:33'),
+(533, 12, 69, 'Remarketing List', 1, 1, '2024-03-12 15:25:37', '2024-03-12 15:25:37'),
+(534, 12, 69, 'Conversion Tracking', 1, 1, '2024-03-12 15:25:41', '2024-03-12 15:25:41'),
+(535, 12, 70, 'Competitor Analysis – Yes', 1, 1, '2024-03-12 15:25:49', '2024-03-12 15:25:49'),
+(536, 12, 70, 'Keyword Optimization – Yes', 1, 1, '2024-03-12 15:25:55', '2024-03-12 15:25:55'),
+(537, 12, 70, 'Ad Copy Optimization – Yes', 1, 1, '2024-03-12 15:26:00', '2024-03-12 15:26:00'),
+(538, 12, 71, 'ROI Analysis', 1, 1, '2024-03-12 15:26:09', '2024-03-12 15:26:09'),
+(539, 12, 71, 'Landing Page Optimization', 1, 1, '2024-03-12 15:26:14', '2024-03-12 15:26:14'),
+(540, 12, 72, 'Reports – Monthly', 1, 1, '2024-03-12 15:26:21', '2024-03-12 15:26:21'),
+(541, 12, 72, 'Dedicated Account Manager', 1, 1, '2024-03-12 15:26:29', '2024-03-12 15:26:29'),
+(542, 12, 72, 'Support – Email, Chat', 1, 1, '2024-03-12 15:26:34', '2024-03-12 15:26:34'),
+(543, 13, 73, 'Upto 5 Pages', 1, 1, '2024-03-13 12:19:04', '2024-03-13 12:19:04'),
+(544, 13, 73, 'Logo', 1, 1, '2024-03-13 12:19:08', '2024-03-13 12:19:08'),
+(545, 13, 73, 'Slider', 1, 1, '2024-03-13 12:19:14', '2024-03-13 12:19:14'),
+(546, 13, 73, 'Dynamic Website', 1, 1, '2024-03-13 12:19:20', '2024-03-13 12:19:20'),
+(547, 13, 73, 'Domain-1st Year Free (.com or .in)', 1, 1, '2024-03-13 12:19:29', '2024-03-13 12:19:29'),
+(548, 13, 73, 'Hosting Free For 1st Year', 1, 1, '2024-03-13 12:19:34', '2024-03-13 12:19:34'),
+(549, 13, 73, '1 Email – 500 MB Quota', 1, 1, '2024-03-13 12:19:41', '2024-03-13 12:19:41'),
+(550, 13, 73, '1 Contact Form', 1, 1, '2024-03-13 12:19:46', '2024-03-13 12:19:46'),
+(551, 13, 73, 'Free SSL', 1, 1, '2024-03-13 12:19:50', '2024-03-13 12:19:50'),
+(552, 13, 73, 'Testimonials', 1, 1, '2024-03-13 12:19:56', '2024-03-13 12:19:56'),
+(553, 13, 73, 'Gallery Section', 1, 1, '2024-03-13 12:20:02', '2024-03-13 12:20:02'),
+(554, 13, 73, 'Chat Feature', 1, 1, '2024-03-13 12:26:37', '2024-03-13 12:26:37');
+INSERT INTO `package_sub_keypoints` (`id`, `package_id`, `keypoint_id`, `sub_keypoint`, `includes`, `status`, `created_at`, `updated_at`) VALUES
+(555, 13, 73, 'Content - 1 Rs per word', 1, 1, '2024-03-13 12:26:47', '2024-03-13 12:26:47'),
+(556, 13, 73, 'Social Profile Link', 1, 1, '2024-03-13 12:28:54', '2024-03-13 12:28:54'),
+(557, 13, 73, 'Click to Call/Email', 1, 1, '2024-03-13 12:28:58', '2024-03-13 12:28:58'),
+(558, 13, 73, 'Mobile Responsive', 1, 1, '2024-03-13 12:29:05', '2024-03-13 12:29:05'),
+(559, 13, 73, 'Login Details Will Be Given', 1, 1, '2024-03-13 12:29:09', '2024-03-13 12:29:09'),
+(560, 13, 73, 'Login Details Will Be Given', 1, 0, '2024-03-13 12:29:09', '2024-03-13 12:29:12'),
+(561, 13, 73, 'Delivery in 3 Days', 1, 1, '2024-03-13 12:29:17', '2024-03-13 12:29:17'),
+(562, 13, 73, 'Renewal – 2000 Rs + Domain Price Plus GST', 1, 1, '2024-03-13 12:29:22', '2024-03-13 12:29:22'),
+(563, 13, 73, 'Support – 500 Rs/Hr', 1, 1, '2024-03-13 12:29:29', '2024-03-13 12:29:29'),
+(564, 14, 74, '10 Pages', 1, 1, '2024-03-13 12:31:04', '2024-03-13 12:31:04'),
+(565, 14, 74, 'Logo', 1, 1, '2024-03-13 12:31:13', '2024-03-13 12:31:13'),
+(566, 14, 74, 'Slider', 1, 1, '2024-03-13 12:31:16', '2024-03-13 12:31:16'),
+(567, 14, 74, 'Dynamic Website', 1, 1, '2024-03-13 12:31:24', '2024-03-13 12:31:24'),
+(568, 14, 74, 'Domain-1st Year Free (.com or .in)', 1, 1, '2024-03-13 12:31:43', '2024-03-13 12:31:43'),
+(569, 14, 74, 'Hosting Free For 1st Year', 1, 1, '2024-03-13 12:31:48', '2024-03-13 12:31:48'),
+(570, 14, 74, '2 Email – 500 MB Quota Each', 1, 1, '2024-03-13 12:31:53', '2024-03-13 12:31:53'),
+(571, 14, 74, '1 Contact Form', 1, 1, '2024-03-13 12:31:58', '2024-03-13 12:31:58'),
+(572, 14, 74, 'Free SSL', 1, 1, '2024-03-13 12:32:02', '2024-03-13 12:32:02'),
+(573, 14, 74, 'Testimonials', 1, 1, '2024-03-13 12:32:05', '2024-03-13 12:32:05'),
+(574, 14, 74, 'Gallery Section', 1, 1, '2024-03-13 12:32:10', '2024-03-13 12:32:10'),
+(575, 14, 74, 'Chat Feature', 1, 1, '2024-03-13 12:32:14', '2024-03-13 12:32:14'),
+(576, 14, 74, '300 Rs/Extra Page', 1, 1, '2024-03-13 12:32:19', '2024-03-13 12:32:19'),
+(577, 14, 74, 'Content - 1 Rs per word', 1, 1, '2024-03-13 12:32:24', '2024-03-13 12:32:24'),
+(578, 14, 74, 'Social Profile Link', 1, 1, '2024-03-13 12:32:29', '2024-03-13 12:32:29'),
+(579, 14, 74, 'Click to Call/Email', 1, 1, '2024-03-13 12:32:35', '2024-03-13 12:32:35'),
+(580, 14, 74, 'Mobile Responsive', 1, 1, '2024-03-13 12:32:40', '2024-03-13 12:32:40'),
+(581, 14, 74, 'Login Details Will Be Given', 1, 1, '2024-03-13 12:32:48', '2024-03-13 12:32:48'),
+(582, 14, 74, 'Delivery in 7 Days', 1, 1, '2024-03-13 12:32:54', '2024-03-13 12:32:54'),
+(583, 14, 74, 'Renewal – 3000 Rs + Domain Price Plus GST', 1, 1, '2024-03-13 12:33:00', '2024-03-13 12:33:00'),
+(584, 14, 74, 'Free 4 Hours Support', 1, 1, '2024-03-13 12:33:06', '2024-03-13 12:33:06'),
+(585, 14, 74, 'Support – 500 Rs/Hr', 1, 1, '2024-03-13 12:33:12', '2024-03-13 12:33:12'),
+(586, 15, 75, 'Up to 50 Products', 1, 1, '2024-03-13 13:22:27', '2024-03-13 13:22:27'),
+(587, 15, 75, 'Logo', 1, 1, '2024-03-13 13:22:33', '2024-03-13 13:22:33'),
+(588, 15, 75, 'Contact Form – 3', 1, 1, '2024-03-13 13:22:37', '2024-03-13 13:22:37'),
+(589, 15, 75, 'Content - 1 Rs per word', 1, 1, '2024-03-13 13:22:42', '2024-03-13 13:22:42'),
+(590, 15, 75, '300 Rs/Extra Page', 1, 1, '2024-03-13 13:22:49', '2024-03-13 13:22:49'),
+(591, 15, 75, 'WhatsApp Chat Integration', 1, 1, '2024-03-13 13:22:54', '2024-03-13 13:22:54'),
+(592, 15, 75, 'Social Media Profiles Integration', 1, 1, '2024-03-13 13:22:59', '2024-03-13 13:22:59'),
+(593, 15, 75, 'Social Profile Link', 1, 1, '2024-03-13 13:23:05', '2024-03-13 13:23:05'),
+(594, 15, 75, 'WordPress Login Details Will be Given', 1, 1, '2024-03-13 13:23:11', '2024-03-13 13:23:11'),
+(595, 15, 75, 'Payment Gateway', 1, 1, '2024-03-13 13:23:16', '2024-03-13 13:23:16'),
+(596, 15, 75, 'Extra Support – 500 Rs/Hour', 1, 1, '2024-03-13 13:23:23', '2024-03-13 13:23:23'),
+(597, 15, 75, 'Revisions – 2', 1, 1, '2024-03-13 13:23:29', '2024-03-13 13:23:29'),
+(598, 15, 75, 'Call/Email/Chat Support', 1, 1, '2024-03-13 13:23:36', '2024-03-13 13:23:36'),
+(599, 16, 76, 'Two off-site backup Monthly', 1, 1, '2024-03-13 13:43:28', '2024-03-13 13:43:28'),
+(600, 16, 76, 'Monthly Scanning', 1, 1, '2024-03-13 13:43:34', '2024-03-13 13:43:34'),
+(601, 16, 76, 'Broken link check & fix', 1, 1, '2024-03-13 13:43:40', '2024-03-13 13:43:40'),
+(602, 16, 76, 'Disaster Recovery', 1, 1, '2024-03-13 13:43:45', '2024-03-13 13:43:45'),
+(603, 16, 76, 'Domain & Hosting Support', 1, 1, '2024-03-13 13:43:50', '2024-03-13 13:43:50'),
+(604, 16, 76, 'SSL Certificate Monitoring', 1, 1, '2024-03-13 13:43:55', '2024-03-13 13:43:55'),
+(605, 16, 76, 'Domain Expiration Alert', 1, 1, '2024-03-13 13:44:00', '2024-03-13 13:44:00'),
+(606, 16, 76, 'Basic website updates', 1, 1, '2024-03-13 13:44:07', '2024-03-13 13:44:07'),
+(607, 16, 76, 'Google Analytics Setup', 1, 1, '2024-03-13 13:44:15', '2024-03-13 13:44:15'),
+(608, 16, 76, 'Search Console Setup', 1, 1, '2024-03-13 13:44:20', '2024-03-13 13:44:20'),
+(609, 16, 76, 'Webmail Supports', 1, 1, '2024-03-13 13:44:24', '2024-03-13 13:44:24'),
+(610, 16, 76, 'WP Core & plugins update', 1, 1, '2024-03-13 13:44:29', '2024-03-13 13:44:29'),
+(611, 16, 76, 'New Page Designing', 1, 1, '2024-03-13 13:44:41', '2024-03-13 13:44:41'),
+(612, 17, 77, 'Weekly Offline Backup', 1, 1, '2024-03-13 13:49:37', '2024-03-13 13:49:37'),
+(613, 17, 77, 'Monthly Security Scanning', 1, 1, '2024-03-13 13:49:42', '2024-03-13 13:49:42'),
+(614, 17, 77, 'Broken link check & fix', 1, 1, '2024-03-13 13:49:47', '2024-03-13 13:49:47'),
+(615, 17, 77, 'Disaster Recovery', 1, 1, '2024-03-13 13:50:02', '2024-03-13 13:50:02'),
+(616, 17, 77, 'Domain & Hosting Support', 1, 1, '2024-03-13 13:50:54', '2024-03-13 13:50:54'),
+(617, 17, 77, 'SSL Certificate Monitoring', 1, 1, '2024-03-13 13:50:58', '2024-03-13 13:50:58'),
+(618, 17, 77, 'Domain Expiration Alert', 1, 1, '2024-03-13 13:51:04', '2024-03-13 13:51:04'),
+(619, 17, 77, 'Basic website updates', 1, 1, '2024-03-13 13:51:16', '2024-03-13 13:51:16'),
+(620, 17, 77, 'Google Analytics Setup', 1, 1, '2024-03-13 13:51:30', '2024-03-13 13:51:30'),
+(621, 17, 77, 'Search Console Setup', 1, 1, '2024-03-13 13:51:40', '2024-03-13 13:51:40'),
+(622, 17, 77, 'Webmail Supports', 1, 1, '2024-03-13 13:51:45', '2024-03-13 13:51:45'),
+(623, 17, 77, 'WP Core & plugins update', 1, 1, '2024-03-13 13:51:50', '2024-03-13 13:51:50'),
+(624, 17, 77, 'New Page Designing', 1, 1, '2024-03-13 13:51:54', '2024-03-13 13:51:54'),
+(625, 18, 78, 'Weekly Backup Offline', 1, 1, '2024-03-13 13:56:19', '2024-03-13 13:56:19'),
+(626, 18, 78, 'Website Performance Monitoring', 1, 1, '2024-03-13 13:56:25', '2024-03-13 13:56:25'),
+(627, 18, 78, 'Disaster Recovery', 1, 1, '2024-03-13 13:56:31', '2024-03-13 13:56:31'),
+(628, 18, 78, 'Domain & Hosting Support', 1, 1, '2024-03-13 13:56:36', '2024-03-13 13:56:36'),
+(629, 18, 78, 'Broken link check & fix', 1, 1, '2024-03-13 13:56:41', '2024-03-13 13:56:41'),
+(630, 18, 78, 'SSL Certificate Monitoring', 1, 1, '2024-03-13 13:56:46', '2024-03-13 13:56:46'),
+(631, 18, 78, 'Domain Expiration Alert', 1, 1, '2024-03-13 13:56:50', '2024-03-13 13:56:50'),
+(632, 18, 78, 'Basic website updates', 1, 1, '2024-03-13 13:57:19', '2024-03-13 13:57:19'),
+(633, 18, 78, 'Webmail Supports', 1, 1, '2024-03-13 13:57:25', '2024-03-13 13:57:25'),
+(634, 18, 78, 'Google Analytics Setup', 1, 1, '2024-03-13 13:57:36', '2024-03-13 13:57:36'),
+(635, 18, 78, 'Search Console Setup', 1, 1, '2024-03-13 13:57:41', '2024-03-13 13:57:41'),
+(636, 18, 78, 'WP Core & plugins update', 1, 1, '2024-03-13 13:57:50', '2024-03-13 13:57:50'),
+(637, 18, 78, 'Malware scanning', 1, 1, '2024-03-13 13:57:55', '2024-03-13 13:57:55'),
+(638, 18, 78, 'New Page Designing', 1, 1, '2024-03-13 13:58:03', '2024-03-13 13:58:03'),
+(639, 19, 79, '50% Upfront to get started with the work immediately', 1, 1, '2024-03-13 15:28:30', '2024-03-13 15:28:30'),
+(640, 19, 79, 'No. of Features Up to 7', 1, 1, '2024-03-13 15:28:36', '2024-03-13 15:28:36'),
+(641, 19, 79, 'Wireframing', 1, 1, '2024-03-13 15:28:41', '2024-03-13 15:28:41'),
+(642, 19, 79, 'Intuitive UI UX (Custom App Design)', 1, 1, '2024-03-13 15:28:47', '2024-03-13 15:28:47'),
+(643, 19, 79, 'Social Media Integration', 1, 1, '2024-03-13 15:28:52', '2024-03-13 15:28:52'),
+(644, 19, 79, 'App Testing', 1, 1, '2024-03-13 15:29:01', '2024-03-13 15:29:01'),
+(645, 19, 79, 'Ads Network Integration', 0, 1, '2024-03-13 15:29:12', '2024-03-13 15:29:12'),
+(646, 19, 79, 'Firebase Integration', 0, 1, '2024-03-13 15:29:21', '2024-03-13 15:29:26'),
+(647, 19, 79, 'In-App Purchase', 0, 1, '2024-03-13 15:29:32', '2024-03-13 15:29:32'),
+(648, 19, 79, 'Publishing on App Store', 1, 1, '2024-03-13 15:29:40', '2024-03-13 15:29:40'),
+(649, 19, 79, 'App Store Optimization', 0, 1, '2024-03-13 15:29:54', '2024-03-13 15:29:54'),
+(650, 19, 79, 'Paid bug support ($350/m)', 1, 1, '2024-03-13 15:30:10', '2024-03-13 15:30:10'),
+(651, 19, 79, 'Native iOS OR Android app', 1, 1, '2024-03-13 15:30:18', '2024-03-13 15:30:18'),
+(652, 19, 79, 'Cross-Platform (Hybrid)', 0, 1, '2024-03-13 15:30:32', '2024-03-13 15:30:32'),
+(653, 19, 79, 'Push Notifications', 0, 1, '2024-03-13 15:30:37', '2024-03-13 15:30:37'),
+(654, 19, 79, 'Messaging API Integration (Live Chat)', 0, 1, '2024-03-13 15:30:43', '2024-03-13 15:30:43'),
+(655, 19, 79, 'Regular App Updates', 0, 1, '2024-03-13 15:30:48', '2024-03-13 15:30:48'),
+(656, 19, 79, 'Google Maps Integration', 0, 1, '2024-03-13 15:30:55', '2024-03-13 15:30:55'),
+(657, 19, 79, 'Admin Panel', 0, 1, '2024-03-13 15:31:00', '2024-03-13 15:31:00'),
+(658, 19, 79, 'Data Import/Export', 0, 1, '2024-03-13 15:31:08', '2024-03-13 15:31:08'),
+(659, 19, 79, 'Web APIs and Online Database', 0, 1, '2024-03-13 15:31:14', '2024-03-13 15:31:14'),
+(660, 19, 79, 'Picture Gallery/ Product Display/ Showcase Services', 0, 1, '2024-03-13 15:31:39', '2024-03-13 15:32:56'),
+(661, 19, 79, 'Product Categories/Sub Categories', 0, 1, '2024-03-13 15:31:46', '2024-03-13 15:31:46'),
+(662, 19, 79, 'CrashAnalytics Integration', 0, 1, '2024-03-13 15:31:52', '2024-03-13 15:31:52'),
+(663, 19, 79, 'Audio/Video Streaming', 0, 1, '2024-03-13 15:31:58', '2024-03-13 15:31:58'),
+(664, 19, 79, 'Payment Gateways Integration', 0, 1, '2024-03-13 15:32:12', '2024-03-13 15:32:12'),
+(665, 19, 79, 'Shopping Cart', 0, 1, '2024-03-13 15:32:17', '2024-03-13 15:32:17'),
+(666, 19, 79, '3rd Party APIs Integrations', 0, 1, '2024-03-13 15:32:22', '2024-03-13 15:32:22'),
+(667, 20, 80, '50% Upfront to get started with the work immediately', 1, 1, '2024-03-13 15:35:33', '2024-03-13 15:35:33'),
+(668, 20, 80, 'No. of Features Up to 10', 1, 1, '2024-03-13 15:35:51', '2024-03-13 15:35:51'),
+(669, 20, 80, 'Wireframing', 1, 1, '2024-03-13 15:35:57', '2024-03-13 15:35:57'),
+(670, 20, 80, 'Intuitive UI UX (Custom App Design)', 1, 1, '2024-03-13 15:36:03', '2024-03-13 15:36:03'),
+(671, 20, 80, 'Social Media Integration', 1, 1, '2024-03-13 15:36:11', '2024-03-13 15:36:11'),
+(672, 20, 80, 'App Testing', 1, 1, '2024-03-13 15:36:17', '2024-03-13 15:36:17'),
+(673, 20, 80, 'Ads Network Integration', 1, 1, '2024-03-13 15:36:27', '2024-03-13 15:36:27'),
+(674, 20, 80, 'Firebase Integration', 1, 1, '2024-03-13 15:36:34', '2024-03-13 15:36:34'),
+(675, 20, 80, 'In-App Purchase', 1, 1, '2024-03-13 15:36:38', '2024-03-13 15:36:38'),
+(676, 20, 80, 'Publishing on App Store', 1, 1, '2024-03-13 15:36:43', '2024-03-13 15:36:43'),
+(677, 20, 80, 'App Store Optimization', 0, 1, '2024-03-13 15:36:49', '2024-03-13 15:36:49'),
+(678, 20, 80, '1 Month free bug support', 1, 1, '2024-03-13 15:36:56', '2024-03-13 15:36:56'),
+(679, 20, 80, 'Native iOS OR Android app', 1, 1, '2024-03-13 15:37:07', '2024-03-13 15:37:07'),
+(680, 20, 80, 'Cross-Platform (Hybrid) On Demand', 1, 1, '2024-03-13 15:37:24', '2024-03-13 15:37:24'),
+(681, 20, 80, 'Push Notifications', 1, 1, '2024-03-13 15:37:32', '2024-03-13 15:37:32'),
+(682, 20, 80, 'Messaging API Integration (Live Chat)', 1, 1, '2024-03-13 15:37:38', '2024-03-13 15:37:38'),
+(683, 20, 80, 'Regular App Updates', 0, 1, '2024-03-13 15:37:44', '2024-03-13 15:37:44'),
+(684, 20, 80, 'Google Maps Integration', 1, 1, '2024-03-13 15:37:56', '2024-03-13 15:37:56'),
+(685, 20, 80, 'Admin Panel', 0, 1, '2024-03-13 15:38:05', '2024-03-13 15:38:05'),
+(686, 20, 80, 'Data Import/Export', 0, 1, '2024-03-13 15:38:11', '2024-03-13 15:38:11'),
+(687, 20, 80, 'Web APIs and Online Database', 1, 1, '2024-03-13 15:38:23', '2024-03-13 15:38:23'),
+(688, 20, 80, 'Picture Gallery/ Product Display/ Showcase Services', 0, 1, '2024-03-13 15:38:29', '2024-03-13 15:38:29'),
+(689, 20, 80, 'Product Categories/Sub Categories', 0, 1, '2024-03-13 15:38:38', '2024-03-13 15:38:38'),
+(690, 20, 80, 'CrashAnalytics Integration', 1, 1, '2024-03-13 15:38:57', '2024-03-13 15:38:57'),
+(691, 20, 80, 'Audio/Video Streaming', 0, 1, '2024-03-13 15:39:04', '2024-03-13 15:39:04'),
+(692, 20, 80, 'Payment Gateways Integration', 0, 1, '2024-03-13 15:39:12', '2024-03-13 15:39:12'),
+(693, 20, 80, 'Payment Gateways Integration', 0, 0, '2024-03-13 15:39:12', '2024-03-13 15:54:27'),
+(694, 20, 80, 'Shopping Cart', 0, 1, '2024-03-13 15:39:18', '2024-03-13 15:39:18'),
+(695, 20, 80, '3rd Party APIs Integrations', 0, 1, '2024-03-13 15:39:23', '2024-03-13 15:39:23'),
+(696, 21, 81, '25% Upfront to get started with the work immediately', 1, 1, '2024-03-13 15:40:46', '2024-03-13 15:40:46'),
+(697, 21, 81, 'No. of Features Up to 25', 1, 1, '2024-03-13 15:40:52', '2024-03-13 15:40:52'),
+(698, 21, 81, 'Wireframing', 1, 1, '2024-03-13 15:40:58', '2024-03-13 15:40:58'),
+(699, 21, 81, 'Intuitive UI UX (Custom App Design)', 1, 1, '2024-03-13 15:41:06', '2024-03-13 15:41:06'),
+(700, 21, 81, 'Social Media Integration', 1, 1, '2024-03-13 15:41:19', '2024-03-13 15:41:19'),
+(701, 21, 81, 'App Testing', 1, 1, '2024-03-13 15:41:33', '2024-03-13 15:41:33'),
+(702, 21, 81, 'Ads Network Integration', 1, 1, '2024-03-13 15:41:48', '2024-03-13 15:41:48'),
+(703, 21, 81, 'Firebase Integration', 1, 1, '2024-03-13 15:42:01', '2024-03-13 15:42:01'),
+(704, 21, 81, 'In-App Purchase', 1, 1, '2024-03-13 15:42:15', '2024-03-13 15:42:15'),
+(705, 21, 81, 'Publishing on App Store', 1, 1, '2024-03-13 15:42:47', '2024-03-13 15:42:47'),
+(706, 21, 81, 'App Store Optimization', 1, 1, '2024-03-13 15:43:00', '2024-03-13 15:43:00'),
+(707, 21, 81, '3 Month free bug support', 1, 1, '2024-03-13 15:43:19', '2024-03-13 15:43:19'),
+(708, 21, 81, 'Native iOS OR Android app', 1, 1, '2024-03-13 15:43:36', '2024-03-13 15:43:36'),
+(709, 21, 81, 'Cross-Platform (Hybrid) On Demand', 1, 1, '2024-03-13 15:43:47', '2024-03-13 15:43:47'),
+(710, 21, 81, 'Push Notifications', 1, 1, '2024-03-13 15:43:57', '2024-03-13 15:43:57'),
+(711, 21, 81, 'Messaging API Integration (Live Chat)', 1, 1, '2024-03-13 15:44:12', '2024-03-13 15:44:12'),
+(712, 21, 81, 'Regular App Updates Yearly 1 Update', 1, 1, '2024-03-13 15:44:27', '2024-03-13 15:44:27'),
+(713, 21, 81, 'Google Maps Integration', 1, 1, '2024-03-13 15:44:37', '2024-03-13 15:44:37'),
+(714, 21, 81, 'Admin Panel', 1, 1, '2024-03-13 15:44:49', '2024-03-13 15:44:49'),
+(715, 21, 81, 'Data Import/Export', 1, 1, '2024-03-13 15:45:18', '2024-03-13 15:45:18'),
+(716, 21, 81, 'Web APIs and Online Database', 1, 1, '2024-03-13 15:45:29', '2024-03-13 15:45:29'),
+(717, 21, 81, 'Picture Gallery/ Product Display/ Showcase Services On Demand', 1, 1, '2024-03-13 15:46:07', '2024-03-13 15:46:07'),
+(718, 21, 81, 'Product Categories/Sub Categories', 1, 1, '2024-03-13 15:46:36', '2024-03-13 15:46:36'),
+(719, 21, 81, 'CrashAnalytics Integration', 1, 1, '2024-03-13 15:46:50', '2024-03-13 15:46:50'),
+(720, 21, 81, 'Audio/Video Streaming', 1, 1, '2024-03-13 15:48:01', '2024-03-13 15:48:01'),
+(721, 21, 81, 'Payment Gateways Integration', 1, 1, '2024-03-13 15:48:08', '2024-03-13 15:48:08'),
+(722, 21, 81, 'Shopping Cart', 1, 1, '2024-03-13 15:48:15', '2024-03-13 15:48:15'),
+(723, 21, 81, '3rd Party APIs Integrations', 1, 1, '2024-03-13 15:48:22', '2024-03-13 15:48:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `package_types`
+--
+
+CREATE TABLE `package_types` (
+  `id` bigint UNSIGNED NOT NULL,
+  `package_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `package_slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `package_types`
+--
+
+INSERT INTO `package_types` (`id`, `package_name`, `package_slug`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'PPC Packages', 'ppc-packages', 1, '2024-03-06 05:58:54', '2024-03-06 09:01:45'),
+(2, 'SEO Packages', 'seo-packages', 1, '2024-03-06 06:02:34', '2024-03-06 06:17:51'),
+(3, 'SMM Packages', 'smm-packages', 1, '2024-03-06 06:23:11', '2024-03-06 06:23:11'),
+(4, 'ORM Packages', 'orm-packages', 0, '2024-03-06 06:23:19', '2024-03-13 14:47:47'),
+(5, 'Logo Designing', 'logo-designing', 0, '2024-03-06 06:23:24', '2024-03-13 14:47:54'),
+(6, 'SMO Packages', 'smo-packages', 1, '2024-03-06 06:23:30', '2024-03-06 06:23:30'),
+(7, 'Website Maintenance', 'website-maintenance', 1, '2024-03-06 06:23:35', '2024-03-06 06:23:35'),
+(8, 'Website Packages', 'website-packages', 1, '2024-03-06 06:23:40', '2024-03-06 06:23:40'),
+(9, 'App Development', 'app-development', 1, '2024-03-13 12:07:03', '2024-03-13 15:19:03');
 
 -- --------------------------------------------------------
 
@@ -50279,11 +49651,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -50293,146 +49665,307 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pharmacy_leads`
+-- Table structure for table `portfolio`
 --
 
-CREATE TABLE `pharmacy_leads` (
+CREATE TABLE `portfolio` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `customer_id` int DEFAULT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `message` longtext COLLATE utf8mb4_unicode_ci,
-  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_address` text COLLATE utf8mb4_unicode_ci,
-  `pincode` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_slug` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `project_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc_heading` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pharmacy_leads`
+-- Dumping data for table `portfolio`
 --
 
-INSERT INTO `pharmacy_leads` (`id`, `service_provider_id`, `customer_id`, `first_name`, `last_name`, `email`, `contact`, `message`, `image`, `user_address`, `pincode`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Rahul Shah', NULL, 'rahul.shah@secondmedic.com', '7898335057', 'test', 'uploads/prescription_image/1702529392_prescription_image.pdf', 'Test Address, Test Address, Test Address, Bhopal, Madhya Pradesh, India, Picode: 462023', '462023', 1, '2023-12-14 10:19:52', '2023-12-14 10:19:52');
+INSERT INTO `portfolio` (`id`, `category`, `name`, `url_slug`, `project_url`, `heading`, `sub_heading`, `logo`, `image`, `banner`, `desc_heading`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, '2,4,3,7,1', 'SecondMedic', 'secondmedic', 'https://www.secondmedic.com/', 'Healthcare Platform', 'Website connects users with diverse health services, facilitating convenient access to medical resources and information.', 'uploads/portfolio/1706773996-logo.webp', 'uploads/portfolio/1706773996-image.webp', NULL, NULL, NULL, 1, '2024-02-01 13:23:16', '2024-04-30 15:32:27'),
+(2, '1', 'Showoffclicks', 'showoffclicks', 'https://showoffclicks.com/', 'Online Contest For Women & Kids', 'A website hosting online contests exclusively for women and kids, fostering creativity and participation in a fun virtual environment.', 'uploads/portfolio/1706782746-logo.webp', 'uploads/portfolio/1706782746-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:49:06', '2024-04-30 15:30:22'),
+(3, '2', 'Greensole', 'greensole', 'https://greensole.com/', 'A Footwear E-commerce Shop', 'Buy recycled shoes & apparel into comfortable footwear, bags, mats and pouches, keeping them away from landfills.', 'uploads/portfolio/1706782809-logo.webp', 'uploads/portfolio/1706782809-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:50:09', '2024-04-30 15:31:36'),
+(4, '2,3,7,1', 'VivaValet', 'vivavalet', 'https://www.vivavalet.com/', 'Home Services For Olders', 'Connecting seniors with trusted home services,  website ensures a safe and reliable support system for aging individuals.', 'uploads/portfolio/1706782869-logo.webp', 'uploads/portfolio/1706782869-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:51:09', '2024-04-30 15:33:02'),
+(5, '1', 'Joint Biologics', 'joint-biologics', '#', 'Orthobiologics Centre', 'Connect with Orthobiologics experts online for personalized consultations and insights on musculoskeletal health.', 'uploads/portfolio/1706782938-logo.webp', 'uploads/portfolio/1706782938-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:52:18', '2024-04-30 15:29:15'),
+(6, '1', 'Heritage Girls School', 'heritage-girls-school', '#', 'Girls  Boarding School', 'Empowering girls through education and community, school provides a nurturing environment for academic and personal growth.', 'uploads/portfolio/1706783119-logo.webp', 'uploads/portfolio/1706783119-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:55:19', '2024-04-29 14:51:32'),
+(7, '1', 'Atal Incubation Centre', 'atal-incubation-centre', '#', 'Startup Conclave', 'The Startup Conclave serves as a dynamic platform fostering innovation, collaboration, and networking for aspiring entrepreneurs and industry leaders.', 'uploads/portfolio/1706783191-logo.webp', 'uploads/portfolio/1706783191-image.webp', NULL, NULL, NULL, 1, '2024-02-01 15:56:31', '2024-04-30 15:28:52'),
+(8, '4,6,5,1', 'Craft & Kreation', 'craft-kreation', '#', 'Digital Marketing Expert', 'Elevate your online presence with a Digital Marketing Expert\'s website, driving effective strategies for business growth.', 'uploads/portfolio/1706783229-logo.webp', 'uploads/portfolio/1706783229-image.webp', NULL, NULL, '<p>Elevate your online presence with a Digital Marketing Expert&#39;s website, driving effective strategies for business growth</p>', 1, '2024-02-01 15:57:09', '2024-04-30 15:27:59'),
+(9, '1', 'JK Bajar', 'jk-bajar', '#', 'Online Grocery App', 'Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.', 'uploads/portfolio/1706783274-logo.webp', 'uploads/portfolio/1706783274-image.webp', NULL, 'Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.', '<p>Revolutionizing grocery shopping, app ensures convenient and efficient doorstep delivery of a wide range of products.</p>', 1, '2024-02-01 15:57:54', '2024-05-20 14:02:05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Table structure for table `portfolio_images`
 --
 
-CREATE TABLE `reviews` (
-  `id` int UNSIGNED NOT NULL,
-  `category_id` int UNSIGNED DEFAULT NULL,
-  `brand_id` int UNSIGNED DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `rating` int NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `service_provider`
---
-
-CREATE TABLE `service_provider` (
+CREATE TABLE `portfolio_images` (
   `id` bigint UNSIGNED NOT NULL,
-  `business_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `partner_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `business_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `registration_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pancard_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shop_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `owner_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `owner_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `owner_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_whatsapp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shop_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shop_location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `latitude` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `longitude` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shop_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agreement_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `alternate_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
-  `user_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Unactive',
-  `referral_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referred_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `recovery_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pharmacy_commission` float DEFAULT NULL,
-  `lab_commission` float DEFAULT NULL,
-  `homecare_commission` float DEFAULT NULL,
-  `consult_commission` float DEFAULT NULL,
-  `status` tinyint NOT NULL DEFAULT '1',
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `service_provider`
---
-
-INSERT INTO `service_provider` (`id`, `business_id`, `partner_type`, `business_name`, `registration_no`, `pancard_no`, `shop_name`, `owner_name`, `owner_contact`, `owner_email`, `user_name`, `user_contact`, `user_email`, `user_whatsapp`, `shop_address`, `shop_location`, `city`, `state`, `country`, `pincode`, `latitude`, `longitude`, `shop_image`, `agreement_status`, `alternate_contact`, `user_password`, `user_type`, `user_status`, `referral_id`, `referred_by`, `recovery_code`, `agent_id`, `pharmacy_commission`, `lab_commission`, `homecare_commission`, `consult_commission`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'SMP789833503079', '1', 'Test', 'DEMO1234567', 'DEMO1234', 'Medical Shop', 'Summit Diwedi', '9321713974', 'rjshah1902@gmail.com', 'Summit Diwedi', '9321713974', 'rjshah1902@gmail.com', '9321713974', 'Shop Address', 'Shop Location', '2440', '21', '101', '486886', '123', '123', 'uploads/shop_image/1702533723_shop_image.webp', 'Active', '9321713974', 'f925916e2754e5e03f75dd58a5733251', 'user', 'Active', 'ETUWGC4E0EAD', 'DEMO1234', 'DEMO1234', '1', 5, 5, 5, 5, 1, NULL, '2023-11-16 01:01:42', '2023-12-14 11:34:25'),
-(2, '989272282332', '1', 'Akshay Medical', 'TEST1234', 'TEST1234', 'Akshay Medical', 'Bhavarlal Parihar', '9892722808', 'akshaymedical82@gmail.com', 'Bhavarlal Parihar', '9892722808', 'akshaymedical82@gmail.com', '9892722808', 'Shop No  C -19  Sector 4 Janta Market', 'Near SDV School  Airoli Sect 4', '2726', '22', '101', '400708', '22.7195687', '75.8577258', 'uploads/shop_image/1701516377_shop_image.png', 'Pending', '9892722808', '5b7d3d55b5dcc22b97f69739723fd35a', 'user', 'Active', '5N8RFBITE9GP', 'Self', '9892722808', '1', 0, 5, 5, 5, 1, NULL, '2023-12-02 16:53:59', '2023-12-02 16:56:26');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sp_website_control`
---
-
-CREATE TABLE `sp_website_control` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_provider_id` int DEFAULT NULL,
-  `shop_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `shop_contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `shop_full_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `heading` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sub_heading` text COLLATE utf8mb4_unicode_ci,
-  `header_bg_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `about_us` longtext COLLATE utf8mb4_unicode_ci,
-  `about_us_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `map_embed` text COLLATE utf8mb4_unicode_ci,
-  `facebook` text COLLATE utf8mb4_unicode_ci,
-  `instagram` text COLLATE utf8mb4_unicode_ci,
-  `twitter` text COLLATE utf8mb4_unicode_ci,
-  `linkedin` text COLLATE utf8mb4_unicode_ci,
-  `youtube` text COLLATE utf8mb4_unicode_ci,
-  `pinterest` text COLLATE utf8mb4_unicode_ci,
-  `footer_heading` text COLLATE utf8mb4_unicode_ci,
+  `portfolio_id` int DEFAULT NULL,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sp_website_control`
+-- Dumping data for table `portfolio_images`
 --
 
-INSERT INTO `sp_website_control` (`id`, `service_provider_id`, `shop_email`, `shop_contact`, `shop_full_address`, `heading`, `sub_heading`, `header_bg_image`, `about_us`, `about_us_image`, `map_embed`, `facebook`, `instagram`, `twitter`, `linkedin`, `youtube`, `pinterest`, `footer_heading`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'customer.support@secondmedic.com', '9321713974', 'Platinum Techno park,  Navi Mumbai, Maharashtra, 400703', 'Second Medic', 'Second Medic', 'uploads/shop_image/1702532804_header_bg_image.webp', '<p>Most blocks can be used with various types of backgrounds: color, pictures, or videos. It can be set in Block Parameters. You can show/hide the title, subtitle, text, button in the Block Parameters (blue gear icon at the top right corner of the block).</p>', 'uploads/shop_image/1702532804_about_us_image.webp', 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30167.727351858823!2d72.995742!3d19.065236!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1f1e241b563%3A0x1f779a5b47306204!2sSecondMedic%20in%20Vashi%20Navi%20Mumbai%20%7C%20Blood%20Test%20in%20Navi%20Mumbai%20%7C%20Online%20Doctor%20Consultation%20In%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1702532960053!5m2!1sen!2sin', NULL, NULL, NULL, NULL, NULL, NULL, 'Second Medic', 1, '2023-11-23 11:09:28', '2023-12-14 12:15:10'),
-(2, 2, 'akshaymedical82@gmail.com', '9892722808', 'Shop No  C -19  Sector 4 Janta Market Navi Mumbai Maharashtra India, 400708', 'Akshay Medical', 'Akshay Medical, Provide Best Medical Services', 'uploads/shop_image/1701516667_header_bg_image.jpg', '<p>Akshay Medical, Provide Best Medical Services</p>', 'uploads/shop_image/1701686486_about_us_image.jpg', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30150.592641500247!2d72.95780536688751!3d19.159176354855774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf523dd8b5ab%3A0x9de9a7f73961da61!2sAiroli%2C%20Navi%20Mumbai%2C%20Maharashtra%20400708!5e0!3m2!1sen!2sin!4v1701516418652!5m2!1sen!2sin', NULL, NULL, NULL, NULL, NULL, NULL, 'Second Medic', 1, '2023-12-02 11:31:07', '2023-12-04 16:11:26');
+INSERT INTO `portfolio_images` (`id`, `portfolio_id`, `heading`, `description`, `portfolio_url`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(16, 9, 'JK Bajar', 'An Illustrated Portfolio – Captivating Screenshots', 'https://www.jkbajar.com/', 'uploads/portfolio-screenshot/1710149250-portfolio.webp', 1, '2024-03-11 14:57:30', '2024-03-13 15:09:57'),
+(17, 8, 'Craft & Kreation', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710149294-portfolio.webp', 1, '2024-03-11 14:58:14', '2024-03-11 14:58:14'),
+(18, 7, 'Atal Incubation Centre', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710149378-portfolio.webp', 1, '2024-03-11 14:59:38', '2024-03-11 14:59:38'),
+(19, 6, 'Heritage Girls School', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710150692-portfolio.webp', 1, '2024-03-11 15:21:32', '2024-03-11 15:21:32'),
+(20, 5, 'Joint Biologics', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710152861-portfolio.webp', 1, '2024-03-11 15:57:41', '2024-03-11 15:57:41'),
+(21, 4, 'Viva Valet', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710157420-portfolio.webp', 1, '2024-03-11 17:13:40', '2024-03-11 17:13:40'),
+(22, 3, 'greensole', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710158134-portfolio.webp', 1, '2024-03-11 17:25:34', '2024-03-11 17:25:34'),
+(23, 2, 'Show off clicks', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710159028-portfolio.webp', 1, '2024-03-11 17:40:28', '2024-03-11 17:40:28'),
+(24, 1, 'Second Medic', 'An Illustrated Portfolio – Captivating Screenshots', NULL, 'uploads/portfolio-screenshot/1710159598-portfolio.webp', 1, '2024-03-11 17:49:58', '2024-03-11 17:49:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio_services`
+--
+
+CREATE TABLE `portfolio_services` (
+  `id` bigint UNSIGNED NOT NULL,
+  `portfolio_id` int DEFAULT NULL,
+  `service_icon` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_title` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_details` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `portfolio_services`
+--
+
+INSERT INTO `portfolio_services` (`id`, `portfolio_id`, `service_icon`, `service_title`, `service_details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 9, 'xyz', 'test', 'service detail', 0, '2024-03-04 17:29:21', '2024-03-07 11:51:35'),
+(2, 9, 'fas fa-store', 'Wide Range of Products', 'Our app is your virtual grocery store, offering a diverse range to cater to your unique preferences.', 1, '2024-03-07 11:58:57', '2024-03-07 12:02:22'),
+(3, 9, '<i class=\"fas fa-store\"></i>', 'Wide Range of Products', 'Choose from an extensive selection of high-quality products, ranging from fresh produce to pantry staples and everything in between. Our app is your virtual grocery store, offering a diverse range to cater to your unique preferences.', 0, '2024-03-07 11:59:59', '2024-03-07 12:00:16'),
+(4, 9, 'fas fa-shipping-fast', 'Efficient Doorstep Delivery', 'Our efficient delivery system ensures that your order reaches you on time, every time, allowing you to focus on what matters most to you', 1, '2024-03-07 12:58:20', '2024-03-07 12:58:20'),
+(5, 9, 'fas fa-shopping-cart', 'Personalized Recommendations', 'Benefit from personalized recommendations based on your shopping history and preferences', 1, '2024-03-07 13:00:10', '2024-03-07 13:00:10'),
+(6, 8, 'fa fa-chart-line', 'Elevate Your Brand Presence', 'Discover how our strategic digital marketing solutions can elevate your brand to new heights, leaving a lasting impression on your target audience.', 1, '2024-03-09 15:39:21', '2024-03-10 14:48:46'),
+(7, 8, 'fa fa-desktop', 'Innovative Web Designs', 'Explore a collection of our innovative web designs that seamlessly blend creativity and functionality, ensuring a captivating online experience for your visitors.', 1, '2024-03-10 14:54:41', '2024-03-10 14:54:41'),
+(8, 8, 'far fa-lightbulb', 'Results-Driven Strategies', 'Uncover the success stories behind our results-driven marketing strategies, demonstrating tangible outcomes that propel businesses forward in the digital landscape.', 1, '2024-03-10 14:58:30', '2024-03-12 11:13:47'),
+(9, 7, 'fa fa-users', 'Dynamic Networking', 'Forge valuable connections at the Startup Conclave, where entrepreneurs and industry leaders converge to create synergies, opening doors to unprecedented opportunities.', 1, '2024-03-10 16:07:18', '2024-03-10 16:07:18'),
+(10, 7, 'fa fa-lightbulb', 'Collaborative Ideation', 'Step into a collaborative nexus where industry pioneers converge, fostering innovation through shared insights, experiences, and the forging of powerful partnerships.', 1, '2024-03-10 16:13:06', '2024-03-10 16:18:15'),
+(11, 7, 'fa fa-chart-line', 'Entrepreneurial Momentum', 'Unleash your entrepreneurial spirit within the energetic atmosphere of the Startup Conclave, a catalyst for fostering innovation and propelling startups to new heights.', 1, '2024-03-10 16:16:25', '2024-03-10 16:36:50'),
+(12, 6, 'fa fa-graduation-cap', 'Personalized Learning Experience', 'Explore a range of educational programs catering to diverse learning styles, ensuring a personalized journey for every student.', 0, '2024-03-10 16:46:27', '2024-03-11 15:50:37'),
+(13, 6, 'fa fa-book', 'Streamlined Education Solutions', 'Empowering Schools Through Integrated Efficiency\r\nSeamless Automation for Administrative Tasks', 1, '2024-03-11 15:49:30', '2024-03-11 15:50:02'),
+(14, 6, 'fa fa-users', 'Efficient School Management Systems', 'Seamless Operations, Enhanced Administrative Control and Optimized Resource Allocation and Planning', 1, '2024-03-11 15:52:42', '2024-03-11 15:52:42'),
+(15, 6, 'fas fa-tasks', 'Transformative Technology for Academic Excellence', 'Advanced Learning Analytics for Student Progress\r\nEngagement-Driven Platforms Fostering Academic Achievement', 1, '2024-03-11 15:55:59', '2024-03-11 15:55:59'),
+(16, 5, 'fas fa-laptop-medical', 'Revolutionary Orthobiologics Therapies', 'Discover cutting-edge solutions and advanced orthobiologics therapies that redefine orthopedic care, promising enhanced mobility and an active lifestyle.', 1, '2024-03-11 16:00:40', '2024-03-11 16:00:59'),
+(17, 5, 'fas fa-hand-holding-medical', 'Expert Guidance for Personalized Wellness', 'Connect with our Orthobiologics experts online for personalized consultations, gaining valuable insights tailored to your unique musculoskeletal health needs.', 1, '2024-03-11 17:04:42', '2024-03-11 17:04:42'),
+(18, 5, 'fas fa-walking', 'Redefining Musculoskeletal Care Through Innovation', 'Explore the future of musculoskeletal care with a focus on innovation, where Joint Biologics is dedicated to pushing boundaries and setting new standards', 1, '2024-03-11 17:07:27', '2024-03-11 17:07:27'),
+(19, 4, 'fas fa-hand-holding-heart', 'Trusted Support for Aging Individuals', 'Establishing a reliable network that connects seniors with trusted home services, fostering a sense of security and assistance.', 1, '2024-03-11 17:18:14', '2024-03-11 17:18:14'),
+(20, 4, 'fas fa-house-user', 'Personalized Care Solutions', 'Tailoring home services to meet the unique needs of seniors, ensuring personalized and compassionate care for a comfortable living environment.', 1, '2024-03-11 17:19:16', '2024-03-11 17:19:16'),
+(21, 4, 'fas fa-headset', 'Support Ecosystem', 'Building a holistic support system that goes beyond services, creating an encompassing environment that prioritizes the overall well-being of older individuals.', 1, '2024-03-11 17:20:22', '2024-03-11 17:22:09'),
+(22, 3, 'fas fa-shoe-prints', 'Fashion with a Conscience', 'Make a statement not just with your style but also with your environmental footprint, as each purchase supports the mission to reduce waste and promote sustainable practices.', 1, '2024-03-11 17:27:20', '2024-03-11 17:27:20'),
+(23, 3, 'fab fa-pagelines', 'Sustainable Greener Tomorrow', 'Take a step towards sustainable living by choosing our eco-friendly footwear and accessories, making a positive impact on the planet while enjoying style and comfort.', 1, '2024-03-11 17:28:53', '2024-03-11 17:30:38'),
+(24, 3, 'fas fa-cart-arrow-down', 'Eco-Conscious Lifestyle Choices', 'Explore our diverse range, extending beyond shoes, to include bags, mats, and pouches - all contributing to a more sustainable and eco-conscious lifestyle.', 1, '2024-03-11 17:33:30', '2024-03-11 17:33:30'),
+(25, 2, 'fas fa-camera-retro', 'Diverse Virtual Contests', 'custom-designed website for Showoffclicks, ensuring a seamless and user-friendly platform that enhances the online contest experience', 1, '2024-03-11 17:44:46', '2024-03-11 17:44:46'),
+(26, 2, 'fas fa-users-cog', 'User-Centric Design', 'Our website design prioritizes user experience that makes it easy for women and kids to navigate, participate, and enjoy the virtual contest journey.', 1, '2024-03-11 17:46:26', '2024-03-11 17:48:34'),
+(27, 2, 'fas fa-laptop-code', 'Digital Innovation', 'Showoffclicks website is a result of collaborative development, leveraging cutting-edge technologies to bring digital innovation', 1, '2024-03-11 17:47:40', '2024-03-11 17:48:52'),
+(28, 1, 'fas fa-laptop-medical', 'Comprehensive Health Services', 'A tailored website development for SecondMedic, ensuring a user-centric platform that revolutionizes healthcare access.', 1, '2024-03-11 17:52:12', '2024-03-11 17:52:49'),
+(29, 1, 'fas fa-heartbeat', 'User-Focused Interface', 'Our design prioritizes user experience, providing an interface that is intuitive and user-friendly for efficient navigation through healthcare services.', 1, '2024-03-11 17:54:10', '2024-03-11 17:54:10'),
+(30, 1, 'fas fa-laptop-house', 'Digital Health Solution', 'A collaborative digital health solution, leveraging innovative technologies to connect users with diverse health services and resources seamlessly.', 1, '2024-03-11 17:58:28', '2024-03-11 17:58:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_slug` text COLLATE utf8mb4_unicode_ci,
+  `product_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `url_slug`, `product_url`, `product_image`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, '7\'O Clock Attendance App', '7o-clock-attendance-app', 'https://hrm.secondmedic.com', 'uploads/products/1712661195-image.webp', 'The 7\'O Clock Attendance App simplifies attendance tracking for businesses. With user-friendly clock-in/clock-out features, real-time monitoring, and geo-fencing technology, it ensures accuracy and accountability. Employees can request leave directly, while managers receive notifications for approvals. Customizable reports offer insights into attendance trends and overtime. Seamlessly integrating with existing HR systems, it streamlines administrative tasks and enhances workforce productivity', 1, '2024-04-09 16:43:15', '2024-04-09 16:43:15'),
+(2, 'Health Hub DSA', 'health-hub-dsa', 'https://dsa.secondmedic.com/', 'uploads/products/1712818866-image.webp', 'Welcome to SecondMedic Health Hub, your all-in-one destination for comprehensive healthcare services. From pharmacy needs to laboratory tests, doctor consultations, insurance assistance, and even home care services, we&#39;re here to ensure your well-being every step of the way. Trust us to provide expert care, convenience, and peace of mind, all under one roof.', 1, '2024-04-09 17:00:32', '2024-04-11 12:31:06'),
+(3, 'Pharmacy Inventory Management System PIMS', 'pharmacy-inventory-management-system-pims', 'https://pims.secondmedic.com/', 'uploads/products/1712664193-image.webp', 'Introducing our Pharmacy Inventory Management System your ultimate solution for efficient inventory control in pharmacies, both for individual shops and large organizations. Streamline your inventory processes, optimize stock levels, and ensure smooth operations with our user-friendly platform. Experience seamless management and maximize productivity with our innovative system.', 1, '2024-04-09 17:33:13', '2024-04-09 17:33:13'),
+(4, 'Coupon deal Now', 'coupon-deal-now', 'https://coupondealnow.com/', 'uploads/products/1712818835-image.webp', 'Welcome to Coupon Deal Now – where saving money is made simple! Dive into our extensive array of exclusive coupons, carefully selected to bring you incredible discounts on everything from electronics to fashion, travel, and beyond. With our constantly updated offers, staying on budget has never been easier. Join our community of savvy shoppers and unlock a world of unbeatable savings – start browsing now!', 1, '2024-04-11 11:54:42', '2024-04-11 12:30:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seo_data`
+--
+
+CREATE TABLE `seo_data` (
+  `id` bigint UNSIGNED NOT NULL,
+  `page_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_link` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `canonical` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service_id` int DEFAULT NULL,
+  `meta_title` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `meta_key` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `meta_description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `meta_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_schema` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `seo_data`
+--
+
+INSERT INTO `seo_data` (`id`, `page_name`, `page_link`, `canonical`, `service_id`, `meta_title`, `meta_key`, `meta_description`, `meta_image`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'home', 'home', NULL, NULL, 'Leading Web Development & IT Solutions | SEO, PPC, Social Media Marketing', 'Web Development, IT Solutions, League City Consulting, USA, Web Design, Software Solutions, Mobile App Development, iOS, Android, Flutter, React Native, Cross-Platform, Hybrid, MVP, Progressive Web App', 'Expert in Web & App Development, SEO, PPC, Social Media Marketing & Website Maintenance, delivering custom solutions to elevate your brand. Get a free quote today! for iOS, Android, Flutter, React Native & more.', 'uploads/meta_image/1708080609_meta_image.webp', NULL, 1, '2024-02-08 08:10:04', '2024-02-22 14:01:24'),
+(2, 'portfolio-details', 'portfolio/jk-bajar-9', 'portfolio/jk-bajar-9', 9, 'JK Bajar: Online Grocery Delivery App developed by League City Consulting', 'JK Bajar, online grocery, delivery app, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of JK Bajar, an innovative online grocery delivery app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 08:18:59', '2024-05-20 14:02:05'),
+(3, 'about-us', 'about-us', 'about-us', NULL, 'League City Consulting - Crafters of Digital Brilliance', 'League City Consulting, software development, digital solutions, technology consulting, business innovation, software engineering, digital automation, intelligent automation', '<p>League City Consulting blends technology expertise with industry insight to craft elegant software solutions. Explore our innovative services and join us on the journey towards digital transformation.</p>', 'uploads/meta_image/1708407477_meta_image.webp', NULL, 1, '2024-02-08 08:18:59', '2024-02-22 14:09:36'),
+(4, 'services', 'services', 'services', NULL, 'Leading IT Solution services: Strategy, Design, Development', 'services, IT partner, software solutions, software engineering, digital automation, intelligent automation, mobile app development, web development, custom software development, UI/UX development, branding services, e-commerce development, cyber security', '<p>Experience comprehensive software solutions with League City Consulting. From software engineering to intelligent automation, fuel your growth with our innovative services.</p>', 'uploads/meta_image/1708407434_meta_image.webp', NULL, 1, '2024-02-08 08:20:42', '2024-02-22 14:09:54'),
+(5, 'portfolio', 'portfolio', 'portfolio', NULL, 'Explore Our Cutting-Edge IT Projects | Transform Your Experience', 'portfolio, projects, design, technology, innovation, customer experience, IT solutions', '<p>Embark on a journey with our latest projects. Experience innovative solutions crafted with a deep understanding of customer needs and desires.</p>', 'uploads/meta_image/1707461540_meta_image.webp', NULL, 1, '2024-02-08 08:21:43', '2024-02-22 14:10:07'),
+(6, 'blogs', 'blogs', 'blogs', NULL, 'Explore Latest Blogs: AI, Blockchain, Development, IT Solutions', 'LeagueCity, AI, Blockchain, Website Development, App Development, Technical Expertise, Blog Posts', '<p>Discover the latest updates and in-depth insights on AI, blockchain, website &amp; app development, and more at LeagueCity&#39;s blog. Explore our technical expertise now!</p>', 'uploads/meta_image/1708080847_meta_image.webp', NULL, 1, '2024-02-08 08:31:26', '2024-02-22 14:10:25'),
+(7, 'blog-details', 'blogs/the-power-of-ai-chatbots-simplifying-your-digital-experience', 'blogs/the-power-of-ai-chatbots-simplifying-your-digital-experience', 3, 'AI Chatbots: Revolutionizing Digital Interaction', 'AI chatbots, digital experience, virtual friend, customer experience, technology, future, automation, NLP, customer service', '<p>Dive into the world of AI chatbots and discover how they&#39;re transforming digital experiences. Explore their benefits, challenges, and the future they hold in store. Join the conversation today</p>', 'uploads/blogs/1708516823-detail.webp', NULL, 1, '2024-02-08 09:10:05', '2024-02-22 14:10:40'),
+(8, 'blog-details', 'blogs/what-is-generative-ai-a-guide-to-its-magic', 'blogs/what-is-generative-ai-a-guide-to-its-magic', 2, 'Unlocking Generative AI: A Comprehensive Guide to Its Magic', 'Generative AI, Generative Adversarial Networks, Variational Autoencoders, AutoRegressive Models, Boltzmann Machines, Transformer Models, Deep Belief Networks, StyleGAN, Recurrent Neural Networks, Conditional Generative Models, Generative NLP, Transformer Learning Models, Language Models, AI Technology', '<p>Discover the enchanting world of Generative AI and its transformative capabilities. Dive into the workings of various models, from GANs to Transformers, and unleash the power of language generation. Join the creative revolution with league city consulting</p>', 'uploads/blogs/1708517006-detail.webp', NULL, 1, '2024-02-08 09:54:23', '2024-02-22 14:10:52'),
+(9, 'blog-details', 'blogs/ai-chatbots-transforming-customer-experiences-with-digital-companions', 'blogs/ai-chatbots-transforming-customer-experiences-with-digital-companions', 1, 'AI Chatbots: Transforming Customer Experiences', 'AI chatbots, customer experience, digital companions, virtual assistants, NLP chatbots, smart chatbots, scripted chatbots, voice-enabled chatbots, social media chatbots', '<p>Discover how AI chatbots revolutionize customer experiences, offering instant help and efficient multitasking. Explore their types, benefits, challenges, and future trends. Join the conversation with League City consulting</p>', 'uploads/blogs/1708517137-detail.webp', NULL, 1, '2024-02-08 10:00:30', '2024-02-22 14:11:05'),
+(10, 'portfolio-details', 'portfolio/craft-kreation-8', 'portfolio/craft-kreation-8', 8, 'Craft & Kreation: Digital Marketing Expert App developed by League City Consulting', 'Craft, Kreation, Digital Marketing, Expert App, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of Craft &amp; Kreation, an innovative online Digital Marketing Expert app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 11:58:26', '2024-04-30 15:27:59'),
+(11, 'portfolio-details', 'portfolio/atal-incubation-centre-7', 'portfolio/atal-incubation-centre-7', 7, 'Atal Incubation Centre: Startup Conclave App developed by League City Consulting', 'Atal Incubation Centre, Startup Conclave, App, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of Atal Incubation Centre, an innovative online Startup Conclave app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 11:58:53', '2024-04-30 15:28:52'),
+(12, 'portfolio-details', 'portfolio/heritage-girls-school-6', 'portfolio/heritage-girls-school-6', 6, 'Heritage Girls School: Girls Boarding School App developed by League City Consulting', 'Heritage Girls School, Girls Boarding School, App, League City Consulting, Education, Technology, Learning, Girls Education', '<p>Discover Heritage Girls School, a premier girls boarding school app crafted by League City Consulting. Elevating girls&#39; education with technology.</p>', NULL, NULL, 1, '2024-02-08 12:00:11', '2024-04-29 14:51:32'),
+(13, 'portfolio-details', 'portfolio/joint-biologics-5', 'portfolio/joint-biologics-5', 5, 'Joint Biologics: Orthobiologics Centre App developed by League City Consulting', 'Joint Biologics, Orthobiologics Centre App, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of Joint Biologics, an innovative online Orthobiologics Centre app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 12:00:35', '2024-04-30 15:29:15'),
+(14, 'portfolio-details', 'portfolio/vivavalet-4', 'portfolio/vivavalet-4', 4, 'VivaValet: Home Services For Elders App developed by League City Consulting', 'VivaValet, Home Services, Elders, App, League City Consulting', '<p>Discover VivaValet, the innovative app by League City Consulting offering essential home care services for elders.</p>', NULL, NULL, 1, '2024-02-08 12:00:53', '2024-04-30 15:33:02'),
+(15, 'portfolio-details', 'portfolio/greensole-3', 'portfolio/greensole-3', 3, 'Greensole: A Footwear E-commerce Shop App developed by League City Consulting', 'Greensole, footwear, e-commerce, shop, app, League City Consulting, shoes, sneakers, sandals, online shopping', '<p>Discover Greensole, the ultimate footwear e-commerce app crafted by League City Consulting. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 12:01:18', '2024-04-30 15:31:36'),
+(16, 'portfolio-details', 'portfolio/showoffclicks-2', 'portfolio/showoffclicks-2', 2, 'Showoffclicks: Online Contest For Women & Kids App developed by League City Consulting', 'Showoffclicks, Online Contest, Women, Kids, App, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of Showoffclicks, an innovative Online Contest For Women &amp; Kids app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 12:01:40', '2024-04-30 15:30:22'),
+(17, 'portfolio-details', 'portfolio/secondmedic-1', 'portfolio/secondmedic-1', 1, 'SecondMedic: Healthcare Platform developed by League City Consulting', 'SecondMedic, online Healthcare Platform, League City Consulting', '<p>Explore League City Consulting&#39;s portfolio showcasing the successful development of SecondMedic, an innovative online Healthcare app. See how our expertise transforms ideas into reality.</p>', NULL, NULL, 1, '2024-02-08 12:02:01', '2024-04-30 15:32:27'),
+(18, 'contact-us', 'contact-us', 'contact-us', NULL, 'League City Consulting | Contact Us for Expert Business Solutions', 'League City Consulting, contact, business solutions, consulting services', '<p>Need expert business solutions? Contact League City Consulting today for top-notch consulting services tailored to your needs.</p>', 'uploads/meta_image/1708407534_meta_image.webp', NULL, 1, '2024-02-12 04:49:14', '2024-02-22 14:12:43'),
+(19, 'terms-and-conditions', 'terms-and-conditions', 'terms-and-conditions', NULL, 'League City Consulting - Terms & Conditions', 'League City Consulting, Terms, Conditions, Partnership, Use, User Conduct, Content Ownership, Disclaimer, Liability, Dispute Resolution', '<p>Review League City Consulting&#39;s Terms &amp; Conditions for a shared understanding. Learn about website usage, content ownership, and dispute resolution.</p>', 'uploads/meta_image/1708407637_meta_image.webp', NULL, 1, '2024-02-12 04:49:14', '2024-02-22 14:12:58'),
+(20, 'privacy-policy', 'privacy-policy', 'privacy-policy', NULL, 'League City Consulting | Privacy Policy', 'League City Consulting, Privacy Policy, Partnering, Integrity, Trust, Communication, Privacy, Success', '<p>League City Consulting values your trust. Our Privacy Policy ensures open communication, protecting your privacy while driving your success. Contact us for any queries.</p>', 'uploads/meta_image/1708407656_meta_image.webp', NULL, 1, '2024-02-12 04:49:14', '2024-02-22 14:13:19'),
+(21, 'package-type', 'packages/app-development', 'packages/app-development', 9, NULL, NULL, NULL, NULL, NULL, 1, '2024-03-13 09:49:03', '2024-03-13 09:49:03'),
+(22, 'products-details', 'products/attendance-app-1', 'products/attendance-app-1', 1, NULL, NULL, NULL, 'uploads/products/1710390713-image.webp', NULL, 1, '2024-03-14 10:01:53', '2024-03-14 10:05:02'),
+(23, 'products-details', 'products/7o-clock-attendance-app', 'products/7o-clock-attendance-app', 1, '7\'O Clock Attendance App', '7\'O Clock Attendance App', '<p>7&#39;O Clock Attendance App</p>', 'uploads/products/1712661195-image.webp', NULL, 1, '2024-04-09 16:43:15', '2024-04-09 16:43:15'),
+(24, 'products-details', 'products/health-hub-dsa-2', 'products/health-hub-dsa-2', 2, 'Health Hub DSA', 'Health Hub DSA', '<p>Health Hub DSA</p>', 'uploads/products/1712818866-image.webp', NULL, 1, '2024-04-09 17:00:32', '2024-04-11 12:31:06'),
+(25, 'products-details', 'products/pharmacy-inventory-management-system-pims', 'products/pharmacy-inventory-management-system-pims', 3, 'Pharmacy Inventory Management System PIMS', 'Pharmacy Inventory Management System PIMS', '<p>Pharmacy Inventory Management System PIMS</p>', 'uploads/products/1712664193-image.webp', NULL, 1, '2024-04-09 17:33:13', '2024-04-09 17:33:13'),
+(26, 'products-details', 'products/coupon-deal-now-4', 'products/coupon-deal-now-4', 4, 'Coupon deal Now', 'Coupon deal Now', '<p>Coupon deal Now</p>', 'uploads/products/1712818835-image.webp', NULL, 1, '2024-04-11 11:54:42', '2024-04-11 12:30:35'),
+(27, 'blog-details', 'blogs/unlocking-the-power-of-web-development-essentials-for-a-successful-online-presence', 'blogs/unlocking-the-power-of-web-development-essentials-for-a-successful-online-presence-4', 4, 'Expert Web Development Services | League City Consulting', 'web development, web development services, front-end development, back-end development, full-stack development, website design, website maintenance, SEO, web security, responsive web design', '<p>Discover top-notch web development services to build and maintain your website. Enhance functionality, design, and security with League City Consulting.</p>', 'uploads/blogs/1719312407-detail.webp', NULL, 1, '2024-06-25 10:46:47', '2024-06-25 10:46:47'),
+(28, 'blog-details', 'blogs/demystifying-mobile-app-development-your-guide-to-building-a-winning-app-in-2024', 'blogs/demystifying-mobile-app-development-your-guide-to-building-a-winning-app-in-2024', 5, 'Build Your Winning App: Mobile Dev Guide', 'mobile app development, mobile app development process, mobile app development cost, mobile app design, native vs hybrid app development, app development company, app store optimization (ASO), mobile app marketing.', '<p>Turn your app idea into a reality! This guide simplifies mobile app development - from concept to launch. Learn key steps, design tips &amp; how League City Consulting can help</p>', 'uploads/blogs/1719382267-detail.webp', NULL, 1, '2024-06-26 06:11:07', '2024-06-27 15:56:11'),
+(29, 'blog-details', 'blogs/building-your-dream-tool-a-guide-to-custom-software-development', 'blogs/building-your-dream-tool-a-guide-to-custom-software-development', 6, 'Custom Software Dev: Build Your Dream Tool', 'custom software development, custom software, business software, software development process, software development company, League City Consulting, custom software benefits.', '<p>Unlock efficiency &amp; growth with custom software. Learn the benefits &amp; process. League City Consulting - Your development partner.</p>', 'uploads/blogs/1719462833-detail.webp', NULL, 1, '2024-06-27 04:33:53', '2024-06-27 16:24:51'),
+(30, 'blog-details', 'blogs/mastering-the-user-experience-a-guide-to-uiux-development', 'blogs/mastering-the-user-experience-a-guide-to-uiux-development', 7, 'Master UI/UX Design: Engage & Convert Users', 'ui/ux design, user experience design, user interface design, ux development, ui development, web design, app design.', '<p>Unleash the power of UI/UX design! Learn how to create user-friendly interfaces that boost engagement &amp; conversions. Explore trends &amp; the future of UX design.</p>', 'uploads/blogs/1719552591-detail.webp', NULL, 1, '2024-06-28 05:29:51', '2024-06-28 05:29:51'),
+(31, 'blog-details', 'blogs/conquering-the-digital-marketplace-your-guide-to-e-commerce-development', 'blogs/conquering-the-digital-marketplace-your-guide-to-e-commerce-development', 8, 'Conquer E-Commerce: Your Online Store Guide', 'e-commerce development, online store development, e-commerce platform, e-commerce website, e-commerce marketing, SEO for e-commerce, payment processing for e-commerce, mobile-friendly e-commerce store, e-commerce customer service, e-commerce success tips, League City Consulting', '<p>Launch your thriving online store! This guide covers e-commerce development, platforms, marketing &amp; success tips. Partner with League City Consulting for expert help.</p>', 'uploads/blogs/1719638084-detail.webp', NULL, 1, '2024-06-29 05:14:44', '2024-07-01 11:31:40'),
+(32, 'blog-details', 'blogs/how-to-craft-a-winning-seo-content-strategy-for-your-business-attract-engage-convert', 'blogs/how-to-craft-a-winning-seo-content-strategy-for-your-business-attract-engage-convert', 9, 'Win Customers with SEO Content Strategy', 'SEO content strategy, SEO content plan, keyword research for SEO, content marketing for SEO, SEO for business, content optimization for SEO.', '<p>Attract, engage, convert! Craft a winning SEO content strategy to dominate search engines &amp; drive sales. Learn how!</p>', 'uploads/blogs/1719818891-detail.webp', NULL, 1, '2024-07-01 07:28:11', '2024-07-01 13:02:50'),
+(33, 'services-details', 'services/mobile-app-development', 'services/mobile-app-development', 1, 'Mobile App Development', 'Mobile App Development', 'Mobile App Development', 'uploads/services/1719896937-image.webp', NULL, 1, '2024-07-02 05:08:57', '2024-07-02 05:08:57'),
+(34, 'services-details', 'services/web-development', 'services/web-development', 2, 'Web Development', 'Web Development', 'Web Development', 'uploads/services/1719896993-image.webp', NULL, 1, '2024-07-02 05:09:53', '2024-07-02 05:09:53'),
+(35, 'services-details', 'services/custom-software-development', 'services/custom-software-development', 3, 'Custom Software Development', 'Custom Software Development', 'Custom Software Development', 'uploads/services/1719897012-image.webp', NULL, 1, '2024-07-02 05:10:12', '2024-07-02 05:10:12'),
+(36, 'services-details', 'services/uiux-developemet', 'services/uiux-developemet', 4, 'UI/UX Developemet', 'UI/UX Developemet', 'UI/UX Developemet', 'uploads/services/1719897032-image.webp', NULL, 1, '2024-07-02 05:10:32', '2024-07-02 05:10:32'),
+(37, 'services-details', 'services/e-commerce-development', 'services/e-commerce-development', 5, 'E-Commerce Development', 'E-Commerce Development', 'E-Commerce Development', 'uploads/services/1719897054-image.webp', NULL, 1, '2024-07-02 05:10:54', '2024-07-02 05:10:54'),
+(38, 'services-details', 'services/cyber-security', 'services/cyber-security', 6, 'Cyber Security', 'Cyber Security', 'Cyber Security', 'uploads/services/1719897077-image.webp', NULL, 1, '2024-07-02 05:11:17', '2024-07-02 05:11:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url_slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `services_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `desc_heading` longtext COLLATE utf8mb4_unicode_ci,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `name`, `url_slug`, `services_url`, `heading`, `sub_heading`, `logo`, `image`, `banner`, `desc_heading`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Mobile App Development', 'mobile-app-development', NULL, 'Mobile App Development', NULL, NULL, 'uploads/services/1719896937-image.webp', NULL, NULL, '<ul>\r\n	<li>iOS App Development</li>\r\n	<li>Android App Development</li>\r\n	<li>Flutter Development</li>\r\n	<li>React Native App Development</li>\r\n	<li>PWA Development</li>\r\n	<li>Mobile App Maintenance &amp; Support Services</li>\r\n</ul>', 1, '2024-07-02 05:08:57', '2024-07-02 05:08:57'),
+(2, 'Web Development', 'web-development', NULL, 'Web Development', NULL, NULL, 'uploads/services/1719896993-image.webp', NULL, NULL, '<ul>\r\n	<li>Front End Development</li>\r\n	<li>Back End Development</li>\r\n	<li>Full Stack Development</li>\r\n</ul>', 1, '2024-07-02 05:09:53', '2024-07-02 05:09:53'),
+(3, 'Custom Software Development', 'custom-software-development', NULL, 'Custom Software Development', NULL, NULL, 'uploads/services/1719897012-image.webp', NULL, NULL, '<ul>\r\n	<li>Innovation ignited</li>\r\n	<li>Top-notch expertise</li>\r\n	<li>Agile approach</li>\r\n	<li>Top-Notch Quality Every Time</li>\r\n</ul>', 1, '2024-07-02 05:10:12', '2024-07-02 05:10:12'),
+(4, 'UI/UX Developemet', 'uiux-developemet', NULL, 'UI/UX Developemet', NULL, NULL, 'uploads/services/1719897032-image.webp', NULL, NULL, '<ul>\r\n	<li>Branding Services</li>\r\n	<li>Photoshop</li>\r\n	<li>Illustrator</li>\r\n	<li>Coreldraw</li>\r\n</ul>', 1, '2024-07-02 05:10:32', '2024-07-02 05:10:32'),
+(5, 'E-Commerce Development', 'e-commerce-development', NULL, 'E-Commerce Development', NULL, NULL, 'uploads/services/1719897054-image.webp', NULL, NULL, '<ul>\r\n	<li>WordPress Development</li>\r\n	<li>Magento Development</li>\r\n	<li>OpenCart Development</li>\r\n	<li>Shopify Development</li>\r\n	<li>WooCommerce Development</li>\r\n</ul>', 1, '2024-07-02 05:10:54', '2024-07-02 05:10:54'),
+(6, 'Cyber Security', 'cyber-security', NULL, 'Cyber Security', NULL, NULL, 'uploads/services/1719897077-image.webp', NULL, NULL, '<ul>\r\n	<li>Penetration Testing</li>\r\n	<li>Threat Intelligence &amp; Monitoring</li>\r\n	<li>Network Security &amp; Firewall Solutions</li>\r\n	<li>Access Control &amp; Identity Management</li>\r\n	<li>Data Encryption &amp; Backups</li>\r\n</ul>', 1, '2024-07-02 05:11:17', '2024-07-02 05:11:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services_details`
+--
+
+CREATE TABLE `services_details` (
+  `id` bigint UNSIGNED NOT NULL,
+  `services_id` int DEFAULT NULL,
+  `service_icon` longtext COLLATE utf8mb4_unicode_ci,
+  `service_title` longtext COLLATE utf8mb4_unicode_ci,
+  `service_details` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services_icons`
+--
+
+CREATE TABLE `services_icons` (
+  `id` bigint UNSIGNED NOT NULL,
+  `services_id` int DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services_images`
+--
+
+CREATE TABLE `services_images` (
+  `id` bigint UNSIGNED NOT NULL,
+  `services_id` int DEFAULT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `project_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -50442,7 +49975,7 @@ INSERT INTO `sp_website_control` (`id`, `service_provider_id`, `shop_email`, `sh
 
 CREATE TABLE `state` (
   `state_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` bigint UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -54547,75 +54080,17 @@ INSERT INTO `state` (`state_id`, `name`, `country_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_prescription`
---
-
-CREATE TABLE `tbl_prescription` (
-  `id` int NOT NULL,
-  `doctor_id` int DEFAULT NULL,
-  `prescription_for` varchar(100) DEFAULT NULL,
-  `request_id` int DEFAULT NULL,
-  `customer_id` int DEFAULT NULL,
-  `patient_name` varchar(255) NOT NULL,
-  `mobile` varchar(20) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `prescription_publish_status` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `prescription_test` text,
-  `prescription_symptom` text,
-  `prescription_file` text,
-  `prescription_status` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `prescription_remark` text,
-  `prescription_date` date DEFAULT NULL,
-  `prescription_time` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_prescription`
---
-
-INSERT INTO `tbl_prescription` (`id`, `doctor_id`, `prescription_for`, `request_id`, `customer_id`, `patient_name`, `mobile`, `email`, `prescription_publish_status`, `prescription_test`, `prescription_symptom`, `prescription_file`, `prescription_status`, `prescription_remark`, `prescription_date`, `prescription_time`) VALUES
-(1, 1, 'user', 1, 1, 'Rahul Shah', '7898335057', 'rahul.shah@secondmedic.com', NULL, 'Blood', 'Fever', 'uploads/prescription/1702535845_prescription.pdf', NULL, 'Testing', NULL, NULL),
-(2, 1, 'user', 2, 3, 'test', '7000027558', 'aniket.namdeo@secondmedic', NULL, 'Blood', 'Fever', 'uploads/prescription/1702535852_prescription.pdf', NULL, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_prescription_detail`
---
-
-CREATE TABLE `tbl_prescription_detail` (
-  `prescription_detail_id` bigint NOT NULL,
-  `prescription_id` bigint NOT NULL,
-  `medicine_name` varchar(255) NOT NULL,
-  `quantity` varchar(100) DEFAULT NULL,
-  `duration` varchar(100) DEFAULT NULL,
-  `regimen` varchar(100) DEFAULT NULL,
-  `frequency` varchar(100) DEFAULT NULL,
-  `consumption` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_prescription_detail`
---
-
-INSERT INTO `tbl_prescription_detail` (`prescription_detail_id`, `prescription_id`, `medicine_name`, `quantity`, `duration`, `regimen`, `frequency`, `consumption`) VALUES
-(1, 1, 'Testing', 'Testing', 'Testing', 'Testing', 'Testing', 'Testing'),
-(2, 2, 'test', '1', '12', '12', '2', 'water');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -54625,23 +54100,60 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `user_type`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', 'admin', NULL, '$2y$10$iIPWB4gNI8U4krIOtAdcvutL/hhN6ppbCzvciH0RZAeUXshSv4eC.', NULL, '2023-11-22 11:53:53', '2023-11-22 11:53:53');
+(1, 'Admin Name', 'admin@admin.com', 'admin', NULL, '$2y$10$iIPWB4gNI8U4krIOtAdcvutL/hhN6ppbCzvciH0RZAeUXshSv4eC.', NULL, '2023-11-22 11:53:53', '2023-11-22 11:53:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_banners`
+--
+
+CREATE TABLE `website_banners` (
+  `id` bigint UNSIGNED NOT NULL,
+  `page_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `website_banners`
+--
+
+INSERT INTO `website_banners` (`id`, `page_name`, `page_title`, `heading`, `sub_heading`, `details`, `banner_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'about-us', 'ABOUT US', 'League City Consulting', 'Where Software Meets Brilliance', 'Harnessing the power of technology with industry smarts, League City Consulting crafts elegant solutions for simple and complex business problems.', 'uploads/banner/1707720250-image.webp', 1, '2024-02-12 06:44:10', '2024-02-12 06:44:10'),
+(2, 'services', 'OUR SERVICES', 'Strategy, Design', 'Development, and More', 'Experience the power of a leading IT partner. League City Consulting\'s comprehensive software solutions tackle any business obstacle, paving the way for progress.', 'uploads/banner/1707720292-image.webp', 1, '2024-02-12 06:44:52', '2024-02-12 06:44:52'),
+(3, 'blogs', 'OUR BLOGS', 'What\'s New', 'At LeagueCity?', 'Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.', 'uploads/banner/1707720438-image.webp', 1, '2024-02-12 06:47:18', '2024-02-12 06:47:18'),
+(4, 'terms-and-conditions', 'LEAGUE CITY CONSULTING', 'Terms & Conditions', 'Terms & Conditions', 'Establishing a successful partnership requires a shared understanding. Please carefully review our Terms of Use beforehand.', 'uploads/banner/1707720519-image.webp', 1, '2024-02-12 06:48:39', '2024-02-12 06:48:39'),
+(5, 'privacy-policy', 'LEAGUE CITY CONSULTING', 'Privacy Policy', 'Privacy Policy', 'Partnering with integrity and clarity. We value your trust and commit to open communication, protecting your privacy while driving your success', 'uploads/banner/1707720589-image.webp', 1, '2024-02-12 06:49:49', '2024-02-12 06:49:49'),
+(6, 'portfolio-details', 'Portfolio', 'Your Growth', 'Starts Here', 'Explore a diverse range of projects where we joined forces with clients to unlock their full potential and achieve significant business growth.', 'uploads/banner/1709810735-image.webp', 1, '2024-03-04 17:23:35', '2024-03-09 18:18:41');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `agents`
+-- Indexes for table `blogs`
 --
-ALTER TABLE `agents`
+ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `api_lab`
+-- Indexes for table `campaign`
 --
-ALTER TABLE `api_lab`
-  ADD PRIMARY KEY (`api_lab_id`);
+ALTER TABLE `campaign`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `city`
@@ -54675,26 +54187,6 @@ ALTER TABLE `customer_address`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `doctors`
---
-ALTER TABLE `doctors`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `doctors_user_contact_unique` (`user_contact`);
-
---
--- Indexes for table `doctor_consult_leads`
---
-ALTER TABLE `doctor_consult_leads`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `doctor_details`
---
-ALTER TABLE `doctor_details`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `doctor_details_doctor_id_unique` (`doctor_id`);
-
---
 -- Indexes for table `email_template`
 --
 ALTER TABLE `email_template`
@@ -54708,71 +54200,10 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `gallery_images`
+-- Indexes for table `industry`
 --
-ALTER TABLE `gallery_images`
+ALTER TABLE `industry`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `homecare_leads`
---
-ALTER TABLE `homecare_leads`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `homecare_nurse`
---
-ALTER TABLE `homecare_nurse`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `homecare_nurse_user_contact_unique` (`user_contact`);
-
---
--- Indexes for table `labs`
---
-ALTER TABLE `labs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `labs_category`
---
-ALTER TABLE `labs_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `labs_package`
---
-ALTER TABLE `labs_package`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `labs_tests_allotments`
---
-ALTER TABLE `labs_tests_allotments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `labs_tests_profile`
---
-ALTER TABLE `labs_tests_profile`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lab_package_booking`
---
-ALTER TABLE `lab_package_booking`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lab_sub_tests`
---
-ALTER TABLE `lab_sub_tests`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `log_data`
---
-ALTER TABLE `log_data`
-  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `migrations`
@@ -54787,116 +54218,164 @@ ALTER TABLE `otp_verification`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `partner_type`
+-- Indexes for table `packages`
 --
-ALTER TABLE `partner_type`
+ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indexes for table `package_includes`
 --
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
-
---
--- Indexes for table `pharmacy_leads`
---
-ALTER TABLE `pharmacy_leads`
+ALTER TABLE `package_includes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reviews`
+-- Indexes for table `package_key_point`
 --
-ALTER TABLE `reviews`
+ALTER TABLE `package_key_point`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `service_provider`
+-- Indexes for table `package_page_details`
 --
-ALTER TABLE `service_provider`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `service_provider_business_id_unique` (`business_id`),
-  ADD UNIQUE KEY `service_provider_owner_email_unique` (`owner_email`);
+ALTER TABLE `package_page_details`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sp_website_control`
+-- Indexes for table `package_request`
 --
-ALTER TABLE `sp_website_control`
+ALTER TABLE `package_request`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `package_sub_keypoints`
+--
+ALTER TABLE `package_sub_keypoints`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `package_types`
+--
+ALTER TABLE `package_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio`
+--
+ALTER TABLE `portfolio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_images`
+--
+ALTER TABLE `portfolio_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_services`
+--
+ALTER TABLE `portfolio_services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `seo_data`
+--
+ALTER TABLE `seo_data`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services_details`
+--
+ALTER TABLE `services_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services_icons`
+--
+ALTER TABLE `services_icons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services_images`
+--
+ALTER TABLE `services_images`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `state`
 --
 ALTER TABLE `state`
-  ADD PRIMARY KEY (`state_id`),
-  ADD KEY `state_country_id_foreign` (`country_id`);
-
---
--- Indexes for table `tbl_prescription`
---
-ALTER TABLE `tbl_prescription`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_prescription_detail`
---
-ALTER TABLE `tbl_prescription_detail`
-  ADD PRIMARY KEY (`prescription_detail_id`);
+  ADD PRIMARY KEY (`state_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `website_banners`
+--
+ALTER TABLE `website_banners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `agents`
+-- AUTO_INCREMENT for table `blogs`
 --
-ALTER TABLE `agents`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `blogs`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `api_lab`
+-- AUTO_INCREMENT for table `campaign`
 --
-ALTER TABLE `api_lab`
-  MODIFY `api_lab_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `campaign`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `city_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95881;
+  MODIFY `city_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47941;
 
 --
 -- AUTO_INCREMENT for table `contact_request`
 --
 ALTER TABLE `contact_request`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `country_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=493;
+  MODIFY `country_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer_address`
@@ -54905,148 +54384,124 @@ ALTER TABLE `customer_address`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `doctors`
---
-ALTER TABLE `doctors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `doctor_consult_leads`
---
-ALTER TABLE `doctor_consult_leads`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `doctor_details`
---
-ALTER TABLE `doctor_details`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `email_template`
 --
 ALTER TABLE `email_template`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT for table `industry`
 --
-ALTER TABLE `failed_jobs`
+ALTER TABLE `industry`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `gallery_images`
---
-ALTER TABLE `gallery_images`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `homecare_leads`
---
-ALTER TABLE `homecare_leads`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `homecare_nurse`
---
-ALTER TABLE `homecare_nurse`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `labs`
---
-ALTER TABLE `labs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `labs_category`
---
-ALTER TABLE `labs_category`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `labs_package`
---
-ALTER TABLE `labs_package`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT for table `labs_tests_allotments`
---
-ALTER TABLE `labs_tests_allotments`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=299;
-
---
--- AUTO_INCREMENT for table `labs_tests_profile`
---
-ALTER TABLE `labs_tests_profile`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
-
---
--- AUTO_INCREMENT for table `lab_package_booking`
---
-ALTER TABLE `lab_package_booking`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `lab_sub_tests`
---
-ALTER TABLE `lab_sub_tests`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=641;
-
---
--- AUTO_INCREMENT for table `log_data`
---
-ALTER TABLE `log_data`
-  MODIFY `log_id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `otp_verification`
 --
 ALTER TABLE `otp_verification`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `partner_type`
---
-ALTER TABLE `partner_type`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pharmacy_leads`
+-- AUTO_INCREMENT for table `packages`
 --
-ALTER TABLE `pharmacy_leads`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `packages`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `reviews`
+-- AUTO_INCREMENT for table `package_includes`
 --
-ALTER TABLE `reviews`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `package_includes`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT for table `service_provider`
+-- AUTO_INCREMENT for table `package_key_point`
 --
-ALTER TABLE `service_provider`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `package_key_point`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
--- AUTO_INCREMENT for table `sp_website_control`
+-- AUTO_INCREMENT for table `package_page_details`
 --
-ALTER TABLE `sp_website_control`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `package_page_details`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `package_request`
+--
+ALTER TABLE `package_request`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `package_sub_keypoints`
+--
+ALTER TABLE `package_sub_keypoints`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=724;
+
+--
+-- AUTO_INCREMENT for table `package_types`
+--
+ALTER TABLE `package_types`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `portfolio`
+--
+ALTER TABLE `portfolio`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `portfolio_images`
+--
+ALTER TABLE `portfolio_images`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `portfolio_services`
+--
+ALTER TABLE `portfolio_services`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `seo_data`
+--
+ALTER TABLE `seo_data`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `services_details`
+--
+ALTER TABLE `services_details`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `services_icons`
+--
+ALTER TABLE `services_icons`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `services_images`
+--
+ALTER TABLE `services_images`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `state`
@@ -55055,32 +54510,16 @@ ALTER TABLE `state`
   MODIFY `state_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4122;
 
 --
--- AUTO_INCREMENT for table `tbl_prescription`
---
-ALTER TABLE `tbl_prescription`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tbl_prescription_detail`
---
-ALTER TABLE `tbl_prescription_detail`
-  MODIFY `prescription_detail_id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for table `website_banners`
 --
-
---
--- Constraints for table `state`
---
-ALTER TABLE `state`
-  ADD CONSTRAINT `state_country_id_foreign` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+ALTER TABLE `website_banners`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
