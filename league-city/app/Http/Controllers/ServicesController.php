@@ -47,7 +47,7 @@ class ServicesController extends Controller
             }
         </script>';
         
-        $services = Services::where(array('status'=>1))->orderBy('id','desc')->get();
+        $services = Services::where(array('status'=>1))->orderBy('id','asc')->get();
 
         return view('frontend/main', compact('page_name','page_title','current_page','web_banner', 'schema_image', 'seo_data_breadcrumb','services'));
     }

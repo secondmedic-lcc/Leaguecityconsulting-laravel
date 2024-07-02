@@ -16,7 +16,7 @@ class ServicesController extends Controller
         
         $page_title = "Manage Services";
         
-        $current_page = "Services";
+        $current_page = "services";
 
         $services = Services::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
 
