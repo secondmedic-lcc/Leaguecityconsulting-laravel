@@ -1,4 +1,4 @@
-<section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/services-banner.webp');">
+{{-- <section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/services-banner.webp');">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -8,7 +8,23 @@
             </div>
         </div>
     </div>
+</section> --}}
+
+@empty(!$web_banner)
+    
+<section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="heading-top">{{ $web_banner['page_title']; }}</span>
+                <h1 class="section-heading">{{ $web_banner['heading']; }}<span class="light">{{ $web_banner['sub_heading']; }}</span></h1>
+                <p>{{ $web_banner['details']; }}</p>
+            </div>
+        </div>
+    </div>
 </section>
+
+@endempty
 
 <nav aria-label="breadcrumb">
     <div class="container">
@@ -17,7 +33,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('/services'); }}">Services</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Mobile App Development</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $services['name'] }}</li>
                 </ol>
             </div>
         </div>
@@ -29,24 +45,27 @@
         <div class="row">
             <div class="row align-items-center portfolio-heading-mb">
                 <div class="col-lg-6">
-                    <h2 class="section-heading">Mobile App Development</h2>
-                    <h4>Lorem ipsum is a simply dummy text.</h4>
+                    <h2 class="section-heading">{{$services['name'] }}</h2>
+                    {{-- <h4>Lorem ipsum is a simply dummy text.</h4> --}}
                 </div>
                 <div class="col-lg-6">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque deserunt ut earum ex cupiditate! Deleniti dignissimos quibusdam, labore excepturi aperiam similique mollitia doloribus?</p>
+                    <?php echo $services['sub_heading']; ?>
                 </div>
             </div>
         </div>
         <div class="row g-3">
-            <div class="col-md-6 col-lg-4 col-6">
+            
+            @foreach($services['services_details'] as $p)
+            <div class="col-md-6 col-lg-4">
                 <div class="box">
-                    <i class="fa fa-user icon"></i>
-                    <i class="fa fa-user big-icon"></i>
-                    <h3>iOS App Development</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima est adipisci voluptatibus necessitatibus accusantium aperiam perspiciatis.</p>
+                    <i class="{{ $p['service_icon'] }} icon"></i>
+                    <i class="{{ $p['service_icon'] }} big-icon"></i>
+                    <h3>{{ $p['service_title'] }}</h3>
+                    <p>{{ $p['service_details'] }}</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-6">
+            @endforeach
+            {{-- <div class="col-md-6 col-lg-4 col-6">
                 <div class="box">
                     <i class="fa fa-user icon"></i>
                     <i class="fa fa-user big-icon"></i>
@@ -85,62 +104,67 @@
                     <h3>Maintenance & Support Services</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima est adipisci voluptatibus necessitatibus accusantium aperiam perspiciatis.</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
-
+@if(count($services['services_images']) > 0)
 <section class="portfolio-standout section-padding">
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
             <div class="col-lg-6">
-                <h2 class="section-heading">Exclusive features that make us stand out.</h2>
+                <h2 class="section-heading">{{ $services['section_heading'] }}</h2>
             </div>
             <div class="col-lg-6">
-                <p>League City Portfolio: Where Innovation Thrives. Explore our diverse projects, each a testament to excellence. Discover a dynamic showcase of impactful solutions and successful collaborations.</p>
+                <?php echo $services['desc_heading']; ?>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="box">
                     <div class="owl-carousel standout-slider">
+                        @foreach($services['services_images'] as $p)
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="content">
-
-                                        <h3>JK Bajar</h3>
-                                        <p>An Illustrated Portfolio – Captivating Screenshots</p>
-                                        <a href="https://www.jkbajar.com/" class="btn web-btn" target="_blank">Visit Website</a>
+                                        {{-- <i class="far fa-play-circle"></i> --}}
+                                        <h3>{{ $p['heading']; }}</h3>
+                                        <p>{{ $p['description']; }}</p>
+                                        <a href="{{$p['project_url']}}" class="btn web-btn" target="_blank">Visit Website</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="https://www.leaguecityconsulting.com//uploads/portfolio-screenshot/1710149250-portfolio.webp" alt="Group Conferencing">
+                                    <img src="{{ asset($p['image']); }}" alt="Group Conferencing">
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        @foreach($services['services_images'] as $p)
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="content">
-
-                                        <h3>JK Bajar</h3>
-                                        <p>An Illustrated Portfolio – Captivating Screenshots</p>
-                                        <a href="#" class="btn web-btn">Visit Website</a>
+                                        {{-- <i class="far fa-play-circle"></i> --}}
+                                        <h3>{{ $p['heading']; }}</h3>
+                                        <p>{{ $p['description']; }}</p>
+                                        <a href="{{$p['project_url']}}" class="btn web-btn">Visit Website</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="https://www.leaguecityconsulting.com//uploads/portfolio-screenshot/1710149250-portfolio.webp" alt="Group Conferencing">
+                                    <img src="{{ asset($p['image']); }}" alt="Group Conferencing">
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+@endif
+{{-- @if(count( $services['services_icons']) > 0) --}}
 <section class="service-technologies section-padding bg-dark">
     <div class="container">
         <div class="row">
@@ -150,13 +174,16 @@
             </div>
         </div>
         <div class="row g-3 g-lg-4">
+          {{-- @php print_r( $services['services_icons'] ); exit; @endphp --}}
+            @foreach( $services['services_icons'] as $p)
             <div class="col-lg-2 col-md-4 col-6">
                 <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/technologies/php.webp" alt="PHP">
-                    <p>PHP</p>
+                    <img src="{{ asset($p['icon']); }}" alt="PHP">
+                    <p>{{$p->name }}</p>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 col-6">
+            @endforeach
+            {{-- <div class="col-lg-2 col-md-4 col-6">
                 <div class="box">
                     <img src="{{ asset('includes-frontend'); }}/images/technologies/mysql.webp" alt="MySQL">
                     <p>MySQL</p>
@@ -185,31 +212,37 @@
                     <img src="{{ asset('includes-frontend'); }}/images/technologies/bootstrap.webp" alt="Bootstrap">
                     <p>Bootstrap</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
-
+{{-- @endif --}}
 
 <section class="portfolio-whychoose section-padding">
     <div class="container">
         <div class="row align-items-center portfolio-heading-mb">
             <div class="col-lg-6">
-                <h2 class="section-heading">Why Choose League City for Mobile App Development?</h2>
+                <h2 class="section-heading">{{ $services['section_heading1'] }}
+                    {{-- Why Choose League City for Mobile App Development? --}}
+                </h2>
             </div>
             <div class="col-lg-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ullam quas quibusdam odit sapiente nemo tempore laborum error neque ducimus? Ab sapiente nam illum quae adipisci delectus? Sint, impedit sequi!</p>
-            </div>
+                <?php echo $services['section_sub_heading1']; ?>          
+              </div>
         </div>
         <div class="row g-3">
+          
+         
+            @foreach($services['services_sub_details'] as $p)
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
-                    <i class="fas fa-percent"></i>
-                    <h3>Qualified App Developers</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
+                    <i class="{{ $p['service_icon'] }} icon"></i>
+                    <h3>{{ $p['service_title'] }}</h3>
+                    <p>{{ $p['service_details'] }}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-6">
+            @endforeach
+            {{-- <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
                     <i class="fas fa-percent"></i>
                     <h3>Client-centric Approach</h3>
@@ -229,7 +262,7 @@
                     <h3>Dedicated Teams</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero eos magnam enim aut consectetur iste delectus debitis soluta.</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

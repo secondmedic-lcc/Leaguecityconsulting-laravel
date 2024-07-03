@@ -11,7 +11,15 @@ use App\Http\Controllers\backend\admin\WebsiteBannersController;
 use App\Http\Controllers\backend\admin\PackagesController;
 use App\Http\Controllers\backend\admin\PackageIncludesController;
 use App\Http\Controllers\backend\admin\PackageTypesController;
+use App\Http\Controllers\backend\admin\ServicesController;
+use App\Http\Controllers\backend\admin\ServicesDetailsController;
+use App\Http\Controllers\backend\admin\ServicesImagesController;
+use App\Http\Controllers\backend\admin\ServicesIconsController;
+
+
+
 use App\Http\Controllers\ErrorController;
+use App\Models\Services;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +42,8 @@ Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::
 Route::post('packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('packages-request');
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
+
+Route::get('services/{url}', [App\Http\Controllers\ServicesController::class, 'services_details']);
 
 Route::get('/singleservice', [App\Http\Controllers\SingleServiceController::class, 'index']);
 
@@ -145,6 +155,50 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('portfolio-images-delete/{id}', [App\Http\Controllers\backend\admin\PotfolioImageController::class, 'destroy']);
 
+
+    /* All Routes for Portfolio */
+    Route::get('/services', [ServicesController::class, 'index'])->name('services');
+
+    Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
+
+    Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
+
+    Route::get('/services/{id}', [ServicesController::class, 'edit'])->name('services.edit');
+
+    Route::post('/services/{id}', [ServicesController::class, 'update'])->name('services.update');
+
+    Route::get('services-delete/{id}', [ServicesController::class, 'delete'])->name('services-delete');
+
+    Route::post('/services-details/{id}', [ServicesController::class, 'update_description'])->name('services-details.update_description');
+
+
+
+    /* All Routes for Portfolio Services */
+    Route::get('/services-details', [ServicesDetailsController::class, 'index'])->name('services-details');
+
+    Route::post('/services-details', [ServicesDetailsController::class, 'store'])->name('services-details-services.store');
+
+    Route::get('/services-details/{id}', [ServicesDetailsController::class, 'edit'])->name('services-details-services.edit');
+    
+    Route::post('/services-details-services/{id}', [ServicesDetailsController::class, 'update'])->name('services-details-services.update');
+
+    Route::get('services-details-delete/{id}', [ServicesDetailsController::class, 'destroy'])->name('services-details-services.destroy');
+
+
+    /* All Routes for Portfolio Images */
+ Route::post('services-images', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'store']);
+
+ Route::post('services-images/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'update'])->name('services-images.update');
+
+ Route::get('services-images-delete/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'destroy']);
+
+ Route::post('services-icons', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'store']);
+
+ Route::post('services-icons/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'update'])->name('services-icons.update');
+
+ Route::get('services-icons-delete/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'destroy']);
+
+ 
 
     /* All Routes for Portfolio Services */
     Route::get('blogs', [BlogsController::class, 'index'])->name('blogs');

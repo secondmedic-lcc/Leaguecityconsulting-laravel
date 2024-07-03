@@ -21,6 +21,7 @@
                                     <option value="portfolio-details" {{ ($banner->page_name == 'portfolio-details') ? 'selected': ''; }}>Portfolio Details</option>
                                     <option value="industry-details" {{ ($banner->page_name == 'industry-details') ? 'selected': ''; }}>Industry Details</option>
                                     <option value="products-details" {{ ($banner->page_name == 'products-details') ? 'selected': ''; }}>Products Details</option>
+                                    <option value="singleservice" {{ ($banner->page_name == 'singleservice') ? 'selected': ''; }}>Services Details</option>
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
