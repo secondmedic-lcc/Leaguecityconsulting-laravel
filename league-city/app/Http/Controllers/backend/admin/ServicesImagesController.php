@@ -32,7 +32,7 @@ class ServicesImagesController extends Controller
             $data = [
                 'services_id' => $request->services_id,
                 'heading' => $request->heading,
-                'description' => $request->description,
+                'description' => $request->description1,
                 'project_url' => $request->project_url,
             ];
           
@@ -78,6 +78,7 @@ class ServicesImagesController extends Controller
                 'project_url' => $request->project_url,
             ];
           
+            print_r(  $data); exit;
           
             if(!empty($request->images)){
                     

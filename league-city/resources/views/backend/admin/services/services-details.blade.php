@@ -25,30 +25,27 @@
 
                         <div class="col-md-12 mt-3">
                             <label>Services Sub Heading</label>
-                            <textarea name="sub_heading" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['sub_heading']; }}</textarea>
+                            <textarea name="sub_heading" class="form-control text-dark" cols="30" rows="5" required>{{ $services_sec['sub_heading']; }}</textarea>
                         </div>
         
                         <div class="col-md-6 mt-3">
                             <label>Section sub Heading</label>
-                            <input type="text" class="form-control text-dark" name="section_heading" value="{{ $services_sec['section_heading']; }}"  />
+                            <input type="text" class="form-control text-dark" name="section_heading" required value="{{ $services_sec['section_heading']; }}"  />
                         </div>
                         <div class="col-md-6 mt-3">
                             <label>Services Desc Heading</label>
-                            <textarea name="desc_heading" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['desc_heading']; }}</textarea>
+                            <textarea name="desc_heading" class="form-control text-dark" cols="30" rows="5" required>{{ $services_sec['desc_heading']; }}</textarea>
                         </div>
 
-                       
-
-                       
                         <div class="col-md-6 mt-3">
                             <label>Services Sub Heading</label>
-                            <input type="text" class="form-control text-dark" name="section_heading1" value="{{ $services_sec['section_heading1']; }}"  />
+                            <input type="text" class="form-control text-dark" name="section_heading1" required value="{{ $services_sec['section_heading1']; }}"  />
                         </div>
 
                         
                         <div class="col-md-6 mt-3">
                             <label>Section Heading </label>
-                            <textarea name="section_sub_heading1" class="form-control text-dark" cols="30" rows="5">{{ $services_sec['section_sub_heading1']; }}</textarea>
+                            <textarea name="section_sub_heading1" class="form-control text-dark" cols="30" rows="5" required>{{ $services_sec['section_sub_heading1']; }}</textarea>
                         </div>
 
                         
@@ -113,7 +110,7 @@
                                 </div>
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
-                                        <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" project_url="{{ $g['project_url']; }}" serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
+                                        <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" project_url="{{ $g['project_url']; }}"  serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
                                         
                                         <a href="javascript:void(0);" url={{ url('/admin/services-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
                                       
