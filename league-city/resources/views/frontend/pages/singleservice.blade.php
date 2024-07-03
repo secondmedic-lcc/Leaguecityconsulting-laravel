@@ -227,7 +227,7 @@
                 </h2>
             </div>
             <div class="col-lg-6">
-                <?php echo $services['desc_heading']; ?>          
+                <?php echo $services['section_sub_heading1']; ?>          
               </div>
         </div>
         <div class="row g-3">
@@ -237,7 +237,6 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
                     <i class="{{ $p['service_icon'] }} icon"></i>
-                    <i class="{{ $p['service_icon'] }} big-icon"></i>
                     <h3>{{ $p['service_title'] }}</h3>
                     <p>{{ $p['service_details'] }}</p>
                 </div>

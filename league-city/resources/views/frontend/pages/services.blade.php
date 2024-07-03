@@ -50,7 +50,7 @@
                         <img src="{{ asset($p->image); }}" alt="{{ $p->name; }}">
                     </div>
                     <div class="details">
-                        <div class="heading"><span>{{$p->name}}</span> <a href="{{$url }}"><i class="fas fa-arrow-right"></i></a></div>
+                        <div class="heading"><span>{{$p->name}}</span> <i class="fas fa-arrow-right"></i></div>
                         <?php echo $p->description ?>
                     </div>
                 </div>
