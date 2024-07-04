@@ -44,7 +44,7 @@
                     <div>
                         <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
                         <ul class="blog-info-list">
-                            <li><span class="text-grey">27 January 2024</span></li>
+                            <li><span class="text-grey">{{ date('d M, Y', strtotime($b->created_at)); }}</span></li>
                             <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
                         </ul>
                         <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
