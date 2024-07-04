@@ -1,14 +1,4 @@
-{{-- <section class="page-banner section-padding" style="background-image: url('{{ asset('includes-frontend'); }}/images/services-banner.webp');">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <span class="heading-top">Software Engineering</span>
-                <h1 class="section-heading">Mobile App<span class="light">Development</span></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ex temporibus ullam maxime expedita modi excepturi nam molestias.</p>
-            </div>
-        </div>
-    </div>
-</section> --}}
+
 
 @empty(!$web_banner)
     
@@ -169,8 +159,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="section-heading with-p">Technologies Leveraged</h2>
-                <p class="heading-info text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique magni veniam maxime magnam dignissimos, explicabo facilis obcaecati fuga deserunt.</p>
+                <h2 class="section-heading with-p">Tech and Tools : Shaping the future
+                </h2>
+                <p class="heading-info text-white">We are a dedicated team of developers who consistently strive to deliver innovative, robust, and interactive solutions using the most suitable tools and technologies, ensuring high scalability.</p>
             </div>
         </div>
         <div class="row g-3 g-lg-4">
@@ -266,13 +257,16 @@
         </div>
     </div>
 </section>
+
+
+
 <section class="service-portfolio-process portfolio-process section-padding bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
-                <h2 class="section-heading with-p">Telemedicine App Development Process We Follow</h2>
-                <p class="heading-info text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique magni veniam maxime magnam dignissimos, explicabo facilis obcaecati fuga deserunt.</p>
-            </div>
+                <h2 class="section-heading with-p">Process We Follow in League City Consulting</h2>
+                <p class="heading-info text-white"> League City Consulting's Strategic Process Unveiled. Discover the Proven Steps to Achieving Your Business Goals</p>
+             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
@@ -280,63 +274,99 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                Accordion Item #1
+                                Discovery and Assessment
                             </button>
                         </h2>
                         <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto provident, doloremque assumenda officiis est.</p>
+                                <p>Our journey begins with a collaborative discovery phase, where our team works closely with your stakeholders to grasp your business objectives, challenges, and vision. We conduct a thorough assessment of your current IT infrastructure, identifying opportunities for improvement and optimization.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Accordion Item #2
+                                Customized Solution Design
                             </button>
                         </h2>
                         <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto provident, doloremque assumenda officiis est.</p>
+                                <p>Building on insights from the discovery phase, our experts create tailor-made IT solutions aligned seamlessly with your business goals. Whether it's crafting bespoke software, integrating existing systems, or architecting scalable applications, our design process prioritizes efficiency, scalability, and user-centric experiences.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                Accordion Item #3
+                                Agile Development Methodology
                             </button>
                         </h2>
                         <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto provident, doloremque assumenda officiis est.</p>
+                                <p>Embracing an agile development approach, we ensure flexibility and responsiveness throughout the project lifecycle. Our teams work in sprints, allowing for continuous feedback and iterative improvements. This methodology guarantees that the final product not only meets but exceeds your expectations.</p>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Accordion Item #4
+                                Quality Assurance and Testing
                             </button>
                         </h2>
                         <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto provident, doloremque assumenda officiis est.</p>
+                                <p>Quality is central to our values. Rigorous testing processes are integrated into our development cycle to ensure the reliability, security, and performance of your software solutions. Our QA specialists use industry-leading tools and methodologies to identify and address potential issues before deployment.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                Accordion Item #5
+                                Seamless Integration
                             </button>
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto provident, doloremque assumenda officiis est.</p>
+                                <p>Recognizing the importance of smooth integration with existing systems, our specialists work diligently to ensure new software seamlessly interacts with your current infrastructure. This minimizes disruptions and maximizes operational efficiency.
+                                </p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                Training and Support
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Successful IT solution implementation relies on a knowledgeable workforce. We provide comprehensive training programs to empower your teams with the skills needed to leverage the full potential of our software. Our dedicated support team is also available to address inquiries or issues, ensuring a seamless post-implementation experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                Continuous Improvement
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>In the ever-evolving IT landscape, League City Consulting is committed to staying ahead of the curve. We offer continuous improvement services, including regular updates, enhancements, and proactive monitoring, keeping your IT solutions aligned with industry trends and emerging technologies.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>

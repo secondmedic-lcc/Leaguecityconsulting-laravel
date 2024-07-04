@@ -78,7 +78,7 @@ class ServicesImagesController extends Controller
                 'project_url' => $request->project_url,
             ];
           
-            print_r(  $data); exit;
+            // print_r(  $data); exit;
           
             if(!empty($request->images)){
                     

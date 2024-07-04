@@ -161,14 +161,57 @@ class ServicesController extends Controller
   
     public function update_description(Request $request, $id)
     {
-     
         $data = $request->validate([
-          'desc_heading' => 'required|string',
             'sub_heading' => 'required|string',
+        ]);
+       
+            $data['sub_heading'] = $request->sub_heading;
+           
+        $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
+        
+        if($check > 0){
+            return redirect()->back()->with('success', 'services Data updated successfully.');
+
+        }else{
+            
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
+    }
+
+    public function update_section(Request $request, $id)
+    {
+        $data = $request->validate([
+            'section_heading' => 'required|string',
+            'desc_heading' => 'required|string',
+        ]);
+       
+            $data['section_heading'] = $request->section_heading;
+            $data['desc_heading'] = $request->desc_heading;
+     
+
+
+        $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
+        
+        if($check > 0){
+            return redirect()->back()->with('success', 'services Data updated successfully.');
+
+
+        }else{
+            
+            return redirect()->back()->with('error', 'Something went wrong');
+
+        }
+    }
+
+    public function update_sub_section(Request $request, $id)
+    {
+        $data = $request->validate([
             'section_heading1' => 'required|string',
             'section_sub_heading1' => 'required|string',
-            'section_heading' => 'required|string',
         ]);
+            $data['section_heading1'] = $request->section_heading1;
+            $data['section_sub_heading1'] = $request->section_sub_heading1;
+
 
         $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
         

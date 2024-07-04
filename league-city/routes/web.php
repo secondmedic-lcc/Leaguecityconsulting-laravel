@@ -171,6 +171,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::post('/services-details/{id}', [ServicesController::class, 'update_description'])->name('services-details.update_description');
 
+    Route::post('/update_section/{id}', [ServicesController::class, 'update_section'])->name('update_section');
+
+    Route::post('/update_sub_section/{id}', [ServicesController::class, 'update_sub_section'])->name('update_sub_section');
 
 
     /* All Routes for Portfolio Services */

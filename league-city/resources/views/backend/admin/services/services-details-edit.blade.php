@@ -23,7 +23,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Service Icon</label>
-                            <textarea class="form-control" name="service_icon" required value="{{ $services_details->service_icon; }}">{{ $services_details->service_icon; }}</textarea>
+                            Service Icon
+                            <input class="form-control" name="service_icon" required value="{{ $services_details->service_icon; }}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Service Details</label>

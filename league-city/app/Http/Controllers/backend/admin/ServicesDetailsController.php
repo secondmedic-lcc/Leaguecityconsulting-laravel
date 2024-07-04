@@ -36,7 +36,13 @@ class ServicesDetailsController extends Controller
 
         $services_icons = ServicesIcons::where(array('status' => 1,'services_id'=>$_GET['services_id']))->get();
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','services','services_details','services_sec','services_images','services_icons'));
+        
+        $services_details_main = ServicesDetails::where(array('status'=>1,'services_id'=>$_GET['services_id'],'data_for'=>'main-details'))->get();
+
+        $services_sub_details = ServicesDetails::where(array('status'=>1,'services_id'=>$_GET['services_id'],'data_for'=>'sub-details'))->get();
+
+
+        return view('backend/admin/main', compact('page_name','page_title','current_page','services','services_details','services_sec','services_images','services_icons','services_details_main','services_sub_details'));
 
     }
 
