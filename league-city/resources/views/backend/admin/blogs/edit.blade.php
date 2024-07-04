@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-m-md-12">
                             <label for="">Blog Description</label>
-                            <textarea name="description" class="form-control">{{ $blog->description }}</textarea>
+                            <textarea name="description" id="description" class="form-control">{{ $blog->description }}</textarea>
                         </div>
                         <div class="col-md-6 mt-3">
                             <div class="col-md-12 mb-3">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-md-6  mt-3">
                             <label for="">Meta Description</label>
-                            <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ @$seo_data->meta_description; }}</textarea>
+                            <textarea name="meta_description" class="form-control text-dark"  id="meta_description" rows="5" required>{{ @$seo_data->meta_description; }}</textarea>
                         </div>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn">

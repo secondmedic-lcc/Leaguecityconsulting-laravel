@@ -22,7 +22,7 @@
                 
                         <div class="col-md-6 mb-3">
                             <label for=""> Description</label>
-                            <textarea name="description" class="form-control text-dark" rows="5" required>{{ @$services->description; }}</textarea>
+                            <textarea name="description" id="description" class="form-control text-dark" rows="5" required>{{ @$services->description; }}</textarea>
                         </div>
                         <div class="col-md-4 mb-4 col-8">
                             <label class="form-label" for="">Services Image</label>

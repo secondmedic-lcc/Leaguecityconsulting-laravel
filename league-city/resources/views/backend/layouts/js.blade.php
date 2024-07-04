@@ -124,14 +124,28 @@
 
 @if(@$current_page == "portfolio" || @$current_page == "blogs")
 <script>
-    CKEDITOR.replace("description"); 
+    $(function() {
+        $("#description").summernote({
+            height: "200px"
+        });
+    });
 </script>
 @endif
 
 @if(@$current_page == "services")
 <script>
-    CKEDITOR.replace("description"); 
-    CKEDITOR.replace("sub_heading"); 
+    /* CKEDITOR.replace("description"); 
+    CKEDITOR.replace("sub_heading"); */
+    $(function() {
+        $("#description").summernote({
+            height: "200px"
+        });
+    });
+    $(function() {
+        $("#sub_heading").summernote({
+            height: "200px"
+        });
+    });
 </script>
 @endif
 
@@ -147,7 +161,12 @@
 
 @if(@$current_page == "portfolio" || @$current_page == "blogs")
 <script>
-    CKEDITOR.replace("description");
+    /* CKEDITOR.replace("description"); */
+    $(function() {
+        $("#description").summernote({
+            height: "200px"
+        });
+    });
 
     function readURL2(input) {
         if (input.files && input.files[0]) {

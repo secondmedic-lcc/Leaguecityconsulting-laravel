@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-6  mt-3">
                             <label for="">Meta Description</label>
-                            <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ @$seo_data->meta_description; }}</textarea>
+                            <textarea name="meta_description" id="meta_description" class="form-control text-dark" rows="5" required>{{ @$seo_data->meta_description; }}</textarea>
                         </div>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn">

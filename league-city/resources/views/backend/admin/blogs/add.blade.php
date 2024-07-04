@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-m-md-12 mb-4">
                             <label for="" class="form-label">Blog Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <textarea name="description" class="form-control" id="description"></textarea>
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-12 mb-3">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <label for="" class="form-label">Meta Description</label>
-                            <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ old('meta_description') }}</textarea>
+                            <textarea name="meta_description" id="meta_description" class="form-control text-dark" rows="5" required>{{ old('meta_description') }}</textarea>
                         </div>
                         <div class="col-md-6 offset-md-3 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn" >

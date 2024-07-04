@@ -52,7 +52,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="col-md-12 mb-3">
                                 <label for="">Meta Description</label>
-                                <textarea name="meta_description" class="form-control text-dark" rows="5" required>{{ old('meta_description') }}</textarea>
+                                <textarea name="meta_description" id="meta_description" class="form-control text-dark" rows="5" required>{{ old('meta_description') }}</textarea>
                             </div>
                             <label for="">Seo Schema</label>
                             <textarea name="meta_schema" class="form-control text-dark" rows="5">{{ old('meta_schema') }}</textarea>
