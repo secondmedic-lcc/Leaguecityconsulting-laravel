@@ -3080,3 +3080,7 @@ tr.hide-table-padding td {
 .table .table-id {
     width: 30px;
 }
+
+.note-editor.note-airframe.fullscreen, .note-editor.note-frame.fullscreen{
+    background-color: white !important;
+}
