@@ -100,6 +100,7 @@ $seo_data = SeoData::where(['page_link' => $page_link])->get()->first();
     <meta name="twitter:image0" content="{{ $seo_data->meta_image != null && $seo_data->meta_image != '' ? asset($seo_data->meta_image) : asset('includes-frontend/img/favicon.webp') }}">
     @else
     <title>League City Consulting</title>
+    <link rel="canonical" href="{{url()->current() }}" />
     @endif
 
     {{-- Organization Schema --}}
