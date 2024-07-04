@@ -10,6 +10,10 @@
 
 <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
 <script src="{{ asset('includes-backend/js/second-medic.js'); }}"></script>
 <script language="JavaScript" src="{{ asset('includes-backend/js/jquery.dataTables.min.js'); }}" type="text/javascript"></script>
 <script language="JavaScript" src="{{ asset('includes-backend/js/dataTables.bootstrap.min.js'); }}" type="text/javascript"></script>
@@ -133,7 +137,11 @@
 
 @if(@$current_page == "seo-data" || @$current_page == "blogs" || @$current_page == "portfolio" || @$current_page == "products" || @$current_page == "industry")
 <script>
-    CKEDITOR.replace("meta_description");
+    $(function() {
+        $("#meta_description").summernote({
+            height: "200px"
+        });
+    });
 </script>
 @endif
 
