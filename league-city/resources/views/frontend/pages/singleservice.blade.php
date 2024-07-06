@@ -1,7 +1,5 @@
-
-
 @empty(!$web_banner)
-    
+
 <section class="page-banner section-padding" style="background-image: url({{ asset($web_banner['banner_image']); }});">
     <div class="container">
         <div class="row">
@@ -30,7 +28,7 @@
     </div>
 </nav>
 
-<section class="singleportfolio section-padding pb-0">
+<section class="singleportfolio section-padding">
     <div class="container">
         <div class="row">
             <div class="row align-items-center portfolio-heading-mb">
@@ -44,7 +42,7 @@
             </div>
         </div>
         <div class="row g-3">
-            
+
             @foreach($services['services_details'] as $p)
             <div class="col-md-6 col-lg-4">
                 <div class="box">
@@ -165,7 +163,7 @@
             </div>
         </div>
         <div class="row g-3 g-lg-4">
-          {{-- @php print_r( $services['services_icons'] ); exit; @endphp --}}
+            {{-- @php print_r( $services['services_icons'] ); exit; @endphp --}}
             @foreach( $services['services_icons'] as $p)
             <div class="col-lg-2 col-md-4 col-6">
                 <div class="box">
@@ -177,34 +175,34 @@
             {{-- <div class="col-lg-2 col-md-4 col-6">
                 <div class="box">
                     <img src="{{ asset('includes-frontend'); }}/images/technologies/mysql.webp" alt="MySQL">
-                    <p>MySQL</p>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/technologies/laravel.webp" alt="Laravel">
-                    <p>Laravel</p>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/technologies/html.webp" alt="HTML5">
-                    <p>HTML5</p>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/technologies/css.webp" alt="CSS">
-                    <p>CSS</p>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend'); }}/images/technologies/bootstrap.webp" alt="Bootstrap">
-                    <p>Bootstrap</p>
-                </div>
-            </div> --}}
+            <p>MySQL</p>
         </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-6">
+        <div class="box">
+            <img src="{{ asset('includes-frontend'); }}/images/technologies/laravel.webp" alt="Laravel">
+            <p>Laravel</p>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-6">
+        <div class="box">
+            <img src="{{ asset('includes-frontend'); }}/images/technologies/html.webp" alt="HTML5">
+            <p>HTML5</p>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-6">
+        <div class="box">
+            <img src="{{ asset('includes-frontend'); }}/images/technologies/css.webp" alt="CSS">
+            <p>CSS</p>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-6">
+        <div class="box">
+            <img src="{{ asset('includes-frontend'); }}/images/technologies/bootstrap.webp" alt="Bootstrap">
+            <p>Bootstrap</p>
+        </div>
+    </div> --}}
+    </div>
     </div>
 </section>
 {{-- @endif --}}
@@ -218,12 +216,12 @@
                 </h2>
             </div>
             <div class="col-lg-6">
-                <?php echo $services['section_sub_heading1']; ?>          
-              </div>
+                <?php echo $services['section_sub_heading1']; ?>
+            </div>
         </div>
         <div class="row g-3">
-          
-         
+
+
             @foreach($services['services_sub_details'] as $p)
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="box">
@@ -266,7 +264,7 @@
             <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="section-heading with-p">Process We Follow in League City Consulting</h2>
                 <p class="heading-info text-white"> League City Consulting's Strategic Process Unveiled. Discover the Proven Steps to Achieving Your Business Goals</p>
-             </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
