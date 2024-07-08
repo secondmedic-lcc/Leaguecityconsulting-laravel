@@ -121,7 +121,11 @@
                                         {{-- <i class="far fa-play-circle"></i> --}}
                                         <h3>{{ $p['heading']; }}</h3>
                                         <p>{{ $p['description']; }}</p>
+                                        @if($p['project_url']!= '')
                                         <a href="{{$p['project_url']}}" class="btn web-btn" target="_blank">Visit Website</a>
+                                        @else
+                                        <a href="" target="_blank"> </a>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
