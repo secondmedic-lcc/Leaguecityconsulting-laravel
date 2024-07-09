@@ -83,4 +83,23 @@ class SaasCampaign1Controller extends Controller
 
         return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
     }
+
+    
+    public function malaysiaCampaign()
+    {
+
+        $page_name = "campaign/malaysia-saas-campaign";
+
+        $page_title = "Malaysia Saas Campaign";
+
+        $current_page = "malaysia-saas-campaign";
+
+        $schema_image = "includes-frontend/images/logo-white.webp";
+
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
+
+        $state = State::where(array('country_id'=>132))->get();
+
+        return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
+    }
 }

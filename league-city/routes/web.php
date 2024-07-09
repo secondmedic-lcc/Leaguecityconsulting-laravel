@@ -55,6 +55,8 @@ Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::clas
 
 Route::get('india-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'indiaCampaign'])->name('india.campaign');
 
+Route::get('malaysia-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'malaysiaCampaign'])->name('malaysia.campaign');
+
 Route::get('/thankyou', [App\Http\Controllers\ThankyouController::class, 'index'])->name('thankyou');
 
 Route::post('campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'store'])->name('campaign.store');
