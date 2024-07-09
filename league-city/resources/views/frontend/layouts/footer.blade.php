@@ -30,10 +30,16 @@
                 <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
-                        <li><a href="{{ url('services#software-engineering'); }}">Mobile App Development</a></li>
-                        <li><a href="{{ url('services#software-engineering'); }}">Web Development</a></li>
-                        <li><a href="{{ url('services#software-engineering'); }}">Custom Software Development</a></li>
-                        <li><a href="{{ url('services#software-engineering'); }}">UI/UX Development</a></li>
+                        @php   use App\Models\Services; 
+
+  $services = Services::where(array('status' => 1))->get(); 
+
+   @endphp
+                        @foreach($services as $p)
+                        @php $url = url('services')."/".$p->url_slug; @endphp
+                        <li><a href="{{ $url }}">{{$p->name}}</a></li>
+                         @endforeach
+                      
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-6">

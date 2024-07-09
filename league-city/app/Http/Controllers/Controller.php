@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Blogs;
 use App\Models\Portfolio;
-/* use App\Models\ServiceProvider; */
+ use App\Models\Services; 
 
 class Controller extends BaseController
 {
@@ -29,9 +29,12 @@ class Controller extends BaseController
 
         $schema_image = "includes-frontend/images/logo-white.webp";
 
+       
+
         $blog = Blogs::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
+
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image'));
     }
