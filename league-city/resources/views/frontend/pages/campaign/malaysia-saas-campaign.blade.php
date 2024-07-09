@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-6">
                 <img src="{{ asset('includes-frontend') }}/images/logo-white.webp" alt="logo" class="logo">
-                <h1>World’s #1 Mobile App Development Company</h1>
+                <h1>Malaysia's #1 Mobile App Development Company</h1>
                 <h5 class="web-clr">We Turn Your Great Ideas into Amazing Mobile Apps</h5>
                 <ul>
                     <li>Accelerated Development Cycle</li>
@@ -50,7 +50,7 @@
                     @endif
                     <form action="{{ route('campaign.store') }}" method="post" id="campaign-form">
                         @csrf
-                        <input type="hidden" name="campaign_for" value="USA Campaign" class="form-control" />
+                        <input type="hidden" name="campaign_for" value="Malaysia Campaign" class="form-control" />
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" />
                             <label for="floatingInput">Your Full Name</label>
@@ -67,9 +67,9 @@
                             {{-- <input type="text" class="form-control" id="floatingInput4" placeholder="country"> --}}
                             {{-- <label for="floatingInput4">Country</label> --}}
                             <select class="form-control" id="floatingInput4" name="country">
-                                <option value="" selected disabled>Country</option>
-                                @foreach ($country as $c)
-                                <option value="{{ $c->country_id }}">{{ $c->name }}</option>
+                                <option value="" selected disabled>Select State</option>
+                                @foreach ($state as $c)
+                                <option value="{{ $c->state_id }}">{{ $c->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -1411,7 +1411,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Contact</span>
-                                            <a href="tel:+18323305432">+1-832-330-5432</a>
+                                            <a href="tel:+917879782233">+91 78797 82233</a>
                                         </div>
                                     </li>
                                     <li>
@@ -1420,7 +1420,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
+                                            <p>Lot 10-03C, 10th Floor Tower 1, <br> Faber Towers</p>
                                         </div>
                                     </li>
                                 </ul>
