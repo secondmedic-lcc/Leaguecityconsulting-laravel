@@ -3215,6 +3215,7 @@ h6 .light {
 }
 .pricing-modal .selected-package p {
     margin: 0px;
+    color: var(--whitecolor);
 }
 .pricing-modal .btn {
     margin-top: 30px;
