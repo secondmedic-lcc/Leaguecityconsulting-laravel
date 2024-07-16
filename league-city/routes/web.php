@@ -106,7 +106,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     /* All Routes for Contact Request */
     Route::get('plan-requests', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'package_request']);
 
-    Route::get('contact-request-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroy']);
+    Route::get('plan-requests-delete/{id}', [App\Http\Controllers\backend\admin\ServiceProviderController::class, 'destroyPackageRequest'])->name('destroyPackageRequest');
 
 
     /* All Routes for Customers */

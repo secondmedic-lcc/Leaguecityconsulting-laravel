@@ -56,4 +56,17 @@ class ServiceProviderController extends Controller
         }
     }
 
+
+    public function destroyPackageRequest($id) {
+       
+        $data = array('status' =>0);
+
+        $result = PackageRequest::where(array('id'=>$id))->update($data);
+        
+        if($result > 0){
+            return redirect()->back()->with('success', 'Package Request Leads Deleted successfully');
+        }else{
+            return redirect()->back()->with('error', 'Something went Wrong');
+        }
+    }
 }

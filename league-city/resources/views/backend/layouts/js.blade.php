@@ -70,7 +70,7 @@
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $('.btn-delete').click(function() {
+    /* $('.btn-delete').click(function() {
         swal({
             title: "Are you sure?",
             text: "Are you sure to delete this data",
@@ -86,7 +86,7 @@
                 return false;
             }
         });
-    });
+    }); */
 
     function deleteData(url) {
         swal({
@@ -153,25 +153,12 @@
 
 @if(@$current_page == "seo-data" || @$current_page == "blogs" || @$current_page == "portfolio" || @$current_page == "products" || @$current_page == "industry")
 <script>
-         CKEDITOR.replace("meta_description"); 
-
-    // $(function() {
-    //     $("#meta_description").summernote({
-    //         height: "200px"
-    //     });
-    // });
+    CKEDITOR.replace("meta_description"); 
 </script>
 @endif
 
 @if(@$current_page == "portfolio" || @$current_page == "blogs")
 <script>
-    /* CKEDITOR.replace("description"); */
-    // $(function() {
-    //     $("#description").summernote({
-    //         height: "200px"
-    //     });
-    // });
-
     function readURL2(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
