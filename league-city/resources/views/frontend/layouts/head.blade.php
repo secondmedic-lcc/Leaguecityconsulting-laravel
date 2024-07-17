@@ -1,11 +1,13 @@
 @php
 use App\Models\SeoData;
 
-$link = str_replace(url('') . '/', '', request()->url());
+$url = 'http://www.leaguecityconsulting.com';
 
-if ($link != '' && $link != null && $link != url('')) {
+$link = str_replace($url.'/', '', request()->url());
 
-$page_link = $link;
+if ($link != '' && $link != null && $link != $url) {
+
+    $page_link = $link;
 
 } else { $page_link = 'home'; }
 
