@@ -24,7 +24,7 @@ class ContactUsController extends Controller
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": 
+                "itemListElement":
                 [
                     {
                         "@type": "ListItem",
@@ -50,7 +50,7 @@ class ContactUsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|email|max:50',
-            'contact' => 'required|min:10|max:10',
+            'contact' => 'required|min:10|max:15',
             'budget' => 'required|max:50',
             'message' => 'required',
         ]);
