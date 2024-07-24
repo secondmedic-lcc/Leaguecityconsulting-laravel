@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Mobile Number*</label>
-                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="15"  /><!---pattern="[6-9]{1}[0-9]{9}"--->
+                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)"   /><!---pattern="[6-9]{1}[0-9]{9}" minlength="8" maxlength="15"--->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -43,7 +43,7 @@
                                     <div class="col-md-6">
                                         @if($current_page != 'saas-campaign')
                                             <label>
-                                            <p><input type="checkbox" required /> By submitting this form I agree to the Condiant's <a href="{{ url('privacy-policy') }}" class="web-clr">Privacy Policy</a></p>
+                                            <p><input type="checkbox" required /> By submitting this form, I agree to LeagueCity Consulting's <a href="{{ url('privacy-policy') }}" class="web-clr">Privacy Policy.</a></p>
                                             </label>
                                         @endif
                                     </div>

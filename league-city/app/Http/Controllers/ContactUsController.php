@@ -50,7 +50,7 @@ class ContactUsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|email|max:50',
-            'contact' => 'required|min:10|max:15',
+            'contact' => 'required', #|min:10|max:15
             'budget' => 'required|max:50',
             'message' => 'required',
         ]);
@@ -66,20 +66,22 @@ class ContactUsController extends Controller
             $data['budget'] = $request->budget;
             $data['message'] = $request->message;
 
+            // dd($data);
+
             $result = ContactRequest::create($data);
 
-            $mail_var = array(
-                'var1' => $request->name,
-                'var2' => $request->email,
-                'var3' => $request->contact,
-                'var4' => $request->budget,
-                'var5' => $request->message,
-                'var6' => "",
-                'var7' => "",
-                'var8' => "",
-            );
+            // $mail_var = array(
+            //     'var1' => $request->name,
+            //     'var2' => $request->email,
+            //     'var3' => $request->contact,
+            //     'var4' => $request->budget,
+            //     'var5' => $request->message,
+            //     'var6' => "",
+            //     'var7' => "",
+            //     'var8' => "",
+            // );
 
-            send_mail($request->email, '1901CR', $mail_var);
+            // send_mail($request->email, '1901CR', $mail_var);
 
             if ($result->id > 0) {
                 return redirect()->back()->with('success', 'Thank you for requesting');
