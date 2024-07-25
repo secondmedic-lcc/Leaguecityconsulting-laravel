@@ -19,6 +19,10 @@
             Packages
         </a>
         <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="{{url('packages-landing');}}">Packages</a>
+                {{-- <!-----{{ url('packages/'.$p->package_slug); }}---> --}}
+            </li>
             @foreach($package_types as $p)
             <li>
                 <a class="dropdown-item" href="{{ url('packages/'.$p->package_slug); }}">{{ $p->package_name; }}</a>

@@ -39,6 +39,8 @@ Route::get('/about-us', [App\Http\Controllers\AboutController::class, 'index']);
 
 Route::get('/packages/{package_slug}', [App\Http\Controllers\PackageController::class, 'index']);
 
+Route::get('packages-landing', [App\Http\Controllers\PackageController::class, 'packagesLanding']);
+
 Route::post('packages/store', [App\Http\Controllers\PackageController::class, 'store'])->name('packages-request');
 
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
@@ -184,7 +186,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/services-details', [ServicesDetailsController::class, 'store'])->name('services-details-services.store');
 
     Route::get('/services-details/{id}', [ServicesDetailsController::class, 'edit'])->name('services-details-services.edit');
-    
+
     Route::post('/services-details-services/{id}', [ServicesDetailsController::class, 'update'])->name('services-details-services.update');
 
     Route::get('services-details-delete/{id}', [ServicesDetailsController::class, 'destroy'])->name('services-details-services.destroy');
@@ -203,7 +205,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
  Route::get('services-icons-delete/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'destroy']);
 
- 
+
 
     /* All Routes for Portfolio Services */
     Route::get('blogs', [BlogsController::class, 'index'])->name('blogs');
@@ -333,7 +335,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::post('package/details/{packageType}', [PackageTypesController::class, 'package_page_details'])->name('package.page.details');
 
-    
+
     /* Create Routes for Category */
     Route::get('category', [App\Http\Controllers\backend\admin\CategoryController::class, 'index'])->name("category.create");
 
@@ -347,7 +349,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('category-delete/{id}', [App\Http\Controllers\backend\admin\CategoryController::class, 'destroy'])->name("category.destory");
 
-    
+
     Route::get('campaign', [App\Http\Controllers\backend\admin\CampaignController::class, 'index'])->name('campaign.list');
 
     Route::get('campaign-delete/{id}', [App\Http\Controllers\backend\admin\CampaignController::class, 'destroy'])->name("campaign.destory");
