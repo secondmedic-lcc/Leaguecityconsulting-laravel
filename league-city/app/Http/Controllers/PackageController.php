@@ -29,33 +29,13 @@ class PackageController extends Controller
 
         $schema_image = @$web_banner['banner_image'];
 
-        $seo_data_breadcrumb =
-            '<script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": 
-                [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.leaguecityconsulting.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "About Us"
-                    }
-                ]
-            }
-        </script>';
+        
         
 		$url = $_SERVER['REQUEST_URI'];
         $this->path = pathinfo($url, PATHINFO_BASENAME);
 
         $package_types = PackageTypes::where(array('status'=>1,'package_slug'=>$this->path))->first();
-
+// print_r($package_types->package_name);exit;
         $details = PackagePageDetails::where(array('status'=>1,'package_id'=>$package_types->id))->first();
 
         $property = PackageIncludes::where(array('status'=>1,'package_for'=>$package_types->id))->get();
@@ -79,6 +59,34 @@ class PackageController extends Controller
                 'keypoints' => $keyList,
             ];
         }
+
+        $seo_data_breadcrumb =
+            '<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": 
+                [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.leaguecityconsulting.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Packages",
+                         "item": "' . url('/packages') . '"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "'. $package_types->package_name .'"
+                    }
+                ]
+            }
+        </script>';
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb','package_types','details','property','plans','plans_list'));
     }

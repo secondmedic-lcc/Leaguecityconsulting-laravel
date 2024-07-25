@@ -20,7 +20,9 @@
             <div class="col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Packages</li>
+                    <li class="breadcrumb-item"><a href="#">Packages</a></li>
+                    {{-- <li class="breadcrumb-item"><a href="{{ url('/packages'); }}">Packages</a></li> --}}
+                    <li class="breadcrumb-item active" aria-current="page">{{ $package_types->package_name }}</li>
                 </ol>
             </div>
         </div>
