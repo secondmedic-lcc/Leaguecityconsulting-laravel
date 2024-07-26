@@ -22,13 +22,23 @@
 <script language="JavaScript" src="{{ asset('includes-backend/js/responsive.bootstrap.min.js'); }}" type="text/javascript"></script>
 
 
-@if(@$current_page == "leads" || @$current_page == "package-request" || @$current_page == "campaign")
+@if(@$current_page == "leads")
 <script>
     $('.btn-view').click(function() {
         var message = $(this).attr('message');
-        $('#viewModel #modal-title').text("Message");
-        $('#viewModel #modal-message').text(message);
+        $('#viewModel #title').text("Message");
+        $('#viewModel #message').text(message);
     });
+</script>
+@endif
+
+
+@if(@$current_page == "package-request" || @$current_page == "campaign")
+<script>
+    function showMessage(message){
+        $('#viewModel #title').text("Message");
+        $('#viewModel #message').text(message);
+    };
 </script>
 @endif
 

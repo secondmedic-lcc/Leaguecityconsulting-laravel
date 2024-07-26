@@ -17,18 +17,6 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-md-6 col-6">
-                    <p>Name <br><b id="name"></b></p>
-                </div>
-                <div class="col-md-6 col-6">
-                    <p>Mobile <br><b id="contact"></b></p>
-                </div>
-                <div class="col-md-12 col-12">
-                    <p>Email <br><b id="email"></b></p>
-                </div>
-                <div class="col-md-12 ">
-                    <p>Subject <br><b id="subject"></b></p>
-                </div>
                 <div class="col-md-12 ">
                     <p>Message <br><b id="message"></b></p>
                 </div>

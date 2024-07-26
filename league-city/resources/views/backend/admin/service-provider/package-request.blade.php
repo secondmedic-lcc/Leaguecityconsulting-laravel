@@ -21,7 +21,8 @@
                     <tbody>
                         @php $a = 1; @endphp
                         @foreach($request as $s)
-                        @php $deleteUrl = url('admin/plan-requests-delete/'.$s['id']); @endphp
+                        @php $deleteUrl = url('admin/plan-requests-delete/'.$s['id']);
+                             $message = $s['about']; @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>{{ $s['package']; }}</td>
@@ -33,7 +34,7 @@
                             <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
                             <td class="text-end">
                                 <div class="table-action-btns">
-                                    <a href="javascript:void(0);" class="btn btn-info btn-xs text-white btn-view" message="{{ $s['about']; }}" data-bs-toggle="modal" data-bs-target="#viewModel">
+                                    <a href="javascript:void(0);" class="btn btn-info btn-xs text-white btn-view" onclick="showMessage('{{ $message; }}')" data-bs-toggle="modal" data-bs-target="#viewModel">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                     <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')"  class="btn btn-danger btn-xs text-white">

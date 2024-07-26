@@ -20,6 +20,7 @@
                     <tbody>
                         @php $a = 1; @endphp
                         @foreach($request as $s)
+                        @php $deleteUrl = route('campaign.destory',$s['id']); @endphp
                         <tr>
                             <td>{{ $a++; }}</td>
                             <td>{{ $s['name']; }}</td>
@@ -33,10 +34,10 @@
                                     <a href="javascript:void(0);" class="btn btn-warning btn-xs text-white btn-edit" remark="{{ $s['remark'] }}"  campaign_id="{{ $s['id'] }}"  request_status="{{ $s['request_status'] }}" data-bs-toggle="modal" data-bs-target="#editModel">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0);" class="btn btn-info btn-xs text-white btn-view" message="{{ $s['message']; }}" data-bs-toggle="modal" data-bs-target="#viewModel">
+                                    <a href="javascript:void(0);" class="btn btn-info btn-xs text-white btn-view" onclick="showMessage('{{ $s->message; }}')"  data-bs-toggle="modal" data-bs-target="#viewModel">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <a href="javascript:void(0);" url={{ route('campaign.destory',$s['id']) }} class="btn btn-danger btn-xs text-white btn-delete">
+                                    <a href="javascript:void(0);" onclick="deleteData('<?= $deleteUrl; ?>')" class="btn btn-danger btn-xs text-white btn-delete">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>
