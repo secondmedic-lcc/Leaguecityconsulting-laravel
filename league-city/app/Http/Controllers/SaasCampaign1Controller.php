@@ -57,6 +57,19 @@ class SaasCampaign1Controller extends Controller
 
             session(['campaign_for'=>$request->campaign_for]);
 
+            $mail_var = array(
+                'var1' => $request->name,
+                'var2' => $request->email,
+                'var3' => $request->contact,
+                'var4' => $request->campaign_for,
+                'var5' => $request->message,
+                'var6' => "",
+                'var7' => "",
+                'var8' => "",
+            );
+
+            send_mail($request->email, '2607CA', $mail_var);
+
             if ($result->id > 0) {
                 return redirect()->route('thankyou');
             } else {
