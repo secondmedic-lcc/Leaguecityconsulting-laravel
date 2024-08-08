@@ -7,7 +7,7 @@
                         <div class="col-lg-8 col-md-12">
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to collaborate.</p>
-                            <form action="{{ url('contact-us'); }}" id="contact-form" method="POST">
+                            <form  id="contact-form" method="POST" autocomplete="off">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -19,19 +19,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Email*</label>
-                                            <input type="email" class="form-control" name="email" required />
+                                            <input type="email" class="form-control" name="email" required onpaste="return false;" oncopy="return false;" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Mobile Number*</label>
-                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)"   /><!---pattern="[6-9]{1}[0-9]{9}" minlength="8" maxlength="15"--->
+                                            <input class="form-control" name="contact" required onkeypress="return /[0-9]/i.test(event.key)" onpaste="return false;" oncopy="return false;" minlength="7" maxlength="15" /> <!---pattern="[6-9]{1}[0-9]{9}" minlength="8" maxlength="15"--->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Budget*</label>
-                                            <input class="form-control" name="budget" required onkeypress="return /[0-9]/i.test(event.key)" min="5000" />
+                                            <input class="form-control" name="budget" required onkeypress="return /[0-9]/i.test(event.key)" min="1000" onpaste="return false;" oncopy="return false;" minlength="4" maxlength="15" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">

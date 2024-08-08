@@ -31,7 +31,8 @@
                             <td>{{ $s['email'] ; }}</td>
                             <td>{{ $s['mobile']; }}</td>
                             <td>{{ $s['location']; }}</td>
-                            <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
+                            <td>{{ date('d M, Y', strtotime($s['created_at'])); }} <br>
+                                {{ date('h:i A', strtotime($s['created_at'])); }}</td>
                             <td class="text-end">
                                 <div class="table-action-btns">
                                     <a href="javascript:void(0);" class="btn btn-info btn-xs text-white btn-view" onclick="showMessage('{{ $message; }}')" data-bs-toggle="modal" data-bs-target="#viewModel">

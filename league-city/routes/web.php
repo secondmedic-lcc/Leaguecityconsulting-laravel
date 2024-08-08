@@ -51,7 +51,7 @@ Route::get('/singleservice', [App\Http\Controllers\SingleServiceController::clas
 
 Route::get('/contact-us', [App\Http\Controllers\ContactUsController::class, 'index']);
 
-Route::post('/contact-us', [App\Http\Controllers\ContactUsController::class, 'store']);
+Route::post('contact-us', [App\Http\Controllers\ContactUsController::class, 'store'])->name('contact-us.request');
 
 Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index'])->name('saas.campaign');
 

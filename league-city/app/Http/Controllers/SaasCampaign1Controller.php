@@ -35,7 +35,12 @@ class SaasCampaign1Controller extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|max:50',
-            'contact' => 'required|min:8|max:12',
+            'contact' => [
+                'required',
+                'numeric',
+                'digits_between:7,15',
+                'regex:/^[5-9][0-9]*$/'
+            ],
             'country' => 'required',
             'message' => 'required',
         ]);

@@ -50,14 +50,25 @@ class ContactUsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|email|max:50',
-            'contact' => 'required', #|min:10|max:15
-            'budget' => 'required|max:50',
+            'contact' => [
+                'required',
+                'numeric',
+                'digits_between:7,15',
+                'regex:/^[5-9][0-9]*$/'
+            ],
+            'budget' => [
+                'required',
+                'numeric',
+                'digits_between:4,15',
+                'regex:/^[1-9][0-9]*$/'
+            ],
             'message' => 'required',
         ]);
 
         if ($validator->fails()) {
 
-            return redirect()->back()->withErrors($validator)->withInput();
+            return response()->json(['status' => false, 'error' => $validator->errors()], 400);
+
         } else {
 
             $data['name'] = $request->name;
@@ -65,8 +76,6 @@ class ContactUsController extends Controller
             $data['contact'] = $request->contact;
             $data['budget'] = $request->budget;
             $data['message'] = $request->message;
-
-
 
             $result = ContactRequest::create($data);
 
@@ -84,9 +93,9 @@ class ContactUsController extends Controller
             send_mail($request->email, '1901CR', $mail_var);
 
             if ($result->id > 0) {
-                return redirect()->back()->with('success', 'Thank you for requesting');
+                return response()->json(['status' => true, 'message' => 'Thank you for your request'], 200);
             } else {
-                return redirect()->back()->with('error', 'Something went Wrong');
+                return response()->json(['status' => false,'message' => 'Something went wrong'], 500);
             }
         }
     }

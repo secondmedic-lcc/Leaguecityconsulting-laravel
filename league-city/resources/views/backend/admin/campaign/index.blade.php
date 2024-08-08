@@ -28,7 +28,8 @@
                             <td>{{ $s['contact']; }}</td>
                             <td>{{ $s['campaign_for']; }}</td>
                             <td>{{ $s['location_name']; }}</td>
-                            <td>{{ date('d M, Y', strtotime($s['created_at'])); }}</td>
+                            <td>{{ date('d M, Y', strtotime($s['created_at'])); }} <br>
+                                {{ date('h:i A', strtotime($s['created_at'])); }}</td>
                             <td class="text-end">
                                 <div class="table-action-btns">
                                     <a href="javascript:void(0);" class="btn btn-warning btn-xs text-white btn-edit" remark="{{ $s['remark'] }}"  campaign_id="{{ $s['id'] }}"  request_status="{{ $s['request_status'] }}" data-bs-toggle="modal" data-bs-target="#editModel">

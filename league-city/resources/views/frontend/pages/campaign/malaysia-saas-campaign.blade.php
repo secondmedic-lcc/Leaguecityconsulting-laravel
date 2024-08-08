@@ -48,19 +48,19 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="{{ route('campaign.store') }}" method="post" id="campaign-form">
+                    <form action="{{ route('campaign.store') }}" method="post" id="campaign-form" autocomplete="off" >
                         @csrf
                         <input type="hidden" name="campaign_for" value="Malaysia Campaign" class="form-control" />
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" />
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" onpaste="return false;" oncopy="return false;" />
                             <label for="floatingInput">Your Full Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput2" placeholder="email" name="email" />
+                            <input type="email" class="form-control" id="floatingInput2" placeholder="email" name="email" onpaste="return false;" oncopy="return false;" />
                             <label for="floatingInput2">Email Address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput3" placeholder="number" onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" name="contact" />
+                            <input type="text" class="form-control" id="floatingInput3" placeholder="number" onkeypress="return /[0-9]/i.test(event.key)" minlength="8" maxlength="12" onpaste="return false;" oncopy="return false;" name="contact" />
                             <label for="floatingInput3">Phone Number</label>
                         </div>
                         <div class="form-floating mb-3">

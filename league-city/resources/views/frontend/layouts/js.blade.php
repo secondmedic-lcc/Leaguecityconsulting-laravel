@@ -3,10 +3,10 @@
 <script src="{{ asset('includes-frontend'); }}/js/owl.carousel.js"></script>
 <script src="{{ asset('includes-frontend'); }}/js/aos.js"></script>
 <script src="{{ asset('includes-frontend'); }}/js/custom.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 @if(session('success') != '')
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     swal("Thank you!", "{{ session('success') }}", "success");
 </script>
@@ -53,6 +53,7 @@
 </script>
 @endif
 
+<!--
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var form = document.getElementById('contact-form');
@@ -63,7 +64,7 @@
             submitButton.innerHTML = 'Submitting...';
         });
     });
-</script>
+</script> -->
 
 
 
@@ -180,6 +181,56 @@
     });
 </script>
 @endif
+
+<script>
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
+
+        const submitButton = document.getElementById('contact-btn');
+
+        submitButton.setAttribute("disabled", true);
+        const form = document.querySelector('form');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "{{ route('contact-us.request'); }}");
+        xhr.send(data);
+        xhr.onerror = () => {
+            swal("Error!", "Network Error", "error");
+        };
+        xhr.onload = (new_res) => {
+
+            let response_new = xhr.responseText;
+            let result = JSON.parse(response_new);
+          
+            if (xhr.readyState === 4 && xhr.status === 200 && result.status == true) {
+
+                swal(
+                    "Thank You!",
+                    "Thank you for your Request",
+                    "success"
+                );
+
+                submitButton.removeAttribute("disabled");
+                form.reset();
+                $('.modal').modal('hide');
+
+            } else {
+                const errors = result.error;
+                
+                let errorMessage = '';
+                for (const field in errors) {
+                    if (errors.hasOwnProperty(field) && errors[field].length > 0) {
+                    errorMessage = errors[field][0];
+                    break;
+                    }
+                }
+                
+                swal("Error!", errorMessage, "error");
+                submitButton.removeAttribute("disabled");
+            }
+        };
+    });
+</script>
 
 </body>
 
