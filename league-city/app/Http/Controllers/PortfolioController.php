@@ -30,7 +30,7 @@ class PortfolioController extends Controller
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": 
+                "itemListElement":
                 [
                     {
                         "@type": "ListItem",
@@ -79,7 +79,7 @@ class PortfolioController extends Controller
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": 
+                "itemListElement":
                 [
                     {
                         "@type": "ListItem",

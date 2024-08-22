@@ -18,6 +18,20 @@
                     <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
 
                     <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Heading</label>
+                            <input type="text" class="form-control" name="banner_heading"  value="{{ $services_sec['banner_heading']; }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Sub Heading</label>
+                            <input type="text" class="form-control" name="banner_sub_heading" required value="{{ $services_sec['banner_sub_heading']; }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Details</label>
+                            <input type="text" class="form-control" name="banner_details" required value="{{ $services_sec['banner_details']; }}" />
+                        </div>
+
                         <div class="col-md-12">
                             <label> Heading</label>
                             <input type="text" class="form-control text-dark" name="heading" value="{{ $services_sec['heading']; }}" readonly disabled />
@@ -55,13 +69,13 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label" for="">services details</label>
-                            
+
                         @if(isset($_GET['services_id']) && $_GET['services_id'] != "")
-                        
+
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $services_sec['name']; }}" readonly disabled />
 
                             <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
-                        @else 
+                        @else
                         <select class="form-control js-example-basic-single" name="services_id">
                             <option value="" selected disabled > -- Select -- </option>
                             @foreach($services as $p)
@@ -75,7 +89,7 @@
                             <select class="form-control js-example-basic-single" name="data_for">
                                 <option value="" selected disabled > -- Select -- </option>
                                 <option value="main-details" selected>Main Details</option>
-                              
+
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -103,7 +117,7 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        
+
         <div class="card member-statistics h-auto billing-table">
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
@@ -123,7 +137,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                             @php $a = 1; @endphp
 
                             @foreach($services_details_main as $s)
@@ -171,7 +185,7 @@
                             <input type="hidden" class="form-control text-dark" name="heading" value="{{ $services_sec['heading']; }}" readonly disabled />
                         </div>
 
-                    
+
                         <div class="col-md-6 mt-3">
                             <label> Heading 2</label>
                             <input type="text" class="form-control text-dark" name="section_heading" required value="{{ $services_sec['section_heading']; }}"  />
@@ -201,7 +215,7 @@
             <div class="card-body pb-0">
                 <form action="{{ url('admin/services-images'); }}" id="services-form" method="POST" autocomplete="off" enctype="multipart/form-data">
                 @csrf
-                    
+
                     <div class="row">
                         <div class="col-md-2">
                             <input type="text" class="form-control text-dark" name="heading" value="{{ $services_sec['heading']; }}" readonly disabled />
@@ -228,7 +242,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <div class="card-body pt-0">
                 <div class="row">
                     @foreach($services_images as $g)
@@ -241,10 +255,10 @@
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
                                         <a href="javascript:void(0);" heading="{{ $g['heading']; }}" description="{{ $g['description']; }}" project_url="{{ $g['project_url']; }}"  serviceId="{{ $g['id']; }}" class="btn btn-warning btn-edit w-100 m-1">Edit</a>
-                                        
+
                                         <a href="javascript:void(0);" url={{ url('/admin/services-images-delete/'.$g['id']) }} class="btn btn-danger btn-delete w-100 m-1">Delete</a>
-                                      
-                                   
+
+
                                     </div>
                                 </div>
                             </div>
@@ -265,7 +279,7 @@
             <div class="card-body pb-0">
                 <form action="{{ url('admin/services-icons'); }}" id="servicesIcons-form" method="POST" autocomplete="off" enctype="multipart/form-data">
                 @csrf
-                    
+
                     <div class="row">
                         <div class="col-md-2">
                             <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
@@ -277,7 +291,7 @@
                             <input type="file" name="icon" id="icon" class="form-control"  accept="image/*" required />
                         </div>
 
-                     
+
                         <div class="col-md-2 text-center mt-2">
                             <button type="submit" class="btn web-btn w-100">
                              Icon Uplaod
@@ -286,7 +300,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <div class="card-body pt-0">
                 <div class="row">
                     @foreach($services_icons as $g)
@@ -333,13 +347,13 @@
                             <input type="text" class="form-control text-dark" name="section_heading1" required value="{{ $services_sec['section_heading1']; }}"  />
                         </div>
 
-                        
+
                         <div class="col-md-6 mt-3">
                             <label>Sub Heading 3</label>
                             <textarea name="section_sub_heading1" class="form-control text-dark" cols="30" rows="5" required>{{ $services_sec['section_sub_heading1']; }}</textarea>
                         </div>
 
-                        
+
                         <div class="col-md-12 text-center mt-4">
                             <button type="submit" class="btn web-btn w-50">
                                 Update Details
@@ -367,13 +381,13 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label" for="">services details</label>
-                            
+
                         @if(isset($_GET['services_id']) && $_GET['services_id'] != "")
-                        
+
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $services_sec['name']; }}" readonly disabled />
 
                             <input type="hidden" class="form-control" value="{{ $services_sec['id']; }}" name="services_id" />
-                        @else 
+                        @else
                         <select class="form-control js-example-basic-single" name="services_id">
                             <option value="" selected disabled > -- Select -- </option>
                             @foreach($services as $p)
@@ -386,7 +400,7 @@
                             <label class="form-label" for="">services details</label>
                             <select class="form-control js-example-basic-single" name="data_for">
                                 <option value="sub-details" selected>Sub Details</option>
-                              
+
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -416,7 +430,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        
+
         <div class="card member-statistics h-auto billing-table">
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
@@ -436,7 +450,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                             @php $a = 1; @endphp
                             @foreach($services_sub_details as $s)
                             <tr>

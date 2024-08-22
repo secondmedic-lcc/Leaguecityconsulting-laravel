@@ -14,9 +14,9 @@ class ServicesController extends Controller
     public function index()
     {
         $page_name = "services/list";
-        
+
         $page_title = "Manage Services";
-        
+
         $current_page = "services";
 
         $services = Services::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
@@ -28,9 +28,9 @@ class ServicesController extends Controller
     public function create()
     {
         $page_name = "services/add";
-        
+
         $page_title = "Manage Services";
-        
+
         $current_page = "services";
 
         return view('backend/admin/main', compact('page_name','page_title','current_page'));
@@ -44,9 +44,9 @@ class ServicesController extends Controller
             'description' => 'required|string',
             'services_image' => 'mimes:webp|max:150'
         ]);
-          
+
         if(!empty($request->services_image)){
-                
+
             $imageName = time().'-image.'.$request->services_image->extension();
 
             $request->services_image->move(public_path('uploads/services'), $imageName);
@@ -57,9 +57,9 @@ class ServicesController extends Controller
 
             $data2['meta_image'] = $image;
         }
-          
+
         $url_slug = Str::slug($request->name."-");
-        
+
         $check = Services::where(array('url_slug'=>$url_slug))->first();
 
         if(empty($check)){
@@ -81,24 +81,24 @@ class ServicesController extends Controller
             $result2 = SeoData::create($data2);
 
             return redirect()->route('services')->with('success', 'services created successfully.');
-        
+
         }else{
-        
+
             return redirect()->back()->with('error', 'Another services Already Exist From this Name')->withInput();
-        
+
         }
     }
 
     public function edit($id)
     {
         $page_name = "services/edit";
-        
+
         $page_title = "Manage services";
-        
+
         $current_page = "services";
-        
+
         $services = Services::where(array('status'=>1,'id'=>$id))->get()->first();
-        
+
         $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'services-details'))->get()->first();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','services','seo_data'));
@@ -110,10 +110,13 @@ class ServicesController extends Controller
             'name' => 'required|string',
             'heading' => 'required|string',
             'description' => 'required|string',
+            'banner_heading' => 'required|string',
+            'banner_sub_heading' => 'required|string',
+            'banner_details' => 'required|string',
         ]);
-          
+
         if(!empty($request->image)){
-                
+
             $imageName = time().'-image.'.$request->image->extension();
 
             $request->image->move(public_path('uploads/services'), $imageName);
@@ -151,29 +154,32 @@ class ServicesController extends Controller
 
     public function delete($id)
     {
-        
+
         $data = array('status' =>0);
 
         $result = Services::where(array('id'=>$id))->update($data);
 
         return redirect()->route('services')->with('success', 'Services deleted successfully.');
     }
-  
+
     public function update_description(Request $request, $id)
     {
         $data = $request->validate([
             'sub_heading' => 'required|string',
+            'banner_heading' => 'required|string',
+            'banner_sub_heading' => 'required|string',
+            'banner_details' => 'required|string',
         ]);
-       
+
             $data['sub_heading'] = $request->sub_heading;
-           
+
         $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
-        
+
         if($check > 0){
             return redirect()->back()->with('success', 'services Data updated successfully.');
 
         }else{
-            
+
             return redirect()->back()->with('error', 'Something went wrong');
         }
     }
@@ -184,20 +190,19 @@ class ServicesController extends Controller
             'section_heading' => 'required|string',
             'desc_heading' => 'required|string',
         ]);
-       
+
             $data['section_heading'] = $request->section_heading;
             $data['desc_heading'] = $request->desc_heading;
-     
 
 
         $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
-        
+
         if($check > 0){
             return redirect()->back()->with('success', 'services Data updated successfully.');
 
 
         }else{
-            
+
             return redirect()->back()->with('error', 'Something went wrong');
 
         }
@@ -214,16 +219,16 @@ class ServicesController extends Controller
 
 
         $check = Services::where(array('status'=>1,'id'=>$id))->update($data);
-        
+
         if($check > 0){
             return redirect()->back()->with('success', 'services Data updated successfully.');
 
 
         }else{
-            
+
             return redirect()->back()->with('error', 'Something went wrong');
 
         }
     }
-   
+
 }

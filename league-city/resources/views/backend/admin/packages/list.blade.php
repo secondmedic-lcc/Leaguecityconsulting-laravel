@@ -12,6 +12,21 @@
                 <form action="{{ url('admin/package/details/'.@$_GET['package_id']) }}" method="POST">
                     @csrf
                     <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Heading</label>
+                            <input type="text" class="form-control" name="banner_heading"  value="{{ @$packagePageDetails->banner_heading }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Sub Heading</label>
+                            <input type="text" class="form-control" name="banner_sub_heading" required value="{{ @$packagePageDetails->banner_sub_heading }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Details</label>
+                            <input type="text" class="form-control" name="banner_details" required value="{{ @$packagePageDetails->banner_details }}" />
+                        </div>
+
+
                         <div class="col-md-4 form-group mb-2">
                             <label for="main_heading">Main Heading</label>
                             <input type="text" class="form-control" id="main_heading" name="main_heading" value="{{ @$packagePageDetails->main_heading }}" required>

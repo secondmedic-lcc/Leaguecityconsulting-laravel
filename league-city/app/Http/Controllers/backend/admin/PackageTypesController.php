@@ -9,13 +9,13 @@ use App\Models\PackagePageDetails;
 
 class PackageTypesController extends Controller
 {
-    
+
     public function index()
     {
         $page_name = "package-types/list";
-        
+
         $page_title = "Manage Package Type";
-        
+
         $current_page = "package-types";
 
         $packageTypes = PackageTypes::where('status',1)->orderBy('id','desc')->get();
@@ -38,11 +38,11 @@ class PackageTypesController extends Controller
     public function edit(PackageTypes $packageType)
     {
         $page_name = "package-types/edit";
-        
+
         $page_title = "Manage Package Type";
-        
+
         $current_page = "package-types";
-        
+
         $seo_data = SeoData::where(array('service_id'=>$packageType->id,'page_name'=>'package-type'))->get()->first();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','packageType','seo_data'));
@@ -65,7 +65,7 @@ class PackageTypesController extends Controller
         $data2['meta_key'] = $request->meta_key;
         $data2['meta_description'] = $request->meta_description;
         $data2['canonical'] = $page_link;
-        
+
         $check = SeoData::where(array('page_name'=>$data2['page_name'],'service_id'=>$packageType->id))->first();
 
         if(empty($check)){
@@ -77,7 +77,7 @@ class PackageTypesController extends Controller
         return redirect()->route('package.types')->with('success', 'Package type updated successfully.');
     }
 
-   
+
     public function destroy($id)
     {
         $data = array('status' =>0);
@@ -88,7 +88,7 @@ class PackageTypesController extends Controller
     }
 
     public function package_page_details(Request $request, $id) {
-        
+
 
         $packagePageDetails = PackagePageDetails::where('package_id', $id)->first();
 
@@ -98,6 +98,9 @@ class PackageTypesController extends Controller
                 'package_id' => $id,
                 'main_heading' => $request->main_heading,
                 'sub_heading' => $request->sub_heading,
+                'banner_heading' => $request->banner_heading,
+                'banner_sub_heading' => $request->banner_sub_heading,
+                'banner_details' => $request->banner_details
             ];
         }
 
@@ -118,7 +121,7 @@ class PackageTypesController extends Controller
                 'includes_details' => $request->includes_details,
             ];
         }
-        
+
 
         if ($packagePageDetails) {
             $packagePageDetails->update($data);

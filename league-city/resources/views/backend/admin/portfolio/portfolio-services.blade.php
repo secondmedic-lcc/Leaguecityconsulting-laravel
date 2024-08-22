@@ -17,6 +17,29 @@
                     <input type="hidden" class="form-control" value="{{ $portfolio_details['id']; }}" name="portfolio_id" />
 
                     <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Heading</label>
+                            <input type="text" class="form-control" name="banner_heading"  value="{{ $portfolio_details['banner_heading']; }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Sub Heading</label>
+                            <input type="text" class="form-control" name="banner_sub_heading" required value="{{ $portfolio_details['banner_sub_heading']; }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Details</label>
+                            <input type="text" class="form-control" name="banner_details" required value="{{ $portfolio_details['banner_details']; }}" />
+                        </div>
+                        {{-- <div class="col-md-3 mb-2 col-8">
+                            <label class="form-label" for="">Banner Image</label>
+                            <input type="file" class="form-control" required name="banner_image" onchange="readURL(this);"  value="{{ $portfolio_details['banner_image'];}}"  accept="image/webp" />
+                            <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded w-100" width="100" height="auto" id="img_preview" />
+                        </div> --}}
+
+
                         <div class="col-md-6">
                             <label>Description Heading</label>
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
@@ -52,7 +75,7 @@
             <div class="card-body pb-0">
                 <form action="{{ url('admin/portfolio-images'); }}" id="portfolio-form" method="POST" autocomplete="off" enctype="multipart/form-data">
                 @csrf
-                    
+
                     <div class="row">
                         <div class="col-md-2">
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
@@ -79,7 +102,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <div class="card-body pt-0">
                 <div class="row">
                     @foreach($portfolio_images as $g)
@@ -116,13 +139,13 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Portfolio</label>
-                            
+
                         @if(isset($_GET['portfolio_id']) && $_GET['portfolio_id'] != "")
-                        
+
                             <input type="text" class="form-control text-dark" name="desc_heading" value="{{ $portfolio_details['name']; }}" readonly disabled />
 
                             <input type="hidden" class="form-control" value="{{ $portfolio_details['id']; }}" name="portfolio_id" />
-                        @else 
+                        @else
                         <select class="form-control js-example-basic-single" name="portfolio_id">
                             <option value="" selected disabled > -- Select -- </option>
                             @foreach($portfolio as $p)
@@ -157,7 +180,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        
+
         <div class="card member-statistics h-auto billing-table">
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
@@ -177,7 +200,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                             @php $a = 1; @endphp
 
                             @foreach($portfolio_service as $s)

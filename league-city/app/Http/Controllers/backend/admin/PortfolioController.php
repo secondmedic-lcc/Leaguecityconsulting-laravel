@@ -14,9 +14,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $page_name = "portfolio/list";
-        
+
         $page_title = "Manage Portfolio";
-        
+
         $current_page = "portfolio";
 
         $portfolio = Portfolio::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
@@ -28,9 +28,9 @@ class PortfolioController extends Controller
     public function create()
     {
         $page_name = "portfolio/add";
-        
+
         $page_title = "Manage Portfolio";
-        
+
         $current_page = "portfolio";
 
         $category = Category::where(array('status' => 1))->orderBy('category_name', 'asc')->get();
@@ -47,9 +47,9 @@ class PortfolioController extends Controller
             'sub_heading' => 'required|string',
             'portfolio_image' => 'mimes:webp|max:150'
         ]);
-          
+
         if(!empty($request->portfolio_image)){
-                
+
             $imageName = time().'-image.'.$request->portfolio_image->extension();
 
             $request->portfolio_image->move(public_path('uploads/portfolio'), $imageName);
@@ -60,9 +60,9 @@ class PortfolioController extends Controller
 
             $data2['meta_image'] = $image;
         }
-          
+
         if(!empty($request->logo)){
-                
+
             $imageName = time().'-logo.'.$request->logo->extension();
 
             $request->logo->move(public_path('uploads/portfolio'), $imageName);
@@ -71,9 +71,9 @@ class PortfolioController extends Controller
 
             $data += array('logo'=>$image);
         }
-        
+
         $url_slug = Str::slug($request->name."-");
-        
+
         $check = Portfolio::where(array('url_slug'=>$url_slug))->first();
 
         if(empty($check)){
@@ -96,24 +96,24 @@ class PortfolioController extends Controller
             $result2 = SeoData::create($data2);
 
             return redirect()->route('portfolio')->with('success', 'Portfolio created successfully.');
-        
+
         }else{
-        
+
             return redirect()->back()->with('error', 'Another Product Already Exist From this Name')->withInput();
-        
+
         }
     }
 
     public function edit($id)
     {
         $page_name = "portfolio/edit";
-        
+
         $page_title = "Manage Portfolio";
-        
+
         $current_page = "portfolio";
-        
+
         $portfolio = Portfolio::where(array('status'=>1,'id'=>$id))->get()->first();
-        
+
         $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'portfolio-details'))->get()->first();
 
         $category = Category::where(array('status' => 1))->orderBy('category_name', 'asc')->get();
@@ -129,11 +129,14 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
+            'banner_heading' => 'required|string',
+            'banner_sub_heading' => 'required|string',
+            'banner_details' => 'required|string',
             'portfolio_image' => 'mimes:webp|max:150'
         ]);
-          
+
         if(!empty($request->portfolio_image)){
-                
+
             $imageName = time().'-image.'.$request->portfolio_image->extension();
 
             $request->portfolio_image->move(public_path('uploads/portfolio'), $imageName);
@@ -143,9 +146,9 @@ class PortfolioController extends Controller
             $data += array('image'=>$image);
             $data2['meta_image'] = $image;
         }
-          
+
         if(!empty($request->logo)){
-                
+
             $imageName = time().'-logo.'.$request->logo->extension();
 
             $request->logo->move(public_path('uploads/portfolio'), $imageName);
@@ -190,13 +193,16 @@ class PortfolioController extends Controller
 
         return redirect()->route('portfolio')->with('success', 'Portfolio deleted successfully.');
     }
-    
+
 
     public function update_description(Request $request, $id)
     {
         $data = $request->validate([
             /*'desc_heading' => 'required|string',*/
-            'description' => 'required|string',
+            'description',
+            'banner_heading' => 'required|string',
+            'banner_sub_heading' => 'required|string',
+            'banner_details' => 'required|string',
         ]);
 
         $check = Portfolio::where(array('status'=>1,'id'=>$id))->update($data);
@@ -206,7 +212,7 @@ class PortfolioController extends Controller
             return redirect()->back()->with('success', 'Portfolio updated successfully.');
 
         }else{
-            
+
             return redirect()->back()->with('error', 'Something went wrong');
 
         }

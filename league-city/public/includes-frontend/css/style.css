@@ -3895,3 +3895,13 @@ h6 .light {
         font-size: 16px !important;
     }
 }
+
+
+/* New Css Start */
+.page-banner h2 {
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0px;
+}
+/* New Css End */

@@ -13,9 +13,9 @@ class PortfolioServicesController extends Controller
     public function index()
     {
         $page_name = "portfolio/portfolio-services";
-        
+
         $page_title = "Manage Portfolio";
-        
+
         $current_page = "portfolio";
 
         $portfolio = Portfolio::where(array('status'=>1))->orderBy('name','asc')->get();
@@ -32,7 +32,7 @@ class PortfolioServicesController extends Controller
 
 
         $portfolio_details = Portfolio::where(array('status'=>1,'id'=>$_GET['portfolio_id']))->first();
-        
+
         $portfolio_images = PotfolioImage::where(array('status' => 1,'portfolio_id'=>$_GET['portfolio_id']))->get();
 
         return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio','portfolio_service','portfolio_images','portfolio_details'));
@@ -47,7 +47,7 @@ class PortfolioServicesController extends Controller
             'service_title' => 'required|string',
             'service_details' => 'required|string'
         ]);
-          
+
         PortfolioServices::create($data);
 
         return redirect()->back()->with('success', 'Portfolio Services created successfully.');
@@ -56,9 +56,9 @@ class PortfolioServicesController extends Controller
     public function edit($id)
     {
         $page_name = "portfolio/portfolio-services-edit";
-        
+
         $page_title = "Manage Portfolio";
-        
+
         $current_page = "portfolio";
 
         $portfolio = Portfolio::where(array('status'=>1))->orderBy('name','asc')->get();

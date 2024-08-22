@@ -3,12 +3,8 @@
         <div class="row">
             <div class="col-lg-7">
                 <span class="heading-top">Packages</span>
-                <h1 class="section-heading">Best Pricing for Seamless
-                    <span class="light">IT Solutions
-                    </span>
-                </h1>
-                <p>Elevate Your Business with League City Consulting: Competitive Pricing for Exceptional Results
-                </p>
+                <h1 class="section-heading">{{ @$details->banner_heading }}<span class="light">{{ @$details->banner_sub_heading}}</span></h1>
+                <h2>{{ @$details->banner_details }}</h2>
             </div>
         </div>
     </div>

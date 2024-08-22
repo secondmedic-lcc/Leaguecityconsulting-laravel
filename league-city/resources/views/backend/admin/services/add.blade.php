@@ -7,16 +7,31 @@
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Heading</label>
+                            <input type="text" class="form-control" name="banner_heading"  value="{{ old('banner_heading') }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Sub Heading</label>
+                            <input type="text" class="form-control" name="banner_sub_heading" required value="{{ old('banner_sub_heading') }}" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label" for="">Banner Details</label>
+                            <input type="text" class="form-control" name="banner_details" required value="{{ old('banner_details') }}" />
+                        </div>
+
+
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Services Name</label>
                             <input type="text" class="form-control" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ old('name') }}" />
                         </div>
-                      
+
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Service Heading</label>
                             <input type="text" class="form-control" name="heading" required value="{{ old('heading') }}" />
                         </div>
-                      
+
                         <div class="col-md-6 mb-3">
                             <label for=""> Description</label>
                             <textarea name="description" id="description" class="form-control"></textarea>
@@ -29,8 +44,8 @@
                         <div class="col-md-2 col-4">
                             <img alt="services Profile" src="{{ asset('uploads/default.jpg')}}" class="w-100 img-responsive mt-2 mb-3 rounded" width="100" height="auto" id="img_preview" />
                         </div>
-                     
-                       
+
+
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Meta Title</label>
                             <input type="text" class="form-control" name="meta_title" required value="{{ old('meta_title') }}" />

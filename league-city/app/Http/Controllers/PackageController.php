@@ -35,7 +35,7 @@ class PackageController extends Controller
         $this->path = pathinfo($url, PATHINFO_BASENAME);
 
         $package_types = PackageTypes::where(array('status'=>1,'package_slug'=>$this->path))->first();
-// print_r($package_types->package_name);exit;
+// echo '<pre/>';  print_r($package_types);exit;
         $details = PackagePageDetails::where(array('status'=>1,'package_id'=>$package_types->id))->first();
 
         $property = PackageIncludes::where(array('status'=>1,'package_for'=>$package_types->id))->get();

@@ -22,6 +22,9 @@ class PackagePageDetails extends Model
         'includes_heading',
         'includes_details',
         'bottom_plan_title',
+        'banner_heading',
+        'banner_sub_heading',
+        'banner_details',
         'status',
     ];
 }
