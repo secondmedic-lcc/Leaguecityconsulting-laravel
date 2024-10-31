@@ -45,7 +45,8 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
-            'portfolio_image' => 'mimes:webp|max:150'
+            'portfolio_image' => 'mimes:webp|max:150',
+            'portfolio_status' => 'required'
         ]);
 
         if(!empty($request->portfolio_image)){
@@ -114,6 +115,8 @@ class PortfolioController extends Controller
 
         $portfolio = Portfolio::where(array('status'=>1,'id'=>$id))->get()->first();
 
+        // dd($portfolio->portfolio_status);
+
         $seo_data = SeoData::where(array('service_id'=>$id,'page_name'=>'portfolio-details'))->get()->first();
 
         $category = Category::where(array('status' => 1))->orderBy('category_name', 'asc')->get();
@@ -129,10 +132,12 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
-            'banner_heading' => 'required|string',
-            'banner_sub_heading' => 'required|string',
-            'banner_details' => 'required|string',
-            'portfolio_image' => 'mimes:webp|max:150'
+            'banner_heading' => 'string',
+            'banner_sub_heading' => 'string',
+            'banner_details' => 'string',
+            'portfolio_image' => 'mimes:webp|max:150',
+            'portfolio_status'  => 'required|string',
+            'ordering'  => 'required|int',
         ]);
 
         if(!empty($request->portfolio_image)){

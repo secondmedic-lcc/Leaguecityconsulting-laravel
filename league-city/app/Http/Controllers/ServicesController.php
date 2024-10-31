@@ -14,23 +14,23 @@ use App\Models\ServicesImages;
 class ServicesController extends Controller
 {
     public function index(){
-        
+
         $page_name = "services";
-        
+
         $page_title = "services";
-        
+
         $current_page = "services";
 
         $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
         $schema_image = @$web_banner['banner_image'];
 
-        $seo_data_breadcrumb = 
+        $seo_data_breadcrumb =
         '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": 
+                "itemListElement":
                 [
                     {
                         "@type": "ListItem",
@@ -46,7 +46,7 @@ class ServicesController extends Controller
                 ]
             }
         </script>';
-        
+
         $services = Services::where(array('status'=>1))->orderBy('id','asc')->get();
 
         return view('frontend/main', compact('page_name','page_title','current_page','web_banner', 'schema_image', 'seo_data_breadcrumb','services'));
@@ -65,7 +65,7 @@ class ServicesController extends Controller
         $pathFragments = explode('-', $this->path);
 
         $services = Services::where(array('status' => 1, 'url_slug' => $this->path))->first();
-        
+
         $services['services_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'main-details'))->get();
         $services['services_sub_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'sub-details'))->get();
 
@@ -76,13 +76,13 @@ class ServicesController extends Controller
         $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
 
         $schema_image = @$web_banner['banner_image'];
-        $seo_data_breadcrumb = 
-      
+        $seo_data_breadcrumb =
+
         '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
-                "itemListElement": 
+                "itemListElement":
                 [
                  {
                     "@type": "ListItem",
@@ -90,7 +90,7 @@ class ServicesController extends Controller
                     "name": "Home",
                     "item": "https://www.leaguecityconsulting.com"
                 },
-                   
+
                     {
                         "@type": "ListItem",
                         "position": 2,

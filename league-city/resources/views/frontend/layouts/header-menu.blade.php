@@ -2,8 +2,24 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ url('about-us'); }}">About Us</a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ url('services'); }}">Services</a>
+    </li> --}}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+        </a>
+        @php
+            use App\Models\Services;
+            $services = Services::where(array('status'=>1))->orderBy('id','asc')->get();
+        @endphp
+        <ul class="dropdown-menu">
+            @foreach($services as $s)
+            <li>
+                <a class="dropdown-item" href="{{ url('services/'.$s->url_slug); }}">{{ $s->name; }}</a>
+            </li>
+            @endforeach
+        </ul>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('portfolio'); }}">Portfolio</a>

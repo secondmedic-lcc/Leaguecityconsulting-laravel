@@ -807,6 +807,11 @@ h6 .light {
         line-height: 20px;
     }
 }
+@media (max-width: 992px) {
+    .services {
+        margin-top: -30px;
+    }
+}
 /* Services Work End */
 
 /* Recent Work's Work Start */
@@ -3898,10 +3903,11 @@ h6 .light {
 
 
 /* New Css Start */
-.page-banner h2 {
+.page-banner .heading-details {
     font-size: 18px;
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 0px;
 }
+
 /* New Css End */

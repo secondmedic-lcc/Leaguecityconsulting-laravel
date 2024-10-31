@@ -19,7 +19,7 @@
                 <div class="col-lg-6">
                     <span class="heading-top">{{ $web_banner['page_title']; }}</span>
                     <h1 class="section-heading">{{ $services['banner_heading']; }}<span class="light">{{ $services['banner_sub_heading']; }}</span></h1>
-                    <h2>{{ $services['banner_details']; }}</h2>
+                    <h2 class="heading-details">{{ $services['banner_details']; }}</h2>
                 </div>
             </div>
         </div>

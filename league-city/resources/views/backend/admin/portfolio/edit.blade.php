@@ -41,6 +41,20 @@
                         <div class="col-md-2 col-4">
                             <img alt="Portfolio Profile" src="{{ ($portfolio->logo && $portfolio->logo != "") ? asset($portfolio->logo) : asset('uploads/default.jpg'); }}" class="img-responsive mt-2 rounded bg-secondary p-2 w-100" height="auto" id="img_preview2" />
                         </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Portfolio Status</label>
+                            <select class="form-control js-example-basic-single" name="portfolio_status">
+                                <option value="" disabled>--------</option>
+                                <option value="active" {{ $portfolio->portfolio_status == 'active' ? 'selected' : '' }}>Active</option>
+                                <option value="inactive" {{ $portfolio->portfolio_status == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Portfolio Ordering</label>
+                            <input type="text" name="ordering" class="form-control" value="{{ $portfolio->ordering ?? $portfolio->id }}" placeholder="{{ $portfolio->ordering ?? $portfolio->id }}">
+                        </div>
+
                         <div class="col-md-6 mt-3">
                             <div class="col-md-12 mb-3">
                                 <label class="form-label" for="">Category</label>

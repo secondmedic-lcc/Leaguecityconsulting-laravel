@@ -15,7 +15,7 @@
                     <span class="heading-top">{{ $web_banner['page_title'] }}</span>
                     <h1 class="section-heading">{{ $portfolio['banner_heading'] }}<span
                             class="light">{{ $portfolio['banner_sub_heading'] }}</span></h1>
-                    <h2>{{ $portfolio['banner_details'] }}</h2>
+                    <h2 class="heading-details">{{ $portfolio['banner_details'] }}</h2>
                 </div>
             </div>
         </div>

@@ -27,6 +27,8 @@ class Portfolio extends Model
         'banner_heading',
         'banner_sub_heading',
         'banner_details',
+        'portfolio_status',
+        'ordering',
         'status'
     ];
 }

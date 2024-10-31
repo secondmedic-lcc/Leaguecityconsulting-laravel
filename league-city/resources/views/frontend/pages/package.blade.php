@@ -4,7 +4,7 @@
             <div class="col-lg-7">
                 <span class="heading-top">Packages</span>
                 <h1 class="section-heading">{{ @$details->banner_heading }}<span class="light">{{ @$details->banner_sub_heading}}</span></h1>
-                <h2>{{ @$details->banner_details }}</h2>
+                <h2 class="heading-details">{{ @$details->banner_details }}</h2>
             </div>
         </div>
     </div>

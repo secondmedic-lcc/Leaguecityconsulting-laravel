@@ -19,7 +19,7 @@ class PortfolioController extends Controller
 
         $current_page = "portfolio";
 
-        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->get();
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('ordering', 'desc')->get();
 
         $category = Category::where(array('status' => 1))->orderBy('id', 'asc')->get();
 
