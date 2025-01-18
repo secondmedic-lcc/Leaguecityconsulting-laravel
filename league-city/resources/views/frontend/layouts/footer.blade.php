@@ -66,7 +66,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <p>&copy; 2024 League City Consulting. All Rights Reserved.</p>
+                    <!-- <p>&copy; 2024 League City Consulting. All Rights Reserved.</p> -->
+                    <p>&copy; <?php echo date('Y'); ?> League City Consulting. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="links">
