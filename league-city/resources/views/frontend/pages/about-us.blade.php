@@ -93,7 +93,7 @@
                             <p>CTO, COO</p>
                         </div>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/jeelthakkar.webp');">
                             </div>
@@ -104,7 +104,7 @@
                             <h3>Jeel Thakkar</h3>
                             <p>Social Media Manager</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/aniketnamdeo.webp');">
@@ -165,7 +165,7 @@
                             <p>Motion Graphics Designer</p>
                         </div>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/shubhamshinde.webp');">
                             </div>
@@ -176,7 +176,7 @@
                             <h3>Shubham Shinde</h3>
                             <p>Social Media Ads Manager</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/sumeetkaur.webp');">
@@ -201,7 +201,7 @@
                             <p>Social Media Ads Manager</p>
                         </div>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/rohitrajput.webp');">
                             </div>
@@ -212,7 +212,7 @@
                             <h3>Rohit Rajput</h3>
                             <p>SEO and PPC Manager</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="item">
                         <div class="box">
                             <div class="main-img" style="background-image:url('{{ asset('includes-frontend'); }}/images/team/kajalswaroop.webp');">
