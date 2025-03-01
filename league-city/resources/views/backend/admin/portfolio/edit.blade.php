@@ -5,7 +5,7 @@
     <div class="col-lg-12">
         @include('backend.layouts.alert')
 
-        <form action="{{ url('admin/portfolio'); }}/{{ $portfolio->id; }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+        <form action="{{ route('portfolio.update',$portfolio->id); }}" method="POST" autocomplete="off" enctype="multipart/form-data">
             @csrf
             <div class="card h-auto">
                 <div class="card-body">

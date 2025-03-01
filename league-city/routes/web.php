@@ -134,7 +134,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('/portfolio/{id}', [PortfolioController::class, 'edit'])->name('portfolio.edit');
 
-    Route::post('/portfolio/{id}', [PortfolioController::class, 'update'])->name('portfolio.update');
+    Route::post('portfolio/{id}/update', [PortfolioController::class, 'update'])->name('portfolio.update');
 
     Route::get('portfolio-delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
 
