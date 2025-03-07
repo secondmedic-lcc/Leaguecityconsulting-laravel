@@ -1,25 +1,24 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backend\admin\PortfolioController;
-use App\Http\Controllers\backend\admin\CustomersController;
-use App\Http\Controllers\backend\admin\PortfolioServicesController;
-use App\Http\Controllers\backend\admin\BlogsController;
-use App\Http\Controllers\backend\admin\ProductsController;
-use App\Http\Controllers\backend\admin\IndustryController;
-use App\Http\Controllers\backend\admin\WebsiteBannersController;
-use App\Http\Controllers\backend\admin\PackagesController;
-use App\Http\Controllers\backend\admin\PackageIncludesController;
-use App\Http\Controllers\backend\admin\PackageTypesController;
-use App\Http\Controllers\backend\admin\ServicesController;
-use App\Http\Controllers\backend\admin\ServicesDetailsController;
-use App\Http\Controllers\backend\admin\ServicesImagesController;
-use App\Http\Controllers\backend\admin\ServicesIconsController;
-
-
-
-use App\Http\Controllers\ErrorController;
 use App\Models\Services;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ErrorController;
+use App\Http\Controllers\backend\admin\AboutUsController;
+use App\Http\Controllers\backend\admin\BlogsController;
+use App\Http\Controllers\backend\admin\IndustryController;
+use App\Http\Controllers\backend\admin\PackagesController;
+use App\Http\Controllers\backend\admin\ProductsController;
+use App\Http\Controllers\backend\admin\ServicesController;
+use App\Http\Controllers\backend\admin\CustomersController;
+use App\Http\Controllers\backend\admin\OurMemberController;
+use App\Http\Controllers\backend\admin\PortfolioController;
+use App\Http\Controllers\backend\admin\PackageTypesController;
+use App\Http\Controllers\backend\admin\ServicesIconsController;
+use App\Http\Controllers\backend\admin\ServicesImagesController;
+use App\Http\Controllers\backend\admin\WebsiteBannersController;
+use App\Http\Controllers\backend\admin\PackageIncludesController;
+use App\Http\Controllers\backend\admin\ServicesDetailsController;
+use App\Http\Controllers\backend\admin\PortfolioServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -193,17 +192,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
     /* All Routes for Portfolio Images */
- Route::post('services-images', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'store']);
+    Route::post('services-images', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'store']);
 
- Route::post('services-images/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'update'])->name('services-images.update');
+    Route::post('services-images/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'update'])->name('services-images.update');
 
- Route::get('services-images-delete/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'destroy']);
+    Route::get('services-images-delete/{id}', [App\Http\Controllers\backend\admin\ServicesImagesController::class, 'destroy']);
 
- Route::post('services-icons', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'store']);
+    Route::post('services-icons', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'store']);
 
- Route::post('services-icons/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'update'])->name('services-icons.update');
+    Route::post('services-icons/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'update'])->name('services-icons.update');
 
- Route::get('services-icons-delete/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'destroy']);
+    Route::get('services-icons-delete/{id}', [App\Http\Controllers\backend\admin\ServicesIconsController::class, 'destroy']);
 
 
 
@@ -356,7 +355,31 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::post('campaign/update', [App\Http\Controllers\backend\admin\CampaignController::class, 'update'])->name('campaign.update');
 
+
+
+    //Team Member
+    Route::get('team-memberss', [OurMemberController::class, 'index'])->name('team-members.index');
+
+    Route::get('team-members/create', [OurMemberController::class, 'create'])->name('team-members.create');
+
+    Route::post('team-members', [OurMemberController::class, 'store'])->name('team-members.store');
+
+    Route::get('team-members/{id}', [OurMemberController::class, 'edit'])->name('team-members.edit');
+
+    Route::put('team-members/{id}', [OurMemberController::class, 'update'])->name('team-members.update');
+
+    Route::get('team-members-delete/{id}', [OurMemberController::class, 'destroy'])->name('team-members.destroy');
+
+
+
+    //for about us 
+   
+
+
+    Route::get('/about-us', [AboutUsController::class, 'edit'])->name('about-us.edit'); // Show edit form
+    Route::post('/about-us/update-or-create', [AboutUsController::class, 'updateOrCreate'])->name('about-us.updateOrCreate'); // Handle form submission
 });
+
 
 Route::get('/logout', [App\Http\Controllers\backend\LoginController::class, 'logout']);
 
@@ -369,6 +392,6 @@ Route::get('/industry', [App\Http\Controllers\IndustryController::class, 'index'
 Route::get('industry/{url}', [App\Http\Controllers\IndustryController::class, 'industry_details']);
 
 
-if(config('app.env') == 'production') {
+if (config('app.env') == 'production') {
     Route::get('/404', [ErrorController::class, 'index'])->name('404');
 }

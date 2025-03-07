@@ -132,7 +132,7 @@
 </script>
 @endif
 
-@if(@$current_page == "portfolio" || @$current_page == "blogs")
+@if(@$current_page == "portfolio" || @$current_page == "blogs" || @$current_page == "about-us")
 <script>
       CKEDITOR.replace("description"); 
    /* $(function() {
