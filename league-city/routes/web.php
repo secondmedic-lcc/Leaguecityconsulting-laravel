@@ -3,8 +3,8 @@
 use App\Models\Services;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ErrorController;
-use App\Http\Controllers\backend\admin\AboutUsController;
 use App\Http\Controllers\backend\admin\BlogsController;
+use App\Http\Controllers\backend\admin\AboutUsController;
 use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\PackagesController;
 use App\Http\Controllers\backend\admin\ProductsController;
@@ -378,6 +378,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('/about-us', [AboutUsController::class, 'edit'])->name('about-us.edit'); // Show edit form
     Route::post('/about-us/update-or-create', [AboutUsController::class, 'updateOrCreate'])->name('about-us.updateOrCreate'); // Handle form submission
+
+
+
+    Route::post('/ceo-testimonial/updateOrCreate', [AboutUsController::class, 'updateOrCreatetestimonial'])
+    ->name('ceo-testimonial.updateOrCreate');
+
 });
 
 
