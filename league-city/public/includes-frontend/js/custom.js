@@ -185,3 +185,27 @@ $(".app-screenshot-slider").owlCarousel({
         },
     },
 });
+
+$(".testimonials-slider").owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+        },
+        767: {
+            items: 2,
+        },
+        1000: {
+            items: 2,
+        },
+        1250: {
+            items: 2.5,
+        },
+    },
+});

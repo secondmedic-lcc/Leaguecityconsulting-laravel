@@ -30,15 +30,15 @@
                 <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
-                        @php   use App\Models\Services; 
-                                $services = Services::where(array('status' => 1))->limit(4)->get();
-                                $services2 = Services::where(array('status' => 1))->skip(4)->limit(4)->get();  @endphp
+                        @php use App\Models\Services;
+                        $services = Services::where(array('status' => 1))->limit(4)->get();
+                        $services2 = Services::where(array('status' => 1))->skip(4)->limit(4)->get(); @endphp
 
                         @foreach($services as $p)
                         @php $url = url('services')."/".$p->url_slug; @endphp
-                            <li><a href="{{ $url }}">{{$p->name}}</a></li>
+                        <li><a href="{{ $url }}">{{$p->name}}</a></li>
                         @endforeach
-                      
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-6">
@@ -46,7 +46,7 @@
                     <ul class="list">
                         @foreach($services2 as $p)
                         @php $url = url('services')."/".$p->url_slug; @endphp
-                            <li><a href="{{ $url }}">{{$p->name}}</a></li>
+                        <li><a href="{{ $url }}">{{$p->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -56,6 +56,7 @@
                         <li><a href="{{ url('about-us') }}">About Us</a></li>
                         <li><a href="{{ url('services') }}">Services</a></li>
                         <li><a href="{{ url('portfolio') }}">Portfolio</a></li>
+                        <li><a href="{{ url('testimonials') }}">Testimonials</a></li>
                         <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
                     </ul>
                 </div>

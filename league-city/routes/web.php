@@ -82,6 +82,8 @@ Route::get('privacy-policy', [App\Http\Controllers\PrivacyPolicyController::clas
 
 Route::get('/singleproduct', [App\Http\Controllers\SingleProductController::class, 'index']);
 
+Route::get('/testimonials', [App\Http\Controllers\TestimonialsController::class, 'index']);
+
 Route::get('sitemap.xml', function () {
     return \Illuminate\Support\Facades\Redirect::to('sitemap.xml');
 });
@@ -372,8 +374,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
 
-    //for about us 
-   
+    //for about us
+
 
 
     Route::get('/about-us', [AboutUsController::class, 'edit'])->name('about-us.edit'); // Show edit form
@@ -382,8 +384,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
     Route::post('/ceo-testimonial/updateOrCreate', [AboutUsController::class, 'updateOrCreatetestimonial'])
-    ->name('ceo-testimonial.updateOrCreate');
-
+        ->name('ceo-testimonial.updateOrCreate');
 });
 
 

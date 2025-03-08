@@ -559,4 +559,73 @@
     </div>
 </section>
 
+<section class="testimonials section-padding pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-dark">
+                    <div class="main-box">
+                        <div class="row g-lg-5">
+                            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                <h2 class="section-heading with-p">What Our Clients Say</h2>
+                                <p class="heading-info">Hear the voices of trust, satisfaction, and motivation as they guide us toward our next innovation.</p>
+                                <div class="btnrow d-none d-lg-block" data-aos="zoom-in">
+                                    <a href="{{ url('testimonials'); }}" class="btn web-btn">View All</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                                <div class="owl-carousel testimonials-slider">
+                                    <div class="item">
+                                        <div class="testimonial-box">
+                                            <img src="{{ asset('includes-frontend'); }}/images/testimonials/super.png" class="logo" alt="League City Consulting">
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
+                                            <div class="img-name">
+                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
+                                                <h3 class="name">SuperTrouper365</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimonial-box">
+                                            <img src="{{ asset('includes-frontend'); }}/images/testimonials/royong.webp" class="logo" alt="League City Consulting">
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
+                                            <div class="img-name">
+                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
+                                                <h3 class="name">Royong</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimonial-box">
+                                            <img src="{{ asset('includes-frontend'); }}/images/testimonials/daypass.png" class="logo" alt="League City Consulting">
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
+                                            <div class="img-name">
+                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
+                                                <h3 class="name">Daypass</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimonial-box">
+                                            <img src="{{ asset('includes-frontend'); }}/images/testimonials/circles.svg" class="logo" alt="League City Consulting">
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
+                                            <div class="img-name">
+                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
+                                                <h3 class="name">Circles</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btnrow d-block d-lg-none text-center" data-aos="zoom-in">
+                                    <a href="#" class="btn web-btn">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @include('frontend.pages.query-form')
