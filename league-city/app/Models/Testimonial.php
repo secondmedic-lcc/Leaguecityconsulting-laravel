@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Testimonial extends Model
 {
     use HasFactory;
-
+protected $table = 'testimonials';
+protected $primaryKey = "id";
     protected $fillable = [
         'name',
         'image',

@@ -31,7 +31,6 @@
                                 <th>Company Logo</th>
                                 <th>Description</th>
                                 <th>Show at Homepage</th>
-                                <th>Status</th>
                                 <th class="text-end">Actions</th>
                             </tr>
                         </thead>
@@ -49,9 +48,6 @@
                                     <td>{{ Str::limit($testimonial->description, 50) }}</td>
                                     <td>
                                         {{ $testimonial->show_at_homepage ? 'Yes' : 'No' }}
-                                    </td>
-                                    <td>
-                                        {{ $testimonial->status ? 'Active' : 'Inactive' }}
                                     </td>
                                     <td class="text-end">
                                         <div class="table-action-btns">

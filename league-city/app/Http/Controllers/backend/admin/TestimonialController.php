@@ -24,7 +24,7 @@ class TestimonialController extends Controller
 
         $current_page = "testimonials";
 
-        $testimonials = Testimonial::orderBy('id', 'desc')->paginate(10);
+        $testimonials = Testimonial::where('status','1')->orderBy('id', 'desc')->paginate(10);
 
         return view('backend/admin/main', compact('page_name', 'page_title', 'current_page', 'testimonials'));
     }

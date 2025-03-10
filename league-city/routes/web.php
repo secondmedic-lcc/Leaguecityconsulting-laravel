@@ -13,7 +13,7 @@ use App\Http\Controllers\backend\admin\ProductsController;
 use App\Http\Controllers\backend\admin\ServicesController;
 use App\Http\Controllers\backend\admin\CustomersController;
 use App\Http\Controllers\backend\admin\OurMemberController;
-use App\Http\Controllers\backend\admin\PortfolioController;     
+use App\Http\Controllers\backend\admin\PortfolioController;
 use App\Http\Controllers\backend\admin\TestimonialController;
 use App\Http\Controllers\backend\admin\PackageTypesController;
 use App\Http\Controllers\backend\admin\PrivacyPolicyController;
@@ -390,16 +390,16 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/ceo-testimonial/updateOrCreate', [AboutUsController::class, 'updateOrCreatetestimonial'])
         ->name('ceo-testimonial.updateOrCreate');
 
-        //Testimonial
+    //Testimonialz
 
-        Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index'); // List testimonials
-        Route::get('/testimonials/create', [TestimonialController::class, 'create'])->name('testimonials.create'); // Show create form
-        Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store'); // Store new testimonial
-        Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('testimonials.edit'); // Show edit form
-        Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update'); // Update testimonial
-        Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial
-     
-    
+    Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index'); // List testimonials
+    Route::get('/testimonials/create', [TestimonialController::class, 'create'])->name('testimonials.create'); // Show create form
+    Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store'); // Store new testimonial
+    Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('testimonials.edit'); // Show edit form
+    Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update'); // Update testimonial
+    Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial
+
+
 });
 
 
