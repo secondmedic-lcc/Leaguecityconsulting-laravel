@@ -575,7 +575,20 @@
                             </div>
                             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                                 <div class="owl-carousel testimonials-slider">
+
+                                    @foreach ($testimonials as $testimonial )
                                     <div class="item">
+                                        <div class="testimonial-box">
+                                            <img src="{{ asset($testimonial->image) ?? ''}}" class="logo" alt="League City Consulting">
+                                            <p>{{ $testimonial->description ?? '' }}</p>
+                                            <div class="img-name">
+                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
+                                                <h3 class="name">{{ $testimonial->name ?? '' }}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    {{-- <div class="item">
                                         <div class="testimonial-box">
                                             <img src="{{ asset('includes-frontend'); }}/images/testimonials/super.png" class="logo" alt="League City Consulting">
                                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
@@ -614,7 +627,7 @@
                                                 <h3 class="name">Circles</h3>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="btnrow d-block d-lg-none text-center" data-aos="zoom-in">
                                     <a href="#" class="btn web-btn">View All</a>

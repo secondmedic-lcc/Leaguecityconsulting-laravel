@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 use App\Models\Blogs;
+use App\Models\Services;
 use App\Models\Portfolio;
- use App\Models\Services; 
+use App\Models\Testimonial;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class Controller extends BaseController
 {
@@ -34,8 +36,8 @@ class Controller extends BaseController
         $blog = Blogs::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
+        $testimonials = Testimonial::where('status', 1)->where('show_at_homepage', 1)->orderBy('id', 'desc')->get();
 
-
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials'));
     }
 }

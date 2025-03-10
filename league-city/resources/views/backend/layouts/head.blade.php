@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('includes-backend/css/select2.min.css'); }}">
 
     <script src="{{ asset('includes-backend/js/jquery.min.js'); }}"></script>
+  
 </head>
 
 <body class="web-overflow">

@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/'); }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
                 </ol>
             </div>
@@ -30,11 +30,25 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">What Our Clients Say</h2>
-                <p class="heading-info">Hear the voices of trust, satisfaction, and motivation as they guide us toward our next innovation.</p>
+                <p class="heading-info">Hear the voices of trust, satisfaction, and motivation as they guide us toward
+                    our next innovation.</p>
             </div>
         </div>
         <div class="row g-3 g-lg-4">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            @foreach ($testimonials as $testimonial)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="testimonial-box">
+                        <img src="{{ asset($testimonial->image) ?? '' }}" class="logo" alt="League City Consulting">
+                        <p>{{ $testimonial->description ?? '' }}</p>
+                        <div class="img-name">
+                            <div class="img"><img src="{{ asset('includes-frontend') }}/images/favicon.webp"
+                                    alt=""></div>
+                            <h3 class="name">{{ $testimonial->name ?? '' }}</h3>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="testimonial-box">
                     <img src="{{ asset('includes-frontend'); }}/images/testimonials/super.png" class="logo" alt="League City Consulting">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quia cupiditate maxime quos? Quisquam ad accusantium odit alias error laborum aut nisi! Quisquam, reprehenderit distinctio? Exercitationem inventore tempore odio eius.</p>
@@ -123,7 +137,7 @@
                         <h3 class="name">SuperTrouper365</h3>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
