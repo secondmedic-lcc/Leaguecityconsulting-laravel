@@ -72,41 +72,41 @@
         @include('backend.layouts.alert')
 
         <form action="{{ route('team-members.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
-        @csrf
+            @csrf
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control text-dark" name="name" required value="{{ old('name') }}" />
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Username</label>
-                            <input type="text" class="form-control text-dark" name="username" required value="{{ old('username') }}" />
+                            <input type="text" class="form-control text-dark" name="name" required
+                                value="{{ old('name') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Designation</label>
-                            <input type="text" class="form-control text-dark" name="designation" required value="{{ old('designation') }}" />
+                            <input type="text" class="form-control text-dark" name="designation" required
+                                value="{{ old('designation') }}" />
                         </div>
                         {{-- <div class="col-md-6 mb-3">
                             <label class="form-label">Profile Image</label>
                             <input type="file" class="form-control" required name="image" onchange="readURL(this);" accept="image/webp" />
                             <small class="text-danger">(Upload only WEBP image format less than 100 KB)</small>
                         </div> --}}
-                       
+
                         <div class="col-md-4 mb-3 col-8">
                             <label class="form-label">Profile Image</label>
-                            <input type="file" class="form-control" name="image" onchange="onpreview(this);" accept="image/webp" />
+                            <input type="file" class="form-control" name="image" onchange="onpreview(this);"
+                                accept="image/webp" />
                             <small class="text-danger">(Upload only WEBP image format less than 100 KB)</small>
                         </div>
                         <!-- Image Preview (Replaces Current Image) -->
                         <div class="col-md-2 col-4">
-                            <img alt="Profile Preview" src="{{('uploads/default.jpg')}}" class="img-responsive mt-2 rounded" width="150px" height="150px" id="img_preview" />
+                            <img alt="Profile Preview" src="{{ 'uploads/default.jpg' }}"
+                                class="img-responsive mt-2 rounded" width="150px" height="150px" id="img_preview" />
                         </div>
-                        
+
                         <div class="col-md-6 offset-md-3 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3">
-                               Add Team Member
+                                Add Team Member
                             </button>
                         </div>
                     </div>
@@ -120,10 +120,10 @@
     function onpreview(input) {
         if (input.files && input.files[0]) {
             let reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 document.getElementById('img_preview').src = e.target.result; // Replace current image
             };
             reader.readAsDataURL(input.files[0]);
         }
     }
-    </script>
+</script>

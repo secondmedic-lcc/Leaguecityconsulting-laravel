@@ -4,29 +4,16 @@
         <div class="card member-statistics h-auto billing-table">
             <div class="card-header bg-white">
                 <div class="d-flex align-items-center justify-content-between">
-                    <h6 class="mb-1">Team Members List</h6>
-                    <div class="dropdown filter-dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class='bx bx-menu-alt-right'></i>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <h6>Quick Actions</h6>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('team-members.create') }}">Add Team Member</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <h6 class="mt-2 mb-2">Team Members List</h6>
                 </div>
             </div>
             <div class="card-body">
-                <table id="tableDrop" class="table dt-responsive nowrap" cellspacing="0" width="100%">
+                <div class="table-responsive">
+                <table id="" class="table dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th class="table-id">ID</th>
                             <th>Name</th>
-                            <th>User Name</th>
                             <th>Designation</th>
                             <th>Image</th>
                             {{-- <th>Status</th> --}}
@@ -38,12 +25,11 @@
                         @foreach ($teamMembers as $member)
                             @php
                                 $deleteUrl = route('team-members.destroy', $member->id);
-                                $toggleStatusUrl = url('/admin/team-member/toggle-status/' . $member->id);
+                               
                             @endphp
                             <tr>
                                 <td>{{ $a++ }}</td>
                                 <td>{{ $member->name }}</td>
-                                <td>{{ $member->username }}</td>
                                 <td>{{ $member->designation }}</td>
                                 <td>
                                     <img src="{{ asset($member->image) }}" width="80" height="auto"
@@ -72,6 +58,7 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
                 <div class="pagination mt-3">
                     {{ $teamMembers->links() }}
                 </div>

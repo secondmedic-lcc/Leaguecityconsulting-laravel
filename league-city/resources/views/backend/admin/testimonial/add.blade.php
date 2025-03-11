@@ -17,8 +17,8 @@
                         </div>
                         <div class="col-md-4 mb-3 col-8">
                             <label class="form-label" for="">Testimonial Image</label>
-                            <input type="file" class="form-control" required name="image" onchange="readURL(this);" accept="image/webp" />
-                            <small class="text-danger">(Upload only WEBP image format less than 100 KB)</small>
+                            <input type="file" class="form-control" required name="image" onchange="previewImage(event);" accept="image" />
+                            <small class="text-danger">(Upload only image format less than 100 KB)</small>
                         </div>
                         <div class="col-md-2 col-4">
                             <img alt="Testimonial Image" src="{{ asset('uploads/default.jpg') }}" class="w-100 img-responsive mt-2 rounded" width="100" height="auto" id="img_preview" />
@@ -37,6 +37,10 @@
                                 <option value="0" {{ old('show_at_homepage') == '0' ? 'selected' : '' }}>No</option>
                             </select>
                         </div>
+                        {{-- <div class="form-group">
+                            <label for="position">Order</label>
+                            <input type="number" name="position" class="form-control" min="1" value="{{ old('position') }}" required>
+                        </div> --}}
                         <div class="col-md-6 offset-md-3 text-center">
                             <button type="submit" class="btn web-btn w-50 mt-3">
                                Add Testimonial
@@ -48,3 +52,16 @@
         </form>
     </div>
 </div>
+<script>
+    function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+
+        reader.onload = function() {
+            var imgElement = document.getElementById("img_preview");
+            imgElement.src = reader.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>

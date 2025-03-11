@@ -147,7 +147,7 @@
                 </li>
 
 
-                <li class="mb-1 dropdown {{ in_array($current_page, ['about-us', 'member']) ? 'active' : '' }}">
+                <li class="mb-1 dropdown {{ in_array($current_page, ['about-us', 'member','addmember']) ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage About Us</span></font>
@@ -156,17 +156,21 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{ route('about-us.edit') }}">Update About Us</a>
                         </li> 
+                        <li><a class="dropdown-item" href="{{ route('team-members.create') }}">Add Team Member</a>
+                        </li>
                         <li><a class="dropdown-item" href="{{ route('team-members.index') }}">List Team Member</a>
                         </li>
                     </ul>
                 </li>
-                <li class="mb-1 dropdown {{ $current_page == 'testimonials' || $current_page == 'packages' || $current_page == 'sub-keypoints' ? 'active' : '' }}">
+                <li class="mb-1 dropdown {{ $current_page == 'testimonials' || $current_page == 'addtestimonials'  ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage Testimonials</span></font>
                         <span class="bx bx-chevron-right"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('testimonials.create') }}">Add Testimonial</a>
+                        </li>
                         <li><a class="dropdown-item" href="{{ route('testimonials.index') }}">List Testimonials</a>
                         </li> 
                     </ul>

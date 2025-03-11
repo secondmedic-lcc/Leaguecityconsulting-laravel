@@ -10,7 +10,8 @@
                     <div class="row">
                         <div class="col-md-9 mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control text-dark" name="name" required value="{{ old('name', $testimonial->name) }}" />
+                            <input type="text" class="form-control text-dark" name="name" required
+                                value="{{ old('name', $testimonial->name) }}" />
                         </div>
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Description</label>
@@ -26,28 +27,33 @@
                         </div> --}}
                         <div class="col-md-4 mb-3 col-8">
                             <label class="form-label" for="">Testimonial Image</label>
-                            <input type="file" class="form-control" name="image" id="imageUpload" accept="image/webp" onchange="previewImage(event)" />
+                            <input type="file" class="form-control" name="image" id="imageUpload"
+                                accept="image/webp" onchange="previewImage(event)" />
                             <small class="text-danger">(Upload only WEBP image format less than 100 KB)</small>
                         </div>
                         <div class="col-md-2 col-4">
-                            <img alt="Testimonial Image" 
-                                 src="{{ asset($testimonial->image ?? 'uploads/default.jpg') }}" 
-                                 class="w-100 img-responsive mt-2 rounded" 
-                                 width="100" height="auto" 
-                                 id="img_preview" />
+                            <img alt="Testimonial Image" src="{{ asset($testimonial->image ?? 'uploads/default.jpg') }}"
+                                class="w-100 img-responsive mt-2 rounded" width="100" height="auto"
+                                id="img_preview" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Status</label>
                             <select class="form-control text-dark" name="status" required>
-                                <option value="1" {{ old('status', $testimonial->status) == '1' ? 'selected' : '' }}>Active</option>
-                                <option value="0" {{ old('status', $testimonial->status) == '0' ? 'selected' : '' }}>Inactive</option>
+                                <option value="1"
+                                    {{ old('status', $testimonial->status) == '1' ? 'selected' : '' }}>Active</option>
+                                <option value="0"
+                                    {{ old('status', $testimonial->status) == '0' ? 'selected' : '' }}>Inactive</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Show at Homepage</label>
                             <select class="form-control text-dark" name="show_at_homepage" required>
-                                <option value="1" {{ old('show_at_homepage', $testimonial->show_at_homepage) == '1' ? 'selected' : '' }}>Yes</option>
-                                <option value="0" {{ old('show_at_homepage', $testimonial->show_at_homepage) == '0' ? 'selected' : '' }}>No</option>
+                                <option value="1"
+                                    {{ old('show_at_homepage', $testimonial->show_at_homepage) == '1' ? 'selected' : '' }}>
+                                    Yes</option>
+                                <option value="0"
+                                    {{ old('show_at_homepage', $testimonial->show_at_homepage) == '0' ? 'selected' : '' }}>
+                                    No</option>
                             </select>
                         </div>
                         <div class="col-md-6 offset-md-3 text-center">

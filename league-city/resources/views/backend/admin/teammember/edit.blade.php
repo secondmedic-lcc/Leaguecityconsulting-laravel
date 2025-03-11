@@ -87,11 +87,6 @@
                                 value="{{ old('name', $team_member->name) }}" />
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Username</label>
-                            <input type="text" class="form-control text-dark" name="username" required
-                                value="{{ old('username', $team_member->username) }}" />
-                        </div>
-                        <div class="col-md-6 mb-3">
                             <label class="form-label">Designation</label>
                             <input type="text" class="form-control text-dark" name="designation" required
                                 value="{{ old('designation', $team_member->designation) }}" />

@@ -144,6 +144,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('portfolio-delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
 
 
+    Route::post('/portfolio/sort', [PortfolioController::class, 'sort'])->name('portfolio.sort');
+
+
+
     /* All Routes for Portfolio Services */
     Route::get('/portfolio-services', [PortfolioServicesController::class, 'index'])->name('portfolio-services');
 
@@ -398,6 +402,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('testimonials.edit'); // Show edit form
     Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update'); // Update testimonial
     Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial
+
+    
+    Route::post('/testimonials/sort', [TestimonialController::class, 'sort'])->name('testimonials.sort');
 
 
 });

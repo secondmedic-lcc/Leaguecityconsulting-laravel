@@ -15,6 +15,7 @@ protected $primaryKey = "id";
         'image',
         'description',
         'status',
-        'show_at_homepage'
+        'show_at_homepage',
+        'position',
     ];
 }

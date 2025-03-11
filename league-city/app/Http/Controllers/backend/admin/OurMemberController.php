@@ -40,7 +40,7 @@ class OurMemberController extends Controller
 
         $page_title = "Add Team Member";
 
-        $current_page = "blogs";
+        $current_page = "addmember";
 
         return view('backend/admin/main', compact('page_name', 'page_title', 'current_page'));
     }
@@ -50,7 +50,7 @@ class OurMemberController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'designation' => 'required|string',
-            'username' => 'required|string|unique:team_members,username',
+            'username' => 'nullable|string|unique:team_members,username',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
@@ -105,7 +105,7 @@ class OurMemberController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'designation' => 'required|string',
-            'username' => 'required|string|unique:team_members,username,' . $id,
+            'username' => 'nullable|string|unique:team_members,username,' . $id,
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
