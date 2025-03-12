@@ -20,7 +20,7 @@ class PortfolioController extends Controller
 
         $current_page = "portfolio";
 
-        $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'asc')->paginate(10);
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'asc')->paginate(10);
 
         return view('backend/admin/main', compact('page_name', 'page_title', 'current_page', 'portfolio'));
     }

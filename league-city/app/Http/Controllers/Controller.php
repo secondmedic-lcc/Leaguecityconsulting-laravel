@@ -34,7 +34,7 @@ class Controller extends BaseController
 
         $blog = Blogs::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'desc')->limit(5)->get();
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'asc')->limit(5)->get();
         $testimonials = Testimonial::where('status', 1)->where('show_at_homepage', 1)->orderBy('position', 'asc')->limit(10)->get();
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials'));
