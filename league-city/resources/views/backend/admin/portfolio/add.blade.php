@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="col-md-4 mb-3">
+                        {{-- <div class="col-md-4 mb-3">
                             <label class="form-label" for="">Banner Heading</label>
                             <input type="text" class="form-control" name="banner_heading"  value="{{ old('banner_heading') }}" />
                         </div>
@@ -19,7 +19,7 @@
                         <div class="col-md-4 mb-3">
                             <label class="form-label" for="">Banner Details</label>
                             <input type="text" class="form-control" name="banner_details" required value="{{ old('banner_details') }}" />
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Portfolio Status</label>
                             <select class="form-control js-example-basic-single" name="portfolio_status">
