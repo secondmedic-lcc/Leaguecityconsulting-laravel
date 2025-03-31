@@ -239,8 +239,6 @@ class PortfolioController extends Controller
     //     return response()->json(['message' => 'Order updated successfully']);
     // }
 
-
-
     public function sort(Request $request)
     {
         Log::info('Received Portfolio Order Update:', ['order' => $request->all()]); // Debugging
@@ -268,5 +266,34 @@ class PortfolioController extends Controller
     
         return response()->json(['message' => 'Portfolio Order updated successfully.']);
     }
+
+    // public function sort(Request $request)
+    // {
+    //     Log::info('Received Portfolio Order Update:', ['order' => $request->all()]); // Debugging
+    
+    //     if (!$request->has('order')) {
+    //         return response()->json(['message' => 'Invalid Data Received'], 400);
+    //     }
+    
+    //     $order = $request->input('order', []);
+    
+    //     if (empty($order)) {
+    //         return response()->json(['message' => 'Invalid Data Received'], 400);
+    //     }
+    
+    //     $positions = array_column($order, 'position');
+    
+    //     // Prevent duplicate positions
+    //     if (count($positions) !== count(array_unique($positions))) {
+    //         return response()->json(['message' => 'Duplicate Orders are not allowed!'], 400);
+    //     }
+    
+    //     foreach ($order as $item) {
+    //         Portfolio::where('id', $item['id'])->update(['position' => $item['position']]);
+    //     }
+    
+    //     return response()->json(['message' => 'Portfolio Order updated successfully.']);
+    // }
+    
     
 }
