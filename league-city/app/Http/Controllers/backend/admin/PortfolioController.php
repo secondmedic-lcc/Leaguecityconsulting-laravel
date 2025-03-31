@@ -150,6 +150,8 @@ class PortfolioController extends Controller
 
         $data['category'] = implode(",", $request->category);
 
+        $data = collect($data)->except('portfolio_image')->toArray();
+
         Portfolio::where(array('status' => 1, 'id' => $id))->update($data);
 
         $page_link = "portfolio/" . Str::slug($request->name . "-" . $id);
