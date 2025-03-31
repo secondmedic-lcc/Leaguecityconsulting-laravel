@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Portfolio;
-use App\Models\PortfolioServices;
+use Illuminate\Http\Request;
 use App\Models\PotfolioImage;
 use App\Models\WebsiteBanners;
-use App\Models\Category;
+use App\Models\PortfolioServices;
 
 class PortfolioController extends Controller
 {
@@ -19,7 +19,7 @@ class PortfolioController extends Controller
 
         $current_page = "portfolio";
 
-        $portfolio = Portfolio::where(array('status' => 1))->orderBy('ordering', 'desc')->get();
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'desc')->get();
 
         $category = Category::where(array('status' => 1))->orderBy('id', 'asc')->get();
 
