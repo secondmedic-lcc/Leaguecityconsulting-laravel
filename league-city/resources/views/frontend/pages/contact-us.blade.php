@@ -51,11 +51,9 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-6">
                 <div class="box">
-                    <div class="box">
-                        <img src="{{ asset('includes-frontend') }}/images/mumbai.svg" alt="Mumbai">
-                        <h2>Kuala Lumpur</h2>
-                        <p>Lot 10-03C, 10th Floor Tower 1, Faber Towers</p>
-                    </div>
+                    <img src="{{ asset('includes-frontend') }}/images/mumbai.svg" alt="Mumbai">
+                    <h2>Kuala Lumpur</h2>
+                    <p>Lot 10-03C, 10th Floor Tower 1, Faber Towers</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-6">
