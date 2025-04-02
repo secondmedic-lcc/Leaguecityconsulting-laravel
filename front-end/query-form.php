@@ -128,7 +128,7 @@ if (isset($_POST)) {
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
+                                            <p>Lot 10-03C, 10th Floor Tower 1, Faber Towers,Kuala Lumpur, Malaysia</p>
                                         </div>
                                     </li>
                                 </ul>
