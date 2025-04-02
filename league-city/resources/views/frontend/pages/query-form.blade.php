@@ -95,7 +95,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Lot 10-03C, 10th Floor Tower 1, Faber Towers</p>
+                                            <p>Lot 10-03C, 10th Floor Tower 1, Faber Towers, Kuala Lumpur, Malaysia</p>
                                         </div>
                                     </li>
                                 </ul>
