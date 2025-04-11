@@ -22,7 +22,11 @@
                         <font><i class="bx bxs-user-pin"></i> <span>Contact Request</span></font>
                     </a>
                 </li>
-
+                <li class="mb-2 {{ $current_page == 'change_password' ? 'active' : '' }}">
+                    <a href="{{ route('change_password') }}">
+                        <font><i class='bx bxs-comment-detail'></i> <span>Change Password</span></font>
+                    </a>
+                </li>
                 <li class="mb-1 {{ $current_page == 'package-request' ? 'active' : '' }}">
                     <a href="{{ url('admin/plan-requests') }}">
                         <font><i class="bx bxs-user-pin"></i> <span>Plan Request</span></font>
@@ -147,7 +151,8 @@
                 </li>
 
 
-                <li class="mb-1 dropdown {{ in_array($current_page, ['about-us', 'member','addmember']) ? 'active' : '' }}">
+                <li
+                    class="mb-1 dropdown {{ in_array($current_page, ['about-us', 'member', 'addmember']) ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage About Us</span></font>
@@ -155,14 +160,15 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{ route('about-us.edit') }}">Update About Us</a>
-                        </li> 
+                        </li>
                         <li><a class="dropdown-item" href="{{ route('team-members.create') }}">Add Team Member</a>
                         </li>
                         <li><a class="dropdown-item" href="{{ route('team-members.index') }}">List Team Member</a>
                         </li>
                     </ul>
                 </li>
-                <li class="mb-1 dropdown {{ $current_page == 'testimonials' || $current_page == 'addtestimonials'  ? 'active' : '' }}">
+                <li
+                    class="mb-1 dropdown {{ $current_page == 'testimonials' || $current_page == 'addtestimonials' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage Testimonials</span></font>
@@ -172,7 +178,7 @@
                         <li><a class="dropdown-item" href="{{ route('testimonials.create') }}">Add Testimonial</a>
                         </li>
                         <li><a class="dropdown-item" href="{{ route('testimonials.index') }}">List Testimonials</a>
-                        </li> 
+                        </li>
                     </ul>
                 </li>
 

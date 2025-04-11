@@ -401,12 +401,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store'); // Store new testimonial
     Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('testimonials.edit'); // Show edit form
     Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update'); // Update testimonial
-    Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial
-
-    
+    Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial   
     Route::post('/testimonials/sort', [TestimonialController::class, 'sort'])->name('testimonials.sort');
 
-
+    Route::get('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'change_password'])->name('change_password');
+    Route::post('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'update_password'])->name('update_password');
 });
 
 

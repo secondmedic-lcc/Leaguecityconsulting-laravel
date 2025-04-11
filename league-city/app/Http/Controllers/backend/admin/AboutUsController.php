@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\backend\admin;
 
+use App\Models\User;
 use App\Models\AboutUs;
 use App\Models\SeoData;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\CeoTestimonial;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AboutUsController extends Controller
@@ -108,6 +110,47 @@ class AboutUsController extends Controller
             return redirect()->back()->with('success', 'CEO Testimonial Updated Successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
+        }
+    }
+
+
+
+    public function change_password()
+    {
+        $page_name = "users/change_password";
+
+        $page_title = "Change Password";
+
+        $current_page = "change_password";
+
+        return view('backend/admin/main', compact('page_name', 'page_title', 'current_page'));
+    }
+
+
+    public function update_password(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|min:5|max:10',
+            'new_password' => 'required|min:5|max:10',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::where('id', auth()->user()->id)->first();
+
+        if (Hash::check($request->current_password, $user->password)) {
+
+            $user->password = Hash::make($request->new_password);
+
+            if ($user->save()) {
+                return redirect()->back()->with('success', 'Your Password has been Changed successfully');
+            } else {
+                return redirect()->back()->with('error', 'Something went wrong');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Current password is incorrect');
         }
     }
 }
