@@ -58,6 +58,8 @@ Route::post('contact-us', [App\Http\Controllers\ContactUsController::class, 'sto
 
 Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'index'])->name('saas.campaign');
 
+Route::get('singapore-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'singaporeCampaign'])->name('singapore.campaign');
+
 Route::get('india-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'indiaCampaign'])->name('india.campaign');
 
 Route::get('malaysia-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'malaysiaCampaign'])->name('malaysia.campaign');
