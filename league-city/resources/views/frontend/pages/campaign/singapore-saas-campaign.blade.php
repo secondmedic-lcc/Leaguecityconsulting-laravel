@@ -1221,7 +1221,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Email</span>
-                                            <a href="mailto:info@leaguecity.com">info@leaguecityconsulting.com</a>
+                                            <a href="mailto:sales@leaguecity.com">sales@leaguecityconsulting.com</a>
                                         </div>
                                     </li>
                                     <li>
@@ -1230,7 +1230,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Contact</span>
-                                            <a href="tel:+917879782233">+91 78797 82233</a>
+                                            <a href="tel:+601127568048">+60 11-2756 8048</a>
                                         </div>
                                     </li>
                                     <li>
@@ -1239,7 +1239,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>E-8/95, JSV Tower, Basant Kunj, Arera Colony, Bhopal, Madhya Pradesh 462016</p>
+                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
                                         </div>
                                     </li>
                                 </ul>
