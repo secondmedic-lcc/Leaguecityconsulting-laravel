@@ -50,7 +50,7 @@
                     @endif
                     <form action="{{ route('campaign.store') }}" method="post" id="campaign-form" autocomplete="off" >
                         @csrf
-                        <input type="hidden" name="campaign_for" value="Malaysia Campaign" class="form-control" />
+                        <input type="hidden" name="campaign_for" value="Singapore Campaign" class="form-control" />
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3" onpaste="return false;" oncopy="return false;" />
                             <label for="floatingInput">Your Full Name</label>

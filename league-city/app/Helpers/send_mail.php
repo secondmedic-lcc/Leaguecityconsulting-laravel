@@ -88,5 +88,4 @@ function send_mail($mailid, $moduleid, $values) {
     send_mail_api("aniket.namdeo@secondmedic.com", $subject, $message);
     send_mail_api("ravi.namdeo@secondmedic.com", $subject, $message);
     send_mail_api("rajneesh.dwivedi@secondmedic.com", $subject, $message);
-    send_mail_api("durgesh.mishra@secondmedic.com", $subject, $message);
 }

@@ -115,7 +115,7 @@ class SaasCampaign1Controller extends Controller
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        $state = State::where(array('country_id'=>101))->get();
+        $state = State::where(array('country_id'=>196))->get();
 
         return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
     }
