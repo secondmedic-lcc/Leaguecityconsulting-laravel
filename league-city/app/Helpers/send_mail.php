@@ -12,7 +12,8 @@ function send_mail_api($to, $sub, $msg) {
     ];
     $array = ['msg' => $msg];
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://api.crisil.xyz/mail/mailpost.php?id=35&to=$to&subject=$sub");
+    curl_setopt($ch, CURLOPT_URL, "https://www.secondmedic.com/mail/mail.php?id=35&to=$to&subject=$sub");
+
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($array));
