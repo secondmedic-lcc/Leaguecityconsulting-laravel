@@ -1239,7 +1239,7 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
+                                            <p>Incorporated in the Republic of Singapore 10 Anson Road # 13-09 International Plaza Singapore (079903)</p>
                                         </div>
                                     </li>
                                 </ul>
