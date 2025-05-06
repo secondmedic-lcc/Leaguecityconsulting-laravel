@@ -1152,7 +1152,7 @@
         </div>
     </div>
 </section>
-<a href="https://api.whatsapp.com/send/?phone=+919987577439&text=We’re here to assist with all your IT needs, Thank you for choosing LeagueCityConsulting" target="_blank" class="campaign-whatsapp">
+<a href="https://api.whatsapp.com/send/?phone=+601127568048&text=Hello%20LeagueCity%20Consulting,%20I%20need%20help%20with:" target="_blank" class="campaign-whatsapp">
     <img src="{{ asset('includes-frontend') }}/images/whatsapp.png" alt="Whatsapp">
 </a>
 
