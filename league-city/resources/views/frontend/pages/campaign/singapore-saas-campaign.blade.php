@@ -216,7 +216,7 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Baldev Singh</h5>
+                                    <h5>Faizal Rahman</h5>
                                     <h6>12/02/2024</h6>
                                 </div>
                             </div>
@@ -237,7 +237,7 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Jaidev Das</h5>
+                                    <h5>Aisyah Ahmad</h5>
                                     <h6>24/01/2024</h6>
                                 </div>
                             </div>
@@ -258,7 +258,7 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Rishi Kumar</h5>
+                                    <h5>Hakim Salleh</h5>
                                     <h6>20/03/2024</h6>
                                 </div>
                             </div>
@@ -279,7 +279,7 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Aman Agrawal</h5>
+                                    <h5>Siti Zainal</h5>
                                     <h6>10/03/2024</h6>
                                 </div>
                             </div>
@@ -300,7 +300,7 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Prashant Verma</h5>
+                                    <h5>Amir Hassan</h5>
                                     <h6>30/03/2024</h6>
                                 </div>
                             </div>
@@ -321,13 +321,14 @@
                                     <img src="{{ asset('includes-frontend') }}/images/campaign/user-default.webp" alt="">
                                 </div>
                                 <div class="profile-text">
-                                    <h5>Nidhi Mishra</h5>
+                                    <h5>Lina Musa</h5>
                                     <h6>08/02/2024</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
