@@ -61,7 +61,7 @@
                     </div>
                     <div class="shape-img" style="mask-image: url('{{ asset('includes-frontend') }}/images/shape.svg')">
                         <div class="shape"
-                            style="background-image:url('{{ asset('includes-frontend') }}/images/team/rajneeshdiwedi.webp');">
+                            style="background-image:url('{{ asset($ceo_testimonial->image) }}');">
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                              <div class="shape-img"
                                 style="mask-image: url('{{ asset('includes-frontend') }}/images/shape.svg')">
                                 <div class="shape"
-                                    style="background-image:url('{{ asset('includes-frontend') }}/images/team/aniketnamdeo.webp');">
+                                    style="background-image:url('{{ asset($member->image) ?? '' }}');">
                                 </div>
                             </div>
                             <h3>{{ $member->name ?? ''}}</h3>
