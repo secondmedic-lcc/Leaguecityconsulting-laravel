@@ -59,13 +59,6 @@
             <div class="col-lg-4 col-md-6 col-6">
                 <div class="box">
                     <img src="{{ asset('includes-frontend') }}/images/mumbai.svg" alt="Mumbai">
-                    <h2>US</h2>
-                    <p>Station Houston Suite 2440, 1301 Fannin Street Houston, Texas 77002, USA</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-6">
-                <div class="box">
-                    <img src="{{ asset('includes-frontend') }}/images/mumbai.svg" alt="Mumbai">
                     <h2>Singapore</h2>
                     <p>133 New Bridge Road Chinatown Point #10-03 Singapore 059413</p>
                 </div>
