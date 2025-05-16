@@ -1,3 +1,8 @@
+@php
+    $socialLinks = \App\Models\SocialLinks::find(1);
+@endphp
+
+
 <footer>
     <section class="footer section-padding bg-dark">
         <div class="container">
@@ -5,8 +10,9 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="footer-info">
                         <div class="logo">
-                            <a href="{{ url('/'); }}">
-                                <img src="{{ asset('includes-frontend'); }}/images/logo-white.webp" alt="League City Consulting">
+                            <a href="{{ url('/') }}">
+                                <img src="{{ asset('includes-frontend') }}/images/logo-white.webp"
+                                    alt="League City Consulting">
                             </a>
                         </div>
                         <p>League City Consulting crafts elegant solutions for simple and complex business problems.</p>
@@ -16,27 +22,64 @@
                         <button class="btn web-btn">Subscribe Now</button>
                     </div> -->
                     <ul class="social-icons colorful d-none d-lg-flex">
-                        <li class="facebook">
-                            <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                        @if ($socialLinks->facebook_url ?? '')
+                            <li class="facebook">
+                                <a href="{{ $socialLinks->facebook_url }}" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </li>
+                        @endif
+                        @if ($socialLinks->instagram_url ?? '')
+                            <li class="instagram">
+                                <a href="{{ $socialLinks->instagram_url }}" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
+                            </li>
+                        @endif
+                        @if ($socialLinks->linkedin_url ?? '')
+                            <li class="linkedin">
+                                <a href="{{ $socialLinks->linkedin_url }}" target="_blank"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        @endif
+                        @if ($socialLinks->twitter_url ?? '')
+                            <li class="twitter"> <a target="_blank" href="{{ $socialLinks->twitter_url }}"><i
+                                        class="fab fa-twitter"></i></a></li>
+                        @endif
+                        @if ($socialLinks->pinterest_url ?? '')
+                            <li class="pinterest"><a target="_blank" href="{{ $socialLinks->pinterest_url }}"><i
+                                        class="fab fa-pinterest"></i></a></li>
+                        @endif
+                        {{-- <li class="facebook">
+                            <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
                         <li class="instagram">
-                            <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/leaguecityconsulting/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
                         </li>
                         <li class="linkedin">
-                            <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
+                            <a href="https://www.linkedin.com/company/league-city-consulting" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </li> --}}
                     </ul>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-sm-6 col-6">
                     <h2 class="footer-h">Software Engineering</h2>
                     <ul class="list">
-                        @php use App\Models\Services;
-                        $services = Services::where(array('status' => 1))->limit(4)->get();
-                        $services2 = Services::where(array('status' => 1))->skip(4)->limit(4)->get(); @endphp
+                        @php
+                            use App\Models\Services;
+                            $services = Services::where(['status' => 1])
+                                ->limit(4)
+                                ->get();
+                            $services2 = Services::where(['status' => 1])
+                                ->skip(4)
+                                ->limit(4)
+                                ->get();
+                        @endphp
 
-                        @foreach($services as $p)
-                        @php $url = url('services')."/".$p->url_slug; @endphp
-                        <li><a href="{{ $url }}">{{$p->name}}</a></li>
+                        @foreach ($services as $p)
+                            @php $url = url('services')."/".$p->url_slug; @endphp
+                            <li><a href="{{ $url }}">{{ $p->name }}</a></li>
                         @endforeach
 
                     </ul>
@@ -44,9 +87,9 @@
                 <div class="col-lg-3 col-sm-6 col-6">
                     <h2 class="footer-h">Digital Automation</h2>
                     <ul class="list">
-                        @foreach($services2 as $p)
-                        @php $url = url('services')."/".$p->url_slug; @endphp
-                        <li><a href="{{ $url }}">{{$p->name}}</a></li>
+                        @foreach ($services2 as $p)
+                            @php $url = url('services')."/".$p->url_slug; @endphp
+                            <li><a href="{{ $url }}">{{ $p->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>

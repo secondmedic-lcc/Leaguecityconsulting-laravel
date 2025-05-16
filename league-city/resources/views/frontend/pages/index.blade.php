@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
                     <h1 class="section-heading">
-                        <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution <span class="light">Company</span>
+                        <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution
+                        <span class="light">Company</span>
                     </h1>
                     <div class="content">
                         <p>
@@ -23,14 +24,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-heading" data-aos="fade-up" data-aos-delay="100">Revolutionary Software Solutions</h2>
+                    <h2 class="section-heading" data-aos="fade-up" data-aos-delay="100">Revolutionary Software Solutions
+                    </h2>
                     <div class="services-slider-height" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel services-slider">
 
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/mobile-app-development.webp" alt="Mobile App Development image">
+                                        <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp"
+                                            alt="Mobile App Development image">
                                     </div>
                                     <div class="content">
                                         <h3>Mobile App Development</h3>
@@ -42,7 +45,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/web-development.webp" alt="Web Development image">
+                                        <img src="{{ asset('includes-frontend') }}/images/web-development.webp"
+                                            alt="Web Development image">
                                     </div>
                                     <div class="content">
                                         <h3>Web <br>Development</h3>
@@ -54,7 +58,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/custom-software-development.webp" alt="Custom Software Development image">
+                                        <img src="{{ asset('includes-frontend') }}/images/custom-software-development.webp"
+                                            alt="Custom Software Development image">
                                     </div>
                                     <div class="content">
                                         <h3>Custom Software Development
@@ -67,7 +72,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/ui-ux-development.webp" alt="UI/UX Development image">
+                                        <img src="{{ asset('includes-frontend') }}/images/ui-ux-development.webp"
+                                            alt="UI/UX Development image">
                                     </div>
                                     <div class="content">
                                         <h3>UI/UX Development
@@ -80,7 +86,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/ecommerce-development.webp" alt="E-Commerce Development image">
+                                        <img src="{{ asset('includes-frontend') }}/images/ecommerce-development.webp"
+                                            alt="E-Commerce Development image">
                                     </div>
                                     <div class="content">
                                         <h3>E-Commerce Development</h3>
@@ -92,7 +99,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/graphic-designing.webp" alt="Graphic Designing image">
+                                        <img src="{{ asset('includes-frontend') }}/images/graphic-designing.webp"
+                                            alt="Graphic Designing image">
                                     </div>
                                     <div class="content">
                                         <h3>Graphic <br>Designing</h3>
@@ -104,7 +112,8 @@
                             <div class="item">
                                 <div class="box">
                                     <div class="images">
-                                        <img src="{{ asset('includes-frontend'); }}/images/cyber-security.webp" alt="Cyber Security image">
+                                        <img src="{{ asset('includes-frontend') }}/images/cyber-security.webp"
+                                            alt="Cyber Security image">
                                     </div>
                                     <div class="content">
                                         <h3>Cyber <br>Security</h3>
@@ -128,29 +137,30 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="section-heading with-p">Start your journey with our latest innovative projects</h2>
-                    <p class="heading-info text-white">We understand customer actions, emotions, and unspoken desires. Through design and technology, we create solutions that make a real difference.</p>
+                    <p class="heading-info text-white">We understand customer actions, emotions, and unspoken desires.
+                        Through design and technology, we create solutions that make a real difference.</p>
                 </div>
             </div>
         </div>
         <div class="work-slider-height" data-aos="zoom-in" data-aos-delay="200">
             <div class="owl-carousel work-slider">
-                @foreach($portfolio as $p)
-                <div class="item">
-                    <div class="box" style="background-image: url({{ asset($p['image']); }})">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <img src="{{ asset($p['logo']); }}" class="logo" alt="SecondMedic app">
-                                <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
-                                <p>{{ $p['sub_heading'] }}</p>
+                @foreach ($portfolio as $p)
+                    <div class="item">
+                        <div class="box" style="background-image: url({{ asset($p['image']) }})">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <img src="{{ asset($p['logo']) }}" class="logo" alt="SecondMedic app">
+                                    <h2><span class="light">{{ $p['name'] }}</span><br> {{ $p['heading'] }}</h2>
+                                    <p>{{ $p['sub_heading'] }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
         <div class="btnrow text-center" data-aos="zoom-in">
-            <a href="{{ url('portfolio'); }}" class="btn web-btn">See Our Portfolio</a>
+            <a href="{{ url('portfolio') }}" class="btn web-btn">See Our Portfolio</a>
         </div>
     </section>
 
@@ -167,7 +177,8 @@
                 <div class="col-lg-6" data-aos="zoom-in-left" data-aos-delay="200">
                     <div class="box left-border">
                         <h2>Unlocking Industry Potential Through Digital Innovation</h2>
-                        <p>Beyond trends, beyond limits. Explore the uncharted territories of your business.Unleash new possibilities in Business.</p>
+                        <p>Beyond trends, beyond limits. Explore the uncharted territories of your business.Unleash new
+                            possibilities in Business.</p>
                         <a href="{{ url('services') }}" class="btn white-btn">Explore</a>
                     </div>
                 </div>
@@ -176,7 +187,9 @@
     </section>
 </div>
 
-<section class="industries" style="background-image: url({{ asset('includes-frontend'); }}/images/healthcarelifescience.webp)" data-aos="zoom-in" data-aos-delay="100">
+{{-- <section class="industries"
+    style="background-image: url({{ asset('includes-frontend') }}/images/healthcarelifescience.webp)"
+    data-aos="zoom-in" data-aos-delay="100">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -254,39 +267,141 @@
                 </div>
             </div>
         </div>
+    </div>
+</section> --}}
 
+<section id="industries-section" class="industries"
+    style="background-image: url('{{ asset('includes-frontend/images/healthcarelifescience.webp') }}')"
+    data-aos="zoom-in" data-aos-delay="100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-heading">Sectors We Cover</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="owl-carousel industry-slider">
+        @foreach ($sectors as $sector)
+            <div class="item">
+                <div class="box" id="{{ $sector->slug }}" data-bg="{{ asset($sector->image) }}">
+                    <h2>{!! nl2br(e($sector->title)) !!}</h2>
+                    <div class="hide">
+                        <p>{{ $sector->description }}</p>
+                        <a href="{{ $sector->button_link ?? url('services') }}"
+                            class="btn web-btn">{{ $sector->button_text }}</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </section>
+
 
 <section class="technology section-padding pb-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">Transforming Industries with Next-Gen Innovation</h2>
-                <p class="heading-info">Beyond automation, beyond disruption. We engineer human-centered innovation with powerful simplicity. Unleash your unexpected tomorrow.</p>
+                <p class="heading-info">Beyond automation, beyond disruption. We engineer human-centered innovation
+                    with powerful simplicity. Unleash your unexpected tomorrow.</p>
             </div>
         </div>
+
+
+
         <div class="row g-0">
             <div class="col-lg-12">
                 <div class="left-side">
-                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mobileapp" type="button" role="tab" aria-controls="v-pills-mobileapp" aria-selected="true" data-aos="fade-up" data-aos-delay="100">
+                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        @foreach ($technologies as $index => $tech)
+                            <button class="nav-link @if ($index == 0) active @endif"
+                                id="v-pills-{{ $tech->slug }}-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-{{ $tech->slug }}" type="button" role="tab"
+                                aria-controls="v-pills-{{ $tech->slug }}"
+                                aria-selected="{{ $index == 0 ? 'true' : 'false' }}">
+                                {{ $tech->title }}
+                            </button>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+                <div class="right-side bg-dark" data-aos="flip-left">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        @foreach ($technologies as $index => $tech)
+                            <div class="tab-pane fade @if ($index == 0) show active @endif"
+                                id="v-pills-{{ $tech->slug }}" role="tabpanel"
+                                aria-labelledby="v-pills-{{ $tech->slug }}-tab">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4">
+                                        <img src="{{ asset($tech->image) }}" alt="{{ $tech->title }}">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="content">
+                                            <h3>{{ $tech->title }}</h3>
+                                            <div class="line"></div>
+                                            @php
+                                                $features = json_decode($tech->features) ?? [];
+                                            @endphp
+                                            <ul>
+                                                @foreach ($features as $feature)
+                                                    <li>{{ $feature }}</li>
+                                                @endforeach
+                                            </ul>
+                                            <div class="text-end">
+                                                <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{-- <div class="row g-0">
+            <div class="col-lg-12">
+                <div class="left-side">
+                    <div class="nav flex-column nav-pills web-overflow" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-mobileapp-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-mobileapp" type="button" role="tab"
+                            aria-controls="v-pills-mobileapp" aria-selected="true" data-aos="fade-up"
+                            data-aos-delay="100">
                             Mobile App Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appdevelopment" type="button" role="tab" aria-controls="v-pills-appdevelopment" aria-selected="false" data-aos="fade-up" data-aos-delay="200">
+                        <button class="nav-link" id="v-pills-appdevelopment-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-appdevelopment" type="button" role="tab"
+                            aria-controls="v-pills-appdevelopment" aria-selected="false" data-aos="fade-up"
+                            data-aos-delay="200">
                             Application Development
                         </button>
 
-                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false" data-aos="fade-up" data-aos-delay="300">
+                        <button class="nav-link" id="v-pills-ai-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai"
+                            aria-selected="false" data-aos="fade-up" data-aos-delay="300">
 
                             AI & Automation</button>
 
-                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uiux" type="button" role="tab" aria-controls="v-pills-uiux" aria-selected="false" data-aos="fade-up" data-aos-delay="400">
+                        <button class="nav-link" id="v-pills-uiux-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-uiux" type="button" role="tab"
+                            aria-controls="v-pills-uiux" aria-selected="false" data-aos="fade-up"
+                            data-aos-delay="400">
 
                             UI/UX Services</button>
 
-                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-itconsulting" type="button" role="tab" aria-controls="v-pills-itconsulting" aria-selected="false" data-aos="fade-up" data-aos-delay="500">
+                        <button class="nav-link" id="v-pills-itconsulting-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-itconsulting" type="button" role="tab"
+                            aria-controls="v-pills-itconsulting" aria-selected="false" data-aos="fade-up"
+                            data-aos-delay="500">
 
                             IT Consulting</button>
                     </div>
@@ -295,10 +410,12 @@
             <div class="col-lg-12">
                 <div class="right-side bg-dark" data-aos="flip-left">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel" aria-labelledby="v-pills-mobileapp-tab">
+                        <div class="tab-pane fade show active" id="v-pills-mobileapp" role="tabpanel"
+                            aria-labelledby="v-pills-mobileapp-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend'); }}/images/mobileapp.webp" alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/mobileapp.webp"
+                                        alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -331,7 +448,8 @@
                                             </li>
                                         </ul>
                                         <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -339,10 +457,12 @@
 
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel" aria-labelledby="v-pills-appdevelopment-tab">
+                        <div class="tab-pane fade" id="v-pills-appdevelopment" role="tabpanel"
+                            aria-labelledby="v-pills-appdevelopment-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend'); }}/images/application-development.webp" alt="Application Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/application-development.webp"
+                                        alt="Application Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -376,7 +496,8 @@
                                             </li>
                                         </ul>
                                         <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +507,7 @@
                         <div class="tab-pane fade" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend'); }}/images/ai.webp" alt="AI & Automation">
+                                    <img src="{{ asset('includes-frontend') }}/images/ai.webp" alt="AI & Automation">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -420,17 +541,20 @@
                                             <li>Independent AI Decision Agents</li>
                                         </ul>
                                         <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel" aria-labelledby="v-pills-uiux-tab">
+                        <div class="tab-pane fade" id="v-pills-uiux" role="tabpanel"
+                            aria-labelledby="v-pills-uiux-tab">
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend'); }}/images/uiux.webp" alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/uiux.webp"
+                                        alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -464,18 +588,21 @@
                                             </li>
                                         </ul>
                                         <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel" aria-labelledby="v-pills-itconsulting-tab">
+                        <div class="tab-pane fade" id="v-pills-itconsulting" role="tabpanel"
+                            aria-labelledby="v-pills-itconsulting-tab">
 
                             <div class="row align-items-center">
                                 <div class="col-lg-4">
-                                    <img src="{{ asset('includes-frontend'); }}/images/itconsulting.webp" alt="Mobile App Development">
+                                    <img src="{{ asset('includes-frontend') }}/images/itconsulting.webp"
+                                        alt="Mobile App Development">
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="content">
@@ -507,7 +634,8 @@
                                             </li>
                                         </ul>
                                         <div class="text-end">
-                                            <a href="{{ url('services') }}" class="btn web-btn">Explore More</a>
+                                            <a href="{{ url('services') }}" class="btn web-btn">Explore
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -516,7 +644,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 
@@ -525,37 +653,40 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="section-heading with-p">What's New At LeagueCity?</h2>
-                <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain, Website & App Development and more.</p>
+                <p class="heading-info">Dive deep into our technical expertise with blog posts on AI, blockchain,
+                    Website & App Development and more.</p>
             </div>
         </div>
         <div class="row">
             <div class="owl-carousel blog-slider">
                 @php $i=2; @endphp
-                @foreach($blog as $b)
-                @php $url = url('blogs')."/".$b['url_slug']; @endphp
-                <div class="item">
-                    <div class="box" data-aos="fade-up" data-aos-delay="{{ $i++ }}00">
-                        <a href="{{ $url; }}">
-                            <div class="image">
-                                <img src="{{ ($b['blog_image'] != '' && $b['blog_image'] != null) ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.webp'); }}" alt="{{ $b['blog_title'] }}">
+                @foreach ($blog as $b)
+                    @php $url = url('blogs')."/".$b['url_slug']; @endphp
+                    <div class="item">
+                        <div class="box" data-aos="fade-up" data-aos-delay="{{ $i++ }}00">
+                            <a href="{{ $url }}">
+                                <div class="image">
+                                    <img src="{{ $b['blog_image'] != '' && $b['blog_image'] != null ? asset($b['blog_image']) : asset('includes-frontend/images/aichatbots.webp') }}"
+                                        alt="{{ $b['blog_title'] }}">
+                                </div>
+                            </a>
+                            <div>
+                                <h3><a href="{{ $url }}">{{ $b['blog_title'] }}</a></h3>
+                                <ul class="blog-info-list">
+                                    <li><span class="text-grey">27 January 2024</span></li>
+                                    <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
+                                </ul>
+                                <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a
+                                        href="{{ $url }}" class="web-clr">Read More</a></p>
                             </div>
-                        </a>
-                        <div>
-                            <h3><a href="{{ $url; }}">{{ $b['blog_title'] }}</a></h3>
-                            <ul class="blog-info-list">
-                                <li><span class="text-grey">27 January 2024</span></li>
-                                <li>Read Time : <span class="text-grey">{{ $b['read_time'] }}</span></li>
-                            </ul>
-                            <p class="mb-0"><span>{{ $b['blog_details'] }}</span> <a href="{{ $url; }}" class="web-clr">Read More</a></p>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
     <div class="btnrow text-center" data-aos="zoom-in">
-        <a href="{{ url('blogs'); }}" class="btn web-btn">View All</a>
+        <a href="{{ url('blogs') }}" class="btn web-btn">View All</a>
     </div>
 </section>
 
@@ -568,25 +699,29 @@
                         <div class="row g-lg-5">
                             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                                 <h2 class="section-heading with-p">What Our Clients Say</h2>
-                                <p class="heading-info">Hear the voices of trust, satisfaction, and motivation as they guide us toward our next innovation.</p>
+                                <p class="heading-info">Hear the voices of trust, satisfaction, and motivation as they
+                                    guide us toward our next innovation.</p>
                                 <div class="btnrow d-none d-lg-block" data-aos="zoom-in">
-                                    <a href="{{ url('testimonials'); }}" class="btn web-btn">View All</a>
+                                    <a href="{{ url('testimonials') }}" class="btn web-btn">View All</a>
                                 </div>
                             </div>
                             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                                 <div class="owl-carousel testimonials-slider">
 
-                                    @foreach ($testimonials as $testimonial )
-                                    <div class="item">
-                                        <div class="testimonial-box">
-                                            <img src="{{ asset($testimonial->image) ?? ''}}" class="logo" alt="League City Consulting">
-                                            <p>{{ $testimonial->description ?? '' }}</p>
-                                            <div class="img-name">
-                                                <div class="img"><img src="{{ asset('includes-frontend'); }}/images/favicon.webp" alt=""></div>
-                                                <h3 class="name">{{ $testimonial->name ?? '' }}</h3>
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="item">
+                                            <div class="testimonial-box">
+                                                <img src="{{ asset($testimonial->image) ?? '' }}" class="logo"
+                                                    alt="League City Consulting">
+                                                <p>{{ $testimonial->description ?? '' }}</p>
+                                                <div class="img-name">
+                                                    <div class="img"><img
+                                                            src="{{ asset('includes-frontend') }}/images/favicon.webp"
+                                                            alt=""></div>
+                                                    <h3 class="name">{{ $testimonial->name ?? '' }}</h3>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                     {{-- <div class="item">
                                         <div class="testimonial-box">

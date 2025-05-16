@@ -130,7 +130,8 @@
         @$current_page == 'website-banner' ||
         @$current_page == 'package-includes' ||
         @$current_page == 'category' ||
-        @$current_page == 'services')
+        @$current_page == 'services' ||
+        @$current_page == 'branch' )
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {

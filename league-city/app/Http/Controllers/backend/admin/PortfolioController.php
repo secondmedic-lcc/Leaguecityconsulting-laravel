@@ -255,7 +255,7 @@ class PortfolioController extends Controller
     
         $positions = array_column($order, 'position');
     
-        // Prevent duplicate positions
+       
         if (count($positions) !== count(array_unique($positions))) {
             return response()->json(['message' => 'Duplicate Orders are not allowed!'], 400);
         }

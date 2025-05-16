@@ -82,24 +82,88 @@ $(".work-slider").owlCarousel({
         },
     },
 });
-$(".industry-slider").owlCarousel({
-    loop: false,
-    margin: 0,
-    nav: true,
-    dots: false,
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-        },
-        767: {
-            items: 3,
-        },
-        1000: {
-            items: 4,
-        },
-    },
+
+
+// $(".industry-slider").owlCarousel({
+//     loop: false,
+//     margin: 0,
+//     nav: true,
+//     dots: false,
+//     responsive: {
+//         0: {
+//             items: 2,
+//             nav: false,
+//         },
+//         767: {
+//             items: 3,
+//         },
+//         1000: {
+//             items: 4,
+//         },
+//     },
+
+
+// });
+
+
+
+
+
+$(document).ready(function () {
+    var owl = $('.industry-slider');
+
+    owl.owlCarousel({
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: { items: 2, nav: false },
+            767: { items: 3 },
+            1000: { items: 4 }
+        }
+    });
+
+    var defaultBg = '{{ asset("includes-frontend/images/healthcarelifescience.webp") }}';
+    var lastActiveBox = null;
+
+    $('#industries-section').css('background-image', 'url(' + defaultBg + ')');
+
+    $('.industry-slider').on('mouseenter', '.box', function () {
+        var bg = $(this).data('bg');
+        if (bg) {
+            $('#industries-section').css('background-image', 'url(' + bg + ')');
+        }
+        $('.box').removeClass('active');
+        $(this).addClass('active');
+        lastActiveBox = $(this);
+    });
+
+    $('.industry-slider').on('mouseleave', '.box', function () {
+        if (lastActiveBox) {
+            var bg = lastActiveBox.data('bg');
+            if (bg) {
+                $('#industries-section').css('background-image', 'url(' + bg + ')');
+            }
+            $('.box').removeClass('active');
+            lastActiveBox.addClass('active');
+        }
+    });
+
+    $('.owl-prev, .owl-next').on('click', function () {
+        if (lastActiveBox) {
+            var bg = lastActiveBox.data('bg');
+            $('#industries-section').css('background-image', 'url(' + bg + ')');
+            $('.box').removeClass('active');
+            lastActiveBox.addClass('active');
+        }
+    });
 });
+
+
+
+
+
 $(".standout-slider").owlCarousel({
     loop: false,
     margin: 0,

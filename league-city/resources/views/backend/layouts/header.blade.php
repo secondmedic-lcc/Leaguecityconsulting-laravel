@@ -181,6 +181,23 @@
                         </li>
                     </ul>
                 </li>
+                <li
+                    class="mb-2 dropdown {{ in_array($current_page, ['contact-info', 'social-links']) ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user-plus"></i> <span>Manage Contant Info</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="{{ $current_page == 'contact-info' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('admin.contact-info.edit') }}">Contact
+                                Info</a>
+                        </li>
+                        <li class="{{ $current_page == 'social-links' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('admin.addSocialLinks') }}">Social Links</a>
+                        </li>
+                    </ul>
+                </li>
 
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
             <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

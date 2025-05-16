@@ -36,7 +36,10 @@ class Controller extends BaseController
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'desc')->limit(5)->get();
         $testimonials = Testimonial::where('status', 1)->where('show_at_homepage', 1)->orderBy('position', 'asc')->limit(10)->get();
+        $technologies = \App\Models\Technology::where('status', 1)->orderBy('order')->get();
+        
+        $sectors = \App\Models\Sector::where('status', 1)->get();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials', 'technologies','sectors'));
     }
 }

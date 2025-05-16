@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
+use App\Models\GrowthMetric;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Models\ContactRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ContactUsController extends Controller
 {
@@ -18,6 +20,8 @@ class ContactUsController extends Controller
         $current_page = "contact-us";
 
         $schema_image = "includes-frontend/images/logo-white.webp";
+        $branches = Branch::where('status', 1)->orderBy('id', 'asc')->get();
+        $growthmetrics = GrowthMetric::where('status', 1)->orderBy('id', 'asc')->get();
 
         $seo_data_breadcrumb =
             '<script type="application/ld+json">
@@ -41,7 +45,7 @@ class ContactUsController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'seo_data_breadcrumb'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'seo_data_breadcrumb','branches','growthmetrics'));
     }
 
     public function store(Request $request)

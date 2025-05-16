@@ -1,3 +1,10 @@
+@php
+
+    $socialLinks = \App\Models\SocialLinks::find(1);
+    $contactinfo = \App\Models\ContactInfo::find(1);
+
+@endphp
+
 <section class="contactus section-padding">
     <div class="container">
         <div class="row">
@@ -8,7 +15,8 @@
                             <h2 class="section-heading with-p mb-lg-2 mb-1">We're here to help</h2>
                             <p class="heading-info">Got a project on your mind! We're confidential listeners, eager to
                                 collaborate.</p>
-                            <form id="contact-form" method="POST" autocomplete="off">
+                            <form id="contact-form" method="POST" action="{{ route('contact-us.request') }}"
+                                autocomplete="off">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -77,7 +85,9 @@
                                         </div>
                                         <div class="text">
                                             <span>Email</span>
-                                            <a href="mailto:info@leaguecity.com">info@leaguecityconsulting.com</a>
+                                            {{-- <a href="mailto:info@leaguecity.com">info@leaguecityconsulting.com</a> --}}
+                                            <a href="mailto:{{ $contactinfo->email }}">{{ $contactinfo->email }}</a>
+
                                         </div>
                                     </li>
                                     <li>
@@ -86,7 +96,8 @@
                                         </div>
                                         <div class="text">
                                             <span>Contact</span>
-                                            <a href="tel:+18323305432">+1-832-330-5432</a>
+                                            {{-- <a href="tel:+18323305432">+1-832-330-5432</a> --}}
+                                            <a href="tel:{{ $contactinfo->phone }}">{{ $contactinfo->phone }}</a>
                                         </div>
                                     </li>
                                     <li>
@@ -95,13 +106,44 @@
                                         </div>
                                         <div class="text">
                                             <span>Address</span>
-                                            <p>Lot 10-03C, 10th Floor Tower 1,<br> Faber Towers, Kuala Lumpur,<br>
-                                                Malaysia</p>
+                                            {{-- <p>Lot 10-03C, 10th Floor Tower 1,<br> Faber Towers, Kuala Lumpur,<br>
+                                                Malaysia</p> --}}
+
+                                            <p>{{ $contactinfo->address }}</p>
                                         </div>
                                     </li>
                                 </ul>
                                 <ul class="social-icons colorful">
-                                    <li class="facebook">
+                                    @if ($socialLinks->facebook_url ?? '')
+                                        <li class="facebook">
+                                            <a href="{{ $socialLinks->facebook_url }}" target="_blank"><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($socialLinks->instagram_url ?? '')
+                                        <li class="instagram">
+                                            <a href="{{ $socialLinks->instagram_url }}" target="_blank"><i
+                                                    class="fab fa-instagram"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($socialLinks->linkedin_url ?? '')
+                                        <li class="linkedin">
+                                            <a href="{{ $socialLinks->linkedin_url }}" target="_blank"><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($socialLinks->twitter_url ?? '')
+                                        <li class="twitter"> <a target="_blank"
+                                                href="{{ $socialLinks->twitter_url }}"><i
+                                                    class="fab fa-twitter"></i></a></li>
+                                    @endif
+                                    @if ($socialLinks->pinterest_url ?? '')
+                                        <li class="pinterest"><a target="_blank"
+                                                href="{{ $socialLinks->pinterest_url }}"><i
+                                                    class="fab fa-pinterest"></i></a></li>
+                                    @endif
+
+                                    {{-- <li class="facebook">
                                         <a href="https://www.facebook.com/leaguecityconsulting" target="_blank"><i
                                                 class="fab fa-facebook-f"></i></a>
                                     </li>
@@ -112,7 +154,7 @@
                                     <li class="linkedin">
                                         <a href="https://www.linkedin.com/company/league-city-consulting"
                                             target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>

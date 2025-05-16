@@ -4,8 +4,10 @@ use App\Models\Services;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ErrorController;
+
 use App\Http\Controllers\backend\admin\BlogsController;
 use App\Http\Controllers\backend\admin\TermsController;
+use App\Http\Controllers\backend\admin\BranchController;
 use App\Http\Controllers\backend\admin\AboutUsController;
 use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\PackagesController;
@@ -15,6 +17,7 @@ use App\Http\Controllers\backend\admin\CustomersController;
 use App\Http\Controllers\backend\admin\OurMemberController;
 use App\Http\Controllers\backend\admin\PortfolioController;
 use App\Http\Controllers\backend\admin\TestimonialController;
+use App\Http\Controllers\backend\admin\GrowthMetricController;
 use App\Http\Controllers\backend\admin\PackageTypesController;
 use App\Http\Controllers\backend\admin\PrivacyPolicyController;
 use App\Http\Controllers\backend\admin\ServicesIconsController;
@@ -405,6 +408,45 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update'); // Update testimonial
     Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial   
     Route::post('/testimonials/sort', [TestimonialController::class, 'sort'])->name('testimonials.sort');
+
+
+
+    Route::get('/contact-info', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'edit'])->name('admin.contact-info.edit');
+
+    Route::post('/contact-info/update', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'update'])->name('admin.contact-info.update');
+
+    Route::get('/social-links', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'add_social_links'])->name('admin.addSocialLinks');
+
+    Route::post('/social-links', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'updateSocialLinks'])->name('admin.updateSocialLinks');
+
+    Route::get('branch', [BranchController::class, 'index'])->name('branch');
+    Route::post('branch-store', [BranchController::class, 'store'])->name('branch.store');
+    Route::get('branch-list', [BranchController::class, 'list'])->name('branch.list');
+    Route::get('branch-edit/{id}', [BranchController::class, 'edit'])->name('branch.edit');
+    Route::put('branch-update/{id}', [BranchController::class, 'update'])->name('branch.update');
+    Route::get('branch-delete/{id}', [BranchController::class, 'destroy'])->name('branch.delete');
+
+    Route::get('/growthmetric', [GrowthMetricController::class, 'index'])->name('growthmetric.index');
+    Route::get('/growthmetric/list', [GrowthMetricController::class, 'list'])->name('growthmetric.list');
+    Route::post('/growthmetric/store', [GrowthMetricController::class, 'store'])->name('growthmetric.store');
+    Route::get('/growthmetric/edit/{id}', [GrowthMetricController::class, 'edit'])->name('growthmetric.edit');
+    Route::put('/growthmetric/update/{id}', [GrowthMetricController::class, 'update'])->name('growthmetric.update');
+    Route::get('/growthmetric/delete/{id}', [GrowthMetricController::class, 'destroy'])->name('growthmetric.delete');
+
+    Route::get('technology/list', [App\Http\Controllers\backend\admin\TechnologyController::class, 'index'])->name('technology.list');
+    Route::get('technology/create', [App\Http\Controllers\backend\admin\TechnologyController::class, 'create'])->name('technology.create');
+    Route::post('technology/store', [App\Http\Controllers\backend\admin\TechnologyController::class, 'store'])->name('technology.store');
+    Route::get('technology/edit/{id}', [App\Http\Controllers\backend\admin\TechnologyController::class, 'edit'])->name('technology.edit');
+    Route::put('technology/update/{id}', [App\Http\Controllers\backend\admin\TechnologyController::class, 'update'])->name('technology.update');
+    Route::get('technology/destroy/{id}', [App\Http\Controllers\backend\admin\TechnologyController::class, 'destroy'])->name('technology.destroy');
+
+
+    Route::get('sectors', [App\Http\Controllers\backend\admin\SectorController::class, 'index'])->name('sector.index');
+    Route::post('sectors', [App\Http\Controllers\backend\admin\SectorController::class, 'store'])->name('sector.store');
+    Route::get('sectors/list', [App\Http\Controllers\backend\admin\SectorController::class, 'list'])->name('sector.list');
+    Route::get('sectors/edit/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'edit'])->name('sector.edit');
+    Route::post('sectors/update/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'update'])->name('sector.update');
+    Route::delete('sectors/delete/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'destroy'])->name('sector.destroy');
 
     Route::get('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'change_password'])->name('change_password');
     Route::post('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'update_password'])->name('update_password');

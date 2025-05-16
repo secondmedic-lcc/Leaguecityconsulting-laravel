@@ -49,7 +49,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-6">
+            @foreach ($branches as $branch)
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="box">
+                        <img src="{{ asset($branch->branch_image) }}" alt="{{ $branch->branch_name }}">
+                        <h2>{{ $branch->branch_name }}</h2>
+                        <p>{{ $branch->branch_address }}</p>
+                    </div>
+                </div>
+            @endforeach
+
+
+            {{-- <div class="col-lg-4 col-md-6 col-6">
                 <div class="box">
                     <img src="{{ asset('includes-frontend') }}/images/mumbai.svg" alt="Mumbai">
                     <h2>Kuala Lumpur</h2>
@@ -99,7 +110,7 @@
                     <h2>Airoli, Mumbai</h2>
                     <p>U-128, Nr. Durga Mata Mandir Rd., Sec. 4, Airoli, Navi Mumbai, Maharashtra - 400708</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
@@ -116,7 +127,21 @@
         </div>
 
         <div class="row g-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+            @foreach ($growthmetrics as $growthmetric)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="{{ $growthmetric->icon_class }}"></i>
+                        </div>
+                        <div>
+                            <h3>{{ $growthmetric->title }}</h3>
+                            <p>{{ $growthmetric->description }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            {{-- <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                 <div class="box">
                     <div class="icon">
                         <i class="fas fa-globe-americas"></i>
@@ -247,7 +272,7 @@
                         <p>Unique &amp; well-defined</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
