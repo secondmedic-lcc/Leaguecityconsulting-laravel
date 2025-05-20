@@ -433,6 +433,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('/growthmetric/update/{id}', [GrowthMetricController::class, 'update'])->name('growthmetric.update');
     Route::get('/growthmetric/delete/{id}', [GrowthMetricController::class, 'destroy'])->name('growthmetric.delete');
 
+
+    Route::post('/growthmetric/title', [GrowthMetricController::class, 'updateOrCreatetitle'])->name('growthmetrictitle.store');
+
     Route::get('technology/list', [App\Http\Controllers\backend\admin\TechnologyController::class, 'index'])->name('technology.list');
     Route::get('technology/create', [App\Http\Controllers\backend\admin\TechnologyController::class, 'create'])->name('technology.create');
     Route::post('technology/store', [App\Http\Controllers\backend\admin\TechnologyController::class, 'store'])->name('technology.store');

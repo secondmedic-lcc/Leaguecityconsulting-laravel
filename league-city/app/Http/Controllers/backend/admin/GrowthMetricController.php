@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend\admin;
 
 use App\Models\GrowthMetric;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -61,10 +62,43 @@ class GrowthMetricController extends Controller
         $page_name = "growthmetric/list";
         $page_title = "Manage Growth Metric";
         $current_page = "growthmetric";
-        $list = GrowthMetric::where('status', 1)->orderBy('id', 'desc')->paginate(20);
+        $pagetitle = GrowthMetric::where('id', 1)->first();
+        $list = GrowthMetric::where('status', 1)->where('id', '!=', 1)->orderBy('id', 'desc')->paginate(20);
 
-        return view('backend.admin.main', compact('page_name', 'page_title', 'current_page', 'list'));
+        return view('backend.admin.main', compact('page_name', 'page_title', 'current_page', 'list', 'pagetitle'));
     }
+
+    public function updateOrCreatetitle(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'icon_class' => 'null',
+            'status' => 1,
+        ];
+
+        $title = GrowthMetric::find(1);
+
+        if ($title) {
+            $title->update($data);
+        } else {
+
+            DB::table('growth_metrics')->insert(array_merge(['id' => 1], $data));
+        }
+
+        return redirect()->route('growthmetric.list')->with('success', 'Growth Metric Title Updated Successfully');
+    }
+
 
 
     public function edit($id)

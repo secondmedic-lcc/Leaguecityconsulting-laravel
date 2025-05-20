@@ -119,10 +119,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
-                <h2 class="section-heading with-p">Know More About Us for Better Growth</h2>
-                <p class="heading-info">Digital Solutions are the future of business in this tech-focused world. League
+                <h2 class="section-heading with-p">
+                    {{-- Know More About Us for Better Growth --}}
+                    {{ $pagetitle->title }}
+                </h2>
+                <p class="heading-info">
+                    {{-- Digital Solutions are the future of business in this tech-focused world. League
                     City Consulting is dedicatedly serving diverse businesses specific demands with utter precisions and
-                    responsibly.</p>
+                    responsibly. --}}
+                    {{ $pagetitle->description }}
+                </p>
             </div>
         </div>
 

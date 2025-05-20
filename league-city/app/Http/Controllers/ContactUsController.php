@@ -21,7 +21,8 @@ class ContactUsController extends Controller
 
         $schema_image = "includes-frontend/images/logo-white.webp";
         $branches = Branch::where('status', 1)->orderBy('id', 'asc')->get();
-        $growthmetrics = GrowthMetric::where('status', 1)->orderBy('id', 'asc')->get();
+        $pagetitle = GrowthMetric::where('id', 1)->first();
+        $growthmetrics = GrowthMetric::where('status', 1)->where('id', '!=', 1)->orderBy('id', 'asc')->get();
 
         $seo_data_breadcrumb =
             '<script type="application/ld+json">
@@ -45,7 +46,7 @@ class ContactUsController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'seo_data_breadcrumb','branches','growthmetrics'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'seo_data_breadcrumb','branches','growthmetrics','pagetitle'));
     }
 
     public function store(Request $request)

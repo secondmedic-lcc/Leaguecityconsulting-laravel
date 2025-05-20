@@ -7,7 +7,6 @@
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="title">Title (e.g. 20+)</label>
                             <input type="text" class="form-control" name="title" id="title" 
