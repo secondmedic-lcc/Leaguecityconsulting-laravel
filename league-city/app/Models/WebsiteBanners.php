@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class WebsiteBanners extends Model
 {
@@ -19,6 +19,8 @@ class WebsiteBanners extends Model
         'sub_heading',
         'details',
         'banner_image',
+        'button_text',
+        'button_url',
         'status',
     ];
 }

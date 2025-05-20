@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
-use App\Models\Services;
+use App\Models\Sector;
+use App\Models\Services;    
 use App\Models\Portfolio;
+use App\Models\Technology;
 use App\Models\Testimonial;
+use App\Models\PrivacyPolicy;
+use App\Models\ExploreSection;
+use App\Models\WebsiteBanners;
+use App\Models\TermsAndConditions;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -36,10 +42,13 @@ class Controller extends BaseController
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('position', 'desc')->limit(5)->get();
         $testimonials = Testimonial::where('status', 1)->where('show_at_homepage', 1)->orderBy('position', 'asc')->limit(10)->get();
-        $technologies = \App\Models\Technology::where('status', 1)->orderBy('order')->get();
-        
-        $sectors = \App\Models\Sector::where('status', 1)->get();
+        $technologies = Technology::where('status', 1)->orderBy('order')->get();
+        $exploreSections = ExploreSection::orderBy('id', 'desc')->where('status', 1)->get();
+        $services = Services::where('status', 1)->get();
+        $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials', 'technologies','sectors'));
+        $sectors = Sector::where('status', 1)->get();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'blog', 'portfolio', 'schema_image', 'testimonials', 'technologies', 'sectors', 'exploreSections', 'web_banner', 'services'));
     }
 }

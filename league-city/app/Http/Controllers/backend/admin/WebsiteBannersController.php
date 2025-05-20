@@ -2,36 +2,35 @@
 
 namespace App\Http\Controllers\backend\admin;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\WebsiteBanners;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
 
 class WebsiteBannersController extends Controller
 {
     public function index()
     {
         $page_name = "website-banner/list";
-        
+
         $page_title = "Manage Website Banner";
-        
+
         $current_page = "website-banner";
 
-        $portfolio = WebsiteBanners::where(array('status'=>1))->orderBy('id','desc')->paginate(20);
+        $portfolio = WebsiteBanners::where(array('status' => 1))->orderBy('id', 'desc')->paginate(20);
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page','portfolio'));
-
+        return view('backend/admin/main', compact('page_name', 'page_title', 'current_page', 'portfolio'));
     }
 
     public function create()
     {
         $page_name = "website-banner/add";
-        
+
         $page_title = "Manage Website Banner";
-        
+
         $current_page = "website-banner";
 
-        return view('backend/admin/main', compact('page_name','page_title','current_page'));
+        return view('backend/admin/main', compact('page_name', 'page_title', 'current_page'));
     }
 
     public function store(Request $request)
@@ -42,25 +41,34 @@ class WebsiteBannersController extends Controller
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'details' => 'required|string',
-            'banner_image' => 'mimes:webp|max:150'
+            'banner_image' => 'mimes:webp|max:150',
+            'button_text' => 'nullable|string',
+            'button_url' => 'nullable|string',
         ]);
 
-        if(!empty($request->banner_image)){
-                
-            $imageName = time().'-image.'.$request->banner_image->extension();
+        // if (!empty($request->banner_image)) {
 
-            $request->banner_image->move(public_path('uploads/banner'), $imageName);
+        //     $imageName = time() . '-image.' . $request->banner_image->extension();
 
-            $image = "uploads/banner/".$imageName;
+        //     $request->banner_image->move(public_path('uploads/banner'), $imageName);
 
-            $data += array('banner_image'=>$image);
+        //     $image = "uploads/banner/" . $imageName;
+
+        //     $data += array('banner_image' => $image);
+        // }
+
+        if ($request->hasFile('banner_image')) {
+            $file = $request->file('banner_image');
+            $imageName = time() . '-image.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/banner'), $imageName);
+            $data['banner_image'] = 'uploads/banner/' . $imageName;
         }
 
         $result = WebsiteBanners::create($data);
-        
-        if($result->id > 0){
+
+        if ($result->id > 0) {
             return redirect()->back()->with('success', 'WebsiteBanners Added successfully');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went Wrong');
         }
     }
@@ -68,14 +76,14 @@ class WebsiteBannersController extends Controller
     public function edit($id)
     {
         $page_name = "website-banner/edit";
-        
+
         $page_title = "Manage Website Banner";
-        
+
         $current_page = "website-banner";
-        
-        $banner = WebsiteBanners::where(array('status'=>1,'id'=>$id))->get()->first();
-        
-        return view('backend/admin/main', compact('page_name','page_title','current_page','banner'));
+
+        $banner = WebsiteBanners::where(array('status' => 1, 'id' => $id))->get()->first();
+
+        return view('backend/admin/main', compact('page_name', 'page_title', 'current_page', 'banner'));
     }
 
     public function update(Request $request, $id)
@@ -86,45 +94,44 @@ class WebsiteBannersController extends Controller
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
             'details' => 'required|string',
+            'button_text' => 'nullable|string',
+            'button_url' => 'nullable|string',
         ]);
-          
-        if(!empty($request->banner_image)){
-            
-            $image_path = WebsiteBanners::where(array('id'=>$id))->first();
+
+        if (!empty($request->banner_image)) {
+
+            $image_path = WebsiteBanners::where(array('id' => $id))->first();
 
             @unlink($image_path->banner_image);
 
-            $imageName = time().'-image.'.$request->banner_image->extension();
+            $imageName = time() . '-image.' . $request->banner_image->extension();
 
             $request->banner_image->move(public_path('uploads/banner'), $imageName);
 
-            $image = "uploads/banner/".$imageName;
+            $image = "uploads/banner/" . $imageName;
 
-            $data += array('banner_image'=>$image);
+            $data += array('banner_image' => $image);
         }
-          
-        $result = WebsiteBanners::where(array('status'=>1,'id'=>$id))->update($data);
-        
-        if($result > 0){
+
+        $result = WebsiteBanners::where(array('status' => 1, 'id' => $id))->update($data);
+
+        if ($result > 0) {
             return redirect()->route('website-banner')->with('success', 'WebsiteBanners updated successfully.');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went Wrong');
         }
-
     }
 
     public function destroy($id)
     {
-        $data = array('status' =>0);
+        $data = array('status' => 0);
 
-        $result = WebsiteBanners::where(array('id'=>$id))->update($data);
+        $result = WebsiteBanners::where(array('id' => $id))->update($data);
 
-        if($result > 0){
+        if ($result > 0) {
             return redirect()->route('website-banner')->with('success', 'WebsiteBanners deleted successfully.');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went Wrong');
         }
-        
     }
-    
 }

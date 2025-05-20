@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\admin\BlogsController;
 use App\Http\Controllers\backend\admin\TermsController;
 use App\Http\Controllers\backend\admin\BranchController;
 use App\Http\Controllers\backend\admin\AboutUsController;
+use App\Http\Controllers\backend\admin\ExploreController;
 use App\Http\Controllers\backend\admin\IndustryController;
 use App\Http\Controllers\backend\admin\PackagesController;
 use App\Http\Controllers\backend\admin\ProductsController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\backend\admin\ServicesIconsController;
 use App\Http\Controllers\backend\admin\ServicesImagesController;
 use App\Http\Controllers\backend\admin\WebsiteBannersController;
 use App\Http\Controllers\backend\admin\PackageIncludesController;
+use App\Http\Controllers\backend\admin\ProcessWeFollowController;
 use App\Http\Controllers\backend\admin\ServicesDetailsController;
 use App\Http\Controllers\backend\admin\PortfolioServicesController;
 
@@ -409,8 +411,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy'); // Delete testimonial   
     Route::post('/testimonials/sort', [TestimonialController::class, 'sort'])->name('testimonials.sort');
 
-
-
     Route::get('/contact-info', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'edit'])->name('admin.contact-info.edit');
 
     Route::post('/contact-info/update', [App\Http\Controllers\backend\admin\ContactInfoController::class, 'update'])->name('admin.contact-info.update');
@@ -447,6 +447,37 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('sectors/edit/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'edit'])->name('sector.edit');
     Route::post('sectors/update/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'update'])->name('sector.update');
     Route::delete('sectors/delete/{id}', [App\Http\Controllers\backend\admin\SectorController::class, 'destroy'])->name('sector.destroy');
+
+    Route::get('/innovative-services', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'index'])->name('innovative_services.create');
+    Route::get('/innovative-services/list', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'list'])->name('innovative_services.list');
+    Route::post('/innovative-services', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'store'])->name('innovative_services.store');
+    Route::get('/innovative-services/{id}/edit', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'edit'])->name('innovative_services.edit');
+    Route::put('/innovative-services/{id}', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'update'])->name('innovative_services.update');
+    Route::get('/innovative-services/{id}', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'destroy'])->name('innovative_services.destroy');
+
+Route::get('process-we-follow', [ProcessWeFollowController::class, 'list'])->name('process_we_follow.list');
+Route::get('process-we-follow/create', [ProcessWeFollowController::class, 'index'])->name('process_we_follow.create');
+Route::post('process-we-follow/store', [ProcessWeFollowController::class, 'store'])->name('process_we_follow.store');
+Route::get('process-we-follow/edit/{id}', [ProcessWeFollowController::class, 'edit'])->name('process_we_follow.edit');
+Route::put('process-we-follow/update/{id}', [ProcessWeFollowController::class, 'update'])->name('process_we_follow.update');
+Route::get('process-we-follow/delete/{id}', [ProcessWeFollowController::class, 'destroy'])->name('process_we_follow.destroy');
+
+    Route::get('explore', [ExploreController::class, 'index'])->name('explore.index');
+    Route::post('explore/store', [ExploreController::class, 'store'])->name('explore.store');
+    Route::get('explore/list', [ExploreController::class, 'list'])->name('explore.list');
+    Route::get('explore/edit/{id}', [ExploreController::class, 'edit'])->name('explore.edit');
+    Route::put('explore/update/{id}', [ExploreController::class, 'update'])->name('explore.update');
+    Route::get('explore/delete/{id}', [ExploreController::class, 'destroy'])->name('explore.delete');
+
+
+    // terms and conditions
+    Route::get('terms/edit', [App\Http\Controllers\backend\admin\TermsAndConditionController::class, 'edit'])->name('terms.edit');
+    Route::post('terms/update', [App\Http\Controllers\backend\admin\TermsAndConditionController::class, 'update'])->name('terms.update');
+    // end terms and conditions
+
+    // privacy policy
+    Route::get('privacy-policy/edit', [App\Http\Controllers\backend\admin\PrivacyPolicyController::class, 'edit'])->name('privacy.edit');
+    Route::post('privacy-policy/update', [App\Http\Controllers\backend\admin\PrivacyPolicyController::class, 'update'])->name('privacy.update');
 
     Route::get('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'change_password'])->name('change_password');
     Route::post('/change-password', [App\Http\Controllers\backend\admin\AboutUsController::class, 'update_password'])->name('update_password');

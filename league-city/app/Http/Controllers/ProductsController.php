@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Products;
+use Illuminate\Http\Request;
 use App\Models\WebsiteBanners;
 
 class ProductsController extends Controller
@@ -17,8 +17,9 @@ class ProductsController extends Controller
         $current_page = "products";
 
         $product = Products::where(array('status'=>1))->orderBy('id','desc')->get();
+        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','product','web_banner'));
     }
     
     public function products_details()

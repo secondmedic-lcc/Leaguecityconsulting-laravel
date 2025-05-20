@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PrivacyPolicy;
 use App\Models\WebsiteBanners;
+use App\Http\Controllers\Controller;
 
 class PrivacyPolicyController extends Controller
 {
@@ -17,10 +19,10 @@ class PrivacyPolicyController extends Controller
 
         $current_page = "privacy-policy";
 
-        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+        $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
 
-        $seo_data_breadcrumb = 
-        '<script type="application/ld+json">
+        $seo_data_breadcrumb =
+            '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -41,6 +43,8 @@ class PrivacyPolicyController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','web_banner', 'seo_data_breadcrumb'));
+        $privacy_policy = PrivacyPolicy::first();
+
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'seo_data_breadcrumb','privacy_policy'));
     }
 }

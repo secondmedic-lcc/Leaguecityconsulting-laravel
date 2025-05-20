@@ -1,24 +1,35 @@
 <div class="bg-dark">
-    <section class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-                    <h1 class="section-heading">
-                        <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution
-                        <span class="light">Company</span>
-                    </h1>
-                    <div class="content">
-                        <p>
-                            League City Consulting is a top-rated
-                            <b>Web Design & Web Development</b> Company based in USA. Get
-                            in touch to boost your business online.
-                        </p>
+    @empty(!$web_banner)
+        <section class="banner" style="background-image: url({{ asset($web_banner['banner_image']) }});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="section-heading">
+                            {{-- <span class="light">Leading</span> Web Development <br><span class="light">&</span> IT Solution
+                            <span class="light">Company</span> --}}
+                            {!! $web_banner->heading !!}<span class="light"> <br>{{ $web_banner['sub_heading'] }}</span>
+                        </h1>
+                        <div class="content">
+                            <p>
+                                {!! $web_banner->details ??
+                                    'League City Consulting is a top-rated <b>Web Design & Web Development</b> Company based in USA. Get in touch to boost your business online.' !!}
+                            </p>
+                            {{-- <p>
+                                League City Consulting is a top-rated
+                                <b>Web Design & Web Development</b> Company based in USA. Get
+                                in touch to boost your business online.
+                            </p> --}}
+                        </div>
+                        @if (!empty($web_banner->button_url) && !empty($web_banner->button_text))
+                            <a href="{{ url($web_banner->button_url) }}"
+                                class="btn web-btn">{{ $web_banner->button_text }}</a>
+                        @endif
+                        {{-- <a href="{{ url('contact-us') }}" class="btn web-btn">Let's Connect</a> --}}
                     </div>
-                    <a href="{{ url('contact-us') }}" class="btn web-btn">Let's Connect</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endempty
 
     <section class="services">
         <div class="container">
@@ -28,8 +39,33 @@
                     </h2>
                     <div class="services-slider-height" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel services-slider">
+                            @if (!empty($services) && count($services) > 0)
+                                @foreach ($services as $service)
+                                    <div class="item">
+                                        <div class="box">
+                                            <div class="images">
+                                                @php
+                                                    $imagePath = $service['image'] ?? '';
+                                                    $imageExists =
+                                                        !empty($imagePath) && file_exists(public_path($imagePath));
+                                                @endphp
 
-                            <div class="item">
+                                                <img src="{{ $imageExists ? asset($imagePath) : asset('assets/images/default.png') }}"
+                                                    alt="{{ $service['name'] ?? 'Service Image' }}"
+                                                    onerror="this.onerror=null;this.src='{{ asset('assets/images/default.png') }}';">
+                                            </div>
+                                            <div class="content">
+                                                <h3>{{ $service['name'] ?? 'No Name' }}</h3>
+                                                <p>{{ $service['min_description'] ?? 'No description available.' }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <p class="text-center">No services found.</p>
+                            @endif
+
+                            {{-- <div class="item">
                                 <div class="box">
                                     <div class="images">
                                         <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp"
@@ -120,7 +156,7 @@
                                         <p>See the unseen threats Stay vigilant, stay secure.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
@@ -164,7 +200,31 @@
         </div>
     </section>
 
-    <section class="explore section-padding">
+    @if (isset($exploreSections) && $exploreSections->count())
+        <section class="explore section-padding">
+            <div class="container">
+                <div class="row g-0">
+                    @foreach ($exploreSections as $section)
+                        <div class="col-lg-6"
+                            data-aos="{{ $section->position == 'left' ? 'zoom-in-right' : 'zoom-in-left' }}"
+                            data-aos-delay="{{ $section->position == 'left' ? '100' : '200' }}">
+
+                            <div class="box {{ $section->position == 'right' ? 'left-border' : '' }}">
+                                <h2>{{ $section->heading }}</h2>
+                                <p>{{ $section->description }}</p>
+                                <a href="{{ $section->button_url ?? '#' }}" class="btn white-btn">
+                                    {{ $section->button_text ?? 'Explore' }}
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+
+    {{-- <section class="explore section-padding">
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-6" data-aos="zoom-in-right" data-aos-delay="100">
@@ -184,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 </div>
 
 {{-- <section class="industries"

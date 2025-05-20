@@ -273,9 +273,49 @@
     </div>
 </section>
 
-
-
 <section class="service-portfolio-process portfolio-process section-padding bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center">
+                <h2 class="section-heading with-p">Process We Follow in League City Consulting</h2>
+                <p class="heading-info text-white">
+                    League City Consulting's Strategic Process Unveiled. Discover the Proven Steps to Achieving Your Business Goals
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="accordion" id="accordionExample">
+                    @foreach ($processSteps as $index => $step)
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button @if($index != 0) collapsed @endif" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse{{ $index + 1 }}"
+                                    aria-expanded="{{ $index == 0 ? 'true' : 'false' }}"
+                                    aria-controls="collapse{{ $index + 1 }}">
+                                    {{ $step->title }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ $index + 1 }}" 
+                                 class="accordion-collapse collapse @if($index == 0) show @endif" 
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>{!! nl2br(e($step->description)) !!}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{{-- <section class="service-portfolio-process portfolio-process section-padding bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
@@ -374,18 +414,14 @@
                         <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>In the ever-evolving IT landscape, League City Consulting is committed to staying ahead of the curve. We offer continuous improvement services, including regular updates, enhancements, and proactive monitoring, keeping your IT solutions aligned with industry trends and emerging technologies.
-
                                 </p>
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 @include('frontend.pages.query-form')

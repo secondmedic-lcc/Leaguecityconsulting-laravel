@@ -32,7 +32,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="content">
-                    <p>League City Consulting is committed to protecting the privacy of our clients and website visitors. This Privacy Policy explains how we collect, use, disclose, and protect the personal information you provide to us.</p>
+
+                    {!! $privacy_policy->content !!}
+                    {{-- <p>League City Consulting is committed to protecting the privacy of our clients and website visitors. This Privacy Policy explains how we collect, use, disclose, and protect the personal information you provide to us.</p>
                     <h2>Information We Collect</h2>
                     <ul>
                         <li>Personal Information: We may collect personal information such as your name, email address, phone number, mailing address when you contact us, request a quote, or use our website.</li>
@@ -55,7 +57,7 @@
                     <h2>Changes to this Privacy Policy</h2>
                     <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website.</p>
                     <h2>Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us at <a href="tel:+18323305432" class="web-clr"><b>+18323305432</b></a></p>
+                    <p>If you have any questions about this Privacy Policy, please contact us at <a href="tel:+18323305432" class="web-clr"><b>+18323305432</b></a></p> --}}
                 </div>
             </div>
         </div>

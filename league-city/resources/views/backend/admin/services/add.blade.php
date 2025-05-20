@@ -31,7 +31,10 @@
                             <label class="form-label" for="">Service Heading</label>
                             <input type="text" class="form-control" name="heading" required value="{{ old('heading') }}" />
                         </div>
-
+                        <div class="col-md-6 mb-3">
+                            <label for="">Small Description</label>
+                            <textarea name="min_description" class="form-control"></textarea>
+                        </div>
                         <div class="col-md-6 mb-3">
                             <label for=""> Description</label>
                             <textarea name="description" id="description" class="form-control"></textarea>

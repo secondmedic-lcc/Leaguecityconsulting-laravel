@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Services;
 use Illuminate\Http\Request;
-use App\Models\WebsiteBanners;
-
 use App\Models\ServicesIcons;
-use App\Models\Category;
-use App\Models\ServicesDetails;
 use App\Models\ServicesImages;
+use App\Models\WebsiteBanners;
+use App\Models\ProcessWeFollow;
+use App\Models\ServicesDetails;
 
 class ServicesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $page_name = "services";
 
@@ -21,12 +22,12 @@ class ServicesController extends Controller
 
         $current_page = "services";
 
-        $web_banner = WebsiteBanners::where(array('status'=>1,'page_name'=>$current_page))->orderBy('id','desc')->get()->first();
+        $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
 
         $schema_image = @$web_banner['banner_image'];
 
         $seo_data_breadcrumb =
-        '<script type="application/ld+json">
+            '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -47,9 +48,9 @@ class ServicesController extends Controller
             }
         </script>';
 
-        $services = Services::where(array('status'=>1))->orderBy('id','asc')->get();
+        $services = Services::where(array('status' => 1))->orderBy('id', 'asc')->get();
 
-        return view('frontend/main', compact('page_name','page_title','current_page','web_banner', 'schema_image', 'seo_data_breadcrumb','services'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb', 'services'));
     }
 
     public function services_details()
@@ -66,19 +67,19 @@ class ServicesController extends Controller
 
         $services = Services::where(array('status' => 1, 'url_slug' => $this->path))->first();
 
-        $services['services_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'main-details'))->get();
-        $services['services_sub_details'] = ServicesDetails::where(array('status' => 1,'services_id' => $services->id,'data_for'=>'sub-details'))->get();
+        $services['services_details'] = ServicesDetails::where(array('status' => 1, 'services_id' => $services->id, 'data_for' => 'main-details'))->get();
+        $services['services_sub_details'] = ServicesDetails::where(array('status' => 1, 'services_id' => $services->id, 'data_for' => 'sub-details'))->get();
 
         $services['services_images'] = ServicesImages::where(array('status' => 1, 'services_id' => $services->id))->get();
 
         $services['services_icons'] = ServicesIcons::where(array('status' => 1, 'services_id' => $services->id))->get();
 
         $web_banner = WebsiteBanners::where(array('status' => 1, 'page_name' => $current_page))->orderBy('id', 'desc')->get()->first();
-
+        $processSteps = ProcessWeFollow::orderBy('order')->get();
         $schema_image = @$web_banner['banner_image'];
         $seo_data_breadcrumb =
 
-        '<script type="application/ld+json">
+            '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -106,6 +107,6 @@ class ServicesController extends Controller
             }
         </script>';
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb','services'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page', 'web_banner', 'schema_image', 'seo_data_breadcrumb', 'services', 'processSteps'));
     }
 }

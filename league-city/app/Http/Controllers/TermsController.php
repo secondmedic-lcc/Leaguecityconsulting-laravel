@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WebsiteBanners;
+use App\Models\TermsAndConditions;
+use App\Http\Controllers\Controller;
 
 class TermsController extends Controller
 {
@@ -40,7 +42,8 @@ class TermsController extends Controller
                 ]
             }
         </script>';
+        $terms_conditions = TermsAndConditions::first();
 
-        return view('frontend/main', compact('page_name', 'page_title', 'current_page','web_banner', 'seo_data_breadcrumb'));
+        return view('frontend/main', compact('page_name', 'page_title', 'current_page','web_banner', 'seo_data_breadcrumb','terms_conditions'));
     }
 }

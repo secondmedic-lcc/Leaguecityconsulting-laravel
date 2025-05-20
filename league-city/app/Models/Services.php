@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Services extends Model
 {
@@ -15,6 +15,8 @@ class Services extends Model
         'name',
         'url_slug',
         'heading',
+        'sub_heading',
+        'min_description',
         'image',
         'desc_heading',
         'description',

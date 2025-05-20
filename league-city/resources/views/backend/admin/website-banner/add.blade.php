@@ -2,8 +2,8 @@
     <div class="col-lg-12">
         @include('backend.layouts.alert')
 
-        <form action="{{ route('website-banner'); }}" method="POST" autocomplete="off" enctype="multipart/form-data" >
-        @csrf
+        <form action="{{ route('website-banner') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+            @csrf
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
@@ -11,9 +11,11 @@
                             <label class="form-label" for="">Page</label>
                             <select class="form-control js-example-basic-single" required name="page_name">
                                 <option value="">-- Select Page --</option>
+                                <option value="home">Home Page</option>
                                 <option value="about-us">About Us</option>
                                 <option value="services">Service Listing</option>
                                 <option value="blogs">Blogs Listing</option>
+                                <option value="products">Products</option>
                                 <option value="terms-and-conditions">Terms And Conditions</option>
                                 <option value="privacy-policy">Privacy Policy</option>
                                 <option value="portfolio-details">Portfolio Details</option>
@@ -24,30 +26,47 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Page Title</label>
-                            <input type="text" class="form-control" name="page_title" onkeypress="return /[A-Za-z ]/i.test(event.key)" required value="{{ old('page_title') }}" />
+                            <input type="text" class="form-control" name="page_title"
+                                onkeypress="return /[A-Za-z ]/i.test(event.key)" required
+                                value="{{ old('page_title') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Banner Heading</label>
-                            <input type="text" class="form-control" name="heading"  value="{{ old('heading') }}" />
+                            <input type="text" class="form-control" name="heading" value="{{ old('heading') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Banner Sub Heading</label>
-                            <input type="text" class="form-control" name="sub_heading" required value="{{ old('sub_heading') }}" />
+                            <input type="text" class="form-control" name="sub_heading" required
+                                value="{{ old('sub_heading') }}" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Banner Details</label>
-                            <input type="text" class="form-control" name="details" required value="{{ old('details') }}" />
+                            <input type="text" class="form-control" name="details" required
+                                value="{{ old('details') }}" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Button Text</label>
+                            <input type="text" class="form-control" name="button_text" 
+                                value="{{ old('button_text') }}" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="">Button Url</label>
+                            <input type="url" class="form-control" name="button_url" 
+                                value="{{ old('button_url') }}" />
                         </div>
                         <div class="col-md-3 mb-2 col-8">
                             <label class="form-label" for="">Banner Image</label>
-                            <input type="file" class="form-control" required name="banner_image" onchange="readURL(this);"  value="{{ old('banner_image') }}"  accept="image/webp" />
+                            <input type="file" class="form-control" required name="banner_image"
+                                onchange="readURL(this);" value="{{ old('banner_image') }}" accept="image/webp" />
                             <small class="text-danger">(Upload only WEBP image format less than 150 KB)</small>
                         </div>
                         <div class="col-md-2 col-4">
-                            <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg')}}" class="img-responsive mt-2 rounded w-100" width="100" height="auto" id="img_preview" />
+                            <img alt="Portfolio Profile" src="{{ asset('uploads/default.jpg') }}"
+                                class="img-responsive mt-2 rounded w-100" width="100" height="auto"
+                                id="img_preview" />
                         </div>
                         <div class="col-md-12 text-center">
-                            <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn" >
+                            <button type="submit" class="btn web-btn w-50 mt-3" id="submit_btn">
                                 Add Banner
                             </button>
                         </div>

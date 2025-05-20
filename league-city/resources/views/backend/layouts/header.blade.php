@@ -39,6 +39,8 @@
                     </a>
                 </li>
 
+
+
                 <li class="mb-2 dropdown {{ $current_page == 'category' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,6 +52,46 @@
                         <li><a class="dropdown-item" href="{{ route('category') }}">Category List</a></li>
                     </ul>
                 </li>
+
+                <li
+                    class="mb-1 dropdown {{ $current_page == 'technology' ? 'active' : '' }} {{ $current_page == 'sector' ? 'active' : '' }} {{ $current_page == 'explore' ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Home Page</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('technology.create') }}">Add Technology</a></li>
+                        <li><a class="dropdown-item" href="{{ route('technology.list') }}">Technology List</a></li>
+                        <li><a class="dropdown-item" href="{{ route('sector.index') }}">Add Sector We Cover
+                            </a></li>
+                        <li><a class="dropdown-item" href="{{ route('sector.list') }}">Sector We Cover list
+                            </a></li>
+                        <li><a class="dropdown-item" href="{{ route('explore.index') }}">Add Explore</a></li>
+
+                        <li><a class="dropdown-item" href="{{ route('explore.list') }}">Explore list
+                            </a></li>
+
+                    </ul>
+                </li>
+
+                <li class="mb-1 dropdown {{ $current_page == 'innovative_services' ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-dashboard"></i> <span>Manage Innovative</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('innovative_services.create') }}">Add
+                                Innovative</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('innovative_services.list') }}">Innovative List</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
 
                 <li class="mb-1 dropdown {{ $current_page == 'portfolio' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -87,7 +129,8 @@
                     </ul>
                 </li>
 
-                <li class="mb-1 dropdown {{ $current_page == 'services' ? 'active' : '' }}">
+                <li
+                    class="mb-1 dropdown {{ $current_page == 'services' ? 'active' : '' }} {{ $current_page == 'process_we_follow' ? 'active' : '' }}">
                     <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <font><i class="bx bxs-dashboard"></i> <span>Manage Services</span></font>
@@ -96,6 +139,11 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{ route('services.create') }}">Add Services</a></li>
                         <li><a class="dropdown-item" href="{{ route('services') }}">Services List</a></li>
+                        <li><a class="dropdown-item" href="{{ route('process_we_follow.create') }}">Add Process We
+                                Follow</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('process_we_follow.list') }}">Process we Follow
+                                List</a></li>
                     </ul>
                 </li>
 
@@ -196,8 +244,37 @@
                         <li class="{{ $current_page == 'social-links' ? 'active' : '' }}">
                             <a class="dropdown-item" href="{{ route('admin.addSocialLinks') }}">Social Links</a>
                         </li>
+                        <li class="{{ $current_page == 'branch' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('branch') }}">Add Branch</a>
+                        </li>
+                        <li class="{{ $current_page == 'branch-list' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('branch.list') }}">Branch List</a>
+                        </li>
+                        <li class="{{ $current_page == 'growth' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('growthmetric.index') }}">Add Ggrowthmetric</a>
+                        </li>
+                        <li class="{{ $current_page == 'growth-list' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('growthmetric.list') }}">Growthmetric List</a>
+
                     </ul>
                 </li>
+                <li
+                    class="mb-2 dropdown {{ $current_page == 'privacy-policy' ? 'active' : '' }} {{ $current_page == 'privacy-policy' ? 'active' : '' }} {{ $current_page == 'terms-conditions' ? 'active' : '' }}">
+                    <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <font><i class="bx bxs-user-plus"></i> <span>Privacy Policy</span></font>
+                        <span class="bx bx-chevron-right"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="{{ $current_page == 'privacy-policy' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('privacy.edit') }}">Update Privacy Policy</a>
+                        </li>
+                        <li class="{{ $current_page == 'terms-conditions' ? 'active' : '' }}">
+                            <a class="dropdown-item" href="{{ route('terms.edit') }}">Update Term & Condition</a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 {{-- <li class="mb-1 dropdown {{ ($current_page == 'packages' || $current_page == 'sub-keypoints') ? 'active' : ''; }}">
             <a href="javascript:;" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

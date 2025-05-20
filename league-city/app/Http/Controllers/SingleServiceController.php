@@ -15,6 +15,7 @@ class SingleServiceController extends Controller
         $page_title = "singleservice";
 
         $current_page = "singleservice";
+        
 
         return view('frontend/main', compact('page_name', 'page_title', 'current_page'));
     }

@@ -147,7 +147,7 @@
     </script>
 @endif
 
-@if (@$current_page == 'portfolio' || @$current_page == 'blogs' || @$current_page == 'about-us')
+@if (@$current_page == 'portfolio' || @$current_page == 'blogs' || @$current_page == 'about-us' || @$current_page == 'privacy-policy' || @$current_page == 'terms-conditions' || @$current_page == 'website-banner')
     <script>
         CKEDITOR.replace("description");
         CKEDITOR.replace("ceo_description");

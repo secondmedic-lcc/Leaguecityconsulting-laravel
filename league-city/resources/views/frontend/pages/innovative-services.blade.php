@@ -1,9 +1,10 @@
-<section class="innovative-services section-padding">
+{{-- <section class="innovative-services section-padding">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="section-heading with-p">Innovative Services: Fuel Your Real Growth</h2>
-                <p class="heading-info">Browse our services and join the collaborative journey towards a brighter future.</p>
+                <p class="heading-info">Browse our services and join the collaborative journey towards a brighter future.
+                </p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -12,7 +13,8 @@
                     <a href="services#software-engineering">
                         <i class="fas fa-desktop"></i>
                         <h3><span>Software Engineering</span> <i class="fas fa-arrow-right"></i></h3>
-                        <p>Our comprehensive full-cycle services and dedicated developer options ensure your software masterpiece.</p>
+                        <p>Our comprehensive full-cycle services and dedicated developer options ensure your software
+                            masterpiece.</p>
                     </a>
                 </div>
             </div>
@@ -25,6 +27,41 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>  --}}
+
+@php
+    use App\Models\InnovativeService;
+    $services = InnovativeService::where(['status' => 1])
+        ->orderBy('id', 'asc')
+        ->get();
+@endphp
+
+
+<section class="innovative-services section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-heading with-p">Innovative Services: Fuel Your Real Growth</h2>
+                <p class="heading-info">Browse our services and join the collaborative journey towards a brighter
+                    future.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach ($services as $service)
+                <div class="col-lg-4 col-6">
+                    <div class="box">
+                        <a href="{{ $service->link }}">
+                            <i class="{{ $service->icon }}"></i>
+                            <h3>
+                                <span>{{ $service->title }}</span> <i class="fas fa-arrow-right"></i>
+                            </h3>
+                            <p>{{ $service->description }}</p>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
