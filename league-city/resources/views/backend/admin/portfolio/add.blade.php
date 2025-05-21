@@ -119,18 +119,17 @@
             <div class="card h-auto">
                 <div class="card-body">
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Portfolio Status</label>
                             <select class="form-control js-example-basic-single" name="portfolio_status">
-                                <option value="" disabled {{ old('portfolio_status') ? '' : 'selected' }}>Select Status
+                                <option value="active"
+                                    {{ old('portfolio_status', 'active') == 'active' ? 'selected' : '' }}>Active
                                 </option>
-                                <option value="active" {{ old('portfolio_status') == 'active' ? 'selected' : '' }}>
-                                    Active</option>
                                 <option value="inactive" {{ old('portfolio_status') == 'inactive' ? 'selected' : '' }}>
-                                    InActive</option>
+                                    Inactive</option>
                             </select>
                         </div>
+
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="">Project Name</label>
