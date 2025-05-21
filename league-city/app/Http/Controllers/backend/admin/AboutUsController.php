@@ -131,7 +131,7 @@ class AboutUsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'current_password' => 'required|min:5|max:10',
-            'new_password' => 'required|min:5|max:10',
+            'new_password' => 'required|min:5|max:10|confirmed',
         ]);
 
         if ($validator->fails()) {
