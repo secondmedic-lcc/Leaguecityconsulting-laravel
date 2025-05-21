@@ -45,7 +45,10 @@ class PortfolioController extends Controller
             'project_url' => 'required|string',
             'heading' => 'required|string',
             'sub_heading' => 'required|string',
-            'portfolio_image' => 'mimes:webp|max:150'
+            'portfolio_image' => 'mimes:webp|max:150',
+            'category'=> 'required|array',
+            'category.*' => 'exists:category,id',
+         
         ]);
         $lastPosition = Portfolio::max('position') ?? 0;
         $newPosition = $lastPosition + 1;
