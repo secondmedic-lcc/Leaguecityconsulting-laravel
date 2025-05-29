@@ -51,7 +51,7 @@
                     @endif
                     <form action="{{ route('campaign.store') }}" method="post" id="campaign-form" autocomplete="off">
                         @csrf
-                        <input type="hidden" name="campaign_for" value="singapore Campaign" class="form-control" />
+                        <input type="hidden" name="campaign_for" value="agentic ai singapore Campaign" class="form-control" />
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingInput" placeholder="Full Name"
                                 name="name" onkeypress="return /[A-Za-z ]/i.test(event.key)" minlength="3"

@@ -20,7 +20,7 @@
                     <h4>Request Submitted Successfully</h4>
                     <p>Our Agent will contact you shortly about your requirements, <br> you can email us at 
                     
-                    @if(session('campaign_for') == 'singapore Campaign')
+                    @if(session('campaign_for') == 'singapore Campaign' || session('campaign_for') == 'agentic ai singapore Campaign')
                         <a href="mailto:sales@leaguecityconsulting.com">
                             <b>sales@leaguecityconsulting.com</b>
                         </a>
@@ -28,7 +28,7 @@
                         <a href="mailto:info@leaguecityconsulting.com"><b>info@leaguecityconsulting.com</b></a>
                     @endif
 
-                    @if(session('campaign_for') == 'singapore Campaign')
+                    @if(session('campaign_for') == 'singapore Campaign' || session('campaign_for') == 'agentic ai singapore Campaign')
                         <br> or call us at <a href="tel:+601127568048"><b>+60-1127568048</b></a></p>
                     @elseif(session('campaign_for') == 'India Campaign' || session('campaign_for') == 'Malaysia Campaign')
                         <br> or call us at <a href="tel:+917879782233"><b>+91-7879782233</b></a></p>
@@ -37,7 +37,9 @@
                     @endif
                 </div>
                 <div class="thankyou-actions">
-                    @if(session('campaign_for') == 'India Campaign')
+                    @if(session('campaign_for') == 'agentic ai singapore Campaign')
+                        <a href="{{ route('agentic.campaign'); }}" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
+                    @elseif(session('campaign_for') == 'India Campaign')
                         <a href="{{ route('india.campaign'); }}" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
                     @elseif(session('campaign_for') == 'Malaysia Campaign')
                         <a href="{{ route('malaysia.campaign'); }}" class="btn web-btn"><i class="fas fa-home"></i> Go To Home Page</a>
