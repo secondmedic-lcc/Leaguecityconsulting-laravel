@@ -867,7 +867,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="box">
                     <h3 class="box-heading">Corporate Website</h3>
-                    <p><b>Starting from 999 SGD</b></p>
+                    <p><b>Starting from 999 SGD</b></p>
                     <p>EXCLUSIVE OF ALL TAXES</p>
                     <ul class="list">
                         <li class="mb-4">Main Points</li>
