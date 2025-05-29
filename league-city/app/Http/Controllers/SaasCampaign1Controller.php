@@ -23,12 +23,12 @@ class SaasCampaign1Controller extends Controller
         $schema_image = "includes-frontend/images/logo-white.webp";
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
-        
+
         $country = Country::get();
 
-        return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio','country'));
+        return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'country'));
     }
-    
+
 
     public function store(Request $request)
     {
@@ -46,9 +46,8 @@ class SaasCampaign1Controller extends Controller
         ]);
 
         if ($validator->fails()) {
-            
-            return redirect()->back()->withErrors($validator)->withInput();
 
+            return redirect()->back()->withErrors($validator)->withInput();
         } else {
 
             $data['name'] = $request->name;
@@ -60,7 +59,7 @@ class SaasCampaign1Controller extends Controller
 
             $result = Campaign::create($data);
 
-            session(['campaign_for'=>$request->campaign_for]);
+            session(['campaign_for' => $request->campaign_for]);
 
             $mail_var = array(
                 'var1' => $request->name,
@@ -83,7 +82,7 @@ class SaasCampaign1Controller extends Controller
         }
     }
 
-    
+
     public function indiaCampaign()
     {
 
@@ -97,11 +96,11 @@ class SaasCampaign1Controller extends Controller
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        $state = State::where(array('country_id'=>101))->get();
+        $state = State::where(array('country_id' => 101))->get();
 
         return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
     }
-    
+
     public function singaporeCampaign()
     {
 
@@ -115,12 +114,12 @@ class SaasCampaign1Controller extends Controller
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        $state = State::where(array('country_id'=>196))->get();
+        $state = State::where(array('country_id' => 196))->get();
 
         return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
     }
 
-    
+
     public function malaysiaCampaign()
     {
 
@@ -134,7 +133,25 @@ class SaasCampaign1Controller extends Controller
 
         $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
 
-        $state = State::where(array('country_id'=>132))->get();
+        $state = State::where(array('country_id' => 132))->get();
+
+        return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
+    }
+
+    public function agenticCampaign()
+    {
+
+        $page_name = "campaign/agentic-ai-campaign";
+
+        $page_title = "agentic ai Saas Campaign";
+
+        $current_page = "agentic-saas-campaign";
+
+        $schema_image = "includes-frontend/images/logo-white.webp";
+
+        $portfolio = Portfolio::where(array('status' => 1))->orderBy('id', 'desc')->limit(5)->get();
+
+        $state = State::where(array('country_id' => 196))->get();
 
         return view('frontend/campaign-main', compact('page_name', 'page_title', 'current_page', 'schema_image', 'portfolio', 'state'));
     }

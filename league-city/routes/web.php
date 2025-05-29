@@ -65,6 +65,8 @@ Route::get('/saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::clas
 
 Route::get('singapore-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'singaporeCampaign'])->name('singapore.campaign');
 
+Route::get('agentic-ai-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'agenticCampaign'])->name('agentic.campaign');
+
 Route::get('india-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'indiaCampaign'])->name('india.campaign');
 
 Route::get('malaysia-saas-campaign', [App\Http\Controllers\SaasCampaign1Controller::class, 'malaysiaCampaign'])->name('malaysia.campaign');
@@ -458,12 +460,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('/innovative-services/{id}', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'update'])->name('innovative_services.update');
     Route::get('/innovative-services/{id}', [App\Http\Controllers\backend\admin\InnovativeServiceController::class, 'destroy'])->name('innovative_services.destroy');
 
-Route::get('process-we-follow', [ProcessWeFollowController::class, 'list'])->name('process_we_follow.list');
-Route::get('process-we-follow/create', [ProcessWeFollowController::class, 'index'])->name('process_we_follow.create');
-Route::post('process-we-follow/store', [ProcessWeFollowController::class, 'store'])->name('process_we_follow.store');
-Route::get('process-we-follow/edit/{id}', [ProcessWeFollowController::class, 'edit'])->name('process_we_follow.edit');
-Route::put('process-we-follow/update/{id}', [ProcessWeFollowController::class, 'update'])->name('process_we_follow.update');
-Route::get('process-we-follow/delete/{id}', [ProcessWeFollowController::class, 'destroy'])->name('process_we_follow.destroy');
+    Route::get('process-we-follow', [ProcessWeFollowController::class, 'list'])->name('process_we_follow.list');
+    Route::get('process-we-follow/create', [ProcessWeFollowController::class, 'index'])->name('process_we_follow.create');
+    Route::post('process-we-follow/store', [ProcessWeFollowController::class, 'store'])->name('process_we_follow.store');
+    Route::get('process-we-follow/edit/{id}', [ProcessWeFollowController::class, 'edit'])->name('process_we_follow.edit');
+    Route::put('process-we-follow/update/{id}', [ProcessWeFollowController::class, 'update'])->name('process_we_follow.update');
+    Route::get('process-we-follow/delete/{id}', [ProcessWeFollowController::class, 'destroy'])->name('process_we_follow.destroy');
 
     Route::get('explore', [ExploreController::class, 'index'])->name('explore.index');
     Route::post('explore/store', [ExploreController::class, 'store'])->name('explore.store');
