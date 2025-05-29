@@ -18,19 +18,20 @@
 </script>
 
 <section class="campaign-banner" id="camp-form">
-    <img src="{{ asset('includes-frontend') }}/images/campaign/saas-campaign-banner-img.webp" alt="img"
+    <img src="{{ asset('includes-frontend') }}/images/campaign/robot.webp" alt="img"
         class="banner-img">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-6">
                 <img src="{{ asset('includes-frontend') }}/images/logo-white.webp" alt="logo" class="logo">
-                <h1>Singapore’s #1 Mobile App Development Company</h1>
-                <h5 class="web-clr">We Turn Your Great Ideas into Amazing Mobile Apps</h5>
+                <h1>Singapore’s #1 Agentic AI Chatbot for Business Automation</h1>
+                <h5 class="web-clr">From lead generation to customer support, let autonomous chatbots manage, respond, and execute intelligently.</h5>
                 <ul>
-                    <li>Accelerated Development Cycle</li>
-                    <li>Fully Confidential, Strict NDA</li>
-                    <li>Clients include Startups, SMEs & Enterprises</li>
-                    <li>Flexible Engagement Options (Fixed Cost / Hourly / Monthly)</li>
+                    <li>Autonomous, Goal-Oriented Chatbot Agents</li>
+  <li>Context-Aware, Continuous Conversations</li>
+  <li>Integrates with Business Tools & Workflows</li>
+  <li>Enterprise-Grade Security & Confidentiality</li>
+  <li>Omnichannel Presence – Always-On</li>
                 </ul>
             </div>
             <div class="col-lg-4 offset-lg-3 col-md-6">
@@ -100,7 +101,20 @@
                 <div class="services-slider-height">
                     <div class="owl-carousel services-slider">
 
-                        <div class="item">
+                    <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/agentic-ai.webp"
+                                        alt="Agentic AI image">
+                                </div>
+                                <div class="content">
+                                    <h3>Agentic AI</h3>
+                                    <p>Autonomous AI that understands, decides, and acts with purpose.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="item">
                             <div class="box">
                                 <div class="images">
                                     <img src="{{ asset('includes-frontend') }}/images/mobile-app-development.webp"
