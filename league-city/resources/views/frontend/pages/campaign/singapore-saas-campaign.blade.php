@@ -93,6 +93,18 @@
                 <h2 class="section-heading text-center">Our Services</h2>
                 <div class="services-slider-height">
                     <div class="owl-carousel services-slider">
+                        <div class="item">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="{{ asset('includes-frontend') }}/images/agentic-ai.webp"
+                                        alt="Agentic AI image">
+                                </div>
+                                <div class="content">
+                                    <h3>Agentic AI</h3>
+                                    <p>Autonomous AI that understands, decides, and acts with purpose.</p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="item">
                             <div class="box">
