@@ -94,7 +94,13 @@
                                         <img src="{{ asset($testimonial->image) }}" width="50"
                                             alt="{{ $testimonial->name }}">
                                     </td>
-                                    <td>{{ $testimonial->description }}</td>
+                                    {{-- <td>{{ $testimonial->description }}</td> --}}
+                                    <td>
+                                        <a href="javascript:void(0);" data-bs-toggle="modal"
+                                            data-bs-target="#descModal{{ $testimonial->id }}" class="text-primary">
+                                            View Description
+                                        </a>
+                                    </td>
                                     <td>{{ $testimonial->show_at_homepage ? 'Yes' : 'No' }}</td>
                                     <td>
                                         <input type="number" class="position-input"
@@ -115,6 +121,21 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="descModal{{ $testimonial->id }}" tabindex="-1"
+                                    aria-labelledby="descModalLabel{{ $testimonial->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Testimonial Description</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {!! $testimonial->description !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
 
@@ -141,17 +162,17 @@
 
 {{-- no duplicate position allowed --}}
 <script>
-    $(document).ready(function () {
-        $(".position-input").on("change", function () {
+    $(document).ready(function() {
+        $(".position-input").on("change", function() {
             let order = [];
             let positions = new Set();
             let hasDuplicate = false;
             let previousValues = {}; // Store old values
-    
-            $(".position-input").each(function () {
+
+            $(".position-input").each(function() {
                 let id = $(this).data("id");
                 let position = $(this).val();
-    
+
                 if (id && position) {
                     if (positions.has(position)) {
                         hasDuplicate = true;
@@ -166,12 +187,12 @@
                     }
                 }
             });
-    
+
             if (hasDuplicate) {
                 Swal.fire("Error", "Duplicate Order are not allowed!", "error");
                 return;
             }
-    
+
             $.ajax({
                 url: "{{ route('testimonials.sort') }}",
                 method: "POST",
@@ -181,7 +202,7 @@
                 data: {
                     order: order
                 },
-                success: function (response) {
+                success: function(response) {
                     Swal.fire({
                         icon: "success",
                         title: "Success",
@@ -189,16 +210,16 @@
                         timer: 1500,
                         showConfirmButton: false
                     });
-    
-                    setTimeout(function () {
+
+                    setTimeout(function() {
                         location.reload(); // Auto refresh page
                     }, 1600);
                 },
-                error: function (xhr) {
-                    Swal.fire("Error", xhr.responseJSON?.message || "Failed to update order!", "error");
+                error: function(xhr) {
+                    Swal.fire("Error", xhr.responseJSON?.message ||
+                        "Failed to update order!", "error");
                 }
             });
         });
     });
-    </script>
-    
+</script>

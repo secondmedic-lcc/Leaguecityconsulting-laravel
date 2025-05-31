@@ -43,15 +43,18 @@
 
                             @foreach ($list as $service)
                                 @php $deleteUrl = route('innovative_services.destroy', $service->id); @endphp
-
-
                                 <tr>
                                     <td>{{ $a++ }}</td>
                                     <td><i class="{{ $service->icon }}"></i></td>
                                     <td>{{ Str::ucfirst($service->title) }}</td>
                                     <td>{{ $service->slug }}</td>
                                     <td><a href="{{ $service->link }}" target="_blank">{{ $service->link }}</a></td>
-                                    <td>{{ Str::limit($service->description, 50) }}</td>
+                                    <td>
+                                        <a href="javascript:void(0);" data-bs-toggle="modal"
+                                            data-bs-target="#descModal{{ $service->id }}" class="text-primary">
+                                            View Description
+                                        </a>
+                                    </td>
                                     <td>
                                         @if ($service->status == 1)
                                             <span class="badge bg-success">Active</span>
@@ -83,6 +86,23 @@
                                         </div>
                                     </td>
                                 </tr>
+                               
+                                    <div class="modal fade" id="descModal{{ $service->id }}" tabindex="-1"
+                                        aria-labelledby="descModalLabel{{ $service->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Service Description</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {!! $service->description !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
                             @endforeach
                         </tbody>
                     </table>

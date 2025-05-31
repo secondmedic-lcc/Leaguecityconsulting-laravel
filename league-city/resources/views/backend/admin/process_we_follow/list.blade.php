@@ -15,7 +15,8 @@
                             <li>
                                 <h6>Quick Actions</h6>
                             </li>
-                            <li><a class="dropdown-item" href="{{ route('process_we_follow.create') }}">Add Process Step</a></li>
+                            <li><a class="dropdown-item" href="{{ route('process_we_follow.create') }}">Add Process
+                                    Step</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,18 +41,42 @@
                                     <td>{{ $a++ }}</td>
                                     <td>{{ Str::ucfirst($process->title) }}</td>
                                     <td>{{ $process->order }}</td>
-                                    <td>{{ \Illuminate\Support\Str::limit($process->description, 60) }}</td>
+                                    {{-- <td>{{ \Illuminate\Support\Str::limit($process->description, 60) }}</td> --}}
+                                    <td>
+                                        <a href="javascript:void(0);" data-bs-toggle="modal"
+                                            data-bs-target="#descModal{{ $process->id }}" class="text-primary">
+                                            View Description
+                                        </a>
+                                    </td>
                                     <td class="text-end">
                                         <div class="table-action-btns">
-                                            <a href="{{ route('process_we_follow.edit', $process->id) }}" class="btn btn-warning btn-xs text-white">
+                                            <a href="{{ route('process_we_follow.edit', $process->id) }}"
+                                                class="btn btn-warning btn-xs text-white">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0);" onclick="deleteData('{{ route('process_we_follow.destroy', $process->id) }}')" class="btn btn-danger btn-xs text-white btn-delete">
+                                            <a href="javascript:void(0);"
+                                                onclick="deleteData('{{ route('process_we_follow.destroy', $process->id) }}')"
+                                                class="btn btn-danger btn-xs text-white btn-delete">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </div>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="descModal{{ $process->id }}" tabindex="-1"
+                                    aria-labelledby="descModalLabel{{ $process->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Process We Follow Description</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {!! $process->description !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
